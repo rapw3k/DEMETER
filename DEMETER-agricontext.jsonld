@@ -10,7 +10,10 @@
         "Treatment" : "http://foodie-cloud.com/model/foodie#Treatment",
         "Holding" : "http://inspire.ec.europa.eu/schemas/af/3.0#Holding",
         "code" : "http://foodie-cloud.com/model/foodie#code",
-        "creationDateTime" : "http://foodie-cloud.com/model/foodie#creationDateTime",
+        "creationDateTime" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#creationDateTime",
+        		"@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
         "cropSpecies" : {
         		"@id" : "http://foodie-cloud.com/model/foodie#cropSpecies",
         		"@type": "@id"
@@ -23,9 +26,9 @@
         		"@id" : "http://foodie-cloud.com/model/foodie#zoneAlert",
         		"@type": "@id"
         },
-        "holdingZone": {
-            "@id": "http://foodie-cloud.com/model/foodie#holdingZone",
-            "@type": "@id"
+        "holdingZone" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#holdingZone",
+        		"@type": "@id"
         }
     }
 }
