@@ -11,9 +11,18 @@
         "Holding" : "http://inspire.ec.europa.eu/schemas/af/3.0#Holding",
         "code" : "http://foodie-cloud.com/model/foodie#code",
         "creationDateTime" : "http://foodie-cloud.com/model/foodie#creationDateTime",
-        "cropSpecies" : "http://foodie-cloud.com/model/foodie#cropSpecies",
-        "originType" : "http://foodie-cloud.com/model/foodie#originType",
-        "zoneAlert" : "http://foodie-cloud.com/model/foodie#zoneAlert",
+        "cropSpecies" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#cropSpecies",
+        		"@type": "@id"
+        },
+        "originType" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#originType",
+        		"@type": "@id"
+        },
+        "zoneAlert" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#zoneAlert",
+        		"@type": "@id"
+        },
         "holdingZone": {
             "@id": "http://foodie-cloud.com/model/foodie#holdingZone",
             "@type": "@id"
