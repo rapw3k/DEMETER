@@ -56,16 +56,33 @@ The additional metadata about the nature of the dataset will still need to be ca
 ### Re-use of generic models and schemas
 Generalised models and schemas can be re-used, but each application will need to specify how specific datasets should be expressed - what terms to use, what optional elements should be present etc.
 
-These constraints on how to use a general purpose mechanism in a consistent way for a specific purpose are called profiles. Profiles allow identification of the data design to attach metadata about the semantics of content related to sampling strageies for example - but they can also be used to describe general patterns that sub-profiles can apply.
+These constraints on how to use a general purpose mechanism in a consistent way for a specific purpose are called profiles. Profiles allow identification of the data design to attach metadata about the semantics of content related to sampling stratgies for example - but they can also be used to describe general patterns that sub-profiles can apply.
 
 Although this is not widespread practice amongst API developers, profiles are become common in metadata standards e.g. [https://www.w3.org/TR/vocab-dcat-2/#profiles] and can be applied to all data. Profiles can also be modelled in terms of how they interoperate with each other:
 
-https://www.w3.org/TR/dx-prof/
 
-![Image][https://www.w3.org/TR/dx-prof/examples/hierarchy.svg "DCAT profiles example"]
+
+![DCAT profiles example](hierarchy.png)
+DCAT profiles example.
+(Source: https://www.w3.org/TR/dx-prof/)
+
+### Interoperability levels
+
+Interoperability concerns appear at multiple aspects of system design, to meet  different stakeholders' requirements for example:
+1) Services (client software)
+2) Data format - availability of libraries: (server and client software)
+3) Data set metadata (client software, end user, publishing)
+4) Schemas - (specialised client software, general client software configuration - identification of role of different elements)
+5) Semantic object identification (URI) - comparison with known objects to identify meaning
+6) Semantic description - URI dereferencing to get semantic resources (end users - get descriptions, publishers - minimise documentation, client software - minimise overhead of collating descriptions, data integration and processing - accessing machine actionable metadata)
+7) profiles - get a statement about the overall meaning of data (data integration and aggregation, publishers, developers, users - minimise overheads with extensive ad-hoc documentation generation and consumption)
 
 ## Recommendations
-1. 
+1. Identify interoperability requirements and create (i.e. publish at a stable URI) profiles that deliver JSON context documents (if mime-type is ld+json) and JSON schema (if mime-type is json)
+1. Identify semantic resource requirements for each interoperability user case and declare the canonical data models for such resources in "super-profiles" of specific use cases to converge on common and sustainable designs. 
+
+e.g. a profile for FIWare/NGSI-LD interoperability, OGC API etc - allows us to both test and share interoperability design across multiple activities.
+
 
 ## Issues
 ### caching
