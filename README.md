@@ -97,3 +97,32 @@ Contexts should be factored according to expectations about scope and stakeholde
 If the authority for a set of definitions publishes a stable, canonical context, this should be used by preference to make interoperability expectations clear. (this will also help caching).
 
 NB. OGC can provide a service to make contexts with broad applicability to standards available on a permanent basis, and also publish project-specific prototypes. Such profiles can accessed by identifying URIs and be semantically annotated within OGC's Linked Data infrastructure. 
+
+### tooling and publishing
+
+some experimentation and consultation is required around optimum approached to context negotiation.
+
+For testing purposes JSON-Ld contexts should be named X_content.jsonld and bundled with examples.
+
+when published, the context should be referenced by the name of the profile (which is technology neutral) and accessed by using appropriate content-negotiation.
+
+RDFLIB json-ld plug-in correctly requests the correct mime type when dereferencing URLS:
+
+``'application/ld+json, application/json;p=0.9, */*;q=0.1'``
+
+So a profile like "http://www.opengis.net/def/profiles/baseline"  would return JSON-LD context to a tool like this - but HTML to a standard web browser, and OWL to a RDF client accessing via owl:imports. 
+
+
+## Examples
+
+test.jsonld is an example that references a common DEMETER content, which in turns references a sample "OGC semantic baseline" context. 
+
+The OGC will publish a context which will:
+* reference standard ontologies and namespaces used in OGC published semantic resources
+* include namespaces for OGC published ontologies (and the W3C standards they use) (geosparql, time, rdfs)
+
+a stub for this is in ogc_core_context.jsonld
+
+the test.py script can be run to generate the equivalent test.ttl version.
+
+
