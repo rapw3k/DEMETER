@@ -1,11 +1,11 @@
 # DEMETER AIM considerations
 
 In line with best practices and recommendations, the specification of DEMETER AIM will follow a modular approach in a layered architecture, enabling among others:
-i) eased interoperability with existing models by reusing available (well-scoped) models in the modules, instead of defining new terms, whenever possible
-ii) easy mapping/alignment with other models, by module instead of the whole model
-iii) easy extension of the domain/areas covered in AIM with additional modules
-iv) easy extension of domain model, by modifying only specific modules
-v) easy mapping to top-level/cross-domain ontologies 
+1.  eased interoperability with existing models by reusing available (well-scoped) models in the modules, instead of defining new terms, whenever possible
+1.  easy mapping/alignment with other models, by module instead of the whole model
+1.  easy extension of the domain/areas covered in AIM with additional modules
+1.  easy extension of domain model, by modifying only specific modules
+1.  easy mapping to top-level/cross-domain ontologies 
 
 
 # NGSI-LD considerations
