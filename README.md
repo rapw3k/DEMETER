@@ -124,5 +124,80 @@ Hence, taking into account the initial considerations of DEMETER AIM, our approa
 
 Hence, DEMETER AIM follows the same 3-layer architecture of NGSI-LD, including a property graph meta-model layer (grounded in RDF/RDFS), a cross-domain (also called top level) ontologies layer, and the domain/application ontologies. However, as opposed to NGSI-LD, DEMETER AIM will implement the cross-domain and domain/application layers by reusing existing standards and/or well-known ontologies/vocabularies. 
  
+As an example, consider the following agriculture management zone using FOODIE ontology as the underlying model encoded in RDF/turle.
+```
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns0: <http://www.opengis.net/ont/geosparql#> .
+@prefix ns1: <http://foodie-cloud.com/model/foodie#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-
+<http://w3id.org/foodie/core/ManagementZone/4>
+  a <http://foodie-cloud.com/model/foodie#ManagementZone> ;
+  rdfs:label "ManagementZone #4" ;
+  ns0:hasGeometry <http://w3id.org/foodie/core/ManagementZone/4/geometry> ;
+  ns1:code "CODA4"^^xsd:string ;
+  ns1:creationDateTime "2015-12-01T00:00:00" ;
+  ns1:cropSpecies <http://w3id.org/foodie/core/CropType/20> ;
+  ns1:holdingZone <http://w3id.org/foodie/core/Plot/1> ;
+  ns1:originType <http://w3id.org/foodie/core/OriginTypeValue/1> ;
+  ns1:zoneAlert <http://w3id.org/foodie/core/Alert/4> .
+```
+With DEMETER AIM, we would define an agriculture model module/profile as a JSON-LD @context, which defines the terms used in DEMETER by reusing existing standards and/or well-known ontologies/vocabularies, i.e., mapping DEMETER terms to the reused ontology/vocabulary terms. A short example of such @[context](DEMETER-agricontext.jsonld) (using FOODIE ontology for demonstration purposes) would be as follows:
+```
+{
+    "@context": {
+        "xsd" : "http://www.w3.org/2001/XMLSchema#",
+        "Nutrients": "http://foodie-cloud.com/model/foodie#ProductNutrients",
+        "Plot": "http://foodie-cloud.com/model/foodie#Plot",
+        "DoseUnit": "http://foodie-cloud.com/model/foodie#DoseUnit",
+        "TreatmentPlan": "http://foodie-cloud.com/model/foodie#TreatmentPlan",
+        "ManagementZone": "http://foodie-cloud.com/model/foodie#ManagementZone",
+        "Intervention" : "http://foodie-cloud.com/model/foodie#Intervention",
+        "CropSpecies" : "http://foodie-cloud.com/model/foodie#CropSpecies",
+        "Treatment" : "http://foodie-cloud.com/model/foodie#Treatment",
+        "Holding" : "http://inspire.ec.europa.eu/schemas/af/3.0#Holding",
+        "code" : "http://foodie-cloud.com/model/foodie#code",
+        "creationDateTime" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#creationDateTime",
+        		"@type": "xsd:dateTime"
+        },
+        "cropSpecies" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#cropSpecies",
+        		"@type": "@id"
+        },
+        "originType" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#originType",
+        		"@type": "@id"
+        },
+        "zoneAlert" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#zoneAlert",
+        		"@type": "@id"
+        },
+        "holdingZone" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#holdingZone",
+        		"@type": "@id"
+        }
+    }
+}
+```
+Then the encoding of the same management zone presented above in JSON-LD using DEMETER AIM would look like:
+```
+{
+    "@context": [
+         "https://rapw3k.github.io/DEMETER/DEMETER-agricontext.jsonld",
+         {"label" : "http://www.w3.org/2000/01/rdf-schema#label",
+           "geo" : "http://www.opengis.net/ont/geosparql#"
+         }
+    ],
+    "@id": "http://w3id.org/foodie/core/ManagementZone/4",
+    "@type": "ManagementZone",
+    "label": "ManagementZone #4",
+    "code" : "CODA4",
+    "creationDateTime" : "2015-12-01T00:00:00",
+    "cropSpecies" : "http://w3id.org/foodie/core/CropType/20",
+    "holdingZone" : "http://w3id.org/foodie/core/Plot/1",
+    "originType" : "http://w3id.org/foodie/core/OriginTypeValue/1",
+    "zoneAlert" : "http://w3id.org/foodie/core/Alert/4",
+    "geo:hasGeometry" : { "@id" : "http://w3id.org/foodie/core/ManagementZone/4/geometry"   }
+}
+```
