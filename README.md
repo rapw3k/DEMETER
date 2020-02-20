@@ -229,3 +229,25 @@ However, using the expressivity of the property graph model, the same informatio
     "geo:hasGeometry" : { "@id" : "http://w3id.org/foodie/core/ManagementZone/4/geometry"   }
 }
 ```
+And the corresponding RDF/Turtle representation would be like:
+```
+@prefix ns0: <http://foodie-cloud.com/model/foodie#> .
+@prefix ns1: <http://uri.etsi.org/ngsi-ld/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns2: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://w3id.org/foodie/core/ManagementZone/4>
+  a <http://foodie-cloud.com/model/foodie#ManagementZone> ;
+  ns0:code [
+    a <http://uri.etsi.org/ngsi-ld/Property> ;
+    ns1:hasValue "CODA4"^^xsd:string
+  ] ;
+  ns0:creationDateTime "2015-12-01T00:00:00"^^xsd:dateTime ;
+  ns0:cropSpecies <http://w3id.org/foodie/core/CropType/20> ;
+  ns0:holdingZone <http://w3id.org/foodie/core/Plot/1> ;
+  ns0:originType <http://w3id.org/foodie/core/OriginTypeValue/1> ;
+  ns0:zoneAlert <http://w3id.org/foodie/core/Alert/4> ;
+  ns2:hasGeometry <http://w3id.org/foodie/core/ManagementZone/4/geometry> ;
+  rdfs:label "ManagementZone #4"^^xsd:string .
+```
