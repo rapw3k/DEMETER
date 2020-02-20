@@ -11,7 +11,9 @@ In line with best practices and recommendations, the specification of DEMETER AI
 # NGSI-LD considerations
 
 The NGSI-LD Information Model is defined at three levels.
-At the higher level, there are the foundation classes which correspond to the Core Meta-model and the Cross-Domain Ontology.  The former concerns the formal specification of the "property graph" model [i.6]. The latter includes is a set of generic, transversal classes which are aimed at avoiding conflicting or redundant definitions of the same classes in each of the domain-specific ontologies. Below these two levels, domain specific ontologies or vocabularies are devised.
+At the higher level, there are the foundation classes which correspond to the Core Meta-model and the Cross-Domain Ontology (see Figure below).  The former concerns the formal specification of the "property graph" model [i.6]. The latter includes is a set of generic, transversal classes which are aimed at avoiding conflicting or redundant definitions of the same classes in each of the domain-specific ontologies. Below these two levels, domain specific ontologies or vocabularies are devised.
+
+![NGSI-LD core meta-model and partial cross-domain ontology](ngsi-ld-layers.png)
 
 NGSI-LD uses JSON-LD as main serialisation format, which provides the key advantage that terms can be defined in a separate document, referenced by an @context statement. In particular, the The @context in JSON-LD is used to map terms provided as strings to concepts specified as URIs. 
 
