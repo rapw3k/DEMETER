@@ -36,7 +36,7 @@ NGSI-LD approach is well founded, following a layered architecture and based on 
 
 The issues or challenges we highlight are more on the implementation of this approach. 
 * The current NGSI-LD context is just a simple flat schema that includes the meta-model and cross ontology terms without any explicit semantics.  There is no definition that a term is a class, a property or information about the property types, constraints on domains/ranges, cardinality, taxonomic relations, or other axioms. 
-* The terms are not mapped to any standard and/or well-known ontologies/vocabularies. There is some documentation dicussing some of such mappings; however, no implementation seems to be available to allow any integration. In fact, it is not clear, how such mappings would be implemented from documentation reviewed. 
+* The terms are not mapped to any standard and/or well-known ontologies/vocabularies. There is some documentation dicussing some of such mappings; however, no implementation seems to be available to allow any integration. In fact, it is not clear, how such mappings would be implemented from the documentation reviewed. 
 * The flat schema implementation approach is not scalable, and difficult to maintain.
 * The only semantic information available is in fact included in the encoding of data itself, and is just minimal (e.g., an element is a property or a relationship)
 
