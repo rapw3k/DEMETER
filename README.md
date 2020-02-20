@@ -33,11 +33,11 @@ The Core NGSI-LD (JSON-LD)[@context](https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-cor
 NGSI-LD approach is well founded, following a layered architecture and based on the increasingly popular JSON-LD serialisation format. Conceptually, it enables the good sides of two “worlds”: the benefits of linked data and underlying RDF-based reasoning tools and querying (enabling data integration, knowledge discovery, etc.) ,  and the richer expressivity of property graphs (using predicates as subjects of other predicates). 
 
 The issues or challenges we highlight are more on the implementation of this approach. 
-The current NGSI-LD context is just a simple flat schema that includes the meta-model and cross ontology terms without any explicit semantics.  There is no definition that a term is a class, a property or information about the property types, constraints on domains/ranges, cardinality, taxonomic relations, or other axioms. 
-The terms are not mapped to any standard and/or well-known ontologies/vocabularies.
-The flat schema implementation approach is not scalable, and difficult to maintain.
-The only semantic information available is in fact included in the encoding of data itself, and is just minimal (e.g., an element is a property or a relationship)
-As a result, many advantages of the linked data and underlying RDF-based reasoning tools and querying cannot be easily exploited, e.g., validation of conformance of data with the model with a simple reasoner, inferencing on the data to discover new knowledge, specialisations (taxonomy) with inheritance of axioms. 
+*The current NGSI-LD context is just a simple flat schema that includes the meta-model and cross ontology terms without any explicit semantics.  There is no definition that a term is a class, a property or information about the property types, constraints on domains/ranges, cardinality, taxonomic relations, or other axioms. 
+*The terms are not mapped to any standard and/or well-known ontologies/vocabularies.
+*The flat schema implementation approach is not scalable, and difficult to maintain.
+*The only semantic information available is in fact included in the encoding of data itself, and is just minimal (e.g., an element is a property or a relationship)
+*As a result, many advantages of the linked data and underlying RDF-based reasoning tools and querying cannot be easily exploited, e.g., validation of conformance of data with the model with a simple reasoner, inferencing on the data to discover new knowledge, specialisations (taxonomy) with inheritance of axioms. 
 
 
 
