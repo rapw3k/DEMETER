@@ -70,6 +70,35 @@ The issues or challenges we highlight are more on the implementation of this app
 }
 
 ```
+The transformation of that json-ld into RDF would be as follows:
+```
+@prefix ns0: <https://uri.etsi.org/ngsi-ld/> .
+@prefix ns1: <https://uri.etsi.org/ngsi-ld/default-context/> .
+@prefix ns2: <https://uri.fiware.org/ns/data-models#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:ngsi-ld:AgriParcelRecord:8f5445e6-f49b-496e-833b-e65fc97fcab7>
+  a <https://uri.fiware.org/ns/data-models#AgriParcelRecord> ;
+  ns0:createdAt "2017-01-01T01:20:00Z"^^ns0:DateTime ;
+  ns1:entityVersion 2 ;
+  ns0:modifiedAt "2017-05-04T12:30:00Z"^^ns0:DateTime ;
+  ns2:dataProvider "https://provider.example.com"^^xsd:string ;
+  ns2:hasAgriParcel [
+    a ns0:Relationship ;
+    ns0:hasObject <urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed>
+  ] ;
+  ns2:observedAt [
+    a ns0:Property ;
+    ns2:value "2017-05-04T10:18:16Z"^^xsd:string
+  ] ;
+  ns2:soilTemperature [
+    a ns0:Property ;
+    ns0:unitCode "CEL"^^xsd:string ;
+    ns2:observedAt "2017-05-04T12:30:00Z"^^ns0:DateTime ;
+    ns2:value 27
+  ] ;
+  ns2:source "https://source.example.com"^^xsd:string .
+```
 
 As a result, many advantages of the linked data and underlying RDF-based reasoning tools and querying cannot be easily or directly  exploited, e.g., (automatic) data link discovery (integration), (automatic) model alignment for data integration, validation of conformance of data with the model with a simple reasoner, inferencing on the data to discover new knowledge, specialisations (taxonomy) with inheritance of axioms. 
 
