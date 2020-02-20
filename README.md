@@ -39,7 +39,37 @@ The issues or challenges we highlight are more on the implementation of this app
 * The terms are not mapped to any standard and/or well-known ontologies/vocabularies (no reuse). There is some documentation dicussing some of such mappings; however, no implementation seems to be available to allow any integration. In fact, it is not clear, how such mappings would be implemented from the documentation reviewed. 
 * Similarly, other modules/profiles (domain vocabularies) are defined in the same way (simple flat schemas with no mapping/reuse of existing standards and/or well-known ontologies). For instance, FIWARE Data Models [@context](https://fiware.github.io/data-models/context.jsonld) is used in many of the provided example and is part of the full [@context](https://fiware.github.io/data-models/full-context.jsonld) (along with the core @context) of NGSI-LD. 
 * The flat schema implementation approach is not scalable, and difficult to maintain.
-* The only semantic information available is in fact included in the encoding of data itself, and is just minimal (e.g., an element is a property or a relationship)
+* The only semantic information available is in fact included in the encoding of data itself, and is just minimal (e.g., an element is a property or a relationship). For instance, the encoding of a FIWARE agri parcel entity example is (partially) below (the full encoding of the example is available [here](ngsi-ld-fiware-parece-example.jsonld) )
+```
+{
+    "@context": [ 
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        "https://fiware.github.io/data-models/context.jsonld"
+    ],
+    "id": "urn:ngsi-ld:AgriParcelRecord:8f5445e6-f49b-496e-833b-e65fc97fcab7",
+    "type": "AgriParcelRecord",
+    "createdAt": "2017-01-01T01:20:00Z",
+    "modifiedAt": "2017-05-04T12:30:00Z",
+    "source": "https://source.example.com",
+    "dataProvider": "https://provider.example.com",
+    "entityVersion": 2.0,
+    "hasAgriParcel": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed"
+    },
+    "soilTemperature": {
+        "type": "Property",
+        "value": 27,
+        "unitCode": "CEL",
+        "observedAt": "2017-05-04T12:30:00Z"
+    },
+    "observedAt": {
+        "type": "Property",
+        "value": "2017-05-04T10:18:16Z"
+    }
+}
+
+```
 
 As a result, many advantages of the linked data and underlying RDF-based reasoning tools and querying cannot be easily or directly  exploited, e.g., (automatic) data link discovery (integration), (automatic) model alignment for data integration, validation of conformance of data with the model with a simple reasoner, inferencing on the data to discover new knowledge, specialisations (taxonomy) with inheritance of axioms. 
 
