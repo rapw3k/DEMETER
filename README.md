@@ -180,7 +180,7 @@ With DEMETER AIM, we would define an agriculture model module/profile as a JSON-
     }
 }
 ```
-Then the encoding of the same management zone presented above in JSON-LD using DEMETER AIM would look like:
+Then the encoding of the same management zone presented above in JSON-LD using DEMETER AIM would look like the listing below (see document [here](managementZone4-example.jsonld)), which could be easily transformed back to RDF/Turtle, for example (try [here](http://www.easyrdf.org/converter)),  to get the same listing as above. 
 ```
 {
     "@context": [
@@ -193,6 +193,34 @@ Then the encoding of the same management zone presented above in JSON-LD using D
     "@type": "ManagementZone",
     "label": "ManagementZone #4",
     "code" : "CODA4",
+    "creationDateTime" : "2015-12-01T00:00:00",
+    "cropSpecies" : "http://w3id.org/foodie/core/CropType/20",
+    "holdingZone" : "http://w3id.org/foodie/core/Plot/1",
+    "originType" : "http://w3id.org/foodie/core/OriginTypeValue/1",
+    "zoneAlert" : "http://w3id.org/foodie/core/Alert/4",
+    "geo:hasGeometry" : { "@id" : "http://w3id.org/foodie/core/ManagementZone/4/geometry"   }
+}
+```
+However, using the expressivity of the property graph model, the same information would be encoded as the listing below (see document [here](managementZone4-example-property-graph.jsonld)):
+//TODO finish typing all properties
+```
+{
+    "@context": [
+         "https://rapw3k.github.io/DEMETER/DEMETER-agricontext.jsonld",
+         {"label" : "http://www.w3.org/2000/01/rdf-schema#label",
+           "geo" : "http://www.opengis.net/ont/geosparql#",
+           "Property": "http://uri.etsi.org/ngsi-ld/Property",
+           "Relationship": "http://uri.etsi.org/ngsi-ld/Relationship",
+          "value": "http://uri.etsi.org/ngsi-ld/hasValue"
+         }
+    ],
+    "@id": "http://w3id.org/foodie/core/ManagementZone/4",
+    "@type": "ManagementZone",
+    "label": "ManagementZone #4",
+    "code": {
+       "@type": "Property",
+       "value": "CODA4"
+     },
     "creationDateTime" : "2015-12-01T00:00:00",
     "cropSpecies" : "http://w3id.org/foodie/core/CropType/20",
     "holdingZone" : "http://w3id.org/foodie/core/Plot/1",
