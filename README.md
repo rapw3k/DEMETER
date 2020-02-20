@@ -38,7 +38,7 @@ The issues or challenges we highlight are more on the implementation of this app
 * The flat schema implementation approach is not scalable, and difficult to maintain.
 * The only semantic information available is in fact included in the encoding of data itself, and is just minimal (e.g., an element is a property or a relationship)
 
-As a result, many advantages of the linked data and underlying RDF-based reasoning tools and querying cannot be easily or directly be exploited, e.g., (automatic) data link discovery (integration), (automatic) model alignment for data integration, validation of conformance of data with the model with a simple reasoner, inferencing on the data to discover new knowledge, specialisations (taxonomy) with inheritance of axioms. 
+As a result, many advantages of the linked data and underlying RDF-based reasoning tools and querying cannot be easily or directly  exploited, e.g., (automatic) data link discovery (integration), (automatic) model alignment for data integration, validation of conformance of data with the model with a simple reasoner, inferencing on the data to discover new knowledge, specialisations (taxonomy) with inheritance of axioms. 
 
 
 
