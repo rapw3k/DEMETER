@@ -24,7 +24,7 @@ According to the specification, the NGSI-LD meta-model provides a formal basis f
 # The NGSI-LD @context
 This site was built using [GitHub Pages](https://pages.github.com/)
 
-The [Core NGSI-LD (JSON-LD) @context] (https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld) is defined as a JSON-LD @context which contains:
+The Core NGSI-LD (JSON-LD) @[context] (https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld) is defined as a JSON-LD @context which contains:
 
 * The core terms needed to represent the key concepts defined by the NGSI LD Information Model, including the meta-model and cross-ontology
 * The terms needed to represent all the members that define the API-related Data Types
