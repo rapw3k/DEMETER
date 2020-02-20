@@ -126,21 +126,21 @@ Hence, DEMETER AIM follows the same 3-layer architecture of NGSI-LD, including a
  
 As an example, consider the following agriculture management zone using FOODIE ontology as the underlying model encoded in RDF/turle.
 ```
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ns0: <http://www.opengis.net/ont/geosparql#> .
-@prefix ns1: <http://foodie-cloud.com/model/foodie#> .
+@prefix ns0: <http://foodie-cloud.com/model/foodie#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns1: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://w3id.org/foodie/core/ManagementZone/4>
   a <http://foodie-cloud.com/model/foodie#ManagementZone> ;
-  rdfs:label "ManagementZone #4" ;
-  ns0:hasGeometry <http://w3id.org/foodie/core/ManagementZone/4/geometry> ;
-  ns1:code "CODA4"^^xsd:string ;
-  ns1:creationDateTime "2015-12-01T00:00:00" ;
-  ns1:cropSpecies <http://w3id.org/foodie/core/CropType/20> ;
-  ns1:holdingZone <http://w3id.org/foodie/core/Plot/1> ;
-  ns1:originType <http://w3id.org/foodie/core/OriginTypeValue/1> ;
-  ns1:zoneAlert <http://w3id.org/foodie/core/Alert/4> .
+  ns0:code "CODA4"^^xsd:string ;
+  ns0:creationDateTime "2015-12-01T00:00:00"^^xsd:dateTime ;
+  ns0:cropSpecies <http://w3id.org/foodie/core/CropType/20> ;
+  ns0:holdingZone <http://w3id.org/foodie/core/Plot/1> ;
+  ns0:originType <http://w3id.org/foodie/core/OriginTypeValue/1> ;
+  ns0:zoneAlert <http://w3id.org/foodie/core/Alert/4> ;
+  ns1:hasGeometry <http://w3id.org/foodie/core/ManagementZone/4/geometry> ;
+  rdfs:label "ManagementZone #4"^^xsd:string .
 ```
 With DEMETER AIM, we would define an agriculture model module/profile as a JSON-LD @context, which defines the terms used in DEMETER by reusing existing standards and/or well-known ontologies/vocabularies, i.e., mapping DEMETER terms to the reused ontology/vocabulary terms. A short example of such @[context](DEMETER-agricontext.jsonld) (using FOODIE ontology for demonstration purposes) would be as follows:
 ```
