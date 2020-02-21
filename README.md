@@ -180,7 +180,7 @@ With DEMETER AIM, we would define an agriculture model module/profile as a JSON-
     }
 }
 ```
-Then the encoding of the same management zone presented above in JSON-LD using DEMETER AIM would look like the listing below (see document [here](managementZone4-example.jsonld)), which could be easily transformed back to RDF/Turtle, for example (try [here](http://www.easyrdf.org/converter)),  to get the same listing as above. 
+Then the encoding of the same management zone presented above in JSON-LD using DEMETER AIM would look like the listing below (see document [here](managementZone4-example.jsonld)), which could be easily transformed back to RDF (try [here](http://www.easyrdf.org/converter))  to get the same listing as above. Note that in addition to the agriculture context, we are adding two more terms to the context in this example (namely: label an geometry); however such terms would be defined in the future in different modules at the cross-domain level (e.g., geospatial model)
 ```
 {
     "@context": [
