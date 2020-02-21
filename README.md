@@ -201,38 +201,58 @@ Then the encoding of the same management zone presented above in JSON-LD using D
     "geo:hasGeometry" : { "@id" : "http://w3id.org/foodie/core/ManagementZone/4/geometry"   }
 }
 ```
-However, using the expressivity of the property graph model, the same information would be encoded as the listing below (see document [here](managementZone4-example-property-graph.jsonld)):
-//TODO finish typing all properties
+However, if we would like to use the expressivity of the property graph model (to raise the semantic expressivity of RDF triples to the level of property graphs), we would first define our core meta-model @[context](DEMETER-core-metamodel.jsonld) as defined below:
+```
+{
+   "@context": {
+      "id": "@id",
+      "type": "@type",
+      "value": "https://uri.etsi.org/ngsi-ld/hasValue",
+      "object": {
+          "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+          "@type":"@id"
+      },
+      "Property": "https://uri.etsi.org/ngsi-ld/Property",
+      "Relationship": "https://uri.etsi.org/ngsi-ld/Relationship"
+   }
+}
+```
+Then we would be able to attach properties to relantionships or other properties (i.e., using the property graph model). So, in our previous example, if we would like to attach properties to one of our data type properties values (e.g., code) and to one of object property values (e.g., cropSpecies), the encoding of the previous management zone would be as the listing below (see document [here](managementZone4-example-property-graph.jsonld)). Note that no extra properties are shown though, as this is just for illustration):
 ```
 {
     "@context": [
          "https://rapw3k.github.io/DEMETER/DEMETER-agricontext.jsonld",
-         {"label" : "http://www.w3.org/2000/01/rdf-schema#label",
-           "geo" : "http://www.opengis.net/ont/geosparql#",
-           "Property": "http://uri.etsi.org/ngsi-ld/Property",
-           "Relationship": "http://uri.etsi.org/ngsi-ld/Relationship",
-          "value": "http://uri.etsi.org/ngsi-ld/hasValue"
+         "https://rapw3k.github.io/DEMETER/DEMETER-core-metamodel.jsonld",
+         {
+             "label" : "http://www.w3.org/2000/01/rdf-schema#label",
+             "geometry": {
+                  "@id": "http://www.opengis.net/ont/geosparql#hasGeometry",
+                  "@type":"@id"
+             }
          }
     ],
-    "@id": "http://w3id.org/foodie/core/ManagementZone/4",
-    "@type": "ManagementZone",
+    "id": "http://w3id.org/foodie/core/ManagementZone/4",
+    "type": "ManagementZone",
     "label": "ManagementZone #4",
     "code": {
-       "@type": "Property",
+       "type": "Property",
        "value": "CODA4"
      },
     "creationDateTime" : "2015-12-01T00:00:00",
-    "cropSpecies" : "http://w3id.org/foodie/core/CropType/20",
+    "cropSpecies" : {
+        "type": "Relationship",
+        "object": "http://w3id.org/foodie/core/CropType/20"
+    },
     "holdingZone" : "http://w3id.org/foodie/core/Plot/1",
     "originType" : "http://w3id.org/foodie/core/OriginTypeValue/1",
     "zoneAlert" : "http://w3id.org/foodie/core/Alert/4",
-    "geo:hasGeometry" : { "@id" : "http://w3id.org/foodie/core/ManagementZone/4/geometry"   }
+    "geometry" : "http://w3id.org/foodie/core/ManagementZone/4/geometry"
 }
 ```
-And the corresponding RDF/Turtle representation would be like:
+Now, if we see the corresponding RDF/Turtle representation, it would be like the listing below:
 ```
 @prefix ns0: <http://foodie-cloud.com/model/foodie#> .
-@prefix ns1: <http://uri.etsi.org/ngsi-ld/> .
+@prefix ns1: <https://uri.etsi.org/ngsi-ld/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix ns2: <http://www.opengis.net/ont/geosparql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -240,11 +260,14 @@ And the corresponding RDF/Turtle representation would be like:
 <http://w3id.org/foodie/core/ManagementZone/4>
   a <http://foodie-cloud.com/model/foodie#ManagementZone> ;
   ns0:code [
-    a <http://uri.etsi.org/ngsi-ld/Property> ;
+    a <https://uri.etsi.org/ngsi-ld/Property> ;
     ns1:hasValue "CODA4"^^xsd:string
   ] ;
   ns0:creationDateTime "2015-12-01T00:00:00"^^xsd:dateTime ;
-  ns0:cropSpecies <http://w3id.org/foodie/core/CropType/20> ;
+  ns0:cropSpecies [
+    a ns1:Relationship ;
+    ns1:hasObject <http://w3id.org/foodie/core/CropType/20>
+  ] ;
   ns0:holdingZone <http://w3id.org/foodie/core/Plot/1> ;
   ns0:originType <http://w3id.org/foodie/core/OriginTypeValue/1> ;
   ns0:zoneAlert <http://w3id.org/foodie/core/Alert/4> ;
