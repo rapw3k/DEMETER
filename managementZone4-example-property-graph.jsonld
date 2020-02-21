@@ -2,13 +2,19 @@
     "@context": [
          "https://rapw3k.github.io/DEMETER/DEMETER-agricontext.jsonld",
          {"label" : "http://www.w3.org/2000/01/rdf-schema#label",
-           "geo" : "http://www.opengis.net/ont/geosparql#"
+           "geo" : "http://www.opengis.net/ont/geosparql#",
+           "Property": "http://uri.etsi.org/ngsi-ld/Property",
+           "Relationship": "http://uri.etsi.org/ngsi-ld/Relationship",
+          "value": "http://uri.etsi.org/ngsi-ld/hasValue"
          }
     ],
     "@id": "http://w3id.org/foodie/core/ManagementZone/4",
     "@type": "ManagementZone",
     "label": "ManagementZone #4",
-    "code" : "CODA4",
+    "code": {
+       "@type": "Property",
+       "value": "CODA4"
+     },
     "creationDateTime" : "2015-12-01T00:00:00",
     "cropSpecies" : "http://w3id.org/foodie/core/CropType/20",
     "holdingZone" : "http://w3id.org/foodie/core/Plot/1",

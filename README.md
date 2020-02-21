@@ -1,128 +1,253 @@
-# DEMETER implementation
+# DEMETER AIM considerations
 
-Primarily this repository explores the use of and best practice (e.g. JSON-LD) to introduce a layer of semantic interoperability into DEMETER implementations.
-
-## Assumptions:
-There will always be a tension between simple application-specific data models and more general ones capable of integrating data from multiple sources.
-
-At some level there is always a generic model that applies, but its optimal use may be harder to understand.
-
-Simple sensor streams will choose trivial data models where it is expected clients understand much of the contextual metadata.
+In line with best practices and recommendations, the specification of DEMETER AIM will follow a modular approach in a layered architecture, enabling among others:
+1.  eased interoperability with existing models by reusing available (well-scoped) models in the modules, instead of defining new terms, whenever possible
+1.  easy mapping/alignment with other models, by module instead of the whole model
+1.  easy extension of the domain/areas covered in AIM with additional modules
+1.  easy extension of domain model, by modifying only specific modules
+1.  easy mapping to top-level/cross-domain ontologies 
 
 
+# NGSI-LD considerations
 
-## Key points about JSON-LD
-1. JSON-LD is just JSON, including extra annotation possibilities.
-1. JSON-LD can use (and re-use) __context_ files that hold all the details so API implementers only need to reference the semantic annotation for the standard they are using.
-1. JSON-LD is actually a form of RDF - so its easy to combine JSON-LD data with other semantic data published in RDF (using standard data models) to create rich information models out of very simple JSON payloads. 
-1. Adding JSON-LD allows __many, simple__ JSON schemas to be used for different purposes, but data integration to be driven by the RDF model of how these schemas fir a bigger picture. (The "have your cake and eat it too").
-1. JSON-LD can co-exist with JSON-schema to both define a structure and explain what it means.
-1. languages like SHACL can be be used over the RDF view of JSON-LD data to validate content as well as structure.
+The NGSI-LD Information Model is defined at three levels.
+At the higher level, there are the foundation classes which correspond to the Core Meta-model and the Cross-Domain Ontology (see Figure below).  The former concerns the formal specification of the "property graph" model [i.6]. The latter includes is a set of generic, transversal classes which are aimed at avoiding conflicting or redundant definitions of the same classes in each of the domain-specific ontologies. Below these two levels, domain specific ontologies or vocabularies are devised.
 
+![NGSI-LD core meta-model and partial cross-domain ontology](ngsi-ld-layers.png)
 
-## Challenges
-### Completeness of "contexts"
-Declaration of "context" - i.e. mapping of schema elements to URIs - gets complex for a domain. Consider the Fiware context: https://fiware.github.io/data-models/context.jsonld
+NGSI-LD uses JSON-LD as main serialisation format, which provides the key advantage that terms can be defined in a separate document, referenced by an @context statement. In particular, the The @context in JSON-LD is used to map terms provided as strings to concepts specified as URIs. 
+
+The meta-model solution in NGSI-LD is based on blank node reification, which is “especially convenient when the graph is serialized with JSON-LD because blank nodes do not explicitly appear in the textual serialized description, and actually show up only when it is represented as an RDF graph. It is thus possible for a developer to generate the JSON-LD payload of an API in a form that is very similar to what he would have generated in plain JSON.”
+
+# NGSI-LD meta-model
+
+According to the specification, the NGSI-LD meta-model provides a formal basis for representing "property graphs" using RDF/RDFS/OWL. It makes it possible to perform back and forth conversion between datasets based on the property graph model on the one hand and linked data datasets which rely on the RDF framework, on the other hand. This may be seen as raising the semantic expressivity of RDF triples to the level of property graphs. Property graphs may, contrary to RDF, use predicates as subjects of other predicates (properties of properties and properties of relationships).
+
+# The NGSI-LD @context
+The Core NGSI-LD (JSON-LD)[@context](https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld) is defined as a JSON-LD @context which contains:
+
+* The core terms needed to represent the key concepts defined by the NGSI LD Information Model, including the meta-model and cross-ontology
+* The terms needed to represent all the members that define the API-related Data Types
+
+# OWL considerations
+
+The OWL 2 Web Ontology Language (OWL 2) is an ontology language for the Semantic Web with formally defined meaning. OWL 2 ontologies provide classes, properties, individuals, and data values and are stored as Semantic Web documents. OWL 2 ontologies can be used along with information written in RDF, and OWL 2 ontologies themselves are primarily exchanged as RDF documents.
+
+In an OWL 2 DL ontology, as in OWL 1, the sets of object properties, datatype properties, annotation properties and ontology properties must be mutually disjoint. In other words, no IRI I is declared in Ax (set of axioms in ontology) as being of more than one type of property; that is, no I is declared in Ax to be both object and data, object and annotation, or data and annotation property. Hence, dc:creator cannot be at the same time a datatype property and an annotation property.
+
+In OWL2 DL a resource cannot be a class, property, or instance at the same time - they may share the same name (this is called “punning”) but will always be treated as distinct things by the underlying logic. With punning, an IRI may denote different entity-types (e.g. both an individual and a class) at the same time. For instance, in OWL 2 it is possible to use the same IRI as a name for both a class and an individual, but with the understanding that the class and the individual are two different views on the same IRI, i.e. they are interpreted semantically as if they were distinct.
+
+Ontologies that are not in OWL 2 DL are often said to belong to OWL 2 Full, and can only be interpreted under RDF-Based Semantics.  OWL 2 Full is used to refer to RDF graphs considered as OWL 2 ontologies and interpreted using the RDF-Based Semantics. OWL 2 DL is a syntactically restricted version of OWL 2 Full where the restrictions are designed to make life easier for implementors (OWL 2 Full is undecidable while with OWL 2 DL reasoners can be written in principle to return yes/no answers), and the most straightforward extension of RDFS. The two main differences are that under the Direct Semantics annotations have no formal meaning and under the RDF-Based Semantics there are some extra inferences that arise from the RDF view of the universe. Some characteristics under the OWL 2 RDF-Based Semantics (OWL 2 full) include
+
+* For annotations properties, annotations are not "semantic-free". As  every other triple or set of triples occurring in an RDF graph, an annotation is assigned a truth value by any given OWL 2 RDF-Based interpretation. 
+* Individuals may play different "roles". For example, an individual can be both a data property and an annotation property, since the different parts of the universe of an OWL 2 RDF-Based interpretation are not required to be mutually disjoint, or an individual can be both a class and a property by associating both a class extension and a property extension with it.
+* There is usually no need to provide localizing information (e.g., by means of "typing triples") for the IRIs occurring in an ontology. As for the RDF Semantics, the OWL 2 RDF-Based semantic conditions have been designed to ensure that the denotation of any IRI will be in the appropriate part of the universe. For example, the RDF triple "C owl:disjointWith D" is sufficient to deduce that the denotations of the IRIs C and D are actually classes. It is not necessary to explicitly add additional typing triples "C rdf:type rdfs:Class" and "D rdf:type rdfs:Class" to the ontology.
+* Every class represents a specific set of individuals, called the class extension of the class: an individual a is an instance of a class C, if a is a member of the class extension ICEXT(C). Since a class is itself an individual under the OWL 2 RDF-Based Semantics, classes are distinguished from their respective class extensions. This distinction allows, for example, that a class may be an instance of itself by being a member of its own class extension. Also, two classes may be equivalent by sharing the same class extension, although being different individuals, e.g., they do not need to share the same properties. Similarly, every property has an associated property extension that consists of pairs of individuals: an individual a1 has a relationship to an individual a2 with respect to a property p if the pair ( a1 , a2 ) is a member of the property extension IEXT(p). Again, properties are distinguished from their property extensions
+
+# Insights
+
+NGSI-LD approach is well founded, following a layered architecture and based on the increasingly popular JSON-LD serialisation format. Conceptually, it enables the good sides of two “worlds”: the benefits of linked data and underlying RDF-based reasoning tools and querying (enabling data integration, knowledge discovery, etc.) ,  and the richer expressivity of property graphs (using predicates as subjects of other predicates). 
+
+The issues or challenges we highlight are more on the implementation of this approach. 
+* The current NGSI-LD context is just a simple flat schema that includes the meta-model and cross ontology terms without any explicit semantics. Except from some property JSON types (@type: DateTime, id), there are no definition that a term is a class, a property with explicit information about the type of property (e.g., relation, datatype), constraints on domains/ranges, cardinality, taxonomic relations, or other axioms. Of course the JSON @type would allow to infer that a given term is a relation (@type: @id), but even those with @type: DateTime are not defined explicitly with the type of property it is, as DateTime (https://uri.etsi.org/ngsi-ld/DateTime) is not having any explicit semantic information.
+* The terms are not mapped to any standard and/or well-known ontologies/vocabularies (no reuse). There is some documentation dicussing some of such mappings; however, no implementation seems to be available to allow any integration. In fact, it is not clear, how such mappings would be implemented from the documentation reviewed. 
+* Similarly, other modules/profiles (domain vocabularies) are defined in the same way (simple flat schemas with no mapping/reuse of existing standards and/or well-known ontologies). For instance, FIWARE Data Models [@context](https://fiware.github.io/data-models/context.jsonld) is used in many of the provided example and is part of the full [@context](https://fiware.github.io/data-models/full-context.jsonld) (along with the core @context) of NGSI-LD. 
+* The flat schema implementation approach is not scalable, and difficult to maintain.
+* The only semantic information available is in fact included in the encoding of data itself, and is just minimal (e.g., an element is a property or a relationship). For instance, the encoding of a FIWARE agri parcel entity example is (partially) below (the full encoding of the example is available [here](ngsi-ld-fiware-parece-example.jsonld) )
+```
+{
+    "@context": [ 
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        "https://fiware.github.io/data-models/context.jsonld"
+    ],
+    "id": "urn:ngsi-ld:AgriParcelRecord:8f5445e6-f49b-496e-833b-e65fc97fcab7",
+    "type": "AgriParcelRecord",
+    "createdAt": "2017-01-01T01:20:00Z",
+    "modifiedAt": "2017-05-04T12:30:00Z",
+    "source": "https://source.example.com",
+    "dataProvider": "https://provider.example.com",
+    "entityVersion": 2.0,
+    "hasAgriParcel": {
+        "type": "Relationship",
+        "object": "urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed"
+    },
+    "soilTemperature": {
+        "type": "Property",
+        "value": 27,
+        "unitCode": "CEL",
+        "observedAt": "2017-05-04T12:30:00Z"
+    },
+    "observedAt": {
+        "type": "Property",
+        "value": "2017-05-04T10:18:16Z"
+    }
+}
+
+```
+The transformation of that json-ld into RDF would be as follows:
+```
+@prefix ns0: <https://uri.etsi.org/ngsi-ld/> .
+@prefix ns1: <https://uri.etsi.org/ngsi-ld/default-context/> .
+@prefix ns2: <https://uri.fiware.org/ns/data-models#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:ngsi-ld:AgriParcelRecord:8f5445e6-f49b-496e-833b-e65fc97fcab7>
+  a <https://uri.fiware.org/ns/data-models#AgriParcelRecord> ;
+  ns0:createdAt "2017-01-01T01:20:00Z"^^ns0:DateTime ;
+  ns1:entityVersion 2 ;
+  ns0:modifiedAt "2017-05-04T12:30:00Z"^^ns0:DateTime ;
+  ns2:dataProvider "https://provider.example.com"^^xsd:string ;
+  ns2:hasAgriParcel [
+    a ns0:Relationship ;
+    ns0:hasObject <urn:ngsi-ld:AgriParcel:d3676010-d815-468c-9e01-25739c5a25ed>
+  ] ;
+  ns2:observedAt [
+    a ns0:Property ;
+    ns2:value "2017-05-04T10:18:16Z"^^xsd:string
+  ] ;
+  ns2:soilTemperature [
+    a ns0:Property ;
+    ns0:unitCode "CEL"^^xsd:string ;
+    ns2:observedAt "2017-05-04T12:30:00Z"^^ns0:DateTime ;
+    ns2:value 27
+  ] ;
+  ns2:source "https://source.example.com"^^xsd:string .
+```
+
+As a result, many advantages of the linked data and underlying RDF-based reasoning tools and querying cannot be easily or directly  exploited, e.g., (automatic) data link discovery (integration), (automatic) model alignment for data integration, validation of conformance of data with the model with a simple reasoner, inferencing on the data to discover new knowledge, specialisations (taxonomy) with inheritance of axioms. 
+
+Hence, taking into account the initial considerations of DEMETER AIM, our approach is in fact similar to the NGSI-LD approach, i.e., modular in a layered architecture. Based on that selected framework, our first design choice, though, was to decide whether to follow a 2-layer approach (top/cross domain + domain ontologies) with direct grounding on RDF/RDFS/OWL or a 3-layer approach as in NGSI-LD that includes the property graph meta-model layer (grounded on RDF/RDFS). After further analysis of the NGSI-LD specification, we decided on the latter for following reasons: 
+
+1. It allows DEMETER AIM to be compliant and easily integrated with NGSI-LD data and models, thus facilitating the integration with exising datasets based on these models that may be relevant to DEMETER
+1. It allows natively the representation of the rich and complex context information of different entities (e.g., systems/platforms/environments) typical within IoT (or WoT) applications, where the context includes the set of properties characterizing these entities, together with the set of relationships that enmesh them together, and the properties of these relationships and properties. This was the main motivation of NGSI-LD and it is also a very important aspect for DEMETER. 
+1. It allows to have the best of two "worlds": property-graphs and linked data. It allows to perform back and forth conversion between datasets based on the property graph model on the one hand and linked data datasets which rely on the RDF framework, on the other hand. As described in [NGSI-spec], property graphs are the implicit semi-formal data models underlying most present-day graph databases, which have gained widespread use specially in the industry (as opposed to academia). They make it possible to attach properties (defined as key-value pairs) to relationships and other properties, a feature which RDF does not directly support, but they lack the standardization and formal underpinnings of RDF and do not interoperate directly with linked data and other RDF datasets. Also they do not lend themselves to reasoning with RDF-based reasoning tools or querying with standard query languages such as SPARQL.
+
+Hence, DEMETER AIM follows the same 3-layer architecture of NGSI-LD, including a property graph meta-model layer (grounded in RDF/RDFS), a cross-domain (also called top level) ontologies layer, and the domain/application ontologies. However, as opposed to NGSI-LD, DEMETER AIM will implement the cross-domain and domain/application layers by reusing existing standards and/or well-known ontologies/vocabularies. 
  
-this contains some 1890 terms including 
-
+As an example, consider the following agriculture management zone using FOODIE ontology as the underlying model encoded in RDF/turle.
 ```
-telephone: "https://uri.fiware.org/ns/data-models#telephone",
-temperature: "https://uri.fiware.org/ns/data-models#temperature",
-surfPracticeArea: "https://uri.fiware.org/ns/data-models#surfPracticeArea",
-wheelieBin: "https://uri.fiware.org/ns/data-models#wheelieBin",
-wheels: "https://uri.fiware.org/ns/data-models#wheels",
+@prefix ns0: <http://foodie-cloud.com/model/foodie#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns1: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://w3id.org/foodie/core/ManagementZone/4>
+  a <http://foodie-cloud.com/model/foodie#ManagementZone> ;
+  ns0:code "CODA4"^^xsd:string ;
+  ns0:creationDateTime "2015-12-01T00:00:00"^^xsd:dateTime ;
+  ns0:cropSpecies <http://w3id.org/foodie/core/CropType/20> ;
+  ns0:holdingZone <http://w3id.org/foodie/core/Plot/1> ;
+  ns0:originType <http://w3id.org/foodie/core/OriginTypeValue/1> ;
+  ns0:zoneAlert <http://w3id.org/foodie/core/Alert/4> ;
+  ns1:hasGeometry <http://w3id.org/foodie/core/ManagementZone/4/geometry> ;
+  rdfs:label "ManagementZone #4"^^xsd:string .
 ```
+With DEMETER AIM, we would define an agriculture model module/profile as a JSON-LD @context, which defines the terms used in DEMETER by reusing existing standards and/or well-known ontologies/vocabularies, i.e., mapping DEMETER terms to the reused ontology/vocabulary terms. A short example of such @[context](DEMETER-agricontext.jsonld) (using FOODIE ontology for demonstration purposes) would be as follows:
+```
+{
+    "@context": {
+        "xsd" : "http://www.w3.org/2001/XMLSchema#",
+        "Nutrients": "http://foodie-cloud.com/model/foodie#ProductNutrients",
+        "Plot": "http://foodie-cloud.com/model/foodie#Plot",
+        "DoseUnit": "http://foodie-cloud.com/model/foodie#DoseUnit",
+        "TreatmentPlan": "http://foodie-cloud.com/model/foodie#TreatmentPlan",
+        "ManagementZone": "http://foodie-cloud.com/model/foodie#ManagementZone",
+        "Intervention" : "http://foodie-cloud.com/model/foodie#Intervention",
+        "CropSpecies" : "http://foodie-cloud.com/model/foodie#CropSpecies",
+        "Treatment" : "http://foodie-cloud.com/model/foodie#Treatment",
+        "Holding" : "http://inspire.ec.europa.eu/schemas/af/3.0#Holding",
+        "code" : "http://foodie-cloud.com/model/foodie#code",
+        "creationDateTime" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#creationDateTime",
+        		"@type": "xsd:dateTime"
+        },
+        "cropSpecies" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#cropSpecies",
+        		"@type": "@id"
+        },
+        "originType" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#originType",
+        		"@type": "@id"
+        },
+        "zoneAlert" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#zoneAlert",
+        		"@type": "@id"
+        },
+        "holdingZone" : {
+        		"@id" : "http://foodie-cloud.com/model/foodie#holdingZone",
+        		"@type": "@id"
+        }
+    }
+}
+```
+Then the encoding of the same management zone presented above in JSON-LD using DEMETER AIM would look like the listing below (see document [here](managementZone4-example.jsonld)), which could be easily transformed back to RDF/Turtle, for example (try [here](http://www.easyrdf.org/converter)),  to get the same listing as above. 
+```
+{
+    "@context": [
+         "https://rapw3k.github.io/DEMETER/DEMETER-agricontext.jsonld",
+         {"label" : "http://www.w3.org/2000/01/rdf-schema#label",
+           "geo" : "http://www.opengis.net/ont/geosparql#"
+         }
+    ],
+    "@id": "http://w3id.org/foodie/core/ManagementZone/4",
+    "@type": "ManagementZone",
+    "label": "ManagementZone #4",
+    "code" : "CODA4",
+    "creationDateTime" : "2015-12-01T00:00:00",
+    "cropSpecies" : "http://w3id.org/foodie/core/CropType/20",
+    "holdingZone" : "http://w3id.org/foodie/core/Plot/1",
+    "originType" : "http://w3id.org/foodie/core/OriginTypeValue/1",
+    "zoneAlert" : "http://w3id.org/foodie/core/Alert/4",
+    "geo:hasGeometry" : { "@id" : "http://w3id.org/foodie/core/ManagementZone/4/geometry"   }
+}
+```
+However, using the expressivity of the property graph model, the same information would be encoded as the listing below (see document [here](managementZone4-example-property-graph.jsonld)):
+//TODO finish typing all properties
+```
+{
+    "@context": [
+         "https://rapw3k.github.io/DEMETER/DEMETER-agricontext.jsonld",
+         {"label" : "http://www.w3.org/2000/01/rdf-schema#label",
+           "geo" : "http://www.opengis.net/ont/geosparql#",
+           "Property": "http://uri.etsi.org/ngsi-ld/Property",
+           "Relationship": "http://uri.etsi.org/ngsi-ld/Relationship",
+          "value": "http://uri.etsi.org/ngsi-ld/hasValue"
+         }
+    ],
+    "@id": "http://w3id.org/foodie/core/ManagementZone/4",
+    "@type": "ManagementZone",
+    "label": "ManagementZone #4",
+    "code": {
+       "@type": "Property",
+       "value": "CODA4"
+     },
+    "creationDateTime" : "2015-12-01T00:00:00",
+    "cropSpecies" : "http://w3id.org/foodie/core/CropType/20",
+    "holdingZone" : "http://w3id.org/foodie/core/Plot/1",
+    "originType" : "http://w3id.org/foodie/core/OriginTypeValue/1",
+    "zoneAlert" : "http://w3id.org/foodie/core/Alert/4",
+    "geo:hasGeometry" : { "@id" : "http://w3id.org/foodie/core/ManagementZone/4/geometry"   }
+}
+```
+And the corresponding RDF/Turtle representation would be like:
+```
+@prefix ns0: <http://foodie-cloud.com/model/foodie#> .
+@prefix ns1: <http://uri.etsi.org/ngsi-ld/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns2: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-clearly this cannot cover all possible semantics, but the list terms is already huge and can never be complete and be stable in a real world context. This cannot reasonably be maintained and governed with so many domains that are possibly covered.  
-
-In general one-size-fits-all schemas, contexts, data models cannot be both specific enough to be useful and complete.
-
-### Ad-hoc schemas
-JSON-LD itself doesnt restrict what information is available, and may not restrict subtleties - such as "temperature" as a property - let us imagine that as temperature of an object, or the ambient temperature of the environment or the temperature of the sensor itself - and then factor in instantaneous or averaged, max, min etc... Clearly it is going to be hard to interpret details of semantics from just a schema - even if we have detailed descriptions of elements.
-
-Often the actual use case is a set of information which together represents a characterisation of something for a particular purpose - for example Air Quality measurement according to an EU standard...
-
-So, to build a full picture it probably necessary to know: schema, which elements mean which, and how the data itself fits into a wider data set context (for what purpose it is sampled.) - What JSON-LD does is allow us to :
-1. identify commonalities between schemas and data sets
-1. link data to available explanations
-1. link data elements to metadata that enables us to process it further
-
-JSON-schema allows us to make sure all necessary elements are present...
-
-The additional metadata about the nature of the dataset will still need to be captured - so if schemas are "ad-hoc" - i.e. every API creates some arbitrary schema, then there will be a large burden on publishers to publish a lot of information and on users to read this, and then on developers to configure clients to cope with each schema. (This is the default state DEMETER is attempting to improve on)
-
-
-### Re-use of generic models and schemas
-Generalised models and schemas can be re-used, but each application will need to specify how specific datasets should be expressed - what terms to use, what optional elements should be present etc.
-
-These constraints on how to use a general purpose mechanism in a consistent way for a specific purpose are called profiles. Profiles allow identification of the data design to attach metadata about the semantics of content related to sampling stratgies for example - but they can also be used to describe general patterns that sub-profiles can apply.
-
-Although this is not widespread practice amongst API developers, profiles are become common in metadata standards e.g. [https://www.w3.org/TR/vocab-dcat-2/#profiles] and can be applied to all data. Profiles can also be modelled in terms of how they interoperate with each other:
-
-
-
-![DCAT profiles example](hierarchy.png)
-DCAT profiles example.
-(Source: https://www.w3.org/TR/dx-prof/)
-
-### Interoperability levels
-
-Interoperability concerns appear at multiple aspects of system design, to meet  different stakeholders' requirements for example:
-1) Services (client software)
-2) Data format - availability of libraries: (server and client software)
-3) Data set metadata (client software, end user, publishing)
-4) Schemas - (specialised client software, general client software configuration - identification of role of different elements)
-5) Semantic object identification (URI) - comparison with known objects to identify meaning
-6) Semantic description - URI dereferencing to get semantic resources (end users - get descriptions, publishers - minimise documentation, client software - minimise overhead of collating descriptions, data integration and processing - accessing machine actionable metadata)
-7) profiles - get a statement about the overall meaning of data (data integration and aggregation, publishers, developers, users - minimise overheads with extensive ad-hoc documentation generation and consumption)
-
-## Recommendations
-1. Identify interoperability requirements and create (i.e. publish at a stable URI) profiles that deliver JSON context documents (if mime-type is ld+json) and JSON schema (if mime-type is json)
-1. Identify semantic resource requirements for each interoperability user case and declare the canonical data models for such resources in "super-profiles" of specific use cases to converge on common and sustainable designs. 
-
-e.g. a profile for FIWare/NGSI-LD interoperability, OGC API etc - allows us to both test and share interoperability design across multiple activities.
-
-
-## Issues
-### caching
-
-Reusable JSON-LD contexts can be cached, so the extra cost of having more contexts to read is actually saved by not having to fetch unique but repetitive contexts. This does mean things ought to be set up sensibly on both server and client.
-
-see: http://manu.sporny.org/2016/json-ld-context-caching/
-
-### governance and stability
-
-Contexts should be factored according to expectations about scope and stakeholder.
-If the authority for a set of definitions publishes a stable, canonical context, this should be used by preference to make interoperability expectations clear. (this will also help caching).
-
-NB. OGC can provide a service to make contexts with broad applicability to standards available on a permanent basis, and also publish project-specific prototypes. Such profiles can accessed by identifying URIs and be semantically annotated within OGC's Linked Data infrastructure. 
-
-### tooling and publishing
-
-some experimentation and consultation is required around optimum approached to context negotiation.
-
-For testing purposes JSON-Ld contexts should be named X_content.jsonld and bundled with examples.
-
-when published, the context should be referenced by the name of the profile (which is technology neutral) and accessed by using appropriate content-negotiation.
-
-RDFLIB json-ld plug-in correctly requests the correct mime type when dereferencing URLS:
-
-``'application/ld+json, application/json;p=0.9, */*;q=0.1'``
-
-So a profile like "http://www.opengis.net/def/profiles/baseline"  would return JSON-LD context to a tool like this - but HTML to a standard web browser, and OWL to a RDF client accessing via owl:imports. 
-
-
-## Examples
-
-test.jsonld is an example that references a common DEMETER content, which in turns references a sample "OGC semantic baseline" context. 
-
-The OGC will publish a context which will:
-* reference standard ontologies and namespaces used in OGC published semantic resources
-* include namespaces for OGC published ontologies (and the W3C standards they use) (geosparql, time, rdfs)
-
-a stub for this is in ogc_core_context.jsonld
-
-the test.py script can be run to generate the equivalent test.ttl version.
-
-
+<http://w3id.org/foodie/core/ManagementZone/4>
+  a <http://foodie-cloud.com/model/foodie#ManagementZone> ;
+  ns0:code [
+    a <http://uri.etsi.org/ngsi-ld/Property> ;
+    ns1:hasValue "CODA4"^^xsd:string
+  ] ;
+  ns0:creationDateTime "2015-12-01T00:00:00"^^xsd:dateTime ;
+  ns0:cropSpecies <http://w3id.org/foodie/core/CropType/20> ;
+  ns0:holdingZone <http://w3id.org/foodie/core/Plot/1> ;
+  ns0:originType <http://w3id.org/foodie/core/OriginTypeValue/1> ;
+  ns0:zoneAlert <http://w3id.org/foodie/core/Alert/4> ;
+  ns2:hasGeometry <http://w3id.org/foodie/core/ManagementZone/4/geometry> ;
+  rdfs:label "ManagementZone #4"^^xsd:string .
+```
