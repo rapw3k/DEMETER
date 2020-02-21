@@ -220,7 +220,7 @@ However, if we would like to use the expressivity of the property graph model (t
    }
 }
 ```
-Then we would be able to attach properties to relantionships or other properties (i.e., using the property graph model). So, in our previous example, if we would like to attach properties to one of our data type properties values (e.g., code) and to one of object property values (e.g., cropSpecies), the encoding of the previous management zone would be as the listing below (see document [here](managementZone4-example-property-graph.jsonld)). Note that no extra properties are shown though, as this is just for illustration):
+Then we would be able to attach properties to relantionships or other properties (i.e., using the property graph model). So, in our previous example, if we would like to attach properties to one of our data type properties values (e.g., code) and to one of object property values (e.g., cropSpecies), the encoding of the previous management zone would be as the listing below (see document [here](managementZone4-example-property-graph.jsonld)). Note that no extra properties are attached in the example though, as this is just for illustration):
 ```
 {
     "@context": [
