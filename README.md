@@ -186,7 +186,10 @@ Then the encoding of the same management zone presented above in JSON-LD using D
     "@context": [
          "https://rapw3k.github.io/DEMETER/DEMETER-agricontext.jsonld",
          {"label" : "http://www.w3.org/2000/01/rdf-schema#label",
-           "geo" : "http://www.opengis.net/ont/geosparql#"
+           "geometry": {
+                  "@id": "http://www.opengis.net/ont/geosparql#hasGeometry",
+                  "@type":"@id"
+             }
          }
     ],
     "@id": "http://w3id.org/foodie/core/ManagementZone/4",
@@ -198,7 +201,7 @@ Then the encoding of the same management zone presented above in JSON-LD using D
     "holdingZone" : "http://w3id.org/foodie/core/Plot/1",
     "originType" : "http://w3id.org/foodie/core/OriginTypeValue/1",
     "zoneAlert" : "http://w3id.org/foodie/core/Alert/4",
-    "geo:hasGeometry" : { "@id" : "http://w3id.org/foodie/core/ManagementZone/4/geometry"   }
+    "geometry" : "http://w3id.org/foodie/core/ManagementZone/4/geometry"
 }
 ```
 However, if we would like to use the expressivity of the property graph model (to raise the semantic expressivity of RDF triples to the level of property graphs), we would first define our core meta-model @[context](DEMETER-core-metamodel.jsonld) as defined below:
