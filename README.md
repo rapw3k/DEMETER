@@ -53,7 +53,7 @@ The issues or challenges we highlight are more on the implementation of this app
 * The terms are not mapped to any standard and/or well-known ontologies/vocabularies (no reuse). There is some documentation dicussing some of such mappings; however, no implementation seems to be available to allow any integration. In fact, it is not clear, how such mappings would be implemented from the documentation reviewed. 
 * Similarly, other modules/profiles (domain vocabularies) are defined in the same way (simple flat schemas with no mapping/reuse of existing standards and/or well-known ontologies). For instance, FIWARE Data Models [@context](https://fiware.github.io/data-models/context.jsonld) is used in many of the provided example and is part of the full [@context](https://fiware.github.io/data-models/full-context.jsonld) (along with the core @context) of NGSI-LD. 
 * The flat schema implementation approach is not scalable, and difficult to maintain.
-* The only semantic information available is in fact included in the encoding of data itself, and is just minimal (e.g., an element is a property or a relationship). For instance, the encoding of a FIWARE agri parcel entity example is (partially) below (the full encoding of the example is available [here](ngsi-ld-fiware-parece-example.jsonld) )
+* The only semantic information available is in fact included in the encoding of data itself, and is just minimal (e.g., an element is a property or a relationship). For instance, the encoding of a FIWARE agri parcel entity example is (partially) below (the full encoding of the example is available [here](ngsi-ld-fiware-parcel-example.jsonld) )
 ```
 {
     "@context": [ 
