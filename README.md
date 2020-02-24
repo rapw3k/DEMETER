@@ -48,12 +48,14 @@ Ontologies that are not in OWL 2 DL are often said to belong to OWL 2 Full, and 
 
 NGSI-LD approach is well founded, following a layered architecture and based on the increasingly popular JSON-LD serialisation format. Conceptually, it enables the good sides of two “worlds”: the benefits of linked data and underlying RDF-based reasoning tools and querying (enabling data integration, knowledge discovery, etc.) ,  and the richer expressivity of property graphs (using predicates as subjects of other predicates). 
 
-The issues or challenges we highlight are more on the implementation of this approach. 
+The issues or challenges we highlight are more on the implementation of this approach:
+ 
 * The current NGSI-LD context is just a simple flat schema that includes the meta-model and cross ontology terms without any explicit semantics. Except from some property JSON types (@type: DateTime, id), there are no definition that a term is a class, a property with explicit information about the type of property (e.g., relation, datatype), constraints on domains/ranges, cardinality, taxonomic relations, or other axioms. Of course the JSON @type would allow to infer that a given term is a relation (@type: @id), but even those with @type: DateTime are not defined explicitly with the type of property it is, as DateTime (https://uri.etsi.org/ngsi-ld/DateTime) is not having any explicit semantic information.
 * The terms are not mapped to any standard and/or well-known ontologies/vocabularies (no reuse). There is some documentation dicussing some of such mappings; however, no implementation seems to be available to allow any integration. In fact, it is not clear, how such mappings would be implemented from the documentation reviewed. 
 * Similarly, other modules/profiles (domain vocabularies) are defined in the same way (simple flat schemas with no mapping/reuse of existing standards and/or well-known ontologies). For instance, FIWARE Data Models [@context](https://fiware.github.io/data-models/context.jsonld) is used in many of the provided example and is part of the full [@context](https://fiware.github.io/data-models/full-context.jsonld) (along with the core @context) of NGSI-LD. This @context, in particular, defines many entities declaration related to many different domains related to FIWARE (described [here](https://github.com/GSMADeveloper/NGSI-LD-Entities) and with other examples [here](https://github.com/FIWARE/NGSI-LD_Experimental/blob/master/doc/example-code.md)) 
 * The flat schema implementation approach is not scalable, and difficult to maintain.
 * The only semantic information available is in fact included in the encoding of data itself, and is just minimal (e.g., an element is a property or a relationship). For instance, the encoding of a FIWARE agri parcel entity example is (partially) below (the full encoding of the example is available [here](ngsi-ld-fiware-parcel-example.jsonld) )
+
 ```
 {
     "@context": [ 
@@ -85,6 +87,7 @@ The issues or challenges we highlight are more on the implementation of this app
 
 ```
 The transformation of that json-ld into RDF would be as follows:
+
 ```
 @prefix ns0: <https://uri.etsi.org/ngsi-ld/> .
 @prefix ns1: <https://uri.etsi.org/ngsi-ld/default-context/> .
@@ -124,7 +127,8 @@ Hence, taking into account the initial considerations of DEMETER AIM, our approa
 
 Hence, DEMETER AIM follows the same 3-layer architecture of NGSI-LD, including a property graph meta-model layer (grounded in RDF/RDFS), a cross-domain (also called top level) ontologies layer, and the domain/application ontologies. However, as opposed to NGSI-LD, DEMETER AIM will implement the cross-domain and domain/application layers by reusing existing standards and/or well-known ontologies/vocabularies. 
  
-As an example, consider the following agriculture management zone using FOODIE ontology as the underlying model encoded in RDF/turle.
+As an example, consider the following agriculture management zone using FOODIE ontology as the underlying model encoded in RDF/turtle.
+
 ```
 @prefix ns0: <http://foodie-cloud.com/model/foodie#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -143,6 +147,7 @@ As an example, consider the following agriculture management zone using FOODIE o
   rdfs:label "ManagementZone #4"^^xsd:string .
 ```
 With DEMETER AIM, we would define an agriculture model module/profile as a JSON-LD @context, which defines the terms used in DEMETER by reusing existing standards and/or well-known ontologies/vocabularies, i.e., mapping DEMETER terms to the reused ontology/vocabulary terms. A short example of such @[context](DEMETER-agricontext.jsonld) (using FOODIE ontology for demonstration purposes) would be as follows:
+
 ```
 {
     "@context": {
@@ -181,6 +186,7 @@ With DEMETER AIM, we would define an agriculture model module/profile as a JSON-
 }
 ```
 Then the encoding of the same management zone presented above in JSON-LD using DEMETER AIM would look like the listing below (see document [here](managementZone4-example.jsonld)), which could be easily transformed back to RDF (try [here](http://www.easyrdf.org/converter))  to get the same listing as above. Note that in addition to the agriculture context, we are adding two more terms to the context in this example (namely: label an geometry); however such terms would be defined in the future in different modules at the cross-domain level (e.g., geospatial model)
+
 ```
 {
     "@context": [
@@ -205,6 +211,7 @@ Then the encoding of the same management zone presented above in JSON-LD using D
 }
 ```
 However, if we would like to use the expressivity of the property graph model (to raise the semantic expressivity of RDF triples to the level of property graphs), we would first define our core meta-model @[context](DEMETER-core-metamodel.jsonld) as defined below:
+
 ```
 {
    "@context": {
@@ -221,6 +228,7 @@ However, if we would like to use the expressivity of the property graph model (t
 }
 ```
 Then we would be able to attach properties to relantionships or other properties (i.e., using the property graph model). So, in our previous example, if we would like to attach properties to one of our data type properties values (e.g., code to say for instance the codelist name or organisation name),  and to one of object property values (e.g., cropSpecies to say for instance at what time was this information was captured), the encoding of the previous management zone would be as the listing below (see document [here](managementZone4-example-property-graph.jsonld)). Note that no extra properties are attached in the example though, as this is just for illustration):
+
 ```
 {
     "@context": [
@@ -253,6 +261,7 @@ Then we would be able to attach properties to relantionships or other properties
 }
 ```
 Now, if we see the corresponding RDF/Turtle representation, it would be like the listing below:
+
 ```
 @prefix ns0: <http://foodie-cloud.com/model/foodie#> .
 @prefix ns1: <https://uri.etsi.org/ngsi-ld/> .
