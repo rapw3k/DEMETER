@@ -17,11 +17,24 @@ At the higher level, there are the foundation classes which correspond to the Co
 
 NGSI-LD uses JSON-LD as main serialisation format, which provides the key advantage that terms can be defined in a separate document, referenced by an @context statement. In particular, the The @context in JSON-LD is used to map terms provided as strings to concepts specified as URIs. 
 
-The meta-model solution in NGSI-LD is based on blank node reification, which is “especially convenient when the graph is serialized with JSON-LD because blank nodes do not explicitly appear in the textual serialized description, and actually show up only when it is represented as an RDF graph. It is thus possible for a developer to generate the JSON-LD payload of an API in a form that is very similar to what he would have generated in plain JSON.”
+NGSI adopts a graph-based meta-model solution along with blank node reification, which is “especially convenient when the graph is serialized with JSON-LD because blank nodes do not explicitly appear in the textual serialized description, and actually show up only when it is represented as an RDF graph. It is thus possible for a developer to generate the JSON-LD payload of an API in a form that is very similar to what he would have generated in plain JSON.”
+
+## Separation of semantic referencing and structural descriptions
+
+NGSI-LD information model separates semantic referencing, used in the classical sense of the Semantic Web, from
+the actual structural description. 
+* The structural description may itself be decomposed into a basis structural graph whose nodes are physically-matched entities, and an overlay layer used to capture the way in which these entities are clustered into subgraphs.
+* Semantic referencing as defined by NGSI-LD is based on standard RDF/RDS/OWL typing and public ontologies, as shared
+by all other semantic information models. All nodes and edges of the structural graph are thus matched to several relevant classes/categories of these ontologies that jointly characterize the features shared by all instances of these classes.
+
+A structural graph is a model of the structural description of an environment, capturing the relationships between the different subsystems that make up this environment. This description is, to some extent, independent of the overlaying semantic referencing, and it could be considered to "stand on its own", even without this referencing. A structural graph does in fact have a different kind of semantics of its own, such as e.g. when a graph captures and matches the structure of a physical network like a power grid or a water distribution network. These semantics apply to the graphs as a whole and are not reducible to the kind of "per-resource" semantics, which RDF is meant to describe.
+
 
 # NGSI-LD meta-model
 
 According to the specification, the NGSI-LD meta-model provides a formal basis for representing "property graphs" using RDF/RDFS/OWL. It makes it possible to perform back and forth conversion between datasets based on the property graph model on the one hand and linked data datasets which rely on the RDF framework, on the other hand. This may be seen as raising the semantic expressivity of RDF triples to the level of property graphs. Property graphs may, contrary to RDF, use predicates as subjects of other predicates (properties of properties and properties of relationships).
+
+According to the documentation, a graph-based model is the only model adapted to capture the complex structure and inter-entity relationships that make up context information as defined by NGSI. Also, that such information does not need to be semantically defined from the outset (it may be natively structural information, capturing e.g. containment or adjacency relationships); the semantics of this context may be added in a later stage of graph enrichment.
 
 # Context documents and Schemas
 
