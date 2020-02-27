@@ -23,37 +23,136 @@ The meta-model solution in NGSI-LD is based on blank node reification, which is 
 
 According to the specification, the NGSI-LD meta-model provides a formal basis for representing "property graphs" using RDF/RDFS/OWL. It makes it possible to perform back and forth conversion between datasets based on the property graph model on the one hand and linked data datasets which rely on the RDF framework, on the other hand. This may be seen as raising the semantic expressivity of RDF triples to the level of property graphs. Property graphs may, contrary to RDF, use predicates as subjects of other predicates (properties of properties and properties of relationships).
 
-# The NGSI-LD @context
+# Context documents and Schemas
+
+## Roles
+NGSI-LD uses both JSON Schema and JSON-LD Context documents for their respective roles: schema documents describe which elements must be present and Context documents provide information about what they mean (mainly by providing a Web URI to uniquely identify things.)
+
+What information is provided at those Web addresses is a not defined, but for DEMETER to successfully integrate data it will be necessary to provide semantic descriptions of elements.
+
+Content (property values) too needs to be explained and controlled - this leads to challenges factoring out standardised content from semantic data models.
+
+Finally, NSGI-LD uses an object reference scheme based on its internal metamodel that needs tool support to turn object references into addresses for those objects in the NSGI environment, which is not natively able to support Linked Data style object references. This seems to be a idiosyncracity to support backwards compatibility between NGSI-LD and NGSI.
+
+Tools exist, but are not completely documented, to derive NSGI-LD context documents from NSGI data schemas (NSGI data models are just schemas, rather than semantic models. )
+
+## The NGSI-LD @context
 The Core NGSI-LD (JSON-LD)[@context](https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld) is defined as a JSON-LD @context which contains:
 
 * The core terms needed to represent the key concepts defined by the NGSI LD Information Model, including the meta-model and cross-ontology
 * The terms needed to represent all the members that define the API-related Data Types
 
-# OWL considerations
+The challenges inherent in the NGSI-LD context include:
 
-The OWL 2 Web Ontology Language (OWL 2) is an ontology language for the Semantic Web with formally defined meaning. OWL 2 ontologies provide classes, properties, individuals, and data values and are stored as Semantic Web documents. OWL 2 ontologies can be used along with information written in RDF, and OWL 2 ontologies themselves are primarily exchanged as RDF documents.
+* URIs in the location document do not resolve to either human or machine-readable descriptions of what properties mean. (They should do both via content negotiation) 
+* ad-hoc approach definitions, ignoring existing domain standrds - particularly spatio-temporal properties not aligned with domain standards (OGC and W3C, which maintain a formal liaison to develop best practices). for example:
 
-In an OWL 2 DL ontology, as in OWL 1, the sets of object properties, datatype properties, annotation properties and ontology properties must be mutually disjoint. In other words, no IRI I is declared in Ax (set of axioms in ontology) as being of more than one type of property; that is, no I is declared in Ax to be both object and data, object and annotation, or data and annotation property. Hence, dc:creator cannot be at the same time a datatype property and an annotation property.
+```
+unitCode: "https://uri.etsi.org/ngsi-ld/unitCode",
+location: "https://uri.etsi.org/ngsi-ld/location",
+observationSpace: "https://uri.etsi.org/ngsi-ld/observationSpace",
+operationSpace: "https://uri.etsi.org/ngsi-ld/operationSpace",
+GeoProperty: "https://uri.etsi.org/ngsi-ld/GeoProperty",
+TemporalProperty: "https://uri.etsi.org/ngsi-ld/TemporalProperty",
+timeInterval: "https://uri.etsi.org/ngsi-ld/timeInterval",
+geoQ: "https://uri.etsi.org/ngsi-ld/geoQ",
+temporalQ: "https://uri.etsi.org/ngsi-ld/temporalQ",
+geometry: "https://uri.etsi.org/ngsi-ld/geometry",
+coordinates: "https://uri.etsi.org/ngsi-ld/coordinates",
+georel: "https://uri.etsi.org/ngsi-ld/georel",
+geoproperty: "https://uri.etsi.org/ngsi-ld/geoproperty",
+```
 
-In OWL2 DL a resource cannot be a class, property, or instance at the same time - they may share the same name (this is called “punning”) but will always be treated as distinct things by the underlying logic. With punning, an IRI may denote different entity-types (e.g. both an individual and a class) at the same time. For instance, in OWL 2 it is possible to use the same IRI as a name for both a class and an individual, but with the understanding that the class and the individual are two different views on the same IRI, i.e. they are interpreted semantically as if they were distinct.
+## FIWARE contexts
 
-Ontologies that are not in OWL 2 DL are often said to belong to OWL 2 Full, and can only be interpreted under RDF-Based Semantics.  OWL 2 Full is used to refer to RDF graphs considered as OWL 2 ontologies and interpreted using the RDF-Based Semantics. OWL 2 DL is a syntactically restricted version of OWL 2 Full where the restrictions are designed to make life easier for implementors (OWL 2 Full is undecidable while with OWL 2 DL reasoners can be written in principle to return yes/no answers), and the most straightforward extension of RDFS. The two main differences are that under the Direct Semantics annotations have no formal meaning and under the RDF-Based Semantics there are some extra inferences that arise from the RDF view of the universe. Some characteristics under the OWL 2 RDF-Based Semantics (OWL 2 full) include
+The FIWARE contexts are evolving from a very large flat list to a repository of data models. Some common models are factored out for reuse [[https://github.com/smart-data-models/data-models/blob/master/common-schema.json]].  This avoids some of the limitations of the NSGI models, but introduces a duplicate model covering the same ground - FIWARE is a discrete interoperability domain within an NGSI world, not interoperable with NGSI in general.
 
-* For annotations properties, annotations are not "semantic-free". As  every other triple or set of triples occurring in an RDF graph, an annotation is assigned a truth value by any given OWL 2 RDF-Based interpretation. 
-* Individuals may play different "roles". For example, an individual can be both a data property and an annotation property, since the different parts of the universe of an OWL 2 RDF-Based interpretation are not required to be mutually disjoint, or an individual can be both a class and a property by associating both a class extension and a property extension with it.
-* There is usually no need to provide localizing information (e.g., by means of "typing triples") for the IRIs occurring in an ontology. As for the RDF Semantics, the OWL 2 RDF-Based semantic conditions have been designed to ensure that the denotation of any IRI will be in the appropriate part of the universe. For example, the RDF triple "C owl:disjointWith D" is sufficient to deduce that the denotations of the IRIs C and D are actually classes. It is not necessary to explicitly add additional typing triples "C rdf:type rdfs:Class" and "D rdf:type rdfs:Class" to the ontology.
-* Every class represents a specific set of individuals, called the class extension of the class: an individual a is an instance of a class C, if a is a member of the class extension ICEXT(C). Since a class is itself an individual under the OWL 2 RDF-Based Semantics, classes are distinguished from their respective class extensions. This distinction allows, for example, that a class may be an instance of itself by being a member of its own class extension. Also, two classes may be equivalent by sharing the same class extension, although being different individuals, e.g., they do not need to share the same properties. Similarly, every property has an associated property extension that consists of pairs of individuals: an individual a1 has a relationship to an individual a2 with respect to a property p if the pair ( a1 , a2 ) is a member of the property extension IEXT(p). Again, properties are distinguished from their property extensions
+The FIWARe approach provides a translation between "normalised" models and simple schemas:
+
+```
+{
+  "id": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+  "type": "AgriApp",
+  "dateCreated": "2017-01-01T01:20:00Z",
+  "dateModified": "2017-05-04T12:30:00Z",
+  "name": "Wine track",
+  ```
+  
+is normalised into the property-graph model
+
+```
+{
+    "@context": [
+        "https://schema.lab.fiware.org/ld/context",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ],
+    "id": "urn:ngsi-ld:AgriApp:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+    "type": "AgriApp",
+    "createdAt": "2017-01-01T01:20:00Z",
+    "modifiedAt": "2017-05-04T12:30:00Z",
+    "name": {
+        "type": "Property",
+        "value": "Wine track"
+    },
+```
+
+Schemas are defined for the simple model, it is still somewhat unclear whether the simple schema is operationally used.
+
+Most importantly, FIWARE is referencing an external standard for many geo concepts (GeoJSON) rather than re-inventing the wheel, however its only doing this for data types in JSON schema, without declaring the equivalent semantics in a reusable context document. 
+
+
+FIWARE tooling aggregates the complete set of data models into a single extensive context document. 
+
+This represents a promising but not fully scalable start, and its roadmap indicates its still very immature and untested. 
+
+## Profiles
+
+FIWARE represents a _profile_ of NGSI-LD, and each FIWARE data model conforms to FIWARE rules - i.e. is a profile of the FIWARE profile of NGSI-LD.
+
+This represents an interoperability contract that is not explicitly stated, but can be inferred from re-use of contexts and commonality across schemas.
+
+
+DEMETER can define data models that either conform to an equivalent DEMETER profile of NGSI-LD, or relevant FIWARE models, depending on the suitability of those models. 
+
+Whenever some common data structure is needed in different contexts this can be factored out into a separate profile and shared. Tooling to handle consolidating the inheritance chain of profiles can be simply implemented, and could be based on an augmentation of the FIWARE tools if required.
+
+As a result an example might look like:
+
+```
+"@context": [
+        "http://example.org/profiles/demeter/AnimalTracking",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ],
+    "id": "urn:ngsi-ld:demeter:IndoorAnimalTracking",
+
+```  
+
+```
+"@context": [
+        "https://schema.lab.fiware.org/ld/context/Animal",
+        "https://schema.lab.fiware.org/ld/context/Location",
+        "http://example.org/profiles/demeter/MovingObject",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ],
+    "id": "urn:ngsi-ld:demeter:AnimalTracking",
+
+```
+
+where the "AnimalTracking" profile inherits from reusable models for Animals, Location and MovingObjects.
+
 
 # Insights
 
 NGSI-LD approach is well founded, following a layered architecture and based on the increasingly popular JSON-LD serialisation format. Conceptually, it enables the good sides of two “worlds”: the benefits of linked data and underlying RDF-based reasoning tools and querying (enabling data integration, knowledge discovery, etc.) ,  and the richer expressivity of property graphs (using predicates as subjects of other predicates). 
 
-The issues or challenges we highlight are more on the implementation of this approach. 
+The issues or challenges we highlight are more on the implementation of this approach:
+ 
 * The current NGSI-LD context is just a simple flat schema that includes the meta-model and cross ontology terms without any explicit semantics. Except from some property JSON types (@type: DateTime, id), there are no definition that a term is a class, a property with explicit information about the type of property (e.g., relation, datatype), constraints on domains/ranges, cardinality, taxonomic relations, or other axioms. Of course the JSON @type would allow to infer that a given term is a relation (@type: @id), but even those with @type: DateTime are not defined explicitly with the type of property it is, as DateTime (https://uri.etsi.org/ngsi-ld/DateTime) is not having any explicit semantic information.
 * The terms are not mapped to any standard and/or well-known ontologies/vocabularies (no reuse). There is some documentation dicussing some of such mappings; however, no implementation seems to be available to allow any integration. In fact, it is not clear, how such mappings would be implemented from the documentation reviewed. 
 * Similarly, other modules/profiles (domain vocabularies) are defined in the same way (simple flat schemas with no mapping/reuse of existing standards and/or well-known ontologies). For instance, FIWARE Data Models [@context](https://fiware.github.io/data-models/context.jsonld) is used in many of the provided example and is part of the full [@context](https://fiware.github.io/data-models/full-context.jsonld) (along with the core @context) of NGSI-LD. This @context, in particular, defines many entities declaration related to many different domains related to FIWARE (described [here](https://github.com/GSMADeveloper/NGSI-LD-Entities) and with other examples [here](https://github.com/FIWARE/NGSI-LD_Experimental/blob/master/doc/example-code.md)) 
 * The flat schema implementation approach is not scalable, and difficult to maintain.
 * The only semantic information available is in fact included in the encoding of data itself, and is just minimal (e.g., an element is a property or a relationship). For instance, the encoding of a FIWARE agri parcel entity example is (partially) below (the full encoding of the example is available [here](ngsi-ld-fiware-parcel-example.jsonld) )
+
 ```
 {
     "@context": [ 
@@ -85,6 +184,7 @@ The issues or challenges we highlight are more on the implementation of this app
 
 ```
 The transformation of that json-ld into RDF would be as follows:
+
 ```
 @prefix ns0: <https://uri.etsi.org/ngsi-ld/> .
 @prefix ns1: <https://uri.etsi.org/ngsi-ld/default-context/> .
@@ -124,7 +224,8 @@ Hence, taking into account the initial considerations of DEMETER AIM, our approa
 
 Hence, DEMETER AIM follows the same 3-layer architecture of NGSI-LD, including a property graph meta-model layer (grounded in RDF/RDFS), a cross-domain (also called top level) ontologies layer, and the domain/application ontologies. However, as opposed to NGSI-LD, DEMETER AIM will implement the cross-domain and domain/application layers by reusing existing standards and/or well-known ontologies/vocabularies. 
  
-As an example, consider the following agriculture management zone using FOODIE ontology as the underlying model encoded in RDF/turle.
+As an example, consider the following agriculture management zone using FOODIE ontology as the underlying model encoded in RDF/turtle.
+
 ```
 @prefix ns0: <http://foodie-cloud.com/model/foodie#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -143,6 +244,7 @@ As an example, consider the following agriculture management zone using FOODIE o
   rdfs:label "ManagementZone #4"^^xsd:string .
 ```
 With DEMETER AIM, we would define an agriculture model module/profile as a JSON-LD @context, which defines the terms used in DEMETER by reusing existing standards and/or well-known ontologies/vocabularies, i.e., mapping DEMETER terms to the reused ontology/vocabulary terms. A short example of such @[context](DEMETER-agricontext.jsonld) (using FOODIE ontology for demonstration purposes) would be as follows:
+
 ```
 {
     "@context": {
@@ -181,6 +283,7 @@ With DEMETER AIM, we would define an agriculture model module/profile as a JSON-
 }
 ```
 Then the encoding of the same management zone presented above in JSON-LD using DEMETER AIM would look like the listing below (see document [here](managementZone4-example.jsonld)), which could be easily transformed back to RDF (try [here](http://www.easyrdf.org/converter))  to get the same listing as above. Note that in addition to the agriculture context, we are adding two more terms to the context in this example (namely: label an geometry); however such terms would be defined in the future in different modules at the cross-domain level (e.g., geospatial model)
+
 ```
 {
     "@context": [
@@ -205,6 +308,7 @@ Then the encoding of the same management zone presented above in JSON-LD using D
 }
 ```
 However, if we would like to use the expressivity of the property graph model (to raise the semantic expressivity of RDF triples to the level of property graphs), we would first define our core meta-model @[context](DEMETER-core-metamodel.jsonld) as defined below:
+
 ```
 {
    "@context": {
@@ -221,6 +325,7 @@ However, if we would like to use the expressivity of the property graph model (t
 }
 ```
 Then we would be able to attach properties to relantionships or other properties (i.e., using the property graph model). So, in our previous example, if we would like to attach properties to one of our data type properties values (e.g., code to say for instance the codelist name or organisation name),  and to one of object property values (e.g., cropSpecies to say for instance at what time was this information was captured), the encoding of the previous management zone would be as the listing below (see document [here](managementZone4-example-property-graph.jsonld)). Note that no extra properties are attached in the example though, as this is just for illustration):
+
 ```
 {
     "@context": [
@@ -253,6 +358,7 @@ Then we would be able to attach properties to relantionships or other properties
 }
 ```
 Now, if we see the corresponding RDF/Turtle representation, it would be like the listing below:
+
 ```
 @prefix ns0: <http://foodie-cloud.com/model/foodie#> .
 @prefix ns1: <https://uri.etsi.org/ngsi-ld/> .
