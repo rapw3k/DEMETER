@@ -380,7 +380,7 @@ Now, if we see the corresponding RDF/Turtle representation, it would be like the
 <http://w3id.org/foodie/core/ManagementZone/4>
   a <http://foodie-cloud.com/model/foodie#ManagementZone> ;
   ns0:code [
-    a <https://uri.etsi.org/ngsi-ld/Property> ;
+    a ns1:Property ;
     ns1:hasValue "CODA4"^^xsd:string
   ] ;
   ns0:creationDateTime "2015-12-01T00:00:00"^^xsd:dateTime ;
