@@ -394,3 +394,4 @@ Now, if we see the corresponding RDF/Turtle representation, it would be like the
   ns2:hasGeometry <http://w3id.org/foodie/core/ManagementZone/4/geometry> ;
   rdfs:label "ManagementZone #4"^^xsd:string .
 ```
+That last individual definition is not a valid OWL 2 DL individual, though, as properties are used differently from how they were defined in the referenced (re-used) ontology (FOODIE). In particular, the data type property _code_ is used as an annotation/object property pointing to a blank node of type _Property_ , and object property _cropSpecies_ defined with range _CropType_ is used as an annotation/object property pointint to a blank node of type _Relationship_. OWL 2 DL allows [punning](https://www.w3.org/TR/owl2-new-features/#F12:_Punning) allowing to use, e.g.,  an URI as class and as an individual, but still has limitations, i.e., a name cannot be used for both a class and a datatype and a name can only be used for one kind of property.
