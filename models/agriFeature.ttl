@@ -1,0 +1,548 @@
+@prefix : <https://w3id.org/cybele/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix stat: <http://data.europa.eu/m8g/> .
+@prefix schema: <http://schema.org/> .
+@prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix saref: <https://w3id.org/def/saref4agri#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@base <https://w3id.org/demeter/> .
+
+<https://w3id.org/demeter/agri/agriFeature> rdf:type owl:Ontology ;
+                            owl:versionIRI <https://github.com/rapw3k/DEMETER/model/raw/master/agriFeature.ttl> ;
+                            dct:contributor [ schema:affiliation [ foaf:name "OGC"
+                                                                 ] ;
+                                              foaf:name "Rob Atkinson"
+                                            ] ,
+                                            [ schema:affiliation [ foaf:name "ICCS"
+                                                                 ] ;
+                                              foaf:name "Ioanna Roussaki"
+                                            ] ;
+                            dct:creator [ schema:affiliation [ foaf:name "PSNC"
+                                                             ] ;
+                                          rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+                                          foaf:name "Raul Palma"
+                                        ] ;
+                            dct:description "The DEMETER AgriFeature is one of the agri profiles of DEMETER AIM, which was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+                            dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+                            dct:title "DEMETER AgriFeature"@en ;
+                            rdfs:comment "The DEMETER Agriculture Information Model - AIM is a common vocabulary in DEMETER project providing the basis for semantic interoperability"@en ;
+                            owl:versionInfo "1.0" ;
+                            foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
+                                         foaf:name "DEMETER project"
+                                       ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+dct:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dct:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+dct:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dct:title rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/affiliation
+schema:affiliation rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/depiction
+foaf:depiction rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/maker
+foaf:maker rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#location
+<http://www.w3.org/2003/01/geo/wgs84_pos#location> rdf:type owl:AnnotationProperty ;
+                                                   rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/based_near> .
+                                                   
+###  http://xmlns.com/foaf/0.1/based_near
+<http://xmlns.com/foaf/0.1/based_near> rdf:type owl:AnnotationProperty .                                                   
+
+### https://uri.fiware.org/ns/data-models#createdAt
+fiware:createdAt	a      rdf:Property ;
+        rdfs:label   		"createAt"@en ;
+        rdfs:comment		"Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+
+### https://uri.fiware.org/ns/data-models#location
+fiware:location	a      rdf:Property ;     
+        rdfs:label   		"location"@en ;
+        rdfs:comment		"The geo:json encoded polygon / multi-polygon describing this parcel" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .          
+
+### https://uri.fiware.org/ns/data-models#area
+fiware:area	a      rdf:Property ;     
+        rdfs:label   		"area"@en ;
+        rdfs:comment		"The area of the parcel nominally in square meters." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .   
+        
+### https://uri.fiware.org/ns/data-models#hasAgriCrop
+fiware:hasAgriCrop	a      rdf:Property ;     
+        rdfs:label   		"hasAgriCrop"@en ;
+        rdfs:comment		"Reference to the crop associated with this parcel" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                
+
+#################################################################
+#    Datatypes
+#################################################################
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+
+###  http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://www.opengis.net/ont/geosparql#Feature> ;
+                                                   rdfs:range <http://www.opengis.net/ont/geosparql#Geometry> ;
+                                                   rdfs:comment "A spatial representation for a given feature."@en ;
+                                                   rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ;
+                                                   rdfs:label "has geometry"@en .
+
+###  http://www.opengis.net/ont/geosparql#sfContains
+<http://www.opengis.net/ont/geosparql#sfContains> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                                  rdfs:range <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                                  rdfs:comment "Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
+                                                  rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
+                                                                   <http://www.opengis.net/spec/geosparql/1.0> ;
+                                                  rdfs:label "contains"@en .
+                                                  
+###  http://www.opengis.net/ont/geosparql#sfWithin
+<http://www.opengis.net/ont/geosparql#sfWithin> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                                rdfs:range <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                                rdfs:comment "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
+                                                rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
+                                                                 <http://www.opengis.net/spec/geosparql/1.0> ;
+                                                rdfs:label "within"@en .                                                  
+
+###  https://w3id.org/def/saref4agri#contains
+saref:contains rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfContains> ;
+          owl:inverseOf :isContainedIn ;
+          rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+
+###  http://inspire.ec.europa.eu/schemas/af/3.0#activity          
+af-inspire:activity
+        a               owl:ObjectProperty ;        
+        rdfs:range      act-inspire:EconomicActivityNACEValue ;
+        skos:prefLabel  "activity"@en ;        
+        rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+
+###  http://inspire.ec.europa.eu/schemas/af/3.0#contains          
+af-inspire:contains
+        a               owl:ObjectProperty ;
+        rdfs:range      af-inspire:Site ;
+        skos:prefLabel  "contains"@en ;
+        rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+
+###  http://foodie-cloud.com/model/foodie#containsPlot
+foodie:containsPlot
+        a               owl:ObjectProperty ;
+        rdfs:range      foodie:Plot ;
+        skos:prefLabel  "containsPlot"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#originType
+foodie:originType  a    owl:ObjectProperty ;
+        rdfs:range      foodie:OriginTypeValue ;
+        skos:prefLabel  "originType"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#crop
+foodie:crop  				a   owl:ObjectProperty ;
+        skos:prefLabel  "crop"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/def/saref4agri#hasName
+saref:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string ;
+         rdfs:label "A relation to express the name of an entity (e.g.,animal)." ,
+                    "has name" ;
+         rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+
+###  http://www.w3.org/ns/prov#generatedAtTime
+prov:generatedAtTime
+				a								owl:DatatypeProperty ;
+				rdfs:label 			"generatedAtTime" ;
+				rdfs:comment		"The time at which an entity was completely created and is available for use."@en ;
+				rdfs:range 			xsd:dateTime ;
+				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
+
+###  http://www.w3.org/ns/prov#invalidatedAtTime				
+prov:invalidatedAtTime
+				a								owl:DatatypeProperty ;
+				rdfs:label			"invalidatedAtTime" ;
+				rdfs:comment		"The time at which an entity was invalidated (i.e., no longer usable)."@en ;
+				rdfs:range			xsd:dateTime ;
+				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
+				
+###  http://foodie-cloud.com/model/foodie#code
+foodie:code  a          owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "code"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#description        
+foodie:description  a   owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "description"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#notes        
+foodie:notes  a         owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "notes"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
+				
+###  <http://portele.de/ont/inspire/baseInspire#validFrom> 
+common:validFrom	a      owl:DatatypeProperty ;
+        rdfs:range       xsd:dateTime ;
+        skos:prefLabel   "begin of real-world phenomenon"@en ;
+        rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
+
+###  <http://portele.de/ont/inspire/baseInspire#validFrom> 
+common:validTo	a        owl:DatatypeProperty ;
+        rdfs:range       xsd:dateTime ;        
+        skos:prefLabel   "end of real-world phenomenon"@en ;
+        rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
+        
+###  http://www.opengis.net/ont/geosparql#hasSerialization
+<http://www.opengis.net/ont/geosparql#hasSerialization> rdf:type owl:DatatypeProperty ;
+                                                rdfs:domain <http://www.opengis.net/ont/geosparql#Geometry> ;
+                                                rdfs:range rdfs:Literal ;
+                                                rdfs:comment "Connects a geometry object with its text-based serialization"@en ;
+                                                rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
+                                                                 <http://www.opengis.net/spec/geosparql/1.0> ;
+                                                rdfs:label "has serialization"@en .   
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/def/saref4agri#Farm
+saref:Farm rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty saref:contains ;
+                        owl:someValuesFrom saref:Building
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty saref:contains ;
+                        owl:someValuesFrom saref:Parcel
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty saref:hasName ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
+      rdfs:comment "A plot of land used for the scope of farming which can contain buildings and parcels."@en ;
+      rdfs:label "Farm" ;
+      rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+      
+###  https://w3id.org/def/saref4agri#Building
+saref:Building rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty saref:contains ;
+                            owl:someValuesFrom saref:BuildingSpace
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty saref:hasName ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          rdfs:comment "A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space)."@en ;
+          rdfs:label "Building" ;
+          rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+
+
+###  https://w3id.org/def/saref4agri#BuildingSpace
+saref:BuildingSpace rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ;
+               rdfs:comment "An entity used to define the physical spaces of the building. A building space contains devices or building objects."@en ;
+               rdfs:label "Building space"@en ;
+               rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+               
+
+###  https://w3id.org/def/saref4agri#Parcel
+saref:Parcel rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty saref:contains ;
+                          owl:someValuesFrom saref:Crop
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty saref:hasName ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ;
+        rdfs:comment "An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items."@en ;
+        rdfs:label "Parcel" ;
+        rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+        
+###  https://w3id.org/def/saref4agri#Crop
+saref:Crop rdf:type owl:Class ;      
+      rdfs:label "Crop" ;   
+      rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .     
+      
+               
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+                                                                 owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Geometry>
+                                                               ] ;
+                                               owl:disjointWith <http://www.opengis.net/ont/geosparql#Geometry> ;
+                                               rdfs:comment "This class represents the top-level feature type. This class is equivalent to GFI_Feature defined in ISO 19156:2011, and it is superclass of all feature types."@en ;
+                                               rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
+                                                                <http://www.opengis.net/ont/gml> ;
+                                               rdfs:label "Feature"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#SpatialObject
+<http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class ;
+                                                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+                                                                       owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Geometry>
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.opengis.net/ont/geosparql#sfContains> ;
+                                                                       owl:allValuesFrom <http://www.opengis.net/ont/geosparql#SpatialObject>
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.opengis.net/ont/geosparql#sfWithin> ;
+                                                                       owl:allValuesFrom <http://www.opengis.net/ont/geosparql#SpatialObject>
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.w3.org/2003/01/geo/wgs84_pos#location> ;
+                                                                       owl:allValuesFrom <http://www.w3.org/2003/01/geo/wgs84_pos#Point>
+                                                                     ] ;
+                                                     rdfs:comment "The class spatial-object represents everything that can have a spatial representation. It is superclass of feature and geometry."@en ;
+                                                     rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+                                                     rdfs:label "SpatialObject"@en .
+               
+###  http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                                rdfs:comment "The class represents the top-level geometry type. This class is equivalent to the UML class GM_Object defined in ISO 19107, and it is superclass of all geometry types."@en ;
+                                                rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+                                                rdfs:label "Geometry"@en .
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#Point
+<http://www.w3.org/2003/01/geo/wgs84_pos#Point> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> ;
+                                                rdfs:comment """ 
+Uniquely identified by lat/long/alt. i.e.
+
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
+
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
+  """ ,
+                                                             "A point, typically described using a coordinate system relative to Earth, such as WGS84." ;
+                                                rdfs:isDefinedBy <http://www.w3.org/2003/01/geo/wgs84_pos#> ;
+                                                rdfs:label "Point"@en .               
+
+###  http://inspire.ec.europa.eu/schemas/af/3.0#Holding
+af-inspire:Holding  a           owl:Class ;
+        rdfs:subClassOf  act-inspire:ActivityComplex, iso19109:AnyFeature , iso19150-2:FeatureType , geo:Feature ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:minCardinality  "1"^^xsd:int ;
+                           owl:onProperty      af-inspire:contains
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:cardinality  	"1"^^xsd:int ;
+                           owl:onProperty      geo:hasGeometry
+                         ] ;
+				skos:prefLabel   "Holding"@en ;
+        rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+
+###  http://inspire.ec.europa.eu/schemas/af/3.0#Site
+af-inspire:Site  a           owl:Class ;
+        rdfs:subClassOf  iso19109:AnyFeature , iso19150-2:FeatureType , geo:Feature ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:minCardinality  "1"^^xsd:int ;
+                           owl:onProperty      af-inspire:activity
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      prov:invalidatedAtTime
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   prov:generatedAtTime
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:code
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:cardinality  	"1"^^xsd:int ;
+                           owl:onProperty      geo:hasGeometry
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   common:validFrom
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      common:validTo
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:minCardinality  	"1"^^xsd:int ;
+                           owl:onProperty      foodie:containsPlot
+                         ] ;
+        skos:prefLabel   "Site"@en ;
+        rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+
+###  http://foodie-cloud.com/model/foodie#Plot
+foodie:Plot  a           owl:Class ;
+        rdfs:subClassOf  iso19109:AnyFeature , geo:Feature , iso19150-2:FeatureType ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:originType
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      prov:invalidatedAtTime
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   prov:generatedAtTime
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:code
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   common:validFrom
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      common:validTo
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:description
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:minCardinality  "1"^^xsd:int ;
+                           owl:onProperty      geo:hasGeometry
+                         ] ;
+        skos:prefLabel   "Plot"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        
+###  http://foodie-cloud.com/model/foodie#ManagementZone
+foodie:ManagementZone
+        a                owl:Class ;
+        rdfs:subClassOf  geo:Feature , iso19150-2:FeatureType , iso19109:AnyFeature ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      prov:invalidatedAtTime
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      common:validTo
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      common:validFrom
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:notes
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:minCardinality  "1"^^xsd:int ;
+                           owl:onProperty      geo:hasGeometry
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   prov:generatedAtTime
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:code
+                         ] ;
+        skos:prefLabel   "ManagementZone"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .                
+
+###  http://foodie-cloud.com/model/foodie#OriginTypeValue
+foodie:OriginTypeValue
+        a                owl:Class ;        
+        skos:prefLabel   "OriginTypeValue"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+
+###  http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue
+act-inspire:EconomicActivityNACEValue rdf:type owl:Class ;      
+      rdfs:label "EconomicActivityNACEValue" ;   
+      rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+
+### https://uri.fiware.org/ns/data-models#AgriParcel
+fiware:AgriParcel	rdf:type owl:Class ;
+			rdfs:label "Agri Parcel" ;   
+			rdfs:comment "This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+			rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+
+#################################################################
+#    Alignments
+#################################################################
+
+saref:Farm owl:equivalentClass af-inspire:Holding .
+saref:Parcel owl:equivalentClass foodie:Plot .
+saref:Parcel owl:equivalentClass fiware:AgriParcel .
+prov:generatedAtTime owl:equivalentProperty fiware:createdAt .
+foodie:crop owl:equivalentProperty fiware:hasAgriCrop .
+fiware:location rdfs:subPropertyOf geo:hasSerialization .
+
+#################################################################
+#    Individuals
+#################################################################
