@@ -15,7 +15,7 @@
 @prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
 @prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
-@prefix saref: <https://w3id.org/def/saref4agri#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
 @prefix fiware: <https://uri.fiware.org/ns/data-models#> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
@@ -158,7 +158,7 @@ fiware:hasAgriCrop	a      rdf:Property ;
                                                 rdfs:label "within"@en .                                                  
 
 ###  https://w3id.org/def/saref4agri#contains
-saref:contains rdf:type owl:ObjectProperty ;
+saref4agri:contains rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfContains> ;
           owl:inverseOf :isContainedIn ;
           rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
@@ -201,7 +201,7 @@ foodie:crop  				a   owl:ObjectProperty ;
 #################################################################
 
 ###  https://w3id.org/def/saref4agri#hasName
-saref:hasName rdf:type owl:DatatypeProperty ;
+saref4agri:hasName rdf:type owl:DatatypeProperty ;
          rdfs:range xsd:string ;
          rdfs:label "A relation to express the name of an entity (e.g.,animal)." ,
                     "has name" ;
@@ -267,18 +267,18 @@ common:validTo	a        owl:DatatypeProperty ;
 #################################################################
 
 ###  https://w3id.org/def/saref4agri#Farm
-saref:Farm rdf:type owl:Class ;
+saref4agri:Farm rdf:type owl:Class ;
       rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
                       [ rdf:type owl:Restriction ;
-                        owl:onProperty saref:contains ;
-                        owl:someValuesFrom saref:Building
+                        owl:onProperty saref4agri:contains ;
+                        owl:someValuesFrom saref4agri:Building
                       ] ,
                       [ rdf:type owl:Restriction ;
-                        owl:onProperty saref:contains ;
-                        owl:someValuesFrom saref:Parcel
+                        owl:onProperty saref4agri:contains ;
+                        owl:someValuesFrom saref4agri:Parcel
                       ] ,
                       [ rdf:type owl:Restriction ;
-                        owl:onProperty saref:hasName ;
+                        owl:onProperty saref4agri:hasName ;
                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
                       ] ;
       rdfs:comment "A plot of land used for the scope of farming which can contain buildings and parcels."@en ;
@@ -286,14 +286,14 @@ saref:Farm rdf:type owl:Class ;
       rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
       
 ###  https://w3id.org/def/saref4agri#Building
-saref:Building rdf:type owl:Class ;
+saref4agri:Building rdf:type owl:Class ;
           rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty saref:contains ;
-                            owl:someValuesFrom saref:BuildingSpace
+                            owl:onProperty saref4agri:contains ;
+                            owl:someValuesFrom saref4agri:BuildingSpace
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty saref:hasName ;
+                            owl:onProperty saref4agri:hasName ;
                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
                           ] ;
           rdfs:comment "A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space)."@en ;
@@ -302,7 +302,7 @@ saref:Building rdf:type owl:Class ;
 
 
 ###  https://w3id.org/def/saref4agri#BuildingSpace
-saref:BuildingSpace rdf:type owl:Class ;
+saref4agri:BuildingSpace rdf:type owl:Class ;
                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ;
                rdfs:comment "An entity used to define the physical spaces of the building. A building space contains devices or building objects."@en ;
                rdfs:label "Building space"@en ;
@@ -310,14 +310,14 @@ saref:BuildingSpace rdf:type owl:Class ;
                
 
 ###  https://w3id.org/def/saref4agri#Parcel
-saref:Parcel rdf:type owl:Class ;
+saref4agri:Parcel rdf:type owl:Class ;
         rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty saref:contains ;
-                          owl:someValuesFrom saref:Crop
+                          owl:onProperty saref4agri:contains ;
+                          owl:someValuesFrom saref4agri:Crop
                         ] ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty saref:hasName ;
+                          owl:onProperty saref4agri:hasName ;
                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:string
                         ] ;
@@ -326,7 +326,7 @@ saref:Parcel rdf:type owl:Class ;
         rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
         
 ###  https://w3id.org/def/saref4agri#Crop
-saref:Crop rdf:type owl:Class ;      
+saref4agri:Crop rdf:type owl:Class ;      
       rdfs:label "Crop" ;   
       rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .     
       
@@ -551,10 +551,10 @@ fiware:AgriGreenhouse	rdf:type owl:Class ;
 #    Alignments
 #################################################################
 
-saref:Farm owl:equivalentClass af-inspire:Holding .
-saref:Farm owl:equivalentClass fiware:AgriFarm .
-saref:Parcel owl:equivalentClass foodie:Plot .
-saref:Parcel owl:equivalentClass fiware:AgriParcel .
+saref4agri:Farm owl:equivalentClass af-inspire:Holding .
+saref4agri:Farm owl:equivalentClass fiware:AgriFarm .
+saref4agri:Parcel owl:equivalentClass foodie:Plot .
+saref4agri:Parcel owl:equivalentClass fiware:AgriParcel .
 prov:generatedAtTime owl:equivalentProperty fiware:createdAt .
 foodie:crop owl:equivalentProperty fiware:hasAgriCrop .
 fiware:location rdfs:subPropertyOf geo:hasSerialization .
