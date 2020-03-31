@@ -119,7 +119,61 @@ fiware:area	a      rdf:Property ;
 fiware:hasAgriCrop	a      rdf:Property ;     
         rdfs:label   		"hasAgriCrop"@en ;
         rdfs:comment		"Reference to the crop associated with this parcel" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .     
+        
+### https://uri.fiware.org/ns/data-models#category
+fiware:category	a      rdf:Property ;     
+        rdfs:label   		"category"@en ;
+        rdfs:comment		"The category of the parcel of land e.g.: arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                    
+
+### https://uri.fiware.org/ns/data-models#cropStatus
+fiware:cropStatus	a      rdf:Property ;     
+        rdfs:label   		"cropStatus"@en ;
+        rdfs:comment		"A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                    
+        
+### https://uri.fiware.org/ns/data-models#lastPlantedAt
+fiware:lastPlantedAt	a      rdf:Property ;     
+        rdfs:label   		"lastPlantedAt"@en ;
+        rdfs:comment		"Indicates the date when the crop was last planted." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                            
+
+### https://uri.fiware.org/ns/data-models#hasDevice
+fiware:hasDevice	a      rdf:Property ;     
+        rdfs:label   		"hasDevice"@en ;
+        rdfs:comment		"Reference to the IoT devices associated with this parcel i.e. sensors, controls." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+
+### https://uri.fiware.org/ns/data-models#hasAgriParcelParent
+fiware:hasAgriParcelParent	a      rdf:Property ;     
+        rdfs:label   		"hasAgriParcelParent"@en ;
+        rdfs:comment		"An optional reference to a higher level (parent) AgriParcel entity to which this entity relates." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+        
+### https://uri.fiware.org/ns/data-models#hasAgriParcelChildren
+fiware:hasAgriParcelChildren	a      rdf:Property ;     
+        rdfs:label   		"hasAgriParcelChildren"@en ;
+        rdfs:comment		"An optional reference to lower level (child) AgriParcel records to which this entity relates." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+        
+### https://uri.fiware.org/ns/data-models#hasAgriSoil
+fiware:hasAgriSoil	a      rdf:Property ;     
+        rdfs:label   		"hasAgriSoil"@en ;
+        rdfs:comment		"Reference to the soil associated with this parcel of land." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                
+
+### https://uri.fiware.org/ns/data-models#landLocation
+fiware:landLocation	a      rdf:Property ;     
+        rdfs:label   		"landLocation"@en ;
+        rdfs:comment		"Geometry defining the boundaries of the farm land" ;
+        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> .
+        
+### https://uri.fiware.org/ns/data-models#hasAgriParcel
+fiware:hasAgriParcel	a      rdf:Property ;     
+        rdfs:label   		"hasAgriParcel"@en ;
+        rdfs:comment		"List of agri parcels belonging to the farm" ;
+        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> .         
 
 #################################################################
 #    Datatypes
@@ -160,8 +214,13 @@ fiware:hasAgriCrop	a      rdf:Property ;
 ###  https://w3id.org/def/saref4agri#contains
 saref4agri:contains rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfContains> ;
-          owl:inverseOf :isContainedIn ;
+          owl:inverseOf saref4agri:isContainedIn ;
           rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+
+###  https://w3id.org/def/saref4agri#isContainedIn
+saref4agri:isContainedIn rdf:type owl:ObjectProperty ;
+               rdfs:label "is contained in"@en ;
+               rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#activity          
 af-inspire:activity
@@ -183,6 +242,12 @@ foodie:containsPlot
         rdfs:range      foodie:Plot ;
         skos:prefLabel  "containsPlot"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        
+###  http://foodie-cloud.com/model/foodie#containsZone
+foodie:containsZone  a  owl:ObjectProperty ;
+        rdfs:range      foodie:ManagementZone ;
+        skos:prefLabel  "containsZone"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#originType
 foodie:originType  a    owl:ObjectProperty ;
@@ -195,7 +260,42 @@ foodie:crop  				a   owl:ObjectProperty ;
         skos:prefLabel  "crop"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
+###  http://foodie-cloud.com/model/foodie#soilProperty
+foodie:soilProperty  a  owl:ObjectProperty ;
+        rdfs:range      foodie:PropertyType ;
+        skos:prefLabel  "soilProperty"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
+###  http://foodie-cloud.com/model/foodie#machine
+foodie:machine	a				owl:ObjectProperty ;
+        rdfs:range      foodie:MachineType ;
+        skos:prefLabel  "machine"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#tractor
+foodie:tractor	a				owl:ObjectProperty ;
+        rdfs:range      foodie:TractorType ;
+        skos:prefLabel  "tractor"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        
+###  http://foodie-cloud.com/model/foodie#holdingSite        
+foodie:holdingSite  a  owl:ObjectProperty ;
+        rdfs:range      af-inspire:Holding ;
+        skos:prefLabel  "holdingSite"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        
+###  http://foodie-cloud.com/model/foodie#holdingPlot        
+foodie:holdingPlot  a  owl:ObjectProperty ;
+        rdfs:range      af-inspire:Site ;
+        skos:prefLabel  "holdingPlot"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        
+###  http://foodie-cloud.com/model/foodie#holdingZone
+foodie:holdingZone  a  owl:ObjectProperty ;
+        rdfs:range      foodie:Plot ;
+        skos:prefLabel  "holdingZone"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        
 #################################################################
 #    Data properties
 #################################################################
@@ -247,7 +347,7 @@ common:validFrom	a      owl:DatatypeProperty ;
         skos:prefLabel   "begin of real-world phenomenon"@en ;
         rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
 
-###  <http://portele.de/ont/inspire/baseInspire#validFrom> 
+###  <http://portele.de/ont/inspire/baseInspire#validTo> 
 common:validTo	a        owl:DatatypeProperty ;
         rdfs:range       xsd:dateTime ;        
         skos:prefLabel   "end of real-world phenomenon"@en ;
@@ -558,6 +658,16 @@ saref4agri:Parcel owl:equivalentClass fiware:AgriParcel .
 prov:generatedAtTime owl:equivalentProperty fiware:createdAt .
 foodie:crop owl:equivalentProperty fiware:hasAgriCrop .
 fiware:location rdfs:subPropertyOf geo:hasSerialization .
+fiware:landLocation rdfs:subPropertyOf geo:hasSerialization .
+af-inspire:contains rdfs:subPropertyOf saref4agri:contains .
+foodie:containsPlot rdfs:subPropertyOf saref4agri:contains .
+foodie:containsZone rdfs:subPropertyOf saref4agri:contains .
+fiware:hasAgriParcelChildren rdfs:subPropertyOf saref4agri:contains .
+fiware:hasAgriParcel rdfs:subPropertyOf saref4agri:contains .
+foodie:holdingSite rdfs:subPropertyOf saref4agri:isContainedIn .
+foodie:holdingPlot rdfs:subPropertyOf saref4agri:isContainedIn .
+foodie:holdingZone rdfs:subPropertyOf saref4agri:isContainedIn .
+fiware:hasAgriParcelParent rdfs:subPropertyOf saref4agri:isContainedIn .
 
 #################################################################
 #    Individuals
