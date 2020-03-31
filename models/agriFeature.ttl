@@ -615,11 +615,10 @@ foodie:ManagementZone
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .                
 
 ###  http://foodie-cloud.com/model/foodie#OriginTypeValue
-foodie:OriginTypeValue
-        a                owl:Class ;        
+foodie:OriginTypeValue	a			owl:Class ;
+				rdfs:subClassOf  skos:Concept , iso19150-2:Codelist ;        
         skos:prefLabel   "OriginTypeValue"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
 
 ###  http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue
 act-inspire:EconomicActivityNACEValue rdf:type owl:Class ;      

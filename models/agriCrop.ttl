@@ -205,21 +205,6 @@ saref4agri:receives rdf:type owl:ObjectProperty ;
                                                rdfs:isDefinedBy <https://w3id.org/saref#> ;
                                                rdfs:label "is feature of interest of"@en .
 
-###  https://w3id.org/saref#isControlledByDevice
-<https://w3id.org/saref#isControlledByDevice> rdf:type owl:ObjectProperty ;
-                                              rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                              rdfs:label "is controlled by device"@en .
-
-###  https://w3id.org/saref#isMeasuredByDevice
-<https://w3id.org/saref#isMeasuredByDevice> rdf:type owl:ObjectProperty ;
-                                            rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                            rdfs:label "is measured by device"@en .
-
-###  https://w3id.org/saref#relatesToMeasurement
-<https://w3id.org/saref#relatesToMeasurement> rdf:type owl:ObjectProperty ;
-                                              rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                              rdfs:label "relates to measurement"@en .
-
 ###  https://w3id.org/saref#hasFeatureOfInterest
 <https://w3id.org/saref#hasFeatureOfInterest> rdf:type owl:ObjectProperty ;
                                               owl:inverseOf <https://w3id.org/saref#isFeatureOfInterestOf> ;
@@ -227,15 +212,6 @@ saref4agri:receives rdf:type owl:ObjectProperty ;
                                               rdfs:isDefinedBy <https://w3id.org/saref#> ;
                                               rdfs:label "has feature of interest"@en .
 
-###  https://w3id.org/saref#isMeasuredIn
-<https://w3id.org/saref#isMeasuredIn> rdf:type owl:ObjectProperty ;
-                                      rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                      rdfs:label "is measured in"@en .
-
-###  https://w3id.org/saref#relatesToProperty
-<https://w3id.org/saref#relatesToProperty> rdf:type owl:ObjectProperty ;
-                                           rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                           rdfs:label "relates to property"@en .
 
 ### http://foodie-cloud.com/model/foodie#cropArea
 foodie:cropArea  a      owl:ObjectProperty ;
@@ -267,18 +243,6 @@ foodie:productionProperty	a	owl:ObjectProperty ;
         skos:prefLabel  "productionProperty"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
-### http://foodie-cloud.com/model/foodie#quantitativeProperty
-foodie:quantitativeProperty	a	owl:ObjectProperty ;
-        rdfs:range      iso19103:Measure ;
-        skos:prefLabel  "quantitativeProperty"@en ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-### http://foodie-cloud.com/model/foodie#propertyType
-foodie:propertyType  a  owl:ObjectProperty ;
-        rdfs:range      foodie:PropertyTypeValue ;
-        skos:prefLabel  "propertyType"@en ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
 
 #################################################################
 #    Data properties
@@ -300,16 +264,6 @@ saref4agri:hasPlantDate rdf:type owl:DatatypeProperty ;
               rdfs:comment "A relation to express the day the crop is planted." ;
               rdfs:label "has plant date" ;
               rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
-
-###  https://w3id.org/saref#hasTimestamp
-<https://w3id.org/saref#hasTimestamp> rdf:type owl:DatatypeProperty ;
-                                      rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                      rdfs:label "has timestamp"@en .
-
-###  https://w3id.org/saref#hasValue
-<https://w3id.org/saref#hasValue> rdf:type owl:DatatypeProperty ;
-                                  rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                  rdfs:label "has value"@en .
 
 ### http://foodie-cloud.com/model/foodie#variety
 foodie:variety  a       owl:DatatypeProperty ;
@@ -340,24 +294,6 @@ foodie:productionDate	a	owl:DatatypeProperty ;
         skos:prefLabel  "productionDate"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
         
-### http://foodie-cloud.com/model/foodie#propertyName                
-foodie:propertyName  a  owl:DatatypeProperty ;
-        rdfs:range      xsd:string ;
-        skos:prefLabel  "propertyName"@en ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-### http://foodie-cloud.com/model/foodie#nonQuantitativeProperty
-foodie:nonQuantitativeProperty	a	owl:DatatypeProperty ;
-        rdfs:range      xsd:string ;
-        skos:prefLabel  "nonQuantitativeProperty"@en ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-### http://foodie-cloud.com/model/foodie#nonQuantitativeProperty
-foodie:analysisDate  a  owl:DatatypeProperty ;
-        rdfs:range      xsd:date ;
-        skos:prefLabel  "analysisDate"@en ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
 ###  http://foodie-cloud.com/model/foodie#code
 foodie:code  a          owl:DatatypeProperty ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
@@ -431,92 +367,19 @@ saref4agri:Crop rdf:type owl:Class ;
 
 ###  https://w3id.org/saref#Property
 <https://w3id.org/saref#Property> rdf:type owl:Class ;
-                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                    owl:onProperty <https://w3id.org/saref#isControlledByDevice> ;
-                                                    owl:allValuesFrom <https://w3id.org/saref#Device>
-                                                  ] ,
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty <https://w3id.org/saref#isMeasuredByDevice> ;
-                                                    owl:allValuesFrom <https://w3id.org/saref#Device>
-                                                  ] ,
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty <https://w3id.org/saref#isPropertyOf> ;
-                                                    owl:allValuesFrom <https://w3id.org/saref#FeatureOfInterest>
-                                                  ] ,
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty <https://w3id.org/saref#relatesToMeasurement> ;
-                                                    owl:allValuesFrom <https://w3id.org/saref#Measurement>
-                                                  ] ;
-                                  owl:disjointWith <https://w3id.org/saref#UnitOfMeasure> ;
-                                  rdfs:comment "An aspect of an entity that can be observable by a sensor."@en ,
-                                               "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended." ;
                                   rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                  rdfs:label "Property"@en ,
-                                             "Property" .             
+                                  rdfs:label "Property"@en .                                                       
                
-
 ###  https://w3id.org/saref#Measurement
 <https://w3id.org/saref#Measurement> rdf:type owl:Class ;
-                                     rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#hasFeatureOfInterest> ;
-                                                       owl:allValuesFrom <https://w3id.org/saref#FeatureOfInterest>
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#isMeasuredIn> ;
-                                                       owl:allValuesFrom <https://w3id.org/saref#UnitOfMeasure>
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#relatesToProperty> ;
-                                                       owl:allValuesFrom <https://w3id.org/saref#Property>
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#isMeasuredIn> ;
-                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                       owl:onClass <https://w3id.org/saref#UnitOfMeasure>
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#relatesToProperty> ;
-                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                       owl:onClass <https://w3id.org/saref#Property>
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#hasTimestamp> ;
-                                                       owl:allValuesFrom xsd:dateTime
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#hasValue> ;
-                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#hasValue> ;
-                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                       owl:onDataRange xsd:float
-                                                     ] ;
-                                     owl:disjointWith <https://w3id.org/saref#Property> ,
-                                                      <https://w3id.org/saref#UnitOfMeasure> ;
-                                     rdfs:comment "Represents the measured value made over a property. It is also linked to the unit of measure in which the value is expressed and the timestamp of the measurement."@en ;
                                      rdfs:isDefinedBy <https://w3id.org/saref#> ;
                                      rdfs:label "Measurement"@en .
 
-###  https://w3id.org/saref#UnitOfMeasure
-<https://w3id.org/saref#UnitOfMeasure> rdf:type owl:Class ;
-                                       rdfs:comment "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of the Smart Appliances ontology, but this list can be extended."@en ,
-                                                    "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)." ;
-                                       rdfs:isDefinedBy <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> ,
-                                                        <https://w3id.org/saref#> ;
-                                       rdfs:label "Unit of measure"@en .
 
 ###  https://w3id.org/saref#Device
 <https://w3id.org/saref#Device> rdf:type owl:Class ;
-                                rdfs:subClassOf <http://www.w3.org/ns/ssn/System> ;
                                 rdfs:isDefinedBy <https://w3id.org/saref#> ;
                                 rdfs:label "Device"@en .
-
-###  http://www.w3.org/ns/ssn/System
-<http://www.w3.org/ns/ssn/System> rdf:type owl:Class ;
-                                  rdfs:comment "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems. (Definition taken from http://www.w3.org/ns/ssn/System)"@en ;
-                                  rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
-                                  rdfs:label "System"@en .
 
 
 ### http://foodie-cloud.com/model/foodie#CropSpecies
@@ -602,40 +465,7 @@ foodie:ProductionType
         skos:prefLabel   "ProductionType"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
-### http://foodie-cloud.com/model/foodie#PropertyType
-foodie:PropertyType  a   owl:Class ;
-        rdfs:subClassOf  iso19150-2:Datatype ;
-        rdfs:subClassOf  [ a                   owl:Restriction ;
-                           owl:maxCardinality  "1"^^xsd:int ;
-                           owl:onProperty      foodie:quantitativeProperty
-                         ] ;
-        rdfs:subClassOf  [ a                   owl:Restriction ;
-                           owl:maxCardinality  "1"^^xsd:int ;
-                           owl:onProperty      foodie:propertyType
-                         ] ;
-        rdfs:subClassOf  [ a                owl:Restriction ;
-                           owl:cardinality  "1"^^xsd:int ;
-                           owl:onProperty   foodie:propertyName
-                         ] ;
-        rdfs:subClassOf  [ a                   owl:Restriction ;
-                           owl:maxCardinality  "1"^^xsd:int ;
-                           owl:onProperty      foodie:nonQuantitativeProperty
-                         ] ;
-        rdfs:subClassOf  [ a                owl:Restriction ;
-                           owl:cardinality  "1"^^xsd:int ;
-                           owl:onProperty   foodie:analysisDate
-                         ] ;
-        skos:prefLabel   "PropertyType"@en ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
- 
-### http://foodie-cloud.com/model/foodie#PropertyTypeValue       
-foodie:PropertyTypeValue
-        a                owl:Class ;
-        rdfs:subClassOf  skos:Concept , iso19150-2:Codelist ;
-        skos:prefLabel   "PropertyTypeValue"@en ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
         
-
 ### https://uri.fiware.org/ns/data-models#AgriCrop
 fiware:AgriCrop	rdf:type owl:Class ;
 			rdfs:label "Agri Farm" ;   
@@ -651,11 +481,8 @@ fiware:AgriCrop	rdf:type owl:Class ;
 saref4agri:Crop owl:equivalentClass foodie:CropSpecies .
 saref4agri:Crop owl:equivalentClass fiware:AgriCrop .
 saref4agri:hasHarvestDate owl:equivalentProperty foodie:productionDate .
-foodie:productionProperty owl:subPropertyOf saref:hasProperty.
-saref:Property owl:equivalentClass foodie:PropertyType .
-saref:Measurement owl:equivalentClass iso19103:Measure .
 prov:generatedAtTime owl:equivalentProperty fiware:createdAt .
-fiware:description owl:subPropertyOf foodie:description.
+fiware:description rdfs:subPropertyOf foodie:description.
 
 #################################################################
 #    Individuals
