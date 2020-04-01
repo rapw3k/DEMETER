@@ -97,83 +97,9 @@ foaf:name rdf:type owl:AnnotationProperty .
 ###  http://xmlns.com/foaf/0.1/based_near
 <http://xmlns.com/foaf/0.1/based_near> rdf:type owl:AnnotationProperty .                                                   
 
-### https://uri.fiware.org/ns/data-models#createdAt
-fiware:createdAt	a      rdf:Property ;
-        rdfs:label   		"createAt"@en ;
-        rdfs:comment		"Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
 
-### https://uri.fiware.org/ns/data-models#location
-fiware:location	a      rdf:Property ;     
-        rdfs:label   		"location"@en ;
-        rdfs:comment		"The geo:json encoded polygon / multi-polygon describing this parcel" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .          
 
-### https://uri.fiware.org/ns/data-models#area
-fiware:area	a      rdf:Property ;     
-        rdfs:label   		"area"@en ;
-        rdfs:comment		"The area of the parcel nominally in square meters." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .   
         
-### https://uri.fiware.org/ns/data-models#hasAgriCrop
-fiware:hasAgriCrop	a      rdf:Property ;     
-        rdfs:label   		"hasAgriCrop"@en ;
-        rdfs:comment		"Reference to the crop associated with this parcel" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .     
-        
-### https://uri.fiware.org/ns/data-models#category
-fiware:category	a      rdf:Property ;     
-        rdfs:label   		"category"@en ;
-        rdfs:comment		"The category of the parcel of land e.g.: arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                    
-
-### https://uri.fiware.org/ns/data-models#cropStatus
-fiware:cropStatus	a      rdf:Property ;     
-        rdfs:label   		"cropStatus"@en ;
-        rdfs:comment		"A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                    
-        
-### https://uri.fiware.org/ns/data-models#lastPlantedAt
-fiware:lastPlantedAt	a      rdf:Property ;     
-        rdfs:label   		"lastPlantedAt"@en ;
-        rdfs:comment		"Indicates the date when the crop was last planted." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                            
-
-### https://uri.fiware.org/ns/data-models#hasDevice
-fiware:hasDevice	a      rdf:Property ;     
-        rdfs:label   		"hasDevice"@en ;
-        rdfs:comment		"Reference to the IoT devices associated with this parcel i.e. sensors, controls." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
-
-### https://uri.fiware.org/ns/data-models#hasAgriParcelParent
-fiware:hasAgriParcelParent	a      rdf:Property ;     
-        rdfs:label   		"hasAgriParcelParent"@en ;
-        rdfs:comment		"An optional reference to a higher level (parent) AgriParcel entity to which this entity relates." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
-        
-### https://uri.fiware.org/ns/data-models#hasAgriParcelChildren
-fiware:hasAgriParcelChildren	a      rdf:Property ;     
-        rdfs:label   		"hasAgriParcelChildren"@en ;
-        rdfs:comment		"An optional reference to lower level (child) AgriParcel records to which this entity relates." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
-        
-### https://uri.fiware.org/ns/data-models#hasAgriSoil
-fiware:hasAgriSoil	a      rdf:Property ;     
-        rdfs:label   		"hasAgriSoil"@en ;
-        rdfs:comment		"Reference to the soil associated with this parcel of land." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                
-
-### https://uri.fiware.org/ns/data-models#landLocation
-fiware:landLocation	a      rdf:Property ;     
-        rdfs:label   		"landLocation"@en ;
-        rdfs:comment		"Geometry defining the boundaries of the farm land" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> .
-        
-### https://uri.fiware.org/ns/data-models#hasAgriParcel
-fiware:hasAgriParcel	a      rdf:Property ;     
-        rdfs:label   		"hasAgriParcel"@en ;
-        rdfs:comment		"List of agri parcels belonging to the farm" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> .         
 
 #################################################################
 #    Datatypes
@@ -236,6 +162,11 @@ af-inspire:contains
         skos:prefLabel  "contains"@en ;
         rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
 
+###  http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal          
+af-inspire:includesAnimal
+        a               owl:ObjectProperty ;
+        rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+
 ###  http://foodie-cloud.com/model/foodie#containsPlot
 foodie:containsPlot
         a               owl:ObjectProperty ;
@@ -296,61 +227,88 @@ foodie:holdingZone  a  owl:ObjectProperty ;
         skos:prefLabel  "holdingZone"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
         
+### https://uri.fiware.org/ns/data-models#hasAgriCrop
+fiware:hasAgriCrop	a   owl:ObjectProperty ;     
+        rdfs:label   		"hasAgriCrop"@en ;
+        rdfs:comment		"Reference to the crop associated with this parcel" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .     
+
+### https://uri.fiware.org/ns/data-models#hasDevice
+fiware:hasDevice	a      owl:ObjectProperty ;     
+        rdfs:label   		"hasDevice"@en ;
+        rdfs:comment		"Reference to the IoT devices associated with this parcel i.e. sensors, controls." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+
+### https://uri.fiware.org/ns/data-models#hasAgriParcelParent
+fiware:hasAgriParcelParent	a      owl:ObjectProperty ;     
+        rdfs:label   		"hasAgriParcelParent"@en ;
+        rdfs:comment		"An optional reference to a higher level (parent) AgriParcel entity to which this entity relates." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+        
+### https://uri.fiware.org/ns/data-models#hasAgriParcelChildren
+fiware:hasAgriParcelChildren	a      owl:ObjectProperty ;     
+        rdfs:label   		"hasAgriParcelChildren"@en ;
+        rdfs:comment		"An optional reference to lower level (child) AgriParcel records to which this entity relates." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+        
+### https://uri.fiware.org/ns/data-models#hasAgriSoil
+fiware:hasAgriSoil	a      owl:ObjectProperty ;     
+        rdfs:label   		"hasAgriSoil"@en ;
+        rdfs:comment		"Reference to the soil associated with this parcel of land." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                
+
+### https://uri.fiware.org/ns/data-models#location
+fiware:location	a      owl:ObjectProperty ;     
+        rdfs:label   		"location"@en ;
+        rdfs:comment		"The geo:json encoded polygon / multi-polygon describing this [entity]" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .          
+
+### https://uri.fiware.org/ns/data-models#landLocation
+fiware:landLocation	a      owl:ObjectProperty ;     
+        rdfs:label   		"landLocation"@en ;
+        rdfs:comment		"Geometry defining the boundaries of the farm land" ;
+        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> .
+        
+### https://uri.fiware.org/ns/data-models#hasAgriParcel
+fiware:hasAgriParcel	a      owl:ObjectProperty ;     
+        rdfs:label   		"hasAgriParcel"@en ;
+        rdfs:comment		"List of agri parcels belonging to the farm" ;
+        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> . 
+        
 #################################################################
 #    Data properties
 #################################################################
 
 ###  https://w3id.org/def/saref4agri#hasName
 saref4agri:hasName rdf:type owl:DatatypeProperty ;
-         rdfs:range xsd:string ;
-         rdfs:label "A relation to express the name of an entity (e.g.,animal)." ,
-                    "has name" ;
          rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
 
 ###  http://www.w3.org/ns/prov#generatedAtTime
-prov:generatedAtTime
-				a								owl:DatatypeProperty ;
-				rdfs:label 			"generatedAtTime" ;
-				rdfs:comment		"The time at which an entity was completely created and is available for use."@en ;
-				rdfs:range 			xsd:dateTime ;
+prov:generatedAtTime a	owl:DatatypeProperty ;
 				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
 
 ###  http://www.w3.org/ns/prov#invalidatedAtTime				
-prov:invalidatedAtTime
-				a								owl:DatatypeProperty ;
-				rdfs:label			"invalidatedAtTime" ;
-				rdfs:comment		"The time at which an entity was invalidated (i.e., no longer usable)."@en ;
-				rdfs:range			xsd:dateTime ;
+prov:invalidatedAtTime	a	owl:DatatypeProperty ;
 				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
 				
 ###  http://foodie-cloud.com/model/foodie#code
 foodie:code  a          owl:DatatypeProperty ;
-        rdfs:range      xsd:string ;
-        skos:prefLabel  "code"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#description        
 foodie:description  a   owl:DatatypeProperty ;
-        rdfs:range      xsd:string ;
-        skos:prefLabel  "description"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#notes        
 foodie:notes  a         owl:DatatypeProperty ;
-        rdfs:range      xsd:string ;
-        skos:prefLabel  "notes"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
 				
 ###  <http://portele.de/ont/inspire/baseInspire#validFrom> 
 common:validFrom	a      owl:DatatypeProperty ;
-        rdfs:range       xsd:dateTime ;
-        skos:prefLabel   "begin of real-world phenomenon"@en ;
         rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
 
 ###  <http://portele.de/ont/inspire/baseInspire#validTo> 
 common:validTo	a        owl:DatatypeProperty ;
-        rdfs:range       xsd:dateTime ;        
-        skos:prefLabel   "end of real-world phenomenon"@en ;
         rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
         
 ###  http://www.opengis.net/ont/geosparql#hasSerialization
@@ -361,6 +319,35 @@ common:validTo	a        owl:DatatypeProperty ;
                                                 rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
                                                                  <http://www.opengis.net/spec/geosparql/1.0> ;
                                                 rdfs:label "has serialization"@en .   
+
+### https://uri.fiware.org/ns/data-models#createdAt
+fiware:createdAt	a      owl:DatatypeProperty ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+
+### https://uri.fiware.org/ns/data-models#area
+fiware:area	a      owl:DatatypeProperty ;     
+        rdfs:label   		"area"@en ;
+        rdfs:comment		"The area of the parcel nominally in square meters." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .   
+        
+### https://uri.fiware.org/ns/data-models#category
+fiware:category	a      owl:DatatypeProperty ;     
+        rdfs:label   		"category"@en ;
+        rdfs:comment		"The category of the parcel of land e.g.: arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                    
+
+### https://uri.fiware.org/ns/data-models#cropStatus
+fiware:cropStatus	a      owl:DatatypeProperty ;     
+        rdfs:label   		"cropStatus"@en ;
+        rdfs:comment		"A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                    
+        
+### https://uri.fiware.org/ns/data-models#lastPlantedAt
+fiware:lastPlantedAt	a owl:DatatypeProperty ;     
+        rdfs:label   		"lastPlantedAt"@en ;
+        rdfs:comment		"Indicates the date when the crop was last planted." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                            
+
 
 #################################################################
 #    Classes
@@ -654,10 +641,9 @@ saref4agri:Farm owl:equivalentClass af-inspire:Holding .
 saref4agri:Farm owl:equivalentClass fiware:AgriFarm .
 saref4agri:Parcel owl:equivalentClass foodie:Plot .
 saref4agri:Parcel owl:equivalentClass fiware:AgriParcel .
-prov:generatedAtTime owl:equivalentProperty fiware:createdAt .
 foodie:crop owl:equivalentProperty fiware:hasAgriCrop .
-fiware:location rdfs:subPropertyOf geo:hasSerialization .
-fiware:landLocation rdfs:subPropertyOf geo:hasSerialization .
+fiware:location rdfs:subPropertyOf geo:hasGeometry .
+fiware:landLocation rdfs:subPropertyOf geo:hasGeometry .
 af-inspire:contains rdfs:subPropertyOf saref4agri:contains .
 foodie:containsPlot rdfs:subPropertyOf saref4agri:contains .
 foodie:containsZone rdfs:subPropertyOf saref4agri:contains .

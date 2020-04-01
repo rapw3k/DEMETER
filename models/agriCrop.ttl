@@ -99,68 +99,6 @@ foaf:name rdf:type owl:AnnotationProperty .
                                                  rdfs:label "has_rank"@en ;
                                                  rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .                                    
 
-### https://uri.fiware.org/ns/data-models#createdAt
-fiware:createdAt	a      rdf:Property ;
-        rdfs:label   		"createAt"@en ;
-        rdfs:comment		"Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
-### https://uri.fiware.org/ns/data-models#name
-fiware:name	a      rdf:Property ;
-        rdfs:label   		"name"@en ;
-        rdfs:comment		"The name of this crop." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
-### https://uri.fiware.org/ns/data-models#description
-fiware:description	a      rdf:Property ;
-        rdfs:label   		"description"@en ;
-        rdfs:comment		"A description of this crop." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
-### https://uri.fiware.org/ns/data-models#hasAgriSoil
-fiware:hasAgriSoil	a      rdf:Property ;
-        rdfs:label   		"hasAgriSoil"@en ;
-        rdfs:comment		"Reference to the recommended types of soil suitable for growing this crop" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
-### https://uri.fiware.org/ns/data-models#hasAgriFertiliser
-fiware:hasAgriFertiliser	a      rdf:Property ;
-        rdfs:label   		"hasAgriFertiliser"@en ;
-        rdfs:comment		"Reference to the recommended types of fertiliser suitable for growing this crop" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
-### https://uri.fiware.org/ns/data-models#hasAgriPest
-fiware:hasAgriPest	a      rdf:Property ;
-        rdfs:label   		"hasAgriPest"@en ;
-        rdfs:comment		"Reference to the pests known to attack this crop." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
-### https://uri.fiware.org/ns/data-models#plantingFrom
-fiware:plantingFrom	a      rdf:Property ;
-        rdfs:label   		"plantingFrom"@en ;
-        rdfs:comment		"A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:
-interval, description
-Where interval is in the form of start date/end date
---MM-DD/--MM-DD
-Meaning repeat each year from this start date to this end date." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
-### https://uri.fiware.org/ns/data-models#harvestingInterval
-fiware:harvestingInterval	a      rdf:Property ;
-        rdfs:label   		"harvestingInterval"@en ;
-        rdfs:comment		"A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:
-interval, description
-Where interval is in the form of start date/end date
---MM-DD/--MM-DD
-Meaning repeat each year from this start date to this end date." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
-### https://uri.fiware.org/ns/data-models#wateringFrequency
-fiware:wateringFrequency	a      rdf:Property ;
-        rdfs:label   		"wateringFrequency"@en ;
-        rdfs:comment		"A description of the recommended watering schedule. A choice from an enumerated list. One of: daily, weekly, biweekly, monthly, onDemand, other" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
 #################################################################
 #    Datatypes
 #################################################################
@@ -243,6 +181,24 @@ foodie:productionProperty	a	owl:ObjectProperty ;
         skos:prefLabel  "productionProperty"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
+### https://uri.fiware.org/ns/data-models#cropHasAgriSoil
+fiware:cropHasAgriSoil	a	owl:ObjectProperty ;
+        rdfs:label   		"cropHasAgriSoil"@en ;
+        rdfs:comment		"Reference to the recommended types of soil suitable for growing this crop" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+### https://uri.fiware.org/ns/data-models#hasAgriFertiliser
+fiware:hasAgriFertiliser	a	owl:ObjectProperty ;
+        rdfs:label   		"hasAgriFertiliser"@en ;
+        rdfs:comment		"Reference to the recommended types of fertiliser suitable for growing this crop" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+### https://uri.fiware.org/ns/data-models#hasAgriPest
+fiware:hasAgriPest	a		owl:ObjectProperty ;
+        rdfs:label   		"hasAgriPest"@en ;
+        rdfs:comment		"Reference to the pests known to attack this crop." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
 
 #################################################################
 #    Data properties
@@ -322,6 +278,43 @@ common:validFrom	a      owl:DatatypeProperty ;
 common:validTo	a        owl:DatatypeProperty ;
         rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .				
 
+### https://uri.fiware.org/ns/data-models#createdAt
+fiware:createdAt	a      owl:DatatypeProperty ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+### https://uri.fiware.org/ns/data-models#name
+fiware:name	a      owl:DatatypeProperty ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+### https://uri.fiware.org/ns/data-models#description
+fiware:description	a      owl:DatatypeProperty ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+### https://uri.fiware.org/ns/data-models#plantingFrom
+fiware:plantingFrom	a		owl:DatatypeProperty ;
+        rdfs:label   		"plantingFrom"@en ;
+        rdfs:comment		"A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:
+interval, description
+Where interval is in the form of start date/end date
+--MM-DD/--MM-DD
+Meaning repeat each year from this start date to this end date." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+### https://uri.fiware.org/ns/data-models#harvestingInterval
+fiware:harvestingInterval	a	owl:DatatypeProperty ;
+        rdfs:label   		"harvestingInterval"@en ;
+        rdfs:comment		"A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:
+interval, description
+Where interval is in the form of start date/end date
+--MM-DD/--MM-DD
+Meaning repeat each year from this start date to this end date." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+### https://uri.fiware.org/ns/data-models#wateringFrequency
+fiware:wateringFrequency	a	owl:DatatypeProperty ;
+        rdfs:label   		"wateringFrequency"@en ;
+        rdfs:comment		"A description of the recommended watering schedule. A choice from an enumerated list. One of: daily, weekly, biweekly, monthly, onDemand, other" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
 
 #################################################################
 #    Classes
@@ -481,8 +474,6 @@ fiware:AgriCrop	rdf:type owl:Class ;
 saref4agri:Crop owl:equivalentClass foodie:CropSpecies .
 saref4agri:Crop owl:equivalentClass fiware:AgriCrop .
 saref4agri:hasHarvestDate owl:equivalentProperty foodie:productionDate .
-prov:generatedAtTime owl:equivalentProperty fiware:createdAt .
-fiware:description rdfs:subPropertyOf foodie:description.
 
 #################################################################
 #    Individuals

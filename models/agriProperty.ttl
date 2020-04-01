@@ -94,168 +94,6 @@ foaf:maker rdf:type owl:AnnotationProperty .
 ###  http://xmlns.com/foaf/0.1/name
 foaf:name rdf:type owl:AnnotationProperty .
 
-### https://uri.fiware.org/ns/data-models#recordHasAgriParcel
-fiware:recordHasAgriParcel	a      rdf:Property ;
-        rdfs:label   		"recordHasAgriParcel"@en ;
-        rdfs:comment		"Reference to the AgriParcel to which this entity relates." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
-
-### https://uri.fiware.org/ns/data-models#soilTemperature
-fiware:soilTemperature	a      rdf:Property ;
-        rdfs:label   		"soilTemperature"@en ;
-        rdfs:comment		"The observed soil temperature nominally in degrees centigrade." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
-        
-### https://uri.fiware.org/ns/data-models#soilMoistureVwc
-fiware:soilMoistureVwc	a      rdf:Property ;
-        rdfs:label   		"soilMoistureVwc"@en ;
-        rdfs:comment		"Measured as Volumetric Water Content, VWC as a percentage. 0 ≤soilMoistureVwc ≤ 1" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
-        
-### https://uri.fiware.org/ns/data-models#soilMoistureEc
-fiware:soilMoistureEc	a      rdf:Property ;
-        rdfs:label   		"soilMoistureEc"@en ;
-        rdfs:comment		"Measured as Electrical Conductivity, EC nominally in units of Siemens per meter (S/m)." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .        
-
-### https://uri.fiware.org/ns/data-models#airTemperature
-fiware:airTemperature	a      rdf:Property ;
-        rdfs:label   		"airTemperature"@en ;
-        rdfs:comment		"The observed air temperature (in the shade) nominally in degrees centigrade." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .        
-
-### https://uri.fiware.org/ns/data-models#solarRadiation
-fiware:solarRadiation	a      rdf:Property ;
-        rdfs:label   		"solarRadiation"@en ;
-        rdfs:comment		"Instantaneous solar radiation measured in kW/m2." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .        
-
-### https://uri.fiware.org/ns/data-models#relativeHumidity
-fiware:relativeHumidity	a      rdf:Property ;
-        rdfs:label   		"relativeHumidity"@en ;
-        rdfs:comment		"Relative Humidity a number between 0 and 1 representing the range of 0% to 100%. 0 ≤ relativeHumidity ≤ 1" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
-        
-### https://uri.fiware.org/ns/data-models#atmosphericPressure
-fiware:atmosphericPressure	a      rdf:Property ;
-        rdfs:label   		"atmosphericPressure"@en ;
-        rdfs:comment		"Atmospheric Pressure nominally in units of hecto Pascals." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
-        
-### https://uri.fiware.org/ns/data-models#hasDevice
-fiware:hasDevice	a      rdf:Property ;
-        rdfs:label   		"hasDevice"@en ;
-        rdfs:comment		"Reference to the IoT devices associated with this greenhouse i.e. sensors, controls." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
-        
-### https://uri.fiware.org/ns/data-models#observedAt
-fiware:observedAt	a      rdf:Property ;
-        rdfs:label   		"observedAt"@en ;
-        rdfs:comment		"Indicates the date/time the record was observed/ last observed." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .                        
-
-### https://uri.fiware.org/ns/data-models#dateObserved
-fiware:dateObserved	a      rdf:Property ;
-        rdfs:label   		"dateObserved"@en ;
-        rdfs:comment		"The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval." ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
-        
-### https://uri.fiware.org/ns/data-models#refDevice
-fiware:refDevice	a      rdf:Property ;
-        rdfs:label   		"refDevice"@en ;
-        rdfs:comment		"A reference to the device(s) which captured this observation." ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .                                
-        
-### https://uri.fiware.org/ns/data-models#refPointOfInterest
-fiware:refPointOfInterest	a      rdf:Property ;
-        rdfs:label   		"refPointOfInterest"@en ;
-        rdfs:comment		"A reference to a point of interest (usually a weather station) associated to this observation" ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .
-        
-### https://uri.fiware.org/ns/data-models#weatherType
-fiware:weatherType	a      rdf:Property ;
-        rdfs:label   		"weatherType"@en ;
-        rdfs:comment		"The observed weather type. It is represented by a comma separated list of weather statuses, for instance overcast, lightRain." ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .
-
-### https://uri.fiware.org/ns/data-models#dewPoint
-fiware:dewPoint	a      rdf:Property ;
-        rdfs:label   		"dewPoint"@en ;
-        rdfs:comment		"The dew point encoded as a number." ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .        
-
-### https://uri.fiware.org/ns/data-models#visibility
-fiware:visibility	a      rdf:Property ;
-        rdfs:label   		"visibility"@en ;
-        rdfs:comment		"Visibility reported (veryPoor, poor, moderate, good, veryGood, excellent)" ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .        
-        
-### https://uri.fiware.org/ns/data-models#temperature
-fiware:temperature	a      rdf:Property ;
-        rdfs:label   		"temperature"@en ;
-        rdfs:comment		"Air’s temperature observed" ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .        
-        
-### https://uri.fiware.org/ns/data-models#relativeHumidity
-fiware:relativeHumidity	a      rdf:Property ;
-        rdfs:label   		"relativeHumidity"@en ;
-        rdfs:comment		"Air’s relative humidity observed (percentage, expressed in parts per one)." ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .        
-        
-### https://uri.fiware.org/ns/data-models#precipitation
-fiware:precipitation	a      rdf:Property ;
-        rdfs:label   		"precipitation"@en ;
-        rdfs:comment		"Precipitation level observed." ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .        
-
-### https://uri.fiware.org/ns/data-models#windDirection
-fiware:windDirection	a      rdf:Property ;
-        rdfs:label   		"windDirection"@en ;
-        rdfs:comment		"The wind direction expressed in decimal degrees compared to geographic North (measured clockwise), encoded as a Number. Range 0 to 360." ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
-        
-### https://uri.fiware.org/ns/data-models#windSpeed
-fiware:windSpeed	a      rdf:Property ;
-        rdfs:label   		"windSpeed"@en ;
-        rdfs:comment		"The observed wind speed in m/s, encoded as a Number." ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
-
-### https://uri.fiware.org/ns/data-models#atmosphericPressure
-fiware:atmosphericPressure	a      rdf:Property ;
-        rdfs:label   		"atmosphericPressure"@en ;
-        rdfs:comment		"The atmospheric pressure observed measured in Hecto Pascals" ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
-
-### https://uri.fiware.org/ns/data-models#pressureTendency
-fiware:pressureTendency	a      rdf:Property ;
-        rdfs:label   		"pressureTendency"@en ;
-        rdfs:comment		"Is the pressure rising or falling? It can be expressed in quantitative terms or qualitative terms (raising, falling, steady)" ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
-        
-### https://uri.fiware.org/ns/data-models#solarRadiation
-fiware:solarRadiation	a      rdf:Property ;
-        rdfs:label   		"solarRadiation"@en ;
-        rdfs:comment		"The solar radiation observed measured in Watts per square meter." ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
-
-### https://uri.fiware.org/ns/data-models#illuminance
-fiware:illuminance	a      rdf:Property ;
-        rdfs:label   		"illuminance"@en ;
-        rdfs:comment		"The illumninance observed measured in lux (lx) or lumens per square metre (cd·sr·m−2)" ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
-
-### https://uri.fiware.org/ns/data-models#streamGauge
-fiware:streamGauge	a      rdf:Property ;
-        rdfs:label   		"streamGauge"@en ;
-        rdfs:comment		"The water level surface elevation observed by Hydrometric measurement sensors, namely a Stream Gauge, expressed in centimeters." ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
-
-### https://uri.fiware.org/ns/data-models#snowHeight
-fiware:snowHeight	a      rdf:Property ;
-        rdfs:label   		"snowHeight"@en ;
-        rdfs:comment		"The snow height observed by generic snow depth measurement sensors, expressed in centimeters." ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
-
 
 #################################################################
 #    Datatypes
@@ -357,6 +195,30 @@ foodie:productionProperty	a	owl:ObjectProperty ;
         skos:prefLabel  "productionProperty"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
         
+### https://uri.fiware.org/ns/data-models#recordHasAgriParcel
+fiware:recordHasAgriParcel	a	owl:ObjectProperty ;
+        rdfs:label   		"recordHasAgriParcel"@en ;
+        rdfs:comment		"Reference to the AgriParcel to which this entity relates." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
+
+### https://uri.fiware.org/ns/data-models#hasDevice
+fiware:hasDevice	a      owl:ObjectProperty ;
+        rdfs:label   		"hasDevice"@en ;
+        rdfs:comment		"Reference to the IoT devices associated with this greenhouse i.e. sensors, controls." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
+
+### https://uri.fiware.org/ns/data-models#refDevice
+fiware:refDevice	a     owl:ObjectProperty ;
+        rdfs:label   		"refDevice"@en ;
+        rdfs:comment		"A reference to the device(s) which captured this observation." ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .                                
+
+### https://uri.fiware.org/ns/data-models#refPointOfInterest
+fiware:refPointOfInterest	a	owl:ObjectProperty ;
+        rdfs:label   		"refPointOfInterest"@en ;
+        rdfs:comment		"A reference to a point of interest (usually a weather station) associated to this observation" ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .
+
 
 #################################################################
 #    Data properties
@@ -389,6 +251,144 @@ foodie:analysisDate  a  owl:DatatypeProperty ;
         rdfs:range      xsd:date ;
         skos:prefLabel  "analysisDate"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+### https://uri.fiware.org/ns/data-models#soilTemperature
+fiware:soilTemperature	a	owl:DatatypeProperty ;
+        rdfs:label   		"soilTemperature"@en ;
+        rdfs:comment		"The observed soil temperature nominally in degrees centigrade." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
+        
+### https://uri.fiware.org/ns/data-models#soilMoistureVwc
+fiware:soilMoistureVwc	a	owl:DatatypeProperty ;
+        rdfs:label   		"soilMoistureVwc"@en ;
+        rdfs:comment		"Measured as Volumetric Water Content, VWC as a percentage. 0 ≤soilMoistureVwc ≤ 1" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
+        
+### https://uri.fiware.org/ns/data-models#soilMoistureEc
+fiware:soilMoistureEc	a	owl:DatatypeProperty ;
+        rdfs:label   		"soilMoistureEc"@en ;
+        rdfs:comment		"Measured as Electrical Conductivity, EC nominally in units of Siemens per meter (S/m)." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .        
+
+### https://uri.fiware.org/ns/data-models#airTemperature
+fiware:airTemperature	a	owl:DatatypeProperty ;
+        rdfs:label   		"airTemperature"@en ;
+        rdfs:comment		"The observed air temperature (in the shade) nominally in degrees centigrade." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .        
+
+### https://uri.fiware.org/ns/data-models#solarRadiation
+fiware:solarRadiation	a	owl:DatatypeProperty ;
+        rdfs:label   		"solarRadiation"@en ;
+        rdfs:comment		"Instantaneous solar radiation measured in kW/m2." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .        
+
+### https://uri.fiware.org/ns/data-models#relativeHumidity
+fiware:relativeHumidity	a	owl:DatatypeProperty ;
+        rdfs:label   		"relativeHumidity"@en ;
+        rdfs:comment		"Relative Humidity a number between 0 and 1 representing the range of 0% to 100%. 0 ≤ relativeHumidity ≤ 1" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
+        
+### https://uri.fiware.org/ns/data-models#atmosphericPressure
+fiware:atmosphericPressure	a	owl:DatatypeProperty ;
+        rdfs:label   		"atmosphericPressure"@en ;
+        rdfs:comment		"Atmospheric Pressure nominally in units of hecto Pascals." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
+               
+### https://uri.fiware.org/ns/data-models#observedAt
+fiware:observedAt	a     owl:DatatypeProperty ;
+        rdfs:label   		"observedAt"@en ;
+        rdfs:comment		"Indicates the date/time the record was observed/ last observed." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .                        
+
+### https://uri.fiware.org/ns/data-models#dateObserved
+fiware:dateObserved	a		owl:DatatypeProperty ;
+        rdfs:label   		"dateObserved"@en ;
+        rdfs:comment		"The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval." ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
+        
+### https://uri.fiware.org/ns/data-models#weatherType
+fiware:weatherType	a   owl:DatatypeProperty ;
+        rdfs:label   		"weatherType"@en ;
+        rdfs:comment		"The observed weather type. It is represented by a comma separated list of weather statuses, for instance overcast, lightRain." ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .
+
+### https://uri.fiware.org/ns/data-models#dewPoint
+fiware:dewPoint	a      	owl:DatatypeProperty ;
+        rdfs:label   		"dewPoint"@en ;
+        rdfs:comment		"The dew point encoded as a number." ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .        
+
+### https://uri.fiware.org/ns/data-models#visibility
+fiware:visibility	a      owl:DatatypeProperty ;
+        rdfs:label   		"visibility"@en ;
+        rdfs:comment		"Visibility reported (veryPoor, poor, moderate, good, veryGood, excellent)" ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .        
+        
+### https://uri.fiware.org/ns/data-models#temperature
+fiware:temperature	a   owl:DatatypeProperty ;
+        rdfs:label   		"temperature"@en ;
+        rdfs:comment		"Air’s temperature observed" ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .        
+        
+### https://uri.fiware.org/ns/data-models#relativeHumidity
+fiware:relativeHumidity	a	owl:DatatypeProperty ;
+        rdfs:label   		"relativeHumidity"@en ;
+        rdfs:comment		"Air’s relative humidity observed (percentage, expressed in parts per one)." ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .        
+        
+### https://uri.fiware.org/ns/data-models#precipitation
+fiware:precipitation	a	owl:DatatypeProperty ;
+        rdfs:label   		"precipitation"@en ;
+        rdfs:comment		"Precipitation level observed." ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .        
+
+### https://uri.fiware.org/ns/data-models#windDirection
+fiware:windDirection	a	owl:DatatypeProperty ;
+        rdfs:label   		"windDirection"@en ;
+        rdfs:comment		"The wind direction expressed in decimal degrees compared to geographic North (measured clockwise), encoded as a Number. Range 0 to 360." ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
+        
+### https://uri.fiware.org/ns/data-models#windSpeed
+fiware:windSpeed	a      owl:DatatypeProperty ;
+        rdfs:label   		"windSpeed"@en ;
+        rdfs:comment		"The observed wind speed in m/s, encoded as a Number." ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
+
+### https://uri.fiware.org/ns/data-models#atmosphericPressure
+fiware:atmosphericPressure	a	owl:DatatypeProperty ;
+        rdfs:label   		"atmosphericPressure"@en ;
+        rdfs:comment		"The atmospheric pressure observed measured in Hecto Pascals" ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
+
+### https://uri.fiware.org/ns/data-models#pressureTendency
+fiware:pressureTendency	a	owl:DatatypeProperty ;
+        rdfs:label   		"pressureTendency"@en ;
+        rdfs:comment		"Is the pressure rising or falling? It can be expressed in quantitative terms or qualitative terms (raising, falling, steady)" ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
+        
+### https://uri.fiware.org/ns/data-models#solarRadiation
+fiware:solarRadiation	a	owl:DatatypeProperty ;
+        rdfs:label   		"solarRadiation"@en ;
+        rdfs:comment		"The solar radiation observed measured in Watts per square meter." ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
+
+### https://uri.fiware.org/ns/data-models#illuminance
+fiware:illuminance	a		owl:DatatypeProperty ;
+        rdfs:label   		"illuminance"@en ;
+        rdfs:comment		"The illumninance observed measured in lux (lx) or lumens per square metre (cd·sr·m−2)" ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
+
+### https://uri.fiware.org/ns/data-models#streamGauge
+fiware:streamGauge	a		owl:DatatypeProperty ;
+        rdfs:label   		"streamGauge"@en ;
+        rdfs:comment		"The water level surface elevation observed by Hydrometric measurement sensors, namely a Stream Gauge, expressed in centimeters." ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
+
+### https://uri.fiware.org/ns/data-models#snowHeight
+fiware:snowHeight	a      owl:DatatypeProperty ;
+        rdfs:label   		"snowHeight"@en ;
+        rdfs:comment		"The snow height observed by generic snow depth measurement sensors, expressed in centimeters." ;
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
 
 #################################################################
 #    Classes
@@ -557,6 +557,7 @@ foodie:productionAmount rdfs:subPropertyOf saref:relatesToMeasurement .
 saref:hasTimestamp owl:equivalentProperty foodie:analysisDate .
 saref:hasTimestamp owl:equivalentProperty fiware:observedAt .
 saref:hasTimestamp owl:equivalentProperty fiware:dateObserved .
+foodie:propertyName rdfs:subPropertyOf fiware:name .
 fiware:airTemperature rdfs:subPropertyOf saref:hasValue .
 fiware:soilTemperature rdfs:subPropertyOf saref:hasValue .
 fiware:soilMoistureVwc rdfs:subPropertyOf saref:hasValue .
@@ -585,6 +586,7 @@ fiware:WeatherForecast rdfs:subClassOf saref:FeatureOfInterest .
 <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilType> rdf:type <https://w3id.org/saref#Property> .
 <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilTexture> rdf:type <https://w3id.org/saref#Property> .
 <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/pH> rdf:type <https://w3id.org/saref#Property> .
+
 
 #################################################################
 #    Individuals
