@@ -223,8 +223,14 @@ fiware:alternateName	a      owl:DatatypeProperty ;
 ### https://uri.fiware.org/ns/data-models#description
 fiware:description	a      owl:DatatypeProperty ;
         rdfs:label   		"description"@en ;
-        rdfs:comment		"	A description of the [entity]." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .         
+        rdfs:comment		"A description of the [entity]." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+        
+### https://uri.fiware.org/ns/data-models#agroVocConcept
+fiware:agroVocConcept	a      owl:DatatypeProperty ;
+        rdfs:label   		"agroVocConcept"@en ;
+        rdfs:comment		"URL of the FAO details of the [entity]" ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .                 
 
 #################################################################
 #    Classes
