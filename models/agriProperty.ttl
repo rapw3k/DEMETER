@@ -25,6 +25,11 @@
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix saref: <https://w3id.org/saref#> .
+@prefix cf-feature: <http://purl.oclc.org/NET/ssnx/cf/cf-feature#> .
+@prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
+@prefix cf: <http://purl.oclc.org/NET/ssnx/cf/cf-property#> .
+@prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
+@prefix dim: <http://purl.oclc.org/NET/ssnx/qu/dim#> .
 @base <https://w3id.org/demeter/> .
 
 <https://w3id.org/demeter/agri/agriProperty> rdf:type owl:Ontology ;
@@ -36,7 +41,11 @@
                                             [ schema:affiliation [ foaf:name "ICCS"
                                                                  ] ;
                                               foaf:name "Ioanna Roussaki"
-                                            ] ;
+                                            ] ,
+                                            [ schema:affiliation [ foaf:name "ICCS"
+                                                                 ] ;
+                     													foaf:name "George Routis"
+                   													] ;
                             dct:creator [ schema:affiliation [ foaf:name "PSNC"
                                                              ] ;
                                           rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
@@ -179,6 +188,11 @@ fiware:refPointOfInterest	a	owl:ObjectProperty ;
         rdfs:label   		"refPointOfInterest"@en ;
         rdfs:comment		"A reference to a point of interest (usually a weather station) associated to this observation" ;
         rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .
+
+###  http://purl.oclc.org/NET/ssnx/ssn#hasProperty
+ssn:hasProperty rdf:type owl:ObjectProperty ;
+                rdfs:comment "A relation between a FeatureOfInterest and a Property of that feature." ;
+                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/ssn> .
 
 
 #################################################################
@@ -445,13 +459,22 @@ fiware:snowHeight	a      owl:DatatypeProperty ;
 <https://w3id.org/saref#Humidity> rdf:type owl:Class ;
                                   rdfs:subClassOf <https://w3id.org/saref#Property> ;
                                   rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit" ;
-                                  rdfs:label "Humidiy"@en .
+                                  rdfs:label "Humidity"@en ;
+                                  rdfs:isDefinedBy <https://w3id.org/saref#> .
 
 ###  https://w3id.org/saref#Temperature
 <https://w3id.org/saref#Temperature> rdf:type owl:Class ;
                                      rdfs:subClassOf <https://w3id.org/saref#Property> ;
                                      rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)" ;
-                                     rdfs:label "Temperature"@en .                                
+                                     rdfs:label "Temperature"@en ;
+                                     rdfs:isDefinedBy <https://w3id.org/saref#> .                                
+
+###  https://w3id.org/def/saref4agri#Soil
+<https://w3id.org/def/saref4agri#Soil> rdf:type owl:Class ;
+      																 rdfs:subClassOf <https://w3id.org/saref#FeatureOfInterest> ;
+      																 rdfs:comment "Upper layer of the earth in which plants grow." ;
+      																 rdfs:label "Soil" ;
+      																 rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
 
 ### http://foodie-cloud.com/model/foodie#PropertyType
 foodie:PropertyType  a   owl:Class ;
@@ -503,12 +526,156 @@ fiware:WeatherForecast	rdf:type owl:Class ;
 			rdfs:label "WeatherForecast" ;   
 			rdfs:comment "A weather forecast for a period of time and a location." ;
 			rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherForecast/doc/spec.html> .
+			
+###  http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind
+qu:QuantityKind rdf:type owl:Class ;
+			rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+			
+
+###  http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration
+dim:Acceleration rdf:type owl:Class ;
+                 rdfs:subClassOf qu:QuantityKind ;
+                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                 
+###  http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility
+dim:Compressibility rdf:type owl:Class ;
+                    rdfs:subClassOf qu:QuantityKind ;
+                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                    
+###  http://purl.oclc.org/NET/ssnx/qu/dim#Concentration
+dim:Concentration rdf:type owl:Class ;
+                  rdfs:subClassOf qu:QuantityKind ;
+                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
+
+###  http://purl.oclc.org/NET/ssnx/qu/dim#Density
+dim:Density rdf:type owl:Class ;
+            rdfs:subClassOf qu:QuantityKind ;
+            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
+            
+###  http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless
+dim:Dimensionless rdf:type owl:Class ;
+                  rdfs:subClassOf qu:QuantityKind ;
+                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
+                  
+###  http://purl.oclc.org/NET/ssnx/qu/dim#Distance
+dim:Distance rdf:type owl:Class ;
+             rdfs:subClassOf qu:QuantityKind ;
+             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
+             
+###  http://purl.oclc.org/NET/ssnx/qu/dim#EnergyDensity
+dim:EnergyDensity rdf:type owl:Class ;
+                  rdfs:subClassOf qu:QuantityKind ;
+                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
+                  
+###  http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux
+dim:EnergyFlux rdf:type owl:Class ;
+               rdfs:subClassOf qu:QuantityKind ;                  
+               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
+               
+###  http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea
+dim:MassPerTimePerArea rdf:type owl:Class ;
+                       rdfs:subClassOf qu:QuantityKind ;
+                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                       
+###  http://purl.oclc.org/NET/ssnx/qu/dim#Power
+dim:Power rdf:type owl:Class ;
+          rdfs:subClassOf qu:QuantityKind ;
+          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+          
+###  http://purl.oclc.org/NET/ssnx/qu/dim#RadianceExposure
+dim:RadianceExposure rdf:type owl:Class ;
+                     rdfs:subClassOf qu:QuantityKind ;
+                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                     
+###  http://purl.oclc.org/NET/ssnx/qu/dim#SpecificEntropy
+dim:SpecificEntropy rdf:type owl:Class ;
+                    rdfs:subClassOf qu:QuantityKind ;
+                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                     
+###  http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure
+dim:StressOrPressure rdf:type owl:Class ;
+                     rdfs:subClassOf qu:QuantityKind ;
+                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                     
+###  http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity
+dim:SurfaceDensity rdf:type owl:Class ;
+                   rdfs:subClassOf qu:QuantityKind ;
+                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                   
+###  http://purl.oclc.org/NET/ssnx/qu/dim#Temperature
+dim:Temperature rdf:type owl:Class ;
+                rdfs:subClassOf qu:QuantityKind ;
+                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .       
+                
+###  http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity
+dim:ThermalConductivity rdf:type owl:Class ;
+                        rdfs:subClassOf qu:QuantityKind ;
+                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .       
+                        
+###  http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed
+dim:VelocityOrSpeed rdf:type owl:Class ;
+                    rdfs:subClassOf qu:QuantityKind ;
+                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .                              
+                                                              
+
+###  http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest
+ssn:FeatureOfInterest rdf:type owl:Class ;
+                      rdfs:isDefinedBy "http://purl.oclc.org/NET/ssnx/ssn" ;
+                      rdfs:label "Feature of Interest" .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer
+cf-feature:Layer rdf:type owl:Class ;
+                 rdfs:subClassOf ssn:FeatureOfInterest ;
+                 rdfs:label "Layer" ;
+                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+                 
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium
+cf-feature:Medium rdf:type owl:Class ;
+                  rdfs:subClassOf ssn:FeatureOfInterest ;
+                  rdfs:label "Medium" ;
+                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+                  
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Precipitation
+cf-feature:Precipitation rdf:type owl:Class ;
+                         rdfs:subClassOf ssn:FeatureOfInterest ;
+                         rdfs:label "Precipitation" ;
+                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+                         
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface
+cf-feature:Surface rdf:type owl:Class ;
+                   rdfs:subClassOf ssn:FeatureOfInterest ;
+                   rdfs:label "Surface" ;
+                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceLayer
+cf-feature:SurfaceLayer rdf:type owl:Class ;
+                        rdfs:subClassOf ssn:FeatureOfInterest ;
+                        rdfs:label "Surface Layer" ;
+                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Wind
+cf-feature:Wind rdf:type owl:Class ;
+                rdfs:subClassOf ssn:FeatureOfInterest ;
+                rdfs:label "Wind" ;
+                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .                                          
+
+
+###  http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind
+qu:PropertyKind rdf:type owl:Class ;
+                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
+
 
 #################################################################
 #    Alignments
 #################################################################
 
+ssn:hasProperty owl:equivalentProperty saref:hasProperty .
+saref:FeatureOfInterest owl:equivalentClass ssn:FeatureOfInterest .
 saref:Property owl:equivalentClass foodie:PropertyType .
+saref:Property owl:equivalentClass qu:QuantityKind .
+saref:Temperature owl:equivalentClass dim:Temperature .
 saref:Measurement owl:equivalentClass iso19103:Measure .
 foodie:productionProperty rdfs:subPropertyOf saref:hasProperty .
 foodie:soilProperty rdfs:subPropertyOf saref:hasProperty .
@@ -547,7 +714,7 @@ fiware:WeatherForecast rdfs:subClassOf saref:FeatureOfInterest .
 <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilType> rdf:type <https://w3id.org/saref#Property> .
 <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilTexture> rdf:type <https://w3id.org/saref#Property> .
 <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/pH> rdf:type <https://w3id.org/saref#Property> .
-
+saref4agri:SoilTemperature owl:sameAs cf:soil_temperature .
 
 #################################################################
 #    Individuals
@@ -656,4 +823,681 @@ saref4agri:SoilTemperature rdf:type owl:NamedIndividual ,
         skos:inScheme   "http://foodie-cloud.com/model/foodie/code/PropertyTypeValue" ;
         skos:prefLabel  "pH"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> . 
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#snowfall
+cf-feature:snowfall rdf:type owl:NamedIndividual ,
+                             cf-feature:Precipitation ;
+                    ssn:hasProperty cf:convective_snowfall_amount ,
+                                    cf:convective_snowfall_flux ,
+                                    cf:large_scale_snowfall_amount ,
+                                    cf:large_scale_snowfall_flux ,
+                                    cf:lwe_convective_snowfall_rate ,
+                                    cf:lwe_large_scale_snowfall_rate ,
+                                    cf:lwe_snowfall_rate ,
+                                    cf:lwe_thickness_of_convective_snowfall_amount ,
+                                    cf:lwe_thickness_of_large_scale_snowfall_amount ,
+                                    cf:lwe_thickness_of_snowfall_amount ,
+                                    cf:snowfall_amount ,
+                                    cf:snowfall_flux ,
+                                    cf:thickness_of_convective_snowfall_amount ,
+                                    cf:thickness_of_large_scale_snowfall_amount ,
+                                    cf:thickness_of_snowfall_amount ;
+                    rdfs:label "snowfall" ;
+                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+                    
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil
+cf-feature:soil rdf:type owl:NamedIndividual ,
+                         cf-feature:Medium ;
+                ssn:hasProperty cf:downward_heat_flux_in_soil ,
+                                cf:lwe_thickness_of_soil_moisture_content ,
+                                cf:mass_concentration_of_condensed_water_in_soil ,
+                                cf:soil_albedo ,
+                                cf:soil_carbon_content ,
+                                cf:soil_frozen_water_content ,
+                                cf:soil_hydraulic_conductivity_at_saturation ,
+                                cf:soil_moisture_content ,
+                                cf:soil_moisture_content_at_field_capacity ,
+                                cf:soil_porosity ,
+                                cf:soil_suction_at_saturation ,
+                                cf:soil_temperature ,
+                                cf:soil_thermal_capacity ,
+                                cf:soil_thermal_conductivity ,
+                                cf:soil_type ,
+                                cf:volume_fraction_of_clay_in_soil ,
+                                cf:volume_fraction_of_condensed_water_in_soil ,
+                                cf:volume_fraction_of_condensed_water_in_soil_at_critical_point ,
+                                cf:volume_fraction_of_condensed_water_in_soil_at_field_capacity ,
+                                cf:volume_fraction_of_condensed_water_in_soil_at_wilting_point ,
+                                cf:volume_fraction_of_frozen_water_in_soil ,
+                                cf:volume_fraction_of_sand_in_soil ,
+                                cf:volume_fraction_of_silt_in_soil ,
+                                cf:water_evaporation_flux_from_soil ;
+                rdfs:label "soil" ;
+                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_layer
+cf-feature:soil_layer rdf:type owl:NamedIndividual ,
+                               cf-feature:Layer ;
+                      ssn:hasProperty cf:frozen_water_content_of_soil_layer ,
+                                      cf:liquid_water_content_of_soil_layer ,
+                                      cf:lwe_thickness_of_frozen_water_content_of_soil_layer ,
+                                      cf:lwe_thickness_of_moisture_content_of_soil_layer ,
+                                      cf:moisture_content_of_soil_layer ,
+                                      cf:moisture_content_of_soil_layer_at_field_capacity ;
+                      rdfs:label "soil layer" ;
+                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_pores
+cf-feature:soil_pores rdf:type owl:NamedIndividual ,
+                               cf-feature:Medium ;
+                      ssn:hasProperty cf:volume_fraction_of_condensed_water_in_soil_pores ;
+                      rdfs:label "soil pores" ;
+                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#vegetation
+cf-feature:vegetation rdf:type owl:NamedIndividual ,
+                               cf-feature:Layer ;
+                      ssn:hasProperty cf:vegetation_area_fraction ,
+                                      cf:vegetation_carbon_content ;
+                      rdfs:label "vegetation" ;
+                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#water
+cf-feature:water rdf:type owl:NamedIndividual ,
+                          cf-feature:Medium ;
+                 rdfs:label "water" ;
+                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#air_density
+cf:air_density rdf:type owl:NamedIndividual ,
+                        <http://purl.oclc.org/NET/ssnx/qu/dim#Density> ;
+               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_dioxide
+cf:atmosphere_mass_content_of_carbon_dioxide rdf:type owl:NamedIndividual ,
+                                                      <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_monoxide
+cf:atmosphere_mass_content_of_carbon_monoxide rdf:type owl:NamedIndividual ,
+                                                       <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_water_vapor_content
+cf:atmosphere_water_vapor_content rdf:type owl:NamedIndividual ,
+                                           <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_amount
+cf:convective_snowfall_amount rdf:type owl:NamedIndividual ,
+                                       dim:SurfaceDensity ;
+                              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_flux
+cf:convective_snowfall_flux rdf:type owl:NamedIndividual ,
+                                     dim:MassPerTimePerArea ;
+                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#downward_heat_flux_in_soil
+cf:downward_heat_flux_in_soil rdf:type owl:NamedIndividual ,
+                                       dim:EnergyFlux ;
+                              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#frozen_water_content_of_soil_layer
+cf:frozen_water_content_of_soil_layer rdf:type owl:NamedIndividual ,
+                                               dim:SurfaceDensity ;
+                                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_amount
+cf:large_scale_snowfall_amount rdf:type owl:NamedIndividual ,
+                                        dim:SurfaceDensity ;
+                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_flux
+cf:large_scale_snowfall_flux rdf:type owl:NamedIndividual ,
+                                      dim:MassPerTimePerArea ;
+                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#liquid_water_content_of_soil_layer
+cf:liquid_water_content_of_soil_layer rdf:type owl:NamedIndividual ,
+                                               dim:SurfaceDensity ;
+                                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_convective_snowfall_rate
+cf:lwe_convective_snowfall_rate rdf:type owl:NamedIndividual ,
+                                         dim:VelocityOrSpeed ;
+                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_large_scale_snowfall_rate
+cf:lwe_large_scale_snowfall_rate rdf:type owl:NamedIndividual ,
+                                          dim:VelocityOrSpeed ;
+                                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_snowfall_rate
+cf:lwe_snowfall_rate rdf:type owl:NamedIndividual ,
+                              dim:VelocityOrSpeed ;
+                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_convective_snowfall_amount
+cf:lwe_thickness_of_convective_snowfall_amount rdf:type owl:NamedIndividual ,
+                                                        dim:Distance ;
+                                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_frozen_water_content_of_soil_layer
+cf:lwe_thickness_of_frozen_water_content_of_soil_layer rdf:type owl:NamedIndividual ,
+                                                                dim:Distance ;
+                                                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_large_scale_snowfall_amount
+cf:lwe_thickness_of_large_scale_snowfall_amount rdf:type owl:NamedIndividual ,
+                                                         dim:Distance ;
+                                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_moisture_content_of_soil_layer
+cf:lwe_thickness_of_moisture_content_of_soil_layer rdf:type owl:NamedIndividual ,
+                                                            dim:Distance ;
+                                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_snowfall_amount
+cf:lwe_thickness_of_snowfall_amount rdf:type owl:NamedIndividual ,
+                                             dim:Distance ;
+                                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_soil_moisture_content
+cf:lwe_thickness_of_soil_moisture_content rdf:type owl:NamedIndividual ,
+                                                   dim:Distance ;
+                                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#mass_concentration_of_condensed_water_in_soil
+cf:mass_concentration_of_condensed_water_in_soil rdf:type owl:NamedIndividual ,
+                                                          dim:Density ;
+                                                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer
+cf:moisture_content_of_soil_layer rdf:type owl:NamedIndividual ,
+                                           dim:SurfaceDensity ;
+                                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer_at_field_capacity
+cf:moisture_content_of_soil_layer_at_field_capacity rdf:type owl:NamedIndividual ,
+                                                             dim:SurfaceDensity ;
+                                                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content
+cf:soil_moisture_content rdf:type owl:NamedIndividual ,
+                                  dim:SurfaceDensity ;
+                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_type
+cf:soil_type rdf:type owl:NamedIndividual ,
+                      dim:Dimensionless ;
+             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_density
+cf:snow_density rdf:type owl:NamedIndividual ,
+                         dim:Density ;                
+                rdfs:label "snow density" ;
+                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_grain_size
+cf:snow_grain_size rdf:type owl:NamedIndividual ,
+                            dim:Distance ;
+                   rdfs:label "snow grain size" ;
+                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_soot_content
+cf:snow_soot_content rdf:type owl:NamedIndividual ,
+                              dim:SurfaceDensity ;
+                     rdfs:label "snow soot content" ;
+                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_temperature
+cf:snow_temperature rdf:type owl:NamedIndividual ,
+                             dim:Temperature ;
+                    rdfs:label "snow temperature" ;
+                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_amount
+cf:snowfall_amount rdf:type owl:NamedIndividual ,
+                            dim:SurfaceDensity ;
+                   rdfs:label "snowfall amount" ;
+                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_flux
+cf:snowfall_flux rdf:type owl:NamedIndividual ,
+                          dim:MassPerTimePerArea ;
+                 rdfs:label "snowfall flux" ;
+                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_albedo
+cf:soil_albedo rdf:type owl:NamedIndividual ,
+                        dim:Dimensionless ;
+               rdfs:label "soil albedo" ;
+               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_carbon_content
+cf:soil_carbon_content rdf:type owl:NamedIndividual ,
+                                dim:SurfaceDensity ;
+                       rdfs:label "soil carbon content" ;
+                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_frozen_water_content
+cf:soil_frozen_water_content rdf:type owl:NamedIndividual ,
+                                      dim:SurfaceDensity ;
+                             rdfs:label "soil frozen water content" ;
+                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_hydraulic_conductivity_at_saturation
+cf:soil_hydraulic_conductivity_at_saturation rdf:type owl:NamedIndividual ,
+                                                      dim:VelocityOrSpeed ;
+                                             rdfs:label "soil hydraulic conductivity at saturation" ;
+                                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content
+cf:soil_moisture_content rdf:type owl:NamedIndividual ,
+                                  dim:SurfaceDensity ;
+                         rdfs:label "soil moisture content" ;
+                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content_at_field_capacity
+cf:soil_moisture_content_at_field_capacity rdf:type owl:NamedIndividual ,
+                                                    dim:SurfaceDensity ;
+                                           rdfs:label "soil moisture content at field capacity" ;
+                                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_porosity
+cf:soil_porosity rdf:type owl:NamedIndividual ,
+                          dim:Dimensionless ;
+                 rdfs:label "soil porosity" ;
+                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_respiration_carbon_flux
+cf:soil_respiration_carbon_flux rdf:type owl:NamedIndividual ,
+                                         dim:MassPerTimePerArea ;                                
+                                rdfs:label "soil respiration carbon flux" ;
+                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_suction_at_saturation
+cf:soil_suction_at_saturation rdf:type owl:NamedIndividual ,
+                                       dim:StressOrPressure ;
+                              rdfs:label "soil suction at saturation" ;
+                              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_temperature
+cf:soil_temperature rdf:type owl:NamedIndividual ,
+                             dim:Temperature ;                    
+                    rdfs:label "soil temperature" ;
+                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_capacity
+cf:soil_thermal_capacity rdf:type owl:NamedIndividual ,
+                                  dim:SpecificEntropy ;
+                         rdfs:label "soil thermal capacity" ;
+                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_conductivity
+cf:soil_thermal_conductivity rdf:type owl:NamedIndividual ,
+                                      dim:ThermalConductivity ;
+                             rdfs:label "soil thermal conductivity" ;
+                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+                             
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_intensity_in_air
+cf:sound_intensity_in_air rdf:type owl:NamedIndividual ,
+                                   dim:EnergyFlux ;
+                          rdfs:label "sound intensity in air" ;
+                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_pressure_in_air
+cf:sound_pressure_in_air rdf:type owl:NamedIndividual ,
+                                  dim:StressOrPressure ;
+                         rdfs:label "sound pressure in air" ;
+                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_convective_snowfall_amount
+cf:thickness_of_convective_snowfall_amount rdf:type owl:NamedIndividual ,
+                                                    dim:Distance ;
+                                           rdfs:label "thickness of convective snowfall amount" ;
+                                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_rainfall_amount
+cf:thickness_of_large_scale_rainfall_amount rdf:type owl:NamedIndividual ,
+                                                     dim:Distance ;
+                                            rdfs:label "thickness of large scale rainfall amount" ;
+                                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_snowfall_amount
+cf:thickness_of_large_scale_snowfall_amount rdf:type owl:NamedIndividual ,
+                                                     dim:Distance ;
+                                            rdfs:label "thickness of large scale snowfall amount" ;
+                                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_rainfall_amount
+cf:thickness_of_rainfall_amount rdf:type owl:NamedIndividual ,
+                                         dim:Distance ;
+                                rdfs:label "thickness of rainfall amount" ;
+                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_snowfall_amount
+cf:thickness_of_snowfall_amount rdf:type owl:NamedIndividual ,
+                                         dim:Distance ;
+                                rdfs:label "thickness of snowfall amount" ;
+                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_area_fraction
+cf:vegetation_area_fraction rdf:type owl:NamedIndividual ,
+                                     dim:Dimensionless ;
+                            rdfs:label "vegetation area fraction" ;
+                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_carbon_content
+cf:vegetation_carbon_content rdf:type owl:NamedIndividual ,
+                                      dim:SurfaceDensity ;
+                             rdfs:label "vegetation carbon content" ;
+                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .                                  
+                                  
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_clay_in_soil
+cf:volume_fraction_of_clay_in_soil rdf:type owl:NamedIndividual ,
+                                            dim:Dimensionless ;
+                                   rdfs:label "volume fraction of clay in soil" ;
+                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil
+cf:volume_fraction_of_condensed_water_in_soil rdf:type owl:NamedIndividual ,
+                                                       dim:Dimensionless ;
+                                              rdfs:label "volume fraction of condensed water in soil" ;
+                                              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_critical_point
+cf:volume_fraction_of_condensed_water_in_soil_at_critical_point rdf:type owl:NamedIndividual ,
+                                                                         dim:Dimensionless ;
+                                                                rdfs:label "volume fraction of condensed water in soil at critical point" ;
+                                                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_field_capacity
+cf:volume_fraction_of_condensed_water_in_soil_at_field_capacity rdf:type owl:NamedIndividual ,
+                                                                         dim:Dimensionless ;
+                                                                rdfs:label "volume fraction of condensed water in soil at field capacity" ;
+                                                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_wilting_point
+cf:volume_fraction_of_condensed_water_in_soil_at_wilting_point rdf:type owl:NamedIndividual ,
+                                                                        dim:Dimensionless ;
+                                                               rdfs:label "volume fraction of condensed water in soil at wilting point" ;
+                                                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_pores
+cf:volume_fraction_of_condensed_water_in_soil_pores rdf:type owl:NamedIndividual ,
+                                                             dim:Dimensionless ;
+                                                    rdfs:label "volume fraction of condensed water in soil pores" ;
+                                                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_frozen_water_in_soil
+cf:volume_fraction_of_frozen_water_in_soil rdf:type owl:NamedIndividual ,
+                                                    dim:Dimensionless ;
+                                           rdfs:label "volume fraction of frozen water in soil" ;
+                                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_sand_in_soil
+cf:volume_fraction_of_sand_in_soil rdf:type owl:NamedIndividual ,
+                                            dim:Dimensionless ;
+                                   rdfs:label "volume fraction of sand in soil" ;
+                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_silt_in_soil
+cf:volume_fraction_of_silt_in_soil rdf:type owl:NamedIndividual ,
+                                            dim:Dimensionless ;
+                                   rdfs:label "volume fraction of silt in soil" ;
+                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#water_evaporation_flux_from_soil
+cf:water_evaporation_flux_from_soil rdf:type owl:NamedIndividual ,
+                                             dim:MassPerTimePerArea ;
+                                    rdfs:label "water evaporation flux from soil" ;
+                                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme
+dim:AcousticsScheme rdf:type owl:NamedIndividual ,
+                             skos:Scheme ;
+                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                             
+###  http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme
+dim:HeatScheme rdf:type owl:NamedIndividual ,
+                        skos:Scheme ;
+                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                        
+###  http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme
+dim:MechanicsScheme rdf:type owl:NamedIndividual ,
+                             skos:Scheme ;
+                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/dim#ElectricityAndMagnetismScheme
+dim:ElectricityAndMagnetismScheme rdf:type owl:NamedIndividual ,
+                                           skos:Scheme ;
+                                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                             
+###  http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme
+dim:PhysicalChemistryAndMolecularPhysicsScheme rdf:type owl:NamedIndividual ,
+                                                        skos:Scheme ;
+                                                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                                                        
+###  http://purl.oclc.org/NET/ssnx/qu/dim#SolidStatePhysicsScheme
+dim:SolidStatePhysicsScheme rdf:type owl:NamedIndividual ,
+                                     skos:Scheme ;
+                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme
+dim:LightAndRelatedElectromagneticRadiationsScheme rdf:type owl:NamedIndividual ,
+                                                            skos:Scheme ;
+                                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme
+dim:SpaceAndTimeScheme rdf:type owl:NamedIndividual ,
+                                skos:Scheme ;
+                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#acceleration
+quantity:acceleration rdf:type owl:NamedIndividual ,
+                               dim:Acceleration ;
+                      skos:inScheme dim:SpaceAndTimeScheme ;
+                      rdfs:label "acceleration"^^xsd:string ;
+                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                      
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#carbonContent
+quantity:carbonContent rdf:type owl:NamedIndividual ,
+                                dim:Concentration ;
+                       skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme ;
+                       rdfs:label "carbon content"^^xsd:string ;
+                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                      
+                                                        
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#compressibility
+quantity:compressibility rdf:type owl:NamedIndividual ,
+                                  dim:Compressibility ;
+                         skos:inScheme dim:HeatScheme ,
+                                       dim:MechanicsScheme ;
+                         rdfs:label "compressibility"^^xsd:string ;
+                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#concentration
+quantity:concentration rdf:type owl:NamedIndividual ,
+                                dim:Concentration ;
+                       skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme ;
+                       rdfs:label "concentration"^^xsd:string ;
+                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#density
+quantity:density rdf:type owl:NamedIndividual ,
+                          dim:Density ;     
+                 skos:inScheme dim:AcousticsScheme ,
+                               dim:MechanicsScheme ,
+                               dim:PhysicalChemistryAndMolecularPhysicsScheme ;            
+                 rdfs:label "density"^^xsd:string ;
+                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
                  
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#distance
+quantity:distance rdf:type owl:NamedIndividual ,
+                           dim:Distance ;
+                  skos:inScheme dim:SpaceAndTimeScheme ;
+                  rdfs:label "distance"^^xsd:string ;
+                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#energyFlowRate
+quantity:energyFlowRate rdf:type owl:NamedIndividual ,
+                                 qu:PropertyKind ;
+                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                                 
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#fraction
+quantity:fraction rdf:type owl:NamedIndividual ,
+                           qu:PropertyKind ;
+                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#length
+quantity:length rdf:type owl:NamedIndividual ,
+                         dim:Distance ;
+                skos:inScheme dim:SpaceAndTimeScheme ;
+                rdfs:label "length"^^xsd:string ;
+                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#massPerTimePerArea
+quantity:massPerTimePerArea rdf:type owl:NamedIndividual ,
+                                     dim:MassPerTimePerArea ;
+                            skos:inScheme dim:MechanicsScheme ;
+                            rdfs:label "mass per time per area"^^xsd:string ;
+                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                            
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#power
+quantity:power rdf:type owl:NamedIndividual ,
+                        dim:Power ;
+               skos:inScheme dim:ElectricityAndMagnetismScheme ,
+                             dim:MechanicsScheme ;
+               rdfs:label "power"^^xsd:string ;
+               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+               
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#pressure
+quantity:pressure rdf:type owl:NamedIndividual ,
+                           dim:StressOrPressure ;
+                  skos:inScheme dim:MechanicsScheme ;
+                  rdfs:label "pressure"^^xsd:string ;
+                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                  
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#property
+quantity:property rdf:type owl:NamedIndividual ,
+                           qu:PropertyKind ;
+                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                  
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#radianceExposure
+quantity:radianceExposure rdf:type owl:NamedIndividual ,
+                                   dim:RadianceExposure ;
+                          skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme ;
+                          rdfs:label "radiance exposure"^^xsd:string ;
+                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                  
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#scalarProperty
+quantity:scalarProperty rdf:type owl:NamedIndividual ,
+                                 qu:PropertyKind ;
+                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                        
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#soundEnergyDensity
+quantity:soundEnergyDensity rdf:type owl:NamedIndividual ,
+                                     dim:EnergyDensity ;
+                            skos:inScheme dim:AcousticsScheme ;
+                            rdfs:label "sound energy density"^^xsd:string ;
+                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#soundIntensity
+quantity:soundIntensity rdf:type owl:NamedIndividual ,
+                                 dim:EnergyFlux ;
+                        skos:inScheme dim:AcousticsScheme ;
+                        rdfs:label "sound intensity"^^xsd:string ;
+                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+               
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#soundPower
+quantity:soundPower rdf:type owl:NamedIndividual ,
+                             dim:Power ;
+                    skos:inScheme dim:AcousticsScheme ;
+                    rdfs:label "sound power"^^xsd:string ;
+                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                    
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#soundPressure
+quantity:soundPressure rdf:type owl:NamedIndividual ,
+                                dim:StressOrPressure ;
+                       skos:inScheme dim:AcousticsScheme ,
+                                     dim:MechanicsScheme ;
+                       rdfs:label "sound pressure"^^xsd:string ;
+                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                   
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#surfaceDensity
+quantity:surfaceDensity rdf:type owl:NamedIndividual ,
+                                 dim:SurfaceDensity ;
+                        skos:inScheme dim:MechanicsScheme ;
+                        rdfs:label "surface density"^^xsd:string ;
+                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                  
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#temperature
+quantity:temperature rdf:type owl:NamedIndividual ,
+                              dim:Temperature ;
+                     skos:inScheme dim:HeatScheme ,
+                                   dim:SolidStatePhysicsScheme ;
+                     rdfs:label "temperature"^^xsd:string ;
+                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#vapourCompressibility
+quantity:vapourCompressibility rdf:type owl:NamedIndividual ,
+                                        dim:Compressibility ;
+                               skos:inScheme dim:HeatScheme ,
+                                             dim:PhysicalChemistryAndMolecularPhysicsScheme ;
+                               rdfs:label "vapour compressibility"^^xsd:string ;
+                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                               
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#vapourPressure
+quantity:vapourPressure rdf:type owl:NamedIndividual ,
+                                 dim:StressOrPressure ;
+                        skos:inScheme dim:MechanicsScheme ;
+                        rdfs:label "vapour pressure"^^xsd:string ;
+                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                        
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#vectorProperty
+quantity:vectorProperty rdf:type owl:NamedIndividual ,
+                                 qu:PropertyKind ;
+                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                        
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#velocity
+quantity:velocity rdf:type owl:NamedIndividual ,
+                           dim:VelocityOrSpeed ;
+                  skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme ,
+                                dim:SpaceAndTimeScheme ;
+                  rdfs:label "velocity"^^xsd:string ;
+                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .                     
+                        

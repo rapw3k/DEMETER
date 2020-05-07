@@ -24,6 +24,11 @@
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix saref: <https://w3id.org/saref#> .
+@prefix cf-feature: <http://purl.oclc.org/NET/ssnx/cf/cf-feature#> .
+@prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
+@prefix cf: <http://purl.oclc.org/NET/ssnx/cf/cf-property#> .
+@prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
+@prefix dim: <http://purl.oclc.org/NET/ssnx/qu/dim#> .
 @base <https://w3id.org/demeter/> .
 
 <https://w3id.org/demeter/agri/agriSystem> rdf:type owl:Ontology ;
@@ -35,7 +40,11 @@
                                             [ schema:affiliation [ foaf:name "ICCS"
                                                                  ] ;
                                               foaf:name "Ioanna Roussaki"
-                                            ] ;
+                                            ] ,
+                                            [ schema:affiliation [ foaf:name "ICCS"
+                                                                 ] ;
+                     													foaf:name "George Routis"
+                   													] ;
                             dct:creator [ schema:affiliation [ foaf:name "PSNC"
                                                              ] ;
                                           rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
@@ -118,6 +127,7 @@
 foodie:code  a          owl:DatatypeProperty ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
         
+											 											 
 #################################################################
 #    Data properties
 #################################################################
@@ -258,6 +268,18 @@ foodie:TractorType  a       owl:Class ;
                          ] ;
         skos:prefLabel   "TractorType"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        
+###  http://purl.oclc.org/NET/ssnx/qu/dim#Energy
+dim:Energy rdf:type owl:Class ;
+           rdfs:subClassOf qu:QuantityKind ;
+           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+           
+###  http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed
+dim:RotationalSpeed rdf:type owl:Class ;
+                    rdfs:subClassOf qu:QuantityKind ;
+                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+           
+                                 
 
 #################################################################
 #    Alignments
@@ -270,3 +292,89 @@ foodie:TractorType rdfs:subClassOf sosa:Platform .
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme
+dim:AcousticsScheme rdf:type owl:NamedIndividual ,
+                             skos:Scheme ;
+                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                    
+###  http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme
+dim:MechanicsScheme rdf:type owl:NamedIndividual ,
+                             skos:Scheme ;
+                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                    
+###  http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme
+dim:PeriodicAndRelatedPhenomenaScheme rdf:type owl:NamedIndividual ,
+                                               skos:Scheme ;
+                                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme
+dim:SpaceAndTimeScheme rdf:type owl:NamedIndividual ,
+                                skos:Scheme ;
+                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#criticalBuildUpSpeed
+quantity:criticalBuildUpSpeed rdf:type owl:NamedIndividual ,
+                                       dim:RotationalSpeed ;
+                              skos:inScheme dim:AcousticsScheme ,
+                                            dim:PeriodicAndRelatedPhenomenaScheme ;
+                              rdfs:label "critical build-up speed"^^xsd:string ;
+                              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+                                                                    
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#criticalTorsionalSpeed
+quantity:criticalTorsionalSpeed rdf:type owl:NamedIndividual ,
+                                         dim:RotationalSpeed ;
+                                skos:inScheme dim:AcousticsScheme ,
+                                              dim:PeriodicAndRelatedPhenomenaScheme ;
+                                rdfs:label "critical torsional speed"^^xsd:string ;
+                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+                                
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#criticalWhirlingSpeed
+quantity:criticalWhirlingSpeed rdf:type owl:NamedIndividual ,
+                                        dim:RotationalSpeed ;
+                               skos:inScheme dim:AcousticsScheme ,
+                                             dim:PeriodicAndRelatedPhenomenaScheme ;
+                               rdfs:label "critical whirling speed"^^xsd:string ;
+                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> . 
+                                                                                         
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#property
+quantity:property rdf:type owl:NamedIndividual ,
+                           qu:PropertyKind ;
+                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+                           
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#pseudovectorProperty
+quantity:pseudovectorProperty rdf:type owl:NamedIndividual ,
+                                       qu:PropertyKind ;
+                              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+                           
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#rotationalSpeed
+quantity:rotationalSpeed rdf:type owl:NamedIndividual ,
+                                  dim:RotationalSpeed ;
+                         skos:inScheme dim:AcousticsScheme ,
+                                       dim:PeriodicAndRelatedPhenomenaScheme ,
+                                       dim:SpaceAndTimeScheme ;
+                         rdfs:label "rotational speed"^^xsd:string ;
+                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+                                                                
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousPullOutTorque
+quantity:synchronousPullOutTorque rdf:type owl:NamedIndividual ,
+                                           dim:Energy ;
+                                  skos:inScheme dim:MechanicsScheme ;
+                                  rdfs:label "synchronous pull-out torque"^^xsd:string ;
+                                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+                                  
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousSpeed
+quantity:synchronousSpeed rdf:type owl:NamedIndividual ,
+                                   dim:RotationalSpeed ;
+                          skos:inScheme dim:AcousticsScheme ,
+                                        dim:PeriodicAndRelatedPhenomenaScheme ;
+                          rdfs:label "synchronous speed"^^xsd:string ;
+                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+                          
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#torque
+quantity:torque rdf:type owl:NamedIndividual ,
+                         dim:Energy ;
+                skos:inScheme dim:MechanicsScheme ;
+                rdfs:label "torque"^^xsd:string ;
+                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
