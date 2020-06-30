@@ -1,0 +1,11 @@
+export PROFILEWIZ=/repos/misc/rdflib/profilewiz/profilewiz/profilewiz.py
+python  $PROFILEWIZ -p=lib/profile_cat.ttl -o agriCommon.ttl ../models/agriCommon.ttl
+# python  $PROFILEWIZ -p=lib/profile_cat.ttl -o agriFeature.ttl /../models/agriFeature.ttl
+# python  $PROFILEWIZ -p=lib/profile_cat.ttl -o agriAlert.ttl ../models/agriAlert.ttl
+# python  $PROFILEWIZ -p=lib/profile_cat.ttl -o agriCrop.ttl ../models/agriCrop.ttl
+# python  $PROFILEWIZ -p=lib/profile_cat.ttl -o agriIntervention.ttl ../models/agriIntervention.ttl
+# python  $PROFILEWIZ -p=lib/profile_cat.ttl -o agriPest.ttl ../models/agriPest.ttl
+# python  $PROFILEWIZ -p=lib/profile_cat.ttl -o agriProduct.ttl ../models/agriProduct.ttl
+# python  $PROFILEWIZ -p=lib/profile_cat.ttl -o agriProperty.ttl ../models/agriProperty.ttl
+# python  $PROFILEWIZ -p=lib/profile_cat.ttl -o agriSystem.ttl ../models/agriSystem.ttl
+# python  $PROFILEWIZ -p=lib/profile_cat.ttl -o farmAnimal.ttl ../models/farmAnimal.ttl
