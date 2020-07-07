@@ -12,7 +12,7 @@
     "versionInfo" : {
       "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
     },
-    "animalSpecies" : {
+    "species" : {
       "@id" : "https://uri.fiware.org/ns/data-models#species"
     },
     "isLocationOf" : {
@@ -23,8 +23,7 @@
       "@id" : "https://uri.fiware.org/ns/data-models#relatedSource"
     },
     "hasName" : {
-      "@id" : "https://w3id.org/def/saref4agri#hasName",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id" : "https://w3id.org/def/saref4agri#hasName"
     },
     "hasID" : {
       "@id" : "https://w3id.org/def/saref4agri#hasID",
@@ -34,7 +33,7 @@
       "@id" : "http://foodie-cloud.com/model/foodie#livestockNumber",
       "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
     },
-    "saref.FeatureOfInterest" : {
+    "FeatureOfInterest" : {
       "@id" : "https://w3id.org/saref#FeatureOfInterest"
     },
     "legalID" : {
@@ -70,9 +69,6 @@
     "Animal" : {
       "@id" : "https://w3id.org/def/saref4agri#Animal"
     },
-    "AnimalEntity" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#Animal"
-    },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
@@ -87,8 +83,9 @@
     "creator" : {
       "@id" : "http://purl.org/dc/terms/creator"
     },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
+    "topObjectProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+      "@type" : "@id"
     },
     "healthCondition" : {
       "@id" : "https://uri.fiware.org/ns/data-models#healthCondition"
@@ -103,6 +100,10 @@
     "livestockType" : {
       "@id" : "http://foodie-cloud.com/model/foodie#livestockType",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "location" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#location",
+      "@type" : "@id"
     },
     "locatedAt" : {
       "@id" : "https://uri.fiware.org/ns/data-models#locatedAt",

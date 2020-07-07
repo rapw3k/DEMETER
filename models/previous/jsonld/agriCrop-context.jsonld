@@ -4,8 +4,7 @@
       "@id" : "http://foodie-cloud.com/model/foodie#productionDate"
     },
     "invalidatedAtTime" : {
-      "@id" : "http://www.w3.org/ns/prov#invalidatedAtTime",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "http://www.w3.org/ns/prov#invalidatedAtTime"
     },
     "cropArea" : {
       "@id" : "http://foodie-cloud.com/model/foodie#cropArea",
@@ -28,18 +27,16 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "generatedAtTime" : {
-      "@id" : "http://www.w3.org/ns/prov#generatedAtTime",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "http://www.w3.org/ns/prov#generatedAtTime"
     },
     "productionAmount" : {
       "@id" : "http://foodie-cloud.com/model/foodie#productionAmount",
       "@type" : "@id"
     },
     "validFrom" : {
-      "@id" : "http://portele.de/ont/inspire/baseInspire#validFrom",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validFrom"
     },
-    "cropTypeSpecies" : {
+    "species" : {
       "@id" : "http://foodie-cloud.com/model/foodie#species",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
@@ -53,7 +50,10 @@
     "topDataProperty" : {
       "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
     },
-    "saref.FeatureOfInterest" : {
+    "createdAt" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#createdAt"
+    },
+    "FeatureOfInterest" : {
       "@id" : "https://w3id.org/saref#FeatureOfInterest"
     },
     "Geometry" : {
@@ -82,13 +82,16 @@
     "harvestingInterval" : {
       "@id" : "https://uri.fiware.org/ns/data-models#harvestingInterval"
     },
+    "Measurement" : {
+      "@id" : "https://w3id.org/saref#Measurement"
+    },
     "AgriCrop" : {
       "@id" : "https://uri.fiware.org/ns/data-models#AgriCrop"
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
-    "saref.hasProperty" : {
+    "hasProperty" : {
       "@id" : "https://w3id.org/saref#hasProperty",
       "@type" : "@id"
     },
@@ -99,6 +102,9 @@
       "@id" : "https://w3id.org/def/saref4agri#hasHarvestDate",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
+    "PropertyType" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#PropertyType"
+    },
     "ProductionType" : {
       "@id" : "http://foodie-cloud.com/model/foodie#ProductionType"
     },
@@ -106,7 +112,7 @@
       "@id" : "http://purl.org/dc/terms/creator"
     },
     "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
+      "@id" : "https://uri.fiware.org/ns/data-models#name"
     },
     "rights" : {
       "@id" : "http://purl.org/dc/terms/rights"
@@ -133,12 +139,14 @@
       "@id" : "http://foodie-cloud.com/model/foodie#variety",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "Property" : {
+      "@id" : "https://w3id.org/saref#Property"
+    },
     "title" : {
       "@id" : "http://purl.org/dc/terms/title"
     },
     "validTo" : {
-      "@id" : "http://portele.de/ont/inspire/baseInspire#validTo",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validTo"
     },
     "family" : {
       "@id" : "http://foodie-cloud.com/model/foodie#family",
@@ -147,12 +155,24 @@
     "wateringFrequency" : {
       "@id" : "https://uri.fiware.org/ns/data-models#wateringFrequency"
     },
+    "hasFeatureOfInterest" : {
+      "@id" : "https://w3id.org/saref#hasFeatureOfInterest",
+      "@type" : "@id"
+    },
     "hasAgriPest" : {
       "@id" : "https://uri.fiware.org/ns/data-models#hasAgriPest",
       "@type" : "@id"
     },
+    "productionProperty" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#productionProperty",
+      "@type" : "@id"
+    },
     "cropSpecies" : {
       "@id" : "http://foodie-cloud.com/model/foodie#cropSpecies",
+      "@type" : "@id"
+    },
+    "isPropertyOf" : {
+      "@id" : "https://w3id.org/saref#isPropertyOf",
       "@type" : "@id"
     },
     "seeAlso" : {
@@ -162,8 +182,7 @@
       "@id" : "https://uri.fiware.org/ns/data-models#plantingFrom"
     },
     "notes" : {
-      "@id" : "http://foodie-cloud.com/model/foodie#notes",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id" : "http://foodie-cloud.com/model/foodie#notes"
     },
     "comment" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
@@ -174,19 +193,20 @@
     "contributor" : {
       "@id" : "http://purl.org/dc/terms/contributor"
     },
+    "Device" : {
+      "@id" : "https://w3id.org/saref#Device"
+    },
     "CropType" : {
       "@id" : "http://foodie-cloud.com/model/foodie#CropType"
     },
     "code" : {
-      "@id" : "http://foodie-cloud.com/model/foodie#code",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id" : "http://foodie-cloud.com/model/foodie#code"
     },
     "prefLabel" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "description" : {
-      "@id" : "http://foodie-cloud.com/model/foodie#description",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id" : "https://uri.fiware.org/ns/data-models#description"
     },
     "receives" : {
       "@id" : "https://w3id.org/def/saref4agri#receives",
@@ -194,6 +214,10 @@
     },
     "AnyFeature" : {
       "@id" : "http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"
+    },
+    "isFeatureOfInterestOf" : {
+      "@id" : "https://w3id.org/saref#isFeatureOfInterestOf",
+      "@type" : "@id"
     }
   }
 }

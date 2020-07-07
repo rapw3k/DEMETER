@@ -43,7 +43,6 @@
                                           rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
                                           foaf:name "Raul Palma"
                                         ] ;
-                            owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
                             dct:description "The DEMETER FarmAnimal is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "DEMETER FarmAnimal"@en ;
@@ -57,6 +56,10 @@
 #    Annotation properties
 #################################################################
 
+
+###  http://purl.obolibrary.org/obo/TAXRANK_1000000
+<http://purl.obolibrary.org/obo/TAXRANK_1000000> rdf:type owl:AnnotationProperty ;
+                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> . 
 
 #################################################################
 #    Datatypes
@@ -87,6 +90,7 @@ saref4agri:isMemberOf rdf:type owl:ObjectProperty ;
             
 ###  https://w3id.org/def/saref4agri#hasID
 saref4agri:hasID rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
        rdfs:range saref4agri:ID ;
        rdfs:comment "A relation to express the unique identifier of an animal." ;
        rdfs:label "has id"@en ;
@@ -99,6 +103,13 @@ saref4agri:hasMember rdf:type owl:ObjectProperty ;
            rdfs:label "has member" ;
            rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .       
 
+###  http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal          
+af-inspire:includesAnimal
+        a               owl:ObjectProperty ;
+        rdfs:range      af-inspire:FarmAnimalSpecies ;
+        skos:prefLabel  "includesAnimal"@en ;
+        rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+
 ### https://uri.fiware.org/ns/data-models#calvedBy
 fiware:calvedBy	a      owl:ObjectProperty ;     
         rdfs:label   		"calvedBy"@en ;
@@ -110,6 +121,10 @@ fiware:siredBy	a      owl:ObjectProperty ;
         rdfs:label   		"siredBy"@en ;
         rdfs:comment		"Father of the animal" ;
         rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .         
+
+### https://uri.fiware.org/ns/data-models#location
+fiware:location	a      owl:ObjectProperty ;     
+        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .       
         
 ### https://uri.fiware.org/ns/data-models#ownedBy
 fiware:ownedBy	a      owl:ObjectProperty ;     
@@ -128,13 +143,6 @@ fiware:fedWith	a      owl:ObjectProperty ;
         rdfs:label   		"fedWith"@en ;
         rdfs:comment		"Food used for the animal" ;
         rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .                  
-
-###  http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal          
-af-inspire:includesAnimal
-        a               owl:ObjectProperty ;
-        rdfs:range      af-inspire:FarmAnimalSpecies ;
-        skos:prefLabel  "includesAnimal"@en ;
-        rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
 
 #################################################################
 #    Data properties
@@ -155,6 +163,10 @@ saref4agri:hasDeathDate rdf:type owl:DatatypeProperty ;
               rdfs:label "has death date" ;
               rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .           
          
+###  https://w3id.org/def/saref4agri#hasName
+saref4agri:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+
 ###  http://foodie-cloud.com/model/foodie#livestockType        
 foodie:livestockType  a  owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
@@ -300,6 +312,15 @@ saref4agri:AnimalGroup rdf:type owl:Class ;
 saref4agri:ID rdf:type owl:Class ;
     rdfs:label "ID" ;
     rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .  
+
+###  http://purl.obolibrary.org/obo/TAXRANK_0000000
+<http://purl.obolibrary.org/obo/TAXRANK_0000000> rdf:type owl:Class ;
+                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .
+
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class ;
+                                               rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
+                                                                <http://www.opengis.net/ont/gml> .
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies
 af-inspire:FarmAnimalSpecies  a           owl:Class ;

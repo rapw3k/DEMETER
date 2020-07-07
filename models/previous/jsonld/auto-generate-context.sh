@@ -1,0 +1,10 @@
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriFeature-context.jsonld https://w3id.org/demeter/agri/agriFeature
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriAlert-context.jsonld https://w3id.org/demeter/agri/agriAlert
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriCommon-context.jsonld https://w3id.org/demeter/agri/agriCommon
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriCrop-context.jsonld https://w3id.org/demeter/agri/agriCrop
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriIntervention-context.jsonld https://w3id.org/demeter/agri/agriIntervention
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriPest-context.jsonld https://w3id.org/demeter/agri/agriPest
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriProduct-context.jsonld https://w3id.org/demeter/agri/agriProduct
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriProperty-context.jsonld https://w3id.org/demeter/agri/agriProperty
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriSystem-context.jsonld https://w3id.org/demeter/agri/agriSystem
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o farmAnimal-context.jsonld https://w3id.org/demeter/agri/farmAnimal

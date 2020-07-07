@@ -1,8 +1,7 @@
 {
   "@context" : {
     "invalidatedAtTime" : {
-      "@id" : "http://www.w3.org/ns/prov#invalidatedAtTime",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "http://www.w3.org/ns/prov#invalidatedAtTime"
     },
     "Crop" : {
       "@id" : "https://w3id.org/def/saref4agri#Crop"
@@ -14,16 +13,18 @@
     "affiliation" : {
       "@id" : "http://schema.org/affiliation"
     },
+    "hasDevice" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#hasDevice",
+      "@type" : "@id"
+    },
     "versionInfo" : {
       "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
     },
     "generatedAtTime" : {
-      "@id" : "http://www.w3.org/ns/prov#generatedAtTime",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "http://www.w3.org/ns/prov#generatedAtTime"
     },
     "validFrom" : {
-      "@id" : "http://portele.de/ont/inspire/baseInspire#validFrom",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validFrom"
     },
     "hasAgriParcelParent" : {
       "@id" : "https://uri.fiware.org/ns/data-models#hasAgriParcelParent",
@@ -40,8 +41,7 @@
       "@id" : "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Codelist"
     },
     "hasName" : {
-      "@id" : "https://w3id.org/def/saref4agri#hasName",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id" : "https://w3id.org/def/saref4agri#hasName"
     },
     "lastPlantedAt" : {
       "@id" : "https://uri.fiware.org/ns/data-models#lastPlantedAt"
@@ -51,6 +51,9 @@
     },
     "area" : {
       "@id" : "https://uri.fiware.org/ns/data-models#area"
+    },
+    "createdAt" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#createdAt"
     },
     "Geometry" : {
       "@id" : "http://www.opengis.net/ont/geosparql#Geometry"
@@ -86,10 +89,6 @@
       "@id" : "https://w3id.org/def/saref4agri#contains",
       "@type" : "@id"
     },
-    "containsSite" : {
-      "@id" : "http://inspire.ec.europa.eu/schemas/af/3.0#contains",
-      "@type" : "@id"
-    },
     "landLocation" : {
       "@id" : "https://uri.fiware.org/ns/data-models#landLocation",
       "@type" : "@id"
@@ -97,12 +96,15 @@
     "Concept" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
     },
-    "wgs84_poslocation" : {
-      "@id" : "http://www.w3.org/2003/01/geo/wgs84_poslocation",
+    "includesAnimal" : {
+      "@id" : "http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal",
       "@type" : "@id"
     },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "based_near" : {
+      "@id" : "http://xmlns.com/foaf/0.1/based_near"
     },
     "ActivityComplex" : {
       "@id" : "http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex"
@@ -111,15 +113,19 @@
       "@id" : "http://foodie-cloud.com/model/foodie#holdingSite",
       "@type" : "@id"
     },
+    "PropertyType" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#PropertyType"
+    },
+    "soilProperty" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#soilProperty",
+      "@type" : "@id"
+    },
     "creator" : {
       "@id" : "http://purl.org/dc/terms/creator"
     },
     "holdingPlot" : {
       "@id" : "http://foodie-cloud.com/model/foodie#holdingPlot",
       "@type" : "@id"
-    },
-    "name" : {
-      "@id" : "http://xmlns.com/foaf/0.1/name"
     },
     "holdingZone" : {
       "@id" : "http://foodie-cloud.com/model/foodie#holdingZone",
@@ -145,10 +151,6 @@
     },
     "location" : {
       "@id" : "https://uri.fiware.org/ns/data-models#location",
-      "@type" : "@id"
-    },
-    "wgs84Location" : {
-      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#location",
       "@type" : "@id"
     },
     "TractorType" : {
@@ -193,8 +195,7 @@
       "@id" : "http://purl.org/dc/terms/title"
     },
     "validTo" : {
-      "@id" : "http://portele.de/ont/inspire/baseInspire#validTo",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validTo"
     },
     "Holding" : {
       "@id" : "http://inspire.ec.europa.eu/schemas/af/3.0#Holding"
@@ -221,9 +222,11 @@
     "MachineType" : {
       "@id" : "http://foodie-cloud.com/model/foodie#MachineType"
     },
+    "category" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#category"
+    },
     "notes" : {
-      "@id" : "http://foodie-cloud.com/model/foodie#notes",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id" : "http://foodie-cloud.com/model/foodie#notes"
     },
     "EconomicActivityNACEValue" : {
       "@id" : "http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue"
@@ -246,8 +249,7 @@
       "@type" : "@id"
     },
     "code" : {
-      "@id" : "http://foodie-cloud.com/model/foodie#code",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id" : "http://foodie-cloud.com/model/foodie#code"
     },
     "AgriParcel" : {
       "@id" : "https://uri.fiware.org/ns/data-models#AgriParcel"
@@ -256,8 +258,7 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "description" : {
-      "@id" : "http://foodie-cloud.com/model/foodie#description",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id" : "http://foodie-cloud.com/model/foodie#description"
     },
     "ManagementZone" : {
       "@id" : "http://foodie-cloud.com/model/foodie#ManagementZone"
