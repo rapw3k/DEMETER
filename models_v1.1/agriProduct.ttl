@@ -1,0 +1,360 @@
+@prefix : <https://w3id.org/cybele/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix stat: <http://data.europa.eu/m8g/> .
+@prefix schema: <http://schema.org/> .
+@prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix iso19115-citation: <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#> .
+@prefix iso19108: <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix saref: <https://w3id.org/saref#> .
+@base <https://w3id.org/demeter/> .
+
+<https://w3id.org/demeter/agri/agriProduct> rdf:type owl:Ontology ;
+                            owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProduct.ttl> ;
+                            dct:contributor [ schema:affiliation [ foaf:name "OGC"
+                                                                 ] ;
+                                              foaf:name "Rob Atkinson"
+                                            ] ,
+                                            [ schema:affiliation [ foaf:name "ICCS"
+                                                                 ] ;
+                                              foaf:name "Ioanna Roussaki"
+                                            ] ;
+                            dct:creator [ schema:affiliation [ foaf:name "PSNC"
+                                                             ] ;
+                                          rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+                                          foaf:name "Raul Palma"
+                                        ] ;
+                            owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
+                            dct:description "The DEMETER AgriProduct is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+                            dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+                            dct:title "DEMETER AgriProduct"@en ;
+                            rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+                            owl:versionInfo "1.0" ;
+                            foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
+                                         foaf:name "DEMETER project"
+                                       ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://foodie-cloud.com/model/foodie#productKind        
+foodie:productKind  a   owl:ObjectProperty ;
+        rdfs:range      foodie:ProductKindValue ;
+        skos:prefLabel  "productKind"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#manufacturer        
+foodie:manufacturer  a  owl:ObjectProperty ;
+        rdfs:range      iso19115-citation:ResponsibleParty ;
+        skos:prefLabel  "manufacturer"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#nutrient                
+foodie:nutrient  a      owl:ObjectProperty ;
+        rdfs:range      foodie:ProductNutrients ;
+        skos:prefLabel  "nutrient"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
+
+###  http://foodie-cloud.com/model/foodie#nutrientProduct                
+foodie:nutrientProduct  a	owl:ObjectProperty ;
+        rdfs:range      foodie:Product ;
+        skos:prefLabel  "nutrientProduct"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
+
+###  http://foodie-cloud.com/model/foodie#solventQuantity                
+foodie:solventQuantity
+        a               owl:ObjectProperty ;
+        rdfs:range      iso19103:Measure ;
+        skos:prefLabel  "solventQuantity"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
+
+###  http://foodie-cloud.com/model/foodie#safetyPeriod                
+foodie:safetyPeriod  a  owl:ObjectProperty ;
+        rdfs:range      iso19108:Period ;
+        skos:prefLabel  "safetyPeriod"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
+
+###  http://foodie-cloud.com/model/foodie#productQuantity                
+foodie:productQuantity
+        a               owl:ObjectProperty ;
+        rdfs:range      iso19103:Measure ;
+        skos:prefLabel  "productQuantity"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
+
+###  http://foodie-cloud.com/model/foodie#ingredientAmount                                
+foodie:ingredientAmount
+        a               owl:ObjectProperty ;
+        rdfs:range      iso19103:Measure ;
+        skos:prefLabel  "ingredientAmount"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#nutrientAmount                                
+foodie:nutrientAmount
+        a               owl:ObjectProperty ;
+        rdfs:range      iso19103:Measure ;
+        skos:prefLabel  "nutrientAmount"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+### https://uri.fiware.org/ns/data-models#hasAgriProductTypeParent
+fiware:hasAgriProductTypeParent	a	owl:ObjectProperty ;
+        rdfs:label   		"hasAgriProductTypeParent"@en ;
+        rdfs:comment		"Reference to the parent product type i.e. immediately above the entity in the hierarchy." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> .
+
+### https://uri.fiware.org/ns/data-models#hasAgriProductTypeChildren
+fiware:hasAgriProductTypeChildren	a	owl:ObjectProperty ;
+        rdfs:label   		"hasAgriProductTypeChildren"@en ;
+        rdfs:comment		"Reference to child product types i.e. immediately below this entity in the hierarchy." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> .
+
+### https://uri.fiware.org/ns/data-models#hasAgriProductType
+fiware:hasAgriProductType	a      owl:ObjectProperty ;     
+        rdfs:label   		"hasAgriProductType"@en ;
+        rdfs:comment		"Reference to the AgriProductType used/ applied." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .                          
+
+#################################################################
+#    Data properties
+#################################################################
+        
+###  http://foodie-cloud.com/model/foodie#productType                
+foodie:productType  a   owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "productType"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#productSubType                
+foodie:productSubType
+        a               owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "productSubType"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#storageHandling                
+foodie:storageHandling
+        a               owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "storageHandling"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#productName                
+foodie:productName  a   owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "productName"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#safetyInstructions                
+foodie:safetyInstructions
+        a               owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "safetyInstructions"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#productCode                
+foodie:productCode  a   owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "productCode"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#registrationCode                        
+foodie:registrationCode
+        a               owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "registrationCode"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#registerUrl                                
+foodie:registerUrl  a   owl:DatatypeProperty ;
+        rdfs:range      xsd:anyURI ;
+        skos:prefLabel  "registerUrl"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#ingredientName                                
+foodie:ingredientName
+        a               owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "ingredientName"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#nutrientName
+foodie:nutrientName  a  owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "nutrientName"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#nutrientMeasure                                
+foodie:nutrientMeasure
+        a               owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "nutrientMeasure"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+                
+### https://uri.fiware.org/ns/data-models#root
+fiware:root	a      owl:DatatypeProperty ;
+        rdfs:label   		"root"@en ;
+        rdfs:comment		"A logical indicator that this product is the root of an AgriProductType hierarchy. Logical true indicates it is the root." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> .
+         
+
+#################################################################
+#    Classes
+#################################################################
+
+### http://foodie-cloud.com/model/foodie#Product                
+foodie:Product  a        owl:Class ;
+        rdfs:subClassOf  iso19150-2:FeatureType , iso19109:AnyFeature , geo:Feature ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:description
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:productKind
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:price
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:productType
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:storageHandling
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:minCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:productName
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:safetyInstructions
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:minCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:manufacturer
+                         ] ;
+        skos:prefLabel   "Product"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+### http://foodie-cloud.com/model/foodie#ProductPreparation                        
+foodie:ProductPreparation
+        a                owl:Class ;
+        rdfs:subClassOf  iso19109:AnyFeature , iso19150-2:FeatureType , geo:Feature ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:solventQuantity
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:safetyPeriod
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:productQuantity
+                         ] ;
+        skos:prefLabel   "ProductPreparation"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+### http://foodie-cloud.com/model/foodie#ActiveIngredients                                
+foodie:ActiveIngredients
+        a                owl:Class ;
+        rdfs:subClassOf  iso19150-2:Datatype ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:ingredientName
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:ingredientAmount
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:code
+                         ] ;
+        skos:prefLabel   "ActiveIngredients"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+### http://foodie-cloud.com/model/foodie#ProductNutrients                                        
+foodie:ProductNutrients
+        a                owl:Class ;
+        rdfs:subClassOf  iso19109:AnyFeature , iso19150-2:FeatureType , geo:Feature ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:nutrientName
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:nutrientMeasure
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:nutrientAmount
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:nutrientProduct
+                         ] ;
+        skos:prefLabel   "ProductNutrients"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+### http://foodie-cloud.com/model/foodie#ProductNutrients                                                
+foodie:ProductKindValue
+        a                owl:Class ;
+        rdfs:subClassOf  skos:Concept , iso19150-2:Codelist ;
+        skos:prefLabel   "ProductKindValue"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+                                
+### https://uri.fiware.org/ns/data-models#AgriProductType
+fiware:AgriProductType	rdf:type owl:Class ;
+			rdfs:label "AgriProductType" ;   
+			rdfs:comment "This entity contains a harmonised description of a generic agricultural product type. This entity is primarily associated with the agricultural vertical and related IoT applications. The AgriProductType includes a hierarchical structure that allows product types to be grouped in a flexible way." ;
+			rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> .
+
+#################################################################
+#    Alignments
+#################################################################
+
+foodie:Product owl:equivalentClass fiware:AgriProductType .
+foodie:productName rdfs:subPropertyOf fiware:name .
+foodie:nutrientName rdfs:subPropertyOf fiware:name .
+foodie:ingredientName rdfs:subPropertyOf fiware:name .
+fiware:hasAgriProductTypeParent rdfs:subClassOf fiware:hasAgriProductType .
+fiware:hasAgriProductTypeChildren rdfs:subClassOf fiware:hasAgriProductType .
+
+#################################################################
+#    Individuals
+#################################################################
+

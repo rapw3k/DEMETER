@@ -1,0 +1,340 @@
+@prefix : <https://w3id.org/cybele/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix stat: <http://data.europa.eu/m8g/> .
+@prefix schema: <http://schema.org/> .
+@prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix iso19115-citation: <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix schema-org: <https://schema.org/> .
+@base <https://w3id.org/demeter/> .
+
+<https://w3id.org/demeter/agri/agriCommon> rdf:type owl:Ontology ;
+                            owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl> ;
+                            dct:contributor [ schema:affiliation [ foaf:name "OGC"
+                                                                 ] ;
+                                              foaf:name "Rob Atkinson"
+                                            ] ,
+                                            [ schema:affiliation [ foaf:name "ICCS"
+                                                                 ] ;
+                                              foaf:name "Ioanna Roussaki"
+                                            ] ;
+                            dct:creator [ schema:affiliation [ foaf:name "PSNC"
+                                                             ] ;
+                                          rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+                                          foaf:name "Raul Palma"
+                                        ] ;
+                            dct:description "The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+                            dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+                            dct:title "DEMETER AgriCommon"@en ;
+                            rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+                            owl:versionInfo "1.0" ;
+                            foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
+                                         foaf:name "DEMETER project"
+                                       ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+dct:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dct:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+dct:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dct:title rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/affiliation
+schema:affiliation rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/depiction
+foaf:depiction rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/maker
+foaf:maker rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+###  http://purl.obolibrary.org/obo/TAXRANK_1000000
+<http://purl.obolibrary.org/obo/TAXRANK_1000000> rdf:type owl:AnnotationProperty ;
+                                                 rdfs:label "has_rank"@en ;
+                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> . 
+
+#################################################################
+#    Datatypes
+#################################################################
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/def/saref4agri#managesFarm
+saref4agri:managesFarm rdf:type owl:ObjectProperty ;
+             rdfs:label "manages farm"@en .
+                                                                           
+###  http://xmlns.com/foaf/0.1/member
+<http://xmlns.com/foaf/0.1/member>
+				a rdf:Property, owl:ObjectProperty ;
+  			rdfs:label "member" ;
+  			rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+  			  			                                              
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/def/saref4agri#hasName
+saref4agri:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string ;
+         rdfs:label "A relation to express the name of an entity (e.g.,animal)." ,
+                    "has name" ;
+         rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+
+###  https://w3id.org/saref#hasDescription
+<https://w3id.org/saref#hasDescription> rdf:type owl:DatatypeProperty ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:comment "A relationship providing a description of an entity (e.g., device)" ;
+                                        rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                        rdfs:label "has description"@en .
+
+###  https://w3id.org/saref#hasTimestamp
+<https://w3id.org/saref#hasTimestamp> rdf:type owl:DatatypeProperty ;
+                                      rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                      rdfs:label "has timestamp"@en .                                                           
+
+###  http://www.w3.org/ns/prov#generatedAtTime
+prov:generatedAtTime
+				a								owl:DatatypeProperty ;
+				rdfs:label 			"generatedAtTime" ;
+				rdfs:comment		"The time at which an entity was completely created and is available for use."@en ;
+				rdfs:range 			xsd:dateTime ;
+				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
+
+###  http://www.w3.org/ns/prov#invalidatedAtTime				
+prov:invalidatedAtTime
+				a								owl:DatatypeProperty ;
+				rdfs:label			"invalidatedAtTime" ;
+				rdfs:comment		"The time at which an entity was invalidated (i.e., no longer usable)."@en ;
+				rdfs:range			xsd:dateTime ;
+				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
+				
+###  http://foodie-cloud.com/model/foodie#code
+foodie:code  a          owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "code"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#description        
+foodie:description  a   owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "description"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#notes        
+foodie:notes  a         owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "notes"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
+
+###  http://foodie-cloud.com/model/foodie#price                
+foodie:price  a         owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "price"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        
+###  http://foodie-cloud.com/model/foodie#type        
+foodie:type  a          owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "type"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        				
+###  <http://portele.de/ont/inspire/baseInspire#validFrom> 
+common:validFrom	a      owl:DatatypeProperty ;
+        rdfs:range       xsd:dateTime ;
+        skos:prefLabel   "begin of real-world phenomenon"@en ;
+        rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
+
+###  <http://portele.de/ont/inspire/baseInspire#validTo> 
+common:validTo	a        owl:DatatypeProperty ;
+        rdfs:range       xsd:dateTime ;        
+        skos:prefLabel   "end of real-world phenomenon"@en ;
+        rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
+        
+### https://uri.fiware.org/ns/data-models#createdAt
+fiware:createdAt	a      owl:DatatypeProperty ;
+        rdfs:label   		"createdAt"@en ;
+        rdfs:comment		"Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md>.
+
+### https://uri.fiware.org/ns/data-models#modifiedAt
+fiware:modifiedAt	a      owl:DatatypeProperty ;
+        rdfs:label   		"modifiedAt"@en ;
+        rdfs:comment		"Indicates the date/ time when the entity was last modified in ISO 8601 format. The value of this will be set by the server when the entity was modified, if the entity has not been modified it may have a null value." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+
+### https://uri.fiware.org/ns/data-models#source
+fiware:source	a      owl:DatatypeProperty ;
+        rdfs:label   		"source"@en ;
+        rdfs:comment		"Specifies the URL to the source of this data (either organisation or where relevant more specific source)" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+                       
+### https://uri.fiware.org/ns/data-models#dataProvider
+fiware:dataProvider	a      owl:DatatypeProperty ;
+        rdfs:label   		"dataProvider"@en ;
+        rdfs:comment		"Specifies the URL to information about the provider of this information" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+
+### https://uri.fiware.org/ns/data-models#entityVersion
+fiware:entityVersion	a      owl:DatatypeProperty ;
+        rdfs:label   		"entityVersion"@en ;
+        rdfs:comment		"The entity specification version as a number. A version number of 2.0 or later denotes the entity is represented using NGSI-LD" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+
+### https://uri.fiware.org/ns/data-models#name
+fiware:name	a      owl:DatatypeProperty ;
+        rdfs:label   		"name"@en ;
+        rdfs:comment		"The name of this [entity]" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> .
+        
+### https://uri.fiware.org/ns/data-models#alternateName
+fiware:alternateName	a      owl:DatatypeProperty ;
+        rdfs:label   		"alternateName"@en ;
+        rdfs:comment		"An alternative name for this [entity]" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .        
+        
+### https://uri.fiware.org/ns/data-models#description
+fiware:description	a      owl:DatatypeProperty ;
+        rdfs:label   		"description"@en ;
+        rdfs:comment		"A description of the [entity]." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+        
+### https://uri.fiware.org/ns/data-models#agroVocConcept
+fiware:agroVocConcept	a      owl:DatatypeProperty ;
+        rdfs:label   		"agroVocConcept"@en ;
+        rdfs:comment		"URL of the FAO details of the [entity]" ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .  
+        
+### https://uri.fiware.org/ns/data-models#category
+fiware:category	a      owl:DatatypeProperty ;     
+        rdfs:label   		"category"@en ;
+        rdfs:comment		"The category of the entity, e.g., parcel of land (arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland), alert (Traffic jam, accidents, weather conditions, high level of pollutants)." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> .                        
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class ;
+                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://xmlns.com/foaf/0.1/member> ;
+                                                    owl:someValuesFrom <http://xmlns.com/foaf/0.1/Agent>
+                                                  ] ;
+                                  rdfs:label "Agent"@en ;
+                                  rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .                                  
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+                                   rdfs:label "Person"@en ;
+                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+
+###  https://schema.org/Organization
+<https://schema.org/Organization> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+                                  rdfs:label "Organization"@en ;
+                                  rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+                                  
+###  https://w3id.org/def/saref4agri#FarmHolding
+saref4agri:FarmHolding rdf:type owl:Class ;
+             rdfs:subClassOf <https://schema.org/Organization> ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty saref4agri:managesFarm ;
+                               owl:someValuesFrom saref4agri:Farm
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty saref4agri:hasName ;
+                               owl:allValuesFrom xsd:string
+                             ] ;
+             rdfs:comment "A class to decsribe a saref4agri farm holding as subcass of an org:Organization" ;
+             rdfs:label "Farm holding"@en .
+
+
+###  https://w3id.org/def/saref4agri#Farmer
+saref4agri:Farmer rdf:type owl:Class ;
+        rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty saref4agri:managesFarm ;
+                          owl:someValuesFrom saref4agri:Farm
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty saref4agri:hasName ;
+                          owl:allValuesFrom xsd:string
+                        ] ;
+        rdfs:comment "A class to decsribe a saref4agri farmer as subcass of a foaf:Person" ;
+        rdfs:label "Farmer"@en .
+
+###  http://purl.obolibrary.org/obo/TAXRANK_0000000
+<http://purl.obolibrary.org/obo/TAXRANK_0000000> rdf:type owl:Class ;
+                                                 rdfs:label "taxonomic_rank"@en ;
+                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .
+              
+#################################################################
+#    Alignments
+#################################################################
+
+saref4agri:hasName owl:equivalentProperty fiware:name .
+fiware:alternateName rdfs:subPropertyOf fiware:name .
+saref:hasDescription owl:equivalentProperty foodie:description .
+saref:hasDescription owl:equivalentProperty fiware:description .
+foodie:description owl:equivalentProperty fiware:description .
+prov:generatedAtTime rdfs:subPropertyOf saref:hasTimestamp .
+fiware:createdAt rdfs:subPropertyOf saref:hasTimestamp .
+iso19115-citation:ResponsibleParty rdfs:subClassOf foaf:Agent .
+fiware:category owl:equivalentProperty foodie:type .
+
+#################################################################
+#    Individuals
+#################################################################
+
