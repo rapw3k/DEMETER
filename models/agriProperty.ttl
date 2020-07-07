@@ -51,6 +51,7 @@
                                           rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
                                           foaf:name "Raul Palma"
                                         ] ;
+														owl:imports <https://w3id.org/demeter/agri/agriCommon> ;                                                                                
                             dct:description "The DEMETER AgriProperty is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "DEMETER AgriProperty"@en ;
@@ -89,26 +90,6 @@
                                               rdfs:isDefinedBy <https://w3id.org/saref#> ;
                                               rdfs:label "relates to measurement"@en .
 
-###  https://w3id.org/saref#isPropertyOf
-<https://w3id.org/saref#isPropertyOf> rdf:type owl:ObjectProperty ;
-                                      rdfs:comment "Relation between a property and a feature of interest in which such property appears."@en ;
-                                      rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                      rdfs:label "is property of"@en .
-
-###  https://w3id.org/saref#hasProperty
-<https://w3id.org/saref#hasProperty> rdf:type owl:ObjectProperty ;
-                                     owl:inverseOf <https://w3id.org/saref#isPropertyOf> ;
-                                     rdfs:comment "Relation between a feature of interest and its properties."@en ;
-                                     rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                     rdfs:label "has property"@en .
-
-###  https://w3id.org/saref#hasFeatureOfInterest
-<https://w3id.org/saref#hasFeatureOfInterest> rdf:type owl:ObjectProperty ;
-                                              owl:inverseOf <https://w3id.org/saref#isFeatureOfInterestOf> ;
-                                              rdfs:comment "Relation between a measurement and the feature of interest being measured."@en ;
-                                              rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                              rdfs:label "has feature of interest"@en .
-
 ###  https://w3id.org/saref#isMeasuredIn
 <https://w3id.org/saref#isMeasuredIn> rdf:type owl:ObjectProperty ;
                                       rdfs:isDefinedBy <https://w3id.org/saref#> ;
@@ -141,6 +122,32 @@
                                           rdfs:isDefinedBy <https://w3id.org/saref#> ;
                                           rdfs:label "measures property"@en .
 
+###  https://w3id.org/saref#hasFeatureOfInterest
+<https://w3id.org/saref#hasFeatureOfInterest> rdf:type owl:ObjectProperty ;
+                                              owl:inverseOf <https://w3id.org/saref#isFeatureOfInterestOf> ;
+                                              rdfs:comment "Relation between a measurement and the feature of interest being measured."@en ;
+                                              rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                              rdfs:label "has feature of interest"@en .
+                                              
+###  https://w3id.org/saref#isFeatureOfInterestOf
+<https://w3id.org/saref#isFeatureOfInterestOf> rdf:type owl:ObjectProperty ;
+                                               rdfs:comment "Relation betwwen a feature of interest and the measurments that are about it."@en ;
+                                               rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                               rdfs:label "is feature of interest of"@en .
+
+###  https://w3id.org/saref#hasProperty
+<https://w3id.org/saref#hasProperty> rdf:type owl:ObjectProperty ;
+                                     owl:inverseOf <https://w3id.org/saref#isPropertyOf> ;
+                                     rdfs:comment "Relation between a feature of interest and its properties."@en ;
+                                     rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                     rdfs:label "has property"@en .
+                                     
+###  https://w3id.org/saref#isPropertyOf
+<https://w3id.org/saref#isPropertyOf> rdf:type owl:ObjectProperty ;
+                                      rdfs:comment "Relation between a property and a feature of interest in which such property appears."@en ;
+                                      rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                      rdfs:label "is property of"@en .
+
 ### http://foodie-cloud.com/model/foodie#quantitativeProperty
 foodie:quantitativeProperty	a	owl:ObjectProperty ;
         rdfs:range      iso19103:Measure ;
@@ -152,29 +159,23 @@ foodie:propertyType  a  owl:ObjectProperty ;
         rdfs:range      foodie:PropertyTypeValue ;
         skos:prefLabel  "propertyType"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-###  http://foodie-cloud.com/model/foodie#soilProperty
-foodie:soilProperty  a  owl:ObjectProperty ;
-        rdfs:range      foodie:PropertyType ;
-        skos:prefLabel  "soilProperty"@en ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
         
 ### http://foodie-cloud.com/model/foodie#productionProperty
 foodie:productionProperty	a	owl:ObjectProperty ;
         rdfs:range      foodie:PropertyType ;
         skos:prefLabel  "productionProperty"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-        
+
+###  http://foodie-cloud.com/model/foodie#soilProperty
+foodie:soilProperty  a  owl:ObjectProperty ;
+        rdfs:range      foodie:PropertyType ;
+        skos:prefLabel  "soilProperty"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+                
 ### https://uri.fiware.org/ns/data-models#recordHasAgriParcel
 fiware:recordHasAgriParcel	a	owl:ObjectProperty ;
         rdfs:label   		"recordHasAgriParcel"@en ;
         rdfs:comment		"Reference to the AgriParcel to which this entity relates." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
-
-### https://uri.fiware.org/ns/data-models#hasDevice
-fiware:hasDevice	a      owl:ObjectProperty ;
-        rdfs:label   		"hasDevice"@en ;
-        rdfs:comment		"Reference to the IoT devices associated with this greenhouse i.e. sensors, controls." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
 
 ### https://uri.fiware.org/ns/data-models#refDevice
@@ -189,8 +190,15 @@ fiware:refPointOfInterest	a	owl:ObjectProperty ;
         rdfs:comment		"A reference to a point of interest (usually a weather station) associated to this observation" ;
         rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .
 
-###  http://purl.oclc.org/NET/ssnx/ssn#hasProperty
+### https://uri.fiware.org/ns/data-models#hasDevice
+fiware:hasDevice	a      owl:ObjectProperty ;
+        rdfs:label   		"hasDevice"@en ;
+        rdfs:comment		"Reference to the IoT devices associated with this [entity] i.e. sensors, controls." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+
+### http://www.w3.org/ns/ssn/hasProperty
 ssn:hasProperty rdf:type owl:ObjectProperty ;
+								rdfs:label "has property"@en ;
                 rdfs:comment "A relation between a FeatureOfInterest and a Property of that feature." ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/ssn> .
 
@@ -199,11 +207,6 @@ ssn:hasProperty rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
         
-###  https://w3id.org/saref#hasTimestamp
-<https://w3id.org/saref#hasTimestamp> rdf:type owl:DatatypeProperty ;
-                                      rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                      rdfs:label "has timestamp"@en .
-
 ###  https://w3id.org/saref#hasValue
 <https://w3id.org/saref#hasValue> rdf:type owl:DatatypeProperty ;
                                   rdfs:isDefinedBy <https://w3id.org/saref#> ;
@@ -262,13 +265,7 @@ fiware:relativeHumidity	a	owl:DatatypeProperty ;
         rdfs:label   		"relativeHumidity"@en ;
         rdfs:comment		"Relative Humidity a number between 0 and 1 representing the range of 0% to 100%. 0 ≤ relativeHumidity ≤ 1" ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
-        
-### https://uri.fiware.org/ns/data-models#atmosphericPressure
-fiware:atmosphericPressure	a	owl:DatatypeProperty ;
-        rdfs:label   		"atmosphericPressure"@en ;
-        rdfs:comment		"Atmospheric Pressure nominally in units of hecto Pascals." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
-               
+                       
 ### https://uri.fiware.org/ns/data-models#observedAt
 fiware:observedAt	a     owl:DatatypeProperty ;
         rdfs:label   		"observedAt"@en ;
@@ -333,7 +330,7 @@ fiware:windSpeed	a      owl:DatatypeProperty ;
 fiware:atmosphericPressure	a	owl:DatatypeProperty ;
         rdfs:label   		"atmosphericPressure"@en ;
         rdfs:comment		"The atmospheric pressure observed measured in Hecto Pascals" ;
-        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 
+        rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> . 
 
 ### https://uri.fiware.org/ns/data-models#pressureTendency
 fiware:pressureTendency	a	owl:DatatypeProperty ;
@@ -444,16 +441,20 @@ fiware:snowHeight	a      owl:DatatypeProperty ;
                                        rdfs:isDefinedBy <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> ,
                                                         <https://w3id.org/saref#> ;
                                        rdfs:label "Unit of measure"@en .
-
-###  https://w3id.org/saref#Device
-<https://w3id.org/saref#Device> rdf:type owl:Class ;
-                                rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                rdfs:label "Device"@en .
                                 
 ###  https://w3id.org/saref#FeatureOfInterest
 <https://w3id.org/saref#FeatureOfInterest> rdf:type owl:Class ;
+                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <https://w3id.org/saref#hasProperty> ;
+                                                             owl:allValuesFrom <https://w3id.org/saref#Property>
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <https://w3id.org/saref#isFeatureOfInterestOf> ;
+                                                             owl:allValuesFrom <https://w3id.org/saref#Measurement>
+                                                           ] ;
+                                           rdfs:comment <https://w3id.org/saref#> ;
                                            rdfs:label "Feature of interest"@en ;
-                                           rdfs:isDefinedBy <https://w3id.org/saref#> .                                                                                   
+                                           rdfs:isDefinedBy <https://w3id.org/saref#> .
 
 ###  https://w3id.org/saref#Humidity
 <https://w3id.org/saref#Humidity> rdf:type owl:Class ;
@@ -529,8 +530,8 @@ fiware:WeatherForecast	rdf:type owl:Class ;
 			
 ###  http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind
 qu:QuantityKind rdf:type owl:Class ;
-			rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-			
+      rdfs:label "QuantityKind" ;   
+			rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .			
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration
 dim:Acceleration rdf:type owl:Class ;
@@ -617,53 +618,53 @@ dim:VelocityOrSpeed rdf:type owl:Class ;
                     rdfs:subClassOf qu:QuantityKind ;
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .                              
                                                               
-
-###  http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest
-ssn:FeatureOfInterest rdf:type owl:Class ;
-                      rdfs:isDefinedBy "http://purl.oclc.org/NET/ssnx/ssn" ;
-                      rdfs:label "Feature of Interest" .
+###  http://www.w3.org/ns/sosa/FeatureOfInterest
+sosa:FeatureOfInterest rdf:type owl:Class ;
+											 rdfs:label "Feature Of Interest"@en ;
+											 rdfs:isDefinedBy sosa: .
 
 ###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer
 cf-feature:Layer rdf:type owl:Class ;
-                 rdfs:subClassOf ssn:FeatureOfInterest ;
+                 rdfs:subClassOf sosa:FeatureOfInterest ;
                  rdfs:label "Layer" ;
                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
                  
 ###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium
 cf-feature:Medium rdf:type owl:Class ;
-                  rdfs:subClassOf ssn:FeatureOfInterest ;
+                  rdfs:subClassOf sosa:FeatureOfInterest ;
                   rdfs:label "Medium" ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
                   
 ###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Precipitation
 cf-feature:Precipitation rdf:type owl:Class ;
-                         rdfs:subClassOf ssn:FeatureOfInterest ;
+                         rdfs:subClassOf sosa:FeatureOfInterest ;
                          rdfs:label "Precipitation" ;
                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
                          
 ###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface
 cf-feature:Surface rdf:type owl:Class ;
-                   rdfs:subClassOf ssn:FeatureOfInterest ;
+                   rdfs:subClassOf sosa:FeatureOfInterest ;
                    rdfs:label "Surface" ;
                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
 
 
 ###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceLayer
 cf-feature:SurfaceLayer rdf:type owl:Class ;
-                        rdfs:subClassOf ssn:FeatureOfInterest ;
+                        rdfs:subClassOf sosa:FeatureOfInterest ;
                         rdfs:label "Surface Layer" ;
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
 
 
 ###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Wind
 cf-feature:Wind rdf:type owl:Class ;
-                rdfs:subClassOf ssn:FeatureOfInterest ;
+                rdfs:subClassOf sosa:FeatureOfInterest ;
                 rdfs:label "Wind" ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .                                          
 
 
 ###  http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind
 qu:PropertyKind rdf:type owl:Class ;
+								rdfs:label "PropertyKind" ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
 
 
@@ -672,7 +673,7 @@ qu:PropertyKind rdf:type owl:Class ;
 #################################################################
 
 ssn:hasProperty owl:equivalentProperty saref:hasProperty .
-saref:FeatureOfInterest owl:equivalentClass ssn:FeatureOfInterest .
+saref:FeatureOfInterest owl:equivalentClass sosa:FeatureOfInterest .
 saref:Property owl:equivalentClass foodie:PropertyType .
 saref:Property owl:equivalentClass qu:QuantityKind .
 saref:Temperature owl:equivalentClass dim:Temperature .
@@ -682,9 +683,9 @@ foodie:soilProperty rdfs:subPropertyOf saref:hasProperty .
 foodie:quantitativeProperty rdfs:subPropertyOf saref:relatesToMeasurement .
 foodie:nonQuantitativeProperty rdfs:subPropertyOf saref:hasValue .
 foodie:productionAmount rdfs:subPropertyOf saref:relatesToMeasurement .
-saref:hasTimestamp owl:equivalentProperty foodie:analysisDate .
-saref:hasTimestamp owl:equivalentProperty fiware:observedAt .
-saref:hasTimestamp owl:equivalentProperty fiware:dateObserved .
+foodie:analysisDate rdfs:subPropertyOf saref:hasTimestamp .
+fiware:observedAt rdfs:subPropertyOf saref:hasTimestamp .
+fiware:dateObserved rdfs:subPropertyOf saref:hasTimestamp .
 foodie:propertyName rdfs:subPropertyOf fiware:name .
 fiware:airTemperature rdfs:subPropertyOf saref:hasValue .
 fiware:soilTemperature rdfs:subPropertyOf saref:hasValue .

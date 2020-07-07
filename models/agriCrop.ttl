@@ -42,6 +42,7 @@
                                           rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
                                           foaf:name "Raul Palma"
                                         ] ;
+                            owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
                             dct:description "The DEMETER AgriCrop is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "DEMETER AgriCrop"@en ;
@@ -55,11 +56,6 @@
 #    Annotation properties
 #################################################################
 
-
-###  http://purl.obolibrary.org/obo/TAXRANK_1000000
-<http://purl.obolibrary.org/obo/TAXRANK_1000000> rdf:type owl:AnnotationProperty ;
-                                                 rdfs:label "has_rank"@en ;
-                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .                                    
 
 #################################################################
 #    Datatypes
@@ -85,34 +81,7 @@ saref4agri:receives rdf:type owl:ObjectProperty ;
           rdfs:comment "A relation to represent the intake/consumption of certain substances in a Crop." ;
           rdfs:label "receives" ;
           rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
-          
-###  https://w3id.org/saref#hasProperty
-<https://w3id.org/saref#hasProperty> rdf:type owl:ObjectProperty ;
-                                     owl:inverseOf <https://w3id.org/saref#isPropertyOf> ;
-                                     rdfs:comment "Relation between a feature of interest and its properties."@en ;
-                                     rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                     rdfs:label "has property"@en .
-                                     
-###  https://w3id.org/saref#isPropertyOf
-<https://w3id.org/saref#isPropertyOf> rdf:type owl:ObjectProperty ;
-                                      rdfs:comment "Relation between a property and a feature of interest in which such property appears."@en ;
-                                      rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                      rdfs:label "is property of"@en .
-                                                    
-###  https://w3id.org/saref#isFeatureOfInterestOf
-<https://w3id.org/saref#isFeatureOfInterestOf> rdf:type owl:ObjectProperty ;
-                                               rdfs:comment "Relation betwwen a feature of interest and the measurments that are about it."@en ;
-                                               rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                               rdfs:label "is feature of interest of"@en .
-
-###  https://w3id.org/saref#hasFeatureOfInterest
-<https://w3id.org/saref#hasFeatureOfInterest> rdf:type owl:ObjectProperty ;
-                                              owl:inverseOf <https://w3id.org/saref#isFeatureOfInterestOf> ;
-                                              rdfs:comment "Relation between a measurement and the feature of interest being measured."@en ;
-                                              rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                              rdfs:label "has feature of interest"@en .
-
-
+                                                                                                   
 ### http://foodie-cloud.com/model/foodie#cropArea
 foodie:cropArea  a      owl:ObjectProperty ;
         rdfs:range      geo:Geometry ;
@@ -135,12 +104,6 @@ foodie:production  a    owl:ObjectProperty ;
 foodie:productionAmount	a	owl:ObjectProperty ;
         rdfs:range      iso19103:Measure ;
         skos:prefLabel  "productionAmount"@en ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-### http://foodie-cloud.com/model/foodie#productionProperty
-foodie:productionProperty	a	owl:ObjectProperty ;
-        rdfs:range      foodie:PropertyType ;
-        skos:prefLabel  "productionProperty"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### https://uri.fiware.org/ns/data-models#cropHasAgriSoil
@@ -211,47 +174,7 @@ foodie:genus  a         owl:DatatypeProperty ;
 foodie:productionDate	a	owl:DatatypeProperty ;
         skos:prefLabel  "productionDate"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-        
-###  http://foodie-cloud.com/model/foodie#code
-foodie:code  a          owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-###  http://foodie-cloud.com/model/foodie#description        
-foodie:description  a   owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-        
-###  http://foodie-cloud.com/model/foodie#notes        
-foodie:notes  a         owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
-        
-###  http://www.w3.org/ns/prov#generatedAtTime
-prov:generatedAtTime	a	owl:DatatypeProperty ;
-				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
-
-###  http://www.w3.org/ns/prov#invalidatedAtTime				
-prov:invalidatedAtTime	a	owl:DatatypeProperty ;
-				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
-				
-###  <http://portele.de/ont/inspire/baseInspire#validFrom> 
-common:validFrom	a      owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
-
-###  <http://portele.de/ont/inspire/baseInspire#validFrom> 
-common:validTo	a        owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .				
-
-### https://uri.fiware.org/ns/data-models#createdAt
-fiware:createdAt	a      owl:DatatypeProperty ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
-### https://uri.fiware.org/ns/data-models#name
-fiware:name	a      owl:DatatypeProperty ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
-### https://uri.fiware.org/ns/data-models#description
-fiware:description	a      owl:DatatypeProperty ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
-
+                        				
 ### https://uri.fiware.org/ns/data-models#plantingFrom
 fiware:plantingFrom	a		owl:DatatypeProperty ;
         rdfs:label   		"plantingFrom"@en ;
@@ -282,11 +205,7 @@ fiware:wateringFrequency	a	owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  http://purl.obolibrary.org/obo/TAXRANK_0000000
-<http://purl.obolibrary.org/obo/TAXRANK_0000000> rdf:type owl:Class ;
-                                                 rdfs:label "taxonomic_rank"@en ;
-                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .
-
+               
 ###  https://w3id.org/def/saref4agri#Crop
 saref4agri:Crop rdf:type owl:Class ;
       rdfs:subClassOf <https://w3id.org/saref#FeatureOfInterest> ,
@@ -304,38 +223,7 @@ saref4agri:Crop rdf:type owl:Class ;
                       ] ;
       rdfs:comment "A collection of cultivated plants that is grown on a large scale commercially, especially a cereal, fruit, or vegetable."@en ;
       rdfs:label "Crop" ;
-      rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
-
-###  https://w3id.org/saref#FeatureOfInterest
-<https://w3id.org/saref#FeatureOfInterest> rdf:type owl:Class ;
-                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <https://w3id.org/saref#hasProperty> ;
-                                                             owl:allValuesFrom <https://w3id.org/saref#Property>
-                                                           ] ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty <https://w3id.org/saref#isFeatureOfInterestOf> ;
-                                                             owl:allValuesFrom <https://w3id.org/saref#Measurement>
-                                                           ] ;
-                                           rdfs:comment <https://w3id.org/saref#> ;
-                                           rdfs:label "Feature of interest"@en ;
-                                           rdfs:isDefinedBy <https://w3id.org/saref#> .
-
-###  https://w3id.org/saref#Property
-<https://w3id.org/saref#Property> rdf:type owl:Class ;
-                                  rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                  rdfs:label "Property"@en .                                                       
-               
-###  https://w3id.org/saref#Measurement
-<https://w3id.org/saref#Measurement> rdf:type owl:Class ;
-                                     rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                     rdfs:label "Measurement"@en .
-
-
-###  https://w3id.org/saref#Device
-<https://w3id.org/saref#Device> rdf:type owl:Class ;
-                                rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                rdfs:label "Device"@en .
-
+      rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .      
 
 ### http://foodie-cloud.com/model/foodie#CropSpecies
 foodie:CropSpecies  a    owl:Class ;
@@ -365,8 +253,8 @@ foodie:CropSpecies  a    owl:Class ;
                            owl:onProperty      common:validTo
                          ] ;
         skos:prefLabel   "CropSpecies"@en ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .   
+        
 ### http://foodie-cloud.com/model/foodie#CropType
 foodie:CropType  a       owl:Class ;
         rdfs:subClassOf  iso19150-2:Datatype ;

@@ -21,6 +21,7 @@
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos> .
 @base <https://w3id.org/demeter/> .
 
 <https://w3id.org/demeter/agri/agriFeature> rdf:type owl:Ontology ;
@@ -38,6 +39,7 @@
                                           rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
                                           foaf:name "Raul Palma"
                                         ] ;
+                            owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
                             dct:description "The DEMETER AgriFeature is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "DEMETER AgriFeature"@en ;
@@ -50,14 +52,7 @@
 #################################################################
 #    Annotation properties
 #################################################################
-
-###  http://www.w3.org/2003/01/geo/wgs84_pos#location
-<http://www.w3.org/2003/01/geo/wgs84_pos#location> rdf:type owl:AnnotationProperty ;
-                                                   rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/based_near> .
-                                                   
-###  http://xmlns.com/foaf/0.1/based_near
-<http://xmlns.com/foaf/0.1/based_near> rdf:type owl:AnnotationProperty .                                                   
-  
+                                                     
 
 #################################################################
 #    Datatypes
@@ -68,6 +63,11 @@
 #    Object Properties
 #################################################################
 
+###  http://www.w3.org/2003/01/geo/wgs84_pos#location
+<http://www.w3.org/2003/01/geo/wgs84_pos#location>  rdf:type owl:ObjectProperty ;
+																										rdfs:label "location" ;
+																										rdfs:comment """The relation between something and the point, or other geometrical thing in space, where it is.""" ;
+																										rdfs:isDefinedBy <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 
 ###  http://www.opengis.net/ont/geosparql#hasGeometry
 <http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty ;
@@ -120,11 +120,6 @@ af-inspire:contains
         skos:prefLabel  "contains"@en ;
         rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
 
-###  http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal          
-af-inspire:includesAnimal
-        a               owl:ObjectProperty ;
-        rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
-
 ###  http://foodie-cloud.com/model/foodie#containsPlot
 foodie:containsPlot
         a               owl:ObjectProperty ;
@@ -147,12 +142,6 @@ foodie:originType  a    owl:ObjectProperty ;
 ###  http://foodie-cloud.com/model/foodie#crop
 foodie:crop  				a   owl:ObjectProperty ;
         skos:prefLabel  "crop"@en ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-###  http://foodie-cloud.com/model/foodie#soilProperty
-foodie:soilProperty  a  owl:ObjectProperty ;
-        rdfs:range      foodie:PropertyType ;
-        skos:prefLabel  "soilProperty"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#machine
@@ -191,12 +180,6 @@ fiware:hasAgriCrop	a   owl:ObjectProperty ;
         rdfs:comment		"Reference to the crop associated with this parcel" ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .     
 
-### https://uri.fiware.org/ns/data-models#hasDevice
-fiware:hasDevice	a      owl:ObjectProperty ;     
-        rdfs:label   		"hasDevice"@en ;
-        rdfs:comment		"Reference to the IoT devices associated with this parcel i.e. sensors, controls." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
-
 ### https://uri.fiware.org/ns/data-models#hasAgriParcelParent
 fiware:hasAgriParcelParent	a      owl:ObjectProperty ;     
         rdfs:label   		"hasAgriParcelParent"@en ;
@@ -215,12 +198,6 @@ fiware:hasAgriSoil	a      owl:ObjectProperty ;
         rdfs:comment		"Reference to the soil associated with this parcel of land." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                
 
-### https://uri.fiware.org/ns/data-models#location
-fiware:location	a      owl:ObjectProperty ;     
-        rdfs:label   		"location"@en ;
-        rdfs:comment		"The geo:json encoded polygon / multi-polygon describing this [entity]" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .          
-
 ### https://uri.fiware.org/ns/data-models#landLocation
 fiware:landLocation	a      owl:ObjectProperty ;     
         rdfs:label   		"landLocation"@en ;
@@ -232,42 +209,17 @@ fiware:hasAgriParcel	a      owl:ObjectProperty ;
         rdfs:label   		"hasAgriParcel"@en ;
         rdfs:comment		"List of agri parcels belonging to the farm" ;
         rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> . 
+
+### https://uri.fiware.org/ns/data-models#location
+fiware:location	a      owl:ObjectProperty ;     
+        rdfs:label   		"location"@en ;
+        rdfs:comment		"The geo:json encoded polygon / multi-polygon describing this [entity]" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .          
         
 #################################################################
 #    Data properties
 #################################################################
-
-###  https://w3id.org/def/saref4agri#hasName
-saref4agri:hasName rdf:type owl:DatatypeProperty ;
-         rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
-
-###  http://www.w3.org/ns/prov#generatedAtTime
-prov:generatedAtTime a	owl:DatatypeProperty ;
-				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
-
-###  http://www.w3.org/ns/prov#invalidatedAtTime				
-prov:invalidatedAtTime	a	owl:DatatypeProperty ;
-				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
-				
-###  http://foodie-cloud.com/model/foodie#code
-foodie:code  a          owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-###  http://foodie-cloud.com/model/foodie#description        
-foodie:description  a   owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-###  http://foodie-cloud.com/model/foodie#notes        
-foodie:notes  a         owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
-				
-###  <http://portele.de/ont/inspire/baseInspire#validFrom> 
-common:validFrom	a      owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
-
-###  <http://portele.de/ont/inspire/baseInspire#validTo> 
-common:validTo	a        owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
+								
         
 ###  http://www.opengis.net/ont/geosparql#hasSerialization
 <http://www.opengis.net/ont/geosparql#hasSerialization> rdf:type owl:DatatypeProperty ;
@@ -278,22 +230,12 @@ common:validTo	a        owl:DatatypeProperty ;
                                                                  <http://www.opengis.net/spec/geosparql/1.0> ;
                                                 rdfs:label "has serialization"@en .   
 
-### https://uri.fiware.org/ns/data-models#createdAt
-fiware:createdAt	a      owl:DatatypeProperty ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
-
 ### https://uri.fiware.org/ns/data-models#area
 fiware:area	a      owl:DatatypeProperty ;     
         rdfs:label   		"area"@en ;
         rdfs:comment		"The area of the parcel nominally in square meters." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .   
         
-### https://uri.fiware.org/ns/data-models#category
-fiware:category	a      owl:DatatypeProperty ;     
-        rdfs:label   		"category"@en ;
-        rdfs:comment		"The category of the parcel of land e.g.: arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                    
-
 ### https://uri.fiware.org/ns/data-models#cropStatus
 fiware:cropStatus	a      owl:DatatypeProperty ;     
         rdfs:label   		"cropStatus"@en ;
@@ -369,13 +311,7 @@ saref4agri:Parcel rdf:type owl:Class ;
         rdfs:comment "An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items."@en ;
         rdfs:label "Parcel" ;
         rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
-        
-###  https://w3id.org/def/saref4agri#Crop
-saref4agri:Crop rdf:type owl:Class ;      
-      rdfs:label "Crop" ;   
-      rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .     
-      
-               
+                             
 ###  http://www.opengis.net/ont/geosparql#Feature
 <http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class ;
                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ,
@@ -388,7 +324,6 @@ saref4agri:Crop rdf:type owl:Class ;
                                                rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
                                                                 <http://www.opengis.net/ont/gml> ;
                                                rdfs:label "Feature"@en .
-
 
 ###  http://www.opengis.net/ont/geosparql#SpatialObject
 <http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class ;
@@ -601,6 +536,7 @@ saref4agri:Parcel owl:equivalentClass foodie:Plot .
 saref4agri:Parcel owl:equivalentClass fiware:AgriParcel .
 foodie:crop owl:equivalentProperty fiware:hasAgriCrop .
 fiware:location rdfs:subPropertyOf geo:hasGeometry .
+fiware:location rdfs:subPropertyOf wgs84_pos:location .
 fiware:landLocation rdfs:subPropertyOf geo:hasGeometry .
 af-inspire:contains rdfs:subPropertyOf saref4agri:contains .
 foodie:containsPlot rdfs:subPropertyOf saref4agri:contains .

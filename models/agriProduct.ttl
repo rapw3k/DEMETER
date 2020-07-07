@@ -44,6 +44,7 @@
                                           rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
                                           foaf:name "Raul Palma"
                                         ] ;
+                            owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
                             dct:description "The DEMETER AgriProduct is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "DEMETER AgriProduct"@en ;
@@ -137,19 +138,16 @@ fiware:hasAgriProductTypeChildren	a	owl:ObjectProperty ;
         rdfs:comment		"Reference to child product types i.e. immediately below this entity in the hierarchy." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> .
 
+### https://uri.fiware.org/ns/data-models#hasAgriProductType
+fiware:hasAgriProductType	a      owl:ObjectProperty ;     
+        rdfs:label   		"hasAgriProductType"@en ;
+        rdfs:comment		"Reference to the AgriProductType used/ applied." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .                          
 
 #################################################################
 #    Data properties
 #################################################################
         
-###  http://foodie-cloud.com/model/foodie#description        
-foodie:description  a   owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-###  http://foodie-cloud.com/model/foodie#price                
-foodie:price  a         owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
 ###  http://foodie-cloud.com/model/foodie#productType                
 foodie:productType  a   owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
@@ -209,10 +207,6 @@ foodie:ingredientName
         skos:prefLabel  "ingredientName"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
-###  http://foodie-cloud.com/model/foodie#code
-foodie:code  a          owl:DatatypeProperty ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
 ###  http://foodie-cloud.com/model/foodie#nutrientName
 foodie:nutrientName  a  owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
@@ -225,15 +219,7 @@ foodie:nutrientMeasure
         rdfs:range      xsd:string ;
         skos:prefLabel  "nutrientMeasure"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-### https://uri.fiware.org/ns/data-models#name
-fiware:name	a      owl:DatatypeProperty ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> .
-        
-### https://uri.fiware.org/ns/data-models#description
-fiware:description	a      owl:DatatypeProperty ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> .  
-        
+                
 ### https://uri.fiware.org/ns/data-models#root
 fiware:root	a      owl:DatatypeProperty ;
         rdfs:label   		"root"@en ;
@@ -365,6 +351,8 @@ foodie:Product owl:equivalentClass fiware:AgriProductType .
 foodie:productName rdfs:subPropertyOf fiware:name .
 foodie:nutrientName rdfs:subPropertyOf fiware:name .
 foodie:ingredientName rdfs:subPropertyOf fiware:name .
+fiware:hasAgriProductTypeParent rdfs:subClassOf fiware:hasAgriProductType .
+fiware:hasAgriProductTypeChildren rdfs:subClassOf fiware:hasAgriProductType .
 
 #################################################################
 #    Individuals

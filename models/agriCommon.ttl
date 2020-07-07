@@ -96,6 +96,10 @@ foaf:maker rdf:type owl:AnnotationProperty .
 ###  http://xmlns.com/foaf/0.1/name
 foaf:name rdf:type owl:AnnotationProperty .
 
+###  http://purl.obolibrary.org/obo/TAXRANK_1000000
+<http://purl.obolibrary.org/obo/TAXRANK_1000000> rdf:type owl:AnnotationProperty ;
+                                                 rdfs:label "has_rank"@en ;
+                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> . 
 
 #################################################################
 #    Datatypes
@@ -108,7 +112,13 @@ foaf:name rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/def/saref4agri#managesFarm
 saref4agri:managesFarm rdf:type owl:ObjectProperty ;
              rdfs:label "manages farm"@en .
-
+                                                                           
+###  http://xmlns.com/foaf/0.1/member
+<http://xmlns.com/foaf/0.1/member>
+				a rdf:Property, owl:ObjectProperty ;
+  			rdfs:label "member" ;
+  			rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+  			  			                                              
 #################################################################
 #    Data properties
 #################################################################
@@ -165,7 +175,19 @@ foodie:notes  a         owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "notes"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
-				
+
+###  http://foodie-cloud.com/model/foodie#price                
+foodie:price  a         owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "price"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        
+###  http://foodie-cloud.com/model/foodie#type        
+foodie:type  a          owl:DatatypeProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "type"@en ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        				
 ###  <http://portele.de/ont/inspire/baseInspire#validFrom> 
 common:validFrom	a      owl:DatatypeProperty ;
         rdfs:range       xsd:dateTime ;
@@ -180,9 +202,9 @@ common:validTo	a        owl:DatatypeProperty ;
         
 ### https://uri.fiware.org/ns/data-models#createdAt
 fiware:createdAt	a      owl:DatatypeProperty ;
-        rdfs:label   		"createAt"@en ;
+        rdfs:label   		"createdAt"@en ;
         rdfs:comment		"Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md>.
 
 ### https://uri.fiware.org/ns/data-models#modifiedAt
 fiware:modifiedAt	a      owl:DatatypeProperty ;
@@ -212,7 +234,7 @@ fiware:entityVersion	a      owl:DatatypeProperty ;
 fiware:name	a      owl:DatatypeProperty ;
         rdfs:label   		"name"@en ;
         rdfs:comment		"The name of this [entity]" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> .
         
 ### https://uri.fiware.org/ns/data-models#alternateName
 fiware:alternateName	a      owl:DatatypeProperty ;
@@ -224,13 +246,19 @@ fiware:alternateName	a      owl:DatatypeProperty ;
 fiware:description	a      owl:DatatypeProperty ;
         rdfs:label   		"description"@en ;
         rdfs:comment		"A description of the [entity]." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
         
 ### https://uri.fiware.org/ns/data-models#agroVocConcept
 fiware:agroVocConcept	a      owl:DatatypeProperty ;
         rdfs:label   		"agroVocConcept"@en ;
         rdfs:comment		"URL of the FAO details of the [entity]" ;
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .                 
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .  
+        
+### https://uri.fiware.org/ns/data-models#category
+fiware:category	a      owl:DatatypeProperty ;     
+        rdfs:label   		"category"@en ;
+        rdfs:comment		"The category of the entity, e.g., parcel of land (arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland), alert (Traffic jam, accidents, weather conditions, high level of pollutants)." ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> .                        
 
 #################################################################
 #    Classes
@@ -285,18 +313,26 @@ saref4agri:Farmer rdf:type owl:Class ;
                           owl:allValuesFrom xsd:string
                         ] ;
         rdfs:comment "A class to decsribe a saref4agri farmer as subcass of a foaf:Person" ;
-        rdfs:label "Farmer"@en .                                  
+        rdfs:label "Farmer"@en .
 
+###  http://purl.obolibrary.org/obo/TAXRANK_0000000
+<http://purl.obolibrary.org/obo/TAXRANK_0000000> rdf:type owl:Class ;
+                                                 rdfs:label "taxonomic_rank"@en ;
+                                                 rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .
+              
 #################################################################
 #    Alignments
 #################################################################
 
 saref4agri:hasName owl:equivalentProperty fiware:name .
+fiware:alternateName rdfs:subPropertyOf fiware:name .
 saref:hasDescription owl:equivalentProperty foodie:description .
 saref:hasDescription owl:equivalentProperty fiware:description .
-saref:hasTimestamp owl:equivalentProperty prov:generatedAtTime .
-saref:hasTimestamp owl:equivalentProperty fiware:createdAt .
+foodie:description owl:equivalentProperty fiware:description .
+prov:generatedAtTime rdfs:subPropertyOf saref:hasTimestamp .
+fiware:createdAt rdfs:subPropertyOf saref:hasTimestamp .
 iso19115-citation:ResponsibleParty rdfs:subClassOf foaf:Agent .
+fiware:category owl:equivalentProperty foodie:type .
 
 #################################################################
 #    Individuals
