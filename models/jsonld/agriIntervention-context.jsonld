@@ -1,0 +1,267 @@
+{
+  "@context" : {
+    "affiliation" : {
+      "@id" : "http://schema.org/affiliation"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "validFrom" : {
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validFrom",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Period" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period"
+    },
+    "flowAdjustment" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#flowAdjustment",
+      "@type" : "@id"
+    },
+    "treatmentDescription" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#treatmentDescription",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "waterSource" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#waterSource"
+    },
+    "interventionPlot" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#interventionPlot",
+      "@type" : "@id"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "areaDose" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#areaDose",
+      "@type" : "@id"
+    },
+    "Codelist" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Codelist"
+    },
+    "Product" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#Product"
+    },
+    "planProduct" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#planProduct",
+      "@type" : "@id"
+    },
+    "motionSpeed" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#motionSpeed",
+      "@type" : "@id"
+    },
+    "Geometry" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#Geometry"
+    },
+    "FeatureType" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"
+    },
+    "operator" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#operator",
+      "@type" : "@id"
+    },
+    "maker" : {
+      "@id" : "http://xmlns.com/foaf/0.1/maker"
+    },
+    "Feature" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "Concept" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "startedAt" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#startedAt"
+    },
+    "supervisor" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#supervisor",
+      "@type" : "@id"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "operationType" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#operationType"
+    },
+    "hasOperator" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#hasOperator",
+      "@type" : "@id"
+    },
+    "creationDateTime" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#creationDateTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "CampaignType" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#CampaignType"
+    },
+    "Measure" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure"
+    },
+    "TreatmentPlan" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#TreatmentPlan"
+    },
+    "operationHasAgriParcel" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#operationHasAgriParcel",
+      "@type" : "@id"
+    },
+    "treatmentPlanCode" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#treatmentPlanCode",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Treatment" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#Treatment"
+    },
+    "AgriParcelOperation" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#AgriParcelOperation"
+    },
+    "Intervention" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#Intervention"
+    },
+    "TreatmentPurposeValue" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#TreatmentPurposeValue"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "interventionGeometry" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#interventionGeometry",
+      "@type" : "@id"
+    },
+    "quantity" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#quantity"
+    },
+    "maximumDose" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#maximumDose",
+      "@type" : "@id"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights"
+    },
+    "campaign" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#campaign",
+      "@type" : "@id"
+    },
+    "status" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#status",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "applicationWidth" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#applicationWidth",
+      "@type" : "@id"
+    },
+    "reportedAt" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#reportedAt"
+    },
+    "FormOfTreatmentValue" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#FormOfTreatmentValue"
+    },
+    "evidenceParty" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#evidenceParty",
+      "@type" : "@id"
+    },
+    "Datatype" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Datatype"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "validTo" : {
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validTo",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "treatmentProduct" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#treatmentProduct",
+      "@type" : "@id"
+    },
+    "type" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#type",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Plot" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#Plot"
+    },
+    "endedAt" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#endedAt"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "pressure" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#pressure",
+      "@type" : "@id"
+    },
+    "plan" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#plan",
+      "@type" : "@id"
+    },
+    "minimumDose" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#minimumDose",
+      "@type" : "@id"
+    },
+    "treatmentPlanCreation" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#treatmentPlanCreation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "period" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#period",
+      "@type" : "@id"
+    },
+    "notes" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#notes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "plannedEndAt" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#plannedEndAt"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "price" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#price",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "interventionZone" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#interventionZone",
+      "@type" : "@id"
+    },
+    "contributor" : {
+      "@id" : "http://purl.org/dc/terms/contributor"
+    },
+    "formOfTreatment" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#formOfTreatment",
+      "@type" : "@id"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "description" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ManagementZone" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#ManagementZone"
+    },
+    "ResponsibleParty" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"
+    },
+    "result" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#result"
+    },
+    "AnyFeature" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"
+    },
+    "DoseUnit" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#DoseUnit"
+    },
+    "plannedStartAt" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#plannedStartAt"
+    }
+  }
+}
