@@ -210,16 +210,16 @@ fiware:hasAgriParcel	a      owl:ObjectProperty ;
         rdfs:comment		"List of agri parcels belonging to the farm" ;
         rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> . 
 
+### https://uri.fiware.org/ns/data-models#location
+fiware:location	a      owl:ObjectProperty ;     
+        rdfs:label   		"location"@en ;
+        rdfs:comment		"The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty" ;
+        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .          
+
         
 #################################################################
 #    Data properties
 #################################################################
-
-### https://uri.fiware.org/ns/data-models#location
-fiware:location	a      owl:DatatypeProperty ;     
-        rdfs:label   		"location"@en ;
-        rdfs:comment		"The geo:json encoded polygon / multi-polygon describing this [entity]" ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .          
 								        
 ###  http://www.opengis.net/ont/geosparql#hasSerialization
 <http://www.opengis.net/ont/geosparql#hasSerialization> rdf:type owl:DatatypeProperty ;
@@ -536,7 +536,8 @@ saref4agri:Parcel owl:equivalentClass foodie:Plot .
 saref4agri:Parcel owl:equivalentClass fiware:AgriParcel .
 foodie:crop owl:equivalentProperty fiware:hasAgriCrop .
 geo:hasGeometry owl:equivalentProperty wgs84_pos:location .
-fiware:landLocation rdfs:subPropertyOf geo:hasGeometry .
+fiware:location rdfs:subPropertyOf geo:hasGeometry .
+fiware:landLocation rdfs:subPropertyOf fiware:location .
 af-inspire:contains rdfs:subPropertyOf saref4agri:contains .
 foodie:containsPlot rdfs:subPropertyOf saref4agri:contains .
 foodie:containsZone rdfs:subPropertyOf saref4agri:contains .
