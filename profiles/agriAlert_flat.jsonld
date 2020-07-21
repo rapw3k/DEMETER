@@ -1,37 +1,27 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriAlert",
     "@context": [
-        "https://uri.fiware.org/ns/data-models",
         "http://foodie-cloud.com/model/foodie",
-        "https://w3id.org/demeter/agri/agriAlert",
+        "https://uri.fiware.org/ns/data-models",
         {
-            "fiware": "https://uri.fiware.org/ns/data-models#",
             "foodie": "http://foodie-cloud.com/model/foodie#",
-            "fiware:Alert": {
-                "@id": "fiware:Alert"
-            },
-            "foodie:Plot": {
-                "@id": "foodie:Plot"
-            },
-            "foodie:ManagementZone": {
-                "@id": "foodie:ManagementZone"
-            },
+            "fiware": "https://uri.fiware.org/ns/data-models#",
             "foodie:Alert": {
                 "@id": "foodie:Alert"
             },
-            "foodie:CropSpecies": {
-                "@id": "foodie:CropSpecies"
+            "fiware:Alert": {
+                "@id": "fiware:Alert"
+            },
+            "foodie:alertPlot": {
+                "@id": "foodie:alertPlot",
+                "@type": "@id"
             },
             "foodie:zoneAlert": {
                 "@id": "foodie:zoneAlert",
                 "@type": "@id"
             },
-            "fiware:location": {
-                "@id": "fiware:location",
-                "@type": "@id"
-            },
-            "foodie:alertSpecies": {
-                "@id": "foodie:alertSpecies",
+            "foodie:speciesAlert": {
+                "@id": "foodie:speciesAlert",
                 "@type": "@id"
             },
             "foodie:plotAlert": {
@@ -42,60 +32,41 @@
                 "@id": "foodie:alertZone",
                 "@type": "@id"
             },
-            "foodie:speciesAlert": {
-                "@id": "foodie:speciesAlert",
-                "@type": "@id"
-            },
             "foodie:alertGeometry": {
                 "@id": "foodie:alertGeometry",
                 "@type": "@id"
             },
-            "foodie:alertPlot": {
-                "@id": "foodie:alertPlot",
+            "foodie:alertSpecies": {
+                "@id": "foodie:alertSpecies",
                 "@type": "@id"
             },
-            "fiware:category": {
-                "@id": "fiware:category"
-            },
-            "fiware:description": {
-                "@id": "fiware:description"
+            "fiware:validFrom": {
+                "@id": "fiware:validFrom"
             },
             "fiware:dateIssued": {
                 "@id": "fiware:dateIssued"
             },
-            "foodie:description": {
-                "@id": "foodie:description"
+            "fiware:data": {
+                "@id": "fiware:data"
+            },
+            "fiware:subCategory": {
+                "@id": "fiware:subCategory"
             },
             "fiware:validTo": {
                 "@id": "fiware:validTo"
+            },
+            "fiware:address": {
+                "@id": "fiware:address"
             },
             "foodie:alertDate": {
                 "@id": "foodie:alertDate",
                 "@type": "xsd:dateTime"
             },
-            "foodie:type": {
-                "@id": "foodie:type"
-            },
-            "fiware:subCategory": {
-                "@id": "fiware:subCategory"
-            },
-            "fiware:severity": {
-                "@id": "fiware:severity"
-            },
-            "fiware:data": {
-                "@id": "fiware:data"
-            },
-            "foodie:code": {
-                "@id": "foodie:code"
-            },
-            "fiware:address": {
-                "@id": "fiware:address"
-            },
             "fiware:alertSource": {
                 "@id": "fiware:alertSource"
             },
-            "fiware:validFrom": {
-                "@id": "fiware:validFrom"
+            "fiware:severity": {
+                "@id": "fiware:severity"
             }
         }
     ]

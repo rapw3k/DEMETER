@@ -13,11 +13,13 @@
 	prof:hasResource [ 
 			prof:hasRole prof:schema ;
 			prof:hasArtifact "foodie.jsonld" ;
-			dct:conformsTo jsonld:
+			dct:conformsTo jsonld: ;
+                        dct:format "application/ld_json" ;
 		], [
-			prof:hasRole prof:vocabulary ;
+			prof:hasRole prof:cachedCopy ;
 			prof:hasArtifact "lib/foodie.ttl" ;
-			dct:conformsTo owl:
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
 		] ;
 .
 
