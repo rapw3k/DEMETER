@@ -14,7 +14,7 @@
 			prof:hasRole prof:schema ;
 			prof:hasArtifact "foodie.jsonld" ;
 			dct:conformsTo jsonld: ;
-                        dct:format "application/ld_json" ;
+            dct:format "application/ld+json" ;
 		], [
 			prof:hasRole prof:cachedCopy ;
 			prof:hasArtifact "lib/foodie.ttl" ;
@@ -23,3 +23,22 @@
 		] ;
 .
 
+<https://uri.fiware.org/ns/data-models> a prof:Profile ;
+	rdfs:label "FIWARE data models" ;
+	prof:hasResource [ 
+			prof:hasRole prof:schema ;
+			prof:hasArtifact "https://fiware.github.io/data-models/full-context.jsonld" ;
+			dct:conformsTo jsonld: ;
+            dct:format "application/ld+json" ;
+		], [
+			prof:hasRole prof:cachedCopy ;
+			prof:hasArtifact "lib/fiware.ttl" ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] , [
+			prof:hasRole prof:specification ;
+			prof:hasArtifact "lib/fiware.ttl" ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+.

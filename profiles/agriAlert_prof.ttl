@@ -16,10 +16,10 @@
             prof:hasArtifact "agriAlert.ttl" ;
             prof:hasRole prof:vocabulary ],
         [ a prof:ResourceDescriptor ;
-            rdfs:label "Profile description as HTML" ;
+            rdfs:label "OWL documentation as HTML" ;
             dcterms:conformsTo prof: ;
             dcterms:format "text/html" ;
-            prof:hasArtifact "agriAlert_prof.html" ;
+            prof:hasArtifact "agriAlert.html" ;
             prof:hasRole prof:profile ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "Flattened JSON-LD context" ;
@@ -28,10 +28,10 @@
             prof:hasArtifact "agriAlert_flat.jsonld" ;
             prof:hasRole prof:contextflat ],
         [ a prof:ResourceDescriptor ;
-            rdfs:label "OWL documentation as HTML" ;
+            rdfs:label "Profile description including links to representations" ;
             dcterms:conformsTo prof: ;
-            dcterms:format "text/html" ;
-            prof:hasArtifact "agriAlert.html" ;
+            dcterms:format "text/turtle" ;
+            prof:hasArtifact "agriAlert_prof.ttl" ;
             prof:hasRole prof:profile ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "JSON-LD Context" ;
@@ -40,9 +40,9 @@
             prof:hasArtifact "agriAlert.jsonld" ;
             prof:hasRole prof:context ],
         [ a prof:ResourceDescriptor ;
-            rdfs:label "Profile description including links to representations" ;
+            rdfs:label "Profile description as HTML" ;
             dcterms:conformsTo prof: ;
-            dcterms:format "text/turtle" ;
-            prof:hasArtifact "agriAlert_prof.ttl" ;
+            dcterms:format "text/html" ;
+            prof:hasArtifact "agriAlert_prof.html" ;
             prof:hasRole prof:profile ] .
 
