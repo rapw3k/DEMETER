@@ -184,6 +184,9 @@
             color: #336;
             text-decoration: none;
         }
+
+        /* highlight imported definition */
+        .importeddef { background: #B88 }
     </style>
     
     <script type="application/ld+json">
@@ -215,7 +218,7 @@
 <body>
   <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
-    <span style="font-size:smaller;">2.8.3</span>
+    <span style="font-size:smaller;">2.8.4</span>
   </div>
   <h1>DEMETER AgriAlert</h1>
 <section id="metadata">
@@ -248,7 +251,7 @@
         <dt>Rights</dt>
         <dd>This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dd>
         <dt>Ontology RDF</dt>
-        <dd><a href="agriAlert.ttl">RDF (turtle)</a></dd>
+        <dd><a href="input.ttl">RDF (turtle)</a></dd>
     </dl>
     <h2>Description</h2>
     <div id="description">
@@ -265,7 +268,7 @@
 <section id="overview">
     <h2>Overview</h2>
     <div class="figure">
-        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+            <div><img src="../images/model_matching.jpg"/></div>
         <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
     </div>
 </section>
@@ -284,6 +287,16 @@
   <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
+        <dt>:</dt>
+        <dd><code>https://w3id.org/cybele/</code></dd>
+        <dt>act-inspire</dt>
+        <dd><code>http://inspire.ec.europa.eu/schemas/act-core/3.0#</code></dd>
+        <dt>af-inspire</dt>
+        <dd><code>http://inspire.ec.europa.eu/schemas/af/3.0#</code></dd>
+        <dt>common</dt>
+        <dd><code>http://portele.de/ont/inspire/baseInspire#</code></dd>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
         <dt>dct</dt>
         <dd><code>http://purl.org/dc/terms/</code></dd>
         <dt>fiware</dt>
@@ -294,20 +307,38 @@
         <dd><code>http://foodie-cloud.com/model/foodie#</code></dd>
         <dt>geo</dt>
         <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
+        <dt>iso19103</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#</code></dd>
+        <dt>iso19109</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#</code></dd>
+        <dt>iso19150-2</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#</code></dd>
         <dt>owl</dt>
         <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
         <dt>prov</dt>
         <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>qb</dt>
+        <dd><code>http://purl.org/linked-data/cube#</code></dd>
         <dt>rdf</dt>
         <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
         <dt>rdfs</dt>
         <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>saref</dt>
+        <dd><code>https://w3id.org/saref#</code></dd>
+        <dt>saref4agri</dt>
+        <dd><code>https://w3id.org/def/saref4agri#</code></dd>
         <dt>schema</dt>
         <dd><code>http://schema.org/</code></dd>
         <dt>sdo</dt>
         <dd><code>https://schema.org/</code></dd>
         <dt>skos</dt>
         <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>sosa</dt>
+        <dd><code>http://www.w3.org/ns/sosa/</code></dd>
+        <dt>ssn</dt>
+        <dd><code>http://www.w3.org/ns/ssn/</code></dd>
+        <dt>stat</dt>
+        <dd><code>http://data.europa.eu/m8g/</code></dd>
         <dt>xsd</dt>
         <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
     </dl>
