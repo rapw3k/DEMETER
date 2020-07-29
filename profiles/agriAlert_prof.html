@@ -184,6 +184,9 @@
             color: #336;
             text-decoration: none;
         }
+
+        /* highlight imported definition */
+        .importeddef { background: #B88 }
     </style>
     
     <script type="application/ld+json">
@@ -205,7 +208,7 @@
 <body>
   <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
-    <span style="font-size:smaller;">2.8.3</span>
+    <span style="font-size:smaller;">2.8.4</span>
   </div>
   <h1>DEMETER AgriAlert</h1>
 <h3><em>A Profile</em></h3>
@@ -216,20 +219,21 @@
         <dd><code>https://w3id.org/demeter/agri/agriAlert</code></dd>
         
         <dt>Profile RDF</dt>
-        <dd><a href="agriAlert_prof.ttl">RDF (turtle)</a></dd>
+        <dd><a href="input.ttl">RDF (turtle)</a></dd>
     </dl>
       <dt><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasResource">Has Resource Descriptor(s)</a></dt>
     <dd>
-          <a href="#ub5bL11C22">Normalised OWL with imports</a><br/>
-          <a href="#ub5bL17C9">OWL documentation as HTML</a><br/>
-          <a href="#ub5bL23C9">Flattened JSON-LD context</a><br/>
-          <a href="#ub5bL29C9">Profile description including links to representations</a><br/>
-          <a href="#ub5bL35C9">JSON-LD Context</a><br/>
-          <a href="#ub5bL41C9">Profile description as HTML</a><br/>
+          <a href="#N1e1c73eec03b4f3e9738fa1e46ccb0ed">OWL documentation as HTML</a><br/>
+          <a href="#N48140f2659a646f3aec416763515acd7">Flattened JSON-LD context</a><br/>
+          <a href="#N4bb5b880c5db48cea119d115800c44c3">Normalised OWL with imports</a><br/>
+          <a href="#N4ddd758df138421292a0b75a0a95493e">JSON-LD Context</a><br/>
+          <a href="#Nc45011ccba724030ae10ea6e66409c6b">OWL with definition details from imports</a><br/>
+          <a href="#Nd5db851d09ec4e7d9ef3d999c086a1d0">Profile description including links to representations</a><br/>
+          <a href="#Ne946849571574495ab0d42c9fa185e5f">Profile description as HTML</a><br/>
     </dd>
     <h2>Description</h2>
     <div id="comment">
-        <p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>
+        <p>The DEMETER AgriAlert is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</p>
     </div>
 </section>
   <section id="resource_descriptors">
@@ -239,37 +243,7 @@
   
   
   
-      <div class="entity resource_descriptor" id="ub5bL11C22">
-    <h3>Normalised OWL with imports</h3>
-    <table>
-        <tr>
-          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
-          <td>
-            <a href="agriAlert.ttl">agriAlert.ttl</a>
-          </td>
-        </tr>
-        
-        <tr>
-          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
-          <td>
-            
-              <a href="http://www.w3.org/ns/dx/prof/vocabulary">prof:vocabulary</a><br />
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/conformsTo">Conforms to</a></th>
-          <td>
-            
-              <a href="http://www.w3.org/2002/07/owl#">http://www.w3.org/2002/07/owl#</a><br />
-            
-          </td>
-        </tr>
-        
-    </table>
-</div>
-      <div class="entity resource_descriptor" id="ub5bL17C9">
+      <div class="entity resource_descriptor" id="N1e1c73eec03b4f3e9738fa1e46ccb0ed">
     <h3>OWL documentation as HTML</h3>
     <table>
         <tr>
@@ -299,7 +273,7 @@
         
     </table>
 </div>
-      <div class="entity resource_descriptor" id="ub5bL23C9">
+      <div class="entity resource_descriptor" id="N48140f2659a646f3aec416763515acd7">
     <h3>Flattened JSON-LD context</h3>
     <table>
         <tr>
@@ -329,13 +303,13 @@
         
     </table>
 </div>
-      <div class="entity resource_descriptor" id="ub5bL29C9">
-    <h3>Profile description including links to representations</h3>
+      <div class="entity resource_descriptor" id="N4bb5b880c5db48cea119d115800c44c3">
+    <h3>Normalised OWL with imports</h3>
     <table>
         <tr>
           <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
           <td>
-            <a href="agriAlert_prof.ttl">agriAlert_prof.ttl</a>
+            <a href="agriAlert.ttl">agriAlert.ttl</a>
           </td>
         </tr>
         
@@ -343,7 +317,7 @@
           <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
           <td>
             
-              <a href="http://www.w3.org/ns/dx/prof/profile">prof:profile</a><br />
+              <a href="http://www.w3.org/ns/dx/prof/vocabulary">prof:vocabulary</a><br />
             
           </td>
         </tr>
@@ -352,14 +326,14 @@
           <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/conformsTo">Conforms to</a></th>
           <td>
             
-              <a href="http://www.w3.org/ns/dx/prof/">prof:</a><br />
+              <a href="http://www.w3.org/2002/07/owl#">http://www.w3.org/2002/07/owl#</a><br />
             
           </td>
         </tr>
         
     </table>
 </div>
-      <div class="entity resource_descriptor" id="ub5bL35C9">
+      <div class="entity resource_descriptor" id="N4ddd758df138421292a0b75a0a95493e">
     <h3>JSON-LD Context</h3>
     <table>
         <tr>
@@ -389,7 +363,67 @@
         
     </table>
 </div>
-      <div class="entity resource_descriptor" id="ub5bL41C9">
+      <div class="entity resource_descriptor" id="Nc45011ccba724030ae10ea6e66409c6b">
+    <h3>OWL with definition details from imports</h3>
+    <table>
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
+          <td>
+            <a href="agriAlert.ttl">agriAlert.ttl</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/vocabulary">prof:vocabulary</a><br />
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/conformsTo">Conforms to</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/2002/07/owl#">http://www.w3.org/2002/07/owl#</a><br />
+            
+          </td>
+        </tr>
+        
+    </table>
+</div>
+      <div class="entity resource_descriptor" id="Nd5db851d09ec4e7d9ef3d999c086a1d0">
+    <h3>Profile description including links to representations</h3>
+    <table>
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasArtifact">Artifact</a></th>
+          <td>
+            <a href="agriAlert_prof.ttl">agriAlert_prof.ttl</a>
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.w3.org/TR/dx-prof/#Property:hasRole">Role(s)</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/profile">prof:profile</a><br />
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <th><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/conformsTo">Conforms to</a></th>
+          <td>
+            
+              <a href="http://www.w3.org/ns/dx/prof/">prof:</a><br />
+            
+          </td>
+        </tr>
+        
+    </table>
+</div>
+      <div class="entity resource_descriptor" id="Ne946849571574495ab0d42c9fa185e5f">
     <h3>Profile description as HTML</h3>
     <table>
         <tr>
