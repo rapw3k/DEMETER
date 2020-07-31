@@ -1,0 +1,261 @@
+@prefix af-inspire: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+af-inspire:includesAnimal a owl:ObjectProperty ;
+    rdfs:isDefinedBy af-inspire: ;
+    rdfs:range af-inspire:FarmAnimalSpecies ;
+    skos:prefLabel "includesAnimal"@en .
+
+fiware:breed a owl:DatatypeProperty ;
+    rdfs:label "breed"@en ;
+    rdfs:comment "Breed of the animal" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:calvedBy a owl:ObjectProperty ;
+    rdfs:label "calvedBy"@en ;
+    rdfs:comment "Mother of the animal" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:fedWith a owl:ObjectProperty ;
+    rdfs:label "fedWith"@en ;
+    rdfs:comment "Food used for the animal" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:healthCondition a owl:DatatypeProperty ;
+    rdfs:label "healthCondition"@en ;
+    rdfs:comment "Health Condition of the animal" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:locatedAt a owl:ObjectProperty ;
+    rdfs:label "locatedAt"@en ;
+    rdfs:comment "AgriParcel relationship" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+    rdfs:subPropertyOf saref4agri:isLocatedIn .
+
+fiware:ownedBy a owl:ObjectProperty ;
+    rdfs:label "ownedBy"@en ;
+    rdfs:comment "The owner of the animal" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:phenologicalCondition a owl:DatatypeProperty ;
+    rdfs:label "phenologicalCondition"@en ;
+    rdfs:comment "Phenological Condition of the animal" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:relatedSource a owl:DatatypeProperty ;
+    rdfs:label "relatedSource"@en ;
+    rdfs:comment "ID of the animal in external applications" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:reproductiveCondition a owl:DatatypeProperty ;
+    rdfs:label "reproductiveCondition"@en ;
+    rdfs:comment "Reproductive Condition of the animal" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:sex a owl:DatatypeProperty ;
+    rdfs:label "sex"@en ;
+    rdfs:comment "Sex of the animal" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:siredBy a owl:ObjectProperty ;
+    rdfs:label "siredBy"@en ;
+    rdfs:comment "Father of the animal" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:weight a owl:DatatypeProperty ;
+    rdfs:label "weight"@en ;
+    rdfs:comment "The weight of the animal as a number" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:welfareCondition a owl:DatatypeProperty ;
+    rdfs:label "welfareCondition"@en ;
+    rdfs:comment "Indicator of the animal welfare" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+saref4agri:isLocationOf rdfs:isDefinedBy saref4agri: .
+
+<https://w3id.org/demeter/agri/farmAnimal> a owl:Ontology ;
+    dct:contributor [ schema:affiliation [ foaf:name "ICCS" ] ;
+            foaf:name "Ioanna Roussaki" ],
+        [ schema:affiliation [ foaf:name "OGC" ] ;
+            foaf:name "Rob Atkinson" ] ;
+    dct:creator [ schema:affiliation [ foaf:name "PSNC" ] ;
+            rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+            foaf:name "Raul Palma" ] ;
+    dct:description "The DEMETER FarmAnimal is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+    dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+    dct:title "DEMETER FarmAnimal"@en ;
+    rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    owl:imports <http://foodie-cloud.com/model/foodie>,
+        <http://inspire.ec.europa.eu/schemas/af/3.0>,
+        <https://w3id.org/def/saref4agri>,
+        <https://w3id.org/demeter/agri/agriCommon> ;
+    owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/farmAnimal.ttl> ;
+    owl:versionInfo "1.0" ;
+    foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
+            foaf:name "DEMETER project" ] .
+
+foodie:livestockNumber a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range xsd:decimal ;
+    owl:equivalentProperty fiware:legalID ;
+    skos:prefLabel "livestockNumber"@en .
+
+foodie:livestockType a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty fiware:species ;
+    skos:prefLabel "livestockType"@en .
+
+af-inspire:FarmAnimalSpecies a owl:Class ;
+    rdfs:isDefinedBy af-inspire: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty foodie:livestockType ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty foodie:livestockNumber ],
+        iso19150-2:Datatype,
+        saref4agri:Animal ;
+    skos:prefLabel "FarmAnimalSpecies"@en .
+
+fiware:Animal a owl:Class ;
+    rdfs:label "Animal" ;
+    rdfs:comment "The proposed animal data model has been made from a more general point of view, trying to adjust it to the information coming from the devices and sensors used in the UC." ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:birthdate a owl:DatatypeProperty ;
+    rdfs:label "birthdate"@en ;
+    rdfs:comment "Animal’s birthdate" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:legalID a owl:DatatypeProperty ;
+    rdfs:label "legalID"@en ;
+    rdfs:comment "Legal ID of the animal" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:species a owl:DatatypeProperty ;
+    rdfs:label "species"@en ;
+    rdfs:comment "Species to which the animal belongs (dairy cattle, beef cattle, sheep, goat, horse, pig)" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+saref4agri:hasBirthDate a owl:DatatypeProperty ;
+    rdfs:label "has birth date" ;
+    rdfs:comment "A relation to express the birth date of an animal." ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:range xsd:dateTime ;
+    owl:equivalentProperty fiware:birthdate .
+
+saref4agri:AnimalGroup a owl:Class ;
+    rdfs:label "Animal Group" ;
+    rdfs:comment "A collection of one or multiple animals."@en ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty saref4agri:isLocatedIn ;
+            owl:someValuesFrom geo:Feature ],
+        [ a owl:Restriction ;
+            owl:onProperty saref4agri:hasMember ;
+            owl:someValuesFrom saref4agri:Animal ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty saref4agri:hasName ],
+        [ a owl:Restriction ;
+            owl:onProperty saref4agri:hasMember ;
+            owl:someValuesFrom saref4agri:Animal ],
+        [ a owl:Restriction ;
+            owl:onProperty saref4agri:isLocatedIn ;
+            owl:someValuesFrom geo:Feature ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty saref4agri:hasName ],
+        saref:FeatureOfInterest .
+
+saref4agri:hasDeathDate a owl:DatatypeProperty ;
+    rdfs:label "has death date" ;
+    rdfs:comment "A relation to express the death date of an animal." ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:range xsd:dateTime .
+
+saref4agri:hasID a owl:ObjectProperty ;
+    rdfs:label "has id"@en ;
+    rdfs:comment "A relation to express the unique identifier of an animal." ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:range saref4agri:ID ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+saref4agri:hasMember rdfs:comment "A relation to represent the members of an AnimalGroup." ;
+    rdfs:isDefinedBy saref4agri: .
+
+saref4agri:isMemberOf rdfs:isDefinedBy saref4agri: .
+
+saref4agri:Animal a owl:Class ;
+    rdfs:label "Animal" ;
+    rdfs:comment "An individual and identifiable living organism that feeds on organic matter, typically having specialized sense organs and nervous system and able to respond rapidly to stimuli."@en ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty saref4agri:isLocatedIn ;
+            owl:someValuesFrom geo:Feature ],
+        [ a owl:Restriction ;
+            owl:onProperty saref4agri:isMemberOf ;
+            owl:someValuesFrom saref4agri:AnimalGroup ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:dateTime ;
+            owl:onProperty saref4agri:hasDeathDate ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass saref4agri:ID ;
+            owl:onProperty saref4agri:hasID ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty saref4agri:hasName ],
+        [ a owl:Restriction ;
+            owl:onProperty obo:TAXRANK_1000000 ;
+            owl:someValuesFrom obo:TAXRANK_0000000 ],
+        [ a owl:Restriction ;
+            owl:onProperty saref4agri:isLocatedIn ;
+            owl:someValuesFrom geo:Feature ],
+        [ a owl:Restriction ;
+            owl:onProperty saref4agri:isMemberOf ;
+            owl:someValuesFrom saref4agri:AnimalGroup ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass saref4agri:ID ;
+            owl:onProperty saref4agri:hasID ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:dateTime ;
+            owl:onProperty saref4agri:hasBirthDate ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:dateTime ;
+            owl:onProperty saref4agri:hasDeathDate ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty saref4agri:hasName ],
+        saref:FeatureOfInterest ;
+    owl:equivalentClass fiware:Animal .
+
+saref4agri:ID a owl:Class ;
+    rdfs:label "ID" ;
+    rdfs:isDefinedBy saref4agri: .
+
+saref4agri:isLocatedIn rdfs:isDefinedBy saref4agri: .
+

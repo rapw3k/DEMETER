@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DEMETER AgriFeature</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+
+        /* highlight imported definition */
+        .importeddef { background: #B88 }
+
+        /* highlight alignment */
+        .highlight-alignment { background: #8B8 }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://w3id.org/demeter/agri/agriFeature",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "DEMETER AgriFeature"
+      }
+    ],
+    "https://schema.org/rights": [
+      {
+        "@value": "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.8.4</span>
+  </div>
+  <h1>DEMETER AgriFeature</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>https://w3id.org/demeter/agri/agriFeature</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            
+    Raul Palma<br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor">Contributor</a>(s)</dt>
+        <dd>
+            
+    Ioanna Roussaki<br/>
+            
+    Rob Atkinson<br/>
+        </dd>
+        <dt>Version Information</dt>
+        <dd>1.0</dd>
+        <dt>Version URI</dt>
+        <dd><a href="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriFeature.ttl">https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriFeature.ttl</a></dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="https://w3id.org/demeter/agri/agriCommon">https://w3id.org/demeter/agri/agriCommon</a><br/>
+        </dd>
+        <dt>Rights</dt>
+        <dd>This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="input.ttl">RDF (turtle)</a></dd>
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>
+    </div>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+            <div><img src="../images/model_matching.jpg"/></div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#AgriFarm">Agri Farm</a></li>
+        <li><a href="#AgriGreenhouse">Agri Greenhouse</a></li>
+        <li><a href="#AgriParcel">Agri Parcel</a></li>
+        <li><a href="#Building">Building</a></li>
+        <li><a href="#Buildingspace">Building space</a></li>
+        <li><a href="#EconomicActivityNACEValue">EconomicActivityNACEValue</a></li>
+        <li><a href="#Farm">Farm</a></li>
+        <li><a href="#Feature">Feature</a></li>
+        <li><a href="#Geometry">Geometry</a></li>
+        <li><a href="#Holding">Holding</a></li>
+        <li><a href="#ManagementZone">ManagementZone</a></li>
+        <li><a href="#OriginTypeValue">OriginTypeValue</a></li>
+        <li><a href="#Parcel">Parcel</a></li>
+        <li><a href="#Plot">Plot</a></li>
+        <li><a href="#Point">Point</a></li>
+        <li><a href="#Site">Site</a></li>
+        <li><a href="#SpatialObject">SpatialObject</a></li>
+    </ul>
+    <div class="entity class" id="ManagementZone">
+        <h3>ManagementZone<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#ManagementZone</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType">iso19150-2:FeatureType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">iso19109:AnyFeature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://portele.de/ont/inspire/baseInspire#validFrom">common:validFrom</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://www.w3.org/ns/prov#generatedAtTime">prov:generatedAtTime</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://portele.de/ont/inspire/baseInspire#validTo">common:validTo</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#notes">foodie:notes</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://www.w3.org/ns/prov#invalidatedAtTime">prov:invalidatedAtTime</a> <span class="cardinality">max</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#containsZone">foodie:containsZone</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="OriginTypeValue">
+        <h3>OriginTypeValue<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#OriginTypeValue</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Codelist">iso19150-2:Codelist</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#originType">foodie:originType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Plot">
+        <h3>Plot<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#Plot</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">iso19109:AnyFeature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType">iso19150-2:FeatureType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.w3.org/ns/prov#generatedAtTime">prov:generatedAtTime</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://portele.de/ont/inspire/baseInspire#validTo">common:validTo</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://www.w3.org/ns/prov#invalidatedAtTime">prov:invalidatedAtTime</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://portele.de/ont/inspire/baseInspire#validFrom">common:validFrom</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#originType">foodie:originType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#description">foodie:description</a> <span class="cardinality">max</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#holdingZone">foodie:holdingZone</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://foodie-cloud.com/model/foodie#containsPlot">foodie:containsPlot</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="EconomicActivityNACEValue">
+        <h3>EconomicActivityNACEValue<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://inspire.ec.europa.eu/schemas/act-core/3.0#
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#activity">af-inspire:activity</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Holding">
+        <h3>Holding<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://inspire.ec.europa.eu/schemas/af/3.0#Holding</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://inspire.ec.europa.eu/schemas/af/3.0#
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType">iso19150-2:FeatureType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex">act-inspire:ActivityComplex</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">iso19109:AnyFeature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#contains">af-inspire:contains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#holdingSite">foodie:holdingSite</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Site">
+        <h3>Site<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://inspire.ec.europa.eu/schemas/af/3.0#Site</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://inspire.ec.europa.eu/schemas/af/3.0#
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">iso19109:AnyFeature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType">iso19150-2:FeatureType</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.w3.org/ns/prov#invalidatedAtTime">prov:invalidatedAtTime</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://www.w3.org/ns/prov#generatedAtTime">prov:generatedAtTime</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://portele.de/ont/inspire/baseInspire#validFrom">common:validFrom</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#activity">af-inspire:activity</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://portele.de/ont/inspire/baseInspire#validTo">common:validTo</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#containsPlot">foodie:containsPlot</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#holdingPlot">foodie:holdingPlot</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#contains">af-inspire:contains</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Feature">
+        <h3>Feature<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#Feature</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.opengis.net/ont/geosparql
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>This class represents the top-level feature type. This class is equivalent to GFI_Feature defined in ISO 19156:2011, and it is superclass of all feature types.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#SpatialObject">geo:SpatialObject</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#Site">af-inspire:Site</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#Building">saref4agri:Building</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#Holding">af-inspire:Holding</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#Parcel">saref4agri:Parcel</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#BuildingSpace">saref4agri:BuildingSpace</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://foodie-cloud.com/model/foodie#Plot">foodie:Plot</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://foodie-cloud.com/model/foodie#ManagementZone">foodie:ManagementZone</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Geometry">
+        <h3>Geometry<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#Geometry</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.opengis.net/ont/geosparql
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class represents the top-level geometry type. This class is equivalent to the UML class GM_Object defined in ISO 19107, and it is superclass of all geometry types.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#SpatialObject">geo:SpatialObject</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2003/01/geo/wgs84_pos#Point">wgs84_pos:Point</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasSerialization">geo:hasSerialization</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="SpatialObject">
+        <h3>SpatialObject<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#SpatialObject</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.opengis.net/ont/geosparql
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The class spatial-object represents everything that can have a spatial representation. It is superclass of feature and geometry.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#sfContains">geo:sfContains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://www.opengis.net/ont/geosparql#SpatialObject">geo:SpatialObject</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#sfWithin">geo:sfWithin</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://www.opengis.net/ont/geosparql#SpatialObject">geo:SpatialObject</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2003/01/geo/wgs84_pos#location">wgs84_pos:location</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2003/01/geo/wgs84_pos#Point">wgs84_pos:Point</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#sfContains">geo:sfContains</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#sfWithin">geo:sfWithin</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#sfContains">geo:sfContains</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#sfWithin">geo:sfWithin</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Point">
+        <h3>Point<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2003/01/geo/wgs84_pos#Point</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.w3.org/2003/01/geo/wgs84_pos#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A point, typically described using a coordinate system relative to Earth, such as WGS84.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AgriFarm">
+        <h3>Agri Farm<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#AgriFarm</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications.</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AgriGreenhouse">
+        <h3>Agri Greenhouse<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#AgriGreenhouse</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Greenhouse.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://uri.fiware.org/ns/data-models#AgriParcel">fiware:AgriParcel</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AgriParcel">
+        <h3>Agri Parcel<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#AgriParcel</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://uri.fiware.org/ns/data-models#AgriGreenhouse">fiware:AgriGreenhouse</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Building">
+        <h3>Building<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#Building</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space).</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#BuildingSpace">saref4agri:BuildingSpace</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a> <span class="cardinality">max</span> 1<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Buildingspace">
+        <h3>Building space<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#BuildingSpace</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An entity used to define the physical spaces of the building. A building space contains devices or building objects.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Farm">
+        <h3>Farm<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#Farm</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A plot of land used for the scope of farming which can contain buildings and parcels.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Alignments</th>
+                <td class="highlight-alignment">
+                    <a href="af-inspire:Holding">af-inspire:Holding</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="fiware:AgriFarm">fiware:AgriFarm</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Parcel">saref4agri:Parcel</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Building">saref4agri:Building</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a> <span class="cardinality">max</span> 1<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Parcel">
+        <h3>Parcel<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#Parcel</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Alignments</th>
+                <td class="highlight-alignment">
+                    <a href="foodie:Plot">foodie:Plot</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="fiware:AgriParcel">fiware:AgriParcel</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Crop">saref4agri:Crop</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#containsPlot">containsPlot</a></li>
+        <li><a href="#containsZone">containsZone</a></li>
+        <li><a href="#crop">crop</a></li>
+        <li><a href="#holdingPlot">holdingPlot</a></li>
+        <li><a href="#holdingSite">holdingSite</a></li>
+        <li><a href="#holdingZone">holdingZone</a></li>
+        <li><a href="#machine">machine</a></li>
+        <li><a href="#originType">originType</a></li>
+        <li><a href="#tractor">tractor</a></li>
+        <li><a href="#activity">activity</a></li>
+        <li><a href="#contains">contains</a></li>
+        <li><a href="#hasgeometry">has geometry</a></li>
+        <li><a href="#sfContains">contains</a></li>
+        <li><a href="#within">within</a></li>
+        <li><a href="#location">location</a></li>
+        <li><a href="#hasAgriCrop">hasAgriCrop</a></li>
+        <li><a href="#hasAgriParcel">hasAgriParcel</a></li>
+        <li><a href="#hasAgriParcelChildren">hasAgriParcelChildren</a></li>
+        <li><a href="#hasAgriParcelParent">hasAgriParcelParent</a></li>
+        <li><a href="#hasAgriSoil">hasAgriSoil</a></li>
+        <li><a href="#landLocation">landLocation</a></li>
+        <li><a href="#location1">location</a></li>
+        <li><a href="#contains1">contains</a></li>
+        <li><a href="#iscontainedin">is contained in</a></li>
+    </ul>
+    <div class="entity property" id="containsPlot">
+        <h3>containsPlot<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#containsPlot</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#Plot">foodie:Plot</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="containsZone">
+        <h3>containsZone<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#containsZone</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#ManagementZone">foodie:ManagementZone</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="crop">
+        <h3>crop<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#crop</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="https://uri.fiware.org/ns/data-models#hasAgriCrop">fiware:hasAgriCrop</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="holdingPlot">
+        <h3>holdingPlot<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#holdingPlot</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#isContainedIn">saref4agri:isContainedIn</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#Site">af-inspire:Site</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="holdingSite">
+        <h3>holdingSite<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#holdingSite</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#isContainedIn">saref4agri:isContainedIn</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#Holding">af-inspire:Holding</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="holdingZone">
+        <h3>holdingZone<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#holdingZone</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#isContainedIn">saref4agri:isContainedIn</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#Plot">foodie:Plot</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="machine">
+        <h3>machine<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#machine</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#MachineType">foodie:MachineType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="originType">
+        <h3>originType<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#originType</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#OriginTypeValue">foodie:OriginTypeValue</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="tractor">
+        <h3>tractor<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#tractor</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#TractorType">foodie:TractorType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="activity">
+        <h3>activity<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://inspire.ec.europa.eu/schemas/af/3.0#activity</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://inspire.ec.europa.eu/schemas/af/3.0#
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue">act-inspire:EconomicActivityNACEValue</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="contains">
+        <h3>contains<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://inspire.ec.europa.eu/schemas/af/3.0#contains</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://inspire.ec.europa.eu/schemas/af/3.0#
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#Site">af-inspire:Site</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasgeometry">
+        <h3>has geometry<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#hasGeometry</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.opengis.net/ont/geosparql#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A spatial representation for a given feature.
+                </td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="http://www.w3.org/2003/01/geo/wgs84_pos#location">wgs84_pos:location</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="sfContains">
+        <h3>contains<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#sfContains</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.opengis.net/ont/geosparql
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#SpatialObject">geo:SpatialObject</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#SpatialObject">geo:SpatialObject</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="within">
+        <h3>within<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#sfWithin</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.opengis.net/spec/geosparql/1.0
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#SpatialObject">geo:SpatialObject</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#SpatialObject">geo:SpatialObject</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="location">
+        <h3>location<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/2003/01/geo/wgs84_pos#location</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.w3.org/2003/01/geo/wgs84_pos#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The relation between something and the point, or other geometrical thing in space, where it is.
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasAgriCrop">
+        <h3>hasAgriCrop<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#hasAgriCrop</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Reference to the crop associated with this parcel
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasAgriParcel">
+        <h3>hasAgriParcel<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#hasAgriParcel</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    List of agri parcels belonging to the farm
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasAgriParcelChildren">
+        <h3>hasAgriParcelChildren<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#hasAgriParcelChildren</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An optional reference to lower level (child) AgriParcel records to which this entity relates.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasAgriParcelParent">
+        <h3>hasAgriParcelParent<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#hasAgriParcelParent</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An optional reference to a higher level (parent) AgriParcel entity to which this entity relates.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#isContainedIn">saref4agri:isContainedIn</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasAgriSoil">
+        <h3>hasAgriSoil<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#hasAgriSoil</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Reference to the soil associated with this parcel of land.
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="landLocation">
+        <h3>landLocation<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#landLocation</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Geometry defining the boundaries of the farm land
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://uri.fiware.org/ns/data-models#location">fiware:location</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="location1">
+        <h3>location<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#location</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="contains1">
+        <h3>contains<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#contains</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#sfContains">geo:sfContains</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#isContainedIn">saref4agri:isContainedIn</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="iscontainedin">
+        <h3>is contained in<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#isContainedIn</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#hasserialization">has serialization</a></li>
+        <li><a href="#area">area</a></li>
+        <li><a href="#cropStatus">cropStatus</a></li>
+        <li><a href="#lastPlantedAt">lastPlantedAt</a></li>
+    </ul>
+    <div class="entity property" id="hasserialization">
+        <h3>has serialization<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#hasSerialization</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.opengis.net/ont/geosparql
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Connects a geometry object with its text-based serialization
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="area">
+        <h3>area<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#area</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The area of the parcel nominally in square meters.
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="cropStatus">
+        <h3>cropStatus<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#cropStatus</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting.
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="lastPlantedAt">
+        <h3>lastPlantedAt<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#lastPlantedAt</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicates the date when the crop was last planted.
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+    </ul>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>:</dt>
+        <dd><code>https://w3id.org/cybele/</code></dd>
+        <dt>act-inspire</dt>
+        <dd><code>http://inspire.ec.europa.eu/schemas/act-core/3.0#</code></dd>
+        <dt>af-inspire</dt>
+        <dd><code>http://inspire.ec.europa.eu/schemas/af/3.0#</code></dd>
+        <dt>common</dt>
+        <dd><code>http://portele.de/ont/inspire/baseInspire#</code></dd>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
+        <dt>dct</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>fiware</dt>
+        <dd><code>https://uri.fiware.org/ns/data-models#</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
+        <dt>foodie</dt>
+        <dd><code>http://foodie-cloud.com/model/foodie#</code></dd>
+        <dt>geo</dt>
+        <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
+        <dt>iso19109</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#</code></dd>
+        <dt>iso19150-2</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>qb</dt>
+        <dd><code>http://purl.org/linked-data/cube#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>saref4agri</dt>
+        <dd><code>https://w3id.org/def/saref4agri#</code></dd>
+        <dt>schema</dt>
+        <dd><code>http://schema.org/</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>stat</dt>
+        <dd><code>http://data.europa.eu/m8g/</code></dd>
+        <dt>wgs84_pos</dt>
+        <dd><code>http://www.w3.org/2003/01/geo/wgs84_pos#</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>

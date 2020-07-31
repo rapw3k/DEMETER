@@ -1,0 +1,595 @@
+@base <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix basic: <../../iso19103/2005/basic#> .
+@prefix ci: <#> .
+@prefix datetype: <code/DateType/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix h2o: <../../iso19150/-2/2012/basic#> .
+@prefix online: <code/OnLineFunction/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix present: <code/PresentationForm/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <code/Role/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    dc:creator """Simon Jonathan David COX
+CSIRO"""^^xsd:string ;
+    dc:date "2012-05-25T00:00:00"^^xsd:dateTime ;
+    dc:description "An OWL representation of parts of the Geographic Metadata model described in ISO 19115:2003 with Corrigendum 2006 - CI Package"^^xsd:string ;
+    dc:source """ISO 19115:2003
+ISO 19115:2006 Corrigendum"""^^xsd:string ;
+    dc:title "OWL representation of ISO 19115 (Geographic Information - Metadata - Citation package)"^^xsd:string ;
+    dcterms:created "2012-05-18T00:00:00"^^xsd:dateTime ;
+    dcterms:hasPart ci:Address, ci:Citation, ci:Contact, ci:Date, <#Date.date>, ci:DateTypeCode, ci:ISBN, ci:ISSN, ci:OnLineFunctionCode, ci:OnlineResource, ci:PresentationFormCode, ci:ResponsibleParty, ci:RoleCode, ci:Series, ci:Telephone, ci:address, ci:administrativeArea, ci:alternateTitle, ci:applicationProfile, ci:citedResponsibleParty, ci:city, ci:collectiveTitle, ci:contactInfo, ci:contactInstructions, ci:country, ci:date, ci:dateType, ci:deliveryPoint, ci:description, ci:edition, ci:editionDate, ci:electronicMailAddress, ci:facsimile, ci:function, ci:hoursOfService, ci:identifier, ci:individualName, ci:issueIdentification, ci:linkage, ci:name, ci:onlineResource, ci:organisationName, ci:otherCitationDetails, ci:page, ci:phone, ci:positionName, ci:postalCode, ci:presentationForm, ci:protocol, ci:role, ci:series, ci:title, ci:voice ;
+    dcterms:modified "2012-10-26T00:00:00"^^xsd:dateTime ;
+    a owl:Ontology ;
+    rdfs:comment "This version of the ontology uses # and /code/ patterns as agreed in ISO 19150-2 meeting in Toulouse, June 2012."^^xsd:string ;
+    owl:imports <../../iso19103/2005/basic>, <code/DateType>, <code/OnLineFunction>, <code/PresentationForm>, <code/Role>, <../../iso19150/-2/2012/basic> ;
+    owl:priorVersion <https://www.seegrid.csiro.au/subversion/xmml/ontologies/tags/201210/ISOTC211/HM/citation.rdf> ;
+    owl:versionIRI <https://www.seegrid.csiro.au/subversion/xmml/ontologies/tags/201305/ISOTC211/HM/citation.rdf> .
+
+ci:Address
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Address"^^xsd:string ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:administrativeArea
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:city
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:country
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:postalCode
+    ], [
+        a owl:Restriction ;
+        owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:deliveryPoint
+    ], [
+        a owl:Restriction ;
+        owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:electronicMailAddress
+    ] ;
+    skos:notation "CI_Address"^^h2o:ISOClassName .
+
+ci:Citation
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Citation"^^xsd:string ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:ISBN
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:ISSN
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:collectiveTitle
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:edition
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:editionDate
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:otherCitationDetails
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:series
+    ], [
+        a owl:Restriction ;
+        owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:alternateTitle
+    ], [
+        a owl:Restriction ;
+        owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:citedResponsibleParty
+    ], [
+        a owl:Restriction ;
+        owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:presentationForm
+    ], [
+        a owl:Restriction ;
+        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass ci:Date ;
+        owl:onProperty ci:date
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom ci:PresentationFormCode ;
+        owl:onProperty ci:presentationForm
+    ], [
+        a owl:Restriction ;
+        owl:allValuesFrom ci:ResponsibleParty ;
+        owl:onProperty ci:citedResponsibleParty
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:title
+    ] ;
+    skos:notation "CI_Citation"^^h2o:ISOClassName .
+
+ci:Contact
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Contact"^^xsd:string ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:contactInstructions
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:hoursOfService
+    ], [
+        a owl:Restriction ;
+        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass ci:Address ;
+        owl:onProperty ci:address
+    ], [
+        a owl:Restriction ;
+        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass ci:OnlineResource ;
+        owl:onProperty ci:onlineResource
+    ], [
+        a owl:Restriction ;
+        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass ci:Telephone ;
+        owl:onProperty ci:phone
+    ] ;
+    skos:notation "CI_Contact"^^h2o:ISOClassName .
+
+ci:Date
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Date"^^xsd:string ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:allValuesFrom ci:DateTypeCode ;
+        owl:onProperty ci:dateType
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty <#Date.date>
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:dateType
+    ] ;
+    skos:notation "CI_Date"^^h2o:ISOClassName .
+
+<#Date.date>
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Date ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Date.date"^^xsd:string ;
+    rdfs:range xsd:date .
+
+ci:DateTypeCode
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Date type code"^^xsd:string ;
+    rdfs:subClassOf skos:Concept ;
+    skos:notation "CI_DateTypeCode"^^h2o:ISOClassName .
+
+ci:ISBN
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "ISBN"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:ISSN
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "ISSN"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:OnLineFunctionCode
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "On line function code"^^xsd:string ;
+    rdfs:subClassOf skos:Concept ;
+    skos:notation "CI_OnLineFunctionCode"^^h2o:ISOClassName .
+
+ci:OnlineResource
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Online resource"^^xsd:string ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:allValuesFrom ci:OnLineFunctionCode ;
+        owl:onProperty ci:function
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:linkage
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:applicationProfile
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:description
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:function
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:name
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:protocol
+    ] ;
+    skos:notation "CI_OnlineResource"^^h2o:ISOClassName .
+
+ci:PresentationFormCode
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Presentation form code"^^xsd:string ;
+    rdfs:subClassOf skos:Concept ;
+    skos:notation "CI_PresentationFormCode"^^h2o:ISOClassName .
+
+ci:ResponsibleParty
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Responsible party"^^xsd:string ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:allValuesFrom ci:RoleCode ;
+        owl:onProperty ci:role
+    ], [
+        a owl:Restriction ;
+        owl:cardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:role
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:individualName
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:organisationName
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:positionName
+    ], [
+        a owl:Restriction ;
+        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass ci:Contact ;
+        owl:onProperty ci:contactInfo
+    ] ;
+    skos:notation "CI_ResponsibleParty"^^h2o:ISOClassName .
+
+ci:RoleCode
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Role code"^^xsd:string ;
+    rdfs:subClassOf skos:Concept ;
+    skos:notation "CI_RoleCode"^^h2o:ISOClassName .
+
+ci:Series
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Series"^^xsd:string ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:issueIdentification
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:name
+    ], [
+        a owl:Restriction ;
+        owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:page
+    ] ;
+    skos:notation "CI_Series"^^h2o:ISOClassName .
+
+ci:Telephone
+    a owl:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Telephone"^^xsd:string ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:facsimile
+    ], [
+        a owl:Restriction ;
+        owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+        owl:onProperty ci:voice
+    ] ;
+    skos:notation "CI_Telephone"^^h2o:ISOClassName .
+
+ci:address
+    a owl:ObjectProperty ;
+    rdfs:domain ci:Contact ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "address"^^xsd:string ;
+    rdfs:range ci:Address .
+
+ci:administrativeArea
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Address ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "administrative area"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:alternateTitle
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "alternate title"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:applicationProfile
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:OnlineResource ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "application profile"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:citedResponsibleParty
+    a owl:ObjectProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "cited responsible party"^^xsd:string ;
+    rdfs:range ci:ResponsibleParty .
+
+ci:city
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Address ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "city"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:collectiveTitle
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "collective title"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:contactInfo
+    a owl:ObjectProperty ;
+    rdfs:domain ci:ResponsibleParty ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "contact info"^^xsd:string ;
+    rdfs:range ci:Contact .
+
+ci:contactInstructions
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Contact ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "contact instructions"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:country
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Address ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "country"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:date
+    a owl:ObjectProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "date"^^xsd:string ;
+    rdfs:range ci:Date .
+
+ci:dateType
+    a owl:ObjectProperty ;
+    rdfs:domain ci:Date ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "date type"^^xsd:string ;
+    rdfs:range ci:DateTypeCode .
+
+ci:deliveryPoint
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Address ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "delivery point"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:description
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:OnlineResource ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "description"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:edition
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "edition"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:editionDate
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "edition date"^^xsd:string ;
+    rdfs:range xsd:date .
+
+ci:electronicMailAddress
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Address ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "electronic mail address"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:facsimile
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Telephone ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "facsimile"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:function
+    a owl:ObjectProperty ;
+    rdfs:domain ci:OnlineResource ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "function"^^xsd:string ;
+    rdfs:range ci:OnLineFunctionCode .
+
+ci:hoursOfService
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Contact ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "hours of service"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:identifier
+    a owl:ObjectProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "identifier"^^xsd:string .
+
+ci:individualName
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:ResponsibleParty ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "individual name"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:issueIdentification
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Series ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "issue identification"^^xsd:string .
+
+ci:linkage
+    a owl:ObjectProperty ;
+    rdfs:domain ci:OnlineResource ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "linkage"^^xsd:string .
+
+ci:name
+    a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (ci:OnlineResource
+            ci:Series
+        )
+    ] ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "name"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:onlineResource
+    a owl:ObjectProperty ;
+    rdfs:domain ci:Contact ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "online resource"^^xsd:string ;
+    rdfs:range ci:OnlineResource .
+
+ci:organisationName
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:ResponsibleParty ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "organisation name"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:otherCitationDetails
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "other citation details"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:page
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Series ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "page"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:phone
+    a owl:ObjectProperty ;
+    rdfs:domain ci:Contact ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "phone"^^xsd:string ;
+    rdfs:range ci:Telephone .
+
+ci:positionName
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:ResponsibleParty ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "position name"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:postalCode
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Address ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "postal code"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:presentationForm
+    a owl:ObjectProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "presentation form"^^xsd:string ;
+    rdfs:range ci:PresentationFormCode .
+
+ci:protocol
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:OnlineResource ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "protocol"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:role
+    a owl:ObjectProperty ;
+    rdfs:domain ci:ResponsibleParty ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "role"^^xsd:string ;
+    rdfs:range ci:RoleCode .
+
+ci:series
+    a owl:ObjectProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "series"^^xsd:string ;
+    rdfs:range ci:Series .
+
+ci:title
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Citation ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "title"^^xsd:string ;
+    rdfs:range xsd:string .
+
+ci:voice
+    a owl:DatatypeProperty ;
+    rdfs:domain ci:Telephone ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "voice"^^xsd:string ;
+    rdfs:range xsd:string .
+

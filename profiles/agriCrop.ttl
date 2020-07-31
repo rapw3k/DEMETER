@@ -1,0 +1,113 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+foodie:CropType rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+foodie:ProductionType rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+foodie:cropArea rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+foodie:cropSpecies rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+foodie:family rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+foodie:genus rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+foodie:production rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+foodie:productionAmount rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+foodie:species rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+foodie:variety rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+fiware:cropHasAgriSoil a owl:ObjectProperty ;
+    rdfs:label "cropHasAgriSoil"@en ;
+    rdfs:comment "Reference to the recommended types of soil suitable for growing this crop" ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+fiware:harvestingInterval a owl:DatatypeProperty ;
+    rdfs:label "harvestingInterval"@en ;
+    rdfs:comment """A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\r
+interval, description\r
+Where interval is in the form of start date/end date\r
+--MM-DD/--MM-DD\r
+Meaning repeat each year from this start date to this end date.""" ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+fiware:hasAgriFertiliser a owl:ObjectProperty ;
+    rdfs:label "hasAgriFertiliser"@en ;
+    rdfs:comment "Reference to the recommended types of fertiliser suitable for growing this crop" ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+fiware:hasAgriPest a owl:ObjectProperty ;
+    rdfs:label "hasAgriPest"@en ;
+    rdfs:comment "Reference to the pests known to attack this crop." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+fiware:plantingFrom a owl:DatatypeProperty ;
+    rdfs:label "plantingFrom"@en ;
+    rdfs:comment """A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\r
+interval, description\r
+Where interval is in the form of start date/end date\r
+--MM-DD/--MM-DD\r
+Meaning repeat each year from this start date to this end date.""" ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+fiware:wateringFrequency a owl:DatatypeProperty ;
+    rdfs:label "wateringFrequency"@en ;
+    rdfs:comment "A description of the recommended watering schedule. A choice from an enumerated list. One of: daily, weekly, biweekly, monthly, onDemand, other" ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+saref4agri:Crop rdfs:isDefinedBy saref4agri: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty saref4agri:hasPlantDate ;
+            owl:someValuesFrom xsd:dateTime ] ;
+    owl:equivalentClass foodie:CropSpecies,
+        fiware:AgriCrop .
+
+saref4agri:generates rdfs:isDefinedBy saref4agri: .
+
+saref4agri:hasHarvestDate rdfs:isDefinedBy saref4agri: ;
+    owl:equivalentProperty foodie:productionDate .
+
+saref4agri:receives rdfs:isDefinedBy saref4agri: .
+
+<https://w3id.org/demeter/agri/agriCrop> a owl:Ontology ;
+    dct:contributor [ schema:affiliation [ foaf:name "ICCS" ] ;
+            foaf:name "Ioanna Roussaki" ],
+        [ schema:affiliation [ foaf:name "OGC" ] ;
+            foaf:name "Rob Atkinson" ] ;
+    dct:creator [ schema:affiliation [ foaf:name "PSNC" ] ;
+            rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+            foaf:name "Raul Palma" ] ;
+    dct:description "The DEMETER AgriCrop is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+    dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+    dct:title "DEMETER AgriCrop"@en ;
+    rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    owl:imports <http://foodie-cloud.com/model/foodie>,
+        <https://w3id.org/def/saref4agri>,
+        <https://w3id.org/demeter/agri/agriCommon> ;
+    owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCrop.ttl> ;
+    owl:versionInfo "1.0" ;
+    foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
+            foaf:name "DEMETER project" ] .
+
+foodie:CropSpecies rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+foodie:productionDate rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+fiware:AgriCrop a owl:Class ;
+    rdfs:label "Agri Farm" ;
+    rdfs:comment "This entity contains a harmonised description of a generic crop. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> .
+
+saref4agri:hasPlantDate rdfs:isDefinedBy saref4agri: .
+
