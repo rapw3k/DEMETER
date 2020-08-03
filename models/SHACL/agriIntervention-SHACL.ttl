@@ -1,0 +1,588 @@
+@prefix :      <https://w3id.org/cybele/> .
+@prefix schema: <http://schema.org/> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix act-inspire: <http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+@prefix ssn:   <http://www.w3.org/ns/ssn/> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix qb:    <http://purl.org/linked-data/cube#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix iso19108: <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix sosa:  <http://www.w3.org/ns/sosa/> .
+@prefix stat:  <http://data.europa.eu/m8g/> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix af-inspire: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix iso19115-citation: <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#> .
+
+<https://astrea.linkeddata.es/shapes#1ca30e946783b27b9122cc1cb2f80fac>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      common:validTo .
+
+<https://astrea.linkeddata.es/shapes#5e71668a8d30e6f1e01a76bfbf0dde7a>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:plan .
+
+<https://astrea.linkeddata.es/shapes#71109d856433408edd5fbbe2c7c9862b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "quantity"@en , "The total quantity of water or product used/ applied. It is recommended this is measured in litres for liquids or kilogrammes for solids." ;
+        sh:description    "The total quantity of water or product used/ applied. It is recommended this is measured in litres for liquids or kilogrammes for solids." ;
+        sh:name           "quantity"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:quantity .
+
+<https://astrea.linkeddata.es/shapes#34d909bed8f3694892659ca769af8455>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:creationDateTime .
+
+<https://astrea.linkeddata.es/shapes#4f8071aa4a6098de3e1e207a123dda40>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      common:validFrom .
+
+<https://astrea.linkeddata.es/shapes#a6deb728acb85fcb95236e8903c6ed1c>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:evidenceParty .
+
+<https://astrea.linkeddata.es/shapes#07c5c3447bba509cbb5dd9bd8002f577>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:treatmentDescription .
+
+<https://astrea.linkeddata.es/shapes#4c85c05b6b5a18f802e2e69a01e5ae55>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19108:Period ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:period .
+
+<https://astrea.linkeddata.es/shapes#5ccfee24676a7ba68d9a9bfad49c79fd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:pressure .
+
+<https://astrea.linkeddata.es/shapes#664e0cad0c346ba5db330a0d1fd0223b>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:price .
+
+<https://astrea.linkeddata.es/shapes#6fa26ea5f24512aa61a72750510f5d63>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:areaDose .
+
+<https://astrea.linkeddata.es/shapes#24af3f2b31afb96bdb50576bc94012b8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "hasOperator"@en , "Reference to the operator conducting the operation" ;
+        sh:description    "Reference to the operator conducting the operation" ;
+        sh:name           "hasOperator"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:hasOperator .
+
+<https://astrea.linkeddata.es/shapes#a9680d60b373feee6f6c64d53beca3c3>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:notes .
+
+<https://astrea.linkeddata.es/shapes#e07b9f115689bab346d95810654809c3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:applicationWidth .
+
+<https://astrea.linkeddata.es/shapes#bbde507bba5de728f49d31128c942ebe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:FormOfTreatmentValue ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:formOfTreatment .
+
+<https://astrea.linkeddata.es/shapes#68a719789e5df366cc08c18b42772407>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:type .
+
+<https://astrea.linkeddata.es/shapes#6fbc836f8c20515f11ca65067c8194cc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d79ae02ab06d1fd501d1694f7aff03c2> ;
+        sh:targetClass    foodie:CampaignType .
+
+<https://astrea.linkeddata.es/shapes#226b206eff8a74df5f0c17bdbd9326d2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:dateTime ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:creationDateTime ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#38b3a7c002109eb68615c0bab5480536>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:Product ;
+        sh:equals         fiware:hasAgriProductType ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:treatmentProduct .
+
+<https://astrea.linkeddata.es/shapes#70b3c128d7291f14d0678dbe1098839f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e4673daae41f54637adfa7d0c0732aa5> , <https://astrea.linkeddata.es/shapes#458266b84934788b6204c5fad12ee12a> , <https://astrea.linkeddata.es/shapes#5da7eba205564f9e693acf7efa987488> , <https://astrea.linkeddata.es/shapes#684e2e899824a15b3dddb982a89db4db> , <https://astrea.linkeddata.es/shapes#6fa26ea5f24512aa61a72750510f5d63> , <https://astrea.linkeddata.es/shapes#5e71668a8d30e6f1e01a76bfbf0dde7a> , <https://astrea.linkeddata.es/shapes#a9c88c1050fd17a8a7428d875d176d0f> , <https://astrea.linkeddata.es/shapes#b86ca0ef9cc650a2c5cb81924e2df903> , <https://astrea.linkeddata.es/shapes#0d890d951f1156f470a3a61055f88e2d> , <https://astrea.linkeddata.es/shapes#4d3585fc8fb7d210f7cfcf9310e9382c> , <https://astrea.linkeddata.es/shapes#07c5c3447bba509cbb5dd9bd8002f577> ;
+        sh:targetClass    foodie:Treatment , fiware:AgriParcelOperation .
+
+<https://astrea.linkeddata.es/shapes#d79ae02ab06d1fd501d1694f7aff03c2>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:period .
+
+<https://astrea.linkeddata.es/shapes#365a8a1d622267a80fc9a3b6da78790c>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:type .
+
+<https://astrea.linkeddata.es/shapes#d2a657b2d775f38122a67bfad6e81470>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:equals         fiware:quantity ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:quantity .
+
+<https://astrea.linkeddata.es/shapes#e4673daae41f54637adfa7d0c0732aa5>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:motionSpeed .
+
+<https://astrea.linkeddata.es/shapes#2813779a0ca8cf3e557b859bc889a0b8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          geo:Geometry ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:interventionGeometry .
+
+<https://astrea.linkeddata.es/shapes#458266b84934788b6204c5fad12ee12a>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:quantity .
+
+<https://astrea.linkeddata.es/shapes#8a585e71e4651e6b1507422a020ccda2>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:minimumDose .
+
+<https://astrea.linkeddata.es/shapes#684e2e899824a15b3dddb982a89db4db>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:price .
+
+<https://astrea.linkeddata.es/shapes#e68dc0035ffd6a2cad9c974ea71bb853>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:status .
+
+<https://astrea.linkeddata.es/shapes#acd3e83fb9c319dd892da6aa1dc1f875>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:interventionPlot .
+
+<https://astrea.linkeddata.es/shapes#452162c8c3d23855bc12705913009246>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:description .
+
+<https://astrea.linkeddata.es/shapes#46ff072e8e7865a3671779f263a34d93>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:Plot ;
+        sh:equals         fiware:operationHasAgriParcel ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:interventionPlot .
+
+<https://astrea.linkeddata.es/shapes#cf8e8c1a7ff0ae02ce4607506f90ab6c>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:campaign .
+
+<https://astrea.linkeddata.es/shapes#0d0e1e3919fb65b3d6f0265743ac12a8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:equals         fiware:status ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:status ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#6827c8fb25e9ec612eb5dd7f871ae3dd>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:treatmentPlanCode .
+
+<https://astrea.linkeddata.es/shapes#b6318844cb2502bccba5bb8e7a152e2c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foodie:FormOfTreatmentValue .
+
+<https://astrea.linkeddata.es/shapes#e2edb59b88d427d4c0622412fd3e6aac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:Product ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:planProduct .
+
+<https://astrea.linkeddata.es/shapes#0d890d951f1156f470a3a61055f88e2d>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:treatmentProduct .
+
+<https://astrea.linkeddata.es/shapes#b6352f83860023dd0dc3831b6b3926b5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:motionSpeed .
+
+<https://astrea.linkeddata.es/shapes#f233a7a2dcd1cd33d7e3ee36758e88f3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19115-citation:ResponsibleParty ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:evidenceParty .
+
+<https://astrea.linkeddata.es/shapes#a9c88c1050fd17a8a7428d875d176d0f>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:formOfTreatment .
+
+<https://astrea.linkeddata.es/shapes#ccbf8e4b94ec06f9b0b70ae80ab74e2c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:treatmentDescription ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#c83812b1f3840eec7624a02645ac05d9>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:notes .
+
+<https://astrea.linkeddata.es/shapes#3d89b85cd5a3bda881f208de27abbb23>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19115-citation:ResponsibleParty ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:supervisor .
+
+<https://astrea.linkeddata.es/shapes#5a9f81b74499b076fed903175aa3fd1d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:maximumDose .
+
+<https://astrea.linkeddata.es/shapes#05a34e6d68290f8adb8fb2a7b76c9bca>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:CampaignType ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:campaign .
+
+<https://astrea.linkeddata.es/shapes#19bef101d4b3ca7c8e10f839d49cdd46>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:planProduct .
+
+<https://astrea.linkeddata.es/shapes#f69f8b990dab9ff3a292e8fc46bff80f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#8a585e71e4651e6b1507422a020ccda2> , <https://astrea.linkeddata.es/shapes#32100c0091e3d7fe8fe08f3ed1079e27> ;
+        sh:targetClass    foodie:DoseUnit .
+
+<https://astrea.linkeddata.es/shapes#1284343ceb04f5321bf8f1c7f6b0948e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "reportedAt"@en , "Timestamp when the event/ fault was reported." ;
+        sh:description    "Timestamp when the event/ fault was reported." ;
+        sh:name           "reportedAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:reportedAt .
+
+<https://astrea.linkeddata.es/shapes#1920818798ec12e24e6184913797a62b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19115-citation:ResponsibleParty ;
+        sh:equals         fiware:hasOperator ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:operator .
+
+<https://astrea.linkeddata.es/shapes#3484b89c3e68bd0514ee9fc1c907e070>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "result"@en , "A description of the results of the operation. One of: ok, aborted, failed." ;
+        sh:description    "A description of the results of the operation. One of: ok, aborted, failed." ;
+        sh:name           "result"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:result .
+
+<https://astrea.linkeddata.es/shapes#b86ca0ef9cc650a2c5cb81924e2df903>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:flowAdjustment .
+
+<https://astrea.linkeddata.es/shapes#035bdcbebf80f84685448088ea1770d6>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:treatmentPlanCreation .
+
+<https://astrea.linkeddata.es/shapes#9597b0bbefc132fba744ec288c5046cb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:treatmentPlanCode ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#caa55776648aa319375fbfef9ab027ae>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "waterSource"@en , "If water was applied/ use this specifies the source. One of: borehole, rainfall, river, rainwater capture, water dam, commercial supply." ;
+        sh:description    "If water was applied/ use this specifies the source. One of: borehole, rainfall, river, rainwater capture, water dam, commercial supply." ;
+        sh:name           "waterSource"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:waterSource .
+
+<https://astrea.linkeddata.es/shapes#8e7c33017e1bf55f1b058619d9a34413>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:TreatmentPlan ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:plan .
+
+<https://astrea.linkeddata.es/shapes#a42a84afb43054b3d92df87bc8e5ef4c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "plannedStartAt"@en , "The planned start date/timestamp for the operation. Note that this is advisory and the actual time the operation starts may be before or after the planned start." ;
+        sh:description    "The planned start date/timestamp for the operation. Note that this is advisory and the actual time the operation starts may be before or after the planned start." ;
+        sh:name           "plannedStartAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:plannedStartAt .
+
+<https://astrea.linkeddata.es/shapes#6acce5441353b5b00ce499d9c8be5b2c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "endedAt"@en , "Timestamp when the operation actually finished." ;
+        sh:description    "Timestamp when the operation actually finished." ;
+        sh:name           "endedAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:endedAt .
+
+<https://astrea.linkeddata.es/shapes#937f180f90276d38786507a75a1db1c1>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:description .
+
+<https://astrea.linkeddata.es/shapes#1156cecfbe89245f15ef380c236da90b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "status"@en , "A choice from an enumerated list describing the status. One of: planned, ongoing, finished, scheduled, cancelled." ;
+        sh:description    "A choice from an enumerated list describing the status. One of: planned, ongoing, finished, scheduled, cancelled." ;
+        sh:name           "status"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:status .
+
+<https://astrea.linkeddata.es/shapes#a90efe444d3ef0b41b5daeeebd209e9b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foodie:TreatmentPurposeValue .
+
+<https://astrea.linkeddata.es/shapes#32100c0091e3d7fe8fe08f3ed1079e27>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:maximumDose .
+
+<https://astrea.linkeddata.es/shapes#43a4c6d9c78991d24a8f36f4ac15a02c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:DoseUnit ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:areaDose .
+
+<https://astrea.linkeddata.es/shapes#1fd94bd64d3ac06aecb3592f6ac62b69>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:flowAdjustment .
+
+<https://astrea.linkeddata.es/shapes#4d3585fc8fb7d210f7cfcf9310e9382c>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:applicationWidth .
+
+<https://astrea.linkeddata.es/shapes#329bfecdebde7336eeaf10a1bf94fcc9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:dateTime ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:treatmentPlanCreation ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#b433cf25596f5f31234e51e24868858d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:ManagementZone ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:interventionZone .
+
+<https://astrea.linkeddata.es/shapes#17eb86688ae773af72274df34a49fd0c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "plannedEndAt"@en , "The planned end date/timestamp for the operation. Note that this is advisory and the actual time the operation finishes may be before or after the planned end." ;
+        sh:description    "The planned end date/timestamp for the operation. Note that this is advisory and the actual time the operation finishes may be before or after the planned end." ;
+        sh:name           "plannedEndAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:plannedEndAt .
+
+<https://astrea.linkeddata.es/shapes#0e392f6d04db1d8e1f5bc645b67eaf44>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Operation.md> ;
+        rdfs:label        "AgriParcelOperation" ;
+        sh:description    "This entity contains a harmonised description of a generic operations performed on a parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+        sh:name           "AgriParcelOperation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware:AgriParcelOperation .
+
+<https://astrea.linkeddata.es/shapes#8dbdae53bc493097f221815b40609bbd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#fb8a3048c4dff8f45c27779487cb6876> , <https://astrea.linkeddata.es/shapes#1ca30e946783b27b9122cc1cb2f80fac> , <https://astrea.linkeddata.es/shapes#664e0cad0c346ba5db330a0d1fd0223b> , <https://astrea.linkeddata.es/shapes#68a719789e5df366cc08c18b42772407> , <https://astrea.linkeddata.es/shapes#452162c8c3d23855bc12705913009246> , <https://astrea.linkeddata.es/shapes#acd3e83fb9c319dd892da6aa1dc1f875> , <https://astrea.linkeddata.es/shapes#a6deb728acb85fcb95236e8903c6ed1c> , <https://astrea.linkeddata.es/shapes#5e107ddaf9952f67337910379c4e2082> , <https://astrea.linkeddata.es/shapes#e68dc0035ffd6a2cad9c974ea71bb853> , <https://astrea.linkeddata.es/shapes#4f8071aa4a6098de3e1e207a123dda40> , <https://astrea.linkeddata.es/shapes#34d909bed8f3694892659ca769af8455> , <https://astrea.linkeddata.es/shapes#a9680d60b373feee6f6c64d53beca3c3> ;
+        sh:targetClass    foodie:Intervention .
+
+<https://astrea.linkeddata.es/shapes#5e107ddaf9952f67337910379c4e2082>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:interventionGeometry .
+
+<https://astrea.linkeddata.es/shapes#78916dd741b46b4466ed927af7798eb3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:minimumDose .
+
+<https://astrea.linkeddata.es/shapes#8477f498da73ed230d18f8e2e151dafe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "startedAt"@en , "Timestamp when the operation actually started to be performed." ;
+        sh:description    "Timestamp when the operation actually started to be performed." ;
+        sh:name           "startedAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:startedAt .
+
+<https://astrea.linkeddata.es/shapes#2cb52b35171814f4adb794b594d1f243>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Operation.md> ;
+        rdfs:label        "operationHasAgriParcel"@en , "Reference to the AgriParcel to which this entity relates." ;
+        sh:description    "Reference to the AgriParcel to which this entity relates." ;
+        sh:name           "operationHasAgriParcel"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:operationHasAgriParcel .
+
+<https://astrea.linkeddata.es/shapes#3d19b81373920988b7721a7e5117c975>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c83812b1f3840eec7624a02645ac05d9> , <https://astrea.linkeddata.es/shapes#937f180f90276d38786507a75a1db1c1> , <https://astrea.linkeddata.es/shapes#19bef101d4b3ca7c8e10f839d49cdd46> , <https://astrea.linkeddata.es/shapes#035bdcbebf80f84685448088ea1770d6> , <https://astrea.linkeddata.es/shapes#6827c8fb25e9ec612eb5dd7f871ae3dd> , <https://astrea.linkeddata.es/shapes#cf8e8c1a7ff0ae02ce4607506f90ab6c> , <https://astrea.linkeddata.es/shapes#365a8a1d622267a80fc9a3b6da78790c> ;
+        sh:targetClass    foodie:TreatmentPlan .
+
+<https://astrea.linkeddata.es/shapes#5e7b73293b58ba1d710937f5dbe29359>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "operationType"@en , "A choice from an enumerated list describing the operation performed on the parcel. One of: fertiliser, inspection, pesticide, water, other." ;
+        sh:description    "A choice from an enumerated list describing the operation performed on the parcel. One of: fertiliser, inspection, pesticide, water, other." ;
+        sh:name           "operationType"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:operationType .
+
+<https://astrea.linkeddata.es/shapes#fb8a3048c4dff8f45c27779487cb6876>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:supervisor .
+
+<https://astrea.linkeddata.es/shapes#5da7eba205564f9e693acf7efa987488>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:pressure .

@@ -1,0 +1,825 @@
+@prefix schema: <http://schema.org/> .
+@prefix :      <https://w3id.org/cybele/> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dim:   <http://purl.oclc.org/NET/ssnx/qu/dim#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix act-inspire: <http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+@prefix ssn:   <http://www.w3.org/ns/ssn/> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix qb:    <http://purl.org/linked-data/cube#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix sosa:  <http://www.w3.org/ns/sosa/> .
+@prefix stat:  <http://data.europa.eu/m8g/> .
+@prefix cf:    <http://purl.oclc.org/NET/ssnx/cf/cf-property#> .
+@prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
+@prefix qu:    <http://purl.oclc.org/NET/ssnx/qu/qu#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix af-inspire: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix cf-feature: <http://purl.oclc.org/NET/ssnx/cf/cf-feature#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<https://astrea.linkeddata.es/shapes#297286adc02d203b9486773c8e2b5ac8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "streamGauge"@en , "The water level surface elevation observed by Hydrometric measurement sensors, namely a Stream Gauge, expressed in centimeters." ;
+        sh:description    "The water level surface elevation observed by Hydrometric measurement sensors, namely a Stream Gauge, expressed in centimeters." ;
+        sh:name           "streamGauge"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:streamGauge .
+
+<https://astrea.linkeddata.es/shapes#82da3f9677527f027e33a454c4a094d8>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:quantitativeProperty .
+
+<https://astrea.linkeddata.es/shapes#f5d85329dd8373607183ef7a6a2c3fc7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "observedAt"@en , "Indicates the date/time the record was observed/ last observed." ;
+        sh:description    "Indicates the date/time the record was observed/ last observed." ;
+        sh:name           "observedAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:observedAt .
+
+<https://astrea.linkeddata.es/shapes#6b2e03dac56c60303e15fac566cda4a6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "Humidity"@en ;
+        sh:description    "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit" ;
+        sh:name           "Humidity"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref:Humidity .
+
+<https://astrea.linkeddata.es/shapes#fd810372de06150f2b7a95a1dffd0447>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foodie:PropertyTypeValue .
+
+<https://astrea.linkeddata.es/shapes#b33a4c13d391551e9a03969aa670e005>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> , <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "Relative Humidity a number between 0 and 1 representing the range of 0% to 100%. 0 ≤ relativeHumidity ≤ 1" , "relativeHumidity"@en , "Air’s relative humidity observed (percentage, expressed in parts per one)." ;
+        sh:description    "Air’s relative humidity observed (percentage, expressed in parts per one)." , "Relative Humidity a number between 0 and 1 representing the range of 0% to 100%. 0 ≤ relativeHumidity ≤ 1" ;
+        sh:name           "relativeHumidity"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:relativeHumidity .
+
+<https://astrea.linkeddata.es/shapes#0107c258bf73c305b3a37725ecc7b835>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "pressureTendency"@en , "Is the pressure rising or falling? It can be expressed in quantitative terms or qualitative terms (raising, falling, steady)" ;
+        sh:description    "Is the pressure rising or falling? It can be expressed in quantitative terms or qualitative terms (raising, falling, steady)" ;
+        sh:name           "pressureTendency"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:pressureTendency .
+
+<https://astrea.linkeddata.es/shapes#38a7f272cc51d62974ed68d2627832e4>
+        a                       sh:PropertyShape ;
+        sh:class                saref:Property ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 saref:relatesToProperty ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  saref:Property ] .
+
+<https://astrea.linkeddata.es/shapes#543e2a89e69d8c46a81f97430c4a8bcb>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:propertyName .
+
+<https://astrea.linkeddata.es/shapes#0424178b00b48cf1e0659c49e2c59076>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:propertyType .
+
+<https://astrea.linkeddata.es/shapes#6ad9985af98c9853889763298e7ca1ed>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "relates to property"@en ;
+        sh:name           "relates to property"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:relatesToProperty .
+
+<https://astrea.linkeddata.es/shapes#a6817e192aa225c2bf51cd485554c628>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "Temperature"@en ;
+        sh:description    "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)" ;
+        sh:name           "Temperature"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref:Temperature , dim:Temperature .
+
+<https://astrea.linkeddata.es/shapes#38b85f306514636db9a5f1b81e81bd46>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "AgriParcelRecord" ;
+        sh:description    "This entity contains a harmonised description of the conditions recorded on a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+        sh:name           "AgriParcelRecord" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware:AgriParcelRecord .
+
+<https://astrea.linkeddata.es/shapes#c3abec14372379675b0e3b2033b73a7c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "recordHasAgriParcel"@en , "Reference to the AgriParcel to which this entity relates." ;
+        sh:description    "Reference to the AgriParcel to which this entity relates." ;
+        sh:name           "recordHasAgriParcel"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:recordHasAgriParcel .
+
+<https://astrea.linkeddata.es/shapes#7622216c02606402eedf4c3ab4d0ead0>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:analysisDate .
+
+<https://astrea.linkeddata.es/shapes#a15cdb5fb0143770c399bc65f0e94507>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
+        rdfs:label        "hasDevice"@en , "Reference to the IoT devices associated with this [entity] i.e. sensors, controls." ;
+        sh:description    "Reference to the IoT devices associated with this [entity] i.e. sensors, controls." ;
+        sh:name           "hasDevice"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:hasDevice .
+
+<https://astrea.linkeddata.es/shapes#725bbb5e075a321c737dde30db7d3a76>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "Measurement"@en ;
+        sh:description    "Represents the measured value made over a property. It is also linked to the unit of measure in which the value is expressed and the timestamp of the measurement."@en ;
+        sh:name           "Measurement"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#d7ebf345df8fe1eee1b1baae1be67bf2> , <https://astrea.linkeddata.es/shapes#156af31e954042e340f8709a0253518d> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#58f226d8030285c0185e857469910d61> , <https://astrea.linkeddata.es/shapes#7b722600669ba01f596047cf2001951f> , <https://astrea.linkeddata.es/shapes#f5964a49119d177c39d3573f1ede7cad> , <https://astrea.linkeddata.es/shapes#38a7f272cc51d62974ed68d2627832e4> , <https://astrea.linkeddata.es/shapes#ac9b01412b3f8f24a9c3c7a9428ef6f2> ;
+        sh:targetClass    iso19103:Measure , saref:Measurement .
+
+<https://astrea.linkeddata.es/shapes#e7d09ea75472fdab925bd7954ab0a2f4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Acceleration .
+
+<https://astrea.linkeddata.es/shapes#7d6a541b22bd5c0ae3ab84fdea174957>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "has feature of interest"@en , "Relation between a measurement and the feature of interest being measured."@en ;
+        sh:description    "Relation between a measurement and the feature of interest being measured."@en ;
+        sh:name           "has feature of interest"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:hasFeatureOfInterest .
+
+<https://astrea.linkeddata.es/shapes#0e9df4f49cf1f0a3373861594f2772a3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        rdfs:label        "QuantityKind" ;
+        sh:name           "QuantityKind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qu:QuantityKind .
+
+<https://astrea.linkeddata.es/shapes#02d4c25304447141a9742f21145f29eb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:MassPerTimePerArea .
+
+<https://astrea.linkeddata.es/shapes#95a1939989677b5cd3aacdd30d3d72a0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Compressibility .
+
+<https://astrea.linkeddata.es/shapes#3b5c594b18161fe8932fbae3f5531ff7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "soilTemperature"@en , "The observed soil temperature nominally in degrees centigrade." ;
+        sh:description    "The observed soil temperature nominally in degrees centigrade." ;
+        sh:name           "soilTemperature"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:soilTemperature .
+
+<https://astrea.linkeddata.es/shapes#e1d72611382749881eb86502f8d8d1a2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "makes measurement"@en ;
+        sh:name           "makes measurement"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:makesMeasurement .
+
+<https://astrea.linkeddata.es/shapes#e7eab2baf1b1ffa91b1b54df1093d0d4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "windSpeed"@en , "The observed wind speed in m/s, encoded as a Number." ;
+        sh:description    "The observed wind speed in m/s, encoded as a Number." ;
+        sh:name           "windSpeed"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:windSpeed .
+
+<https://astrea.linkeddata.es/shapes#9448f013a659c4c2c89845301bed10e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "is controlled by device"@en ;
+        sh:name           "is controlled by device"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:isControlledByDevice .
+
+<https://astrea.linkeddata.es/shapes#1dcc4d9d13d84acd7cd750d36aa7363d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:SpecificEntropy .
+
+<https://astrea.linkeddata.es/shapes#e99d601b76a7db1b1132902175fa4f7e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Dimensionless .
+
+<https://astrea.linkeddata.es/shapes#4752e3e2bb553f8a78c5302130c05719>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherForecast/doc/spec.html> ;
+        rdfs:label        "WeatherForecast" ;
+        sh:description    "A weather forecast for a period of time and a location." ;
+        sh:name           "WeatherForecast" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware:WeatherForecast .
+
+<https://astrea.linkeddata.es/shapes#fe1d20defb55d9b091cee4f590f01aca>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "soilMoistureVwc"@en , "Measured as Volumetric Water Content, VWC as a percentage. 0 ≤soilMoistureVwc ≤ 1" ;
+        sh:description    "Measured as Volumetric Water Content, VWC as a percentage. 0 ≤soilMoistureVwc ≤ 1" ;
+        sh:name           "soilMoistureVwc"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:soilMoistureVwc .
+
+<https://astrea.linkeddata.es/shapes#3b03bab9f8bf5207ae7c517190972ec0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        rdfs:label        "PropertyKind" ;
+        sh:name           "PropertyKind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qu:PropertyKind .
+
+<https://astrea.linkeddata.es/shapes#65c715d5d2f2d31d44acef9806b5664e>
+        a            sh:PropertyShape ;
+        sh:class     saref:Device ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:isControlledByDevice .
+
+<https://astrea.linkeddata.es/shapes#cd9445c64e106b75337259da0347cea3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Concentration .
+
+<https://astrea.linkeddata.es/shapes#fb41a462e8338424ef4eaa17b4d8f2db>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:dateTime ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:analysisDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#e2931e7b6c2eb60ddface78eccba4bd9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "Property"@en , "Property" ;
+        sh:description    "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended." , "An aspect of an entity that can be observable by a sensor."@en ;
+        sh:name           "Property"@en , "Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#156af31e954042e340f8709a0253518d> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#df4ae458b4e554c080717d9bdb48e778> , <https://astrea.linkeddata.es/shapes#40cac3f9a1397b5ef47c697cccc0d6b8> , <https://astrea.linkeddata.es/shapes#a0152b516031df77da267c5973fceb3d> , <https://astrea.linkeddata.es/shapes#65c715d5d2f2d31d44acef9806b5664e> ;
+        sh:targetClass    saref:Property , foodie:PropertyType , qu:QuantityKind .
+
+<https://astrea.linkeddata.es/shapes#e32f5c6affc3f1a530406d8609cd9c37>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#543e2a89e69d8c46a81f97430c4a8bcb> , <https://astrea.linkeddata.es/shapes#7622216c02606402eedf4c3ab4d0ead0> , <https://astrea.linkeddata.es/shapes#82da3f9677527f027e33a454c4a094d8> , <https://astrea.linkeddata.es/shapes#0424178b00b48cf1e0659c49e2c59076> , <https://astrea.linkeddata.es/shapes#45af5f745969881725f85e8f6325a462> ;
+        sh:targetClass    foodie:PropertyType .
+
+<https://astrea.linkeddata.es/shapes#152560ee90de07720f4fb1e606c349c9>
+        a            sh:PropertyShape ;
+        sh:class     saref:Measurement ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:isFeatureOfInterestOf .
+
+<https://astrea.linkeddata.es/shapes#feb55fa4be1793183a97c77e8da8b390>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:EnergyFlux .
+
+<https://astrea.linkeddata.es/shapes#46aaaec0bd6ff6e19e55a4801decd885>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+        rdfs:label        "Medium" ;
+        sh:name           "Medium" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    cf-feature:Medium .
+
+<https://astrea.linkeddata.es/shapes#7d500845887f53beb750d2a134541b12>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "dateObserved"@en , "The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval." ;
+        sh:description    "The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval." ;
+        sh:name           "dateObserved"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:dateObserved .
+
+<https://astrea.linkeddata.es/shapes#96c5445ce9eb6c581ca247628a9b99fa>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Density .
+
+<https://astrea.linkeddata.es/shapes#d7fc215d256ad3e5c4dd33d2c2f1998e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "atmosphericPressure"@en , "The atmospheric pressure observed measured in Hecto Pascals" ;
+        sh:description    "The atmospheric pressure observed measured in Hecto Pascals" ;
+        sh:name           "atmosphericPressure"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:atmosphericPressure .
+
+<https://astrea.linkeddata.es/shapes#021b14753ceeb8ef52220477ed0b71c9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "has property"@en , "Relation between a feature of interest and its properties."@en ;
+        sh:description    "Relation between a feature of interest and its properties."@en ;
+        sh:name           "has property"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:hasProperty .
+
+<https://astrea.linkeddata.es/shapes#87dba1bff46eb4a192d32b25b6cda251>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "refPointOfInterest"@en , "A reference to a point of interest (usually a weather station) associated to this observation" ;
+        sh:description    "A reference to a point of interest (usually a weather station) associated to this observation" ;
+        sh:name           "refPointOfInterest"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:refPointOfInterest .
+
+<https://astrea.linkeddata.es/shapes#798f5efed7706e1ab95b8bff19b57ed8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:SurfaceDensity .
+
+<https://astrea.linkeddata.es/shapes#b44fb04a68de358717a4bd8f19dcc4e0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "is measured by device"@en ;
+        sh:name           "is measured by device"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:isMeasuredByDevice .
+
+<https://astrea.linkeddata.es/shapes#156af31e954042e340f8709a0253518d>
+        a         sh:PropertyShape ;
+        sh:class  saref:UnitOfMeasure .
+
+<https://astrea.linkeddata.es/shapes#3612b2c16ebce72371e3646a901384d2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:VelocityOrSpeed .
+
+<https://astrea.linkeddata.es/shapes#83b7f8163e2d75c668715725094b5549>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "airTemperature"@en , "The observed air temperature (in the shade) nominally in degrees centigrade." ;
+        sh:description    "The observed air temperature (in the shade) nominally in degrees centigrade." ;
+        sh:name           "airTemperature"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:airTemperature .
+
+<https://astrea.linkeddata.es/shapes#d5106b5a978d899fb1d6d2c91a36ddfa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:nonQuantitativeProperty ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#477a31758c58ec2a31f728133ae9e4e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "precipitation"@en , "Precipitation level observed." ;
+        sh:description    "Precipitation level observed." ;
+        sh:name           "precipitation"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:precipitation .
+
+<https://astrea.linkeddata.es/shapes#dcab4bdbfe6acda4587c461732a4f224>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "WeatherObserved" ;
+        sh:description    "A weather observation made over a period of time at a specific location" ;
+        sh:name           "WeatherObserved" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware:WeatherObserved .
+
+<https://astrea.linkeddata.es/shapes#06663f64a0154a8dce8122f3dbbc8d89>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:propertyName ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#a0152b516031df77da267c5973fceb3d>
+        a            sh:PropertyShape ;
+        sh:class     saref:FeatureOfInterest ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:isPropertyOf .
+
+<https://astrea.linkeddata.es/shapes#21fc777093a942aa6c153efcb1be7a5d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "has value"@en ;
+        sh:name           "has value"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           saref:hasValue .
+
+<https://astrea.linkeddata.es/shapes#45af5f745969881725f85e8f6325a462>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:nonQuantitativeProperty .
+
+<https://astrea.linkeddata.es/shapes#0f86872d25ea266df5fbb15547fd49c8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "Feature of interest"@en ;
+        sh:description    saref: ;
+        sh:name           "Feature of interest"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#09f5e35fbb67d281bfa409122a569f0c> , <https://astrea.linkeddata.es/shapes#152560ee90de07720f4fb1e606c349c9> ;
+        sh:targetClass    sosa:FeatureOfInterest , saref:FeatureOfInterest .
+
+<https://astrea.linkeddata.es/shapes#ee5ec727f91c6d55b7e56c8d0a3ddd81>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:PropertyType ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:productionProperty .
+
+<https://astrea.linkeddata.es/shapes#577857b06622ab1523b5e75d28f19b43>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+        rdfs:label        "Surface" ;
+        sh:name           "Surface" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    cf-feature:Surface .
+
+<https://astrea.linkeddata.es/shapes#1f4b716b8f6628e9c868e13eec22b16a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "measures property"@en ;
+        sh:name           "measures property"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:measuresProperty .
+
+<https://astrea.linkeddata.es/shapes#7b722600669ba01f596047cf2001951f>
+        a                       sh:PropertyShape ;
+        sh:class                saref:UnitOfMeasure ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 saref:isMeasuredIn ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  saref:UnitOfMeasure ] .
+
+<https://astrea.linkeddata.es/shapes#84b03bbedb195b34cdeb73e5ff52ebb2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+        rdfs:label        "Wind" ;
+        sh:name           "Wind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    cf-feature:Wind .
+
+<https://astrea.linkeddata.es/shapes#fef8eed41a9119575b5ef31c98009e94>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:quantitativeProperty .
+
+<https://astrea.linkeddata.es/shapes#c38ddf7f7d575c414b91bceafbe9a23c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:ThermalConductivity .
+
+<https://astrea.linkeddata.es/shapes#50d46638569363bac480e3988a01f2d0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "temperature"@en , "Air’s temperature observed" ;
+        sh:description    "Air’s temperature observed" ;
+        sh:name           "temperature"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:temperature .
+
+<https://astrea.linkeddata.es/shapes#a6f9f94a4804975b719b55a6f8aa4722>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "soilMoistureEc"@en , "Measured as Electrical Conductivity, EC nominally in units of Siemens per meter (S/m)." ;
+        sh:description    "Measured as Electrical Conductivity, EC nominally in units of Siemens per meter (S/m)." ;
+        sh:name           "soilMoistureEc"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:soilMoistureEc .
+
+<https://astrea.linkeddata.es/shapes#09f5e35fbb67d281bfa409122a569f0c>
+        a            sh:PropertyShape ;
+        sh:class     saref:Property ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:hasProperty .
+
+<https://astrea.linkeddata.es/shapes#1542e8e8bcfbfc73c93f9ea3bc52506b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+        rdfs:label        "Precipitation" ;
+        sh:name           "Precipitation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    cf-feature:Precipitation .
+
+<https://astrea.linkeddata.es/shapes#e85f7f569c1b43b31809a79038a33ed0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "Feature Of Interest"@en ;
+        sh:name           "Feature Of Interest"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sosa:FeatureOfInterest .
+
+<https://astrea.linkeddata.es/shapes#58f226d8030285c0185e857469910d61>
+        a            sh:PropertyShape ;
+        sh:class     saref:FeatureOfInterest ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:hasFeatureOfInterest .
+
+<https://astrea.linkeddata.es/shapes#f5964a49119d177c39d3573f1ede7cad>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:dateTime ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:hasTimestamp .
+
+<https://astrea.linkeddata.es/shapes#5df41e27a6a109010ffe856646bac71a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Temperature .
+
+<https://astrea.linkeddata.es/shapes#125eef08b12ba43d878ac29d6ea9c5bc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Distance .
+
+<https://astrea.linkeddata.es/shapes#063f206ce3739840972aeccecf104496>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Power .
+
+<https://astrea.linkeddata.es/shapes#b139d149be15b6e60e6c8b1bef46b4fa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "relates to measurement"@en ;
+        sh:name           "relates to measurement"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:relatesToMeasurement .
+
+<https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> , saref: ;
+        rdfs:label        "Unit of measure"@en ;
+        sh:description    "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of the Smart Appliances ontology, but this list can be extended."@en , "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)." ;
+        sh:name           "Unit of measure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref:UnitOfMeasure .
+
+<https://astrea.linkeddata.es/shapes#df4ae458b4e554c080717d9bdb48e778>
+        a            sh:PropertyShape ;
+        sh:class     saref:Measurement ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:relatesToMeasurement .
+
+<https://astrea.linkeddata.es/shapes#ed8e20ca8f8a7d959083f202a998156b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "visibility"@en , "Visibility reported (veryPoor, poor, moderate, good, veryGood, excellent)" ;
+        sh:description    "Visibility reported (veryPoor, poor, moderate, good, veryGood, excellent)" ;
+        sh:name           "visibility"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:visibility .
+
+<https://astrea.linkeddata.es/shapes#811ef72b6ccea344721cf0bcfa6618ba>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/ssn> ;
+        rdfs:label        "has property"@en , "A relation between a FeatureOfInterest and a Property of that feature." ;
+        sh:description    "A relation between a FeatureOfInterest and a Property of that feature." ;
+        sh:equals         saref:hasProperty ;
+        sh:name           "has property"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasProperty .
+
+<https://astrea.linkeddata.es/shapes#1060f31bb77710178ed8201af7ef9e56>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "is measured in"@en ;
+        sh:name           "is measured in"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:isMeasuredIn .
+
+<https://astrea.linkeddata.es/shapes#61831577bcbf4588767fc1545d94c2bd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "controls property"@en ;
+        sh:name           "controls property"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:controlsProperty .
+
+<https://astrea.linkeddata.es/shapes#28ccb211e6cd2daa5a1a4831b1581a83>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "solarRadiation"@en , "Instantaneous solar radiation measured in kW/m2." , "The solar radiation observed measured in Watts per square meter." ;
+        sh:description    "The solar radiation observed measured in Watts per square meter." , "Instantaneous solar radiation measured in kW/m2." ;
+        sh:name           "solarRadiation"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:solarRadiation .
+
+<https://astrea.linkeddata.es/shapes#7e3adb8d51a59ba87ae0d547fa88984d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:PropertyTypeValue ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:propertyType .
+
+<https://astrea.linkeddata.es/shapes#25c6f4326d87e2068d4482b5630f4e25>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "is feature of interest of"@en , "Relation betwwen a feature of interest and the measurments that are about it."@en ;
+        sh:description    "Relation betwwen a feature of interest and the measurments that are about it."@en ;
+        sh:name           "is feature of interest of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:isFeatureOfInterestOf .
+
+<https://astrea.linkeddata.es/shapes#40cac3f9a1397b5ef47c697cccc0d6b8>
+        a            sh:PropertyShape ;
+        sh:class     saref:Device ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:isMeasuredByDevice .
+
+<https://astrea.linkeddata.es/shapes#095f9984c5d4662d997b832984a4966e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:StressOrPressure .
+
+<https://astrea.linkeddata.es/shapes#3cadcceeb4d136522f36af7913b4481e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:EnergyDensity .
+
+<https://astrea.linkeddata.es/shapes#7ef9556b6a447372290246838b1a4c72>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "snowHeight"@en , "The snow height observed by generic snow depth measurement sensors, expressed in centimeters." ;
+        sh:description    "The snow height observed by generic snow depth measurement sensors, expressed in centimeters." ;
+        sh:name           "snowHeight"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:snowHeight .
+
+<https://astrea.linkeddata.es/shapes#9292ed038e80185c3094631a79d8781b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "windDirection"@en , "The wind direction expressed in decimal degrees compared to geographic North (measured clockwise), encoded as a Number. Range 0 to 360." ;
+        sh:description    "The wind direction expressed in decimal degrees compared to geographic North (measured clockwise), encoded as a Number. Range 0 to 360." ;
+        sh:name           "windDirection"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:windDirection .
+
+<https://astrea.linkeddata.es/shapes#d44a7c2f81ca2fd36a878737392a98c3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "measurement made by"@en , "Relation between a measurement and the device that made it."@en ;
+        sh:description    "Relation between a measurement and the device that made it."@en ;
+        sh:name           "measurement made by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:measurementMadeBy .
+
+<https://astrea.linkeddata.es/shapes#8a4625974fc3cbc57d1601d7005f1cd0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+        rdfs:label        "Surface Layer" ;
+        sh:name           "Surface Layer" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    cf-feature:SurfaceLayer .
+
+<https://astrea.linkeddata.es/shapes#4747a67c1721d631f521dad4945ab39f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "is property of"@en , "Relation between a property and a feature of interest in which such property appears."@en ;
+        sh:description    "Relation between a property and a feature of interest in which such property appears."@en ;
+        sh:name           "is property of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:isPropertyOf .
+
+<https://astrea.linkeddata.es/shapes#47a83b960f28fcca71252fa9443ecbc9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Soil" ;
+        sh:description    "Upper layer of the earth in which plants grow." ;
+        sh:name           "Soil" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:Soil .
+
+<https://astrea.linkeddata.es/shapes#6c4eb5c4906d5ba4c081f85367dd0edd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:RadianceExposure .
+
+<https://astrea.linkeddata.es/shapes#b750c456a22cd04db1ce4147d857b041>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "illuminance"@en , "The illumninance observed measured in lux (lx) or lumens per square metre (cd·sr·m−2)" ;
+        sh:description    "The illumninance observed measured in lux (lx) or lumens per square metre (cd·sr·m−2)" ;
+        sh:name           "illuminance"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:illuminance .
+
+<https://astrea.linkeddata.es/shapes#5f126655bae82556cee93619e59685a6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "dewPoint"@en , "The dew point encoded as a number." ;
+        sh:description    "The dew point encoded as a number." ;
+        sh:name           "dewPoint"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:dewPoint .
+
+<https://astrea.linkeddata.es/shapes#18eae720f8bb0af37acdae085e61611e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "weatherType"@en , "The observed weather type. It is represented by a comma separated list of weather statuses, for instance overcast, lightRain." ;
+        sh:description    "The observed weather type. It is represented by a comma separated list of weather statuses, for instance overcast, lightRain." ;
+        sh:name           "weatherType"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:weatherType .
+
+<https://astrea.linkeddata.es/shapes#f6b42c80f4c9c46b5e5254095d073516>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "refDevice"@en , "A reference to the device(s) which captured this observation." ;
+        sh:description    "A reference to the device(s) which captured this observation." ;
+        sh:equals         saref:measurementMadeBy ;
+        sh:name           "refDevice"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:refDevice .
+
+<https://astrea.linkeddata.es/shapes#d7ebf345df8fe1eee1b1baae1be67bf2>
+        a         sh:PropertyShape ;
+        sh:class  saref:Property .
+
+<https://astrea.linkeddata.es/shapes#466029394f8f44718cce25b40440d323>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+        rdfs:label        "Layer" ;
+        sh:name           "Layer" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    cf-feature:Layer .
+
+<https://astrea.linkeddata.es/shapes#c0ad8a083203dc9b50e039f44e41d17e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:PropertyType ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:soilProperty .
+
+<https://astrea.linkeddata.es/shapes#ac9b01412b3f8f24a9c3c7a9428ef6f2>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:hasValue .
