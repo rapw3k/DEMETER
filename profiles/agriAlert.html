@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DEMETER AgriAlert</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+
+        /* highlight imported definition */
+        .importeddef { background: #B88 }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://w3id.org/demeter/agri/agriAlert",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "DEMETER AgriAlert"
+      }
+    ],
+    "https://schema.org/rights": [
+      {
+        "@value": "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.8.4</span>
+  </div>
+  <h1>DEMETER AgriAlert</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>https://w3id.org/demeter/agri/agriAlert</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            
+    Raul Palma<br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor">Contributor</a>(s)</dt>
+        <dd>
+            
+    Ioanna Roussaki<br/>
+            
+    Rob Atkinson<br/>
+        </dd>
+        <dt>Version Information</dt>
+        <dd>1.0</dd>
+        <dt>Version URI</dt>
+        <dd><a href="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriAlert.ttl">https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriAlert.ttl</a></dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a><br/>
+            <a href="https://uri.fiware.org/ns/data-models">https://uri.fiware.org/ns/data-models</a><br/>
+            <a href="https://w3id.org/demeter/agri/agriCommon">https://w3id.org/demeter/agri/agriCommon</a><br/>
+        </dd>
+        <dt>Rights</dt>
+        <dd>This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="input.ttl">RDF (turtle)</a></dd>
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>
+    </div>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+            <div><img src="../images/model_matching.jpg"/></div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Alert">Alert</a></li>
+        <li><a href="#Alert1">Alert</a></li>
+    </ul>
+    <div class="entity class" id="Alert">
+        <h3>Alert<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#Alert</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType">iso19150-2:FeatureType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">iso19109:AnyFeature</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#alertDate">foodie:alertDate</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#alertGeometry">foodie:alertGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#description">foodie:description</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#type">foodie:type</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#type">foodie:type</a> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#description">foodie:description</a> <span class="cardinality">max</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#plotAlert">foodie:plotAlert</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://foodie-cloud.com/model/foodie#speciesAlert">foodie:speciesAlert</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://foodie-cloud.com/model/foodie#zoneAlert">foodie:zoneAlert</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Alert1">
+        <h3>Alert<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#Alert</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://fiware.github.io/data-models/specs/Alert/doc/spec.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>This entity models an alert and could be used to send alerts related to traffic jam, accidents, weather conditions, high level of pollutants and so on. The purpose of the model is to support the generation of notifications for a user or trigger other actions, based on such alerts. An alert is generated by a specific situation. The main features of an alert is that it is not predictable and it is not a recurrent data. That means that an alert could be an accident or a high level of pollutants measure, additionally it could be the fall down of a patient or a car driving in the opposite direction.</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#alertGeometry">alertGeometry</a></li>
+        <li><a href="#alertPlot">alertPlot</a></li>
+        <li><a href="#alertSpecies">alertSpecies</a></li>
+        <li><a href="#alertZone">alertZone</a></li>
+        <li><a href="#plotAlert">plotAlert</a></li>
+        <li><a href="#speciesAlert">speciesAlert</a></li>
+        <li><a href="#zoneAlert">zoneAlert</a></li>
+    </ul>
+    <div class="entity property" id="alertGeometry">
+        <h3>alertGeometry<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#alertGeometry</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="alertPlot">
+        <h3>alertPlot<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#alertPlot</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#plotAlert">foodie:plotAlert</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#Plot">foodie:Plot</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="alertSpecies">
+        <h3>alertSpecies<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#alertSpecies</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#speciesAlert">foodie:speciesAlert</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#CropSpecies">foodie:CropSpecies</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="alertZone">
+        <h3>alertZone<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#alertZone</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Inverse properties</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#zoneAlert">foodie:zoneAlert</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#ManagementZone">foodie:ManagementZone</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="plotAlert">
+        <h3>plotAlert<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#plotAlert</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#Alert">foodie:Alert</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="speciesAlert">
+        <h3>speciesAlert<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#speciesAlert</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#Alert">foodie:Alert</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="zoneAlert">
+        <h3>zoneAlert<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#zoneAlert</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#Alert">foodie:Alert</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#alertDate">alertDate</a></li>
+        <li><a href="#validFrom">validFrom</a></li>
+        <li><a href="#validTo">validTo</a></li>
+    </ul>
+    <div class="entity property" id="alertDate">
+        <h3>alertDate<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#alertDate</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                    <a href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="validFrom">
+        <h3>validFrom<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#validFrom</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://fiware.github.io/data-models/specs/Alert/doc/spec.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The start date of validity of the alert in ISO8601 UTC format.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://portele.de/ont/inspire/baseInspire#validFrom">common:validFrom</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="validTo">
+        <h3>validTo<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#validTo</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://fiware.github.io/data-models/specs/Alert/doc/spec.html
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The end date of validity of the alert in ISO8601 UTC format.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://portele.de/ont/inspire/baseInspire#validTo">common:validTo</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+    </ul>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>:</dt>
+        <dd><code>https://w3id.org/cybele/</code></dd>
+        <dt>act-inspire</dt>
+        <dd><code>http://inspire.ec.europa.eu/schemas/act-core/3.0#</code></dd>
+        <dt>af-inspire</dt>
+        <dd><code>http://inspire.ec.europa.eu/schemas/af/3.0#</code></dd>
+        <dt>common</dt>
+        <dd><code>http://portele.de/ont/inspire/baseInspire#</code></dd>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
+        <dt>dct</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>fiware</dt>
+        <dd><code>https://uri.fiware.org/ns/data-models#</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
+        <dt>foodie</dt>
+        <dd><code>http://foodie-cloud.com/model/foodie#</code></dd>
+        <dt>geo</dt>
+        <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
+        <dt>iso19103</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#</code></dd>
+        <dt>iso19109</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#</code></dd>
+        <dt>iso19150-2</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>qb</dt>
+        <dd><code>http://purl.org/linked-data/cube#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>saref</dt>
+        <dd><code>https://w3id.org/saref#</code></dd>
+        <dt>saref4agri</dt>
+        <dd><code>https://w3id.org/def/saref4agri#</code></dd>
+        <dt>schema</dt>
+        <dd><code>http://schema.org/</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>sosa</dt>
+        <dd><code>http://www.w3.org/ns/sosa/</code></dd>
+        <dt>ssn</dt>
+        <dd><code>http://www.w3.org/ns/ssn/</code></dd>
+        <dt>stat</dt>
+        <dd><code>http://data.europa.eu/m8g/</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>

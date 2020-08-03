@@ -1,0 +1,44 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix profiles: <http://defs-dev.opengis.net/def/metamodel/profiles/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix jsonld:  <https://www.w3.org/TR/json-ld/> .
+
+<http://foodie-cloud.com/model/foodie> a prof:Profile ;
+	rdfs:label "Foodie Ontology" ;
+	prof:hasResource [ 
+			prof:hasRole prof:schema ;
+			prof:hasArtifact "foodie.jsonld" ;
+			dct:conformsTo jsonld: ;
+            dct:format "application/ld+json" ;
+		], [
+			prof:hasRole prof:cachedCopy ;
+			prof:hasArtifact "lib/foodie.ttl" ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+.
+
+<https://uri.fiware.org/ns/data-models> a prof:Profile ;
+	rdfs:label "FIWARE data models" ;
+	prof:hasResource [ 
+			prof:hasRole prof:schema ;
+			prof:hasArtifact "https://fiware.github.io/data-models/full-context.jsonld" ;
+			dct:conformsTo jsonld: ;
+            dct:format "application/ld+json" ;
+		], [
+			prof:hasRole prof:cachedCopy ;
+			prof:hasArtifact "lib/fiware.ttl" ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] , [
+			prof:hasRole prof:specification ;
+			prof:hasArtifact "lib/fiware.ttl" ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+.
