@@ -91,5 +91,21 @@
 		] ;
 .
 
+<http://www.opengis.net/ont/geosparql>  a prof:Profile ;
+	rdfs:label  "GeoSPARQL"@en ;
+	prof:hasResource 	[
+			prof:hasRole prof:cachedCopy ;
+			prof:hasArtifact "lib/geosparql.ttl" ;
+			dct:conformsTo owl:, rdfs: ;
+            dct:format "text/turtle" ;
+		] ;
+		prof:hasResource 	[
+			prof:hasRole prof:source ;
+			prof:hasArtifact <http://schemas.opengis.net/geosparql/1.0/geosparql_vocab_all.rdf> ;
+			dct:conformsTo owl: , rdfs: ;
+            dct:format "application/rdf+xml" ;
+		] ;
+.
+
 
 
