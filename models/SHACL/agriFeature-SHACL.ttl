@@ -1,5 +1,5 @@
 @prefix :      <https://w3id.org/cybele/> .
-@prefix schema: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
@@ -10,6 +10,7 @@
 @prefix geo:   <http://www.opengis.net/ont/geosparql#> .
 @prefix qb:    <http://purl.org/linked-data/cube#> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix sf:    <http://www.opengis.net/ont/sf#> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
 @prefix dct:   <http://purl.org/dc/terms/> .
 @prefix sh:    <http://www.w3.org/ns/shacl#> .
@@ -54,6 +55,15 @@
         sh:property       <https://astrea.linkeddata.es/shapes#ffa228fbe9acf17ea0b9d1fa1bf85040> , <https://astrea.linkeddata.es/shapes#79f9049ac8c7b059d503662569e881fe> ;
         sh:targetClass    af-inspire:Holding .
 
+<https://astrea.linkeddata.es/shapes#9f3f156f683d37683f9c2798ebd9c3a6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Curve"@en ;
+        sh:description    "\nA Curve is a 1-dimensional geometric object usually stored as a sequence of Points, with the subtype of Curve specifying the form of the interpolation between Points. This specification defines only one subclass of Curve, LineString, which uses linear interpolation between Points.\nA Curve is a 1-dimensional geometric object that is the homeomorphic image of a real, closed, interval.\nA Curve is simple if it does not pass through the same Point twice with the possible exception of the two end\npoints.\nA Curve is closed if its start Point is equal to its end Point.\nThe boundary of a closed Curve is empty.\nA Curve that is simple and closed is a Ring.\nThe boundary of a non-closed Curve consists of its two end Points.\nA Curve is defined as topologically closed, that is, it contains its endpoints f(a) and f(b).\n    "@en ;
+        sh:name           "Curve"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Curve .
+
 <https://astrea.linkeddata.es/shapes#a742b2c3b67f7817094c3e8d8100531d>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:int ;
@@ -92,6 +102,21 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:hasAgriCrop .
 
+<https://astrea.linkeddata.es/shapes#a6fc85850e8eaf3606f2059efa9f8fb3>
+        a            sh:PropertyShape ;
+        sh:class     geo:Geometry ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      geo:hasGeometry .
+
+<https://astrea.linkeddata.es/shapes#cf6a37cc1bfa54fcde15de1df08c3452>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Polygon"@en ;
+        sh:description    "\nA Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon.\nThe exterior boundary LinearRing defines the top of the surface which is the side of the surface from which the exterior boundary appears to traverse the boundary in a counter clockwise direction. The interior LinearRings will have the opposite orientation, and appear as clockwise when viewed from the top,\nThe assertions for Polygons (the rules that define valid Polygons) are as follows:\na) Polygons are topologically closed;\nb) The boundary of a Polygon consists of a set of LinearRings that make up its exterior and interior boundaries;\nc) No two Rings in the boundary cross and the Rings in the boundary of a Polygon may intersect at a Point but only as a tangent.\nd) A Polygon may not have cut lines, spikes or punctures.\ne) The interior of every Polygon is a connected point set;\nf) The exterior of a Polygon with 1 or more holes is not connected. Each hole defines a connected component of the exterior.\n    "@en ;
+        sh:name           "Polygon"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Polygon .
+
 <https://astrea.linkeddata.es/shapes#be4b194476cee0124b7ee49362b53877>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  af-inspire: ;
@@ -99,11 +124,14 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           af-inspire:activity .
 
-<https://astrea.linkeddata.es/shapes#a6fc85850e8eaf3606f2059efa9f8fb3>
-        a            sh:PropertyShape ;
-        sh:class     geo:Geometry ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      geo:hasGeometry .
+<https://astrea.linkeddata.es/shapes#e94ea9bef8e93d35e2fe9f1f528dffd3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Surface"@en ;
+        sh:description    "\nA Surface is a 2-dimensional geometric object.\nA simple Surface may consists of a single patch that is associated with one exterior boundary and 0 or more interior boundaries. A single such Surface patch in 3-dimensional space is isometric to planar Surfaces, by a simple affine rotation matrix that rotates the patch onto the plane z = 0. If the patch is not vertical, the projection onto the same plane is an isomorphism, and can be represented as a linear transformation, i.e. an affine.\nPolyhedral Surfaces are formed by stitching together such simple Surfaces patches along their common boundaries. Such polyhedral Surfaces in a 3-dimensional space may not be planar as a whole, depending on the orientation of their planar normals. If all the patches are in alignment (their normals are parallel), then the whole stitched polyhedral surface is co-planar and can be represented as a single patch if it is connected.\nThe boundary of a simple Surface is the set of closed Curves corresponding to its exterior and interior boundaries.\nA Polygon is a simple Surface that is planar. A PolyhedralSurface is a simple surface, consisting of some number of Polygon patches or facets. If a PolyhedralSurface is closed, then it bounds a solid. A MultiSurface containing a set of closed PolyhedralSurfaces can be used to represent a Solid object with holes.\n    "@en ;
+        sh:name           "Surface"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Surface .
 
 <https://astrea.linkeddata.es/shapes#4e2656b0e2a32e06c1a88a6a3133fd04>
         a            sh:PropertyShape ;
@@ -130,6 +158,15 @@
         sh:minCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      prov:generatedAtTime .
+
+<https://astrea.linkeddata.es/shapes#bf1be28f61b0bbde317423ecb2f7d2a7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Triangle"@en ;
+        sh:description    "\n A Triangle is a polygon with 3 distinct, non-collinear vertices and no interior boundary.\n    "@en ;
+        sh:name           "Triangle"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Triangle .
 
 <https://astrea.linkeddata.es/shapes#7656edcbaa7adbdb325bfe2856838bc6>
         a            sh:PropertyShape ;
@@ -264,7 +301,7 @@
         sh:description    "The class represents the top-level geometry type. This class is equivalent to the UML class GM_Object defined in ISO 19107, and it is superclass of all geometry types."@en ;
         sh:name           "Geometry"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#0f6502053608fc059a721676b6e67115> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0f6502053608fc059a721676b6e67115> , <https://astrea.linkeddata.es/shapes#ea758cf93a4a6fcb568c859d464061d1> ;
         sh:targetClass    geo:Geometry .
 
 <https://astrea.linkeddata.es/shapes#ec92439b303570f321576b28135fe664>
@@ -294,6 +331,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:notes .
 
+<https://astrea.linkeddata.es/shapes#25c3adb40ac09192c2b49de35c64abad>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Geometry Collection"@en ;
+        sh:description    "\nA GeometryCollection is a geometric object that is a collection of some number of geometric objects.\nAll the elements in a GeometryCollection shall be in the same Spatial Reference System. This is also the Spatial Reference System for the GeometryCollection.\nGeometryCollection places no other constraints on its elements. Subclasses of GeometryCollection may restrict membership based on dimension and may also place other constraints on the degree of spatial overlap between elements.\n    "@en ;
+        sh:name           "Geometry Collection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:GeometryCollection .
+
 <https://astrea.linkeddata.es/shapes#7139ac3bac1fb96b85203ca83f019ef6>
         a            sh:PropertyShape ;
         sh:minCount  "1"^^xsd:int ;
@@ -305,6 +351,33 @@
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    foodie:OriginTypeValue .
+
+<https://astrea.linkeddata.es/shapes#95da19ec76b5a8a3977cc858fc374ee8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Curve"@en ;
+        sh:description    "\nA MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.\nA MultiCurve defines a set of methods for its subclasses and is included for reasons of extensibility.\nA MultiCurve is simple if and only if all of its elements are simple and the only intersections between any two elements occur at Points that are on the boundaries of both elements.\nThe boundary of a MultiCurve is obtained by applying the mod 2 union rule: A Point is in the boundary of a MultiCurve if it is in the boundaries of an odd number of elements of the MultiCurve.\nA MultiCurve is closed if all of its elements are closed. The boundary of a closed MultiCurve is always empty.\nA MultiCurve is defined as topologically closed.\n    "@en ;
+        sh:name           "Multi Curve"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiCurve .
+
+<https://astrea.linkeddata.es/shapes#2d1397475113b7db235fc471ef1ae5d3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Line"@en ;
+        sh:description    "\nA Line is a LineString with exactly 2 Points.\n    "@en ;
+        sh:name           "Line"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Line .
+
+<https://astrea.linkeddata.es/shapes#aa5038b3045842c3467135022934c084>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Triangulated Irregular Network"@en ;
+        sh:description    "\nA TIN (triangulated irregular network) is a PolyhedralSurface consisting only of Triangle patches.\n    "@en ;
+        sh:name           "Triangulated Irregular Network"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:TIN .
 
 <https://astrea.linkeddata.es/shapes#bf3bc9f168c46a0a3e0fe3c379bbe0d7>
         a            sh:PropertyShape ;
@@ -330,12 +403,30 @@
         sh:property       <https://astrea.linkeddata.es/shapes#3f6891594ac2d163a004bec00f8db48a> , <https://astrea.linkeddata.es/shapes#3348f96caa15fb50d86f0a2231585642> ;
         sh:targetClass    geo:Feature .
 
+<https://astrea.linkeddata.es/shapes#c8592f59b9f1f31ba0fc9d468fd8eb93>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Linear Ring"@en ;
+        sh:description    "\nA LinearRing is a LineString that is both closed and simple.\n    "@en ;
+        sh:name           "Linear Ring"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:LinearRing .
+
 <https://astrea.linkeddata.es/shapes#ef4ee09775a4ed717799816812fb2efc>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#bf3bc9f168c46a0a3e0fe3c379bbe0d7> , <https://astrea.linkeddata.es/shapes#f7b2b5e404a15b049376007758affc7e> , <https://astrea.linkeddata.es/shapes#ae908c904944a56cefec54c488a89327> , <https://astrea.linkeddata.es/shapes#7139ac3bac1fb96b85203ca83f019ef6> , <https://astrea.linkeddata.es/shapes#92ec9f4a340443ce661beb8dfaf279a7> , <https://astrea.linkeddata.es/shapes#77cce3bcdaf17172ebb7f37f1c99b4d1> , <https://astrea.linkeddata.es/shapes#d5cfa76e1be0f91bfc1d3c44ef0b8ae0> ;
         sh:targetClass    foodie:ManagementZone .
+
+<https://astrea.linkeddata.es/shapes#f2457c74a6bad939d7352214edada504>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Surface"@en ;
+        sh:description    "\nA MultiSurface is a 2-dimensional GeometryCollection whose elements are Surfaces, all using coordinates from the same coordinate reference system. The geometric interiors of any two Surfaces in a MultiSurface may not intersect in the full coordinate system. The boundaries of any two coplanar elements in a MultiSurface may intersect, at most, at a finite number of Points. If they were to meet along a curve, they could be merged into a single surface.\nA MultiSurface may be used to represent heterogeneous surfaces collections of polygons and polyhedral surfaces. It defines a set of methods for its subclasses. The subclass of MultiSurface is MultiPolygon corresponding to a collection of Polygons only. Other collections shall use MultiSurface.\n    "@en ;
+        sh:name           "Multi Surface"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiSurface .
 
 <https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63>
         a                 sh:NodeShape ;
@@ -345,6 +436,15 @@
         sh:name           "Point"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    wgs84_pos:Point .
+
+<https://astrea.linkeddata.es/shapes#163744438032c52e32bf3c7c8bb195e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Point"@en ;
+        sh:description    "\nA Point is a 0-dimensional geometric object and represents a single location in coordinate space. \nA Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.\nThe boundary of a Point is the empty set.\n    "@en ;
+        sh:name           "Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Point .
 
 <https://astrea.linkeddata.es/shapes#0f6502053608fc059a721676b6e67115>
         a                 sh:PropertyShape ;
@@ -388,6 +488,14 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           saref4agri:isContainedIn .
 
+<https://astrea.linkeddata.es/shapes#773ee1c13e884ec4f5e6535d912e7461>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "Well-known Text Literal"@en , "A Well-known Text serialization of a geometry object."@en ;
+        sh:description    "A Well-known Text serialization of a geometry object."@en ;
+        sh:name           "Well-known Text Literal"@en ;
+        sh:nodeKind       sh:Literal .
+
 <https://astrea.linkeddata.es/shapes#3348f96caa15fb50d86f0a2231585642>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  geo: ;
@@ -419,6 +527,15 @@
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref4agri:contains .
+
+<https://astrea.linkeddata.es/shapes#de2fa1af89dfd5df63d132ae742481df>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Geometry"@en ;
+        sh:description    "\nGeometry is the root class of the hierarchy.\nThe instantiable subclasses of Geometry are restricted to 0, 1 and 2-dimensional geometric objects that exist in 2, 3 or 4-dimensional coordinate space (R2, R3 or R4). Geometry values in R2 have points with coordinate values for x and y. Geometry values in R3 have points with coordinate values for x, y and z or for x, y and m. Geometry values in R4 have points with coordinate values for x, y, z and m.\nThe interpretation of the coordinates is subject to the coordinate reference systems associated to the point. All coordinates within a geometry object should be in the same coordinate reference systems. Each coordinate shall be unambiguously associated to a coordinate reference system either directly or through its containing geometry. The z coordinate of a point is typically, but not necessarily, represents altitude or elevation. The m coordinate represents a measurement.\nAll Geometry classes described in this specification are defined so that instances of Geometry are topologically closed, i.e. all represented geometries include their boundary as point sets. This does not affect their representation, and open version of the same classes may be used in other circumstances, such as topological representations.\n    "@en ;
+        sh:name           "Geometry"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Geometry .
 
 <https://astrea.linkeddata.es/shapes#d1dbf8e5174cb33e190071253f816d1e>
         a                 sh:PropertyShape ;
@@ -511,6 +628,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      common:validFrom .
 
+<https://astrea.linkeddata.es/shapes#7317fff6f0fe9d43eb9307265f55dbf9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Line String"@en ;
+        sh:description    "\nA MultiLineString is a MultiCurve whose elements are LineStrings.\n    "@en ;
+        sh:name           "Multi Line String"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiLineString .
+
 <https://astrea.linkeddata.es/shapes#ffa228fbe9acf17ea0b9d1fa1bf85040>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:int ;
@@ -522,6 +648,15 @@
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref4agri:contains .
+
+<https://astrea.linkeddata.es/shapes#a6ea61114ce41b9bec42319b4236e2df>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Line String"@en ;
+        sh:description    "\nA LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.\n    "@en ;
+        sh:name           "Line String"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:LineString .
 
 <https://astrea.linkeddata.es/shapes#f7b2b5e404a15b049376007758affc7e>
         a            sh:PropertyShape ;
@@ -555,6 +690,22 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:originType .
 
+<https://astrea.linkeddata.es/shapes#f196d50238714ed345057b23b1b1272c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Point"@en ;
+        sh:description    "\nA MultiPoint is a 0-dimensional GeometryCollection. The elements of a MultiPoint are restricted to Points. ThePoints are not connected or ordered in any semantically important way.\nA MultiPoint is simple if no two Points in the MultiPoint are equal (have identical coordinate values in X and Y).\nEvery MultiPoint is spatially equal to a simple Multipoint.\nThe boundary of a MultiPoint is the empty set.\n    "@en ;
+        sh:name           "Multi Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiPoint .
+
+<https://astrea.linkeddata.es/shapes#42179914bb5f0eb140c2471501e085ab>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  af-inspire: ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bf42292cb0c5051a51b20e6f2fa77392> , <https://astrea.linkeddata.es/shapes#ec92439b303570f321576b28135fe664> , <https://astrea.linkeddata.es/shapes#9b924293881f2d5e050aebe0296bcc65> , <https://astrea.linkeddata.es/shapes#c2c26428d6d9e54285a52c4b4d4745a5> , <https://astrea.linkeddata.es/shapes#1234d42ca03d2db81542faa103549017> , <https://astrea.linkeddata.es/shapes#021432ba9c751b4d4033997503c1f902> , <https://astrea.linkeddata.es/shapes#c59d4953fd243e041443fc088566f8b8> , <https://astrea.linkeddata.es/shapes#14306bd799bd4ee4de065efc914e4a55> ;
+        sh:targetClass    af-inspire:Site .
+
 <https://astrea.linkeddata.es/shapes#d4e2a1e81542161626d4dc6183ac8582>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  saref4agri: ;
@@ -568,12 +719,14 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:containsZone .
 
-<https://astrea.linkeddata.es/shapes#42179914bb5f0eb140c2471501e085ab>
+<https://astrea.linkeddata.es/shapes#a0b008815cd8501c0f8a678830ff0399>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  af-inspire: ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Polyhedral Surface"@en ;
+        sh:description    "\nA PolyhedralSurface is a contiguous collection of polygons, which share common boundary segments. For each pair of polygons that touch, the common boundary shall be expressible as a finite collection of LineStrings. Each such LineString shall be part of the boundary of at most 2 Polygon patches. \nFor any two polygons that share a common boundary, the top of the polygon shall be consistent. This means that when two LinearRings from these two Polygons traverse the common boundary segment, they do so in opposite directions. Since the Polyhedral surface is contiguous, all polygons will be thus consistently oriented. This means that a non-oriented surface (such as Mbius band) shall not have single surface representations. They may be represented by a MultiSurface.\nIf each such LineString is the boundary of exactly 2 Polygon patches, then the PolyhedralSurface is a simple, closed polyhedron and is topologically isomorphic to the surface of a sphere. By the Jordan Surface Theorem (Jordans Theorem for 2-spheres), such polyhedrons enclose a solid topologically isomorphic to the interior of a sphere; the ball. In this case, the top of the surface will either point inward or outward of the enclosed finite solid. If outward, the surface is the exterior boundary of the enclosed surface. If inward, the surface is the interior of the infinite complement of the enclosed solid. A Ball with some number of voids (holes) inside can thus be presented as one exterior boundary shell, and some number in interior boundary shells.\n    "@en ;
+        sh:name           "Polyhedral Surface"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#bf42292cb0c5051a51b20e6f2fa77392> , <https://astrea.linkeddata.es/shapes#ec92439b303570f321576b28135fe664> , <https://astrea.linkeddata.es/shapes#9b924293881f2d5e050aebe0296bcc65> , <https://astrea.linkeddata.es/shapes#c2c26428d6d9e54285a52c4b4d4745a5> , <https://astrea.linkeddata.es/shapes#1234d42ca03d2db81542faa103549017> , <https://astrea.linkeddata.es/shapes#021432ba9c751b4d4033997503c1f902> , <https://astrea.linkeddata.es/shapes#c59d4953fd243e041443fc088566f8b8> , <https://astrea.linkeddata.es/shapes#14306bd799bd4ee4de065efc914e4a55> ;
-        sh:targetClass    af-inspire:Site .
+        sh:targetClass    sf:PolyhedralSurface .
 
 <https://astrea.linkeddata.es/shapes#e8ed999c2de445b957dc5a746142c8c9>
         a                 sh:NodeShape ;
@@ -631,3 +784,22 @@
         sh:class          foodie:MachineType ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:machine .
+
+<https://astrea.linkeddata.es/shapes#ea758cf93a4a6fcb568c859d464061d1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "has serialization"@en , "The WKT serialization of a geometry"@en ;
+        sh:datatype       geo:wktLiteral ;
+        sh:description    "The WKT serialization of a geometry"@en ;
+        sh:name           "has serialization"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           geo:asWKT .
+
+<https://astrea.linkeddata.es/shapes#eab2ccb77e56d3ad473395331d814f3d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Polygon"@en ;
+        sh:description    "\nA MultiPolygon is a MultiSurface whose elements are Polygons.\nThe assertions for MultiPolygons are as follows.\na) The interiors of 2 Polygons that are elements of a MultiPolygon may not intersect.\nb) The boundaries of any 2 Polygons that are elements of a MultiPolygon may not cross and may touch at only a finite number of Points.\nc) A MultiPolygon is defined as topologically closed.\nd) A MultiPolygon may not have cut lines, spikes or punctures, a MultiPolygon is a regular closed Point set,\ne) The interior of a MultiPolygon with more than 1 Polygon is not connected; the number of connected components of the interior of a MultiPolygon is equal to the number of Polygons in the MultiPolygon. \nThe boundary of a MultiPolygon is a set of closed Curves (LineStrings) corresponding to the boundaries of its element Polygons. Each Curve in the boundary of the MultiPolygon is in the boundary of exactly 1 element Polygon, and every Curve in the boundary of an element Polygon is in the boundary of the MultiPolygon.\n    "@en ;
+        sh:name           "Multi Polygon"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiPolygon .
