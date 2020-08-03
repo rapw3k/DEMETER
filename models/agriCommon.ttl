@@ -11,7 +11,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix stat: <http://data.europa.eu/m8g/> .
-@prefix schema: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
 @prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
 @prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
@@ -26,8 +26,8 @@
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix saref: <https://w3id.org/saref#> .
-@prefix schema-org: <https://schema.org/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix demeterAgriCommon: <https://w3id.org/demeter/agri/agriCommon#> .
 @base <https://w3id.org/demeter/> .
 
 <https://w3id.org/demeter/agri/agriCommon> rdf:type owl:Ontology ;
@@ -77,10 +77,12 @@ dct:rights rdf:type owl:AnnotationProperty .
 ###  http://purl.org/dc/terms/title
 dct:title rdf:type owl:AnnotationProperty .
 
+
 ###  http://purl.org/dc/terms/identifier
 dct:identifier rdf:type owl:AnnotationProperty .
 
-###  http://schema.org/affiliation
+
+###  https://schema.org/affiliation
 schema:affiliation rdf:type owl:AnnotationProperty .
 
 
@@ -99,10 +101,26 @@ foaf:maker rdf:type owl:AnnotationProperty .
 ###  http://xmlns.com/foaf/0.1/name
 foaf:name rdf:type owl:AnnotationProperty .
 
+
 ###  http://purl.obolibrary.org/obo/TAXRANK_1000000
 <http://purl.obolibrary.org/obo/TAXRANK_1000000> rdf:type owl:AnnotationProperty ;
                                                  rdfs:label "has_rank"@en ;
                                                  rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> . 
+
+
+###  https://schema.org/name
+schema:name rdf:type rdf:Property ;
+                                  rdfs:label "name"@en ;
+                                  rdfs:comment "The name of the item." ;
+                                  rdfs:isDefinedBy <https://schema.org/name> .
+
+
+###  https://schema.org/telephone
+schema:telephone rdf:type rdf:Property ;
+                                  rdfs:label "telephone"@en ;
+                                  rdfs:comment "The telephone number." ;
+                                  rdfs:isDefinedBy <https://schema.org/telephone> .
+
 
 #################################################################
 #    Datatypes
@@ -125,6 +143,18 @@ saref4agri:managesFarm rdf:type owl:ObjectProperty ;
 #################################################################
 #    Data properties
 #################################################################
+
+###  https://w3id.org/demeter/agri/agriCommon#userName
+demeterAgriCommon:userName rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string ;
+         rdfs:label "User Name" ;
+         rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .
+
+###  https://w3id.org/demeter/agri/agriCommon#password
+demeterAgriCommon:password rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string ;
+         rdfs:label "Password" ;
+         rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .
 
 ###  https://w3id.org/def/saref4agri#hasName
 saref4agri:hasName rdf:type owl:DatatypeProperty ;
@@ -276,6 +306,7 @@ fiware:category	a      owl:DatatypeProperty ;
                                   rdfs:label "Agent"@en ;
                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .                                  
 
+
 ###  http://xmlns.com/foaf/0.1/Person
 <http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
                                    rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
@@ -283,11 +314,30 @@ fiware:category	a      owl:DatatypeProperty ;
                                    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
 
+###  https://schema.org/Person
+<https://schema.org/Person> rdf:type owl:Class ;
+                                  rdfs:label "Person"@en ;
+                                  rdfs:comment "A person (alive, dead, undead, or fictional)."@en ;
+                                  owl:equivalentClass foaf:Person ;
+                                  rdfs:isDefinedBy <https://schema.org/Person> .
+
+
 ###  https://schema.org/Organization
 <https://schema.org/Organization> rdf:type owl:Class ;
                                   rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
                                   rdfs:label "Organization"@en ;
-                                  rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+                                  rdfs:comment "An organization such as a school, NGO, corporation, club, etc."@en ;
+                                  rdfs:isDefinedBy <https://schema.org/Organization> .
+
+
+###  https://schema.org/Role
+<https://schema.org/Role> rdf:type owl:Class ;
+                                  rdfs:label "Role"@en ;
+                                  rdfs:comment """Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.<br/><br/>
+
+See also <a href="http://blog.schema.org/2014/06/introducing-role.html">blog post</a>."""@en ;
+                                  rdfs:isDefinedBy <https://schema.org/Role> .
+                                  
                                   
 ###  https://w3id.org/def/saref4agri#FarmHolding
 saref4agri:FarmHolding rdf:type owl:Class ;
@@ -327,6 +377,7 @@ saref4agri:Farmer rdf:type owl:Class ;
 #    Alignments
 #################################################################
 
+fiware:name rdfs:subPropertyOf schema:name .
 saref4agri:hasName owl:equivalentProperty fiware:name .
 fiware:alternateName rdfs:subPropertyOf fiware:name .
 saref:hasDescription owl:equivalentProperty foodie:description .
