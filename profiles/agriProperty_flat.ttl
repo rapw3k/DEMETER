@@ -590,18 +590,18 @@ saref4agri:SoilTemperature rdfs:isDefinedBy saref4agri: ;
             foaf:name "DEMETER project" ] .
 
 saref:Humidity a owl:Class ;
-    rdfs:label "Humidity"^^xsd:string,
-        "Humidity",
+    rdfs:label "Humidity",
+        "Humidity"^^xsd:string,
         "Humidity"@en,
         "Humidiy"@en ;
-    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit"^^xsd:string,
-        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit" ;
+    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit",
+        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit"^^xsd:string ;
     rdfs:isDefinedBy saref: ;
     rdfs:subClassOf saref:Property .
 
 saref:Temperature a owl:Class ;
-    rdfs:label "Temperature",
-        "Temperature"^^xsd:string,
+    rdfs:label "Temperature"^^xsd:string,
+        "Temperature",
         "Temperature"@en ;
     rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)"^^xsd:string,
         "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)" ;
@@ -938,27 +938,6 @@ saref:Measurement a owl:Class ;
     rdfs:comment "Represents the measured value made over a property. It is also linked to the unit of measure in which the value is expressed and the timestamp of the measurement."@en ;
     rdfs:isDefinedBy saref: ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty saref:hasTimestamp ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom saref:UnitOfMeasure ;
-            owl:onProperty saref:isMeasuredIn ],
-        [ a owl:Restriction ;
-            owl:onClass saref:Property ;
-            owl:onProperty saref:relatesToProperty ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onClass saref:UnitOfMeasure ;
-            owl:onProperty saref:isMeasuredIn ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom saref:Property ;
-            owl:onProperty saref:relatesToProperty ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:float ;
-            owl:onProperty saref:hasValue ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
             owl:allValuesFrom saref:FeatureOfInterest ;
             owl:onProperty saref:hasFeatureOfInterest ],
         [ a owl:Restriction ;
@@ -981,6 +960,27 @@ saref:Measurement a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty saref:hasValue ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty saref:hasValue ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty saref:hasTimestamp ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:UnitOfMeasure ;
+            owl:onProperty saref:isMeasuredIn ],
+        [ a owl:Restriction ;
+            owl:onClass saref:Property ;
+            owl:onProperty saref:relatesToProperty ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass saref:UnitOfMeasure ;
+            owl:onProperty saref:isMeasuredIn ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Property ;
+            owl:onProperty saref:relatesToProperty ],
         [ a owl:Restriction ;
             owl:onDataRange xsd:float ;
             owl:onProperty saref:hasValue ;
@@ -1024,8 +1024,8 @@ saref:FeatureOfInterest a owl:Class ;
 saref:UnitOfMeasure a owl:Class ;
     rdfs:label "Unit of measure"^^xsd:string,
         "Unit of measure"@en ;
-    rdfs:comment "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)."^^xsd:string,
-        "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM).",
+    rdfs:comment "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM).",
+        "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)."^^xsd:string,
         "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of the Smart Appliances ontology, but this list can be extended."@en ;
     rdfs:isDefinedBy <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure>,
         saref: .
@@ -1042,23 +1042,14 @@ dim:MechanicsScheme a owl:NamedIndividual,
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 saref:Property a owl:Class ;
-    rdfs:label "Property"^^xsd:string,
-        "Property",
+    rdfs:label "Property",
+        "Property"^^xsd:string,
         "Property"@en ;
     rdfs:comment "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended.",
         "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended."^^xsd:string,
         "An aspect of an entity that can be observable by a sensor."@en ;
     rdfs:isDefinedBy saref: ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom saref:Device ;
-            owl:onProperty saref:isMeasuredByDevice ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom saref:Device ;
-            owl:onProperty saref:isControlledByDevice ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom saref:Measurement ;
-            owl:onProperty saref:relatesToMeasurement ],
-        [ a owl:Restriction ;
             owl:allValuesFrom saref:Device ;
             owl:onProperty saref:isControlledByDevice ],
         [ a owl:Restriction ;
@@ -1067,6 +1058,15 @@ saref:Property a owl:Class ;
         [ a owl:Restriction ;
             owl:allValuesFrom saref:FeatureOfInterest ;
             owl:onProperty saref:isPropertyOf ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Measurement ;
+            owl:onProperty saref:relatesToMeasurement ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Device ;
+            owl:onProperty saref:isMeasuredByDevice ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Device ;
+            owl:onProperty saref:isControlledByDevice ],
         [ a owl:Restriction ;
             owl:allValuesFrom saref:Measurement ;
             owl:onProperty saref:relatesToMeasurement ] ;

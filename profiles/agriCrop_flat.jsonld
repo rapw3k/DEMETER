@@ -2,49 +2,49 @@
     "@id": "https://w3id.org/demeter/agri/agriCrop",
     "@context": [
         "http://foodie-cloud.com/model/foodie",
-        "https://uri.fiware.org/ns/data-models",
         "https://w3id.org/def/saref4agri",
+        "https://uri.fiware.org/ns/data-models",
         {
             "foodie": "http://foodie-cloud.com/model/foodie#",
-            "fiware": "https://uri.fiware.org/ns/data-models#",
             "saref4agri": "https://w3id.org/def/saref4agri#",
-            "fiware:AgriCrop": {
-                "@id": "fiware:AgriCrop"
-            },
-            "foodie:CropSpecies": {
-                "@id": "foodie:CropSpecies"
-            },
+            "fiware": "https://uri.fiware.org/ns/data-models#",
             "foodie:CropType": {
                 "@id": "foodie:CropType"
             },
-            "foodie:ProductionType": {
-                "@id": "foodie:ProductionType"
+            "fiware:AgriCrop": {
+                "@id": "fiware:AgriCrop"
             },
             "saref4agri:Crop": {
                 "@id": "saref4agri:Crop"
             },
-            "saref4agri:generates": {
-                "@id": "saref4agri:generates",
+            "foodie:CropSpecies": {
+                "@id": "foodie:CropSpecies"
+            },
+            "foodie:ProductionType": {
+                "@id": "foodie:ProductionType"
+            },
+            "fiware:hasAgriPest": {
+                "@id": "fiware:hasAgriPest",
                 "@type": "@id"
             },
-            "foodie:cropSpecies": {
-                "@id": "foodie:cropSpecies",
+            "fiware:cropHasAgriSoil": {
+                "@id": "fiware:cropHasAgriSoil",
                 "@type": "@id"
             },
             "foodie:production": {
                 "@id": "foodie:production",
                 "@type": "@id"
             },
-            "fiware:hasAgriPest": {
-                "@id": "fiware:hasAgriPest",
-                "@type": "@id"
-            },
-            "fiware:hasAgriFertiliser": {
-                "@id": "fiware:hasAgriFertiliser",
+            "foodie:cropSpecies": {
+                "@id": "foodie:cropSpecies",
                 "@type": "@id"
             },
             "saref4agri:receives": {
                 "@id": "saref4agri:receives",
+                "@type": "@id"
+            },
+            "fiware:hasAgriFertiliser": {
+                "@id": "fiware:hasAgriFertiliser",
                 "@type": "@id"
             },
             "foodie:productionAmount": {
@@ -55,45 +55,45 @@
                 "@id": "foodie:cropArea",
                 "@type": "@id"
             },
-            "fiware:cropHasAgriSoil": {
-                "@id": "fiware:cropHasAgriSoil",
+            "saref4agri:generates": {
+                "@id": "saref4agri:generates",
                 "@type": "@id"
-            },
-            "foodie:variety": {
-                "@id": "foodie:variety",
-                "@type": "xsd:string"
             },
             "foodie:family": {
                 "@id": "foodie:family",
                 "@type": "xsd:string"
             },
-            "fiware:plantingFrom": {
-                "@id": "fiware:plantingFrom"
-            },
             "foodie:genus": {
                 "@id": "foodie:genus",
+                "@type": "xsd:string"
+            },
+            "fiware:wateringFrequency": {
+                "@id": "fiware:wateringFrequency"
+            },
+            "saref4agri:hasHarvestDate": {
+                "@id": "saref4agri:hasHarvestDate",
+                "@type": "xsd:dateTime"
+            },
+            "fiware:harvestingInterval": {
+                "@id": "fiware:harvestingInterval"
+            },
+            "foodie:variety": {
+                "@id": "foodie:variety",
                 "@type": "xsd:string"
             },
             "saref4agri:hasPlantDate": {
                 "@id": "saref4agri:hasPlantDate",
                 "@type": "xsd:dateTime"
             },
-            "fiware:harvestingInterval": {
-                "@id": "fiware:harvestingInterval"
-            },
-            "saref4agri:hasHarvestDate": {
-                "@id": "saref4agri:hasHarvestDate",
-                "@type": "xsd:dateTime"
-            },
             "foodie:species": {
                 "@id": "foodie:species",
                 "@type": "xsd:string"
             },
+            "fiware:plantingFrom": {
+                "@id": "fiware:plantingFrom"
+            },
             "foodie:productionDate": {
                 "@id": "foodie:productionDate"
-            },
-            "fiware:wateringFrequency": {
-                "@id": "fiware:wateringFrequency"
             }
         }
     ]

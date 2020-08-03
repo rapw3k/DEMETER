@@ -201,7 +201,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>"
+        "@value": "<p>The DEMETER AgriFeature is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</p>"
       }
     ],
     "https://schema.org/name": [
@@ -256,7 +256,7 @@
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>
+        <p>The DEMETER AgriFeature is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</p>
     </div>
 </section>
 <section id="toc">
@@ -321,13 +321,13 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://portele.de/ont/inspire/baseInspire#validFrom">common:validFrom</a> <span class="cardinality">max</span> 1<br/>
-                    <a href="http://www.w3.org/ns/prov#generatedAtTime">prov:generatedAtTime</a> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="http://portele.de/ont/inspire/baseInspire#validTo">common:validTo</a> <span class="cardinality">max</span> 1<br/>
-                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
-                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="http://foodie-cloud.com/model/foodie#notes">foodie:notes</a> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://www.w3.org/ns/prov#invalidatedAtTime">prov:invalidatedAtTime</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://portele.de/ont/inspire/baseInspire#validTo">common:validTo</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#notes">foodie:notes</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://www.w3.org/ns/prov#generatedAtTime">prov:generatedAtTime</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://portele.de/ont/inspire/baseInspire#validFrom">common:validFrom</a> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -354,8 +354,8 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Codelist">iso19150-2:Codelist</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -382,29 +382,29 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">iso19109:AnyFeature</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType">iso19150-2:FeatureType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">iso19109:AnyFeature</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://www.w3.org/ns/prov#generatedAtTime">prov:generatedAtTime</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#originType">foodie:originType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://portele.de/ont/inspire/baseInspire#validTo">common:validTo</a> <span class="cardinality">max</span> 1<br/>
                     <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://www.w3.org/ns/prov#generatedAtTime">prov:generatedAtTime</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#description">foodie:description</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://www.w3.org/ns/prov#invalidatedAtTime">prov:invalidatedAtTime</a> <span class="cardinality">max</span> 1<br/>
                     <a href="http://portele.de/ont/inspire/baseInspire#validFrom">common:validFrom</a> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="http://foodie-cloud.com/model/foodie#originType">foodie:originType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="http://foodie-cloud.com/model/foodie#description">foodie:description</a> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="http://foodie-cloud.com/model/foodie#holdingZone">foodie:holdingZone</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://foodie-cloud.com/model/foodie#containsPlot">foodie:containsPlot</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://foodie-cloud.com/model/foodie#holdingZone">foodie:holdingZone</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -446,17 +446,17 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType">iso19150-2:FeatureType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex">act-inspire:ActivityComplex</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">iso19109:AnyFeature</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://inspire.ec.europa.eu/schemas/af/3.0#contains">af-inspire:contains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -483,29 +483,29 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">iso19109:AnyFeature</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType">iso19150-2:FeatureType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">iso19109:AnyFeature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://www.w3.org/ns/prov#invalidatedAtTime">prov:invalidatedAtTime</a> <span class="cardinality">max</span> 1<br/>
-                    <a href="http://www.w3.org/ns/prov#generatedAtTime">prov:generatedAtTime</a> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="http://portele.de/ont/inspire/baseInspire#validFrom">common:validFrom</a> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#activity">af-inspire:activity</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
                     <a href="http://portele.de/ont/inspire/baseInspire#validTo">common:validTo</a> <span class="cardinality">max</span> 1<br/>
-                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://foodie-cloud.com/model/foodie#containsPlot">foodie:containsPlot</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://www.w3.org/ns/prov#invalidatedAtTime">prov:invalidatedAtTime</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://portele.de/ont/inspire/baseInspire#validFrom">common:validFrom</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#activity">af-inspire:activity</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://www.w3.org/ns/prov#generatedAtTime">prov:generatedAtTime</a> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="http://foodie-cloud.com/model/foodie#holdingPlot">foodie:holdingPlot</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://inspire.ec.europa.eu/schemas/af/3.0#contains">af-inspire:contains</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://foodie-cloud.com/model/foodie#holdingPlot">foodie:holdingPlot</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -520,7 +520,7 @@
             <tr class="importeddef">
                 <th>Is Defined By</th>
                 <td>
-                    http://www.opengis.net/ont/geosparql
+                    http://www.opengis.net/ont/gml
                 </td>
             </tr>
             <tr>
@@ -544,14 +544,14 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#Site">af-inspire:Site</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/def/saref4agri#Building">saref4agri:Building</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#Holding">af-inspire:Holding</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/def/saref4agri#Parcel">saref4agri:Parcel</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#BuildingSpace">saref4agri:BuildingSpace</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://foodie-cloud.com/model/foodie#Plot">foodie:Plot</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#Parcel">saref4agri:Parcel</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#Holding">af-inspire:Holding</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#Building">saref4agri:Building</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://inspire.ec.europa.eu/schemas/af/3.0#Site">af-inspire:Site</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://foodie-cloud.com/model/foodie#ManagementZone">foodie:ManagementZone</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://foodie-cloud.com/model/foodie#Plot">foodie:Plot</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -788,8 +788,8 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#BuildingSpace">saref4agri:BuildingSpace</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#BuildingSpace">saref4agri:BuildingSpace</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -856,9 +856,9 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
+                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a> <span class="cardinality">max</span> 1<br/>
                     <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Parcel">saref4agri:Parcel</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Building">saref4agri:Building</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
         </table>
@@ -891,15 +891,15 @@
             <tr>
                 <th>Alignments</th>
                 <td class="highlight-alignment">
-                    <a href="foodie:Plot">foodie:Plot</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="fiware:AgriParcel">fiware:AgriParcel</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="foodie:Plot">foodie:Plot</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a> <span class="cardinality">max</span> 1<br/>
                     <a href="https://w3id.org/def/saref4agri#contains">saref4agri:contains</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Crop">saref4agri:Crop</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
         </table>
@@ -1249,7 +1249,7 @@
             <tr class="importeddef">
                 <th>Is Defined By</th>
                 <td>
-                    http://www.opengis.net/ont/geosparql
+                    http://www.opengis.net/spec/geosparql/1.0
                 </td>
             </tr>
             <tr>
@@ -1282,7 +1282,7 @@
             <tr class="importeddef">
                 <th>Is Defined By</th>
                 <td>
-                    http://www.opengis.net/spec/geosparql/1.0
+                    http://www.opengis.net/ont/geosparql
                 </td>
             </tr>
             <tr>
@@ -1486,7 +1486,7 @@
             <tr class="importeddef">
                 <th>Is Defined By</th>
                 <td>
-                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                    https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md
                 </td>
             </tr>
             <tr>

@@ -1,31 +1,31 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriIntervention",
     "@context": [
-        "https://uri.fiware.org/ns/data-models",
         "http://foodie-cloud.com/model/foodie",
+        "https://uri.fiware.org/ns/data-models",
         {
-            "fiware": "https://uri.fiware.org/ns/data-models#",
             "foodie": "http://foodie-cloud.com/model/foodie#",
-            "foodie:CampaignType": {
-                "@id": "foodie:CampaignType"
+            "fiware": "https://uri.fiware.org/ns/data-models#",
+            "foodie:DoseUnit": {
+                "@id": "foodie:DoseUnit"
             },
             "foodie:Treatment": {
                 "@id": "foodie:Treatment"
             },
-            "foodie:DoseUnit": {
-                "@id": "foodie:DoseUnit"
-            },
-            "foodie:FormOfTreatmentValue": {
-                "@id": "foodie:FormOfTreatmentValue"
+            "foodie:TreatmentPurposeValue": {
+                "@id": "foodie:TreatmentPurposeValue"
             },
             "foodie:TreatmentPlan": {
                 "@id": "foodie:TreatmentPlan"
             },
+            "foodie:CampaignType": {
+                "@id": "foodie:CampaignType"
+            },
+            "foodie:FormOfTreatmentValue": {
+                "@id": "foodie:FormOfTreatmentValue"
+            },
             "foodie:Intervention": {
                 "@id": "foodie:Intervention"
-            },
-            "foodie:TreatmentPurposeValue": {
-                "@id": "foodie:TreatmentPurposeValue"
             },
             "fiware:AgriParcelOperation": {
                 "@id": "fiware:AgriParcelOperation"
@@ -34,56 +34,24 @@
                 "@id": "foodie:areaDose",
                 "@type": "@id"
             },
+            "foodie:formOfTreatment": {
+                "@id": "foodie:formOfTreatment",
+                "@type": "@id"
+            },
+            "foodie:interventionGeometry": {
+                "@id": "foodie:interventionGeometry",
+                "@type": "@id"
+            },
             "foodie:operator": {
                 "@id": "foodie:operator",
-                "@type": "@id"
-            },
-            "foodie:treatmentProduct": {
-                "@id": "foodie:treatmentProduct",
-                "@type": "@id"
-            },
-            "foodie:supervisor": {
-                "@id": "foodie:supervisor",
-                "@type": "@id"
-            },
-            "foodie:evidenceParty": {
-                "@id": "foodie:evidenceParty",
-                "@type": "@id"
-            },
-            "foodie:minimumDose": {
-                "@id": "foodie:minimumDose",
                 "@type": "@id"
             },
             "foodie:motionSpeed": {
                 "@id": "foodie:motionSpeed",
                 "@type": "@id"
             },
-            "foodie:interventionPlot": {
-                "@id": "foodie:interventionPlot",
-                "@type": "@id"
-            },
-            "foodie:plan": {
-                "@id": "foodie:plan",
-                "@type": "@id"
-            },
-            "foodie:maximumDose": {
-                "@id": "foodie:maximumDose",
-                "@type": "@id"
-            },
-            "foodie:formOfTreatment": {
-                "@id": "foodie:formOfTreatment",
-                "@type": "@id"
-            },
-            "fiware:hasOperator": {
-                "@id": "fiware:hasOperator",
-                "@type": "@id"
-            },
-            "foodie:applicationWidth": {
-                "@id": "foodie:applicationWidth",
-                "@type": "@id"
-            },
-            "foodie:interventionGeometry": {
-                "@id": "foodie:interventionGeometry",
+            "foodie:planProduct": {
+                "@id": "foodie:planProduct",
                 "@type": "@id"
             },
             "fiware:operationHasAgriParcel": {
@@ -94,20 +62,20 @@
                 "@id": "foodie:interventionZone",
                 "@type": "@id"
             },
+            "foodie:campaign": {
+                "@id": "foodie:campaign",
+                "@type": "@id"
+            },
+            "foodie:minimumDose": {
+                "@id": "foodie:minimumDose",
+                "@type": "@id"
+            },
             "foodie:pressure": {
                 "@id": "foodie:pressure",
                 "@type": "@id"
             },
-            "foodie:flowAdjustment": {
-                "@id": "foodie:flowAdjustment",
-                "@type": "@id"
-            },
-            "foodie:planProduct": {
-                "@id": "foodie:planProduct",
-                "@type": "@id"
-            },
-            "foodie:campaign": {
-                "@id": "foodie:campaign",
+            "foodie:maximumDose": {
+                "@id": "foodie:maximumDose",
                 "@type": "@id"
             },
             "foodie:period": {
@@ -118,23 +86,73 @@
                 "@id": "foodie:quantity",
                 "@type": "@id"
             },
-            "fiware:status": {
-                "@id": "fiware:status"
+            "foodie:interventionPlot": {
+                "@id": "foodie:interventionPlot",
+                "@type": "@id"
             },
-            "fiware:result": {
-                "@id": "fiware:result"
+            "foodie:flowAdjustment": {
+                "@id": "foodie:flowAdjustment",
+                "@type": "@id"
+            },
+            "fiware:hasOperator": {
+                "@id": "fiware:hasOperator",
+                "@type": "@id"
+            },
+            "foodie:supervisor": {
+                "@id": "foodie:supervisor",
+                "@type": "@id"
+            },
+            "foodie:applicationWidth": {
+                "@id": "foodie:applicationWidth",
+                "@type": "@id"
+            },
+            "foodie:evidenceParty": {
+                "@id": "foodie:evidenceParty",
+                "@type": "@id"
+            },
+            "foodie:plan": {
+                "@id": "foodie:plan",
+                "@type": "@id"
+            },
+            "foodie:treatmentProduct": {
+                "@id": "foodie:treatmentProduct",
+                "@type": "@id"
+            },
+            "foodie:creationDateTime": {
+                "@id": "foodie:creationDateTime",
+                "@type": "xsd:dateTime"
+            },
+            "fiware:waterSource": {
+                "@id": "fiware:waterSource"
+            },
+            "fiware:quantity": {
+                "@id": "fiware:quantity"
+            },
+            "fiware:startedAt": {
+                "@id": "fiware:startedAt"
             },
             "fiware:plannedEndAt": {
                 "@id": "fiware:plannedEndAt"
             },
-            "fiware:operationType": {
-                "@id": "fiware:operationType"
+            "fiware:status": {
+                "@id": "fiware:status"
+            },
+            "fiware:endedAt": {
+                "@id": "fiware:endedAt"
             },
             "fiware:plannedStartAt": {
                 "@id": "fiware:plannedStartAt"
             },
-            "fiware:startedAt": {
-                "@id": "fiware:startedAt"
+            "foodie:treatmentDescription": {
+                "@id": "foodie:treatmentDescription",
+                "@type": "xsd:string"
+            },
+            "fiware:operationType": {
+                "@id": "fiware:operationType"
+            },
+            "foodie:treatmentPlanCreation": {
+                "@id": "foodie:treatmentPlanCreation",
+                "@type": "xsd:dateTime"
             },
             "fiware:reportedAt": {
                 "@id": "fiware:reportedAt"
@@ -147,26 +165,8 @@
                 "@id": "foodie:status",
                 "@type": "xsd:string"
             },
-            "foodie:treatmentPlanCreation": {
-                "@id": "foodie:treatmentPlanCreation",
-                "@type": "xsd:dateTime"
-            },
-            "fiware:quantity": {
-                "@id": "fiware:quantity"
-            },
-            "fiware:endedAt": {
-                "@id": "fiware:endedAt"
-            },
-            "foodie:creationDateTime": {
-                "@id": "foodie:creationDateTime",
-                "@type": "xsd:dateTime"
-            },
-            "fiware:waterSource": {
-                "@id": "fiware:waterSource"
-            },
-            "foodie:treatmentDescription": {
-                "@id": "foodie:treatmentDescription",
-                "@type": "xsd:string"
+            "fiware:result": {
+                "@id": "fiware:result"
             }
         }
     ]

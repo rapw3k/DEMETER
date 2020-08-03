@@ -201,7 +201,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>"
+        "@value": "<p>The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</p>"
       }
     ],
     "https://schema.org/name": [
@@ -261,7 +261,7 @@
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>
+        <p>The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</p>
     </div>
 </section>
 <section id="toc">
@@ -315,11 +315,11 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#individualName">iso19115-citation:individualName</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#role">iso19115-citation:role</a> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#organisationName">iso19115-citation:organisationName</a> <span class="cardinality">max</span> 1<br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#positionName">iso19115-citation:positionName</a> <span class="cardinality">max</span> 1<br/>
-                    <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#role">iso19115-citation:role</a> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#role">iso19115-citation:role</a> <span class="cardinality">only</span> <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#RoleCode">iso19115-citation:RoleCode</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#individualName">iso19115-citation:individualName</a> <span class="cardinality">max</span> 1<br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#contactInfo">iso19115-citation:contactInfo</a> <span class="cardinality">max</span> 1 <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Contact">iso19115-citation:Contact</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
@@ -347,10 +347,10 @@
                 <th>URI</th>
                 <td><code>http://schema.org/Organization</code></td>
             </tr>
-            <tr class="importeddef">
+            <tr>
                 <th>Is Defined By</th>
                 <td>
-                    http://xmlns.com/foaf/0.1/
+                    http://schema.org/Organization
                 </td>
             </tr>
             <tr>
@@ -409,8 +409,8 @@
                 <th>Sub-classes</th>
                 <td>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty">iso19115-citation:ResponsibleParty</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://schema.org/Organization">schema-org:Organization</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://schema.org/Organization">schema-org:Organization</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -443,15 +443,15 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Alignments</th>
                 <td class="highlight-alignment">
-                    <a href="schema-org:Person">schema-org:Person</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/2000/10/swap/pim/contact#Person">http://www.w3.org/2000/10/swap/pim/contact#Person</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="schema-org:Person">schema-org:Person</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -478,8 +478,8 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="https://schema.org/Organization">sdo:Organization</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://schema.org/Organization">schema-org:Organization</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://schema.org/Organization">sdo:Organization</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -516,8 +516,8 @@
                 <th>Restrictions</th>
                 <td>
                     <a href="https://w3id.org/def/saref4agri#managesFarm">saref4agri:managesFarm</a> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/def/saref4agri#managesFarm">saref4agri:managesFarm</a> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#managesFarm">saref4agri:managesFarm</a> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
@@ -586,7 +586,7 @@
         <li><a href="#modifiedAt">modifiedAt</a></li>
         <li><a href="#name1">name</a></li>
         <li><a href="#source">source</a></li>
-        <li><a href="#Arelationtoexpressthenameofanentity(e.g.,animal).">A relation to express the name of an entity (e.g.,animal).</a></li>
+        <li><a href="#hasname">has name</a></li>
         <li><a href="#hasdescription">has description</a></li>
     </ul>
     <div class="entity property" id="code">
@@ -947,7 +947,7 @@
             <tr class="importeddef">
                 <th>Is Defined By</th>
                 <td>
-                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md
                 </td>
             </tr>
             <tr>
@@ -1042,8 +1042,8 @@
             </tr>
         </table>
     </div>
-    <div class="entity property" id="Arelationtoexpressthenameofanentity(e.g.,animal).">
-        <h3>A relation to express the name of an entity (e.g.,animal).<sup title="datatype property" class="sup-dp">dp</sup></h3>
+    <div class="entity property" id="hasname">
+        <h3>has name<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
                 <th>URI</th>

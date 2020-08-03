@@ -201,7 +201,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>"
+        "@value": "<p>The DEMETER FarmAnimal is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</p>"
       }
     ],
     "https://schema.org/name": [
@@ -256,7 +256,7 @@
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>
+        <p>The DEMETER FarmAnimal is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</p>
     </div>
 </section>
 <section id="toc">
@@ -375,13 +375,13 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
+                    <a href="https://w3id.org/def/saref4agri#hasDeathDate">saref4agri:hasDeathDate</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="https://w3id.org/def/saref4agri#hasBirthDate">saref4agri:hasBirthDate</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                     <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://w3id.org/def/saref4agri#isMemberOf">saref4agri:isMemberOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#AnimalGroup">saref4agri:AnimalGroup</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://purl.obolibrary.org/obo/TAXRANK_1000000">obo:TAXRANK_1000000</a> <span class="cardinality">some</span> <a href="http://purl.obolibrary.org/obo/TAXRANK_0000000">obo:TAXRANK_0000000</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#isLocatedIn">saref4agri:isLocatedIn</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/def/saref4agri#isMemberOf">saref4agri:isMemberOf</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#AnimalGroup">saref4agri:AnimalGroup</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#hasID">saref4agri:hasID</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">max</span> 1 <a href="https://w3id.org/def/saref4agri#ID">saref4agri:ID</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/def/saref4agri#hasDeathDate">saref4agri:hasDeathDate</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -421,8 +421,8 @@
                 <th>Restrictions</th>
                 <td>
                     <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a> <span class="cardinality">max</span> 1<br/>
-                    <a href="https://w3id.org/def/saref4agri#hasMember">saref4agri:hasMember</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Animal">saref4agri:Animal</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#isLocatedIn">saref4agri:isLocatedIn</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#hasMember">saref4agri:hasMember</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Animal">saref4agri:Animal</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
