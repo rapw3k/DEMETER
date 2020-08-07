@@ -17,12 +17,25 @@
             prof:hasArtifact "agriPest_flat.ttl" ;
             prof:hasRole prof:vocabulary ],
         [ a prof:ResourceDescriptor ;
-            rdfs:label "Profile description as HTML" ;
+            rdfs:label "Normalised OWL with imports" ;
+            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
+            dcterms:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriPest.ttl" ;
+            prof:hasRole prof:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
             dcterms:conformsTo prof: ;
             dcterms:format "text/html" ;
-            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
-            prof:hasArtifact "agriPest_source.html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "agriPest.html" ;
             prof:hasRole prof:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
+            dcterms:format "application/ld+json" ;
+            prof:hasArtifact "agriPest.jsonld" ;
+            prof:hasRole prof:context ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "Original Source OWL model" ;
             dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
@@ -31,36 +44,23 @@
             prof:hasArtifact "../models\\agriPest.ttl" ;
             prof:hasRole prof:source ],
         [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dcterms:conformsTo prof: ;
+            dcterms:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "agriPest_source.html" ;
+            prof:hasRole prof:profile ],
+        [ a prof:ResourceDescriptor ;
             rdfs:label "Flattened JSON-LD context" ;
             dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
             dcterms:format "application/ld+json" ;
             prof:hasArtifact "agriPest_flat.jsonld" ;
             prof:hasRole prof:contextflat ],
         [ a prof:ResourceDescriptor ;
-            rdfs:label "Normalised OWL with imports" ;
-            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "text/turtle" ;
-            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
-            prof:hasArtifact "agriPest.ttl" ;
-            prof:hasRole prof:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON-LD Context" ;
-            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dcterms:format "application/ld+json" ;
-            prof:hasArtifact "agriPest.jsonld" ;
-            prof:hasRole prof:context ],
-        [ a prof:ResourceDescriptor ;
             rdfs:label "Profile description as HTML" ;
             dcterms:conformsTo prof: ;
             dcterms:format "text/html" ;
             rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
             prof:hasArtifact "agriPest_prof.html" ;
-            prof:hasRole prof:profile ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "OWL documentation as HTML" ;
-            dcterms:conformsTo prof: ;
-            dcterms:format "text/html" ;
-            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
-            prof:hasArtifact "agriPest.html" ;
             prof:hasRole prof:profile ] .
 

@@ -1,0 +1,180 @@
+@prefix schema: <https://schema.org/> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<https://astrea.linkeddata.es/shapes#087fbed8781859126a644978af69eb02>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:type .
+
+<https://astrea.linkeddata.es/report/372572075>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "https://uri.fiware.org/ns/data-models" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#86e3369eda8c0f95add13c7c501c3bd9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:ManagementZone ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:alertZone .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#86e3369eda8c0f95add13c7c501c3bd9> , <https://astrea.linkeddata.es/shapes#0f76c8d028abcb73eda615acb7f76c30> , <https://astrea.linkeddata.es/shapes#18a0f7a52e8ad364133544a8f8068e04> , <https://astrea.linkeddata.es/shapes#151ba0c6cf4537f9f4b8420a05aca6fb> , <https://astrea.linkeddata.es/shapes#fe28364e22e4346c5d98eda61092be59> , <https://astrea.linkeddata.es/shapes#71c81ff3bceca6e51c8eb23948f6b72c> , <https://astrea.linkeddata.es/shapes#8833e158640b2c4a21f6ee942cc316d3> , <https://astrea.linkeddata.es/shapes#26c5ac60005e9177ec24b4fc1d3218f3> , <https://astrea.linkeddata.es/shapes#c4d8a24267a0f8f8336c2c458d792f44> , <https://astrea.linkeddata.es/shapes#087fbed8781859126a644978af69eb02> , <https://astrea.linkeddata.es/shapes#7ba72b4487d0800caff6564aeaac2fe4> , <https://astrea.linkeddata.es/shapes#3c4069d1209a65109a18f94b31644ae1> , <https://astrea.linkeddata.es/shapes#da443a0a889f835728e2b9778c537399> , <https://astrea.linkeddata.es/shapes#51143ff066a7d0d59bc809b448db3f32> , <https://astrea.linkeddata.es/shapes#479332686803645c81119120a8805b9d> , <https://astrea.linkeddata.es/shapes#4a9211d2ba2240ff7b93e9f22d6aeb6e> , <https://astrea.linkeddata.es/shapes#72b5ce36f0debf76da4c0832ffed7785> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/01163512728> , <https://astrea.linkeddata.es/report/372572075> , <https://astrea.linkeddata.es/report/1963213088> .
+
+<https://astrea.linkeddata.es/shapes#151ba0c6cf4537f9f4b8420a05aca6fb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> ;
+        rdfs:label        "validTo"@en , "The end date of validity of the alert in ISO8601 UTC format." ;
+        sh:description    "The end date of validity of the alert in ISO8601 UTC format." ;
+        sh:name           "validTo"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:validTo .
+
+<https://astrea.linkeddata.es/shapes#51143ff066a7d0d59bc809b448db3f32>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:alertDate .
+
+<https://astrea.linkeddata.es/shapes#18a0f7a52e8ad364133544a8f8068e04>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> ;
+        rdfs:label        "Alert" ;
+        sh:description    "This entity models an alert and could be used to send alerts related to traffic jam, accidents, weather conditions, high level of pollutants and so on. The purpose of the model is to support the generation of notifications for a user or trigger other actions, based on such alerts. An alert is generated by a specific situation. The main features of an alert is that it is not predictable and it is not a recurrent data. That means that an alert could be an accident or a high level of pollutants measure, additionally it could be the fall down of a patient or a car driving in the opposite direction." ;
+        sh:name           "Alert" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware:Alert .
+
+<https://astrea.linkeddata.es/shapes#26c5ac60005e9177ec24b4fc1d3218f3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#51143ff066a7d0d59bc809b448db3f32> , <https://astrea.linkeddata.es/shapes#3c4069d1209a65109a18f94b31644ae1> , <https://astrea.linkeddata.es/shapes#087fbed8781859126a644978af69eb02> , <https://astrea.linkeddata.es/shapes#72b5ce36f0debf76da4c0832ffed7785> , <https://astrea.linkeddata.es/shapes#0f76c8d028abcb73eda615acb7f76c30> ;
+        sh:targetClass    foodie:Alert , fiware:Alert .
+
+<https://astrea.linkeddata.es/report/01163512728>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://foodie-cloud.com/model/foodie" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#479332686803645c81119120a8805b9d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> ;
+        rdfs:label        "validFrom"@en , "The start date of validity of the alert in ISO8601 UTC format." ;
+        sh:description    "The start date of validity of the alert in ISO8601 UTC format." ;
+        sh:name           "validFrom"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:validFrom .
+
+<https://astrea.linkeddata.es/shapes#7ba72b4487d0800caff6564aeaac2fe4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          geo:Geometry ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:alertGeometry .
+
+<https://astrea.linkeddata.es/shapes#8833e158640b2c4a21f6ee942cc316d3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:Alert ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:speciesAlert .
+
+<https://astrea.linkeddata.es/shapes#da443a0a889f835728e2b9778c537399>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:dateTime , xsd:date ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:alertDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" , "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#3c4069d1209a65109a18f94b31644ae1>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:alertGeometry .
+
+<https://astrea.linkeddata.es/shapes#71c81ff3bceca6e51c8eb23948f6b72c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:CropSpecies ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:alertSpecies .
+
+<https://astrea.linkeddata.es/report/1963213088>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/demeter/agri/agriCommon" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c4d8a24267a0f8f8336c2c458d792f44>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:Alert ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:plotAlert .
+
+<https://astrea.linkeddata.es/shapes#0f76c8d028abcb73eda615acb7f76c30>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:code .
+
+<https://astrea.linkeddata.es/shapes#4a9211d2ba2240ff7b93e9f22d6aeb6e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:Plot ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:alertPlot .
+
+<https://astrea.linkeddata.es/shapes#72b5ce36f0debf76da4c0832ffed7785>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:description .
+
+<https://astrea.linkeddata.es/shapes#fe28364e22e4346c5d98eda61092be59>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:Alert ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:zoneAlert .

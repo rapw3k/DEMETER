@@ -1,5 +1,4 @@
-@prefix schema: <http://schema.org/> .
-@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix schema: <https://schema.org/> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix afn:   <http://jena.apache.org/ARQ/function#> .
@@ -7,25 +6,17 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix af-inspire: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
-@prefix act-inspire: <http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix act-inspire: <http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix geo:   <http://www.opengis.net/ont/geosparql#> .
-@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix sf:    <http://www.opengis.net/ont/sf#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
-@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
 @prefix dct:   <http://purl.org/dc/terms/> .
 @prefix sh:    <http://www.w3.org/ns/shacl#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix prov:  <http://www.w3.org/ns/prov#> .
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
-
-<https://astrea.linkeddata.es/shapes#1234d42ca03d2db81542faa103549017>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      common:validFrom .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <https://astrea.linkeddata.es/shapes#cec13f824650b91401ee4d9e7051141d>
         a                 sh:PropertyShape ;
@@ -36,38 +27,54 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:lastPlantedAt .
 
-<https://astrea.linkeddata.es/shapes#94c94d6cfbd428c08f39ddc52cc55162>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:hasName .
+<https://astrea.linkeddata.es/shapes#213dce020d8d1d818cf322430ccb65dd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "spatialDimension"@en , "\n      The number of measurements or axes needed to describe the spatial position of \n      this geometry in a coordinate system.\n    "@en ;
+        sh:datatype       xsd:integer ;
+        sh:description    "\n      The number of measurements or axes needed to describe the spatial position of \n      this geometry in a coordinate system.\n    "@en ;
+        sh:name           "spatialDimension"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           geo:spatialDimension ;
+        sh:pattern        "[\\-+]?[0-9]+" .
 
-<https://astrea.linkeddata.es/shapes#b01d6eed32b58e8c5381e68a18181893>
+<https://astrea.linkeddata.es/report/01127642143>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://inspire.ec.europa.eu/schemas/af/3.0" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#7c3b13bb921121fa1376fd3c24a241fb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "tangential proper part inverse"@en , "\n      Exists if the subject SpatialObject spatially covers the \n      object SpatialObject. DE-9IM: TTTFTTFFT\n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially covers the \n      object SpatialObject. DE-9IM: TTTFTTFFT\n    "@en ;
+        sh:name           "tangential proper part inverse"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:rcc8tppi .
+
+<https://astrea.linkeddata.es/shapes#ae94128fcc137af430a67a1e3bb364a3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "\n      Exists if the subject SpatialObject spatially touches the \n      object SpatialObject.\n      DE-9IM: FT******* ^ F**T***** ^ F***T****\n    "@en , "touches"@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially touches the \n      object SpatialObject.\n      DE-9IM: FT******* ^ F**T***** ^ F***T****\n    "@en ;
+        sh:name           "touches"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:sfTouches .
+
+<https://astrea.linkeddata.es/shapes#9f3f156f683d37683f9c2798ebd9c3a6>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  af-inspire: ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Curve"@en ;
+        sh:description    "\r\nA Curve is a 1-dimensional geometric object usually stored as a sequence of Points, with the subtype of Curve specifying the form of the interpolation between Points. This specification defines only one subclass of Curve, LineString, which uses linear interpolation between Points.\r\nA Curve is a 1-dimensional geometric object that is the homeomorphic image of a real, closed, interval.\r\nA Curve is simple if it does not pass through the same Point twice with the possible exception of the two end\r\npoints.\r\nA Curve is closed if its start Point is equal to its end Point.\r\nThe boundary of a closed Curve is empty.\r\nA Curve that is simple and closed is a Ring.\r\nThe boundary of a non-closed Curve consists of its two end Points.\r\nA Curve is defined as topologically closed, that is, it contains its endpoints f(a) and f(b).\r\n    "@en ;
+        sh:name           "Curve"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#ffa228fbe9acf17ea0b9d1fa1bf85040> , <https://astrea.linkeddata.es/shapes#79f9049ac8c7b059d503662569e881fe> ;
-        sh:targetClass    af-inspire:Holding .
-
-<https://astrea.linkeddata.es/shapes#a742b2c3b67f7817094c3e8d8100531d>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      common:validFrom .
-
-<https://astrea.linkeddata.es/shapes#3feb00f80e5466881b35881ee8cd88c4>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:code .
-
-<https://astrea.linkeddata.es/shapes#561d7681316bbbc7f832f6f814fa96dd>
-        a            sh:PropertyShape ;
-        sh:class     wgs84_pos:Point ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      wgs84_pos:location .
+        sh:targetClass    sf:Curve .
 
 <https://astrea.linkeddata.es/shapes#1dc19786e03c31a4408854a399076c70>
         a                 sh:PropertyShape ;
@@ -87,67 +94,62 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:hasAgriCrop .
 
-<https://astrea.linkeddata.es/shapes#be4b194476cee0124b7ee49362b53877>
+<https://astrea.linkeddata.es/shapes#d6877bded711db9ad3da81bbbeb99c3f>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  af-inspire: ;
-        sh:class          act-inspire:EconomicActivityNACEValue ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "covers"@en , "\n      Exists if the subject SpatialObject spatially covers the \n      object SpatialObject. DE-9IM: T*TFT*FF*\n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially covers the \n      object SpatialObject. DE-9IM: T*TFT*FF*\n    "@en ;
+        sh:name           "covers"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           af-inspire:activity .
+        sh:path           geo:ehCovers .
 
-<https://astrea.linkeddata.es/shapes#a6fc85850e8eaf3606f2059efa9f8fb3>
-        a            sh:PropertyShape ;
-        sh:class     geo:Geometry ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      geo:hasGeometry .
+<https://astrea.linkeddata.es/shapes#cf6a37cc1bfa54fcde15de1df08c3452>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Polygon"@en ;
+        sh:description    "\r\nA Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon.\r\nThe exterior boundary LinearRing defines the top of the surface which is the side of the surface from which the exterior boundary appears to traverse the boundary in a counter clockwise direction. The interior LinearRings will have the opposite orientation, and appear as clockwise when viewed from the top,\r\nThe assertions for Polygons (the rules that define valid Polygons) are as follows:\r\na) Polygons are topologically closed;\r\nb) The boundary of a Polygon consists of a set of LinearRings that make up its exterior and interior boundaries;\r\nc) No two Rings in the boundary cross and the Rings in the boundary of a Polygon may intersect at a Point but only as a tangent.\r\nd) A Polygon may not have cut lines, spikes or punctures.\r\ne) The interior of every Polygon is a connected point set;\r\nf) The exterior of a Polygon with 1 or more holes is not connected. Each hole defines a connected component of the exterior.\r\n    "@en ;
+        sh:name           "Polygon"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Polygon .
 
-<https://astrea.linkeddata.es/shapes#4e2656b0e2a32e06c1a88a6a3133fd04>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:description .
+<https://astrea.linkeddata.es/shapes#e94ea9bef8e93d35e2fe9f1f528dffd3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Surface"@en ;
+        sh:description    "\r\nA Surface is a 2-dimensional geometric object.\r\nA simple Surface may consists of a single patch that is associated with one exterior boundary and 0 or more interior boundaries. A single such Surface patch in 3-dimensional space is isometric to planar Surfaces, by a simple affine rotation matrix that rotates the patch onto the plane z = 0. If the patch is not vertical, the projection onto the same plane is an isomorphism, and can be represented as a linear transformation, i.e. an affine.\r\nPolyhedral Surfaces are formed by stitching together such simple Surfaces patches along their common boundaries. Such polyhedral Surfaces in a 3-dimensional space may not be planar as a whole, depending on the orientation of their planar normals. If all the patches are in alignment (their normals are parallel), then the whole stitched polyhedral surface is co-planar and can be represented as a single patch if it is connected.\r\nThe boundary of a simple Surface is the set of closed Curves corresponding to its exterior and interior boundaries.\r\nA Polygon is a simple Surface that is planar. A PolyhedralSurface is a simple surface, consisting of some number of Polygon patches or facets. If a PolyhedralSurface is closed, then it bounds a solid. A MultiSurface containing a set of closed PolyhedralSurfaces can be used to represent a Solid object with holes.\r\n    "@en ;
+        sh:name           "Surface"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Surface .
 
-<https://astrea.linkeddata.es/shapes#9698dc4a8537d2e9cd91560f11e157da>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      prov:generatedAtTime .
+<https://astrea.linkeddata.es/shapes#a0cee7e7e4ddc429b5c683a41b9013f5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "\n      Exists if the subject SpatialObject spatially equals the \n      object SpatialObject. DE-9IM: TFFFTFFFT\n    "@en , "equals"@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially equals the \n      object SpatialObject. DE-9IM: TFFFTFFFT\n    "@en ;
+        sh:name           "equals"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:rcc8eq .
 
-<https://astrea.linkeddata.es/shapes#100f1a0fde90405f1c26850ca86d085e>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      common:validTo .
-
-<https://astrea.linkeddata.es/shapes#77cce3bcdaf17172ebb7f37f1c99b4d1>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      prov:generatedAtTime .
-
-<https://astrea.linkeddata.es/shapes#7656edcbaa7adbdb325bfe2856838bc6>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      prov:invalidatedAtTime .
+<https://astrea.linkeddata.es/shapes#bf1be28f61b0bbde317423ecb2f7d2a7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Triangle"@en ;
+        sh:description    "\r\n A Triangle is a polygon with 3 distinct, non-collinear vertices and no interior boundary.\r\n    "@en ;
+        sh:name           "Triangle"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Triangle .
 
 <https://astrea.linkeddata.es/shapes#467f9b0187d4c9cb09e9552fd853c424>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
-        rdfs:label        "within"@en , "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
+        rdfs:label        "within"@en , "\n      Exists if the subject SpatialObject is spatially within the \n      object SpatialObject. DE-9IM: T*F**F***\n    "@en ;
         sh:class          geo:SpatialObject ;
-        sh:description    "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
+        sh:description    "\n      Exists if the subject SpatialObject is spatially within the \n      object SpatialObject. DE-9IM: T*F**F***\n    "@en ;
         sh:name           "within"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           geo:sfWithin .
-
-<https://astrea.linkeddata.es/shapes#263550765f3409c3e526d4b72a416373>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          foodie:Plot ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:holdingZone .
 
 <https://astrea.linkeddata.es/shapes#db2cab4dd634c22d6152f7a596a05e6e>
         a                 sh:PropertyShape ;
@@ -158,20 +160,20 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:location .
 
-<https://astrea.linkeddata.es/shapes#05d33e1cf8ead5ebf41d409a1af0e7dc>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  act-inspire: ;
-        rdfs:label        "EconomicActivityNACEValue" ;
-        sh:name           "EconomicActivityNACEValue" ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    act-inspire:EconomicActivityNACEValue .
+<https://astrea.linkeddata.es/shapes#8226f1366a4c039f3af9d69dcb20e175>
+        a         sh:PropertyShape ;
+        sh:class  geo:Feature .
 
-<https://astrea.linkeddata.es/shapes#eff3a21eb92b38d1ceecd6a7b50956a9>
+<https://astrea.linkeddata.es/shapes#ce9b1b3ec27a653696d2ed4bd02b1d12>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          af-inspire:Holding ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:holdingSite .
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "\n      (true) if this geometric object has no anomalous geometric \n      points, such as self intersection or self tangency.\n    "@en , "isSimple"@en ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "\n      (true) if this geometric object has no anomalous geometric \n      points, such as self intersection or self tangency.\n    "@en ;
+        sh:name           "isSimple"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           geo:isSimple ;
+        sh:pattern        "true|false|0|1" .
 
 <https://astrea.linkeddata.es/shapes#e6681742cb01e8ceff3eff7cbeac73bf>
         a                 sh:PropertyShape ;
@@ -182,6 +184,16 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:cropStatus .
 
+<https://astrea.linkeddata.es/shapes#5103bc48aa70ede622e295c92c62971f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "meet"@en , "\n      Exists if the subject SpatialObject spatially meets the \n      object SpatialObject. \n      DE-9IM: FT******* ^ F**T***** ^ F***T****\n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially meets the \n      object SpatialObject. \n      DE-9IM: FT******* ^ F**T***** ^ F***T****\n    "@en ;
+        sh:name           "meet"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:ehMeet .
+
 <https://astrea.linkeddata.es/shapes#d35bf908c20032fcd25f5924864f2a8e>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> ;
@@ -191,229 +203,307 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:hasAgriParcel .
 
-<https://astrea.linkeddata.es/shapes#c2c26428d6d9e54285a52c4b4d4745a5>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:code .
-
-<https://astrea.linkeddata.es/shapes#88868d8c55ef1f8660fa5427e6fd63d2>
+<https://astrea.linkeddata.es/shapes#b43c2bc06054e5242a46b9d7b3c5a68f>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:equals         fiware:hasAgriCrop ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:crop .
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "GML Literal"@en , "\n      A GML serialization of a geometry object.\n    "@en ;
+        sh:description    "\n      A GML serialization of a geometry object.\n    "@en ;
+        sh:name           "GML Literal"@en ;
+        sh:nodeKind       sh:Literal .
 
-<https://astrea.linkeddata.es/shapes#80b6412cec973e549d02f8f742992180>
+<https://astrea.linkeddata.es/shapes#42d80f85c97e61c90caf7c228a5a60f8>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          foodie:Plot ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "\n      Exists if the subject SpatialObject spatially overlaps the \n      object SpatialObject. DE-9IM: TTTTTTTTT\n    "@en , "partially overlapping"@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially overlaps the \n      object SpatialObject. DE-9IM: TTTTTTTTT\n    "@en ;
+        sh:name           "partially overlapping"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:containsPlot .
-
-<https://astrea.linkeddata.es/shapes#7d1250b1e972e6db18e8c8490eb8728a>
-        a            sh:PropertyShape ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      geo:hasGeometry .
-
-<https://astrea.linkeddata.es/shapes#e7b516b5764ab14aac9d4b2dcbe92e80>
-        a            sh:PropertyShape ;
-        sh:class     geo:SpatialObject ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      geo:sfContains .
+        sh:path           geo:rcc8po .
 
 <https://astrea.linkeddata.es/shapes#498ecea4906de70915739bdbdf3d1bc0>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
         rdfs:label        "SpatialObject"@en ;
-        sh:description    "The class spatial-object represents everything that can have a spatial representation. It is superclass of feature and geometry."@en ;
+        sh:description    "\n      The class spatial-object represents everything that can have \n      a spatial representation. It is superclass of feature and geometry.\n    "@en ;
         sh:name           "SpatialObject"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#561d7681316bbbc7f832f6f814fa96dd> , <https://astrea.linkeddata.es/shapes#467f9b0187d4c9cb09e9552fd853c424> , <https://astrea.linkeddata.es/shapes#a6fc85850e8eaf3606f2059efa9f8fb3> , <https://astrea.linkeddata.es/shapes#e7b516b5764ab14aac9d4b2dcbe92e80> , <https://astrea.linkeddata.es/shapes#8355820918b8f052e2489eb782a08ab2> , <https://astrea.linkeddata.es/shapes#eb47bba04f59dfa4446ff67663f33e76> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3f05440e1a3afd171ae47cd9247a1088> , <https://astrea.linkeddata.es/shapes#467f9b0187d4c9cb09e9552fd853c424> , <https://astrea.linkeddata.es/shapes#92f740593d34a41bdf77247e0441b68c> , <https://astrea.linkeddata.es/shapes#c8767ee5e3e380d5ad760a9a480fa7c4> , <https://astrea.linkeddata.es/shapes#55c315f5aaa307445c02d8114eb78ce9> , <https://astrea.linkeddata.es/shapes#5b4bcbfb109ba790e573276efc2907ef> , <https://astrea.linkeddata.es/shapes#d6877bded711db9ad3da81bbbeb99c3f> , <https://astrea.linkeddata.es/shapes#a0cee7e7e4ddc429b5c683a41b9013f5> , <https://astrea.linkeddata.es/shapes#7c3b13bb921121fa1376fd3c24a241fb> , <https://astrea.linkeddata.es/shapes#1ed48cc4ebd292d0376ea0ac8906c3ee> , <https://astrea.linkeddata.es/shapes#ae94128fcc137af430a67a1e3bb364a3> , <https://astrea.linkeddata.es/shapes#90047e6a68849315b64c4d79c190b5d2> , <https://astrea.linkeddata.es/shapes#8355820918b8f052e2489eb782a08ab2> , <https://astrea.linkeddata.es/shapes#d41390cfd09ce6886e478734bc2ba947> , <https://astrea.linkeddata.es/shapes#5103bc48aa70ede622e295c92c62971f> , <https://astrea.linkeddata.es/shapes#327c5645c5fe9705bbdf273eaa641d47> , <https://astrea.linkeddata.es/shapes#82dffe840b9700ea7def478a1c47e0a2> , <https://astrea.linkeddata.es/shapes#707522d236f1c7f315e8257b43e96fdc> , <https://astrea.linkeddata.es/shapes#f8482c6a0f358f8055f45eacf42d6a2c> , <https://astrea.linkeddata.es/shapes#e9055ade9fa07170a022595bfd14d083> , <https://astrea.linkeddata.es/shapes#208f40f2aa73c7b7c461ef56bc5131f5> , <https://astrea.linkeddata.es/shapes#7708bbae5b8480898ff5092cdbab2525> , <https://astrea.linkeddata.es/shapes#42d80f85c97e61c90caf7c228a5a60f8> , <https://astrea.linkeddata.es/shapes#ad7033a4715aac6f896834ee235fce35> ;
         sh:targetClass    geo:SpatialObject .
 
-<https://astrea.linkeddata.es/shapes#651efc216c5a0a6abf668d162509b4c9>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:hasName .
-
-<https://astrea.linkeddata.es/shapes#021432ba9c751b4d4033997503c1f902>
-        a            sh:PropertyShape ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      af-inspire:activity .
-
-<https://astrea.linkeddata.es/shapes#c509e281fc42c3d5de278a4ba65f429c>
+<https://astrea.linkeddata.es/shapes#7708bbae5b8480898ff5092cdbab2525>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  af-inspire: ;
-        sh:class          af-inspire:Site ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "intersects"@en , "\n      Exists if the subject SpatialObject is not spatially disjoint \n      from the object SpatialObject.\n      DE-9IM: T******** ^ *T******* ^ ***T***** ^ ****T**** \n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject is not spatially disjoint \n      from the object SpatialObject.\n      DE-9IM: T******** ^ *T******* ^ ***T***** ^ ****T**** \n    "@en ;
+        sh:name           "intersects"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           af-inspire:contains .
+        sh:path           geo:sfIntersects .
+
+<https://astrea.linkeddata.es/shapes#ad7033a4715aac6f896834ee235fce35>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "overlaps"@en , "\n      Exists if the subject SpatialObject spatially overlaps the \n      object SpatialObject. DE-9IM: T*T***T** \n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially overlaps the \n      object SpatialObject. DE-9IM: T*T***T** \n    "@en ;
+        sh:name           "overlaps"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:sfOverlaps .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#e979b2838bed23a0c61e63cbeae54db6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "\n      The default geometry to be used in spatial calculations.\n      It is Usually the most detailed geometry.\n    "@en , "defaultGeometry"@en ;
+        sh:class          geo:Geometry ;
+        sh:description    "\n      The default geometry to be used in spatial calculations.\n      It is Usually the most detailed geometry.\n    "@en ;
+        sh:name           "defaultGeometry"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:defaultGeometry .
 
 <https://astrea.linkeddata.es/shapes#9e81a8547fd8cabc79752e243c8d2b67>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
         rdfs:label        "Geometry"@en ;
-        sh:description    "The class represents the top-level geometry type. This class is equivalent to the UML class GM_Object defined in ISO 19107, and it is superclass of all geometry types."@en ;
+        sh:description    "\n      The class represents the top-level geometry type. This class is \n      equivalent to the UML class GM_Object defined in ISO 19107, and \n      it is superclass of all geometry types.\n    "@en ;
         sh:name           "Geometry"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#0f6502053608fc059a721676b6e67115> ;
+        sh:not            <https://astrea.linkeddata.es/shapes#8226f1366a4c039f3af9d69dcb20e175> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0f6502053608fc059a721676b6e67115> , <https://astrea.linkeddata.es/shapes#bb9ad1857093cc31f11d9ba7f19348ea> , <https://astrea.linkeddata.es/shapes#ba37020ab8b5cf73b00e9187bead387c> , <https://astrea.linkeddata.es/shapes#b3b89c89e30bbeb141774553213d763a> , <https://astrea.linkeddata.es/shapes#ce9b1b3ec27a653696d2ed4bd02b1d12> , <https://astrea.linkeddata.es/shapes#213dce020d8d1d818cf322430ccb65dd> , <https://astrea.linkeddata.es/shapes#6f1a80b9ea58c60979eb6b5d7dd31a18> , <https://astrea.linkeddata.es/shapes#ea758cf93a4a6fcb568c859d464061d1> ;
         sh:targetClass    geo:Geometry .
 
-<https://astrea.linkeddata.es/shapes#ec92439b303570f321576b28135fe664>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      geo:hasGeometry .
-
-<https://astrea.linkeddata.es/shapes#14306bd799bd4ee4de065efc914e4a55>
-        a            sh:PropertyShape ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:containsPlot .
-
-<https://astrea.linkeddata.es/shapes#c59d4953fd243e041443fc088566f8b8>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      prov:generatedAtTime .
-
-<https://astrea.linkeddata.es/shapes#ae908c904944a56cefec54c488a89327>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:notes .
-
-<https://astrea.linkeddata.es/shapes#7139ac3bac1fb96b85203ca83f019ef6>
-        a            sh:PropertyShape ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      geo:hasGeometry .
-
-<https://astrea.linkeddata.es/shapes#34772c2940cb10460f0219f508e35699>
+<https://astrea.linkeddata.es/shapes#25c3adb40ac09192c2b49de35c64abad>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Geometry Collection"@en ;
+        sh:description    "\r\nA GeometryCollection is a geometric object that is a collection of some number of geometric objects.\r\nAll the elements in a GeometryCollection shall be in the same Spatial Reference System. This is also the Spatial Reference System for the GeometryCollection.\r\nGeometryCollection places no other constraints on its elements. Subclasses of GeometryCollection may restrict membership based on dimension and may also place other constraints on the degree of spatial overlap between elements.\r\n    "@en ;
+        sh:name           "Geometry Collection"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:targetClass    foodie:OriginTypeValue .
+        sh:targetClass    sf:GeometryCollection .
 
-<https://astrea.linkeddata.es/shapes#bf3bc9f168c46a0a3e0fe3c379bbe0d7>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:code .
+<https://astrea.linkeddata.es/report/01163512728>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://foodie-cloud.com/model/foodie" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
 
-<https://astrea.linkeddata.es/shapes#d5cfa76e1be0f91bfc1d3c44ef0b8ae0>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      common:validTo .
+<https://astrea.linkeddata.es/shapes#f8482c6a0f358f8055f45eacf42d6a2c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "\n      Exists if the subject SpatialObject is spatially disjoint\n      from the object SpatialObject. DE-9IM: FF*FF****\n    "@en , "disjoint"@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject is spatially disjoint\n      from the object SpatialObject. DE-9IM: FF*FF****\n    "@en ;
+        sh:name           "disjoint"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:ehDisjoint .
+
+<https://astrea.linkeddata.es/shapes#707522d236f1c7f315e8257b43e96fdc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "\n      Exists if the subject SpatialObject is spatially disjoint \n      from the object SpatialObject. DE-9IM: FF*FF****\n    "@en , "disjoint"@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject is spatially disjoint \n      from the object SpatialObject. DE-9IM: FF*FF****\n    "@en ;
+        sh:name           "disjoint"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:sfDisjoint .
+
+<https://astrea.linkeddata.es/shapes#95da19ec76b5a8a3977cc858fc374ee8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Curve"@en ;
+        sh:description    "\r\nA MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.\r\nA MultiCurve defines a set of methods for its subclasses and is included for reasons of extensibility.\r\nA MultiCurve is simple if and only if all of its elements are simple and the only intersections between any two elements occur at Points that are on the boundaries of both elements.\r\nThe boundary of a MultiCurve is obtained by applying the mod 2 union rule: A Point is in the boundary of a MultiCurve if it is in the boundaries of an odd number of elements of the MultiCurve.\r\nA MultiCurve is closed if all of its elements are closed. The boundary of a closed MultiCurve is always empty.\r\nA MultiCurve is defined as topologically closed.\r\n    "@en ;
+        sh:name           "Multi Curve"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiCurve .
+
+<https://astrea.linkeddata.es/shapes#2d1397475113b7db235fc471ef1ae5d3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Line"@en ;
+        sh:description    "\r\nA Line is a LineString with exactly 2 Points.\r\n    "@en ;
+        sh:name           "Line"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Line .
+
+<https://astrea.linkeddata.es/shapes#aa5038b3045842c3467135022934c084>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Triangulated Irregular Network"@en ;
+        sh:description    "\r\nA TIN (triangulated irregular network) is a PolyhedralSurface consisting only of Triangle patches.\r\n    "@en ;
+        sh:name           "Triangulated Irregular Network"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:TIN .
+
+<https://astrea.linkeddata.es/shapes#92f740593d34a41bdf77247e0441b68c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "non-tangential proper part inverse"@en , "\n      Exists if the subject SpatialObject spatially contains the \n      object SpatialObject. DE-9IM: TTTFFTFFT\n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially contains the \n      object SpatialObject. DE-9IM: TTTFFTFFT\n    "@en ;
+        sh:name           "non-tangential proper part inverse"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:rcc8ntppi .
 
 <https://astrea.linkeddata.es/shapes#8c9f0a3ef50fe390869f7c693885d425>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.opengis.net/ont/gml> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
         rdfs:label        "Feature"@en ;
-        sh:description    "This class represents the top-level feature type. This class is equivalent to GFI_Feature defined in ISO 19156:2011, and it is superclass of all feature types."@en ;
+        sh:description    "\n      This class represents the top-level feature type. This class is \n      equivalent to GFI_Feature defined in ISO 19156:2011, and it is \n      superclass of all feature types.\n    "@en ;
         sh:name           "Feature"@en ;
         sh:nodeKind       sh:IRI ;
         sh:not            <https://astrea.linkeddata.es/shapes#16b639b6c59786f5c650e18b0080386b> ;
-        sh:property       <https://astrea.linkeddata.es/shapes#3f6891594ac2d163a004bec00f8db48a> , <https://astrea.linkeddata.es/shapes#3348f96caa15fb50d86f0a2231585642> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3348f96caa15fb50d86f0a2231585642> , <https://astrea.linkeddata.es/shapes#e979b2838bed23a0c61e63cbeae54db6> ;
         sh:targetClass    geo:Feature .
 
-<https://astrea.linkeddata.es/shapes#ef4ee09775a4ed717799816812fb2efc>
+<https://astrea.linkeddata.es/shapes#c8592f59b9f1f31ba0fc9d468fd8eb93>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Linear Ring"@en ;
+        sh:description    "\r\nA LinearRing is a LineString that is both closed and simple.\r\n    "@en ;
+        sh:name           "Linear Ring"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#bf3bc9f168c46a0a3e0fe3c379bbe0d7> , <https://astrea.linkeddata.es/shapes#f7b2b5e404a15b049376007758affc7e> , <https://astrea.linkeddata.es/shapes#ae908c904944a56cefec54c488a89327> , <https://astrea.linkeddata.es/shapes#7139ac3bac1fb96b85203ca83f019ef6> , <https://astrea.linkeddata.es/shapes#92ec9f4a340443ce661beb8dfaf279a7> , <https://astrea.linkeddata.es/shapes#77cce3bcdaf17172ebb7f37f1c99b4d1> , <https://astrea.linkeddata.es/shapes#d5cfa76e1be0f91bfc1d3c44ef0b8ae0> ;
-        sh:targetClass    foodie:ManagementZone .
+        sh:targetClass    sf:LinearRing .
 
-<https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63>
+<https://astrea.linkeddata.es/shapes#f2457c74a6bad939d7352214edada504>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  wgs84_pos: ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Surface"@en ;
+        sh:description    "\r\nA MultiSurface is a 2-dimensional GeometryCollection whose elements are Surfaces, all using coordinates from the same coordinate reference system. The geometric interiors of any two Surfaces in a MultiSurface may not intersect in the full coordinate system. The boundaries of any two coplanar elements in a MultiSurface may intersect, at most, at a finite number of Points. If they were to meet along a curve, they could be merged into a single surface.\r\nA MultiSurface may be used to represent heterogeneous surfaces collections of polygons and polyhedral surfaces. It defines a set of methods for its subclasses. The subclass of MultiSurface is MultiPolygon corresponding to a collection of Polygons only. Other collections shall use MultiSurface.\r\n    "@en ;
+        sh:name           "Multi Surface"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiSurface .
+
+<https://astrea.linkeddata.es/shapes#163744438032c52e32bf3c7c8bb195e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
         rdfs:label        "Point"@en ;
-        sh:description    "A point, typically described using a coordinate system relative to Earth, such as WGS84." , " \r\nUniquely identified by lat/long/alt. i.e.\r\n\r\nspaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),\r\n  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).\r\n\r\nsameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).\r\n  " ;
+        sh:description    "\r\nA Point is a 0-dimensional geometric object and represents a single location in coordinate space. \r\nA Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.\r\nThe boundary of a Point is the empty set.\r\n    "@en ;
         sh:name           "Point"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:targetClass    wgs84_pos:Point .
+        sh:targetClass    sf:Point .
 
 <https://astrea.linkeddata.es/shapes#0f6502053608fc059a721676b6e67115>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
-        rdfs:label        "has serialization"@en , "Connects a geometry object with its text-based serialization"@en ;
+        rdfs:label        "has serialization"@en , "\n      Connects a geometry object with its text-based serialization.\n    "@en , "Connects a geometry object with its text-based serialization"@en ;
         sh:datatype       rdfs:Literal ;
-        sh:description    "Connects a geometry object with its text-based serialization"@en ;
+        sh:description    "\n      Connects a geometry object with its text-based serialization.\n    "@en , "Connects a geometry object with its text-based serialization"@en ;
         sh:name           "has serialization"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           geo:hasSerialization .
 
-<https://astrea.linkeddata.es/shapes#44d387d97a81baf0defa97566060720b>
+<https://astrea.linkeddata.es/shapes#c8767ee5e3e380d5ad760a9a480fa7c4>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          foodie:TractorType ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "\n      Exists if the subject SpatialObject is spatially inside \n      the object SpatialObject. DE-9IM: TFF*FFT**\n    "@en , "inside"@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject is spatially inside \n      the object SpatialObject. DE-9IM: TFF*FFT**\n    "@en ;
+        sh:name           "inside"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:tractor .
+        sh:path           geo:ehInside .
 
-<https://astrea.linkeddata.es/shapes#bf42292cb0c5051a51b20e6f2fa77392>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      prov:invalidatedAtTime .
+<https://astrea.linkeddata.es/shapes#6f1a80b9ea58c60979eb6b5d7dd31a18>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "coordinateDimension"@en , "\n      The number of measurements or axes needed to describe the position of this\n      geometry in a coordinate system.\n    "@en ;
+        sh:datatype       xsd:integer ;
+        sh:description    "\n      The number of measurements or axes needed to describe the position of this\n      geometry in a coordinate system.\n    "@en ;
+        sh:name           "coordinateDimension"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           geo:coordinateDimension ;
+        sh:pattern        "[\\-+]?[0-9]+" .
 
 <https://astrea.linkeddata.es/shapes#16b639b6c59786f5c650e18b0080386b>
         a         sh:PropertyShape ;
         sh:class  geo:Geometry .
 
-<https://astrea.linkeddata.es/shapes#911b85a41f3a3ad7701eb24d15f10cdb>
+<https://astrea.linkeddata.es/shapes#773ee1c13e884ec4f5e6535d912e7461>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          af-inspire:Site ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:holdingPlot .
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "\n      A Well-known Text serialization of a geometry object.\n    "@en , "A Well-known Text serialization of a geometry object."@en , "Well-known Text Literal"@en ;
+        sh:description    "A Well-known Text serialization of a geometry object."@en , "\n      A Well-known Text serialization of a geometry object.\n    "@en ;
+        sh:name           "Well-known Text Literal"@en ;
+        sh:nodeKind       sh:Literal .
 
-<https://astrea.linkeddata.es/shapes#607bdac0f15890021a981ed53c08385f>
+<https://astrea.linkeddata.es/shapes#d41390cfd09ce6886e478734bc2ba947>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  saref4agri: ;
-        rdfs:label        "is contained in"@en ;
-        sh:name           "is contained in"@en ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "contains"@en , "\n      Exists if the subject SpatialObject spatially contains the \n      object SpatialObject. DE-9IM: T*TFF*FF*\n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially contains the \n      object SpatialObject. DE-9IM: T*TFF*FF*\n    "@en ;
+        sh:name           "contains"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           saref4agri:isContainedIn .
+        sh:path           geo:ehContains .
+
+<https://astrea.linkeddata.es/shapes#ba37020ab8b5cf73b00e9187bead387c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "dimension"@en , "\n      The topological dimension of this geometric object, which \n      must be less than or equal to the coordinate dimension. \n      In non-homogeneous collections, this will return the largest \n      topological dimension of the contained objects.\n    "@en ;
+        sh:datatype       xsd:integer ;
+        sh:description    "\n      The topological dimension of this geometric object, which \n      must be less than or equal to the coordinate dimension. \n      In non-homogeneous collections, this will return the largest \n      topological dimension of the contained objects.\n    "@en ;
+        sh:name           "dimension"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           geo:dimension ;
+        sh:pattern        "[\\-+]?[0-9]+" .
 
 <https://astrea.linkeddata.es/shapes#3348f96caa15fb50d86f0a2231585642>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  geo: ;
-        rdfs:label        "has geometry"@en , "A spatial representation for a given feature."@en ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "hasGeometry"@en , "\n      A spatial representation for a given feature.\n    "@en ;
         sh:class          geo:Geometry ;
-        sh:description    "A spatial representation for a given feature."@en ;
+        sh:description    "\n      A spatial representation for a given feature.\n    "@en ;
         sh:equals         wgs84_pos:location ;
-        sh:name           "has geometry"@en ;
+        sh:name           "hasGeometry"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           geo:hasGeometry .
 
-<https://astrea.linkeddata.es/shapes#532c96c480f991d2378c8f44624b10f6>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:hasName .
+<https://astrea.linkeddata.es/shapes#82dffe840b9700ea7def478a1c47e0a2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "externally connected"@en , "\n      Exists if the subject SpatialObject spatially meets the \n      object SpatialObject. DE-9IM: FFTFTTTTT\n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially meets the \n      object SpatialObject. DE-9IM: FFTFTTTTT\n    "@en ;
+        sh:name           "externally connected"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:rcc8ec .
 
-<https://astrea.linkeddata.es/shapes#7596737bf4a6921eb418db1a46b9cc2e>
+<https://astrea.linkeddata.es/shapes#bb9ad1857093cc31f11d9ba7f19348ea>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "asGML"@en , "\n      The GML serialization of a geometry\n    "@en ;
+        sh:datatype       geo:gmlLiteral ;
+        sh:description    "\n      The GML serialization of a geometry\n    "@en ;
+        sh:name           "asGML"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           geo:asGML .
+
+<https://astrea.linkeddata.es/shapes#de2fa1af89dfd5df63d132ae742481df>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  saref4agri: ;
-        rdfs:label        "Farm" ;
-        sh:description    "A plot of land used for the scope of farming which can contain buildings and parcels."@en ;
-        sh:name           "Farm" ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Geometry"@en ;
+        sh:description    "\r\nGeometry is the root class of the hierarchy.\r\nThe instantiable subclasses of Geometry are restricted to 0, 1 and 2-dimensional geometric objects that exist in 2, 3 or 4-dimensional coordinate space (R2, R3 or R4). Geometry values in R2 have points with coordinate values for x and y. Geometry values in R3 have points with coordinate values for x, y and z or for x, y and m. Geometry values in R4 have points with coordinate values for x, y, z and m.\r\nThe interpretation of the coordinates is subject to the coordinate reference systems associated to the point. All coordinates within a geometry object should be in the same coordinate reference systems. Each coordinate shall be unambiguously associated to a coordinate reference system either directly or through its containing geometry. The z coordinate of a point is typically, but not necessarily, represents altitude or elevation. The m coordinate represents a measurement.\r\nAll Geometry classes described in this specification are defined so that instances of Geometry are topologically closed, i.e. all represented geometries include their boundary as point sets. This does not affect their representation, and open version of the same classes may be used in other circumstances, such as topological representations.\r\n    "@en ;
+        sh:name           "Geometry"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#532c96c480f991d2378c8f44624b10f6> , <https://astrea.linkeddata.es/shapes#cd45bf2d7086935ef4cae881bbe6a0d1> ;
-        sh:targetClass    af-inspire:Holding , fiware:AgriFarm , saref4agri:Farm .
+        sh:targetClass    sf:Geometry .
 
-<https://astrea.linkeddata.es/shapes#cd45bf2d7086935ef4cae881bbe6a0d1>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:contains .
+<https://astrea.linkeddata.es/report/1486927977>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/def/saref4agri" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#d1dbf8e5174cb33e190071253f816d1e>
         a                 sh:PropertyShape ;
@@ -423,21 +513,6 @@
         sh:name           "area"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:area .
-
-<https://astrea.linkeddata.es/shapes#9b924293881f2d5e050aebe0296bcc65>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      common:validTo .
-
-<https://astrea.linkeddata.es/shapes#ffa627c90b2f93431bad38fc95750b9e>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  wgs84_pos: ;
-        rdfs:label        "location" , "The relation between something and the point, or other geometrical thing in space, where it is." ;
-        sh:description    "The relation between something and the point, or other geometrical thing in space, where it is." ;
-        sh:name           "location" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           wgs84_pos:location .
 
 <https://astrea.linkeddata.es/shapes#6802eec3913acf2a6c9cb7317522b366>
         a                 sh:PropertyShape ;
@@ -466,23 +541,33 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:hasAgriParcelParent .
 
-<https://astrea.linkeddata.es/shapes#79f9049ac8c7b059d503662569e881fe>
-        a            sh:PropertyShape ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      af-inspire:contains .
+<https://astrea.linkeddata.es/shapes#90047e6a68849315b64c4d79c190b5d2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "equals"@en , "\n      Exists if the subject SpatialObject spatially equals the \n      object SpatialObject. DE-9IM: TFFFTFFFT\n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially equals the \n      object SpatialObject. DE-9IM: TFFFTFFFT\n    "@en ;
+        sh:name           "equals"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:sfEquals .
 
-<https://astrea.linkeddata.es/shapes#3f6891594ac2d163a004bec00f8db48a>
-        a            sh:PropertyShape ;
-        sh:class     geo:Geometry ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      geo:hasGeometry .
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#208f40f2aa73c7b7c461ef56bc5131f5> , <https://astrea.linkeddata.es/shapes#e29dbde7c1f41aad2f20eccfcec14058> , <https://astrea.linkeddata.es/shapes#92f740593d34a41bdf77247e0441b68c> , <https://astrea.linkeddata.es/shapes#d41390cfd09ce6886e478734bc2ba947> , <https://astrea.linkeddata.es/shapes#db2cab4dd634c22d6152f7a596a05e6e> , <https://astrea.linkeddata.es/shapes#163744438032c52e32bf3c7c8bb195e8> , <https://astrea.linkeddata.es/shapes#8226f1366a4c039f3af9d69dcb20e175> , <https://astrea.linkeddata.es/shapes#1dc19786e03c31a4408854a399076c70> , <https://astrea.linkeddata.es/shapes#ad7033a4715aac6f896834ee235fce35> , <https://astrea.linkeddata.es/shapes#f196d50238714ed345057b23b1b1272c> , <https://astrea.linkeddata.es/shapes#95da19ec76b5a8a3977cc858fc374ee8> , <https://astrea.linkeddata.es/shapes#7317fff6f0fe9d43eb9307265f55dbf9> , <https://astrea.linkeddata.es/shapes#42d80f85c97e61c90caf7c228a5a60f8> , <https://astrea.linkeddata.es/shapes#c8767ee5e3e380d5ad760a9a480fa7c4> , <https://astrea.linkeddata.es/shapes#d1dbf8e5174cb33e190071253f816d1e> , <https://astrea.linkeddata.es/shapes#467f9b0187d4c9cb09e9552fd853c424> , <https://astrea.linkeddata.es/shapes#f2457c74a6bad939d7352214edada504> , <https://astrea.linkeddata.es/shapes#707522d236f1c7f315e8257b43e96fdc> , <https://astrea.linkeddata.es/shapes#5103bc48aa70ede622e295c92c62971f> , <https://astrea.linkeddata.es/shapes#bf1be28f61b0bbde317423ecb2f7d2a7> , <https://astrea.linkeddata.es/shapes#c8592f59b9f1f31ba0fc9d468fd8eb93> , <https://astrea.linkeddata.es/shapes#213dce020d8d1d818cf322430ccb65dd> , <https://astrea.linkeddata.es/shapes#8355820918b8f052e2489eb782a08ab2> , <https://astrea.linkeddata.es/shapes#d6ba2ad06ee60e9831df14dfb16ec28f> , <https://astrea.linkeddata.es/shapes#e979b2838bed23a0c61e63cbeae54db6> , <https://astrea.linkeddata.es/shapes#a0b008815cd8501c0f8a678830ff0399> , <https://astrea.linkeddata.es/shapes#7c3b13bb921121fa1376fd3c24a241fb> , <https://astrea.linkeddata.es/shapes#f8482c6a0f358f8055f45eacf42d6a2c> , <https://astrea.linkeddata.es/shapes#7708bbae5b8480898ff5092cdbab2525> , <https://astrea.linkeddata.es/shapes#1be48af0cf6b75e1dabf27a2980aa633> , <https://astrea.linkeddata.es/shapes#e94ea9bef8e93d35e2fe9f1f528dffd3> , <https://astrea.linkeddata.es/shapes#5eeae139d7dc3b975f5db84262268428> , <https://astrea.linkeddata.es/shapes#e9055ade9fa07170a022595bfd14d083> , <https://astrea.linkeddata.es/shapes#ea758cf93a4a6fcb568c859d464061d1> , <https://astrea.linkeddata.es/shapes#ba37020ab8b5cf73b00e9187bead387c> , <https://astrea.linkeddata.es/shapes#6f1a80b9ea58c60979eb6b5d7dd31a18> , <https://astrea.linkeddata.es/shapes#356b5c12716bacd05f9e43896197c2ae> , <https://astrea.linkeddata.es/shapes#82dffe840b9700ea7def478a1c47e0a2> , <https://astrea.linkeddata.es/shapes#8c9f0a3ef50fe390869f7c693885d425> , <https://astrea.linkeddata.es/shapes#bb9ad1857093cc31f11d9ba7f19348ea> , <https://astrea.linkeddata.es/shapes#327c5645c5fe9705bbdf273eaa641d47> , <https://astrea.linkeddata.es/shapes#a6ea61114ce41b9bec42319b4236e2df> , <https://astrea.linkeddata.es/shapes#d35bf908c20032fcd25f5924864f2a8e> , <https://astrea.linkeddata.es/shapes#9f3f156f683d37683f9c2798ebd9c3a6> , <https://astrea.linkeddata.es/shapes#9e81a8547fd8cabc79752e243c8d2b67> , <https://astrea.linkeddata.es/shapes#55c315f5aaa307445c02d8114eb78ce9> , <https://astrea.linkeddata.es/shapes#25c3adb40ac09192c2b49de35c64abad> , <https://astrea.linkeddata.es/shapes#b43c2bc06054e5242a46b9d7b3c5a68f> , <https://astrea.linkeddata.es/shapes#16b639b6c59786f5c650e18b0080386b> , <https://astrea.linkeddata.es/shapes#773ee1c13e884ec4f5e6535d912e7461> , <https://astrea.linkeddata.es/shapes#a0cee7e7e4ddc429b5c683a41b9013f5> , <https://astrea.linkeddata.es/shapes#cf6a37cc1bfa54fcde15de1df08c3452> , <https://astrea.linkeddata.es/shapes#aa5038b3045842c3467135022934c084> , <https://astrea.linkeddata.es/shapes#e6681742cb01e8ceff3eff7cbeac73bf> , <https://astrea.linkeddata.es/shapes#6802eec3913acf2a6c9cb7317522b366> , <https://astrea.linkeddata.es/shapes#d6877bded711db9ad3da81bbbeb99c3f> , <https://astrea.linkeddata.es/shapes#3348f96caa15fb50d86f0a2231585642> , <https://astrea.linkeddata.es/shapes#cec13f824650b91401ee4d9e7051141d> , <https://astrea.linkeddata.es/shapes#de2fa1af89dfd5df63d132ae742481df> , <https://astrea.linkeddata.es/shapes#ae94128fcc137af430a67a1e3bb364a3> , <https://astrea.linkeddata.es/shapes#f594accb3ab1abee976af834f4a87746> , <https://astrea.linkeddata.es/shapes#2d1397475113b7db235fc471ef1ae5d3> , <https://astrea.linkeddata.es/shapes#498ecea4906de70915739bdbdf3d1bc0> , <https://astrea.linkeddata.es/shapes#90047e6a68849315b64c4d79c190b5d2> , <https://astrea.linkeddata.es/shapes#ce9b1b3ec27a653696d2ed4bd02b1d12> , <https://astrea.linkeddata.es/shapes#3f05440e1a3afd171ae47cd9247a1088> , <https://astrea.linkeddata.es/shapes#b3b89c89e30bbeb141774553213d763a> , <https://astrea.linkeddata.es/shapes#eab2ccb77e56d3ad473395331d814f3d> , <https://astrea.linkeddata.es/shapes#1ed48cc4ebd292d0376ea0ac8906c3ee> , <https://astrea.linkeddata.es/shapes#0f6502053608fc059a721676b6e67115> , <https://astrea.linkeddata.es/shapes#5b4bcbfb109ba790e573276efc2907ef> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1963213088> , <https://astrea.linkeddata.es/report/01333335882> , <https://astrea.linkeddata.es/report/01127642143> , <https://astrea.linkeddata.es/report/824247582> , <https://astrea.linkeddata.es/report/1496633346> , <https://astrea.linkeddata.es/report/01163512728> , <https://astrea.linkeddata.es/report/1486927977> , <https://astrea.linkeddata.es/report/0620946147> .
 
-<https://astrea.linkeddata.es/shapes#eb47bba04f59dfa4446ff67663f33e76>
-        a            sh:PropertyShape ;
-        sh:class     geo:SpatialObject ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      geo:sfWithin .
+<https://astrea.linkeddata.es/shapes#b3b89c89e30bbeb141774553213d763a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "isEmpty"@en , "\n      (true) if this geometric object is the empty Geometry. If \n      true, then this geometric object represents the empty point \n      set for the coordinate space.\n    "@en ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "\n      (true) if this geometric object is the empty Geometry. If \n      true, then this geometric object represents the empty point \n      set for the coordinate space.\n    "@en ;
+        sh:name           "isEmpty"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           geo:isEmpty ;
+        sh:pattern        "true|false|0|1" .
 
 <https://astrea.linkeddata.es/shapes#1be48af0cf6b75e1dabf27a2980aa633>
         a                 sh:NodeShape ;
@@ -493,46 +578,70 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    fiware:AgriGreenhouse .
 
-<https://astrea.linkeddata.es/shapes#50fb204bdd3a0e1876233e9e71c263f8>
+<https://astrea.linkeddata.es/report/1963213088>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/demeter/agri/agriCommon" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#7317fff6f0fe9d43eb9307265f55dbf9>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Line String"@en ;
+        sh:description    "\r\nA MultiLineString is a MultiCurve whose elements are LineStrings.\r\n    "@en ;
+        sh:name           "Multi Line String"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#100f1a0fde90405f1c26850ca86d085e> , <https://astrea.linkeddata.es/shapes#9698dc4a8537d2e9cd91560f11e157da> , <https://astrea.linkeddata.es/shapes#3feb00f80e5466881b35881ee8cd88c4> , <https://astrea.linkeddata.es/shapes#a742b2c3b67f7817094c3e8d8100531d> , <https://astrea.linkeddata.es/shapes#4c8e9f5c93b51026ee7925f183a5ace5> , <https://astrea.linkeddata.es/shapes#7d1250b1e972e6db18e8c8490eb8728a> , <https://astrea.linkeddata.es/shapes#4e2656b0e2a32e06c1a88a6a3133fd04> , <https://astrea.linkeddata.es/shapes#7656edcbaa7adbdb325bfe2856838bc6> ;
-        sh:targetClass    foodie:Plot .
+        sh:targetClass    sf:MultiLineString .
 
-<https://astrea.linkeddata.es/shapes#92ec9f4a340443ce661beb8dfaf279a7>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      common:validFrom .
+<https://astrea.linkeddata.es/report/1496633346>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.w3.org/2003/01/geo/wgs84_pos" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
 
-<https://astrea.linkeddata.es/shapes#ffa228fbe9acf17ea0b9d1fa1bf85040>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      geo:hasGeometry .
+<https://astrea.linkeddata.es/report/01333335882>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://inspire.ec.europa.eu/schemas/act-core/3.0" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
 
-<https://astrea.linkeddata.es/shapes#e7e55ae5615fe107537373c8179bbf7f>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:contains .
+<https://astrea.linkeddata.es/shapes#a6ea61114ce41b9bec42319b4236e2df>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Line String"@en ;
+        sh:description    "\r\nA LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.\r\n    "@en ;
+        sh:name           "Line String"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:LineString .
 
-<https://astrea.linkeddata.es/shapes#f7b2b5e404a15b049376007758affc7e>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      prov:invalidatedAtTime .
-
-<https://astrea.linkeddata.es/shapes#8355820918b8f052e2489eb782a08ab2>
+<https://astrea.linkeddata.es/shapes#208f40f2aa73c7b7c461ef56bc5131f5>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
-        rdfs:label        "contains"@en , "Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
+        rdfs:label        "tangential proper part"@en , "\n      Exists if the subject SpatialObject is spatially covered \n      by the object SpatialObject. DE-9IM: TFFTTFTTT\n    "@en ;
         sh:class          geo:SpatialObject ;
-        sh:description    "Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
-        sh:name           "contains"@en ;
+        sh:description    "\n      Exists if the subject SpatialObject is spatially covered \n      by the object SpatialObject. DE-9IM: TFFTTFTTT\n    "@en ;
+        sh:name           "tangential proper part"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           geo:sfContains .
+        sh:path           geo:rcc8tpp .
+
+<https://astrea.linkeddata.es/shapes#1ed48cc4ebd292d0376ea0ac8906c3ee>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "\n      Exists if the subject SpatialObject is spatially covered \n      by the object SpatialObject. DE-9IM: TFF*TFT**\n    "@en , "coveredBy"@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject is spatially covered \n      by the object SpatialObject. DE-9IM: TFF*TFT**\n    "@en ;
+        sh:name           "coveredBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:ehCoveredBy .
 
 <https://astrea.linkeddata.es/shapes#f594accb3ab1abee976af834f4a87746>
         a                 sh:NodeShape ;
@@ -543,73 +652,92 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    fiware:AgriFarm .
 
-<https://astrea.linkeddata.es/shapes#2bce13ade70060bed3ad95798661aeb8>
+<https://astrea.linkeddata.es/shapes#8355820918b8f052e2489eb782a08ab2>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          foodie:OriginTypeValue ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "contains"@en , "\n      Exists if the subject SpatialObject spatially contains the \n      object SpatialObject. DE-9IM: T*****FF*\n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially contains the \n      object SpatialObject. DE-9IM: T*****FF*\n    "@en ;
+        sh:name           "contains"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:originType .
+        sh:path           geo:sfContains .
 
-<https://astrea.linkeddata.es/shapes#d4e2a1e81542161626d4dc6183ac8582>
+<https://astrea.linkeddata.es/shapes#327c5645c5fe9705bbdf273eaa641d47>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "disconnected"@en , "\n      Exists if the subject SpatialObject is spatially disjoint\n      from the object SpatialObject. DE-9IM: FFTFFTTTT\n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject is spatially disjoint\n      from the object SpatialObject. DE-9IM: FFTFFTTTT\n    "@en ;
+        sh:name           "disconnected"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           saref4agri:contains .
+        sh:path           geo:rcc8dc .
 
-<https://astrea.linkeddata.es/shapes#6be1d03efca12a71da4b30a5b4a343b2>
+<https://astrea.linkeddata.es/shapes#55c315f5aaa307445c02d8114eb78ce9>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          foodie:ManagementZone ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "equals"@en , "\n      Exists if the subject SpatialObject spatially equals the \n      object SpatialObject. DE-9IM: TFFFTFFFT\n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially equals the \n      object SpatialObject. DE-9IM: TFFFTFFFT\n    "@en ;
+        sh:name           "equals"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:containsZone .
+        sh:path           geo:ehEquals .
 
-<https://astrea.linkeddata.es/shapes#42179914bb5f0eb140c2471501e085ab>
+<https://astrea.linkeddata.es/shapes#3f05440e1a3afd171ae47cd9247a1088>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "\n      Exists if the subject SpatialObject spatially crosses the \n      object SpatialObject. DE-9IM: T*T******\n    "@en , "crosses"@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially crosses the \n      object SpatialObject. DE-9IM: T*T******\n    "@en ;
+        sh:name           "crosses"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:sfCrosses .
+
+<https://astrea.linkeddata.es/shapes#f196d50238714ed345057b23b1b1272c>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  af-inspire: ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Point"@en ;
+        sh:description    "\r\nA MultiPoint is a 0-dimensional GeometryCollection. The elements of a MultiPoint are restricted to Points. ThePoints are not connected or ordered in any semantically important way.\r\nA MultiPoint is simple if no two Points in the MultiPoint are equal (have identical coordinate values in X and Y).\r\nEvery MultiPoint is spatially equal to a simple Multipoint.\r\nThe boundary of a MultiPoint is the empty set.\r\n    "@en ;
+        sh:name           "Multi Point"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#bf42292cb0c5051a51b20e6f2fa77392> , <https://astrea.linkeddata.es/shapes#ec92439b303570f321576b28135fe664> , <https://astrea.linkeddata.es/shapes#9b924293881f2d5e050aebe0296bcc65> , <https://astrea.linkeddata.es/shapes#c2c26428d6d9e54285a52c4b4d4745a5> , <https://astrea.linkeddata.es/shapes#1234d42ca03d2db81542faa103549017> , <https://astrea.linkeddata.es/shapes#021432ba9c751b4d4033997503c1f902> , <https://astrea.linkeddata.es/shapes#c59d4953fd243e041443fc088566f8b8> , <https://astrea.linkeddata.es/shapes#14306bd799bd4ee4de065efc914e4a55> ;
-        sh:targetClass    af-inspire:Site .
+        sh:targetClass    sf:MultiPoint .
 
-<https://astrea.linkeddata.es/shapes#e8ed999c2de445b957dc5a746142c8c9>
+<https://astrea.linkeddata.es/shapes#5b4bcbfb109ba790e573276efc2907ef>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "overlap"@en , "\n      Exists if the subject SpatialObject spatially overlaps the \n      object SpatialObject. DE-9IM: T*T***T**\n    "@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject spatially overlaps the \n      object SpatialObject. DE-9IM: T*T***T**\n    "@en ;
+        sh:name           "overlap"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:ehOverlap .
+
+<https://astrea.linkeddata.es/shapes#a0b008815cd8501c0f8a678830ff0399>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  saref4agri: ;
-        rdfs:label        "Building" ;
-        sh:description    "A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space)."@en ;
-        sh:name           "Building" ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Polyhedral Surface"@en ;
+        sh:description    "\r\nA PolyhedralSurface is a contiguous collection of polygons, which share common boundary segments. For each pair of polygons that touch, the common boundary shall be expressible as a finite collection of LineStrings. Each such LineString shall be part of the boundary of at most 2 Polygon patches. \r\nFor any two polygons that share a common boundary, the top of the polygon shall be consistent. This means that when two LinearRings from these two Polygons traverse the common boundary segment, they do so in opposite directions. Since the Polyhedral surface is contiguous, all polygons will be thus consistently oriented. This means that a non-oriented surface (such as Mbius band) shall not have single surface representations. They may be represented by a MultiSurface.\r\nIf each such LineString is the boundary of exactly 2 Polygon patches, then the PolyhedralSurface is a simple, closed polyhedron and is topologically isomorphic to the surface of a sphere. By the Jordan Surface Theorem (Jordans Theorem for 2-spheres), such polyhedrons enclose a solid topologically isomorphic to the interior of a sphere; the ball. In this case, the top of the surface will either point inward or outward of the enclosed finite solid. If outward, the surface is the exterior boundary of the enclosed surface. If inward, the surface is the interior of the infinite complement of the enclosed solid. A Ball with some number of voids (holes) inside can thus be presented as one exterior boundary shell, and some number in interior boundary shells.\r\n    "@en ;
+        sh:name           "Polyhedral Surface"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#e7e55ae5615fe107537373c8179bbf7f> , <https://astrea.linkeddata.es/shapes#94c94d6cfbd428c08f39ddc52cc55162> ;
-        sh:targetClass    saref4agri:Building .
+        sh:targetClass    sf:PolyhedralSurface .
 
-<https://astrea.linkeddata.es/shapes#4c8e9f5c93b51026ee7925f183a5ace5>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:originType .
+<https://astrea.linkeddata.es/shapes#e9055ade9fa07170a022595bfd14d083>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "\n      Exists if the subject SpatialObject is spatially inside \n      the object SpatialObject. DE-9IM: TFFTFFTTT\n    "@en , "non-tangential proper part"@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "\n      Exists if the subject SpatialObject is spatially inside \n      the object SpatialObject. DE-9IM: TFFTFFTTT\n    "@en ;
+        sh:name           "non-tangential proper part"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:rcc8ntpp .
 
-<https://astrea.linkeddata.es/shapes#8dfa58d44df4446f771625d9437b8472>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  saref4agri: ;
-        rdfs:label        "Building space"@en ;
-        sh:description    "An entity used to define the physical spaces of the building. A building space contains devices or building objects."@en ;
-        sh:name           "Building space"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    saref4agri:BuildingSpace .
-
-<https://astrea.linkeddata.es/shapes#c7440d1726af17e71d4486a5f43e978a>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:contains .
-
-<https://astrea.linkeddata.es/shapes#8c6ff4b7d0cf7d6348f602ebad111cef>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  saref4agri: ;
-        rdfs:label        "Parcel" ;
-        sh:description    "An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items."@en ;
-        sh:name           "Parcel" ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#651efc216c5a0a6abf668d162509b4c9> , <https://astrea.linkeddata.es/shapes#c7440d1726af17e71d4486a5f43e978a> ;
-        sh:targetClass    saref4agri:Parcel , foodie:Plot , fiware:AgriParcel .
+<https://astrea.linkeddata.es/report/824247582>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.opengis.net/ont/geosparql" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#d6ba2ad06ee60e9831df14dfb16ec28f>
         a                 sh:PropertyShape ;
@@ -620,9 +748,21 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:hasAgriParcelChildren .
 
-<https://astrea.linkeddata.es/shapes#7079166d64f203e3c5ada3ecea14c911>
+<https://astrea.linkeddata.es/shapes#ea758cf93a4a6fcb568c859d464061d1>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          foodie:MachineType ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:machine .
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "has serialization"@en , "The WKT serialization of a geometry"@en , "asWKT"@en , "\n      The WKT serialization of a geometry\n    "@en ;
+        sh:datatype       geo:wktLiteral ;
+        sh:description    "The WKT serialization of a geometry"@en , "\n      The WKT serialization of a geometry\n    "@en ;
+        sh:name           "asWKT"@en , "has serialization"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           geo:asWKT .
+
+<https://astrea.linkeddata.es/shapes#eab2ccb77e56d3ad473395331d814f3d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Polygon"@en ;
+        sh:description    "\r\nA MultiPolygon is a MultiSurface whose elements are Polygons.\r\nThe assertions for MultiPolygons are as follows.\r\na) The interiors of 2 Polygons that are elements of a MultiPolygon may not intersect.\r\nb) The boundaries of any 2 Polygons that are elements of a MultiPolygon may not cross and may touch at only a finite number of Points.\r\nc) A MultiPolygon is defined as topologically closed.\r\nd) A MultiPolygon may not have cut lines, spikes or punctures, a MultiPolygon is a regular closed Point set,\r\ne) The interior of a MultiPolygon with more than 1 Polygon is not connected; the number of connected components of the interior of a MultiPolygon is equal to the number of Polygons in the MultiPolygon. \r\nThe boundary of a MultiPolygon is a set of closed Curves (LineStrings) corresponding to the boundaries of its element Polygons. Each Curve in the boundary of the MultiPolygon is in the boundary of exactly 1 element Polygon, and every Curve in the boundary of an element Polygon is in the boundary of the MultiPolygon.\r\n    "@en ;
+        sh:name           "Multi Polygon"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiPolygon .

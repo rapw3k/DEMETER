@@ -10,7 +10,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix saref: <https://w3id.org/saref#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
-@prefix schema: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -88,13 +88,13 @@ fiware:welfareCondition a owl:DatatypeProperty ;
 saref4agri:isLocationOf rdfs:isDefinedBy saref4agri: .
 
 <https://w3id.org/demeter/agri/farmAnimal> a owl:Ontology ;
-    dct:contributor [ schema:affiliation [ foaf:name "ICCS" ] ;
-            foaf:name "Ioanna Roussaki" ],
-        [ schema:affiliation [ foaf:name "OGC" ] ;
-            foaf:name "Rob Atkinson" ] ;
-    dct:creator [ schema:affiliation [ foaf:name "PSNC" ] ;
-            rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
-            foaf:name "Raul Palma" ] ;
+    dct:contributor [ foaf:name "Ioanna Roussaki" ;
+            schema:affiliation [ foaf:name "ICCS" ] ],
+        [ foaf:name "Rob Atkinson" ;
+            schema:affiliation [ foaf:name "OGC" ] ] ;
+    dct:creator [ rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+            foaf:name "Raul Palma" ;
+            schema:affiliation [ foaf:name "PSNC" ] ] ;
     dct:description "The DEMETER FarmAnimal is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
     dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
     dct:title "DEMETER FarmAnimal"@en ;

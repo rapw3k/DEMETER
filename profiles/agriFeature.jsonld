@@ -1,19 +1,21 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriFeature",
     "@context": [
-        "http://foodie-cloud.com/model/foodie",
-        "https://w3id.org/def/saref4agri",
+        "http://www.opengis.net/ont/sf",
         "http://inspire.ec.europa.eu/schemas/af/3.0",
-        "http://www.opengis.net/ont/geosparql",
+        "https://w3id.org/def/saref4agri",
         "https://uri.fiware.org/ns/data-models",
+        "http://www.opengis.net/ont/geosparql",
+        "http://foodie-cloud.com/model/foodie",
         "http://inspire.ec.europa.eu/schemas/act-core/3.0",
         "http://www.w3.org/2003/01/geo/wgs84_pos",
         {
-            "foodie": "http://foodie-cloud.com/model/foodie#",
-            "saref4agri": "https://w3id.org/def/saref4agri#",
+            "sf": "http://www.opengis.net/ont/sf#",
             "af-inspire": "http://inspire.ec.europa.eu/schemas/af/3.0#",
-            "geo": "http://www.opengis.net/ont/geosparql#",
+            "saref4agri": "https://w3id.org/def/saref4agri#",
             "fiware": "https://uri.fiware.org/ns/data-models#",
+            "geo": "http://www.opengis.net/ont/geosparql#",
+            "foodie": "http://foodie-cloud.com/model/foodie#",
             "act-inspire": "http://inspire.ec.europa.eu/schemas/act-core/3.0#",
             "wgs84_pos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
             "fiware:AgriGreenhouse": {
@@ -25,28 +27,28 @@
             "fiware:AgriFarm": {
                 "@id": "fiware:AgriFarm"
             },
-            "saref4agri:Building": {
-                "@id": "saref4agri:Building"
-            },
             "saref4agri:Farm": {
                 "@id": "saref4agri:Farm"
             },
             "saref4agri:Parcel": {
                 "@id": "saref4agri:Parcel"
             },
+            "saref4agri:Building": {
+                "@id": "saref4agri:Building"
+            },
             "af-inspire:Holding": {
                 "@id": "af-inspire:Holding"
             },
-            "fiware:hasAgriParcel": {
-                "@id": "fiware:hasAgriParcel",
-                "@type": "@id"
-            },
-            "fiware:location": {
-                "@id": "fiware:location",
+            "fiware:landLocation": {
+                "@id": "fiware:landLocation",
                 "@type": "@id"
             },
             "fiware:hasAgriParcelParent": {
                 "@id": "fiware:hasAgriParcelParent",
+                "@type": "@id"
+            },
+            "fiware:hasAgriSoil": {
+                "@id": "fiware:hasAgriSoil",
                 "@type": "@id"
             },
             "fiware:hasAgriCrop": {
@@ -57,26 +59,22 @@
                 "@id": "fiware:hasAgriParcelChildren",
                 "@type": "@id"
             },
-            "fiware:hasAgriSoil": {
-                "@id": "fiware:hasAgriSoil",
+            "fiware:hasAgriParcel": {
+                "@id": "fiware:hasAgriParcel",
                 "@type": "@id"
             },
-            "fiware:landLocation": {
-                "@id": "fiware:landLocation",
+            "fiware:location": {
+                "@id": "fiware:location",
                 "@type": "@id"
             },
             "fiware:cropStatus": {
                 "@id": "fiware:cropStatus"
             },
-            "fiware:area": {
-                "@id": "fiware:area"
-            },
             "fiware:lastPlantedAt": {
                 "@id": "fiware:lastPlantedAt"
             },
-            "geo:hasSerialization": {
-                "@id": "geo:hasSerialization",
-                "@type": "rdfs:Literal"
+            "fiware:area": {
+                "@id": "fiware:area"
             }
         }
     ]

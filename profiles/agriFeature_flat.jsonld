@@ -1,138 +1,131 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriFeature",
     "@context": [
-        "http://foodie-cloud.com/model/foodie",
-        "https://w3id.org/def/saref4agri",
+        "http://www.opengis.net/ont/sf",
         "http://inspire.ec.europa.eu/schemas/af/3.0",
-        "http://www.opengis.net/ont/geosparql",
+        "https://w3id.org/def/saref4agri",
         "https://uri.fiware.org/ns/data-models",
+        "http://www.opengis.net/ont/geosparql",
+        "http://foodie-cloud.com/model/foodie",
         "http://inspire.ec.europa.eu/schemas/act-core/3.0",
         "http://www.w3.org/2003/01/geo/wgs84_pos",
         {
-            "foodie": "http://foodie-cloud.com/model/foodie#",
-            "saref4agri": "https://w3id.org/def/saref4agri#",
+            "sf": "http://www.opengis.net/ont/sf#",
             "af-inspire": "http://inspire.ec.europa.eu/schemas/af/3.0#",
-            "geo": "http://www.opengis.net/ont/geosparql#",
+            "saref4agri": "https://w3id.org/def/saref4agri#",
             "fiware": "https://uri.fiware.org/ns/data-models#",
+            "geo": "http://www.opengis.net/ont/geosparql#",
+            "foodie": "http://foodie-cloud.com/model/foodie#",
             "act-inspire": "http://inspire.ec.europa.eu/schemas/act-core/3.0#",
             "wgs84_pos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
-            "fiware:AgriParcel": {
-                "@id": "fiware:AgriParcel"
+            "geo:SpatialObject": {
+                "@id": "geo:SpatialObject"
             },
-            "wgs84_pos:Point": {
-                "@id": "wgs84_pos:Point"
+            "sf:Geometry": {
+                "@id": "sf:Geometry"
             },
-            "saref4agri:Building": {
-                "@id": "saref4agri:Building"
+            "sf:TIN": {
+                "@id": "sf:TIN"
             },
             "af-inspire:Holding": {
                 "@id": "af-inspire:Holding"
             },
-            "foodie:ManagementZone": {
-                "@id": "foodie:ManagementZone"
-            },
-            "af-inspire:Site": {
-                "@id": "af-inspire:Site"
-            },
-            "foodie:OriginTypeValue": {
-                "@id": "foodie:OriginTypeValue"
-            },
-            "geo:Feature": {
-                "@id": "geo:Feature"
-            },
-            "geo:SpatialObject": {
-                "@id": "geo:SpatialObject"
+            "saref4agri:Farm": {
+                "@id": "saref4agri:Farm"
             },
             "act-inspire:EconomicActivityNACEValue": {
                 "@id": "act-inspire:EconomicActivityNACEValue"
             },
-            "saref4agri:Farm": {
-                "@id": "saref4agri:Farm"
-            },
-            "foodie:Plot": {
-                "@id": "foodie:Plot"
-            },
-            "fiware:AgriGreenhouse": {
-                "@id": "fiware:AgriGreenhouse"
-            },
-            "saref4agri:BuildingSpace": {
-                "@id": "saref4agri:BuildingSpace"
-            },
-            "saref4agri:Parcel": {
-                "@id": "saref4agri:Parcel"
-            },
-            "fiware:AgriFarm": {
-                "@id": "fiware:AgriFarm"
+            "sf:MultiPolygon": {
+                "@id": "sf:MultiPolygon"
             },
             "geo:Geometry": {
                 "@id": "geo:Geometry"
             },
-            "foodie:tractor": {
-                "@id": "foodie:tractor",
+            "sf:Curve": {
+                "@id": "sf:Curve"
+            },
+            "sf:MultiPoint": {
+                "@id": "sf:MultiPoint"
+            },
+            "fiware:AgriGreenhouse": {
+                "@id": "fiware:AgriGreenhouse"
+            },
+            "sf:LinearRing": {
+                "@id": "sf:LinearRing"
+            },
+            "sf:Line": {
+                "@id": "sf:Line"
+            },
+            "geo:Feature": {
+                "@id": "geo:Feature"
+            },
+            "wgs84_pos:Point": {
+                "@id": "wgs84_pos:Point"
+            },
+            "saref4agri:Parcel": {
+                "@id": "saref4agri:Parcel"
+            },
+            "fiware:AgriParcel": {
+                "@id": "fiware:AgriParcel"
+            },
+            "saref4agri:Building": {
+                "@id": "saref4agri:Building"
+            },
+            "sf:MultiLineString": {
+                "@id": "sf:MultiLineString"
+            },
+            "sf:LineString": {
+                "@id": "sf:LineString"
+            },
+            "foodie:ManagementZone": {
+                "@id": "foodie:ManagementZone"
+            },
+            "sf:PolyhedralSurface": {
+                "@id": "sf:PolyhedralSurface"
+            },
+            "sf:Point": {
+                "@id": "sf:Point"
+            },
+            "sf:Polygon": {
+                "@id": "sf:Polygon"
+            },
+            "sf:Surface": {
+                "@id": "sf:Surface"
+            },
+            "foodie:Plot": {
+                "@id": "foodie:Plot"
+            },
+            "foodie:OriginTypeValue": {
+                "@id": "foodie:OriginTypeValue"
+            },
+            "af-inspire:Site": {
+                "@id": "af-inspire:Site"
+            },
+            "sf:GeometryCollection": {
+                "@id": "sf:GeometryCollection"
+            },
+            "sf:MultiSurface": {
+                "@id": "sf:MultiSurface"
+            },
+            "fiware:AgriFarm": {
+                "@id": "fiware:AgriFarm"
+            },
+            "saref4agri:BuildingSpace": {
+                "@id": "saref4agri:BuildingSpace"
+            },
+            "sf:MultiCurve": {
+                "@id": "sf:MultiCurve"
+            },
+            "sf:Triangle": {
+                "@id": "sf:Triangle"
+            },
+            "fiware:hasAgriCrop": {
+                "@id": "fiware:hasAgriCrop",
                 "@type": "@id"
             },
-            "af-inspire:activity": {
-                "@id": "af-inspire:activity",
-                "@type": "@id"
-            },
-            "saref4agri:isContainedIn": {
-                "@id": "saref4agri:isContainedIn",
-                "@type": "@id"
-            },
-            "foodie:machine": {
-                "@id": "foodie:machine",
-                "@type": "@id"
-            },
-            "foodie:containsPlot": {
-                "@id": "foodie:containsPlot",
-                "@type": "@id"
-            },
-            "foodie:holdingSite": {
-                "@id": "foodie:holdingSite",
-                "@type": "@id"
-            },
-            "foodie:crop": {
-                "@id": "foodie:crop",
-                "@type": "@id"
-            },
-            "wgs84_pos:location": {
-                "@id": "wgs84_pos:location",
-                "@type": "@id"
-            },
-            "foodie:containsZone": {
-                "@id": "foodie:containsZone",
-                "@type": "@id"
-            },
-            "geo:hasGeometry": {
-                "@id": "geo:hasGeometry",
-                "@type": "@id"
-            },
-            "foodie:originType": {
-                "@id": "foodie:originType",
-                "@type": "@id"
-            },
-            "fiware:hasAgriParcelParent": {
-                "@id": "fiware:hasAgriParcelParent",
-                "@type": "@id"
-            },
-            "geo:sfContains": {
-                "@id": "geo:sfContains",
-                "@type": "@id"
-            },
-            "fiware:hasAgriParcelChildren": {
-                "@id": "fiware:hasAgriParcelChildren",
-                "@type": "@id"
-            },
-            "fiware:hasAgriParcel": {
-                "@id": "fiware:hasAgriParcel",
-                "@type": "@id"
-            },
-            "fiware:hasAgriSoil": {
-                "@id": "fiware:hasAgriSoil",
-                "@type": "@id"
-            },
-            "saref4agri:contains": {
-                "@id": "saref4agri:contains",
+            "foodie:holdingPlot": {
+                "@id": "foodie:holdingPlot",
                 "@type": "@id"
             },
             "foodie:holdingZone": {
@@ -143,38 +136,102 @@
                 "@id": "fiware:location",
                 "@type": "@id"
             },
-            "fiware:hasAgriCrop": {
-                "@id": "fiware:hasAgriCrop",
-                "@type": "@id"
-            },
-            "fiware:landLocation": {
-                "@id": "fiware:landLocation",
-                "@type": "@id"
-            },
-            "af-inspire:contains": {
-                "@id": "af-inspire:contains",
-                "@type": "@id"
-            },
-            "foodie:holdingPlot": {
-                "@id": "foodie:holdingPlot",
+            "fiware:hasAgriParcel": {
+                "@id": "fiware:hasAgriParcel",
                 "@type": "@id"
             },
             "geo:sfWithin": {
                 "@id": "geo:sfWithin",
                 "@type": "@id"
             },
-            "fiware:lastPlantedAt": {
-                "@id": "fiware:lastPlantedAt"
+            "af-inspire:activity": {
+                "@id": "af-inspire:activity",
+                "@type": "@id"
             },
-            "fiware:area": {
-                "@id": "fiware:area"
+            "saref4agri:contains": {
+                "@id": "saref4agri:contains",
+                "@type": "@id"
             },
-            "fiware:cropStatus": {
-                "@id": "fiware:cropStatus"
+            "foodie:machine": {
+                "@id": "foodie:machine",
+                "@type": "@id"
+            },
+            "geo:sfContains": {
+                "@id": "geo:sfContains",
+                "@type": "@id"
+            },
+            "wgs84_pos:location": {
+                "@id": "wgs84_pos:location",
+                "@type": "@id"
+            },
+            "geo:hasGeometry": {
+                "@id": "geo:hasGeometry",
+                "@type": "@id"
+            },
+            "foodie:holdingSite": {
+                "@id": "foodie:holdingSite",
+                "@type": "@id"
+            },
+            "foodie:crop": {
+                "@id": "foodie:crop",
+                "@type": "@id"
+            },
+            "foodie:containsZone": {
+                "@id": "foodie:containsZone",
+                "@type": "@id"
+            },
+            "foodie:containsPlot": {
+                "@id": "foodie:containsPlot",
+                "@type": "@id"
+            },
+            "fiware:hasAgriParcelChildren": {
+                "@id": "fiware:hasAgriParcelChildren",
+                "@type": "@id"
+            },
+            "foodie:originType": {
+                "@id": "foodie:originType",
+                "@type": "@id"
+            },
+            "foodie:tractor": {
+                "@id": "foodie:tractor",
+                "@type": "@id"
+            },
+            "fiware:landLocation": {
+                "@id": "fiware:landLocation",
+                "@type": "@id"
+            },
+            "fiware:hasAgriSoil": {
+                "@id": "fiware:hasAgriSoil",
+                "@type": "@id"
+            },
+            "saref4agri:isContainedIn": {
+                "@id": "saref4agri:isContainedIn",
+                "@type": "@id"
+            },
+            "af-inspire:contains": {
+                "@id": "af-inspire:contains",
+                "@type": "@id"
+            },
+            "fiware:hasAgriParcelParent": {
+                "@id": "fiware:hasAgriParcelParent",
+                "@type": "@id"
             },
             "geo:hasSerialization": {
                 "@id": "geo:hasSerialization",
                 "@type": "rdfs:Literal"
+            },
+            "fiware:lastPlantedAt": {
+                "@id": "fiware:lastPlantedAt"
+            },
+            "geo:asWKT": {
+                "@id": "geo:asWKT",
+                "@type": "geo:wktLiteral"
+            },
+            "fiware:cropStatus": {
+                "@id": "fiware:cropStatus"
+            },
+            "fiware:area": {
+                "@id": "fiware:area"
             }
         }
     ]

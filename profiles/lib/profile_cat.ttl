@@ -107,5 +107,20 @@
 		] ;
 .
 
+<http://www.opengis.net/ont/sf>  a prof:Profile ;
+	rdfs:label  "OGC Simple Features"@en ;
+	prof:hasResource 	[
+			prof:hasRole prof:cachedCopy ;
+			prof:hasArtifact "lib/ogc_sf.rdf" ;
+			dct:conformsTo owl:, rdfs: ;
+            dct:format "application/rdf+xml" ;
+		] ;
+		prof:hasResource 	[
+			prof:hasRole prof:source ;
+			prof:hasArtifact <hhttp://schemas.opengis.net/sf/1.0/simple_features_geometries.rdf> ;
+			dct:conformsTo owl: , rdfs: ;
+            dct:format "application/rdf+xml" ;
+		] ;
+.
 
 

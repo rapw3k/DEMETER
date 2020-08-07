@@ -1,5 +1,5 @@
-@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix demeterAgriCommon: <https://w3id.org/demeter/agri/agriCommon#> .
 @prefix fiware: <https://uri.fiware.org/ns/data-models#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
@@ -10,8 +10,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix saref: <https://w3id.org/saref#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
-@prefix schema-org: <http://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 iso19115-citation:ResponsibleParty rdfs:subClassOf foaf:Agent .
@@ -22,19 +21,6 @@ foodie:notes rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 foodie:price rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
-common:validFrom a owl:DatatypeProperty ;
-    rdfs:isDefinedBy common: ;
-    rdfs:range xsd:dateTime ;
-    skos:prefLabel "begin of real-world phenomenon"@en .
-
-common:validTo a owl:DatatypeProperty ;
-    rdfs:isDefinedBy common: ;
-    rdfs:range xsd:dateTime ;
-    skos:prefLabel "end of real-world phenomenon"@en .
-
-obo:TAXRANK_0000000 rdfs:label "taxonomic_rank"@en ;
-    rdfs:isDefinedBy obo: .
-
 obo:TAXRANK_1000000 a owl:AnnotationProperty ;
     rdfs:label "has_rank"@en ;
     rdfs:isDefinedBy obo: .
@@ -42,8 +28,6 @@ obo:TAXRANK_1000000 a owl:AnnotationProperty ;
 dct:identifier a owl:AnnotationProperty .
 
 dct:rights a owl:AnnotationProperty .
-
-schema-org:affiliation a owl:AnnotationProperty .
 
 prov:generatedAtTime rdfs:subPropertyOf saref:hasTimestamp .
 
@@ -54,6 +38,8 @@ foaf:homepage a owl:AnnotationProperty .
 foaf:maker a owl:AnnotationProperty .
 
 foaf:name a owl:AnnotationProperty .
+
+schema:affiliation a owl:AnnotationProperty .
 
 fiware:agroVocConcept a owl:DatatypeProperty ;
     rdfs:label "agroVocConcept"@en ;
@@ -105,8 +91,7 @@ saref4agri:FarmHolding rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty saref4agri:hasName ],
         [ a owl:Restriction ;
             owl:onProperty saref4agri:managesFarm ;
-            owl:someValuesFrom saref4agri:Farm ],
-        schema-org:Organization .
+            owl:someValuesFrom saref4agri:Farm ] .
 
 saref4agri:Farmer rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
@@ -116,27 +101,39 @@ saref4agri:Farmer rdfs:subClassOf [ a owl:Restriction ;
             owl:someValuesFrom saref4agri:Farm ] .
 
 <https://w3id.org/demeter/agri/agriCommon> a owl:Ontology ;
-    dct:contributor [ schema-org:affiliation [ foaf:name "ICCS" ] ;
-            foaf:name "Ioanna Roussaki" ],
-        [ schema-org:affiliation [ foaf:name "OGC" ] ;
-            foaf:name "Rob Atkinson" ] ;
-    dct:creator [ schema-org:affiliation [ foaf:name "PSNC" ] ;
-            rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
-            foaf:name "Raul Palma" ] ;
+    dct:contributor [ foaf:name "Ioanna Roussaki" ;
+            schema:affiliation [ foaf:name "ICCS" ] ],
+        [ foaf:name "Rob Atkinson" ;
+            schema:affiliation [ foaf:name "OGC" ] ] ;
+    dct:creator [ rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+            foaf:name "Raul Palma" ;
+            schema:affiliation [ foaf:name "PSNC" ] ] ;
     dct:description "The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
     dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
     dct:title "DEMETER AgriCommon"@en ;
     rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
     owl:imports <http://foodie-cloud.com/model/foodie>,
+        <http://portele.de/ont/inspire/baseInspire>,
         <http://purl.obolibrary.org/obo>,
         <http://www.w3.org/ns/prov>,
         <http://xmlns.com/foaf/0.1>,
+        <https://schema.org>,
         <https://w3id.org/def/saref4agri>,
         <https://w3id.org/saref> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl> ;
     owl:versionInfo "1.0" ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
+
+demeterAgriCommon:password a owl:DatatypeProperty ;
+    rdfs:label "Password" ;
+    rdfs:isDefinedBy demeterAgriCommon: ;
+    rdfs:range xsd:string .
+
+demeterAgriCommon:userName a owl:DatatypeProperty ;
+    rdfs:label "User Name" ;
+    rdfs:isDefinedBy demeterAgriCommon: ;
+    rdfs:range xsd:string .
 
 saref:hasDescription owl:equivalentProperty foodie:description,
         fiware:description .
@@ -145,10 +142,6 @@ foodie:description rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
     owl:equivalentProperty fiware:description .
 
 foodie:type rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-schema-org:Organization a owl:Class ;
-    rdfs:isDefinedBy foaf: ;
-    rdfs:subClassOf foaf:Agent .
 
 foaf:Agent rdfs:isDefinedBy foaf: .
 
@@ -166,7 +159,8 @@ fiware:name a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md>,
         <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md>,
         <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md>,
-        <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> .
+        <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> ;
+    rdfs:subPropertyOf schema:name .
 
 saref4agri:hasName rdfs:isDefinedBy saref4agri: ;
     owl:equivalentProperty fiware:name .

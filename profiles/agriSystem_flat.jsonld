@@ -1,66 +1,21 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriSystem",
     "@context": [
+        "http://foodie-cloud.com/model/foodie",
         "https://w3id.org/def/saref4agri",
-        "https://w3id.org/saref",
-        "http://www.w3.org/ns/ssn",
         "http://www.w3.org/ns/sosa",
         "http://purl.oclc.org/NET/ssnx/qu/dim",
-        "http://foodie-cloud.com/model/foodie",
+        "http://www.w3.org/ns/ssn",
+        "https://w3id.org/saref",
         {
+            "foodie": "http://foodie-cloud.com/model/foodie#",
             "saref4agri": "https://w3id.org/def/saref4agri#",
-            "saref": "https://w3id.org/saref#",
-            "ssn": "http://www.w3.org/ns/ssn/",
             "sosa": "http://www.w3.org/ns/sosa/",
             "dim": "http://purl.oclc.org/NET/ssnx/qu/dim#",
-            "foodie": "http://foodie-cloud.com/model/foodie#",
-            "saref:Sensor": {
-                "@id": "saref:Sensor"
-            },
-            "saref:Actuator": {
-                "@id": "saref:Actuator"
-            },
-            "saref4agri:Pluviometer": {
-                "@id": "saref4agri:Pluviometer"
-            },
-            "saref4agri:WateringGun": {
-                "@id": "saref4agri:WateringGun"
-            },
-            "ssn:System": {
-                "@id": "ssn:System"
-            },
-            "foodie:TractorType": {
-                "@id": "foodie:TractorType"
-            },
-            "saref4agri:Thermometer": {
-                "@id": "saref4agri:Thermometer"
-            },
-            "ssn:Deployment": {
-                "@id": "ssn:Deployment"
-            },
-            "saref4agri:WeatherStation": {
-                "@id": "saref4agri:WeatherStation"
-            },
-            "dim:RotationalSpeed": {
-                "@id": "dim:RotationalSpeed"
-            },
-            "saref4agri:WateringSystem": {
-                "@id": "saref4agri:WateringSystem"
-            },
-            "dim:Energy": {
-                "@id": "dim:Energy"
-            },
-            "saref4agri:SoilTensiometer": {
-                "@id": "saref4agri:SoilTensiometer"
-            },
+            "ssn": "http://www.w3.org/ns/ssn/",
+            "saref": "https://w3id.org/saref#",
             "saref4agri:MovementActivitySensor": {
                 "@id": "saref4agri:MovementActivitySensor"
-            },
-            "sosa:Platform": {
-                "@id": "sosa:Platform"
-            },
-            "saref4agri:EatingActivitySensor": {
-                "@id": "saref4agri:EatingActivitySensor"
             },
             "saref4agri:WateringValve": {
                 "@id": "saref4agri:WateringValve"
@@ -68,41 +23,86 @@
             "foodie:MachineType": {
                 "@id": "foodie:MachineType"
             },
-            "saref4agri:WeightSensor": {
-                "@id": "saref4agri:WeightSensor"
+            "ssn:System": {
+                "@id": "ssn:System"
             },
-            "saref:Device": {
-                "@id": "saref:Device"
+            "saref4agri:WeatherStation": {
+                "@id": "saref4agri:WeatherStation"
+            },
+            "saref:Actuator": {
+                "@id": "saref:Actuator"
+            },
+            "foodie:TractorType": {
+                "@id": "foodie:TractorType"
+            },
+            "saref4agri:SoilTensiometer": {
+                "@id": "saref4agri:SoilTensiometer"
+            },
+            "saref4agri:Thermometer": {
+                "@id": "saref4agri:Thermometer"
+            },
+            "ssn:Deployment": {
+                "@id": "ssn:Deployment"
+            },
+            "saref4agri:EatingActivitySensor": {
+                "@id": "saref4agri:EatingActivitySensor"
+            },
+            "saref4agri:Pluviometer": {
+                "@id": "saref4agri:Pluviometer"
+            },
+            "saref4agri:WateringSystem": {
+                "@id": "saref4agri:WateringSystem"
             },
             "saref4agri:MilkingSensor": {
                 "@id": "saref4agri:MilkingSensor"
             },
-            "sosa:hosts": {
-                "@id": "sosa:hosts",
-                "@type": "@id"
+            "saref4agri:WeightSensor": {
+                "@id": "saref4agri:WeightSensor"
             },
-            "ssn:hasSubSystem": {
-                "@id": "ssn:hasSubSystem",
+            "saref:Sensor": {
+                "@id": "saref:Sensor"
+            },
+            "dim:Energy": {
+                "@id": "dim:Energy"
+            },
+            "saref:Device": {
+                "@id": "saref:Device"
+            },
+            "saref4agri:WateringGun": {
+                "@id": "saref4agri:WateringGun"
+            },
+            "dim:RotationalSpeed": {
+                "@id": "dim:RotationalSpeed"
+            },
+            "sosa:Platform": {
+                "@id": "sosa:Platform"
+            },
+            "sosa:isHostedBy": {
+                "@id": "sosa:isHostedBy",
                 "@type": "@id"
             },
             "ssn:hasDeployment": {
                 "@id": "ssn:hasDeployment",
                 "@type": "@id"
             },
-            "sosa:isHostedBy": {
-                "@id": "sosa:isHostedBy",
+            "ssn:hasSubSystem": {
+                "@id": "ssn:hasSubSystem",
                 "@type": "@id"
             },
-            "ssn:deployedSystem": {
-                "@id": "ssn:deployedSystem",
+            "ssn:inDeployment": {
+                "@id": "ssn:inDeployment",
+                "@type": "@id"
+            },
+            "sosa:hosts": {
+                "@id": "sosa:hosts",
                 "@type": "@id"
             },
             "ssn:deployedOnPlatform": {
                 "@id": "ssn:deployedOnPlatform",
                 "@type": "@id"
             },
-            "ssn:inDeployment": {
-                "@id": "ssn:inDeployment",
+            "ssn:deployedSystem": {
+                "@id": "ssn:deployedSystem",
                 "@type": "@id"
             }
         }

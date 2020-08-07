@@ -8,14 +8,310 @@
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix ns1: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
-@prefix schema: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sf:Curve a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Curve"@en ;
+    rdfs:comment """
+A Curve is a 1-dimensional geometric object usually stored as a sequence of Points, with the subtype of Curve specifying the form of the interpolation between Points. This specification defines only one subclass of Curve, LineString, which uses linear interpolation between Points.
+A Curve is a 1-dimensional geometric object that is the homeomorphic image of a real, closed, interval.
+A Curve is simple if it does not pass through the same Point twice with the possible exception of the two end
+points.
+A Curve is closed if its start Point is equal to its end Point.
+The boundary of a closed Curve is empty.
+A Curve that is simple and closed is a Ring.
+The boundary of a non-closed Curve consists of its two end Points.
+A Curve is defined as topologically closed, that is, it contains its endpoints f(a) and f(b).
+    """@en,
+        """\r
+A Curve is a 1-dimensional geometric object usually stored as a sequence of Points, with the subtype of Curve specifying the form of the interpolation between Points. This specification defines only one subclass of Curve, LineString, which uses linear interpolation between Points.\r
+A Curve is a 1-dimensional geometric object that is the homeomorphic image of a real, closed, interval.\r
+A Curve is simple if it does not pass through the same Point twice with the possible exception of the two end\r
+points.\r
+A Curve is closed if its start Point is equal to its end Point.\r
+The boundary of a closed Curve is empty.\r
+A Curve that is simple and closed is a Ring.\r
+The boundary of a non-closed Curve consists of its two end Points.\r
+A Curve is defined as topologically closed, that is, it contains its endpoints f(a) and f(b).\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Geometry .
+
+sf:Geometry a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Geometry"@en ;
+    rdfs:comment """
+Geometry is the root class of the hierarchy.
+The instantiable subclasses of Geometry are restricted to 0, 1 and 2-dimensional geometric objects that exist in 2, 3 or 4-dimensional coordinate space (R2, R3 or R4). Geometry values in R2 have points with coordinate values for x and y. Geometry values in R3 have points with coordinate values for x, y and z or for x, y and m. Geometry values in R4 have points with coordinate values for x, y, z and m.
+The interpretation of the coordinates is subject to the coordinate reference systems associated to the point. All coordinates within a geometry object should be in the same coordinate reference systems. Each coordinate shall be unambiguously associated to a coordinate reference system either directly or through its containing geometry. The z coordinate of a point is typically, but not necessarily, represents altitude or elevation. The m coordinate represents a measurement.
+All Geometry classes described in this specification are defined so that instances of Geometry are topologically closed, i.e. all represented geometries include their boundary as point sets. This does not affect their representation, and open version of the same classes may be used in other circumstances, such as topological representations.
+    """@en,
+        """\r
+Geometry is the root class of the hierarchy.\r
+The instantiable subclasses of Geometry are restricted to 0, 1 and 2-dimensional geometric objects that exist in 2, 3 or 4-dimensional coordinate space (R2, R3 or R4). Geometry values in R2 have points with coordinate values for x and y. Geometry values in R3 have points with coordinate values for x, y and z or for x, y and m. Geometry values in R4 have points with coordinate values for x, y, z and m.\r
+The interpretation of the coordinates is subject to the coordinate reference systems associated to the point. All coordinates within a geometry object should be in the same coordinate reference systems. Each coordinate shall be unambiguously associated to a coordinate reference system either directly or through its containing geometry. The z coordinate of a point is typically, but not necessarily, represents altitude or elevation. The m coordinate represents a measurement.\r
+All Geometry classes described in this specification are defined so that instances of Geometry are topologically closed, i.e. all represented geometries include their boundary as point sets. This does not affect their representation, and open version of the same classes may be used in other circumstances, such as topological representations.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf geo:Geometry .
+
+sf:GeometryCollection a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Geometry Collection"@en ;
+    rdfs:comment """
+A GeometryCollection is a geometric object that is a collection of some number of geometric objects.
+All the elements in a GeometryCollection shall be in the same Spatial Reference System. This is also the Spatial Reference System for the GeometryCollection.
+GeometryCollection places no other constraints on its elements. Subclasses of GeometryCollection may restrict membership based on dimension and may also place other constraints on the degree of spatial overlap between elements.
+    """@en,
+        """\r
+A GeometryCollection is a geometric object that is a collection of some number of geometric objects.\r
+All the elements in a GeometryCollection shall be in the same Spatial Reference System. This is also the Spatial Reference System for the GeometryCollection.\r
+GeometryCollection places no other constraints on its elements. Subclasses of GeometryCollection may restrict membership based on dimension and may also place other constraints on the degree of spatial overlap between elements.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Geometry .
+
+sf:Line a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Line"@en ;
+    rdfs:comment """
+A Line is a LineString with exactly 2 Points.
+    """@en,
+        """\r
+A Line is a LineString with exactly 2 Points.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:LineString .
+
+sf:LineString a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Line String"@en ;
+    rdfs:comment """
+A LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.
+    """@en,
+        """\r
+A LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Curve .
+
+sf:LinearRing a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Linear Ring"@en ;
+    rdfs:comment """
+A LinearRing is a LineString that is both closed and simple.
+    """@en,
+        """\r
+A LinearRing is a LineString that is both closed and simple.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:LineString .
+
+sf:MultiCurve a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Multi Curve"@en ;
+    rdfs:comment """
+A MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.
+A MultiCurve defines a set of methods for its subclasses and is included for reasons of extensibility.
+A MultiCurve is simple if and only if all of its elements are simple and the only intersections between any two elements occur at Points that are on the boundaries of both elements.
+The boundary of a MultiCurve is obtained by applying the mod 2 union rule: A Point is in the boundary of a MultiCurve if it is in the boundaries of an odd number of elements of the MultiCurve.
+A MultiCurve is closed if all of its elements are closed. The boundary of a closed MultiCurve is always empty.
+A MultiCurve is defined as topologically closed.
+    """@en,
+        """\r
+A MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.\r
+A MultiCurve defines a set of methods for its subclasses and is included for reasons of extensibility.\r
+A MultiCurve is simple if and only if all of its elements are simple and the only intersections between any two elements occur at Points that are on the boundaries of both elements.\r
+The boundary of a MultiCurve is obtained by applying the mod 2 union rule: A Point is in the boundary of a MultiCurve if it is in the boundaries of an odd number of elements of the MultiCurve.\r
+A MultiCurve is closed if all of its elements are closed. The boundary of a closed MultiCurve is always empty.\r
+A MultiCurve is defined as topologically closed.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:GeometryCollection .
+
+sf:MultiLineString a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Multi Line String"@en ;
+    rdfs:comment """
+A MultiLineString is a MultiCurve whose elements are LineStrings.
+    """@en,
+        """\r
+A MultiLineString is a MultiCurve whose elements are LineStrings.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:MultiCurve .
+
+sf:MultiPoint a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Multi Point"@en ;
+    rdfs:comment """
+A MultiPoint is a 0-dimensional GeometryCollection. The elements of a MultiPoint are restricted to Points. ThePoints are not connected or ordered in any semantically important way.
+A MultiPoint is simple if no two Points in the MultiPoint are equal (have identical coordinate values in X and Y).
+Every MultiPoint is spatially equal to a simple Multipoint.
+The boundary of a MultiPoint is the empty set.
+    """@en,
+        """\r
+A MultiPoint is a 0-dimensional GeometryCollection. The elements of a MultiPoint are restricted to Points. ThePoints are not connected or ordered in any semantically important way.\r
+A MultiPoint is simple if no two Points in the MultiPoint are equal (have identical coordinate values in X and Y).\r
+Every MultiPoint is spatially equal to a simple Multipoint.\r
+The boundary of a MultiPoint is the empty set.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:GeometryCollection .
+
+sf:MultiPolygon a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Multi Polygon"@en ;
+    rdfs:comment """
+A MultiPolygon is a MultiSurface whose elements are Polygons.
+The assertions for MultiPolygons are as follows.
+a) The interiors of 2 Polygons that are elements of a MultiPolygon may not intersect.
+b) The boundaries of any 2 Polygons that are elements of a MultiPolygon may not cross and may touch at only a finite number of Points.
+c) A MultiPolygon is defined as topologically closed.
+d) A MultiPolygon may not have cut lines, spikes or punctures, a MultiPolygon is a regular closed Point set,
+e) The interior of a MultiPolygon with more than 1 Polygon is not connected; the number of connected components of the interior of a MultiPolygon is equal to the number of Polygons in the MultiPolygon. 
+The boundary of a MultiPolygon is a set of closed Curves (LineStrings) corresponding to the boundaries of its element Polygons. Each Curve in the boundary of the MultiPolygon is in the boundary of exactly 1 element Polygon, and every Curve in the boundary of an element Polygon is in the boundary of the MultiPolygon.
+    """@en,
+        """\r
+A MultiPolygon is a MultiSurface whose elements are Polygons.\r
+The assertions for MultiPolygons are as follows.\r
+a) The interiors of 2 Polygons that are elements of a MultiPolygon may not intersect.\r
+b) The boundaries of any 2 Polygons that are elements of a MultiPolygon may not cross and may touch at only a finite number of Points.\r
+c) A MultiPolygon is defined as topologically closed.\r
+d) A MultiPolygon may not have cut lines, spikes or punctures, a MultiPolygon is a regular closed Point set,\r
+e) The interior of a MultiPolygon with more than 1 Polygon is not connected; the number of connected components of the interior of a MultiPolygon is equal to the number of Polygons in the MultiPolygon. \r
+The boundary of a MultiPolygon is a set of closed Curves (LineStrings) corresponding to the boundaries of its element Polygons. Each Curve in the boundary of the MultiPolygon is in the boundary of exactly 1 element Polygon, and every Curve in the boundary of an element Polygon is in the boundary of the MultiPolygon.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:MultiSurface .
+
+sf:MultiSurface a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Multi Surface"@en ;
+    rdfs:comment """
+A MultiSurface is a 2-dimensional GeometryCollection whose elements are Surfaces, all using coordinates from the same coordinate reference system. The geometric interiors of any two Surfaces in a MultiSurface may not intersect in the full coordinate system. The boundaries of any two coplanar elements in a MultiSurface may intersect, at most, at a finite number of Points. If they were to meet along a curve, they could be merged into a single surface.
+A MultiSurface may be used to represent heterogeneous surfaces collections of polygons and polyhedral surfaces. It defines a set of methods for its subclasses. The subclass of MultiSurface is MultiPolygon corresponding to a collection of Polygons only. Other collections shall use MultiSurface.
+    """@en,
+        """\r
+A MultiSurface is a 2-dimensional GeometryCollection whose elements are Surfaces, all using coordinates from the same coordinate reference system. The geometric interiors of any two Surfaces in a MultiSurface may not intersect in the full coordinate system. The boundaries of any two coplanar elements in a MultiSurface may intersect, at most, at a finite number of Points. If they were to meet along a curve, they could be merged into a single surface.\r
+A MultiSurface may be used to represent heterogeneous surfaces collections of polygons and polyhedral surfaces. It defines a set of methods for its subclasses. The subclass of MultiSurface is MultiPolygon corresponding to a collection of Polygons only. Other collections shall use MultiSurface.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:GeometryCollection .
+
+sf:Point a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Point"@en ;
+    rdfs:comment """
+A Point is a 0-dimensional geometric object and represents a single location in coordinate space. 
+A Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.
+The boundary of a Point is the empty set.
+    """@en,
+        """\r
+A Point is a 0-dimensional geometric object and represents a single location in coordinate space. \r
+A Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.\r
+The boundary of a Point is the empty set.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Geometry .
+
+sf:Polygon a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Polygon"@en ;
+    rdfs:comment """
+A Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon.
+The exterior boundary LinearRing defines the top of the surface which is the side of the surface from which the exterior boundary appears to traverse the boundary in a counter clockwise direction. The interior LinearRings will have the opposite orientation, and appear as clockwise when viewed from the top,
+The assertions for Polygons (the rules that define valid Polygons) are as follows:
+a) Polygons are topologically closed;
+b) The boundary of a Polygon consists of a set of LinearRings that make up its exterior and interior boundaries;
+c) No two Rings in the boundary cross and the Rings in the boundary of a Polygon may intersect at a Point but only as a tangent.
+d) A Polygon may not have cut lines, spikes or punctures.
+e) The interior of every Polygon is a connected point set;
+f) The exterior of a Polygon with 1 or more holes is not connected. Each hole defines a connected component of the exterior.
+    """@en,
+        """\r
+A Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon.\r
+The exterior boundary LinearRing defines the top of the surface which is the side of the surface from which the exterior boundary appears to traverse the boundary in a counter clockwise direction. The interior LinearRings will have the opposite orientation, and appear as clockwise when viewed from the top,\r
+The assertions for Polygons (the rules that define valid Polygons) are as follows:\r
+a) Polygons are topologically closed;\r
+b) The boundary of a Polygon consists of a set of LinearRings that make up its exterior and interior boundaries;\r
+c) No two Rings in the boundary cross and the Rings in the boundary of a Polygon may intersect at a Point but only as a tangent.\r
+d) A Polygon may not have cut lines, spikes or punctures.\r
+e) The interior of every Polygon is a connected point set;\r
+f) The exterior of a Polygon with 1 or more holes is not connected. Each hole defines a connected component of the exterior.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Surface .
+
+sf:PolyhedralSurface a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Polyhedral Surface"@en ;
+    rdfs:comment """
+A PolyhedralSurface is a contiguous collection of polygons, which share common boundary segments. For each pair of polygons that touch, the common boundary shall be expressible as a finite collection of LineStrings. Each such LineString shall be part of the boundary of at most 2 Polygon patches. 
+For any two polygons that share a common boundary, the top of the polygon shall be consistent. This means that when two LinearRings from these two Polygons traverse the common boundary segment, they do so in opposite directions. Since the Polyhedral surface is contiguous, all polygons will be thus consistently oriented. This means that a non-oriented surface (such as Mbius band) shall not have single surface representations. They may be represented by a MultiSurface.
+If each such LineString is the boundary of exactly 2 Polygon patches, then the PolyhedralSurface is a simple, closed polyhedron and is topologically isomorphic to the surface of a sphere. By the Jordan Surface Theorem (Jordans Theorem for 2-spheres), such polyhedrons enclose a solid topologically isomorphic to the interior of a sphere; the ball. In this case, the top of the surface will either point inward or outward of the enclosed finite solid. If outward, the surface is the exterior boundary of the enclosed surface. If inward, the surface is the interior of the infinite complement of the enclosed solid. A Ball with some number of voids (holes) inside can thus be presented as one exterior boundary shell, and some number in interior boundary shells.
+    """@en,
+        """\r
+A PolyhedralSurface is a contiguous collection of polygons, which share common boundary segments. For each pair of polygons that touch, the common boundary shall be expressible as a finite collection of LineStrings. Each such LineString shall be part of the boundary of at most 2 Polygon patches. \r
+For any two polygons that share a common boundary, the top of the polygon shall be consistent. This means that when two LinearRings from these two Polygons traverse the common boundary segment, they do so in opposite directions. Since the Polyhedral surface is contiguous, all polygons will be thus consistently oriented. This means that a non-oriented surface (such as Mbius band) shall not have single surface representations. They may be represented by a MultiSurface.\r
+If each such LineString is the boundary of exactly 2 Polygon patches, then the PolyhedralSurface is a simple, closed polyhedron and is topologically isomorphic to the surface of a sphere. By the Jordan Surface Theorem (Jordans Theorem for 2-spheres), such polyhedrons enclose a solid topologically isomorphic to the interior of a sphere; the ball. In this case, the top of the surface will either point inward or outward of the enclosed finite solid. If outward, the surface is the exterior boundary of the enclosed surface. If inward, the surface is the interior of the infinite complement of the enclosed solid. A Ball with some number of voids (holes) inside can thus be presented as one exterior boundary shell, and some number in interior boundary shells.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Surface .
+
+sf:Surface a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Surface"@en ;
+    rdfs:comment """
+A Surface is a 2-dimensional geometric object.
+A simple Surface may consists of a single patch that is associated with one exterior boundary and 0 or more interior boundaries. A single such Surface patch in 3-dimensional space is isometric to planar Surfaces, by a simple affine rotation matrix that rotates the patch onto the plane z = 0. If the patch is not vertical, the projection onto the same plane is an isomorphism, and can be represented as a linear transformation, i.e. an affine.
+Polyhedral Surfaces are formed by stitching together such simple Surfaces patches along their common boundaries. Such polyhedral Surfaces in a 3-dimensional space may not be planar as a whole, depending on the orientation of their planar normals. If all the patches are in alignment (their normals are parallel), then the whole stitched polyhedral surface is co-planar and can be represented as a single patch if it is connected.
+The boundary of a simple Surface is the set of closed Curves corresponding to its exterior and interior boundaries.
+A Polygon is a simple Surface that is planar. A PolyhedralSurface is a simple surface, consisting of some number of Polygon patches or facets. If a PolyhedralSurface is closed, then it bounds a solid. A MultiSurface containing a set of closed PolyhedralSurfaces can be used to represent a Solid object with holes.
+    """@en,
+        """\r
+A Surface is a 2-dimensional geometric object.\r
+A simple Surface may consists of a single patch that is associated with one exterior boundary and 0 or more interior boundaries. A single such Surface patch in 3-dimensional space is isometric to planar Surfaces, by a simple affine rotation matrix that rotates the patch onto the plane z = 0. If the patch is not vertical, the projection onto the same plane is an isomorphism, and can be represented as a linear transformation, i.e. an affine.\r
+Polyhedral Surfaces are formed by stitching together such simple Surfaces patches along their common boundaries. Such polyhedral Surfaces in a 3-dimensional space may not be planar as a whole, depending on the orientation of their planar normals. If all the patches are in alignment (their normals are parallel), then the whole stitched polyhedral surface is co-planar and can be represented as a single patch if it is connected.\r
+The boundary of a simple Surface is the set of closed Curves corresponding to its exterior and interior boundaries.\r
+A Polygon is a simple Surface that is planar. A PolyhedralSurface is a simple surface, consisting of some number of Polygon patches or facets. If a PolyhedralSurface is closed, then it bounds a solid. A MultiSurface containing a set of closed PolyhedralSurfaces can be used to represent a Solid object with holes.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Geometry .
+
+sf:TIN a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Triangulated Irregular Network"@en ;
+    rdfs:comment """
+A TIN (triangulated irregular network) is a PolyhedralSurface consisting only of Triangle patches.
+    """@en,
+        """\r
+A TIN (triangulated irregular network) is a PolyhedralSurface consisting only of Triangle patches.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:PolyhedralSurface .
+
+sf:Triangle a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Triangle"@en ;
+    rdfs:comment """
+ A Triangle is a polygon with 3 distinct, non-collinear vertices and no interior boundary.
+    """@en,
+        """\r
+ A Triangle is a polygon with 3 distinct, non-collinear vertices and no interior boundary.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Polygon .
 
 wgs84_pos:Point a rdfs:Class,
         owl:Class ;
@@ -81,13 +377,28 @@ foodie:tractor a owl:ObjectProperty ;
     rdfs:range foodie:TractorType ;
     skos:prefLabel "tractor"@en .
 
-geo:hasSerialization a owl:DatatypeProperty ;
-    rdfs:label "has serialization"@en ;
-    rdfs:comment "Connects a geometry object with its text-based serialization"@en ;
+geo:asWKT a owl:DatatypeProperty ;
+    rdfs:label "asWKT"@en,
+        "has serialization"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      The WKT serialization of a geometry
+    """@en ;
+    rdfs:comment """
+      The WKT serialization of a geometry
+    """@en,
+        "The WKT serialization of a geometry"@en ;
     rdfs:domain geo:Geometry ;
     rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
         <http://www.opengis.net/spec/geosparql/1.0> ;
-    rdfs:range rdfs:Literal .
+    rdfs:range geo:wktLiteral ;
+    rdfs:subPropertyOf geo:hasSerialization ;
+    skos:definition """
+      The WKT serialization of a geometry
+    """@en ;
+    skos:prefLabel "asWKT"@en .
 
 fiware:AgriGreenhouse a owl:Class ;
     rdfs:label "Agri Greenhouse" ;
@@ -166,13 +477,13 @@ saref4agri:Farm a owl:Class ;
         fiware:AgriFarm .
 
 <https://w3id.org/demeter/agri/agriFeature> a owl:Ontology ;
-    dct:contributor [ schema:affiliation [ foaf:name "ICCS" ] ;
-            foaf:name "Ioanna Roussaki" ],
-        [ schema:affiliation [ foaf:name "OGC" ] ;
-            foaf:name "Rob Atkinson" ] ;
-    dct:creator [ schema:affiliation [ foaf:name "PSNC" ] ;
-            rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
-            foaf:name "Raul Palma" ] ;
+    dct:contributor [ foaf:name "Ioanna Roussaki" ;
+            schema:affiliation [ foaf:name "ICCS" ] ],
+        [ foaf:name "Rob Atkinson" ;
+            schema:affiliation [ foaf:name "OGC" ] ] ;
+    dct:creator [ rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+            foaf:name "Raul Palma" ;
+            schema:affiliation [ foaf:name "PSNC" ] ] ;
     dct:description "The DEMETER AgriFeature is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
     dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
     dct:title "DEMETER AgriFeature"@en ;
@@ -181,6 +492,7 @@ saref4agri:Farm a owl:Class ;
         <http://inspire.ec.europa.eu/schemas/act-core/3.0>,
         <http://inspire.ec.europa.eu/schemas/af/3.0>,
         <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/ont/sf>,
         <http://www.w3.org/2003/01/geo/wgs84_pos>,
         <https://w3id.org/def/saref4agri>,
         <https://w3id.org/demeter/agri/agriCommon> ;
@@ -252,13 +564,28 @@ af-inspire:contains a owl:ObjectProperty ;
     rdfs:subPropertyOf saref4agri:contains ;
     skos:prefLabel "contains"@en .
 
-geo:sfWithin a owl:ObjectProperty ;
-    rdfs:label "within"@en ;
-    rdfs:comment "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
-    rdfs:domain geo:SpatialObject ;
+geo:hasSerialization a owl:DatatypeProperty ;
+    rdfs:label "has serialization"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      Connects a geometry object with its text-based serialization.
+    """@en ;
+    rdfs:comment """
+      Connects a geometry object with its text-based serialization.
+    """@en,
+        "Connects a geometry object with its text-based serialization"@en ;
+    rdfs:domain geo:Geometry ;
     rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
         <http://www.opengis.net/spec/geosparql/1.0> ;
-    rdfs:range geo:SpatialObject .
+    rdfs:range rdfs:Literal ;
+    skos:definition """
+      Connects a geometry object with its text-based serialization.
+    """@en ;
+    skos:prefLabel "has serialization"@en .
+
+geo:wktLiteral rdfs:comment "A Well-known Text serialization of a geometry object."@en .
 
 fiware:AgriFarm a owl:Class ;
     rdfs:label "Agri Farm" ;
@@ -282,6 +609,8 @@ af-inspire:Holding a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:int ;
             owl:onProperty geo:hasGeometry ],
+        [ ],
+        [ ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:int ;
             owl:onProperty foodie:userId ],
@@ -296,7 +625,15 @@ af-inspire:Holding a owl:Class ;
 
 af-inspire:Site a owl:Class ;
     rdfs:isDefinedBy af-inspire: ;
-    rdfs:subClassOf [ a owl:Restriction ;
+    rdfs:subClassOf [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ ],
+        [ a owl:Restriction ;
             owl:minCardinality "1"^^xsd:int ;
             owl:onProperty af-inspire:activity ],
         [ a owl:Restriction ;
@@ -327,11 +664,51 @@ af-inspire:Site a owl:Class ;
 
 geo:sfContains a owl:ObjectProperty ;
     rdfs:label "contains"@en ;
-    rdfs:comment "Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      Exists if the subject SpatialObject spatially contains the 
+      object SpatialObject. DE-9IM: T*****FF*
+    """@en ;
+    rdfs:comment """
+      Exists if the subject SpatialObject spatially contains the 
+      object SpatialObject. DE-9IM: T*****FF*
+    """@en,
+        "Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
     rdfs:domain geo:SpatialObject ;
     rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
         <http://www.opengis.net/spec/geosparql/1.0> ;
-    rdfs:range geo:SpatialObject .
+    rdfs:range geo:SpatialObject ;
+    skos:definition """
+      Exists if the subject SpatialObject spatially contains the 
+      object SpatialObject. DE-9IM: T*****FF*
+    """@en ;
+    skos:prefLabel "contains"@en .
+
+geo:sfWithin a owl:ObjectProperty ;
+    rdfs:label "within"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      Exists if the subject SpatialObject is spatially within the 
+      object SpatialObject. DE-9IM: T*F**F***
+    """@en ;
+    rdfs:comment """
+      Exists if the subject SpatialObject is spatially within the 
+      object SpatialObject. DE-9IM: T*F**F***
+    """@en,
+        "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
+    rdfs:domain geo:SpatialObject ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:range geo:SpatialObject ;
+    skos:definition """
+      Exists if the subject SpatialObject is spatially within the 
+      object SpatialObject. DE-9IM: T*F**F***
+    """@en ;
+    skos:prefLabel "within"@en .
 
 wgs84_pos:location rdfs:comment "The relation between something and the point, or other geometrical thing in space, where it is." ;
     rdfs:isDefinedBy wgs84_pos: .
@@ -418,26 +795,78 @@ foodie:Plot a owl:Class ;
         geo:Feature ;
     skos:prefLabel "Plot"@en .
 
-saref4agri:isContainedIn rdfs:isDefinedBy saref4agri: .
+saref4agri:isContainedIn a owl:ObjectProperty ;
+    rdfs:label "is contained in"@en ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:subPropertyOf geo:sfWithin .
+
+geo:hasGeometry a owl:ObjectProperty ;
+    rdfs:label "has geometry"@en,
+        "hasGeometry"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      A spatial representation for a given feature.
+    """@en ;
+    rdfs:comment """
+      A spatial representation for a given feature.
+    """@en,
+        "A spatial representation for a given feature."@en ;
+    rdfs:domain geo:Feature ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        geo:,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:range geo:Geometry ;
+    owl:equivalentProperty wgs84_pos:location ;
+    skos:definition """
+      A spatial representation for a given feature.
+    """@en ;
+    skos:prefLabel "hasGeometry"@en .
 
 geo:Geometry a owl:Class ;
     rdfs:label "Geometry"@en ;
-    rdfs:comment "The class represents the top-level geometry type. This class is equivalent to the UML class GM_Object defined in ISO 19107, and it is superclass of all geometry types."@en ;
-    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
-    rdfs:subClassOf geo:SpatialObject .
-
-geo:hasGeometry a owl:ObjectProperty ;
-    rdfs:label "has geometry"@en ;
-    rdfs:comment "A spatial representation for a given feature."@en ;
-    rdfs:domain geo:Feature ;
-    rdfs:isDefinedBy geo: ;
-    rdfs:range geo:Geometry ;
-    owl:equivalentProperty wgs84_pos:location .
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      The class represents the top-level geometry type. This class is 
+      equivalent to the UML class GM_Object defined in ISO 19107, and 
+      it is superclass of all geometry types.
+    """@en ;
+    rdfs:comment """
+      The class represents the top-level geometry type. This class is 
+      equivalent to the UML class GM_Object defined in ISO 19107, and 
+      it is superclass of all geometry types.
+    """@en,
+        "The class represents the top-level geometry type. This class is equivalent to the UML class GM_Object defined in ISO 19107, and it is superclass of all geometry types."@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:subClassOf geo:SpatialObject ;
+    owl:disjointWith geo:Feature ;
+    skos:definition """
+      The class represents the top-level geometry type. This class is 
+      equivalent to the UML class GM_Object defined in ISO 19107, and 
+      it is superclass of all geometry types.
+    """@en ;
+    skos:prefLabel "Geometry"@en .
 
 geo:SpatialObject a owl:Class ;
     rdfs:label "SpatialObject"@en ;
-    rdfs:comment "The class spatial-object represents everything that can have a spatial representation. It is superclass of feature and geometry."@en ;
-    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      The class spatial-object represents everything that can have 
+      a spatial representation. It is superclass of feature and geometry.
+    """@en ;
+    rdfs:comment """
+      The class spatial-object represents everything that can have 
+      a spatial representation. It is superclass of feature and geometry.
+    """@en,
+        "The class spatial-object represents everything that can have a spatial representation. It is superclass of feature and geometry."@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom geo:Geometry ;
             owl:onProperty geo:hasGeometry ],
@@ -449,18 +878,43 @@ geo:SpatialObject a owl:Class ;
             owl:onProperty geo:sfWithin ],
         [ a owl:Restriction ;
             owl:allValuesFrom wgs84_pos:Point ;
-            owl:onProperty wgs84_pos:location ] .
+            owl:onProperty wgs84_pos:location ] ;
+    skos:definition """
+      The class spatial-object represents everything that can have 
+      a spatial representation. It is superclass of feature and geometry.
+    """@en ;
+    skos:prefLabel "SpatialObject"@en .
 
 geo:Feature a owl:Class ;
     rdfs:label "Feature"@en ;
-    rdfs:comment "This class represents the top-level feature type. This class is equivalent to GFI_Feature defined in ISO 19156:2011, and it is superclass of all feature types."@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      This class represents the top-level feature type. This class is 
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is 
+      superclass of all feature types.
+    """@en ;
+    rdfs:comment """
+      This class represents the top-level feature type. This class is 
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is 
+      superclass of all feature types.
+    """@en,
+        "This class represents the top-level feature type. This class is equivalent to GFI_Feature defined in ISO 19156:2011, and it is superclass of all feature types."@en ;
     rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
-        <http://www.opengis.net/ont/gml> ;
+        <http://www.opengis.net/ont/gml>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom geo:Geometry ;
             owl:onProperty geo:hasGeometry ],
         geo:SpatialObject ;
-    owl:disjointWith geo:Geometry .
+    owl:disjointWith geo:Geometry ;
+    skos:definition """
+      This class represents the top-level feature type. This class is 
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is 
+      superclass of all feature types.
+    """@en ;
+    skos:prefLabel "Feature"@en .
 
 saref4agri:contains a owl:ObjectProperty ;
     rdfs:isDefinedBy saref4agri: ;

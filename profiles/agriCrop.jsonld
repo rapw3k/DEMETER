@@ -2,10 +2,12 @@
     "@id": "https://w3id.org/demeter/agri/agriCrop",
     "@context": [
         "http://foodie-cloud.com/model/foodie",
+        "https://w3id.org/demeter/agri/agriCrop",
         "https://w3id.org/def/saref4agri",
         "https://uri.fiware.org/ns/data-models",
         {
             "foodie": "http://foodie-cloud.com/model/foodie#",
+            "demeterAgriCrop": "https://w3id.org/demeter/agri/agriCrop#",
             "saref4agri": "https://w3id.org/def/saref4agri#",
             "fiware": "https://uri.fiware.org/ns/data-models#",
             "fiware:AgriCrop": {
@@ -18,22 +20,34 @@
                 "@id": "fiware:hasAgriFertiliser",
                 "@type": "@id"
             },
-            "fiware:cropHasAgriSoil": {
-                "@id": "fiware:cropHasAgriSoil",
-                "@type": "@id"
-            },
             "fiware:hasAgriPest": {
                 "@id": "fiware:hasAgriPest",
                 "@type": "@id"
             },
-            "fiware:wateringFrequency": {
-                "@id": "fiware:wateringFrequency"
-            },
-            "fiware:plantingFrom": {
-                "@id": "fiware:plantingFrom"
+            "fiware:cropHasAgriSoil": {
+                "@id": "fiware:cropHasAgriSoil",
+                "@type": "@id"
             },
             "fiware:harvestingInterval": {
                 "@id": "fiware:harvestingInterval"
+            },
+            "demeterAgriCrop:numberOfHivesNeeded": {
+                "@id": "demeterAgriCrop:numberOfHivesNeeded",
+                "@type": "xsd:dateTime"
+            },
+            "demeterAgriCrop:expectedBloomingEnd": {
+                "@id": "demeterAgriCrop:expectedBloomingEnd",
+                "@type": "xsd:dateTime"
+            },
+            "fiware:wateringFrequency": {
+                "@id": "fiware:wateringFrequency"
+            },
+            "demeterAgriCrop:expectedBloomingStart": {
+                "@id": "demeterAgriCrop:expectedBloomingStart",
+                "@type": "xsd:dateTime"
+            },
+            "fiware:plantingFrom": {
+                "@id": "fiware:plantingFrom"
             }
         }
     ]

@@ -201,7 +201,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>The DEMETER core ontology is a profile (subset) of the ontology presented in Annex D of the NGSI-LD standard: ETSI GS CIM 006 V1.1.1 (2019-07), covering only the core property-graph entities.</p>"
+        "@value": "<p>The DEMETER core ontology includes the meta-model elements reused from NGSI-LD specification that provide a formal basis for representing 'property graphs' using RDF/RDFS/OWL.</p>"
       }
     ],
     "https://schema.org/name": [
@@ -232,19 +232,26 @@
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
         <dd>
             
-    Raul Palma<br/>
+    Raul Palma of 
+    PSNC<br/>
         </dd>
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor">Contributor</a>(s)</dt>
         <dd>
             
-    Ioanna Roussaki<br/>
+    Ioanna Roussaki of 
+    ICCS<br/>
             
-    Rob Atkinson<br/>
+    Rob Atkinson of 
+    OGC<br/>
         </dd>
         <dt>Version Information</dt>
         <dd>1.0</dd>
         <dt>Version URI</dt>
         <dd><a href="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/demeterCore.ttl">https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/demeterCore.ttl</a></dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="https://uri.etsi.org/ngsi-ld/v1/ontology">https://uri.etsi.org/ngsi-ld/v1/ontology</a><br/>
+        </dd>
         <dt>Rights</dt>
         <dd>This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dd>
         <dt>Ontology RDF</dt>
@@ -252,7 +259,7 @@
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>The DEMETER core ontology is a profile (subset) of the ontology presented in Annex D of the NGSI-LD standard: ETSI GS CIM 006 V1.1.1 (2019-07), covering only the core property-graph entities.</p>
+        <p>The DEMETER core ontology includes the meta-model elements reused from NGSI-LD specification that provide a formal basis for representing 'property graphs' using RDF/RDFS/OWL.</p>
     </div>
 </section>
 <section id="toc">
@@ -360,6 +367,8 @@
                 <td>
                     <a href="https://uri.etsi.org/ngsi-ld/v1/ontology#Property">ngsi-ld:Property</a><sup class="sup-c" title="class">c</sup>
                     <a href="https://uri.etsi.org/ngsi-ld/v1/ontology#Value">ngsi-ld:Value</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://uri.etsi.org/ngsi-ld/v1/ontology#Property">ngsi-ld:Property</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://uri.etsi.org/ngsi-ld/v1/ontology#Value">ngsi-ld:Value</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
         </table>
@@ -380,6 +389,8 @@
             <tr>
                 <th>Range(s)</th>
                 <td>
+                    <a href="https://uri.etsi.org/ngsi-ld/v1/ontology#Entity">ngsi-ld:Entity</a><sup class="sup-c" title="class">c</sup>
+                    <a href="https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship">ngsi-ld:Relationship</a><sup class="sup-c" title="class">c</sup>
                     <a href="https://uri.etsi.org/ngsi-ld/v1/ontology#Entity">ngsi-ld:Entity</a><sup class="sup-c" title="class">c</sup>
                     <a href="https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship">ngsi-ld:Relationship</a><sup class="sup-c" title="class">c</sup>
                 </td>
@@ -457,8 +468,6 @@
         <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
         <dt>rdfs</dt>
         <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
-        <dt>schema</dt>
-        <dd><code>http://schema.org/</code></dd>
         <dt>sdo</dt>
         <dd><code>https://schema.org/</code></dd>
         <dt>skos</dt>

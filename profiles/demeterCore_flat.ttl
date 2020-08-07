@@ -5,7 +5,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
 
 ngsi-ld:hasObject a owl:ObjectProperty ;
     rdfs:domain ngsi-ld:Relationship ;
@@ -15,17 +15,18 @@ ngsi-ld:hasValue a owl:DatatypeProperty ;
     rdfs:domain ngsi-ld:Property .
 
 :core a owl:Ontology ;
-    dct:contributor [ schema:affiliation [ foaf:name "ICCS" ] ;
-            foaf:name "Ioanna Roussaki" ],
-        [ schema:affiliation [ foaf:name "OGC" ] ;
-            foaf:name "Rob Atkinson" ] ;
-    dct:creator [ schema:affiliation [ foaf:name "PSNC" ] ;
-            rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
-            foaf:name "Raul Palma" ] ;
+    dct:contributor [ foaf:name "Ioanna Roussaki" ;
+            schema:affiliation [ foaf:name "ICCS" ] ],
+        [ foaf:name "Rob Atkinson" ;
+            schema:affiliation [ foaf:name "OGC" ] ] ;
+    dct:creator [ rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+            foaf:name "Raul Palma" ;
+            schema:affiliation [ foaf:name "PSNC" ] ] ;
     dct:description "The DEMETER core ontology includes the meta-model elements reused from NGSI-LD specification that provide a formal basis for representing 'property graphs' using RDF/RDFS/OWL."@en ;
     dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
     dct:title "DEMETER core meta-model"@en ;
     rdfs:comment "The DEMETER core ontology is a profile (subset) of the ontology presented in Annex D of the NGSI-LD standard: ETSI GS CIM 006 V1.1.1 (2019-07), covering only the core property-graph entities."@en ;
+    owl:imports <https://uri.etsi.org/ngsi-ld/v1/ontology> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/demeterCore.ttl> ;
     owl:versionInfo "1.0" ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
@@ -39,7 +40,8 @@ ngsi-ld:Entity a owl:Class ;
 ngsi-ld:Property a owl:Class,
         owl:ObjectProperty ;
     rdfs:range [ a owl:Class ;
-            owl:unionOf ( ngsi-ld:Property ngsi-ld:Value ) ] ;
+            owl:unionOf ( ngsi-ld:Property ngsi-ld:Value ) ],
+        [ ] ;
     owl:disjointWith ngsi-ld:Relationship .
 
 ngsi-ld:Value a owl:Class .
@@ -48,6 +50,7 @@ ngsi-ld:Relationship a owl:Class,
         owl:ObjectProperty ;
     rdfs:domain ngsi-ld:Entity ;
     rdfs:range [ a owl:Class ;
-            owl:unionOf ( ngsi-ld:Entity ngsi-ld:Relationship ) ] ;
+            owl:unionOf ( ngsi-ld:Entity ngsi-ld:Relationship ) ],
+        [ ] ;
     owl:disjointWith ngsi-ld:Value .
 
