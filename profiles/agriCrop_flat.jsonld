@@ -1,18 +1,15 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriCrop",
     "@context": [
-        "http://foodie-cloud.com/model/foodie",
         "https://w3id.org/demeter/agri/agriCrop",
         "https://w3id.org/def/saref4agri",
+        "http://foodie-cloud.com/model/foodie",
         "https://uri.fiware.org/ns/data-models",
         {
-            "foodie": "http://foodie-cloud.com/model/foodie#",
             "demeterAgriCrop": "https://w3id.org/demeter/agri/agriCrop#",
             "saref4agri": "https://w3id.org/def/saref4agri#",
+            "foodie": "http://foodie-cloud.com/model/foodie#",
             "fiware": "https://uri.fiware.org/ns/data-models#",
-            "fiware:AgriCrop": {
-                "@id": "fiware:AgriCrop"
-            },
             "foodie:CropType": {
                 "@id": "foodie:CropType"
             },
@@ -22,20 +19,11 @@
             "foodie:CropSpecies": {
                 "@id": "foodie:CropSpecies"
             },
+            "fiware:AgriCrop": {
+                "@id": "fiware:AgriCrop"
+            },
             "saref4agri:Crop": {
                 "@id": "saref4agri:Crop"
-            },
-            "foodie:cropArea": {
-                "@id": "foodie:cropArea",
-                "@type": "@id"
-            },
-            "foodie:productionAmount": {
-                "@id": "foodie:productionAmount",
-                "@type": "@id"
-            },
-            "saref4agri:receives": {
-                "@id": "saref4agri:receives",
-                "@type": "@id"
             },
             "fiware:cropHasAgriSoil": {
                 "@id": "fiware:cropHasAgriSoil",
@@ -45,21 +33,40 @@
                 "@id": "saref4agri:generates",
                 "@type": "@id"
             },
-            "foodie:production": {
-                "@id": "foodie:production",
+            "fiware:hasAgriPest": {
+                "@id": "fiware:hasAgriPest",
+                "@type": "@id"
+            },
+            "saref4agri:receives": {
+                "@id": "saref4agri:receives",
                 "@type": "@id"
             },
             "foodie:cropSpecies": {
                 "@id": "foodie:cropSpecies",
                 "@type": "@id"
             },
+            "foodie:cropArea": {
+                "@id": "foodie:cropArea",
+                "@type": "@id"
+            },
+            "foodie:production": {
+                "@id": "foodie:production",
+                "@type": "@id"
+            },
             "fiware:hasAgriFertiliser": {
                 "@id": "fiware:hasAgriFertiliser",
                 "@type": "@id"
             },
-            "fiware:hasAgriPest": {
-                "@id": "fiware:hasAgriPest",
+            "foodie:productionAmount": {
+                "@id": "foodie:productionAmount",
                 "@type": "@id"
+            },
+            "foodie:family": {
+                "@id": "foodie:family",
+                "@type": "xsd:string"
+            },
+            "fiware:plantingFrom": {
+                "@id": "fiware:plantingFrom"
             },
             "fiware:wateringFrequency": {
                 "@id": "fiware:wateringFrequency"
@@ -68,23 +75,15 @@
                 "@id": "saref4agri:hasPlantDate",
                 "@type": "xsd:dateTime"
             },
-            "demeterAgriCrop:numberOfHivesNeeded": {
-                "@id": "demeterAgriCrop:numberOfHivesNeeded",
-                "@type": "xsd:dateTime"
-            },
             "fiware:harvestingInterval": {
                 "@id": "fiware:harvestingInterval"
-            },
-            "foodie:family": {
-                "@id": "foodie:family",
-                "@type": "xsd:string"
             },
             "saref4agri:hasHarvestDate": {
                 "@id": "saref4agri:hasHarvestDate",
                 "@type": "xsd:dateTime"
             },
-            "fiware:plantingFrom": {
-                "@id": "fiware:plantingFrom"
+            "foodie:productionDate": {
+                "@id": "foodie:productionDate"
             },
             "foodie:species": {
                 "@id": "foodie:species",
@@ -94,9 +93,6 @@
                 "@id": "demeterAgriCrop:expectedBloomingStart",
                 "@type": "xsd:dateTime"
             },
-            "foodie:productionDate": {
-                "@id": "foodie:productionDate"
-            },
             "demeterAgriCrop:expectedBloomingEnd": {
                 "@id": "demeterAgriCrop:expectedBloomingEnd",
                 "@type": "xsd:dateTime"
@@ -104,6 +100,10 @@
             "foodie:variety": {
                 "@id": "foodie:variety",
                 "@type": "xsd:string"
+            },
+            "demeterAgriCrop:numberOfHivesNeeded": {
+                "@id": "demeterAgriCrop:numberOfHivesNeeded",
+                "@type": "xsd:dateTime"
             },
             "foodie:genus": {
                 "@id": "foodie:genus",

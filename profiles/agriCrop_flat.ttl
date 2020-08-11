@@ -8,6 +8,7 @@
 @prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix ns1: <http://www.w3.org/ns/dx/prof/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -110,6 +111,10 @@ saref4agri:receives a owl:ObjectProperty ;
         <https://w3id.org/demeter/agri/agriCommon> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCrop.ttl> ;
     owl:versionInfo "1.0" ;
+    ns1:isProfileOf <https://w3id.org/demeter/agri/agriCrop_profile4foodie.ttl>,
+        <https://w3id.org/demeter/agri/agriCrop_profile4saref4agri.ttl> ;
+    ns1:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+        <https://w3id.org/def/saref4agri> ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 

@@ -1,11 +1,11 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/ns/prov#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://w3id.org/demeter/agri/agriFeature> a prof:Profile ;
     rdfs:label "DEMETER AgriFeature"@en ;
-    dcterms:source "../models\\agriFeature.ttl" ;
     rdfs:comment "The DEMETER AgriFeature is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
         "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
     skos:historyNote "Ontology profile normalised using ProfileWiz" ;
@@ -13,9 +13,23 @@
             rdfs:label "Profile description as HTML" ;
             dcterms:conformsTo prof: ;
             dcterms:format "text/html" ;
-            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
-            prof:hasArtifact "agriFeature_source.html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "agriFeature_prof.html" ;
             prof:hasRole prof:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dcterms:conformsTo prof: ;
+            dcterms:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "agriFeature.html" ;
+            prof:hasRole prof:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
+            dcterms:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "agriFeature_flat.ttl" ;
+            prof:hasRole prof:vocabulary ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "Normalised OWL with imports" ;
             dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
@@ -33,9 +47,15 @@
             rdfs:label "Profile description as HTML" ;
             dcterms:conformsTo prof: ;
             dcterms:format "text/html" ;
-            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
-            prof:hasArtifact "agriFeature_prof.html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "agriFeature_source.html" ;
             prof:hasRole prof:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dcterms:format "application/json" ;
+            prof:hasArtifact "agriFeature.json" ;
+            prof:hasRole prof:schema ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "Original Source OWL model" ;
             dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
@@ -48,19 +68,20 @@
             dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
             dcterms:format "application/ld+json" ;
             prof:hasArtifact "agriFeature_flat.jsonld" ;
-            prof:hasRole prof:contextflat ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "OWL with definition details from imports" ;
-            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "text/turtle" ;
-            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
-            prof:hasArtifact "agriFeature_flat.ttl" ;
-            prof:hasRole prof:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "OWL documentation as HTML" ;
-            dcterms:conformsTo prof: ;
-            dcterms:format "text/html" ;
-            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
-            prof:hasArtifact "agriFeature.html" ;
-            prof:hasRole prof:profile ] .
+            prof:hasRole prof:contextflat ] ;
+    prof:isProfileOf <https://w3id.org/demeter/agri/agriFeature_profile4agriFeature_act-core>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4agriFeature_af>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4foodie.ttl>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4geosparql.ttl>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4ogc_sf.rdf>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4saref4agri.ttl>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4wgs84_pos> ;
+    prof:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+        <http://inspire.ec.europa.eu/schemas/act-core/3.0>,
+        <http://inspire.ec.europa.eu/schemas/af/3.0>,
+        <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/ont/sf>,
+        <http://www.w3.org/2003/01/geo/wgs84_pos>,
+        <https://w3id.org/def/saref4agri> ;
+    ns1:wasDerivedFrom "../models\\agriFeature.ttl" .
 

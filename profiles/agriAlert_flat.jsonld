@@ -1,28 +1,16 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriAlert",
     "@context": [
-        "http://foodie-cloud.com/model/foodie",
         "https://uri.fiware.org/ns/data-models",
+        "http://foodie-cloud.com/model/foodie",
         {
-            "foodie": "http://foodie-cloud.com/model/foodie#",
             "fiware": "https://uri.fiware.org/ns/data-models#",
-            "foodie:Alert": {
-                "@id": "foodie:Alert"
-            },
+            "foodie": "http://foodie-cloud.com/model/foodie#",
             "fiware:Alert": {
                 "@id": "fiware:Alert"
             },
-            "foodie:alertZone": {
-                "@id": "foodie:alertZone",
-                "@type": "@id"
-            },
-            "foodie:speciesAlert": {
-                "@id": "foodie:speciesAlert",
-                "@type": "@id"
-            },
-            "foodie:alertSpecies": {
-                "@id": "foodie:alertSpecies",
-                "@type": "@id"
+            "foodie:Alert": {
+                "@id": "foodie:Alert"
             },
             "foodie:plotAlert": {
                 "@id": "foodie:plotAlert",
@@ -36,37 +24,49 @@
                 "@id": "foodie:zoneAlert",
                 "@type": "@id"
             },
+            "foodie:speciesAlert": {
+                "@id": "foodie:speciesAlert",
+                "@type": "@id"
+            },
+            "foodie:alertZone": {
+                "@id": "foodie:alertZone",
+                "@type": "@id"
+            },
+            "foodie:alertSpecies": {
+                "@id": "foodie:alertSpecies",
+                "@type": "@id"
+            },
             "foodie:alertGeometry": {
                 "@id": "foodie:alertGeometry",
                 "@type": "@id"
+            },
+            "fiware:validTo": {
+                "@id": "fiware:validTo"
+            },
+            "fiware:data": {
+                "@id": "fiware:data"
             },
             "foodie:alertDate": {
                 "@id": "foodie:alertDate",
                 "@type": "xsd:dateTime"
             },
-            "fiware:validTo": {
-                "@id": "fiware:validTo"
+            "fiware:subCategory": {
+                "@id": "fiware:subCategory"
             },
             "fiware:validFrom": {
                 "@id": "fiware:validFrom"
             },
+            "fiware:severity": {
+                "@id": "fiware:severity"
+            },
             "fiware:alertSource": {
                 "@id": "fiware:alertSource"
-            },
-            "fiware:dateIssued": {
-                "@id": "fiware:dateIssued"
             },
             "fiware:address": {
                 "@id": "fiware:address"
             },
-            "fiware:subCategory": {
-                "@id": "fiware:subCategory"
-            },
-            "fiware:data": {
-                "@id": "fiware:data"
-            },
-            "fiware:severity": {
-                "@id": "fiware:severity"
+            "fiware:dateIssued": {
+                "@id": "fiware:dateIssued"
             }
         }
     ]

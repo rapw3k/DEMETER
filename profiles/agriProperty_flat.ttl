@@ -7,7 +7,8 @@
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
-@prefix ns1: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <http://www.w3.org/ns/dx/prof/> .
+@prefix ns2: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
 @prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
@@ -586,22 +587,36 @@ saref4agri:SoilTemperature rdfs:isDefinedBy saref4agri: ;
         <https://w3id.org/saref> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProperty.ttl> ;
     owl:versionInfo "1.0" ;
+    ns1:isProfileOf <https://w3id.org/demeter/agri/agriProperty_profile4agriProperty_dim>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4cf-feature>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4foodie.ttl>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4qu>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4saref>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4saref4agri.ttl>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4sosa> ;
+    ns1:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+        <http://purl.oclc.org/NET/ssnx/cf/cf-feature>,
+        <http://purl.oclc.org/NET/ssnx/qu/dim>,
+        <http://purl.oclc.org/NET/ssnx/qu/qu>,
+        <http://www.w3.org/ns/sosa>,
+        <https://w3id.org/def/saref4agri>,
+        <https://w3id.org/saref> ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 
 saref:Humidity a owl:Class ;
-    rdfs:label "Humidity",
-        "Humidity"^^xsd:string,
+    rdfs:label "Humidity"^^xsd:string,
+        "Humidity",
         "Humidity"@en,
         "Humidiy"@en ;
-    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit",
-        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit"^^xsd:string ;
+    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit"^^xsd:string,
+        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit" ;
     rdfs:isDefinedBy saref: ;
     rdfs:subClassOf saref:Property .
 
 saref:Temperature a owl:Class ;
-    rdfs:label "Temperature",
-        "Temperature"^^xsd:string,
+    rdfs:label "Temperature"^^xsd:string,
+        "Temperature",
         "Temperature"@en ;
     rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)"^^xsd:string,
         "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)" ;
@@ -938,27 +953,6 @@ saref:Measurement a owl:Class ;
     rdfs:comment "Represents the measured value made over a property. It is also linked to the unit of measure in which the value is expressed and the timestamp of the measurement."@en ;
     rdfs:isDefinedBy saref: ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty saref:hasTimestamp ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom saref:UnitOfMeasure ;
-            owl:onProperty saref:isMeasuredIn ],
-        [ a owl:Restriction ;
-            owl:onClass saref:Property ;
-            owl:onProperty saref:relatesToProperty ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onClass saref:UnitOfMeasure ;
-            owl:onProperty saref:isMeasuredIn ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom saref:Property ;
-            owl:onProperty saref:relatesToProperty ],
-        [ a owl:Restriction ;
-            owl:onDataRange xsd:float ;
-            owl:onProperty saref:hasValue ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
             owl:allValuesFrom saref:FeatureOfInterest ;
             owl:onProperty saref:hasFeatureOfInterest ],
         [ a owl:Restriction ;
@@ -981,6 +975,27 @@ saref:Measurement a owl:Class ;
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty saref:hasValue ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty saref:hasValue ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty saref:hasTimestamp ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:UnitOfMeasure ;
+            owl:onProperty saref:isMeasuredIn ],
+        [ a owl:Restriction ;
+            owl:onClass saref:Property ;
+            owl:onProperty saref:relatesToProperty ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass saref:UnitOfMeasure ;
+            owl:onProperty saref:isMeasuredIn ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Property ;
+            owl:onProperty saref:relatesToProperty ],
         [ a owl:Restriction ;
             owl:onDataRange xsd:float ;
             owl:onProperty saref:hasValue ;
@@ -1042,23 +1057,14 @@ dim:MechanicsScheme a owl:NamedIndividual,
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 saref:Property a owl:Class ;
-    rdfs:label "Property"^^xsd:string,
-        "Property",
+    rdfs:label "Property",
+        "Property"^^xsd:string,
         "Property"@en ;
-    rdfs:comment "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended.",
-        "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended."^^xsd:string,
+    rdfs:comment "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended."^^xsd:string,
+        "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended.",
         "An aspect of an entity that can be observable by a sensor."@en ;
     rdfs:isDefinedBy saref: ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom saref:Device ;
-            owl:onProperty saref:isMeasuredByDevice ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom saref:Device ;
-            owl:onProperty saref:isControlledByDevice ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom saref:Measurement ;
-            owl:onProperty saref:relatesToMeasurement ],
-        [ a owl:Restriction ;
             owl:allValuesFrom saref:Device ;
             owl:onProperty saref:isControlledByDevice ],
         [ a owl:Restriction ;
@@ -1069,6 +1075,15 @@ saref:Property a owl:Class ;
             owl:onProperty saref:isPropertyOf ],
         [ a owl:Restriction ;
             owl:allValuesFrom saref:Measurement ;
+            owl:onProperty saref:relatesToMeasurement ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Device ;
+            owl:onProperty saref:isMeasuredByDevice ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Device ;
+            owl:onProperty saref:isControlledByDevice ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Measurement ;
             owl:onProperty saref:relatesToMeasurement ] ;
     owl:disjointWith saref:UnitOfMeasure ;
     owl:equivalentClass foodie:PropertyType,
@@ -1076,7 +1091,7 @@ saref:Property a owl:Class ;
 
 qu:QuantityKind a owl:Class ;
     rdfs:label "QuantityKind" ;
-    ns1:source "skos:exactMatch 'QuantityKind' [SysML 1.2-QUDV] http://www.omgwiki.org/OMGSysML/doku.php?id=sysml-qudv:quantities_units_dimensions_values_qudv" ;
+    ns2:source "skos:exactMatch 'QuantityKind' [SysML 1.2-QUDV] http://www.omgwiki.org/OMGSysML/doku.php?id=sysml-qudv:quantities_units_dimensions_values_qudv" ;
     rdfs:comment """A QuantityKind is an abstract classifier that represents the [VIM] concept of "kind of quantity" that is defined as "aspect
 common to mutually comparable quantities." A QuantityKind represents the essence of a quantity without any numerical
 value or unit. Quantities of the same kind within a given system of quantities have the same quantity dimension. However,

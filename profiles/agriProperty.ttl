@@ -6,6 +6,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix ns1: <http://www.w3.org/ns/dx/prof/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
 @prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
@@ -562,6 +563,20 @@ saref4agri:SoilTemperature rdfs:isDefinedBy saref4agri: ;
         <https://w3id.org/saref> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProperty.ttl> ;
     owl:versionInfo "1.0" ;
+    ns1:isProfileOf <https://w3id.org/demeter/agri/agriProperty_profile4agriProperty_dim>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4cf-feature>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4foodie.ttl>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4qu>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4saref>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4saref4agri.ttl>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4sosa> ;
+    ns1:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+        <http://purl.oclc.org/NET/ssnx/cf/cf-feature>,
+        <http://purl.oclc.org/NET/ssnx/qu/dim>,
+        <http://purl.oclc.org/NET/ssnx/qu/qu>,
+        <http://www.w3.org/ns/sosa>,
+        <https://w3id.org/def/saref4agri>,
+        <https://w3id.org/saref> ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 

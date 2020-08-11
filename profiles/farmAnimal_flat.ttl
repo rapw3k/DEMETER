@@ -5,6 +5,7 @@
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix ns1: <http://www.w3.org/ns/dx/prof/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -105,6 +106,12 @@ saref4agri:isLocationOf rdfs:isDefinedBy saref4agri: .
         <https://w3id.org/demeter/agri/agriCommon> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/farmAnimal.ttl> ;
     owl:versionInfo "1.0" ;
+    ns1:isProfileOf <https://w3id.org/demeter/agri/farmAnimal_profile4agriFeature_af>,
+        <https://w3id.org/demeter/agri/farmAnimal_profile4foodie.ttl>,
+        <https://w3id.org/demeter/agri/farmAnimal_profile4saref4agri.ttl> ;
+    ns1:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+        <http://inspire.ec.europa.eu/schemas/af/3.0>,
+        <https://w3id.org/def/saref4agri> ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 

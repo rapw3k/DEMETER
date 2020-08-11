@@ -1,0 +1,189 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://w3id.org/demeter/agri/agriIntervention?_profile=jsonschema",
+    "type": "object",
+    "properties": {
+        "foodie:CampaignType": {
+            "type": "object",
+            "properties": {
+                "foodie:period": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "foodie:period"
+            ]
+        },
+        "foodie:TreatmentPurposeValue": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foodie:Treatment": {
+            "type": "object",
+            "properties": {
+                "foodie:flowAdjustment": {
+                    "type": "string"
+                },
+                "foodie:plan": {
+                    "type": "string"
+                },
+                "foodie:motionSpeed": {
+                    "type": "string"
+                },
+                "foodie:price": {
+                    "type": "string"
+                },
+                "foodie:pressure": {
+                    "type": "string"
+                },
+                "foodie:formOfTreatment": {
+                    "type": "string"
+                },
+                "foodie:applicationWidth": {
+                    "type": "string"
+                },
+                "foodie:treatmentProduct": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foodie:treatmentDescription": {
+                    "type": "string"
+                },
+                "foodie:quantity": {
+                    "type": "string"
+                },
+                "foodie:areaDose": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "foodie:formOfTreatment",
+                "foodie:treatmentProduct",
+                "foodie:quantity"
+            ]
+        },
+        "foodie:Intervention": {
+            "type": "object",
+            "properties": {
+                "foodie:price": {
+                    "type": "string"
+                },
+                "foodie:interventionGeometry": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foodie:supervisor": {
+                    "type": "string"
+                },
+                "foodie:description": {
+                    "type": "string"
+                },
+                "foodie:notes": {
+                    "type": "string"
+                },
+                "foodie:status": {
+                    "type": "string"
+                },
+                "foodie:type": {
+                    "type": "string"
+                },
+                "foodie:creationDateTime": {
+                    "type": "string"
+                },
+                "common:validTo": {
+                    "type": "string"
+                },
+                "foodie:interventionPlot": {
+                    "type": "string"
+                },
+                "common:validFrom": {
+                    "type": "string"
+                },
+                "foodie:evidenceParty": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "foodie:interventionGeometry",
+                "foodie:description",
+                "foodie:status",
+                "foodie:type",
+                "foodie:creationDateTime",
+                "common:validFrom",
+                "foodie:evidenceParty"
+            ]
+        },
+        "foodie:DoseUnit": {
+            "type": "object",
+            "properties": {
+                "foodie:minimumDose": {
+                    "type": "string"
+                },
+                "foodie:maximumDose": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "foodie:TreatmentPlan": {
+            "type": "object",
+            "properties": {
+                "foodie:type": {
+                    "type": "string"
+                },
+                "foodie:notes": {
+                    "type": "string"
+                },
+                "foodie:treatmentPlanCreation": {
+                    "type": "string"
+                },
+                "foodie:planProduct": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foodie:treatmentPlanCode": {
+                    "type": "string"
+                },
+                "foodie:description": {
+                    "type": "string"
+                },
+                "foodie:campaign": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "foodie:type",
+                "foodie:treatmentPlanCreation",
+                "foodie:planProduct",
+                "foodie:description",
+                "foodie:campaign"
+            ]
+        },
+        "foodie:FormOfTreatmentValue": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "fiware:AgriParcelOperation": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    }
+}

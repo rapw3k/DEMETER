@@ -6,6 +6,7 @@
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix ns1: <http://www.w3.org/ns/dx/prof/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
@@ -59,6 +60,10 @@ fiware:validTo a owl:DatatypeProperty ;
         <https://w3id.org/demeter/agri/agriCommon> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriAlert.ttl> ;
     owl:versionInfo "1.0" ;
+    ns1:isProfileOf <https://w3id.org/demeter/agri/agriAlert_profile4fiware.ttl>,
+        <https://w3id.org/demeter/agri/agriAlert_profile4foodie.ttl> ;
+    ns1:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+        <https://uri.fiware.org/ns/data-models> ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 

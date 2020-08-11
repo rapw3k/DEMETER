@@ -1,62 +1,22 @@
-@prefix schema: <http://schema.org/> .
-@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix schema: <https://schema.org/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix afn:   <http://jena.apache.org/ARQ/function#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1:   <http://www.w3.org/ns/dx/prof/> .
 @prefix fiware: <https://uri.fiware.org/ns/data-models#> .
-@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
-@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
-@prefix iso19108: <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#> .
-@prefix dct:   <http://purl.org/dc/terms/> .
-@prefix sh:    <http://www.w3.org/ns/shacl#> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix iso19115-citation: <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#> .
-@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
 
-<https://astrea.linkeddata.es/shapes#096c0e70d50c2052dc106ec62a5928fa>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:storageHandling .
-
-<https://astrea.linkeddata.es/shapes#f732bfe4cd7d7e60f56c19972068a061>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          iso19108:Period ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:safetyPeriod .
-
-<https://astrea.linkeddata.es/shapes#9ac950b49faf2955868b10e77e12a880>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#40543ae31d15d62fa39b0fcb7a505b2f> , <https://astrea.linkeddata.es/shapes#eaf8048c422d6aac33295a6538729799> , <https://astrea.linkeddata.es/shapes#c35dc4a09d15756696a1345c58857956> ;
-        sh:targetClass    foodie:ActiveIngredients .
-
-<https://astrea.linkeddata.es/shapes#b7370a9404b09b09d8f745f67d63a0b9>
-        a            sh:PropertyShape ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:manufacturer .
-
-<https://astrea.linkeddata.es/shapes#ee7fb75c8f5367f40ad773a552371ad6>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    foodie:ProductKindValue .
-
-<https://astrea.linkeddata.es/shapes#3bf3299c5dc29feddd0c0cca3c2a723c>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
-        rdfs:label        "hasAgriProductType"@en , "Reference to the AgriProductType used/ applied." ;
-        sh:description    "Reference to the AgriProductType used/ applied." ;
-        sh:name           "hasAgriProductType"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           fiware:hasAgriProductType .
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#47c1e2559c61fa756b8f3c0121c37fb4> , <https://astrea.linkeddata.es/shapes#f07abf9215b6051ab31e82ee62200790> , <https://astrea.linkeddata.es/shapes#109937f9262d82fe198dd158384fbdda> , <https://astrea.linkeddata.es/shapes#3bf3299c5dc29feddd0c0cca3c2a723c> , <https://astrea.linkeddata.es/shapes#ba8e1b8fcfb09964556a872869d800d7> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/1963213088> , <https://astrea.linkeddata.es/report/01163512728> .
 
 <https://astrea.linkeddata.es/shapes#109937f9262d82fe198dd158384fbdda>
         a                 sh:PropertyShape ;
@@ -67,203 +27,39 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:hasAgriProductTypeParent .
 
-<https://astrea.linkeddata.es/shapes#285a282cb7b44b493b7deab15b0dba4d>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:productQuantity .
-
-<https://astrea.linkeddata.es/shapes#ebbe910ae1d1715be840f89bdc805b68>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:productSubType ;
-        sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#528e6d8ffcc0a1e5ba0134a4c2a21af4>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:productName ;
-        sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#145bfabbde83654339c4ccec491f80ac>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          foodie:ProductNutrients ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:nutrient .
-
-<https://astrea.linkeddata.es/shapes#cb19e1d4f9b1fa087da12b932e9137cf>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:nutrientMeasure .
-
-<https://astrea.linkeddata.es/shapes#ff6e0678bcb21ed4960519de863ae8fe>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          foodie:ProductKindValue ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:productKind .
-
-<https://astrea.linkeddata.es/shapes#0c264d7145a37cb616e5b9042b449c10>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:nutrientAmount .
-
-<https://astrea.linkeddata.es/shapes#37e742ea104967f9da32f501ccad63b7>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:description .
-
-<https://astrea.linkeddata.es/shapes#c35dc4a09d15756696a1345c58857956>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:ingredientAmount .
-
-<https://astrea.linkeddata.es/shapes#40543ae31d15d62fa39b0fcb7a505b2f>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:ingredientName .
-
-<https://astrea.linkeddata.es/shapes#14a77292befb5c1f110050defb975227>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          iso19103:Measure ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:ingredientAmount .
-
-<https://astrea.linkeddata.es/shapes#f07abf9215b6051ab31e82ee62200790>
-        a                 sh:PropertyShape ;
+<https://astrea.linkeddata.es/shapes#ba8e1b8fcfb09964556a872869d800d7>
+        a                 sh:NodeShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> ;
-        rdfs:label        "root"@en , "A logical indicator that this product is the root of an AgriProductType hierarchy. Logical true indicates it is the root." ;
-        sh:description    "A logical indicator that this product is the root of an AgriProductType hierarchy. Logical true indicates it is the root." ;
-        sh:name           "root"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:root .
-
-<https://astrea.linkeddata.es/shapes#8d5bcd972e7d929efe8c5c4d60ed2e1b>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:productType .
-
-<https://astrea.linkeddata.es/shapes#c819de49cc619f614511d046937d3882>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:nutrientName .
-
-<https://astrea.linkeddata.es/shapes#cb15d1b208f12d513843da13eb5a8d5c>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "AgriProductType" ;
+        sh:description    "This entity contains a harmonised description of a generic agricultural product type. This entity is primarily associated with the agricultural vertical and related IoT applications. The AgriProductType includes a hierarchical structure that allows product types to be grouped in a flexible way." ;
+        sh:name           "AgriProductType" ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#c819de49cc619f614511d046937d3882> , <https://astrea.linkeddata.es/shapes#3693dda63470591331f78f417dc9cacd> , <https://astrea.linkeddata.es/shapes#0c264d7145a37cb616e5b9042b449c10> , <https://astrea.linkeddata.es/shapes#cb19e1d4f9b1fa087da12b932e9137cf> ;
-        sh:targetClass    foodie:ProductNutrients .
+        sh:targetClass    fiware:AgriProductType .
 
-<https://astrea.linkeddata.es/shapes#334ff63536fa68513bf1176a2a77c193>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:safetyInstructions ;
-        sh:pattern        ".*" .
+<https://astrea.linkeddata.es/report/1963213088>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/demeter/agri/agriCommon" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
 
-<https://astrea.linkeddata.es/shapes#cdfce9c4586a4f98a89cc4adeb28f777>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:storageHandling ;
-        sh:pattern        ".*" .
+<https://astrea.linkeddata.es/report/01163512728>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://foodie-cloud.com/model/foodie" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
 
-<https://astrea.linkeddata.es/shapes#d733db293e8dea5bd935b1ec5a78c686>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:price .
-
-<https://astrea.linkeddata.es/shapes#7634f840d042163ff2aa8299bb7043d7>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:nutrientName ;
-        sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#8abaea53eba47792591975d1f22f3d06>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          iso19103:Measure ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:productQuantity .
-
-<https://astrea.linkeddata.es/shapes#d05a6b516912aaf3f7baedcd7c01b1f8>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:productCode ;
-        sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#5925dc5ee5229385034205ecff707b9e>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:anyURI ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:registerUrl ;
-        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
-
-<https://astrea.linkeddata.es/shapes#ea949a1d7d7468131cdb59f80cccbcfe>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:solventQuantity .
-
-<https://astrea.linkeddata.es/shapes#2ce18e4be99ca18a9a563f69681ec1d6>
-        a            sh:PropertyShape ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:productName .
-
-<https://astrea.linkeddata.es/shapes#237833b52440d3e831e5366297bc3f72>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          iso19103:Measure ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:solventQuantity .
-
-<https://astrea.linkeddata.es/shapes#985c7a1a8ba08964f7d3650e67472693>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#006fb2dde1f5db028c8dc041c832068c> , <https://astrea.linkeddata.es/shapes#285a282cb7b44b493b7deab15b0dba4d> , <https://astrea.linkeddata.es/shapes#ea949a1d7d7468131cdb59f80cccbcfe> ;
-        sh:targetClass    foodie:ProductPreparation .
-
-<https://astrea.linkeddata.es/shapes#c560ad0e5b4116631b5dd8dce5084197>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          iso19103:Measure ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:nutrientAmount .
-
-<https://astrea.linkeddata.es/shapes#cf4cc8cb7188c322129720fac974c1a6>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:productKind .
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#47c1e2559c61fa756b8f3c0121c37fb4>
         a                 sh:PropertyShape ;
@@ -274,90 +70,20 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:hasAgriProductTypeChildren .
 
-<https://astrea.linkeddata.es/shapes#ebc99f004d47773ac134702657bdeed7>
+<https://astrea.linkeddata.es/shapes#3bf3299c5dc29feddd0c0cca3c2a723c>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:productType ;
-        sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#6398230a511e7cef7f01493ba6aead98>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:nutrientMeasure ;
-        sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#3693dda63470591331f78f417dc9cacd>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:nutrientProduct .
-
-<https://astrea.linkeddata.es/shapes#eaf8048c422d6aac33295a6538729799>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:code .
-
-<https://astrea.linkeddata.es/shapes#fa78375fa7b7180ebd205d5d3a678829>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          iso19115-citation:ResponsibleParty ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "hasAgriProductType"@en , "Reference to the AgriProductType used/ applied." ;
+        sh:description    "Reference to the AgriProductType used/ applied." ;
+        sh:name           "hasAgriProductType"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:manufacturer .
+        sh:path           fiware:hasAgriProductType .
 
-<https://astrea.linkeddata.es/shapes#006fb2dde1f5db028c8dc041c832068c>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:safetyPeriod .
-
-<https://astrea.linkeddata.es/shapes#71391c4dd59c428848b9f6466e1650c8>
+<https://astrea.linkeddata.es/shapes#f07abf9215b6051ab31e82ee62200790>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          foodie:Product ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:nutrientProduct .
-
-<https://astrea.linkeddata.es/shapes#c00c63a1734d13aa093a8ba3d31299dc>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:safetyInstructions .
-
-<https://astrea.linkeddata.es/shapes#ba8e1b8fcfb09964556a872869d800d7>
-        a                 sh:NodeShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> ;
-        rdfs:label        "AgriProductType" ;
-        sh:description    "This entity contains a harmonised description of a generic agricultural product type. This entity is primarily associated with the agricultural vertical and related IoT applications. The AgriProductType includes a hierarchical structure that allows product types to be grouped in a flexible way." ;
-        sh:name           "AgriProductType" ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    fiware:AgriProductType .
-
-<https://astrea.linkeddata.es/shapes#6d60e47e6ae5f9718930954a3486bb48>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#096c0e70d50c2052dc106ec62a5928fa> , <https://astrea.linkeddata.es/shapes#2ce18e4be99ca18a9a563f69681ec1d6> , <https://astrea.linkeddata.es/shapes#37e742ea104967f9da32f501ccad63b7> , <https://astrea.linkeddata.es/shapes#d733db293e8dea5bd935b1ec5a78c686> , <https://astrea.linkeddata.es/shapes#8d5bcd972e7d929efe8c5c4d60ed2e1b> , <https://astrea.linkeddata.es/shapes#b7370a9404b09b09d8f745f67d63a0b9> , <https://astrea.linkeddata.es/shapes#c00c63a1734d13aa093a8ba3d31299dc> , <https://astrea.linkeddata.es/shapes#cf4cc8cb7188c322129720fac974c1a6> ;
-        sh:targetClass    foodie:Product , fiware:AgriProductType .
-
-<https://astrea.linkeddata.es/shapes#130096b8e6f78a2085222da967d7d6da>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
+        rdfs:label        "root"@en , "A logical indicator that this product is the root of an AgriProductType hierarchy. Logical true indicates it is the root." ;
+        sh:description    "A logical indicator that this product is the root of an AgriProductType hierarchy. Logical true indicates it is the root." ;
+        sh:name           "root"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           foodie:registrationCode ;
-        sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#7d5ef7a3f3f78d7a3741dc5fa59b1dde>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:ingredientName ;
-        sh:pattern        ".*" .
+        sh:path           fiware:root .

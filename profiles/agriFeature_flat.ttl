@@ -9,6 +9,7 @@
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix ns1: <http://purl.org/dc/elements/1.1/> .
+@prefix ns2: <http://www.w3.org/ns/dx/prof/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -498,6 +499,20 @@ saref4agri:Farm a owl:Class ;
         <https://w3id.org/demeter/agri/agriCommon> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriFeature.ttl> ;
     owl:versionInfo "1.0" ;
+    ns2:isProfileOf <https://w3id.org/demeter/agri/agriFeature_profile4agriFeature_act-core>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4agriFeature_af>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4foodie.ttl>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4geosparql.ttl>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4ogc_sf.rdf>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4saref4agri.ttl>,
+        <https://w3id.org/demeter/agri/agriFeature_profile4wgs84_pos> ;
+    ns2:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+        <http://inspire.ec.europa.eu/schemas/act-core/3.0>,
+        <http://inspire.ec.europa.eu/schemas/af/3.0>,
+        <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/ont/sf>,
+        <http://www.w3.org/2003/01/geo/wgs84_pos>,
+        <https://w3id.org/def/saref4agri> ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 
