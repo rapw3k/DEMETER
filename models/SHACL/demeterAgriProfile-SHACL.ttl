@@ -1,5 +1,5 @@
-@prefix :      <https://w3id.org/cybele/> .
 @prefix schema: <https://schema.org/> .
+@prefix :      <https://w3id.org/cybele/> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix saref: <https://w3id.org/saref#> .
@@ -37,7 +37,18 @@
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix iso19115-citation: <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#> .
+@prefix demeterAgriCrop: <https://w3id.org/demeter/agri/agriCrop#> .
 @prefix obo:   <http://purl.obolibrary.org/obo/> .
+
+<https://astrea.linkeddata.es/shapes#21917d7dc03734a1127f44a0c209b34a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  demeterAgriCrop: ;
+        rdfs:label        "Expected Blooming Start" ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "Expected Blooming Start" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           demeterAgriCrop:expectedBloomingStart ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
 <https://astrea.linkeddata.es/shapes#356b5c12716bacd05f9e43896197c2ae>
         a                 sh:NodeShape ;
@@ -61,6 +72,13 @@
         sh:name           "quantity"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:quantity .
+
+<https://astrea.linkeddata.es/shapes#caf836e94ba4e4071027db962df60b3f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b9e9e73c6123c8053c9666090d3e157b> , <https://astrea.linkeddata.es/shapes#456f7c6743f2b12f83abbd722d752719> , <https://astrea.linkeddata.es/shapes#414c107a93104e5ad3d18d9fa7af096a> ;
+        sh:targetClass    foodie:ProductionType .
 
 <https://astrea.linkeddata.es/shapes#aff2f8d66fa4966ac88d4395c0ed82c1>
         a                 sh:PropertyShape ;
@@ -97,6 +115,14 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:safetyPeriod .
 
+<https://astrea.linkeddata.es/shapes#41b5bb376d95ae13c5e1feffeee3a7d0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:family ;
+        sh:pattern        ".*" .
+
 <https://astrea.linkeddata.es/shapes#14a77292befb5c1f110050defb975227>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
@@ -125,6 +151,13 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:campaign .
 
+<https://astrea.linkeddata.es/shapes#c560ad0e5b4116631b5dd8dce5084197>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:nutrientAmount .
+
 <https://astrea.linkeddata.es/shapes#de2fa1af89dfd5df63d132ae742481df>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
@@ -142,19 +175,6 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    saref4agri:EatingActivitySensor .
 
-<https://astrea.linkeddata.es/shapes#684e2e899824a15b3dddb982a89db4db>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:price .
-
-<https://astrea.linkeddata.es/shapes#c560ad0e5b4116631b5dd8dce5084197>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          iso19103:Measure ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:nutrientAmount .
-
 <https://astrea.linkeddata.es/shapes#87dba1bff46eb4a192d32b25b6cda251>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
@@ -163,6 +183,27 @@
         sh:name           "refPointOfInterest"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:refPointOfInterest .
+
+<https://astrea.linkeddata.es/shapes#684e2e899824a15b3dddb982a89db4db>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:price .
+
+<https://astrea.linkeddata.es/shapes#2e882900e5f69eabc9a8cc0836b49954>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "hasAgriFertiliser"@en , "Reference to the recommended types of fertiliser suitable for growing this crop" ;
+        sh:description    "Reference to the recommended types of fertiliser suitable for growing this crop" ;
+        sh:name           "hasAgriFertiliser"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:hasAgriFertiliser .
+
+<https://astrea.linkeddata.es/shapes#c1d94919533707da4d2e988f54400b77>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:cropArea .
 
 <https://astrea.linkeddata.es/shapes#83b7f8163e2d75c668715725094b5549>
         a                 sh:PropertyShape ;
@@ -191,6 +232,13 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:status .
 
+<https://astrea.linkeddata.es/shapes#3905f69417199738ee7b95f8a221b361>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:cropSpecies .
+
 <https://astrea.linkeddata.es/shapes#18eae720f8bb0af37acdae085e61611e>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
@@ -199,6 +247,13 @@
         sh:name           "weatherType"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:weatherType .
+
+<https://astrea.linkeddata.es/shapes#fe28364e22e4346c5d98eda61092be59>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:Alert ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:zoneAlert .
 
 <https://astrea.linkeddata.es/shapes#d4e2a1e81542161626d4dc6183ac8582>
         a                 sh:PropertyShape ;
@@ -215,12 +270,12 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    sosa:Platform .
 
-<https://astrea.linkeddata.es/shapes#fe28364e22e4346c5d98eda61092be59>
-        a                 sh:PropertyShape ;
+<https://astrea.linkeddata.es/shapes#c57af3386faae1a04077383703294912>
+        a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          foodie:Alert ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:zoneAlert .
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f444727b0a1b6a2ceb7f3f5dd96f2e16> , <https://astrea.linkeddata.es/shapes#4f091202afbb5b2e8a21aa53fa07a10a> , <https://astrea.linkeddata.es/shapes#cf7e863fd9342e2ab72c18692e43a4eb> , <https://astrea.linkeddata.es/shapes#da70ad3187c2035f4ab0d283e0408deb> , <https://astrea.linkeddata.es/shapes#b8f175b6e568edf4370bf8eab7d42a31> , <https://astrea.linkeddata.es/shapes#795c744f2b69f0f3a4226675a18c617e> , <https://astrea.linkeddata.es/shapes#79a04f1d699cb1e0e48e5173b01db57f> ;
+        sh:targetClass    foodie:CropType .
 
 <https://astrea.linkeddata.es/shapes#c819de49cc619f614511d046937d3882>
         a            sh:PropertyShape ;
@@ -258,11 +313,6 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    saref4agri:Soil .
 
-<https://astrea.linkeddata.es/shapes#cd45bf2d7086935ef4cae881bbe6a0d1>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:contains .
-
 <https://astrea.linkeddata.es/shapes#6acce5441353b5b00ce499d9c8be5b2c>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
@@ -277,6 +327,11 @@
         sh:maxCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:flowAdjustment .
+
+<https://astrea.linkeddata.es/shapes#cd45bf2d7086935ef4cae881bbe6a0d1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:contains .
 
 <https://astrea.linkeddata.es/shapes#dca7312f034502b7f870ffa09ac382fc>
         a                 sh:PropertyShape ;
@@ -325,6 +380,19 @@
         sh:class          iso19103:Measure ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:maximumDose .
+
+<https://astrea.linkeddata.es/shapes#5f7afcb23c0de93ffd61c03ebea84fb7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:variety ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#536dc3aa61b372bf2f2754c0c93e90cd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:hasPlantDate .
 
 <https://astrea.linkeddata.es/shapes#9e9cb48c1174c31afed273d1a674e5ba>
         a                 sh:NodeShape ;
@@ -404,6 +472,15 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    saref:Temperature , dim:Temperature .
 
+<https://astrea.linkeddata.es/shapes#6ee324d10fab92b43dda92b5d0a730fb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "harvestingInterval"@en , "A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals: interval, description. Where interval is in the form of start date/end date --MM-DD/--MM-DD. Meaning repeat each year from this start date to this end date." ;
+        sh:description    "A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals: interval, description. Where interval is in the form of start date/end date --MM-DD/--MM-DD. Meaning repeat each year from this start date to this end date." ;
+        sh:name           "harvestingInterval"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:harvestingInterval .
+
 <https://astrea.linkeddata.es/shapes#05a34e6d68290f8adb8fb2a7b76c9bca>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
@@ -433,6 +510,13 @@
         sh:minCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:originType .
+
+<https://astrea.linkeddata.es/shapes#b9e9e73c6123c8053c9666090d3e157b>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:productionDate .
 
 <https://astrea.linkeddata.es/shapes#df4ae458b4e554c080717d9bdb48e778>
         a            sh:PropertyShape ;
@@ -481,6 +565,19 @@
         sh:name           "Watering valve"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    saref4agri:WateringValve .
+
+<https://astrea.linkeddata.es/shapes#da70ad3187c2035f4ab0d283e0408deb>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:genus .
+
+<https://astrea.linkeddata.es/shapes#b9ab2de3f52949a57c0ef816f69d3d1a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:CropType ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:cropSpecies .
 
 <https://astrea.linkeddata.es/shapes#4d3585fc8fb7d210f7cfcf9310e9382c>
         a            sh:PropertyShape ;
@@ -532,11 +629,27 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           geo:sfWithin .
 
+<https://astrea.linkeddata.es/shapes#0d55f7607aaecf6bc7ca8f35c186544b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          geo:Geometry ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:cropArea .
+
 <https://astrea.linkeddata.es/shapes#4e2656b0e2a32e06c1a88a6a3133fd04>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:description .
+
+<https://astrea.linkeddata.es/report/1514534692>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriSystem.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#7ef9556b6a447372290246838b1a4c72>
         a                 sh:PropertyShape ;
@@ -567,6 +680,14 @@
         sh:path           foodie:productType ;
         sh:pattern        ".*" .
 
+<https://astrea.linkeddata.es/shapes#4020fc6aee69ce618a3cc140a8115ae1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:species ;
+        sh:pattern        ".*" .
+
 <https://astrea.linkeddata.es/shapes#d05a6b516912aaf3f7baedcd7c01b1f8>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
@@ -585,17 +706,20 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           ssn:hasProperty .
 
+<https://astrea.linkeddata.es/shapes#7e750f50ddb63802b760f52ae361772b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> ;
+        rdfs:label        "dateIssued"@en , "The date and time the alert was issued by the alert generator in ISO8601 UTC format" ;
+        sh:description    "The date and time the alert was issued by the alert generator in ISO8601 UTC format" ;
+        sh:name           "dateIssued"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:dateIssued .
+
 <https://astrea.linkeddata.es/shapes#8a585e71e4651e6b1507422a020ccda2>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:minimumDose .
-
-<https://astrea.linkeddata.es/shapes#1ca30e946783b27b9122cc1cb2f80fac>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      common:validTo .
 
 <https://astrea.linkeddata.es/shapes#fa221ce52859ceec8f84e607ba0095ac>
         a                 sh:NodeShape ;
@@ -629,14 +753,11 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:sex .
 
-<https://astrea.linkeddata.es/shapes#7e750f50ddb63802b760f52ae361772b>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> ;
-        rdfs:label        "dateIssued"@en , "The date and time the alert was issued by the alert generator in ISO8601 UTC format" ;
-        sh:description    "The date and time the alert was issued by the alert generator in ISO8601 UTC format" ;
-        sh:name           "dateIssued"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:dateIssued .
+<https://astrea.linkeddata.es/shapes#1ca30e946783b27b9122cc1cb2f80fac>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      common:validTo .
 
 <https://astrea.linkeddata.es/shapes#1060f31bb77710178ed8201af7ef9e56>
         a                 sh:PropertyShape ;
@@ -661,6 +782,12 @@
         sh:property       <https://astrea.linkeddata.es/shapes#bbf2b80f2a4bd0c20fab127bf2ff39dd> ;
         sh:targetClass    foodie:TractorType .
 
+<https://astrea.linkeddata.es/shapes#4ca0a3bf9404370610cee7850d518b09>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:productionDate .
+
 <https://astrea.linkeddata.es/shapes#ce137a6ae8005973ea185df81f79ee37>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  ssn: ;
@@ -668,12 +795,6 @@
         sh:name           "has deployment"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           ssn:hasDeployment .
-
-<https://astrea.linkeddata.es/shapes#0d890d951f1156f470a3a61055f88e2d>
-        a            sh:PropertyShape ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:treatmentProduct .
 
 <https://astrea.linkeddata.es/shapes#f5913330dc3214b06473525103511a93>
         a                 sh:PropertyShape ;
@@ -683,6 +804,12 @@
         sh:name           "reproductiveCondition"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:reproductiveCondition .
+
+<https://astrea.linkeddata.es/shapes#0d890d951f1156f470a3a61055f88e2d>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:treatmentProduct .
 
 <https://astrea.linkeddata.es/shapes#50d46638569363bac480e3988a01f2d0>
         a                 sh:PropertyShape ;
@@ -720,7 +847,7 @@
 
 <https://astrea.linkeddata.es/shapes#d7fc215d256ad3e5c4dd33d2c2f1998e>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> , <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
         rdfs:label        "atmosphericPressure"@en , "The atmospheric pressure observed measured in Hecto Pascals" ;
         sh:description    "The atmospheric pressure observed measured in Hecto Pascals" ;
         sh:name           "atmosphericPressure"@en ;
@@ -772,6 +899,11 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:motionSpeed .
 
+<https://astrea.linkeddata.es/shapes#36cbea6e92ac4e1e754724db3d4cb574>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      obo:TAXRANK_1000000 .
+
 <https://astrea.linkeddata.es/shapes#b44fb04a68de358717a4bd8f19dcc4e0>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  saref: ;
@@ -791,6 +923,13 @@
         sh:class     saref:Device ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:isMeasuredByDevice .
+
+<https://astrea.linkeddata.es/shapes#c16c83e6f4dbbaee2429b1be7f802cb2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:productionAmount .
 
 <https://astrea.linkeddata.es/shapes#145bfabbde83654339c4ccec491f80ac>
         a                 sh:PropertyShape ;
@@ -843,6 +982,13 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:formOfTreatment .
 
+<https://astrea.linkeddata.es/shapes#b360303278847d5ec14bd1af6b765bb6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e8ce284036033c966b9722d835b4029e> , <https://astrea.linkeddata.es/shapes#462450f3abc9cf4b91404bbb742bed03> , <https://astrea.linkeddata.es/shapes#c1d94919533707da4d2e988f54400b77> , <https://astrea.linkeddata.es/shapes#cdad82710db50439354480e1ec4d6365> , <https://astrea.linkeddata.es/shapes#3905f69417199738ee7b95f8a221b361> , <https://astrea.linkeddata.es/shapes#2706167f0ebae7dce7551be561fd997d> ;
+        sh:targetClass    foodie:CropSpecies .
+
 <https://astrea.linkeddata.es/shapes#95a1939989677b5cd3aacdd30d3d72a0>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
@@ -870,6 +1016,22 @@
         sh:name           "Alert" ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    fiware:Alert .
+
+<https://astrea.linkeddata.es/shapes#456f7c6743f2b12f83abbd722d752719>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:variety .
+
+<https://astrea.linkeddata.es/shapes#77e23c52096db830b65258a7a60f8cb1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "plantingFrom"@en , "A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals: interval, description. Where interval is in the form of start date/end date --MM-DD/--MM-DD. Meaning repeat each year from this start date to this end date." ;
+        sh:description    "A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals: interval, description. Where interval is in the form of start date/end date --MM-DD/--MM-DD. Meaning repeat each year from this start date to this end date." ;
+        sh:name           "plantingFrom"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:plantingFrom .
 
 <https://astrea.linkeddata.es/shapes#2813779a0ca8cf3e557b859bc889a0b8>
         a                 sh:PropertyShape ;
@@ -922,13 +1084,6 @@
         sh:path           foodie:livestockNumber ;
         sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
 
-<https://astrea.linkeddata.es/shapes#237833b52440d3e831e5366297bc3f72>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          iso19103:Measure ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:solventQuantity .
-
 <https://astrea.linkeddata.es/shapes#7596737bf4a6921eb418db1a46b9cc2e>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  saref4agri: ;
@@ -939,11 +1094,26 @@
         sh:property       <https://astrea.linkeddata.es/shapes#532c96c480f991d2378c8f44624b10f6> , <https://astrea.linkeddata.es/shapes#cd45bf2d7086935ef4cae881bbe6a0d1> ;
         sh:targetClass    af-inspire:Holding , fiware:AgriFarm , saref4agri:Farm .
 
+<https://astrea.linkeddata.es/shapes#237833b52440d3e831e5366297bc3f72>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:solventQuantity .
+
 <https://astrea.linkeddata.es/shapes#d79ae02ab06d1fd501d1694f7aff03c2>
         a            sh:PropertyShape ;
         sh:minCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:period .
+
+<https://astrea.linkeddata.es/shapes#130096b8e6f78a2085222da967d7d6da>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:registrationCode ;
+        sh:pattern        ".*" .
 
 <https://astrea.linkeddata.es/shapes#eab2ccb77e56d3ad473395331d814f3d>
         a                 sh:NodeShape ;
@@ -954,13 +1124,14 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    sf:MultiPolygon .
 
-<https://astrea.linkeddata.es/shapes#130096b8e6f78a2085222da967d7d6da>
+<https://astrea.linkeddata.es/shapes#9aee027a0f666f2b642a3582438cf672>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:registrationCode ;
-        sh:pattern        ".*" .
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "hasAgriPest"@en , "Reference to the pests known to attack this crop." ;
+        sh:description    "Reference to the pests known to attack this crop." ;
+        sh:name           "hasAgriPest"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:hasAgriPest .
 
 <https://astrea.linkeddata.es/shapes#38b3a7c002109eb68615c0bab5480536>
         a                 sh:PropertyShape ;
@@ -1020,11 +1191,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:analysisDate .
 
-<https://astrea.linkeddata.es/shapes#67887954de7f456192f7a2bbf8e8241c>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foaf:member .
-
 <https://astrea.linkeddata.es/shapes#2ce18e4be99ca18a9a563f69681ec1d6>
         a            sh:PropertyShape ;
         sh:minCount  "1"^^xsd:int ;
@@ -1046,6 +1212,11 @@
         sh:class          foodie:PropertyTypeValue ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:propertyType .
+
+<https://astrea.linkeddata.es/shapes#67887954de7f456192f7a2bbf8e8241c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foaf:member .
 
 <https://astrea.linkeddata.es/shapes#c4d8a24267a0f8f8336c2c458d792f44>
         a                 sh:PropertyShape ;
@@ -1074,7 +1245,7 @@
 
 <https://astrea.linkeddata.es/shapes#773ee1c13e884ec4f5e6535d912e7461>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
         rdfs:label        "Well-known Text Literal"@en , "A Well-known Text serialization of a geometry object."@en ;
         sh:description    "A Well-known Text serialization of a geometry object."@en ;
         sh:name           "Well-known Text Literal"@en ;
@@ -1183,6 +1354,12 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:holdingZone .
 
+<https://astrea.linkeddata.es/shapes#414c107a93104e5ad3d18d9fa7af096a>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:productionAmount .
+
 <https://astrea.linkeddata.es/shapes#c7440d1726af17e71d4486a5f43e978a>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
@@ -1208,7 +1385,7 @@
 
 <https://astrea.linkeddata.es/shapes#a15cdb5fb0143770c399bc65f0e94507>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
         rdfs:label        "hasDevice"@en , "Reference to the IoT devices associated with this [entity] i.e. sensors, controls." ;
         sh:description    "Reference to the IoT devices associated with this [entity] i.e. sensors, controls." ;
         sh:name           "hasDevice"@en ;
@@ -1313,6 +1490,15 @@
         sh:path           common:validFrom ;
         sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
+<https://astrea.linkeddata.es/report/355507722>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProperty.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
 <https://astrea.linkeddata.es/shapes#689dff520b7934561f2107f67cb3637e>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  saref4agri: ;
@@ -1335,6 +1521,13 @@
         sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
         sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
         sh:qualifiedValueShape  [ sh:class  saref:UnitOfMeasure ] .
+
+<https://astrea.linkeddata.es/shapes#50453204a775bc64c92ccf0e8a0315c0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:ProductionType ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:production .
 
 <https://astrea.linkeddata.es/shapes#0c264d7145a37cb616e5b9042b449c10>
         a            sh:PropertyShape ;
@@ -1361,13 +1554,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      prov:generatedAtTime .
 
-<https://astrea.linkeddata.es/shapes#34d909bed8f3694892659ca769af8455>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:creationDateTime .
-
 <https://astrea.linkeddata.es/shapes#c058a40bb679abdf650145e1bdd5148e>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  ssn: ;
@@ -1382,6 +1568,19 @@
         sh:minCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      geo:hasGeometry .
+
+<https://astrea.linkeddata.es/shapes#4f091202afbb5b2e8a21aa53fa07a10a>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:species .
+
+<https://astrea.linkeddata.es/shapes#34d909bed8f3694892659ca769af8455>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:creationDateTime .
 
 <https://astrea.linkeddata.es/shapes#1dc19786e03c31a4408854a399076c70>
         a                 sh:PropertyShape ;
@@ -1422,12 +1621,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:code .
 
-<https://astrea.linkeddata.es/shapes#a6deb728acb85fcb95236e8903c6ed1c>
-        a            sh:PropertyShape ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:evidenceParty .
-
 <https://astrea.linkeddata.es/shapes#86ef91578085052efc05fc7027269752>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
@@ -1437,10 +1630,11 @@
         sh:path           foodie:livestockType ;
         sh:pattern        ".*" .
 
-<https://astrea.linkeddata.es/shapes#c7275863adeb16160c5d5b532ce3542d>
+<https://astrea.linkeddata.es/shapes#a6deb728acb85fcb95236e8903c6ed1c>
         a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:hasBirthDate .
+        sh:path      foodie:evidenceParty .
 
 <https://astrea.linkeddata.es/shapes#50fb204bdd3a0e1876233e9e71c263f8>
         a                 sh:NodeShape ;
@@ -1448,6 +1642,11 @@
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#100f1a0fde90405f1c26850ca86d085e> , <https://astrea.linkeddata.es/shapes#9698dc4a8537d2e9cd91560f11e157da> , <https://astrea.linkeddata.es/shapes#3feb00f80e5466881b35881ee8cd88c4> , <https://astrea.linkeddata.es/shapes#a742b2c3b67f7817094c3e8d8100531d> , <https://astrea.linkeddata.es/shapes#4c8e9f5c93b51026ee7925f183a5ace5> , <https://astrea.linkeddata.es/shapes#7d1250b1e972e6db18e8c8490eb8728a> , <https://astrea.linkeddata.es/shapes#4e2656b0e2a32e06c1a88a6a3133fd04> , <https://astrea.linkeddata.es/shapes#7656edcbaa7adbdb325bfe2856838bc6> ;
         sh:targetClass    foodie:Plot .
+
+<https://astrea.linkeddata.es/shapes#c7275863adeb16160c5d5b532ce3542d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:hasBirthDate .
 
 <https://astrea.linkeddata.es/shapes#5ccfee24676a7ba68d9a9bfad49c79fd>
         a                 sh:PropertyShape ;
@@ -1496,14 +1695,31 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:entityVersion .
 
+<https://astrea.linkeddata.es/shapes#fb797affae63524e98629e4ab362199b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "wateringFrequency"@en , "A description of the recommended watering schedule. A choice from an enumerated list. One of: daily, weekly, biweekly, monthly, onDemand, other" ;
+        sh:description    "A description of the recommended watering schedule. A choice from an enumerated list. One of: daily, weekly, biweekly, monthly, onDemand, other" ;
+        sh:name           "wateringFrequency"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:wateringFrequency .
+
 <https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  wgs84_pos: ;
         rdfs:label        "Point"@en ;
-        sh:description    " \nUniquely identified by lat/long/alt. i.e.\n\nspaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),\n  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).\n\nsameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).\n  " , "A point, typically described using a coordinate system relative to Earth, such as WGS84." ;
+        sh:description    "A point, typically described using a coordinate system relative to Earth, such as WGS84." , " \nUniquely identified by lat/long/alt. i.e.\n\nspaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),\n  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).\n\nsameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).\n  " ;
         sh:name           "Point"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    wgs84_pos:Point .
+
+<https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "member" ;
+        sh:name           "member" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:member .
 
 <https://astrea.linkeddata.es/shapes#559f9e94d95d585dd6e2a884152790c2>
         a                 sh:PropertyShape ;
@@ -1515,14 +1731,6 @@
         sh:nodeKind       sh:Literal ;
         sh:path           saref4agri:hasDeathDate ;
         sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
-
-<https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  foaf: ;
-        rdfs:label        "member" ;
-        sh:name           "member" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foaf:member .
 
 <https://astrea.linkeddata.es/shapes#bbde507bba5de728f49d31128c942ebe>
         a                 sh:PropertyShape ;
@@ -1588,7 +1796,7 @@
 
 <https://astrea.linkeddata.es/shapes#db2cab4dd634c22d6152f7a596a05e6e>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
         rdfs:label        "location"@en , "The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty" ;
         sh:description    "The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty" ;
         sh:name           "location"@en ;
@@ -1638,11 +1846,14 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:agroVocConcept .
 
-<https://astrea.linkeddata.es/shapes#6827c8fb25e9ec612eb5dd7f871ae3dd>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:treatmentPlanCode .
+<https://astrea.linkeddata.es/report/0206434858>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProduct.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#010e59cdc3cb50b4531a6c95ee5ca209>
         a                 sh:NodeShape ;
@@ -1661,6 +1872,12 @@
         sh:name           "is controlled by device"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           saref:isControlledByDevice .
+
+<https://astrea.linkeddata.es/shapes#6827c8fb25e9ec612eb5dd7f871ae3dd>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:treatmentPlanCode .
 
 <https://astrea.linkeddata.es/shapes#aa5038b3045842c3467135022934c084>
         a                 sh:NodeShape ;
@@ -1713,7 +1930,7 @@
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#8a585e71e4651e6b1507422a020ccda2> , <https://astrea.linkeddata.es/shapes#32100c0091e3d7fe8fe08f3ed1079e27> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#32100c0091e3d7fe8fe08f3ed1079e27> , <https://astrea.linkeddata.es/shapes#8a585e71e4651e6b1507422a020ccda2> ;
         sh:targetClass    foodie:DoseUnit .
 
 <https://astrea.linkeddata.es/shapes#b7370a9404b09b09d8f745f67d63a0b9>
@@ -1773,11 +1990,26 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    sf:MultiSurface .
 
+<https://astrea.linkeddata.es/report/908222557>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriFeature.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
 <https://astrea.linkeddata.es/shapes#6354aa33cca2c364c92d3fbafa4a1079>
         a            sh:PropertyShape ;
         sh:datatype  xsd:string ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref4agri:hasName .
+
+<https://astrea.linkeddata.es/shapes#e8ce284036033c966b9722d835b4029e>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      common:validTo .
 
 <https://astrea.linkeddata.es/shapes#39f03359b20315c9711b1ea426ca3462>
         a                 sh:PropertyShape ;
@@ -1804,13 +2036,6 @@
         sh:property       <https://astrea.linkeddata.es/shapes#e4673daae41f54637adfa7d0c0732aa5> , <https://astrea.linkeddata.es/shapes#458266b84934788b6204c5fad12ee12a> , <https://astrea.linkeddata.es/shapes#5da7eba205564f9e693acf7efa987488> , <https://astrea.linkeddata.es/shapes#684e2e899824a15b3dddb982a89db4db> , <https://astrea.linkeddata.es/shapes#6fa26ea5f24512aa61a72750510f5d63> , <https://astrea.linkeddata.es/shapes#5e71668a8d30e6f1e01a76bfbf0dde7a> , <https://astrea.linkeddata.es/shapes#a9c88c1050fd17a8a7428d875d176d0f> , <https://astrea.linkeddata.es/shapes#b86ca0ef9cc650a2c5cb81924e2df903> , <https://astrea.linkeddata.es/shapes#0d890d951f1156f470a3a61055f88e2d> , <https://astrea.linkeddata.es/shapes#4d3585fc8fb7d210f7cfcf9310e9382c> , <https://astrea.linkeddata.es/shapes#07c5c3447bba509cbb5dd9bd8002f577> ;
         sh:targetClass    foodie:Treatment , fiware:AgriParcelOperation .
 
-<https://astrea.linkeddata.es/shapes#ffa228fbe9acf17ea0b9d1fa1bf85040>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      geo:hasGeometry .
-
 <https://astrea.linkeddata.es/shapes#d702899e61acd0020cb11296353eec9d>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
@@ -1833,6 +2058,13 @@
         sh:name           "has subsystem"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           ssn:hasSubSystem .
+
+<https://astrea.linkeddata.es/shapes#ffa228fbe9acf17ea0b9d1fa1bf85040>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      geo:hasGeometry .
 
 <https://astrea.linkeddata.es/shapes#1284343ceb04f5321bf8f1c7f6b0948e>
         a                 sh:PropertyShape ;
@@ -1866,6 +2098,13 @@
         sh:path           foodie:treatmentPlanCode ;
         sh:pattern        ".*" .
 
+<https://astrea.linkeddata.es/shapes#cdad82710db50439354480e1ec4d6365>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      common:validFrom .
+
 <https://astrea.linkeddata.es/shapes#46d9477ef78e6b291e5febf12c3870de>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  saref4agri: ;
@@ -1876,12 +2115,6 @@
         sh:property       <https://astrea.linkeddata.es/shapes#ff869b76f854e49f3612293744e8246e> , <https://astrea.linkeddata.es/shapes#36d76706c0194cfd3fb18f3d1b78006f> , <https://astrea.linkeddata.es/shapes#13b3c15f87ac1698f3dcd55cd3874ff4> ;
         sh:targetClass    saref4agri:AnimalGroup .
 
-<https://astrea.linkeddata.es/shapes#087fbed8781859126a644978af69eb02>
-        a            sh:PropertyShape ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:type .
-
 <https://astrea.linkeddata.es/shapes#4c85c05b6b5a18f802e2e69a01e5ae55>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
@@ -1889,9 +2122,15 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:period .
 
+<https://astrea.linkeddata.es/shapes#087fbed8781859126a644978af69eb02>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:type .
+
 <https://astrea.linkeddata.es/shapes#3bf3299c5dc29feddd0c0cca3c2a723c>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> ;
         rdfs:label        "hasAgriProductType"@en , "Reference to the AgriProductType used/ applied." ;
         sh:description    "Reference to the AgriProductType used/ applied." ;
         sh:name           "hasAgriProductType"@en ;
@@ -1973,11 +2212,19 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:operator .
 
-<https://astrea.linkeddata.es/shapes#096c0e70d50c2052dc106ec62a5928fa>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:storageHandling .
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#b86ca0ef9cc650a2c5cb81924e2df903> , <https://astrea.linkeddata.es/shapes#d4e2a1e81542161626d4dc6183ac8582> , <https://astrea.linkeddata.es/shapes#1c20aeaf56b91e5b9b6adf8be31fd11d> , <https://astrea.linkeddata.es/shapes#8866e3f2019fcadc04bd60737397cedf> , <https://astrea.linkeddata.es/shapes#a74ec6533109f056675b61ba243f5dd9> , <https://astrea.linkeddata.es/shapes#77e23c52096db830b65258a7a60f8cb1> , <https://astrea.linkeddata.es/shapes#f5913330dc3214b06473525103511a93> , <https://astrea.linkeddata.es/shapes#0e392f6d04db1d8e1f5bc645b67eaf44> , <https://astrea.linkeddata.es/shapes#0424178b00b48cf1e0659c49e2c59076> , <https://astrea.linkeddata.es/shapes#109937f9262d82fe198dd158384fbdda> , <https://astrea.linkeddata.es/shapes#2ded8249c845505a3e9eea3925b38df1> , <https://astrea.linkeddata.es/shapes#ccbf8e4b94ec06f9b0b70ae80ab74e2c> , <https://astrea.linkeddata.es/shapes#17df36668c68a2b8ece07442c26e334b> , <https://astrea.linkeddata.es/shapes#25c6f4326d87e2068d4482b5630f4e25> , <https://astrea.linkeddata.es/shapes#e8991cd7864fdd37aeb8413270a50313> , <https://astrea.linkeddata.es/shapes#9e81a8547fd8cabc79752e243c8d2b67> , <https://astrea.linkeddata.es/shapes#da443a0a889f835728e2b9778c537399> , <https://astrea.linkeddata.es/shapes#7d31e878918619ad12be68dcc0363395> , <https://astrea.linkeddata.es/shapes#7e3adb8d51a59ba87ae0d547fa88984d> , <https://astrea.linkeddata.es/shapes#ac2d4132e2d16c28b67d59b2419f2f0c> , <https://astrea.linkeddata.es/shapes#58f226d8030285c0185e857469910d61> , <https://astrea.linkeddata.es/shapes#237833b52440d3e831e5366297bc3f72> , <https://astrea.linkeddata.es/shapes#ea758cf93a4a6fcb568c859d464061d1> , <https://astrea.linkeddata.es/shapes#83b7f8163e2d75c668715725094b5549> , <https://astrea.linkeddata.es/shapes#5e7b73293b58ba1d710937f5dbe29359> , <https://astrea.linkeddata.es/shapes#47a83b960f28fcca71252fa9443ecbc9> , <https://astrea.linkeddata.es/shapes#5aa5fad1e4088b335f1282ec70d70d42> , <https://astrea.linkeddata.es/shapes#9b924293881f2d5e050aebe0296bcc65> , <https://astrea.linkeddata.es/shapes#71391c4dd59c428848b9f6466e1650c8> , <https://astrea.linkeddata.es/shapes#e29dbde7c1f41aad2f20eccfcec14058> , <https://astrea.linkeddata.es/shapes#d6ba2ad06ee60e9831df14dfb16ec28f> , <https://astrea.linkeddata.es/shapes#1f4b716b8f6628e9c868e13eec22b16a> , <https://astrea.linkeddata.es/shapes#7832bd54f9465f1bcf59cc4aae49c834> , <https://astrea.linkeddata.es/shapes#490b032c49a38f742c8739b3df447a8e> , <https://astrea.linkeddata.es/shapes#f2457c74a6bad939d7352214edada504> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> , <https://astrea.linkeddata.es/shapes#21e87ae54ee2f9e68cf4b18b30541c13> , <https://astrea.linkeddata.es/shapes#46aaaec0bd6ff6e19e55a4801decd885> , <https://astrea.linkeddata.es/shapes#130096b8e6f78a2085222da967d7d6da> , <https://astrea.linkeddata.es/shapes#ac1f1df7f42714c31f2630f3e028cb0b> , <https://astrea.linkeddata.es/shapes#0d890d951f1156f470a3a61055f88e2d> , <https://astrea.linkeddata.es/shapes#c7440d1726af17e71d4486a5f43e978a> , <https://astrea.linkeddata.es/shapes#a0152b516031df77da267c5973fceb3d> , <https://astrea.linkeddata.es/shapes#e59eaa45bd97e25b0903c266b38a5d1f> , <https://astrea.linkeddata.es/shapes#b8f175b6e568edf4370bf8eab7d42a31> , <https://astrea.linkeddata.es/shapes#95a1939989677b5cd3aacdd30d3d72a0> , <https://astrea.linkeddata.es/shapes#c3cc8ba8b69f980217340a99151c2ee2> , <https://astrea.linkeddata.es/shapes#d7fc215d256ad3e5c4dd33d2c2f1998e> , <https://astrea.linkeddata.es/shapes#b433cf25596f5f31234e51e24868858d> , <https://astrea.linkeddata.es/shapes#3484b89c3e68bd0514ee9fc1c907e070> , <https://astrea.linkeddata.es/shapes#f196d50238714ed345057b23b1b1272c> , <https://astrea.linkeddata.es/shapes#6b2e03dac56c60303e15fac566cda4a6> , <https://astrea.linkeddata.es/shapes#458266b84934788b6204c5fad12ee12a> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#8c03923175c5716526c38c4d357fd6fe> , <https://astrea.linkeddata.es/shapes#f233a7a2dcd1cd33d7e3ee36758e88f3> , <https://astrea.linkeddata.es/shapes#4c85c05b6b5a18f802e2e69a01e5ae55> , <https://astrea.linkeddata.es/shapes#1a3d7a1ed18965087c91359834d60df4> , <https://astrea.linkeddata.es/shapes#f8d39a8571f65103be4266433a282cd5> , <https://astrea.linkeddata.es/shapes#561d7681316bbbc7f832f6f814fa96dd> , <https://astrea.linkeddata.es/shapes#ef4ee09775a4ed717799816812fb2efc> , <https://astrea.linkeddata.es/shapes#e6df4e017e0bb9438dcf15f6a4c5dfa9> , <https://astrea.linkeddata.es/shapes#4b0de082e19a0eddd94cfeeef929fe10> , <https://astrea.linkeddata.es/shapes#00ddfb7acd6e0e403b1d92211277f4fb> , <https://astrea.linkeddata.es/shapes#38a7f272cc51d62974ed68d2627832e4> , <https://astrea.linkeddata.es/shapes#d5106b5a978d899fb1d6d2c91a36ddfa> , <https://astrea.linkeddata.es/shapes#fd810372de06150f2b7a95a1dffd0447> , <https://astrea.linkeddata.es/shapes#e99d601b76a7db1b1132902175fa4f7e> , <https://astrea.linkeddata.es/shapes#3693dda63470591331f78f417dc9cacd> , <https://astrea.linkeddata.es/shapes#1542e8e8bcfbfc73c93f9ea3bc52506b> , <https://astrea.linkeddata.es/shapes#a6ea61114ce41b9bec42319b4236e2df> , <https://astrea.linkeddata.es/shapes#60ada34585494ace4bd506b78949a46c> , <https://astrea.linkeddata.es/shapes#e4673daae41f54637adfa7d0c0732aa5> , <https://astrea.linkeddata.es/shapes#5f126655bae82556cee93619e59685a6> , <https://astrea.linkeddata.es/shapes#0f86872d25ea266df5fbb15547fd49c8> , <https://astrea.linkeddata.es/shapes#911b85a41f3a3ad7701eb24d15f10cdb> , <https://astrea.linkeddata.es/shapes#d608b201e320443adb2b29602d3dce02> , <https://astrea.linkeddata.es/shapes#145bfabbde83654339c4ccec491f80ac> , <https://astrea.linkeddata.es/shapes#eab2ccb77e56d3ad473395331d814f3d> , <https://astrea.linkeddata.es/shapes#7596737bf4a6921eb418db1a46b9cc2e> , <https://astrea.linkeddata.es/shapes#d0e6ba474f39cef246b37ead110998fb> , <https://astrea.linkeddata.es/shapes#577857b06622ab1523b5e75d28f19b43> , <https://astrea.linkeddata.es/shapes#92ec9f4a340443ce661beb8dfaf279a7> , <https://astrea.linkeddata.es/shapes#329bfecdebde7336eeaf10a1bf94fcc9> , <https://astrea.linkeddata.es/shapes#795c744f2b69f0f3a4226675a18c617e> , <https://astrea.linkeddata.es/shapes#38b3a7c002109eb68615c0bab5480536> , <https://astrea.linkeddata.es/shapes#5da7eba205564f9e693acf7efa987488> , <https://astrea.linkeddata.es/shapes#7079166d64f203e3c5ada3ecea14c911> , <https://astrea.linkeddata.es/shapes#daeed9fa59dbe88693b3b778f632e014> , <https://astrea.linkeddata.es/shapes#14306bd799bd4ee4de065efc914e4a55> , <https://astrea.linkeddata.es/shapes#8c6ff4b7d0cf7d6348f602ebad111cef> , <https://astrea.linkeddata.es/shapes#c8592f59b9f1f31ba0fc9d468fd8eb93> , <https://astrea.linkeddata.es/shapes#a6deb728acb85fcb95236e8903c6ed1c> , <https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8> , <https://astrea.linkeddata.es/shapes#c1d94919533707da4d2e988f54400b77> , <https://astrea.linkeddata.es/shapes#dca7312f034502b7f870ffa09ac382fc> , <https://astrea.linkeddata.es/shapes#4f8071aa4a6098de3e1e207a123dda40> , <https://astrea.linkeddata.es/shapes#6be1d03efca12a71da4b30a5b4a343b2> , <https://astrea.linkeddata.es/shapes#fe28364e22e4346c5d98eda61092be59> , <https://astrea.linkeddata.es/shapes#7ba72b4487d0800caff6564aeaac2fe4> , <https://astrea.linkeddata.es/shapes#c35dc4a09d15756696a1345c58857956> , <https://astrea.linkeddata.es/shapes#ac9b01412b3f8f24a9c3c7a9428ef6f2> , <https://astrea.linkeddata.es/shapes#1234d42ca03d2db81542faa103549017> , <https://astrea.linkeddata.es/shapes#82a00e75812e0d6634a7777fd7ca6929> , <https://astrea.linkeddata.es/shapes#78b37b13428e58c8824cde0844043b7e> , <https://astrea.linkeddata.es/shapes#4f091202afbb5b2e8a21aa53fa07a10a> , <https://astrea.linkeddata.es/shapes#035bdcbebf80f84685448088ea1770d6> , <https://astrea.linkeddata.es/shapes#c00c63a1734d13aa093a8ba3d31299dc> , <https://astrea.linkeddata.es/shapes#8833e158640b2c4a21f6ee942cc316d3> , <https://astrea.linkeddata.es/shapes#cb15d1b208f12d513843da13eb5a8d5c> , <https://astrea.linkeddata.es/shapes#f4d90415f5e9d6fcd19af24755bd434e> , <https://astrea.linkeddata.es/shapes#34772c2940cb10460f0219f508e35699> , <https://astrea.linkeddata.es/shapes#f3b164702d80c975502f0e4ba5584f76> , <https://astrea.linkeddata.es/shapes#798f5efed7706e1ab95b8bff19b57ed8> , <https://astrea.linkeddata.es/shapes#18a0f7a52e8ad364133544a8f8068e04> , <https://astrea.linkeddata.es/shapes#414c107a93104e5ad3d18d9fa7af096a> , <https://astrea.linkeddata.es/shapes#d5cfa76e1be0f91bfc1d3c44ef0b8ae0> , <https://astrea.linkeddata.es/shapes#e68dc0035ffd6a2cad9c974ea71bb853> , <https://astrea.linkeddata.es/shapes#cec13f824650b91401ee4d9e7051141d> , <https://astrea.linkeddata.es/shapes#e8ce284036033c966b9722d835b4029e> , <https://astrea.linkeddata.es/shapes#8a585e71e4651e6b1507422a020ccda2> , <https://astrea.linkeddata.es/shapes#be4b194476cee0124b7ee49362b53877> , <https://astrea.linkeddata.es/shapes#ba8e1b8fcfb09964556a872869d800d7> , <https://astrea.linkeddata.es/shapes#b44fb04a68de358717a4bd8f19dcc4e0> , <https://astrea.linkeddata.es/shapes#21fc777093a942aa6c153efcb1be7a5d> , <https://astrea.linkeddata.es/shapes#7e750f50ddb63802b760f52ae361772b> , <https://astrea.linkeddata.es/shapes#5e107ddaf9952f67337910379c4e2082> , <https://astrea.linkeddata.es/shapes#61831577bcbf4588767fc1545d94c2bd> , <https://astrea.linkeddata.es/shapes#14a77292befb5c1f110050defb975227> , <https://astrea.linkeddata.es/shapes#0f76c8d028abcb73eda615acb7f76c30> , <https://astrea.linkeddata.es/shapes#6802eec3913acf2a6c9cb7317522b366> , <https://astrea.linkeddata.es/shapes#cd9445c64e106b75337259da0347cea3> , <https://astrea.linkeddata.es/shapes#47165499a8631177d20464939561e0f6> , <https://astrea.linkeddata.es/shapes#6fa26ea5f24512aa61a72750510f5d63> , <https://astrea.linkeddata.es/shapes#497a2f9ed31a7d70fdbf4108e3bd274c> , <https://astrea.linkeddata.es/shapes#e2931e7b6c2eb60ddface78eccba4bd9> , <https://astrea.linkeddata.es/shapes#bf3bc9f168c46a0a3e0fe3c379bbe0d7> , <https://astrea.linkeddata.es/shapes#80b6412cec973e549d02f8f742992180> , <https://astrea.linkeddata.es/shapes#87dba1bff46eb4a192d32b25b6cda251> , <https://astrea.linkeddata.es/shapes#c186b1044a6b8571d5484d0488dd2d7b> , <https://astrea.linkeddata.es/shapes#e6681742cb01e8ceff3eff7cbeac73bf> , <https://astrea.linkeddata.es/shapes#ec92439b303570f321576b28135fe664> , <https://astrea.linkeddata.es/shapes#9fef3b114595ed4aa13d030667f0542b> , <https://astrea.linkeddata.es/shapes#2ce18e4be99ca18a9a563f69681ec1d6> , <https://astrea.linkeddata.es/shapes#fa78375fa7b7180ebd205d5d3a678829> , <https://astrea.linkeddata.es/shapes#bbde507bba5de728f49d31128c942ebe> , <https://astrea.linkeddata.es/shapes#88868d8c55ef1f8660fa5427e6fd63d2> , <https://astrea.linkeddata.es/shapes#8e7c33017e1bf55f1b058619d9a34413> , <https://astrea.linkeddata.es/shapes#151ba0c6cf4537f9f4b8420a05aca6fb> , <https://astrea.linkeddata.es/shapes#c57af3386faae1a04077383703294912> , <https://astrea.linkeddata.es/shapes#05a34e6d68290f8adb8fb2a7b76c9bca> , <https://astrea.linkeddata.es/shapes#3d19b81373920988b7721a7e5117c975> , <https://astrea.linkeddata.es/shapes#65c715d5d2f2d31d44acef9806b5664e> , <https://astrea.linkeddata.es/shapes#50d46638569363bac480e3988a01f2d0> , <https://astrea.linkeddata.es/shapes#0d0e1e3919fb65b3d6f0265743ac12a8> , <https://astrea.linkeddata.es/shapes#ff869b76f854e49f3612293744e8246e> , <https://astrea.linkeddata.es/shapes#874ca680d48398aba67aa7c89d44b614> , <https://astrea.linkeddata.es/shapes#fa221ce52859ceec8f84e607ba0095ac> , <https://astrea.linkeddata.es/shapes#36d76706c0194cfd3fb18f3d1b78006f> , <https://astrea.linkeddata.es/shapes#4e2656b0e2a32e06c1a88a6a3133fd04> , <https://astrea.linkeddata.es/shapes#5a9f81b74499b076fed903175aa3fd1d> , <https://astrea.linkeddata.es/shapes#5e71668a8d30e6f1e01a76bfbf0dde7a> , <https://astrea.linkeddata.es/shapes#456f7c6743f2b12f83abbd722d752719> , <https://astrea.linkeddata.es/shapes#780e177fb581897efc24ae85d3dd5a91> , <https://astrea.linkeddata.es/shapes#5ccfee24676a7ba68d9a9bfad49c79fd> , <https://astrea.linkeddata.es/shapes#e8ed999c2de445b957dc5a746142c8c9> , <https://astrea.linkeddata.es/shapes#2cb52b35171814f4adb794b594d1f243> , <https://astrea.linkeddata.es/shapes#24af3f2b31afb96bdb50576bc94012b8> , <https://astrea.linkeddata.es/shapes#b750c456a22cd04db1ce4147d857b041> , <https://astrea.linkeddata.es/shapes#95c322184613a1662d48949c2a46829e> , <https://astrea.linkeddata.es/shapes#3f0ead2ed8b8c63be98bcddf16930322> , <https://astrea.linkeddata.es/shapes#3348f96caa15fb50d86f0a2231585642> , <https://astrea.linkeddata.es/shapes#334ff63536fa68513bf1176a2a77c193> , <https://astrea.linkeddata.es/shapes#0799c039eedfbe1358b3ecdb305f4f0f> , <https://astrea.linkeddata.es/shapes#7622216c02606402eedf4c3ab4d0ead0> , <https://astrea.linkeddata.es/shapes#17eb86688ae773af72274df34a49fd0c> , <https://astrea.linkeddata.es/shapes#5f7afcb23c0de93ffd61c03ebea84fb7> , <https://astrea.linkeddata.es/shapes#46d9477ef78e6b291e5febf12c3870de> , <https://astrea.linkeddata.es/shapes#82da3f9677527f027e33a454c4a094d8> , <https://astrea.linkeddata.es/shapes#14f4740cb2289a2aa9391d4da4a86b24> , <https://astrea.linkeddata.es/shapes#43e06f22e93661c0366559118b6d0477> , <https://astrea.linkeddata.es/shapes#f6b42c80f4c9c46b5e5254095d073516> , <https://astrea.linkeddata.es/shapes#a67bc63ef9d2e2c81c529fcf31a56c93> , <https://astrea.linkeddata.es/shapes#45af5f745969881725f85e8f6325a462> , <https://astrea.linkeddata.es/shapes#1920818798ec12e24e6184913797a62b> , <https://astrea.linkeddata.es/shapes#df4ae458b4e554c080717d9bdb48e778> , <https://astrea.linkeddata.es/shapes#9567ae971b10ed8610f8f23ed925b580> , <https://astrea.linkeddata.es/shapes#25c3adb40ac09192c2b49de35c64abad> , <https://astrea.linkeddata.es/shapes#b9f782f84471e60ee95cbd1c340c4cf5> , <https://astrea.linkeddata.es/shapes#79a04f1d699cb1e0e48e5173b01db57f> , <https://astrea.linkeddata.es/shapes#26c5ac60005e9177ec24b4fc1d3218f3> , <https://astrea.linkeddata.es/shapes#c3abec14372379675b0e3b2033b73a7c> , <https://astrea.linkeddata.es/shapes#c0ad8a083203dc9b50e039f44e41d17e> , <https://astrea.linkeddata.es/shapes#96c5445ce9eb6c581ca247628a9b99fa> , <https://astrea.linkeddata.es/shapes#cf8e8c1a7ff0ae02ce4607506f90ab6c> , <https://astrea.linkeddata.es/shapes#5925dc5ee5229385034205ecff707b9e> , <https://astrea.linkeddata.es/shapes#9597b0bbefc132fba744ec288c5046cb> , <https://astrea.linkeddata.es/shapes#a9c88c1050fd17a8a7428d875d176d0f> , <https://astrea.linkeddata.es/shapes#ff6e0678bcb21ed4960519de863ae8fe> , <https://astrea.linkeddata.es/shapes#aff23b97673892b9b4c4c10e469828e9> , <https://astrea.linkeddata.es/shapes#cf6a37cc1bfa54fcde15de1df08c3452> , <https://astrea.linkeddata.es/shapes#70b3c128d7291f14d0678dbe1098839f> , <https://astrea.linkeddata.es/shapes#9698dc4a8537d2e9cd91560f11e157da> , <https://astrea.linkeddata.es/shapes#e07b9f115689bab346d95810654809c3> , <https://astrea.linkeddata.es/shapes#d79ae02ab06d1fd501d1694f7aff03c2> , <https://astrea.linkeddata.es/shapes#41b5bb376d95ae13c5e1feffeee3a7d0> , <https://astrea.linkeddata.es/shapes#43a4c6d9c78991d24a8f36f4ac15a02c> , <https://astrea.linkeddata.es/shapes#021b14753ceeb8ef52220477ed0b71c9> , <https://astrea.linkeddata.es/shapes#38b85f306514636db9a5f1b81e81bd46> , <https://astrea.linkeddata.es/shapes#498ecea4906de70915739bdbdf3d1bc0> , <https://astrea.linkeddata.es/shapes#dcab4bdbfe6acda4587c461732a4f224> , <https://astrea.linkeddata.es/shapes#1a05d3b9fe79227f9bcbedbfb5656d4f> , <https://astrea.linkeddata.es/shapes#9ac950b49faf2955868b10e77e12a880> , <https://astrea.linkeddata.es/shapes#285a282cb7b44b493b7deab15b0dba4d> , <https://astrea.linkeddata.es/shapes#2706167f0ebae7dce7551be561fd997d> , <https://astrea.linkeddata.es/shapes#9aee027a0f666f2b642a3582438cf672> , <https://astrea.linkeddata.es/shapes#ffa228fbe9acf17ea0b9d1fa1bf85040> , <https://astrea.linkeddata.es/shapes#16b639b6c59786f5c650e18b0080386b> , <https://astrea.linkeddata.es/shapes#6b9038cdae642483bf87853d93c46b60> , <https://astrea.linkeddata.es/shapes#a037870373166f040e2eb7bb7f35935a> , <https://astrea.linkeddata.es/shapes#e32f5c6affc3f1a530406d8609cd9c37> , <https://astrea.linkeddata.es/shapes#f7b2b5e404a15b049376007758affc7e> , <https://astrea.linkeddata.es/shapes#36cbea6e92ac4e1e754724db3d4cb574> , <https://astrea.linkeddata.es/shapes#21917d7dc03734a1127f44a0c209b34a> , <https://astrea.linkeddata.es/shapes#462450f3abc9cf4b91404bbb742bed03> , <https://astrea.linkeddata.es/shapes#84d04499ff9bcc09dd3ba2a8c4b97a97> , <https://astrea.linkeddata.es/shapes#f594accb3ab1abee976af834f4a87746> , <https://astrea.linkeddata.es/shapes#cf4cc8cb7188c322129720fac974c1a6> , <https://astrea.linkeddata.es/shapes#6fbc836f8c20515f11ca65067c8194cc> , <https://astrea.linkeddata.es/shapes#c2c26428d6d9e54285a52c4b4d4745a5> , <https://astrea.linkeddata.es/shapes#86e3369eda8c0f95add13c7c501c3bd9> , <https://astrea.linkeddata.es/shapes#b3f81eca38904455db8f71dbf8317387> , <https://astrea.linkeddata.es/shapes#0d55f7607aaecf6bc7ca8f35c186544b> , <https://astrea.linkeddata.es/shapes#297286adc02d203b9486773c8e2b5ac8> , <https://astrea.linkeddata.es/shapes#3bf3299c5dc29feddd0c0cca3c2a723c> , <https://astrea.linkeddata.es/shapes#eb47bba04f59dfa4446ff67663f33e76> , <https://astrea.linkeddata.es/shapes#1dcc4d9d13d84acd7cd750d36aa7363d> , <https://astrea.linkeddata.es/shapes#100f1a0fde90405f1c26850ca86d085e> , <https://astrea.linkeddata.es/shapes#c08dff0e53e0b76f625bc3a192fdc520> , <https://astrea.linkeddata.es/shapes#18eae720f8bb0af37acdae085e61611e> , <https://astrea.linkeddata.es/shapes#9bc5c7b2abd9be521a142f8b3b446210> , <https://astrea.linkeddata.es/shapes#3cadcceeb4d136522f36af7913b4481e> , <https://astrea.linkeddata.es/shapes#3b03bab9f8bf5207ae7c517190972ec0> , <https://astrea.linkeddata.es/shapes#d05a6b516912aaf3f7baedcd7c01b1f8> , <https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63> , <https://astrea.linkeddata.es/shapes#3feb00f80e5466881b35881ee8cd88c4> , <https://astrea.linkeddata.es/shapes#d7ebf345df8fe1eee1b1baae1be67bf2> , <https://astrea.linkeddata.es/shapes#7d1250b1e972e6db18e8c8490eb8728a> , <https://astrea.linkeddata.es/shapes#d2a657b2d775f38122a67bfad6e81470> , <https://astrea.linkeddata.es/shapes#125eef08b12ba43d878ac29d6ea9c5bc> , <https://astrea.linkeddata.es/shapes#0b32b6a0ab0b687e8930befdc6c2f26f> , <https://astrea.linkeddata.es/shapes#ebbe910ae1d1715be840f89bdc805b68> , <https://astrea.linkeddata.es/shapes#acd3e83fb9c319dd892da6aa1dc1f875> , <https://astrea.linkeddata.es/shapes#607bdac0f15890021a981ed53c08385f> , <https://astrea.linkeddata.es/shapes#a5d1d90d85a3dca6c7c8406eec083400> , <https://astrea.linkeddata.es/shapes#2892a1d5ac68741abb1b8f96a9763d31> , <https://astrea.linkeddata.es/shapes#13b3c15f87ac1698f3dcd55cd3874ff4> , <https://astrea.linkeddata.es/shapes#8dbdae53bc493097f221815b40609bbd> , <https://astrea.linkeddata.es/shapes#479332686803645c81119120a8805b9d> , <https://astrea.linkeddata.es/shapes#356b5c12716bacd05f9e43896197c2ae> , <https://astrea.linkeddata.es/shapes#cdfce9c4586a4f98a89cc4adeb28f777> , <https://astrea.linkeddata.es/shapes#f5964a49119d177c39d3573f1ede7cad> , <https://astrea.linkeddata.es/shapes#c59d4953fd243e041443fc088566f8b8> , <https://astrea.linkeddata.es/shapes#7c43f3f788bfa14a479241aebc5b17b8> , <https://astrea.linkeddata.es/shapes#651efc216c5a0a6abf668d162509b4c9> , <https://astrea.linkeddata.es/shapes#11809b7e7a3bf51ca4f44c40f5d3c183> , <https://astrea.linkeddata.es/shapes#4752e3e2bb553f8a78c5302130c05719> , <https://astrea.linkeddata.es/shapes#ae908c904944a56cefec54c488a89327> , <https://astrea.linkeddata.es/shapes#d733db293e8dea5bd935b1ec5a78c686> , <https://astrea.linkeddata.es/shapes#78916dd741b46b4466ed927af7798eb3> , <https://astrea.linkeddata.es/shapes#50453204a775bc64c92ccf0e8a0315c0> , <https://astrea.linkeddata.es/shapes#c058a40bb679abdf650145e1bdd5148e> , <https://astrea.linkeddata.es/shapes#da70ad3187c2035f4ab0d283e0408deb> , <https://astrea.linkeddata.es/shapes#84b03bbedb195b34cdeb73e5ff52ebb2> , <https://astrea.linkeddata.es/shapes#559f9e94d95d585dd6e2a884152790c2> , <https://astrea.linkeddata.es/shapes#952974f74933c23be9b6358c21ece57a> , <https://astrea.linkeddata.es/shapes#7317fff6f0fe9d43eb9307265f55dbf9> , <https://astrea.linkeddata.es/shapes#7656edcbaa7adbdb325bfe2856838bc6> , <https://astrea.linkeddata.es/shapes#cdad82710db50439354480e1ec4d6365> , <https://astrea.linkeddata.es/shapes#8a4625974fc3cbc57d1601d7005f1cd0> , <https://astrea.linkeddata.es/shapes#b6318844cb2502bccba5bb8e7a152e2c> , <https://astrea.linkeddata.es/shapes#2bce13ade70060bed3ad95798661aeb8> , <https://astrea.linkeddata.es/shapes#4a9211d2ba2240ff7b93e9f22d6aeb6e> , <https://astrea.linkeddata.es/shapes#466029394f8f44718cce25b40440d323> , <https://astrea.linkeddata.es/shapes#1284343ceb04f5321bf8f1c7f6b0948e> , <https://astrea.linkeddata.es/shapes#fd8dff26fee2da1ab28c70cb2cc60647> , <https://astrea.linkeddata.es/shapes#92ceb1c2593f6ec3bdb3019e44a64dfc> , <https://astrea.linkeddata.es/shapes#94c94d6cfbd428c08f39ddc52cc55162> , <https://astrea.linkeddata.es/shapes#d0af053575dd9d79a42ed45f1900165d> , <https://astrea.linkeddata.es/shapes#c7275863adeb16160c5d5b532ce3542d> , <https://astrea.linkeddata.es/shapes#021432ba9c751b4d4033997503c1f902> , <https://astrea.linkeddata.es/shapes#37e742ea104967f9da32f501ccad63b7> , <https://astrea.linkeddata.es/shapes#c509e281fc42c3d5de278a4ba65f429c> , <https://astrea.linkeddata.es/shapes#467f9b0187d4c9cb09e9552fd853c424> , <https://astrea.linkeddata.es/shapes#1060f31bb77710178ed8201af7ef9e56> , <https://astrea.linkeddata.es/shapes#95da19ec76b5a8a3977cc858fc374ee8> , <https://astrea.linkeddata.es/shapes#ca42dcd3e488a491f41cb610aae7b09d> , <https://astrea.linkeddata.es/shapes#09f5e35fbb67d281bfa409122a569f0c> , <https://astrea.linkeddata.es/shapes#86ef91578085052efc05fc7027269752> , <https://astrea.linkeddata.es/shapes#71c81ff3bceca6e51c8eb23948f6b72c> , <https://astrea.linkeddata.es/shapes#db2cab4dd634c22d6152f7a596a05e6e> , <https://astrea.linkeddata.es/shapes#feb55fa4be1793183a97c77e8da8b390> , <https://astrea.linkeddata.es/shapes#522e6e9d9c1ec057b270d68c6e6671e1> , <https://astrea.linkeddata.es/shapes#dc011acee58ff3836114952ae3e050a3> , <https://astrea.linkeddata.es/shapes#ce137a6ae8005973ea185df81f79ee37> , <https://astrea.linkeddata.es/shapes#eaf8048c422d6aac33295a6538729799> , <https://astrea.linkeddata.es/shapes#f07abf9215b6051ab31e82ee62200790> , <https://astrea.linkeddata.es/shapes#937f180f90276d38786507a75a1db1c1> , <https://astrea.linkeddata.es/shapes#1e4b18a5bd47914de5037ef0bb5f98e5> , <https://astrea.linkeddata.es/shapes#226b206eff8a74df5f0c17bdbd9326d2> , <https://astrea.linkeddata.es/shapes#6d116126bebfac192167e58aaa0deaa6> , <https://astrea.linkeddata.es/shapes#4020fc6aee69ce618a3cc140a8115ae1> , <https://astrea.linkeddata.es/shapes#50fb204bdd3a0e1876233e9e71c263f8> , <https://astrea.linkeddata.es/shapes#48634e5542ecb3d5688c02ece3e54f64> , <https://astrea.linkeddata.es/shapes#0107c258bf73c305b3a37725ecc7b835> , <https://astrea.linkeddata.es/shapes#fef8eed41a9119575b5ef31c98009e94> , <https://astrea.linkeddata.es/shapes#fb797affae63524e98629e4ab362199b> , <https://astrea.linkeddata.es/shapes#5df41e27a6a109010ffe856646bac71a> , <https://astrea.linkeddata.es/shapes#7ef9556b6a447372290246838b1a4c72> , <https://astrea.linkeddata.es/shapes#096c0e70d50c2052dc106ec62a5928fa> , <https://astrea.linkeddata.es/shapes#28ccb211e6cd2daa5a1a4831b1581a83> , <https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913> , <https://astrea.linkeddata.es/shapes#a6817e192aa225c2bf51cd485554c628> , <https://astrea.linkeddata.es/shapes#c819de49cc619f614511d046937d3882> , <https://astrea.linkeddata.es/shapes#087fbed8781859126a644978af69eb02> , <https://astrea.linkeddata.es/shapes#5c90dfd90e3f32a443a047cb631787b0> , <https://astrea.linkeddata.es/shapes#b9e9e73c6123c8053c9666090d3e157b> , <https://astrea.linkeddata.es/shapes#536dc3aa61b372bf2f2754c0c93e90cd> , <https://astrea.linkeddata.es/shapes#69925a22875d8e76f21162cdea079f4f> , <https://astrea.linkeddata.es/shapes#a42a84afb43054b3d92df87bc8e5ef4c> , <https://astrea.linkeddata.es/shapes#ed8e20ca8f8a7d959083f202a998156b> , <https://astrea.linkeddata.es/shapes#68a719789e5df366cc08c18b42772407> , <https://astrea.linkeddata.es/shapes#063f206ce3739840972aeccecf104496> , <https://astrea.linkeddata.es/shapes#4572712ac3fdd6f68259f9122a606cc3> , <https://astrea.linkeddata.es/shapes#67887954de7f456192f7a2bbf8e8241c> , <https://astrea.linkeddata.es/shapes#664e0cad0c346ba5db330a0d1fd0223b> , <https://astrea.linkeddata.es/shapes#22cd46dde8953830a6e5244fced5a303> , <https://astrea.linkeddata.es/shapes#4d3585fc8fb7d210f7cfcf9310e9382c> , <https://astrea.linkeddata.es/shapes#176d6868c726544c5477ac0fb503b142> , <https://astrea.linkeddata.es/shapes#8d5bcd972e7d929efe8c5c4d60ed2e1b> , <https://astrea.linkeddata.es/shapes#499af03d1cb5ac159c48185c9fe54b06> , <https://astrea.linkeddata.es/shapes#242c53465f77ee16942577018a5d99b3> , <https://astrea.linkeddata.es/shapes#ebc99f004d47773ac134702657bdeed7> , <https://astrea.linkeddata.es/shapes#caf836e94ba4e4071027db962df60b3f> , <https://astrea.linkeddata.es/shapes#28859dcb6be4a9e21f596c8879fa717a> , <https://astrea.linkeddata.es/shapes#fb41a462e8338424ef4eaa17b4d8f2db> , <https://astrea.linkeddata.es/shapes#bac156cb4c091b645a2b3eceee3c609b> , <https://astrea.linkeddata.es/shapes#c4d8a24267a0f8f8336c2c458d792f44> , <https://astrea.linkeddata.es/shapes#46ff072e8e7865a3671779f263a34d93> , <https://astrea.linkeddata.es/shapes#163744438032c52e32bf3c7c8bb195e8> , <https://astrea.linkeddata.es/shapes#6827c8fb25e9ec612eb5dd7f871ae3dd> , <https://astrea.linkeddata.es/shapes#b7370a9404b09b09d8f745f67d63a0b9> , <https://astrea.linkeddata.es/shapes#29e69eab58f79e77dc47ba0d0b204f9c> , <https://astrea.linkeddata.es/shapes#2813779a0ca8cf3e557b859bc889a0b8> , <https://astrea.linkeddata.es/shapes#ffa627c90b2f93431bad38fc95750b9e> , <https://astrea.linkeddata.es/shapes#15c31c97fdf1f3cf83113228d2ce8e7c> , <https://astrea.linkeddata.es/shapes#19bef101d4b3ca7c8e10f839d49cdd46> , <https://astrea.linkeddata.es/shapes#0c264d7145a37cb616e5b9042b449c10> , <https://astrea.linkeddata.es/shapes#e85f7f569c1b43b31809a79038a33ed0> , <https://astrea.linkeddata.es/shapes#37de2065ed2f84f6b6abc75343470d48> , <https://astrea.linkeddata.es/shapes#aa5038b3045842c3467135022934c084> , <https://astrea.linkeddata.es/shapes#2c1c1855ca25f23f352bcf7023af09a2> , <https://astrea.linkeddata.es/shapes#02d4c25304447141a9742f21145f29eb> , <https://astrea.linkeddata.es/shapes#7139ac3bac1fb96b85203ca83f019ef6> , <https://astrea.linkeddata.es/shapes#8355820918b8f052e2489eb782a08ab2> , <https://astrea.linkeddata.es/shapes#ea1a1e3d2380b574749df423ca895398> , <https://astrea.linkeddata.es/shapes#42179914bb5f0eb140c2471501e085ab> , <https://astrea.linkeddata.es/shapes#6acce5441353b5b00ce499d9c8be5b2c> , <https://astrea.linkeddata.es/shapes#d35bf908c20032fcd25f5924864f2a8e> , <https://astrea.linkeddata.es/shapes#e1d72611382749881eb86502f8d8d1a2> , <https://astrea.linkeddata.es/shapes#8477f498da73ed230d18f8e2e151dafe> , <https://astrea.linkeddata.es/shapes#773ee1c13e884ec4f5e6535d912e7461> , <https://astrea.linkeddata.es/shapes#8abaea53eba47792591975d1f22f3d06> , <https://astrea.linkeddata.es/shapes#a0b008815cd8501c0f8a678830ff0399> , <https://astrea.linkeddata.es/shapes#9448f013a659c4c2c89845301bed10e8> , <https://astrea.linkeddata.es/shapes#477a31758c58ec2a31f728133ae9e4e8> , <https://astrea.linkeddata.es/shapes#3d89b85cd5a3bda881f208de27abbb23> , <https://astrea.linkeddata.es/shapes#e94ea9bef8e93d35e2fe9f1f528dffd3> , <https://astrea.linkeddata.es/shapes#6fe7446209c7d0657bea56e0dd818d93> , <https://astrea.linkeddata.es/shapes#f05250f16c115f2d8e978b14a6da76eb> , <https://astrea.linkeddata.es/shapes#40543ae31d15d62fa39b0fcb7a505b2f> , <https://astrea.linkeddata.es/shapes#8dfa58d44df4446f771625d9437b8472> , <https://astrea.linkeddata.es/shapes#bf1be28f61b0bbde317423ecb2f7d2a7> , <https://astrea.linkeddata.es/shapes#452162c8c3d23855bc12705913009246> , <https://astrea.linkeddata.es/shapes#811ef72b6ccea344721cf0bcfa6618ba> , <https://astrea.linkeddata.es/shapes#f732bfe4cd7d7e60f56c19972068a061> , <https://astrea.linkeddata.es/shapes#528e6d8ffcc0a1e5ba0134a4c2a21af4> , <https://astrea.linkeddata.es/shapes#b139d149be15b6e60e6c8b1bef46b4fa> , <https://astrea.linkeddata.es/shapes#a9680d60b373feee6f6c64d53beca3c3> , <https://astrea.linkeddata.es/shapes#7634f840d042163ff2aa8299bb7043d7> , <https://astrea.linkeddata.es/shapes#caa55776648aa319375fbfef9ab027ae> , <https://astrea.linkeddata.es/shapes#8c9f0a3ef50fe390869f7c693885d425> , <https://astrea.linkeddata.es/shapes#44d387d97a81baf0defa97566060720b> , <https://astrea.linkeddata.es/shapes#c16c83e6f4dbbaee2429b1be7f802cb2> , <https://astrea.linkeddata.es/shapes#7d6a541b22bd5c0ae3ab84fdea174957> , <https://astrea.linkeddata.es/shapes#010e59cdc3cb50b4531a6c95ee5ca209> , <https://astrea.linkeddata.es/shapes#6ad9985af98c9853889763298e7ca1ed> , <https://astrea.linkeddata.es/shapes#3b5c594b18161fe8932fbae3f5531ff7> , <https://astrea.linkeddata.es/shapes#378884c9a8a498df70f2e193093df0af> , <https://astrea.linkeddata.es/shapes#9292ed038e80185c3094631a79d8781b> , <https://astrea.linkeddata.es/shapes#2e882900e5f69eabc9a8cc0836b49954> , <https://astrea.linkeddata.es/shapes#656253a2e2b47a837a280b35b949ebc7> , <https://astrea.linkeddata.es/shapes#b2e984c1224c8f63b3efbff65b641c1b> , <https://astrea.linkeddata.es/shapes#4c8e9f5c93b51026ee7925f183a5ace5> , <https://astrea.linkeddata.es/shapes#095f9984c5d4662d997b832984a4966e> , <https://astrea.linkeddata.es/shapes#fb8a3048c4dff8f45c27779487cb6876> , <https://astrea.linkeddata.es/shapes#79f9049ac8c7b059d503662569e881fe> , <https://astrea.linkeddata.es/shapes#c967b0fdd8f53ecc88b36db8a1959138> , <https://astrea.linkeddata.es/shapes#32100c0091e3d7fe8fe08f3ed1079e27> , <https://astrea.linkeddata.es/shapes#fe1d20defb55d9b091cee4f590f01aca> , <https://astrea.linkeddata.es/shapes#6d60e47e6ae5f9718930954a3486bb48> , <https://astrea.linkeddata.es/shapes#cf7e863fd9342e2ab72c18692e43a4eb> , <https://astrea.linkeddata.es/shapes#a36d1842a0736a976406b312e2d3ba03> , <https://astrea.linkeddata.es/shapes#e7d09ea75472fdab925bd7954ab0a2f4> , <https://astrea.linkeddata.es/shapes#c83812b1f3840eec7624a02645ac05d9> , <https://astrea.linkeddata.es/shapes#a742b2c3b67f7817094c3e8d8100531d> , <https://astrea.linkeddata.es/shapes#56412c6e81da06014e55555506514cf3> , <https://astrea.linkeddata.es/shapes#b9ab2de3f52949a57c0ef816f69d3d1a> , <https://astrea.linkeddata.es/shapes#b6113b7c026f284e1dc73e09fe6e5ec3> , <https://astrea.linkeddata.es/shapes#cfc20da821fd68ec0a54e6cc5e492f52> , <https://astrea.linkeddata.es/shapes#71109d856433408edd5fbbe2c7c9862b> , <https://astrea.linkeddata.es/shapes#6ee324d10fab92b43dda92b5d0a730fb> , <https://astrea.linkeddata.es/shapes#e7e55ae5615fe107537373c8179bbf7f> , <https://astrea.linkeddata.es/shapes#263550765f3409c3e526d4b72a416373> , <https://astrea.linkeddata.es/shapes#c7bfd558152fdd447ea5230b0d708747> , <https://astrea.linkeddata.es/shapes#2d1397475113b7db235fc471ef1ae5d3> , <https://astrea.linkeddata.es/shapes#ac1d82bae30ebd27516dc1248741ac53> , <https://astrea.linkeddata.es/shapes#9f3f156f683d37683f9c2798ebd9c3a6> , <https://astrea.linkeddata.es/shapes#4747a67c1721d631f521dad4945ab39f> , <https://astrea.linkeddata.es/shapes#c560ad0e5b4116631b5dd8dce5084197> , <https://astrea.linkeddata.es/shapes#0e9df4f49cf1f0a3373861594f2772a3> , <https://astrea.linkeddata.es/shapes#e8924a7f1da93fb4b400f5b6545d17c8> , <https://astrea.linkeddata.es/shapes#684e2e899824a15b3dddb982a89db4db> , <https://astrea.linkeddata.es/shapes#3612b2c16ebce72371e3646a901384d2> , <https://astrea.linkeddata.es/shapes#bbf2b80f2a4bd0c20fab127bf2ff39dd> , <https://astrea.linkeddata.es/shapes#72b5ce36f0debf76da4c0832ffed7785> , <https://astrea.linkeddata.es/shapes#eff3a21eb92b38d1ceecd6a7b50956a9> , <https://astrea.linkeddata.es/shapes#c38ddf7f7d575c414b91bceafbe9a23c> , <https://astrea.linkeddata.es/shapes#de2fa1af89dfd5df63d132ae742481df> , <https://astrea.linkeddata.es/shapes#985c7a1a8ba08964f7d3650e67472693> , <https://astrea.linkeddata.es/shapes#06663f64a0154a8dce8122f3dbbc8d89> , <https://astrea.linkeddata.es/shapes#365a8a1d622267a80fc9a3b6da78790c> , <https://astrea.linkeddata.es/shapes#fcd1a68295f667be2485414be93680be> , <https://astrea.linkeddata.es/shapes#7d5ef7a3f3f78d7a3741dc5fa59b1dde> , <https://astrea.linkeddata.es/shapes#1fd94bd64d3ac06aecb3592f6ac62b69> , <https://astrea.linkeddata.es/shapes#1ca30e946783b27b9122cc1cb2f80fac> , <https://astrea.linkeddata.es/shapes#1587c852ac374ff783866802f52ca429> , <https://astrea.linkeddata.es/shapes#d702899e61acd0020cb11296353eec9d> , <https://astrea.linkeddata.es/shapes#9e9cb48c1174c31afed273d1a674e5ba> , <https://astrea.linkeddata.es/shapes#07c5c3447bba509cbb5dd9bd8002f577> , <https://astrea.linkeddata.es/shapes#a6fc85850e8eaf3606f2059efa9f8fb3> , <https://astrea.linkeddata.es/shapes#cd45bf2d7086935ef4cae881bbe6a0d1> , <https://astrea.linkeddata.es/shapes#f69f8b990dab9ff3a292e8fc46bff80f> , <https://astrea.linkeddata.es/shapes#f444727b0a1b6a2ceb7f3f5dd96f2e16> , <https://astrea.linkeddata.es/shapes#156af31e954042e340f8709a0253518d> , <https://astrea.linkeddata.es/shapes#7ac439ee81b8651107b120c31dae04f7> , <https://astrea.linkeddata.es/shapes#4ca0a3bf9404370610cee7850d518b09> , <https://astrea.linkeddata.es/shapes#6354aa33cca2c364c92d3fbafa4a1079> , <https://astrea.linkeddata.es/shapes#152560ee90de07720f4fb1e606c349c9> , <https://astrea.linkeddata.es/shapes#ea949a1d7d7468131cdb59f80cccbcfe> , <https://astrea.linkeddata.es/shapes#ee7fb75c8f5367f40ad773a552371ad6> , <https://astrea.linkeddata.es/shapes#51143ff066a7d0d59bc809b448db3f32> , <https://astrea.linkeddata.es/shapes#3905f69417199738ee7b95f8a221b361> , <https://astrea.linkeddata.es/shapes#5eeae139d7dc3b975f5db84262268428> , <https://astrea.linkeddata.es/shapes#4c6b24d90f0552a8df061124f285506d> , <https://astrea.linkeddata.es/shapes#05d33e1cf8ead5ebf41d409a1af0e7dc> , <https://astrea.linkeddata.es/shapes#73a8044dd52a60737c3bf520efe33c33> , <https://astrea.linkeddata.es/shapes#6c87b3fbc0f4085d69421982c72ecfb8> , <https://astrea.linkeddata.es/shapes#1156cecfbe89245f15ef380c236da90b> , <https://astrea.linkeddata.es/shapes#b4f88c60dec16114d393e29cf0110fb6> , <https://astrea.linkeddata.es/shapes#b33a4c13d391551e9a03969aa670e005> , <https://astrea.linkeddata.es/shapes#a90efe444d3ef0b41b5daeeebd209e9b> , <https://astrea.linkeddata.es/shapes#39f03359b20315c9711b1ea426ca3462> , <https://astrea.linkeddata.es/shapes#1dc19786e03c31a4408854a399076c70> , <https://astrea.linkeddata.es/shapes#6c4eb5c4906d5ba4c081f85367dd0edd> , <https://astrea.linkeddata.es/shapes#725bbb5e075a321c737dde30db7d3a76> , <https://astrea.linkeddata.es/shapes#7b722600669ba01f596047cf2001951f> , <https://astrea.linkeddata.es/shapes#a6f9f94a4804975b719b55a6f8aa4722> , <https://astrea.linkeddata.es/shapes#6398230a511e7cef7f01493ba6aead98> , <https://astrea.linkeddata.es/shapes#689dff520b7934561f2107f67cb3637e> , <https://astrea.linkeddata.es/shapes#06d343a59be56b45caf7bbca1e50e807> , <https://astrea.linkeddata.es/shapes#0f6502053608fc059a721676b6e67115> , <https://astrea.linkeddata.es/shapes#34d909bed8f3694892659ca769af8455> , <https://astrea.linkeddata.es/shapes#40cac3f9a1397b5ef47c697cccc0d6b8> , <https://astrea.linkeddata.es/shapes#b6352f83860023dd0dc3831b6b3926b5> , <https://astrea.linkeddata.es/shapes#e7eab2baf1b1ffa91b1b54df1093d0d4> , <https://astrea.linkeddata.es/shapes#e2edb59b88d427d4c0622412fd3e6aac> , <https://astrea.linkeddata.es/shapes#cb19e1d4f9b1fa087da12b932e9137cf> , <https://astrea.linkeddata.es/shapes#b360303278847d5ec14bd1af6b765bb6> , <https://astrea.linkeddata.es/shapes#d44a7c2f81ca2fd36a878737392a98c3> , <https://astrea.linkeddata.es/shapes#f5d85329dd8373607183ef7a6a2c3fc7> , <https://astrea.linkeddata.es/shapes#1be48af0cf6b75e1dabf27a2980aa633> , <https://astrea.linkeddata.es/shapes#a15cdb5fb0143770c399bc65f0e94507> , <https://astrea.linkeddata.es/shapes#ee5ec727f91c6d55b7e56c8d0a3ddd81> , <https://astrea.linkeddata.es/shapes#543e2a89e69d8c46a81f97430c4a8bcb> , <https://astrea.linkeddata.es/shapes#532c96c480f991d2378c8f44624b10f6> , <https://astrea.linkeddata.es/shapes#3c4069d1209a65109a18f94b31644ae1> , <https://astrea.linkeddata.es/shapes#e7929688d1eb164b8e14b2892279ac15> , <https://astrea.linkeddata.es/shapes#006fb2dde1f5db028c8dc041c832068c> , <https://astrea.linkeddata.es/shapes#917a03a4e98e9b45105c8bd428ee27a1> , <https://astrea.linkeddata.es/shapes#b01d6eed32b58e8c5381e68a18181893> , <https://astrea.linkeddata.es/shapes#47c1e2559c61fa756b8f3c0121c37fb4> , <https://astrea.linkeddata.es/shapes#bf42292cb0c5051a51b20e6f2fa77392> , <https://astrea.linkeddata.es/shapes#3f6891594ac2d163a004bec00f8db48a> , <https://astrea.linkeddata.es/shapes#77cce3bcdaf17172ebb7f37f1c99b4d1> , <https://astrea.linkeddata.es/shapes#aff2f8d66fa4966ac88d4395c0ed82c1> , <https://astrea.linkeddata.es/shapes#fd268784d770a61cc9487f7932e3e9ec> , <https://astrea.linkeddata.es/shapes#afd432ca9d507a89c5ab032681bb246f> , <https://astrea.linkeddata.es/shapes#e7b516b5764ab14aac9d4b2dcbe92e80> , <https://astrea.linkeddata.es/shapes#d1dbf8e5174cb33e190071253f816d1e> , <https://astrea.linkeddata.es/shapes#7d500845887f53beb750d2a134541b12> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1765382796> , <https://astrea.linkeddata.es/report/0206434858> , <https://astrea.linkeddata.es/report/2056155360> , <https://astrea.linkeddata.es/report/355507722> , <https://astrea.linkeddata.es/report/1879514699> , <https://astrea.linkeddata.es/report/1812461706> , <https://astrea.linkeddata.es/report/908222557> , <https://astrea.linkeddata.es/report/0767747899> , <https://astrea.linkeddata.es/report/1514534692> , <https://astrea.linkeddata.es/report/0742649341> .
+
+<https://astrea.linkeddata.es/shapes#71c81ff3bceca6e51c8eb23948f6b72c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:CropSpecies ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:alertSpecies .
 
 <https://astrea.linkeddata.es/shapes#1be48af0cf6b75e1dabf27a2980aa633>
         a                 sh:NodeShape ;
@@ -1988,14 +2235,6 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    fiware:AgriGreenhouse .
 
-<https://astrea.linkeddata.es/shapes#7d5ef7a3f3f78d7a3741dc5fa59b1dde>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:ingredientName ;
-        sh:pattern        ".*" .
-
 <https://astrea.linkeddata.es/shapes#88868d8c55ef1f8660fa5427e6fd63d2>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
@@ -2003,12 +2242,19 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:crop .
 
-<https://astrea.linkeddata.es/shapes#71c81ff3bceca6e51c8eb23948f6b72c>
+<https://astrea.linkeddata.es/shapes#096c0e70d50c2052dc106ec62a5928fa>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:storageHandling .
+
+<https://astrea.linkeddata.es/shapes#7d5ef7a3f3f78d7a3741dc5fa59b1dde>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:class          foodie:CropSpecies ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foodie:alertSpecies .
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:ingredientName ;
+        sh:pattern        ".*" .
 
 <https://astrea.linkeddata.es/shapes#e8991cd7864fdd37aeb8413270a50313>
         a                       sh:PropertyShape ;
@@ -2052,6 +2298,15 @@
         sh:path           foodie:status ;
         sh:pattern        ".*" .
 
+<https://astrea.linkeddata.es/shapes#73a8044dd52a60737c3bf520efe33c33>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "receives" , "A relation to represent the intake/consumption of certain substances in a Crop." ;
+        sh:description    "A relation to represent the intake/consumption of certain substances in a Crop." ;
+        sh:name           "receives" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref4agri:receives .
+
 <https://astrea.linkeddata.es/shapes#46ff072e8e7865a3671779f263a34d93>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
@@ -2068,6 +2323,15 @@
         sh:name           "visibility"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:visibility .
+
+<https://astrea.linkeddata.es/shapes#29e69eab58f79e77dc47ba0d0b204f9c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "Agri Farm" ;
+        sh:description    "This entity contains a harmonised description of a generic crop. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+        sh:name           "Agri Farm" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware:AgriCrop .
 
 <https://astrea.linkeddata.es/shapes#378884c9a8a498df70f2e193093df0af>
         a                 sh:NodeShape ;
@@ -2094,6 +2358,12 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:productType .
 
+<https://astrea.linkeddata.es/shapes#cf7e863fd9342e2ab72c18692e43a4eb>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:description .
+
 <https://astrea.linkeddata.es/shapes#a6ea61114ce41b9bec42319b4236e2df>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
@@ -2110,6 +2380,12 @@
         sh:name           "Sensor"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    saref:Sensor .
+
+<https://astrea.linkeddata.es/shapes#b8f175b6e568edf4370bf8eab7d42a31>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:variety .
 
 <https://astrea.linkeddata.es/shapes#5e71668a8d30e6f1e01a76bfbf0dde7a>
         a            sh:PropertyShape ;
@@ -2132,17 +2408,17 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    saref4agri:SoilTensiometer .
 
-<https://astrea.linkeddata.es/shapes#063f206ce3739840972aeccecf104496>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    dim:Power .
-
 <https://astrea.linkeddata.es/shapes#4b0de082e19a0eddd94cfeeef929fe10>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    dim:Energy .
+
+<https://astrea.linkeddata.es/shapes#063f206ce3739840972aeccecf104496>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Power .
 
 <https://astrea.linkeddata.es/shapes#7ba72b4487d0800caff6564aeaac2fe4>
         a                 sh:PropertyShape ;
@@ -2150,6 +2426,13 @@
         sh:class          geo:Geometry ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:alertGeometry .
+
+<https://astrea.linkeddata.es/shapes#462450f3abc9cf4b91404bbb742bed03>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      prov:generatedAtTime .
 
 <https://astrea.linkeddata.es/shapes#226b206eff8a74df5f0c17bdbd9326d2>
         a                 sh:PropertyShape ;
@@ -2328,6 +2611,12 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           saref:measurementMadeBy .
 
+<https://astrea.linkeddata.es/shapes#f444727b0a1b6a2ceb7f3f5dd96f2e16>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:family .
+
 <https://astrea.linkeddata.es/shapes#ea949a1d7d7468131cdb59f80cccbcfe>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:int ;
@@ -2339,6 +2628,12 @@
         sh:maxCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:price .
+
+<https://astrea.linkeddata.es/shapes#2706167f0ebae7dce7551be561fd997d>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      prov:invalidatedAtTime .
 
 <https://astrea.linkeddata.es/shapes#7832bd54f9465f1bcf59cc4aae49c834>
         a                 sh:PropertyShape ;
@@ -2358,15 +2653,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:recordHasAgriParcel .
 
-<https://astrea.linkeddata.es/shapes#6d116126bebfac192167e58aaa0deaa6>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> ;
-        rdfs:label        "subCategory"@en , "Describe the sub category of alert" ;
-        sh:description    "Describe the sub category of alert" ;
-        sh:name           "subCategory"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:subCategory .
-
 <https://astrea.linkeddata.es/shapes#5e7b73293b58ba1d710937f5dbe29359>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
@@ -2376,14 +2662,14 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:operationType .
 
-<https://astrea.linkeddata.es/shapes#479332686803645c81119120a8805b9d>
+<https://astrea.linkeddata.es/shapes#6d116126bebfac192167e58aaa0deaa6>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> ;
-        rdfs:label        "validFrom"@en , "The start date of validity of the alert in ISO8601 UTC format." ;
-        sh:description    "The start date of validity of the alert in ISO8601 UTC format." ;
-        sh:name           "validFrom"@en ;
+        rdfs:label        "subCategory"@en , "Describe the sub category of alert" ;
+        sh:description    "Describe the sub category of alert" ;
+        sh:name           "subCategory"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           fiware:validFrom .
+        sh:path           fiware:subCategory .
 
 <https://astrea.linkeddata.es/shapes#cf6a37cc1bfa54fcde15de1df08c3452>
         a                 sh:NodeShape ;
@@ -2393,6 +2679,15 @@
         sh:name           "Polygon"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    sf:Polygon .
+
+<https://astrea.linkeddata.es/shapes#479332686803645c81119120a8805b9d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> ;
+        rdfs:label        "validFrom"@en , "The start date of validity of the alert in ISO8601 UTC format." ;
+        sh:description    "The start date of validity of the alert in ISO8601 UTC format." ;
+        sh:name           "validFrom"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:validFrom .
 
 <https://astrea.linkeddata.es/shapes#6be1d03efca12a71da4b30a5b4a343b2>
         a                 sh:PropertyShape ;
@@ -2409,9 +2704,9 @@
 
 <https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> , saref: ;
+        rdfs:isDefinedBy  saref: , <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> ;
         rdfs:label        "Unit of measure"@en ;
-        sh:description    "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of the Smart Appliances ontology, but this list can be extended."@en , "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)." ;
+        sh:description    "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)." , "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of the Smart Appliances ontology, but this list can be extended."@en ;
         sh:name           "Unit of measure"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    saref:UnitOfMeasure .
@@ -2493,6 +2788,12 @@
         sh:class          iso19103:Measure ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:productQuantity .
+
+<https://astrea.linkeddata.es/shapes#79a04f1d699cb1e0e48e5173b01db57f>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:notes .
 
 <https://astrea.linkeddata.es/shapes#2892a1d5ac68741abb1b8f96a9763d31>
         a                 sh:NodeShape ;
@@ -2596,6 +2897,25 @@
         sh:property       <https://astrea.linkeddata.es/shapes#09f5e35fbb67d281bfa409122a569f0c> , <https://astrea.linkeddata.es/shapes#152560ee90de07720f4fb1e606c349c9> ;
         sh:targetClass    sosa:FeatureOfInterest , saref:FeatureOfInterest .
 
+<https://astrea.linkeddata.es/shapes#47165499a8631177d20464939561e0f6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  demeterAgriCrop: ;
+        rdfs:label        "Number Of Hives Needed" ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "Number Of Hives Needed" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           demeterAgriCrop:numberOfHivesNeeded ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/report/0767747899>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCrop.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
 <https://astrea.linkeddata.es/shapes#8866e3f2019fcadc04bd60737397cedf>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  saref4agri: ;
@@ -2692,6 +3012,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:code .
 
+<https://astrea.linkeddata.es/report/1879514699>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriPest.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
 <https://astrea.linkeddata.es/shapes#e6681742cb01e8ceff3eff7cbeac73bf>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
@@ -2703,7 +3032,7 @@
 
 <https://astrea.linkeddata.es/shapes#9fef3b114595ed4aa13d030667f0542b>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
         rdfs:label        "createdAt"@en , "Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
         sh:description    "Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
         sh:name           "createdAt"@en ;
@@ -2748,6 +3077,22 @@
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#67887954de7f456192f7a2bbf8e8241c> ;
         sh:targetClass    foaf:Agent .
+
+<https://astrea.linkeddata.es/shapes#b4f88c60dec16114d393e29cf0110fb6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "has plant date" , "A relation to express the day the crop is planted." ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "A relation to express the day the crop is planted." ;
+        sh:name           "has plant date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           saref4agri:hasPlantDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#69925a22875d8e76f21162cdea079f4f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:hasHarvestDate .
 
 <https://astrea.linkeddata.es/shapes#798f5efed7706e1ab95b8bff19b57ed8>
         a                 sh:NodeShape ;
@@ -2849,6 +3194,15 @@
         sh:nodeKind       sh:Literal ;
         sh:path           saref:hasValue .
 
+<https://astrea.linkeddata.es/report/0742649341>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriAlert.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
 <https://astrea.linkeddata.es/shapes#7ac439ee81b8651107b120c31dae04f7>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
@@ -2862,7 +3216,7 @@
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#006fb2dde1f5db028c8dc041c832068c> , <https://astrea.linkeddata.es/shapes#285a282cb7b44b493b7deab15b0dba4d> , <https://astrea.linkeddata.es/shapes#ea949a1d7d7468131cdb59f80cccbcfe> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#285a282cb7b44b493b7deab15b0dba4d> , <https://astrea.linkeddata.es/shapes#006fb2dde1f5db028c8dc041c832068c> , <https://astrea.linkeddata.es/shapes#ea949a1d7d7468131cdb59f80cccbcfe> ;
         sh:targetClass    foodie:ProductPreparation .
 
 <https://astrea.linkeddata.es/shapes#cfc20da821fd68ec0a54e6cc5e492f52>
@@ -2904,9 +3258,9 @@
 <https://astrea.linkeddata.es/shapes#e2931e7b6c2eb60ddface78eccba4bd9>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  saref: ;
-        rdfs:label        "Property"@en , "Property" ;
+        rdfs:label        "Property" , "Property"@en ;
         sh:description    "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended." , "An aspect of an entity that can be observable by a sensor."@en ;
-        sh:name           "Property"@en , "Property" ;
+        sh:name           "Property" , "Property"@en ;
         sh:nodeKind       sh:IRI ;
         sh:not            <https://astrea.linkeddata.es/shapes#156af31e954042e340f8709a0253518d> ;
         sh:property       <https://astrea.linkeddata.es/shapes#df4ae458b4e554c080717d9bdb48e778> , <https://astrea.linkeddata.es/shapes#40cac3f9a1397b5ef47c697cccc0d6b8> , <https://astrea.linkeddata.es/shapes#a0152b516031df77da267c5973fceb3d> , <https://astrea.linkeddata.es/shapes#65c715d5d2f2d31d44acef9806b5664e> ;
@@ -2996,7 +3350,7 @@
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  af-inspire: ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#242c53465f77ee16942577018a5d99b3> , <https://astrea.linkeddata.es/shapes#95c322184613a1662d48949c2a46829e> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#95c322184613a1662d48949c2a46829e> , <https://astrea.linkeddata.es/shapes#242c53465f77ee16942577018a5d99b3> ;
         sh:targetClass    af-inspire:FarmAnimalSpecies .
 
 <https://astrea.linkeddata.es/shapes#b2e984c1224c8f63b3efbff65b641c1b>
@@ -3048,6 +3402,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:description .
 
+<https://astrea.linkeddata.es/shapes#17eb86688ae773af72274df34a49fd0c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "plannedEndAt"@en , "The planned end date/timestamp for the operation. Note that this is advisory and the actual time the operation finishes may be before or after the planned end." ;
+        sh:description    "The planned end date/timestamp for the operation. Note that this is advisory and the actual time the operation finishes may be before or after the planned end." ;
+        sh:name           "plannedEndAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:plannedEndAt .
+
 <https://astrea.linkeddata.es/shapes#32100c0091e3d7fe8fe08f3ed1079e27>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:int ;
@@ -3063,14 +3426,14 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:hasAgriProductTypeParent .
 
-<https://astrea.linkeddata.es/shapes#17eb86688ae773af72274df34a49fd0c>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
-        rdfs:label        "plannedEndAt"@en , "The planned end date/timestamp for the operation. Note that this is advisory and the actual time the operation finishes may be before or after the planned end." ;
-        sh:description    "The planned end date/timestamp for the operation. Note that this is advisory and the actual time the operation finishes may be before or after the planned end." ;
-        sh:name           "plannedEndAt"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:plannedEndAt .
+<https://astrea.linkeddata.es/report/2056155360>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#84d04499ff9bcc09dd3ba2a8c4b97a97>
         a                 sh:PropertyShape ;
@@ -3089,6 +3452,12 @@
         sh:name           "description"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:description .
+
+<https://astrea.linkeddata.es/shapes#795c744f2b69f0f3a4226675a18c617e>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:code .
 
 <https://astrea.linkeddata.es/shapes#4752e3e2bb553f8a78c5302130c05719>
         a                 sh:NodeShape ;
@@ -3128,6 +3497,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:treatmentPlanCreation .
 
+<https://astrea.linkeddata.es/shapes#0799c039eedfbe1358b3ecdb305f4f0f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "cropHasAgriSoil"@en , "Reference to the recommended types of soil suitable for growing this crop" ;
+        sh:description    "Reference to the recommended types of soil suitable for growing this crop" ;
+        sh:name           "cropHasAgriSoil"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:cropHasAgriSoil .
+
 <https://astrea.linkeddata.es/shapes#b33a4c13d391551e9a03969aa670e005>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> , <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
@@ -3150,11 +3528,23 @@
         sh:path           foodie:productSubType ;
         sh:pattern        ".*" .
 
+<https://astrea.linkeddata.es/shapes#ac1f1df7f42714c31f2630f3e028cb0b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "has harvest date" , "A relation to express the day the crop is harvested." ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "A relation to express the day the crop is harvested." ;
+        sh:equals         foodie:productionDate ;
+        sh:name           "has harvest date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           saref4agri:hasHarvestDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
 <https://astrea.linkeddata.es/shapes#cb15d1b208f12d513843da13eb5a8d5c>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#3693dda63470591331f78f417dc9cacd> , <https://astrea.linkeddata.es/shapes#c819de49cc619f614511d046937d3882> , <https://astrea.linkeddata.es/shapes#0c264d7145a37cb616e5b9042b449c10> , <https://astrea.linkeddata.es/shapes#cb19e1d4f9b1fa087da12b932e9137cf> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c819de49cc619f614511d046937d3882> , <https://astrea.linkeddata.es/shapes#3693dda63470591331f78f417dc9cacd> , <https://astrea.linkeddata.es/shapes#cb19e1d4f9b1fa087da12b932e9137cf> , <https://astrea.linkeddata.es/shapes#0c264d7145a37cb616e5b9042b449c10> ;
         sh:targetClass    foodie:ProductNutrients .
 
 <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
@@ -3176,12 +3566,6 @@
         sh:property       <https://astrea.linkeddata.es/shapes#096c0e70d50c2052dc106ec62a5928fa> , <https://astrea.linkeddata.es/shapes#2ce18e4be99ca18a9a563f69681ec1d6> , <https://astrea.linkeddata.es/shapes#37e742ea104967f9da32f501ccad63b7> , <https://astrea.linkeddata.es/shapes#d733db293e8dea5bd935b1ec5a78c686> , <https://astrea.linkeddata.es/shapes#8d5bcd972e7d929efe8c5c4d60ed2e1b> , <https://astrea.linkeddata.es/shapes#b7370a9404b09b09d8f745f67d63a0b9> , <https://astrea.linkeddata.es/shapes#c00c63a1734d13aa093a8ba3d31299dc> , <https://astrea.linkeddata.es/shapes#cf4cc8cb7188c322129720fac974c1a6> ;
         sh:targetClass    foodie:Product , fiware:AgriProductType .
 
-<https://astrea.linkeddata.es/shapes#72b5ce36f0debf76da4c0832ffed7785>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:description .
-
 <https://astrea.linkeddata.es/shapes#43e06f22e93661c0366559118b6d0477>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  saref: ;
@@ -3190,12 +3574,27 @@
         sh:nodeKind       sh:Literal ;
         sh:path           saref:hasTimestamp .
 
+<https://astrea.linkeddata.es/shapes#72b5ce36f0debf76da4c0832ffed7785>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:description .
+
 <https://astrea.linkeddata.es/shapes#2bce13ade70060bed3ad95798661aeb8>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
         sh:class          foodie:OriginTypeValue ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:originType .
+
+<https://astrea.linkeddata.es/report/1765382796>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriIntervention.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#58f226d8030285c0185e857469910d61>
         a            sh:PropertyShape ;
@@ -3220,6 +3619,15 @@
         sh:maxCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      prov:invalidatedAtTime .
+
+<https://astrea.linkeddata.es/shapes#2c1c1855ca25f23f352bcf7023af09a2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "generates"@en , "A relation to represent the yield generated by a Crop." ;
+        sh:description    "A relation to represent the yield generated by a Crop." ;
+        sh:name           "generates"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref4agri:generates .
 
 <https://astrea.linkeddata.es/shapes#65c715d5d2f2d31d44acef9806b5664e>
         a            sh:PropertyShape ;
@@ -3254,6 +3662,16 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:interventionPlot .
 
+<https://astrea.linkeddata.es/shapes#00ddfb7acd6e0e403b1d92211277f4fb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  demeterAgriCrop: ;
+        rdfs:label        "Expected Blooming End" ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "Expected Blooming End" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           demeterAgriCrop:expectedBloomingEnd ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
 <https://astrea.linkeddata.es/shapes#17df36668c68a2b8ece07442c26e334b>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  saref: ;
@@ -3284,6 +3702,23 @@
         rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    dim:EnergyDensity .
+
+<https://astrea.linkeddata.es/report/1812461706>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/farmAnimal.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#490b032c49a38f742c8739b3df447a8e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:genus ;
+        sh:pattern        ".*" .
 
 <https://astrea.linkeddata.es/shapes#b139d149be15b6e60e6c8b1bef46b4fa>
         a                 sh:PropertyShape ;
@@ -3381,19 +3816,19 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           fiware:fedWith .
 
-<https://astrea.linkeddata.es/shapes#365a8a1d622267a80fc9a3b6da78790c>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:type .
-
 <https://astrea.linkeddata.es/shapes#1fd94bd64d3ac06aecb3592f6ac62b69>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
         sh:class          iso19103:Measure ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:flowAdjustment .
+
+<https://astrea.linkeddata.es/shapes#365a8a1d622267a80fc9a3b6da78790c>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:type .
 
 <https://astrea.linkeddata.es/shapes#952974f74933c23be9b6358c21ece57a>
         a                 sh:PropertyShape ;
@@ -3456,7 +3891,7 @@
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#40543ae31d15d62fa39b0fcb7a505b2f> , <https://astrea.linkeddata.es/shapes#c35dc4a09d15756696a1345c58857956> , <https://astrea.linkeddata.es/shapes#eaf8048c422d6aac33295a6538729799> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#40543ae31d15d62fa39b0fcb7a505b2f> , <https://astrea.linkeddata.es/shapes#eaf8048c422d6aac33295a6538729799> , <https://astrea.linkeddata.es/shapes#c35dc4a09d15756696a1345c58857956> ;
         sh:targetClass    foodie:ActiveIngredients .
 
 <https://astrea.linkeddata.es/shapes#499af03d1cb5ac159c48185c9fe54b06>
@@ -3506,6 +3941,12 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:planProduct .
 
+<https://astrea.linkeddata.es/shapes#561d7681316bbbc7f832f6f814fa96dd>
+        a            sh:PropertyShape ;
+        sh:class     wgs84_pos:Point ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      wgs84_pos:location .
+
 <https://astrea.linkeddata.es/shapes#caa55776648aa319375fbfef9ab027ae>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
@@ -3515,11 +3956,15 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:waterSource .
 
-<https://astrea.linkeddata.es/shapes#561d7681316bbbc7f832f6f814fa96dd>
-        a            sh:PropertyShape ;
-        sh:class     wgs84_pos:Point ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      wgs84_pos:location .
+<https://astrea.linkeddata.es/shapes#dc011acee58ff3836114952ae3e050a3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Crop" ;
+        sh:description    "A collection of cultivated plants that is grown on a large scale commercially, especially a cereal, fruit, or vegetable."@en ;
+        sh:name           "Crop" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#536dc3aa61b372bf2f2754c0c93e90cd> , <https://astrea.linkeddata.es/shapes#36cbea6e92ac4e1e754724db3d4cb574> , <https://astrea.linkeddata.es/shapes#69925a22875d8e76f21162cdea079f4f> ;
+        sh:targetClass    saref4agri:Crop , fiware:AgriCrop , foodie:CropSpecies .
 
 <https://astrea.linkeddata.es/shapes#f196d50238714ed345057b23b1b1272c>
         a                 sh:NodeShape ;
@@ -3542,7 +3987,7 @@
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#543e2a89e69d8c46a81f97430c4a8bcb> , <https://astrea.linkeddata.es/shapes#7622216c02606402eedf4c3ab4d0ead0> , <https://astrea.linkeddata.es/shapes#82da3f9677527f027e33a454c4a094d8> , <https://astrea.linkeddata.es/shapes#0424178b00b48cf1e0659c49e2c59076> , <https://astrea.linkeddata.es/shapes#45af5f745969881725f85e8f6325a462> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7622216c02606402eedf4c3ab4d0ead0> , <https://astrea.linkeddata.es/shapes#543e2a89e69d8c46a81f97430c4a8bcb> , <https://astrea.linkeddata.es/shapes#45af5f745969881725f85e8f6325a462> , <https://astrea.linkeddata.es/shapes#0424178b00b48cf1e0659c49e2c59076> , <https://astrea.linkeddata.es/shapes#82da3f9677527f027e33a454c4a094d8> ;
         sh:targetClass    foodie:PropertyType .
 
 <https://astrea.linkeddata.es/shapes#79f9049ac8c7b059d503662569e881fe>
