@@ -1,5 +1,5 @@
-@prefix :      <https://w3id.org/cybele/> .
 @prefix schema: <https://schema.org/> .
+@prefix :      <https://w3id.org/cybele/> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix saref: <https://w3id.org/saref#> .
@@ -97,7 +97,7 @@
 
 <https://astrea.linkeddata.es/shapes#9fef3b114595ed4aa13d030667f0542b>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
         rdfs:label        "createdAt"@en , "Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
         sh:description    "Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
         sh:name           "createdAt"@en ;
@@ -195,6 +195,15 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    schema:Role .
 
+<https://astrea.linkeddata.es/report/2056155360>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
 <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -266,6 +275,13 @@
         sh:name           "member" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foaf:member .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#43e06f22e93661c0366559118b6d0477> , <https://astrea.linkeddata.es/shapes#37de2065ed2f84f6b6abc75343470d48> , <https://astrea.linkeddata.es/shapes#e8924a7f1da93fb4b400f5b6545d17c8> , <https://astrea.linkeddata.es/shapes#917a03a4e98e9b45105c8bd428ee27a1> , <https://astrea.linkeddata.es/shapes#f05250f16c115f2d8e978b14a6da76eb> , <https://astrea.linkeddata.es/shapes#22cd46dde8953830a6e5244fced5a303> , <https://astrea.linkeddata.es/shapes#ac2d4132e2d16c28b67d59b2419f2f0c> , <https://astrea.linkeddata.es/shapes#92ceb1c2593f6ec3bdb3019e44a64dfc> , <https://astrea.linkeddata.es/shapes#874ca680d48398aba67aa7c89d44b614> , <https://astrea.linkeddata.es/shapes#b3f81eca38904455db8f71dbf8317387> , <https://astrea.linkeddata.es/shapes#dca7312f034502b7f870ffa09ac382fc> , <https://astrea.linkeddata.es/shapes#67887954de7f456192f7a2bbf8e8241c> , <https://astrea.linkeddata.es/shapes#a74ec6533109f056675b61ba243f5dd9> , <https://astrea.linkeddata.es/shapes#1a3d7a1ed18965087c91359834d60df4> , <https://astrea.linkeddata.es/shapes#a36d1842a0736a976406b312e2d3ba03> , <https://astrea.linkeddata.es/shapes#b9f782f84471e60ee95cbd1c340c4cf5> , <https://astrea.linkeddata.es/shapes#6b9038cdae642483bf87853d93c46b60> , <https://astrea.linkeddata.es/shapes#c08dff0e53e0b76f625bc3a192fdc520> , <https://astrea.linkeddata.es/shapes#9fef3b114595ed4aa13d030667f0542b> , <https://astrea.linkeddata.es/shapes#f4d90415f5e9d6fcd19af24755bd434e> , <https://astrea.linkeddata.es/shapes#1a05d3b9fe79227f9bcbedbfb5656d4f> , <https://astrea.linkeddata.es/shapes#4c6b24d90f0552a8df061124f285506d> , <https://astrea.linkeddata.es/shapes#fa221ce52859ceec8f84e607ba0095ac> , <https://astrea.linkeddata.es/shapes#7c43f3f788bfa14a479241aebc5b17b8> , <https://astrea.linkeddata.es/shapes#48634e5542ecb3d5688c02ece3e54f64> , <https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8> , <https://astrea.linkeddata.es/shapes#a67bc63ef9d2e2c81c529fcf31a56c93> , <https://astrea.linkeddata.es/shapes#c7bfd558152fdd447ea5230b0d708747> , <https://astrea.linkeddata.es/shapes#497a2f9ed31a7d70fdbf4108e3bd274c> , <https://astrea.linkeddata.es/shapes#176d6868c726544c5477ac0fb503b142> , <https://astrea.linkeddata.es/shapes#7d31e878918619ad12be68dcc0363395> , <https://astrea.linkeddata.es/shapes#39f03359b20315c9711b1ea426ca3462> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#cfc20da821fd68ec0a54e6cc5e492f52> , <https://astrea.linkeddata.es/shapes#6354aa33cca2c364c92d3fbafa4a1079> , <https://astrea.linkeddata.es/shapes#9e9cb48c1174c31afed273d1a674e5ba> , <https://astrea.linkeddata.es/shapes#6c87b3fbc0f4085d69421982c72ecfb8> , <https://astrea.linkeddata.es/shapes#1e4b18a5bd47914de5037ef0bb5f98e5> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/2056155360> .
 
 <https://astrea.linkeddata.es/shapes#874ca680d48398aba67aa7c89d44b614>
         a            sh:PropertyShape ;
