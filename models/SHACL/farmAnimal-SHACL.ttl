@@ -1,5 +1,5 @@
-@prefix :      <https://w3id.org/cybele/> .
 @prefix schema: <https://schema.org/> .
+@prefix :      <https://w3id.org/cybele/> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix saref: <https://w3id.org/saref#> .
@@ -244,6 +244,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref4agri:hasBirthDate .
 
+<https://astrea.linkeddata.es/report/1812461706>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/farmAnimal.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
 <https://astrea.linkeddata.es/shapes#11809b7e7a3bf51ca4f44c40f5d3c183>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
@@ -283,11 +292,18 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:livestockNumber .
 
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#d608b201e320443adb2b29602d3dce02> , <https://astrea.linkeddata.es/shapes#fcd1a68295f667be2485414be93680be> , <https://astrea.linkeddata.es/shapes#c3cc8ba8b69f980217340a99151c2ee2> , <https://astrea.linkeddata.es/shapes#9567ae971b10ed8610f8f23ed925b580> , <https://astrea.linkeddata.es/shapes#242c53465f77ee16942577018a5d99b3> , <https://astrea.linkeddata.es/shapes#010e59cdc3cb50b4531a6c95ee5ca209> , <https://astrea.linkeddata.es/shapes#5c90dfd90e3f32a443a047cb631787b0> , <https://astrea.linkeddata.es/shapes#7ac439ee81b8651107b120c31dae04f7> , <https://astrea.linkeddata.es/shapes#86ef91578085052efc05fc7027269752> , <https://astrea.linkeddata.es/shapes#b6113b7c026f284e1dc73e09fe6e5ec3> , <https://astrea.linkeddata.es/shapes#d702899e61acd0020cb11296353eec9d> , <https://astrea.linkeddata.es/shapes#ff869b76f854e49f3612293744e8246e> , <https://astrea.linkeddata.es/shapes#82a00e75812e0d6634a7777fd7ca6929> , <https://astrea.linkeddata.es/shapes#ac1d82bae30ebd27516dc1248741ac53> , <https://astrea.linkeddata.es/shapes#d0af053575dd9d79a42ed45f1900165d> , <https://astrea.linkeddata.es/shapes#e8991cd7864fdd37aeb8413270a50313> , <https://astrea.linkeddata.es/shapes#a037870373166f040e2eb7bb7f35935a> , <https://astrea.linkeddata.es/shapes#952974f74933c23be9b6358c21ece57a> , <https://astrea.linkeddata.es/shapes#aff2f8d66fa4966ac88d4395c0ed82c1> , <https://astrea.linkeddata.es/shapes#aff23b97673892b9b4c4c10e469828e9> , <https://astrea.linkeddata.es/shapes#e59eaa45bd97e25b0903c266b38a5d1f> , <https://astrea.linkeddata.es/shapes#fd8dff26fee2da1ab28c70cb2cc60647> , <https://astrea.linkeddata.es/shapes#d0e6ba474f39cef246b37ead110998fb> , <https://astrea.linkeddata.es/shapes#780e177fb581897efc24ae85d3dd5a91> , <https://astrea.linkeddata.es/shapes#ca42dcd3e488a491f41cb610aae7b09d> , <https://astrea.linkeddata.es/shapes#1587c852ac374ff783866802f52ca429> , <https://astrea.linkeddata.es/shapes#c7275863adeb16160c5d5b532ce3542d> , <https://astrea.linkeddata.es/shapes#46d9477ef78e6b291e5febf12c3870de> , <https://astrea.linkeddata.es/shapes#36d76706c0194cfd3fb18f3d1b78006f> , <https://astrea.linkeddata.es/shapes#b2e984c1224c8f63b3efbff65b641c1b> , <https://astrea.linkeddata.es/shapes#2ded8249c845505a3e9eea3925b38df1> , <https://astrea.linkeddata.es/shapes#4572712ac3fdd6f68259f9122a606cc3> , <https://astrea.linkeddata.es/shapes#e6df4e017e0bb9438dcf15f6a4c5dfa9> , <https://astrea.linkeddata.es/shapes#f5913330dc3214b06473525103511a93> , <https://astrea.linkeddata.es/shapes#11809b7e7a3bf51ca4f44c40f5d3c183> , <https://astrea.linkeddata.es/shapes#559f9e94d95d585dd6e2a884152790c2> , <https://astrea.linkeddata.es/shapes#60ada34585494ace4bd506b78949a46c> , <https://astrea.linkeddata.es/shapes#95c322184613a1662d48949c2a46829e> , <https://astrea.linkeddata.es/shapes#8c03923175c5716526c38c4d357fd6fe> , <https://astrea.linkeddata.es/shapes#7832bd54f9465f1bcf59cc4aae49c834> , <https://astrea.linkeddata.es/shapes#f3b164702d80c975502f0e4ba5584f76> , <https://astrea.linkeddata.es/shapes#5aa5fad1e4088b335f1282ec70d70d42> , <https://astrea.linkeddata.es/shapes#13b3c15f87ac1698f3dcd55cd3874ff4> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1812461706> .
+
 <https://astrea.linkeddata.es/shapes#d0e6ba474f39cef246b37ead110998fb>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  af-inspire: ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#242c53465f77ee16942577018a5d99b3> , <https://astrea.linkeddata.es/shapes#95c322184613a1662d48949c2a46829e> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#95c322184613a1662d48949c2a46829e> , <https://astrea.linkeddata.es/shapes#242c53465f77ee16942577018a5d99b3> ;
         sh:targetClass    af-inspire:FarmAnimalSpecies .
 
 <https://astrea.linkeddata.es/shapes#13b3c15f87ac1698f3dcd55cd3874ff4>

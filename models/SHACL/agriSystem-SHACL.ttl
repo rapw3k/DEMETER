@@ -39,6 +39,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:code .
 
+<https://astrea.linkeddata.es/report/1514534692>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriSystem.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
 <https://astrea.linkeddata.es/shapes#06d343a59be56b45caf7bbca1e50e807>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  saref4agri: ;
@@ -81,6 +90,13 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    ssn:System .
 
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#daeed9fa59dbe88693b3b778f632e014> , <https://astrea.linkeddata.es/shapes#ea1a1e3d2380b574749df423ca895398> , <https://astrea.linkeddata.es/shapes#78b37b13428e58c8824cde0844043b7e> , <https://astrea.linkeddata.es/shapes#e7929688d1eb164b8e14b2892279ac15> , <https://astrea.linkeddata.es/shapes#06d343a59be56b45caf7bbca1e50e807> , <https://astrea.linkeddata.es/shapes#4b0de082e19a0eddd94cfeeef929fe10> , <https://astrea.linkeddata.es/shapes#499af03d1cb5ac159c48185c9fe54b06> , <https://astrea.linkeddata.es/shapes#689dff520b7934561f2107f67cb3637e> , <https://astrea.linkeddata.es/shapes#15c31c97fdf1f3cf83113228d2ce8e7c> , <https://astrea.linkeddata.es/shapes#6fe7446209c7d0657bea56e0dd818d93> , <https://astrea.linkeddata.es/shapes#c058a40bb679abdf650145e1bdd5148e> , <https://astrea.linkeddata.es/shapes#28859dcb6be4a9e21f596c8879fa717a> , <https://astrea.linkeddata.es/shapes#c967b0fdd8f53ecc88b36db8a1959138> , <https://astrea.linkeddata.es/shapes#bbf2b80f2a4bd0c20fab127bf2ff39dd> , <https://astrea.linkeddata.es/shapes#bac156cb4c091b645a2b3eceee3c609b> , <https://astrea.linkeddata.es/shapes#c186b1044a6b8571d5484d0488dd2d7b> , <https://astrea.linkeddata.es/shapes#a5d1d90d85a3dca6c7c8406eec083400> , <https://astrea.linkeddata.es/shapes#378884c9a8a498df70f2e193093df0af> , <https://astrea.linkeddata.es/shapes#1c20aeaf56b91e5b9b6adf8be31fd11d> , <https://astrea.linkeddata.es/shapes#21e87ae54ee2f9e68cf4b18b30541c13> , <https://astrea.linkeddata.es/shapes#afd432ca9d507a89c5ab032681bb246f> , <https://astrea.linkeddata.es/shapes#14f4740cb2289a2aa9391d4da4a86b24> , <https://astrea.linkeddata.es/shapes#f8d39a8571f65103be4266433a282cd5> , <https://astrea.linkeddata.es/shapes#fd268784d770a61cc9487f7932e3e9ec> , <https://astrea.linkeddata.es/shapes#2892a1d5ac68741abb1b8f96a9763d31> , <https://astrea.linkeddata.es/shapes#8866e3f2019fcadc04bd60737397cedf> , <https://astrea.linkeddata.es/shapes#17df36668c68a2b8ece07442c26e334b> , <https://astrea.linkeddata.es/shapes#ce137a6ae8005973ea185df81f79ee37> , <https://astrea.linkeddata.es/shapes#56412c6e81da06014e55555506514cf3> , <https://astrea.linkeddata.es/shapes#656253a2e2b47a837a280b35b949ebc7> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1514534692> .
+
 <https://astrea.linkeddata.es/shapes#14f4740cb2289a2aa9391d4da4a86b24>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  saref4agri: ;
@@ -116,13 +132,6 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    saref4agri:SoilTensiometer .
 
-<https://astrea.linkeddata.es/shapes#bbf2b80f2a4bd0c20fab127bf2ff39dd>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foodie:code .
-
 <https://astrea.linkeddata.es/shapes#689dff520b7934561f2107f67cb3637e>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  saref4agri: ;
@@ -138,6 +147,13 @@
         sh:name           "Watering system"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    saref4agri:WateringSystem .
+
+<https://astrea.linkeddata.es/shapes#bbf2b80f2a4bd0c20fab127bf2ff39dd>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:code .
 
 <https://astrea.linkeddata.es/shapes#afd432ca9d507a89c5ab032681bb246f>
         a                 sh:NodeShape ;

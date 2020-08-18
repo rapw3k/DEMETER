@@ -1,5 +1,5 @@
-@prefix :      <https://w3id.org/cybele/> .
 @prefix schema: <https://schema.org/> .
+@prefix :      <https://w3id.org/cybele/> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix saref: <https://w3id.org/saref#> .
@@ -27,6 +27,22 @@
 @prefix af-inspire: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#522e6e9d9c1ec057b270d68c6e6671e1> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1879514699> .
+
+<https://astrea.linkeddata.es/report/1879514699>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriPest.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#522e6e9d9c1ec057b270d68c6e6671e1>
         a                 sh:NodeShape ;
