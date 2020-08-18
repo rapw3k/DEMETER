@@ -2,15 +2,18 @@
 @prefix fiware: <https://uri.fiware.org/ns/data-models#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 fiware:AgriPest a owl:Class ;
     rdfs:label "AgriPest" ;
     rdfs:comment "This entity contains a harmonised description of an agricultural pest. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
     rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> .
 
-<https://w3id.org/demeter/agri/agriPest> a owl:Ontology ;
+<https://w3id.org/demeter/agri/agriPest> a owl:Ontology,
+        prov:Entity ;
     dct:contributor [ foaf:name "Rob Atkinson" ;
             schema:affiliation [ foaf:name "OGC" ] ],
         [ foaf:name "Ioanna Roussaki" ;
@@ -25,6 +28,13 @@ fiware:AgriPest a owl:Class ;
     owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriPest.ttl> ;
     owl:versionInfo "1.0" ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriPest.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriPest.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            prov:endedAtTime "2020-08-18"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.3" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 

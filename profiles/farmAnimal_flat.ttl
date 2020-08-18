@@ -8,6 +8,7 @@
 @prefix ns1: <http://www.w3.org/ns/dx/prof/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix saref: <https://w3id.org/saref#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
@@ -88,7 +89,8 @@ fiware:welfareCondition a owl:DatatypeProperty ;
 
 saref4agri:isLocationOf rdfs:isDefinedBy saref4agri: .
 
-<https://w3id.org/demeter/agri/farmAnimal> a owl:Ontology ;
+<https://w3id.org/demeter/agri/farmAnimal> a owl:Ontology,
+        prov:Entity ;
     dct:contributor [ foaf:name "Ioanna Roussaki" ;
             schema:affiliation [ foaf:name "ICCS" ] ],
         [ foaf:name "Rob Atkinson" ;
@@ -112,6 +114,13 @@ saref4agri:isLocationOf rdfs:isDefinedBy saref4agri: .
     ns1:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
         <http://inspire.ec.europa.eu/schemas/af/3.0>,
         <https://w3id.org/def/saref4agri> ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\farmAnimal.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = ../models\\farmAnimal.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            prov:endedAtTime "2020-08-18"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.3" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 

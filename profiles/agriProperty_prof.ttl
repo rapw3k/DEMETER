@@ -10,18 +10,18 @@
         "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
     skos:historyNote "Ontology profile normalised using ProfileWiz" ;
     prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "Original Source OWL model" ;
-            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "text/turtle" ;
-            rdfs:comment "Source OWL model used to derive normalised profile views." ;
-            prof:hasArtifact "../models\\agriProperty.ttl" ;
-            prof:hasRole prof:source ],
-        [ a prof:ResourceDescriptor ;
             rdfs:label "OWL with definition details from imports" ;
             dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
             dcterms:format "text/turtle" ;
             rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
             prof:hasArtifact "agriProperty_flat.ttl" ;
+            prof:hasRole prof:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
+            dcterms:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriProperty.ttl" ;
             prof:hasRole prof:vocabulary ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "OWL documentation as HTML" ;
@@ -31,19 +31,18 @@
             prof:hasArtifact "agriProperty.html" ;
             prof:hasRole prof:profile ],
         [ a prof:ResourceDescriptor ;
-            rdfs:label "Profile description as HTML" ;
-            dcterms:conformsTo prof: ;
-            dcterms:format "text/html" ;
-            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
-            prof:hasArtifact "agriProperty_prof.html" ;
-            prof:hasRole prof:profile ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Normalised OWL with imports" ;
+            rdfs:label "Original Source OWL model" ;
             dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
             dcterms:format "text/turtle" ;
-            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
-            prof:hasArtifact "agriProperty.ttl" ;
-            prof:hasRole prof:vocabulary ],
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriProperty.ttl" ;
+            prof:hasRole prof:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dcterms:format "application/json" ;
+            prof:hasArtifact "agriProperty.json" ;
+            prof:hasRole prof:schema ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "Profile description as HTML" ;
             dcterms:conformsTo prof: ;
@@ -52,23 +51,24 @@
             prof:hasArtifact "agriProperty_source.html" ;
             prof:hasRole prof:profile ],
         [ a prof:ResourceDescriptor ;
-            rdfs:label "Flattened JSON-LD context" ;
-            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dcterms:format "application/ld+json" ;
-            prof:hasArtifact "agriProperty_flat.jsonld" ;
-            prof:hasRole prof:contextflat ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON Schema" ;
-            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
-            dcterms:format "application/json" ;
-            prof:hasArtifact "agriProperty.json" ;
-            prof:hasRole prof:schema ],
-        [ a prof:ResourceDescriptor ;
             rdfs:label "JSON-LD Context" ;
             dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
             dcterms:format "application/ld+json" ;
             prof:hasArtifact "agriProperty.jsonld" ;
-            prof:hasRole prof:context ] ;
+            prof:hasRole prof:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dcterms:conformsTo prof: ;
+            dcterms:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "agriProperty_prof.html" ;
+            prof:hasRole prof:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
+            dcterms:format "application/ld+json" ;
+            prof:hasArtifact "agriProperty_flat.jsonld" ;
+            prof:hasRole prof:contextflat ] ;
     prof:isProfileOf <https://w3id.org/demeter/agri/agriProperty_profile4agriProperty_dim>,
         <https://w3id.org/demeter/agri/agriProperty_profile4cf-feature>,
         <https://w3id.org/demeter/agri/agriProperty_profile4foodie.ttl>,

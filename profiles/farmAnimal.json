@@ -3,6 +3,21 @@
     "$id": "https://w3id.org/demeter/agri/farmAnimal?_profile=jsonschema",
     "type": "object",
     "properties": {
+        "saref4agri:ID": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "saref:FeatureOfInterest": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dummy": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
         "saref4agri:AnimalGroup": {
             "type": "object",
             "properties": {
@@ -42,19 +57,19 @@
                         "type": "string"
                     }
                 },
+                "saref4agri:hasDeathDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "saref4agri:hasBirthDate": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "saref4agri:hasName": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref4agri:hasDeathDate": {
+                "saref4agri:isMemberOf": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -66,7 +81,7 @@
                         "type": "string"
                     }
                 },
-                "saref4agri:isMemberOf": {
+                "saref4agri:hasName": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -75,12 +90,12 @@
             },
             "required": []
         },
-        "saref4agri:ID": {
+        "fiware:Animal": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "fiware:Animal": {
+        "iso19150-2:Datatype": {
             "type": "object",
             "properties": {},
             "required": []

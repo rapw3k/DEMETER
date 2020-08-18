@@ -11,6 +11,7 @@
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix ns1: <http://www.w3.org/ns/dx/prof/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -119,7 +120,8 @@ fiware:waterSource a owl:DatatypeProperty ;
     rdfs:comment "If water was applied/ use this specifies the source. One of: borehole, rainfall, river, rainwater capture, water dam, commercial supply." ;
     rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
 
-<https://w3id.org/demeter/agri/agriIntervention> a owl:Ontology ;
+<https://w3id.org/demeter/agri/agriIntervention> a owl:Ontology,
+        prov:Entity ;
     dct:contributor [ foaf:name "Ioanna Roussaki" ;
             schema:affiliation [ foaf:name "ICCS" ] ],
         [ foaf:name "Rob Atkinson" ;
@@ -137,6 +139,13 @@ fiware:waterSource a owl:DatatypeProperty ;
     owl:versionInfo "1.0" ;
     ns1:isProfileOf <https://w3id.org/demeter/agri/agriIntervention_profile4foodie.ttl> ;
     ns1:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie> ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriIntervention.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriIntervention.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            prov:endedAtTime "2020-08-18"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.3" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 

@@ -327,8 +327,8 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.w3.org/ns/sosa/Platform">sosa:Platform</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Datatype">iso19150-2:Datatype</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/Platform">sosa:Platform</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -355,8 +355,8 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Datatype">iso19150-2:Datatype</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/sosa/Platform">sosa:Platform</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Datatype">iso19150-2:Datatype</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -446,8 +446,8 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="http://foodie-cloud.com/model/foodie#MachineType">foodie:MachineType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://foodie-cloud.com/model/foodie#TractorType">foodie:TractorType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://foodie-cloud.com/model/foodie#MachineType">foodie:MachineType</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -483,8 +483,8 @@
                 <th>Restrictions</th>
                 <td>
                     <a href="http://www.w3.org/ns/ssn/forProperty">ssn:forProperty</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/Property">ssn:Property</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/ssn/deployedSystem">ssn:deployedSystem</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/ssn/deployedOnPlatform">ssn:deployedOnPlatform</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/sosa/Platform">sosa:Platform</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/ssn/deployedSystem">ssn:deployedSystem</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -505,25 +505,25 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems.</p>
+                    <p>System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems. (Definition taken from http://www.w3.org/ns/ssn/System)</p>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://www.w3.org/ns/ssn/hasSubSystem">ssn:hasSubSystem</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/ssn/hasDeployment">ssn:hasDeployment</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/Deployment">ssn:Deployment</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/ssn/implements">ssn:implements</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/sosa/Procedure">sosa:Procedure</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="ub23bL474C28">ub23bL474C28</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/sosa/isHostedBy">sosa:isHostedBy</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/sosa/Platform">sosa:Platform</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/ssn/hasSubSystem">ssn:hasSubSystem</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="ub22bL474C28">ub22bL474C28</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/ssn/hasDeployment">ssn:hasDeployment</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/Deployment">ssn:Deployment</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="https://w3id.org/def/saref4agri#WeatherStation">saref4agri:WeatherStation</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/def/saref4agri#WateringSystem">saref4agri:WateringSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/saref#Device">saref:Device</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#WateringSystem">saref4agri:WateringSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#WeatherStation">saref4agri:WeatherStation</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -853,20 +853,20 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/saref#hasModel">saref:hasModel</a> <span class="cardinality">max</span> 1<br/>
-                    <a href="https://w3id.org/saref#measuresProperty">saref:measuresProperty</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Property">saref:Property</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/saref#consistsOf">saref:consistsOf</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Device">saref:Device</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/saref#hasFunction">saref:hasFunction</a> <span class="cardinality">min</span> 1 <a href="https://w3id.org/saref#Function">saref:Function</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/saref#offers">saref:offers</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Service">saref:Service</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/saref#accomplishes">saref:accomplishes</a> <span class="cardinality">min</span> 1 <a href="https://w3id.org/saref#Task">saref:Task</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/saref#hasManufacturer">saref:hasManufacturer</a> <span class="cardinality">max</span> 1<br/>
-                    <a href="https://w3id.org/saref#hasState">saref:hasState</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#State">saref:State</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/saref#hasProfile">saref:hasProfile</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Profile">saref:Profile</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/saref#hasTypicalConsumption">saref:hasTypicalConsumption</a> <span class="cardinality">only</span> ()<br/>
-                    <a href="https://w3id.org/saref#controlsProperty">saref:controlsProperty</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Property">saref:Property</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/saref#isUsedFor">saref:isUsedFor</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Commodity">saref:Commodity</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/saref#hasDescription">saref:hasDescription</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://w3id.org/saref#hasState">saref:hasState</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#State">saref:State</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#measuresProperty">saref:measuresProperty</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Property">saref:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#offers">saref:offers</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Service">saref:Service</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#hasFunction">saref:hasFunction</a> <span class="cardinality">min</span> 1 <a href="https://w3id.org/saref#Function">saref:Function</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#hasModel">saref:hasModel</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://w3id.org/saref#hasTypicalConsumption">saref:hasTypicalConsumption</a> <span class="cardinality">only</span> (<a href="https://w3id.org/saref#Energy">saref:Energy</a><sup class="sup-c" title="class">c</sup> or <a href="https://w3id.org/saref#Power">saref:Power</a><sup class="sup-c" title="class">c</sup>)<br/>
+                    <a href="https://w3id.org/saref#accomplishes">saref:accomplishes</a> <span class="cardinality">min</span> 1 <a href="https://w3id.org/saref#Task">saref:Task</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#controlsProperty">saref:controlsProperty</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Property">saref:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#consistsOf">saref:consistsOf</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Device">saref:Device</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#hasManufacturer">saref:hasManufacturer</a> <span class="cardinality">max</span> 1<br/>
                     <a href="https://w3id.org/saref#makesMeasurement">saref:makesMeasurement</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Measurement">saref:Measurement</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#hasProfile">saref:hasProfile</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Profile">saref:Profile</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#hasDescription">saref:hasDescription</a> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
             <tr>
@@ -913,14 +913,14 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="https://w3id.org/def/saref4agri#WeightSensor">saref4agri:WeightSensor</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/def/saref4agri#MilkingSensor">saref4agri:MilkingSensor</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/def/saref4agri#SoilTensiometer">saref4agri:SoilTensiometer</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#WeatherStation">saref4agri:WeatherStation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#MilkingSensor">saref4agri:MilkingSensor</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#Pluviometer">saref4agri:Pluviometer</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/def/saref4agri#EatingActivitySensor">saref4agri:EatingActivitySensor</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="https://w3id.org/def/saref4agri#Thermometer">saref4agri:Thermometer</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#MovementActivitySensor">saref4agri:MovementActivitySensor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#EatingActivitySensor">saref4agri:EatingActivitySensor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#WeightSensor">saref4agri:WeightSensor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#SoilTensiometer">saref4agri:SoilTensiometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#Thermometer">saref4agri:Thermometer</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>

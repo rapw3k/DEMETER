@@ -8,17 +8,9 @@
 @prefix afn:   <http://jena.apache.org/ARQ/function#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ns1:   <http://www.w3.org/ns/dx/prof/> .
+@prefix ns2:   <http://www.w3.org/ns/dx/prof/> .
+@prefix ns1:   <http://www.w3.org/ns/prov#> .
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
-
-<https://astrea.linkeddata.es/report/1331304647>
-        a       <https://w3id.org/def/astrea#ReportEntry> ;
-        <https://w3id.org/def/astrea#message>
-                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
-        <https://w3id.org/def/astrea#source>
-                "https://uri.etsi.org/ngsi-ld/v1/ontology" ;
-        <https://w3id.org/def/astrea#statusCode>
-                "400"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#c77654dc7d225e9b11cb0e2206c52715>
         a         sh:PropertyShape ;
@@ -102,3 +94,12 @@
 <https://astrea.linkeddata.es/shapes#1cf598ed932b84574c5c2aec418ea0b3>
         a         sh:PropertyShape ;
         sh:class  ngsi-ld:Relationship .
+
+<https://astrea.linkeddata.es/report/1331304647>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "https://uri.etsi.org/ngsi-ld/v1/ontology" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .

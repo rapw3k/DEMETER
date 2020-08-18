@@ -7,11 +7,13 @@
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
-@prefix ns1: <http://www.w3.org/ns/dx/prof/> .
-@prefix ns2: <http://purl.org/dc/elements/1.1/> .
+@prefix ns1: <http://purl.org/dc/elements/1.1/> .
+@prefix ns2: <http://www.w3.org/ns/dx/prof/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
 @prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix saref: <https://w3id.org/saref#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
@@ -563,7 +565,8 @@ saref4agri:SoilMoisture rdfs:isDefinedBy saref4agri: .
 saref4agri:SoilTemperature rdfs:isDefinedBy saref4agri: ;
     owl:sameAs cf:soil_temperature .
 
-<https://w3id.org/demeter/agri/agriProperty> a owl:Ontology ;
+<https://w3id.org/demeter/agri/agriProperty> a owl:Ontology,
+        prov:Entity ;
     dct:contributor [ foaf:name "Ioanna Roussaki" ;
             schema:affiliation [ foaf:name "ICCS" ] ],
         [ foaf:name "George Routis" ;
@@ -587,20 +590,27 @@ saref4agri:SoilTemperature rdfs:isDefinedBy saref4agri: ;
         <https://w3id.org/saref> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProperty.ttl> ;
     owl:versionInfo "1.0" ;
-    ns1:isProfileOf <https://w3id.org/demeter/agri/agriProperty_profile4agriProperty_dim>,
+    ns2:isProfileOf <https://w3id.org/demeter/agri/agriProperty_profile4agriProperty_dim>,
         <https://w3id.org/demeter/agri/agriProperty_profile4cf-feature>,
         <https://w3id.org/demeter/agri/agriProperty_profile4foodie.ttl>,
         <https://w3id.org/demeter/agri/agriProperty_profile4qu>,
         <https://w3id.org/demeter/agri/agriProperty_profile4saref>,
         <https://w3id.org/demeter/agri/agriProperty_profile4saref4agri.ttl>,
         <https://w3id.org/demeter/agri/agriProperty_profile4sosa> ;
-    ns1:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+    ns2:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
         <http://purl.oclc.org/NET/ssnx/cf/cf-feature>,
         <http://purl.oclc.org/NET/ssnx/qu/dim>,
         <http://purl.oclc.org/NET/ssnx/qu/qu>,
         <http://www.w3.org/ns/sosa>,
         <https://w3id.org/def/saref4agri>,
         <https://w3id.org/saref> ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriProperty.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriProperty.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            prov:endedAtTime "2020-08-18"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.3" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 
@@ -609,17 +619,17 @@ saref:Humidity a owl:Class ;
         "Humidity",
         "Humidity"@en,
         "Humidiy"@en ;
-    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit"^^xsd:string,
-        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit" ;
+    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit",
+        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit"^^xsd:string ;
     rdfs:isDefinedBy saref: ;
     rdfs:subClassOf saref:Property .
 
 saref:Temperature a owl:Class ;
-    rdfs:label "Temperature"^^xsd:string,
-        "Temperature",
+    rdfs:label "Temperature",
+        "Temperature"^^xsd:string,
         "Temperature"@en ;
-    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)"^^xsd:string,
-        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)" ;
+    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)",
+        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)"^^xsd:string ;
     rdfs:isDefinedBy saref: ;
     rdfs:subClassOf saref:Property ;
     owl:equivalentClass dim:Temperature .
@@ -1057,8 +1067,8 @@ dim:MechanicsScheme a owl:NamedIndividual,
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 saref:Property a owl:Class ;
-    rdfs:label "Property",
-        "Property"^^xsd:string,
+    rdfs:label "Property"^^xsd:string,
+        "Property",
         "Property"@en ;
     rdfs:comment "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended."^^xsd:string,
         "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended.",
@@ -1091,7 +1101,7 @@ saref:Property a owl:Class ;
 
 qu:QuantityKind a owl:Class ;
     rdfs:label "QuantityKind" ;
-    ns2:source "skos:exactMatch 'QuantityKind' [SysML 1.2-QUDV] http://www.omgwiki.org/OMGSysML/doku.php?id=sysml-qudv:quantities_units_dimensions_values_qudv" ;
+    ns1:source "skos:exactMatch 'QuantityKind' [SysML 1.2-QUDV] http://www.omgwiki.org/OMGSysML/doku.php?id=sysml-qudv:quantities_units_dimensions_values_qudv" ;
     rdfs:comment """A QuantityKind is an abstract classifier that represents the [VIM] concept of "kind of quantity" that is defined as "aspect
 common to mutually comparable quantities." A QuantityKind represents the essence of a quantity without any numerical
 value or unit. Quantities of the same kind within a given system of quantities have the same quantity dimension. However,
@@ -1100,5 +1110,20 @@ quantities of the same dimension are not necessarily of the same kind.""" ;
         "http://purl.oclc.org/NET/ssnx/qu" ;
     rdfs:seeAlso "http://www.omgsysml.org/qudv#Quantity" ;
     rdfs:subClassOf [ a owl:Class ;
-            owl:intersectionOf [ ] ] .
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass qu:Scale ;
+                        owl:onProperty qu:scale ] [ a owl:Restriction ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:name ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:symbol ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:definitionURI ] [ a owl:Restriction ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:description ] ) ] .
 

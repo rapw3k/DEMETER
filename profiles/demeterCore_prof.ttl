@@ -10,47 +10,6 @@
         "The DEMETER core ontology is a profile (subset) of the ontology presented in Annex D of the NGSI-LD standard: ETSI GS CIM 006 V1.1.1 (2019-07), covering only the core property-graph entities."@en ;
     skos:historyNote "Ontology profile normalised using ProfileWiz" ;
     prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "Flattened JSON-LD context" ;
-            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dcterms:format "application/ld+json" ;
-            prof:hasArtifact "demeterCore_flat.jsonld" ;
-            prof:hasRole prof:contextflat ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Original Source OWL model" ;
-            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "text/turtle" ;
-            rdfs:comment "Source OWL model used to derive normalised profile views." ;
-            prof:hasArtifact "../models\\demeterCore.ttl" ;
-            prof:hasRole prof:source ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Normalised OWL with imports" ;
-            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "text/turtle" ;
-            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
-            prof:hasArtifact "demeterCore.ttl" ;
-            prof:hasRole prof:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "OWL with definition details from imports" ;
-            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "text/turtle" ;
-            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
-            prof:hasArtifact "demeterCore_flat.ttl" ;
-            prof:hasRole prof:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Profile description as HTML" ;
-            dcterms:conformsTo prof: ;
-            dcterms:format "text/html" ;
-            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
-            prof:hasArtifact "demeterCore_prof.html" ;
-            prof:hasRole prof:profile ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Profile description as HTML" ;
-            dcterms:conformsTo prof: ;
-            dcterms:format "text/html" ;
-            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
-            prof:hasArtifact "demeterCore_source.html" ;
-            prof:hasRole prof:profile ],
-        [ a prof:ResourceDescriptor ;
             rdfs:label "JSON-LD Context" ;
             dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
             dcterms:format "application/ld+json" ;
@@ -62,6 +21,47 @@
             dcterms:format "application/json" ;
             prof:hasArtifact "demeterCore.json" ;
             prof:hasRole prof:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
+            dcterms:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "demeterCore_flat.ttl" ;
+            prof:hasRole prof:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dcterms:conformsTo prof: ;
+            dcterms:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "demeterCore_source.html" ;
+            prof:hasRole prof:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
+            dcterms:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "demeterCore.ttl" ;
+            prof:hasRole prof:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
+            dcterms:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\demeterCore.ttl" ;
+            prof:hasRole prof:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
+            dcterms:format "application/ld+json" ;
+            prof:hasArtifact "demeterCore_flat.jsonld" ;
+            prof:hasRole prof:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dcterms:conformsTo prof: ;
+            dcterms:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "demeterCore_prof.html" ;
+            prof:hasRole prof:profile ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "OWL documentation as HTML" ;
             dcterms:conformsTo prof: ;

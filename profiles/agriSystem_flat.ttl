@@ -5,8 +5,10 @@
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix ns1: <http://www.w3.org/ns/dx/prof/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
 @prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix saref: <https://w3id.org/saref#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
@@ -150,7 +152,8 @@ saref4agri:WeightSensor a owl:Class ;
     rdfs:isDefinedBy saref4agri: ;
     rdfs:subClassOf saref:Sensor .
 
-<https://w3id.org/demeter/agri/agriSystem> a owl:Ontology ;
+<https://w3id.org/demeter/agri/agriSystem> a owl:Ontology,
+        prov:Entity ;
     dct:contributor [ foaf:name "Ioanna Roussaki" ;
             schema:affiliation [ foaf:name "ICCS" ] ],
         [ foaf:name "George Routis" ;
@@ -182,6 +185,13 @@ saref4agri:WeightSensor a owl:Class ;
         <http://www.w3.org/ns/ssn>,
         <https://w3id.org/def/saref4agri>,
         <https://w3id.org/saref> ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriSystem.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriSystem.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            prov:endedAtTime "2020-08-18"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.3" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 
@@ -271,7 +281,8 @@ saref:Device a owl:Class ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty saref:hasModel ],
         [ a owl:Restriction ;
-            owl:allValuesFrom [ ] ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:unionOf ( saref:Energy saref:Power ) ] ;
             owl:onProperty saref:hasTypicalConsumption ],
         ssn:System .
 
@@ -320,7 +331,7 @@ ssn:System a owl:Class ;
             owl:onProperty sosa:isHostedBy ],
         [ a owl:Restriction ;
             owl:allValuesFrom ssn:System ;
-            owl:onProperty [ ] ] ;
+            owl:onProperty [ owl:inverseOf ssn:hasSubSystem ] ] ;
     skos:definition "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems."@en .
 
 saref:Sensor a owl:Class ;
