@@ -1,0 +1,357 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://w3id.org/demeter/agri/agriFeature?_profile=jsonschema",
+    "type": "object",
+    "properties": {
+        "sf:LinearRing": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiCurve": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Point": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiPoint": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiLineString": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Surface": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:PolyhedralSurface": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiSurface": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Line": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Curve": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Triangle": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Polygon": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:LineString": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Geometry": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:TIN": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiPolygon": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:GeometryCollection": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foodie:OriginTypeValue": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foodie:ManagementZone": {
+            "type": "object",
+            "properties": {
+                "foodie:notes": {
+                    "type": "string"
+                },
+                "geo:hasGeometry": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foodie:code": {
+                    "type": "string"
+                },
+                "prov:invalidatedAtTime": {
+                    "type": "string"
+                },
+                "prov:generatedAtTime": {
+                    "type": "string"
+                },
+                "common:validTo": {
+                    "type": "string"
+                },
+                "common:validFrom": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "foodie:notes",
+                "geo:hasGeometry",
+                "foodie:code",
+                "prov:generatedAtTime"
+            ]
+        },
+        "foodie:Plot": {
+            "type": "object",
+            "properties": {
+                "geo:hasGeometry": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foodie:code": {
+                    "type": "string"
+                },
+                "prov:generatedAtTime": {
+                    "type": "string"
+                },
+                "foodie:originType": {
+                    "type": "string"
+                },
+                "common:validTo": {
+                    "type": "string"
+                },
+                "common:validFrom": {
+                    "type": "string"
+                },
+                "foodie:description": {
+                    "type": "string"
+                },
+                "prov:invalidatedAtTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "geo:hasGeometry",
+                "foodie:code",
+                "prov:generatedAtTime",
+                "foodie:originType",
+                "common:validFrom"
+            ]
+        },
+        "af-inspire:Holding": {
+            "type": "object",
+            "properties": {
+                "foodie:userId": {
+                    "type": "string"
+                },
+                "af-inspire:contains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "foodie:userId",
+                "af-inspire:contains"
+            ]
+        },
+        "af-inspire:Site": {
+            "type": "object",
+            "properties": {
+                "prov:invalidatedAtTime": {
+                    "type": "string"
+                },
+                "common:validFrom": {
+                    "type": "string"
+                },
+                "af-inspire:activity": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:hasGeometry": {
+                    "type": "string"
+                },
+                "foodie:containsPlot": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foodie:code": {
+                    "type": "string"
+                },
+                "common:validTo": {
+                    "type": "string"
+                },
+                "prov:generatedAtTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "common:validFrom",
+                "af-inspire:activity",
+                "geo:hasGeometry",
+                "foodie:containsPlot",
+                "foodie:code",
+                "prov:generatedAtTime"
+            ]
+        },
+        "geo:Geometry": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "geo:SpatialObject": {
+            "type": "object",
+            "properties": {
+                "geo:hasGeometry": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfWithin": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfContains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "wgs84_pos:location": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "geo:Feature": {
+            "type": "object",
+            "properties": {
+                "geo:hasGeometry": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "act-inspire:EconomicActivityNACEValue": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "fiware:AgriParcel": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "fiware:AgriFarm": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "fiware:AgriGreenhouse": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "saref4agri:Parcel": {
+            "type": "object",
+            "properties": {
+                "saref4agri:hasName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:contains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "saref4agri:Farm": {
+            "type": "object",
+            "properties": {
+                "saref4agri:contains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "saref4agri:BuildingSpace": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "saref4agri:Building": {
+            "type": "object",
+            "properties": {
+                "saref4agri:hasName": {
+                    "type": "string"
+                },
+                "saref4agri:contains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "wgs84_pos:Point": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    }
+}

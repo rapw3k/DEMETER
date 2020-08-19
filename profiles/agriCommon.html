@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DEMETER AgriCommon</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+
+        /* highlight imported definition */
+        .importeddef { background: #B88 }
+
+        /* highlight alignment */
+        .highlight-alignment { background: #8B8 }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://w3id.org/demeter/agri/agriCommon",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</p>"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "DEMETER AgriCommon"
+      }
+    ],
+    "https://schema.org/rights": [
+      {
+        "@value": "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.8.4</span>
+  </div>
+  <h1>DEMETER AgriCommon</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>https://w3id.org/demeter/agri/agriCommon</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            
+    Raul Palma of 
+    PSNC<br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor">Contributor</a>(s)</dt>
+        <dd>
+            
+    Ioanna Roussaki of 
+    ICCS<br/>
+            
+    Rob Atkinson of 
+    OGC<br/>
+        </dd>
+        <dt>Version Information</dt>
+        <dd>1.0</dd>
+        <dt>Version URI</dt>
+        <dd><a href="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl">https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl</a></dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a><br/>
+            <a href="http://portele.de/ont/inspire/baseInspire">http://portele.de/ont/inspire/baseInspire</a><br/>
+            <a href="http://purl.obolibrary.org/obo">http://purl.obolibrary.org/obo</a><br/>
+            <a href="http://www.w3.org/ns/prov">http://www.w3.org/ns/prov</a><br/>
+            <a href="http://xmlns.com/foaf/0.1">http://xmlns.com/foaf/0.1</a><br/>
+            <a href="https://schema.org">https://schema.org</a><br/>
+            <a href="https://w3id.org/def/saref4agri">https://w3id.org/def/saref4agri</a><br/>
+            <a href="https://w3id.org/saref">https://w3id.org/saref</a><br/>
+        </dd>
+        <dt>Rights</dt>
+        <dd>This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="input.ttl">RDF (turtle)</a></dd>
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</p>
+    </div>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
+        <li><a href="#annotationproperties">Annotation Properties</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+            <div><img src="../images/model_matching.jpg"/></div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Agent">Agent</a></li>
+        <li><a href="#Farmholding">Farm holding</a></li>
+        <li><a href="#Farmer">Farmer</a></li>
+        <li><a href="#Organization">Organization</a></li>
+        <li><a href="#Person">Person</a></li>
+        <li><a href="#Person1">Person</a></li>
+        <li><a href="#Responsibleparty">Responsible party</a></li>
+        <li><a href="#Role">Role</a></li>
+        <li><a href="#taxonomic_rank">taxonomic_rank</a></li>
+    </ul>
+    <div class="entity class" id="Responsibleparty">
+        <h3>Responsible party<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#positionName">iso19115-citation:positionName</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#individualName">iso19115-citation:individualName</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#role">iso19115-citation:role</a> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#role">iso19115-citation:role</a> <span class="cardinality">only</span> <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#RoleCode">iso19115-citation:RoleCode</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#contactInfo">iso19115-citation:contactInfo</a> <span class="cardinality">max</span> 1 <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Contact">iso19115-citation:Contact</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#organisationName">iso19115-citation:organisationName</a> <span class="cardinality">max</span> 1<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="taxonomic_rank">
+        <h3>taxonomic_rank<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.obolibrary.org/obo/TAXRANK_0000000</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.obolibrary.org/obo/
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Agent">
+        <h3>Agent<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/Agent</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://xmlns.com/foaf/0.1/
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An agent (eg. person, group, software or physical artifact).</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Alignments</th>
+                <td class="highlight-alignment">
+                    <a href="dct:Agent">dct:Agent</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/member">foaf:member</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty">iso19115-citation:ResponsibleParty</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://schema.org/Organization">sdo:Organization</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/member">foaf:member</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Person">
+        <h3>Person<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/Person</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://xmlns.com/foaf/0.1/
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A person.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Alignments</th>
+                <td class="highlight-alignment">
+                    <a href="http://www.w3.org/2000/10/swap/pim/contact#Person">http://www.w3.org/2000/10/swap/pim/contact#Person</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://schema.org/Person">http://schema.org/Person</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#Farmer">saref4agri:Farmer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Organization">
+        <h3>Organization<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://schema.org/Organization</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    https://schema.org/Organization
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An organization such as a school, NGO, corporation, club, etc.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#FarmHolding">saref4agri:FarmHolding</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Person1">
+        <h3>Person<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://schema.org/Person</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    https://schema.org/Person
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A person (alive, dead, undead, or fictional).</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Alignments</th>
+                <td class="highlight-alignment">
+                    <a href="foaf:Person">foaf:Person</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Role">
+        <h3>Role<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://schema.org/Role</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    https://schema.org/Role
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.<br/><br/></p>
+<p>See also <a href="http://blog.schema.org/2014/06/introducing-role.html">blog post</a>.</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Farmholding">
+        <h3>Farm holding<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#FarmHolding</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A class to decsribe a saref4agri farm holding as subcass of an org:Organization</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://schema.org/Organization">sdo:Organization</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#managesFarm">saref4agri:managesFarm</a> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#managesFarm">saref4agri:managesFarm</a> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Farmer">
+        <h3>Farmer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#Farmer</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A class to decsribe a saref4agri farmer as subcass of a foaf:Person</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#managesFarm">saref4agri:managesFarm</a> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#managesFarm">saref4agri:managesFarm</a> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+<section id="objectproperties">
+    <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#member">member</a></li>
+    </ul>
+    <div class="entity property" id="member">
+        <h3>member<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/member</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://xmlns.com/foaf/0.1/
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicates a member of a Group
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Group">foaf:Group</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#code">code</a></li>
+        <li><a href="#description">description</a></li>
+        <li><a href="#notes">notes</a></li>
+        <li><a href="#price">price</a></li>
+        <li><a href="#type">type</a></li>
+        <li><a href="#validFrom">validFrom</a></li>
+        <li><a href="#validTo">validTo</a></li>
+        <li><a href="#generatedAtTime">generatedAtTime</a></li>
+        <li><a href="#invalidatedAtTime">invalidatedAtTime</a></li>
+        <li><a href="#agroVocConcept">agroVocConcept</a></li>
+        <li><a href="#alternateName">alternateName</a></li>
+        <li><a href="#category">category</a></li>
+        <li><a href="#createdAt">createdAt</a></li>
+        <li><a href="#dataProvider">dataProvider</a></li>
+        <li><a href="#description1">description</a></li>
+        <li><a href="#entityVersion">entityVersion</a></li>
+        <li><a href="#modifiedAt">modifiedAt</a></li>
+        <li><a href="#name1">name</a></li>
+        <li><a href="#source">source</a></li>
+        <li><a href="#hasname">has name</a></li>
+        <li><a href="#Password">Password</a></li>
+        <li><a href="#UserName">User Name</a></li>
+        <li><a href="#hasdescription">has description</a></li>
+    </ul>
+    <div class="entity property" id="code">
+        <h3>code<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#code</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="description">
+        <h3>description<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#description</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="https://uri.fiware.org/ns/data-models#description">fiware:description</a><sup class="sup-dp" title="datatype property">dp</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="notes">
+        <h3>notes<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#notes</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="price">
+        <h3>price<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#price</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="type">
+        <h3>type<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#type</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="validFrom">
+        <h3>validFrom<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://portele.de/ont/inspire/baseInspire#validFrom</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://portele.de/ont/inspire/baseInspire#
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="validTo">
+        <h3>validTo<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://portele.de/ont/inspire/baseInspire#validTo</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://portele.de/ont/inspire/baseInspire#
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="generatedAtTime">
+        <h3>generatedAtTime<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/prov#generatedAtTime</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.w3.org/ns/prov-o#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The time at which an entity was completely created and is available for use.
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/saref#hasTimestamp">saref:hasTimestamp</a>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.w3.org/ns/prov#Entity">prov:Entity</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="invalidatedAtTime">
+        <h3>invalidatedAtTime<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/prov#invalidatedAtTime</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.w3.org/ns/prov-o#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The time at which an entity was invalidated (i.e., no longer usable).
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="http://www.w3.org/ns/prov#Entity">prov:Entity</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="agroVocConcept">
+        <h3>agroVocConcept<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#agroVocConcept</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    URL of the FAO details of the [entity]
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="alternateName">
+        <h3>alternateName<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#alternateName</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    An alternative name for this [entity]
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://uri.fiware.org/ns/data-models#name">fiware:name</a><sup class="sup-dp" title="datatype property">dp</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="category">
+        <h3>category<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#category</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The category of the entity, e.g., parcel of land (arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland), alert (Traffic jam, accidents, weather conditions, high level of pollutants).
+                </td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#type">foodie:type</a><sup class="sup-dp" title="datatype property">dp</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="createdAt">
+        <h3>createdAt<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#createdAt</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://w3id.org/saref#hasTimestamp">saref:hasTimestamp</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="dataProvider">
+        <h3>dataProvider<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#dataProvider</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Specifies the URL to information about the provider of this information
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="description1">
+        <h3>description<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#description</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A description of the [entity].
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="entityVersion">
+        <h3>entityVersion<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#entityVersion</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The entity specification version as a number. A version number of 2.0 or later denotes the entity is represented using NGSI-LD
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="modifiedAt">
+        <h3>modifiedAt<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#modifiedAt</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Indicates the date/ time when the entity was last modified in ISO 8601 format. The value of this will be set by the server when the entity was modified, if the entity has not been modified it may have a null value.
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="name1">
+        <h3>name<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#name</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The name of this [entity]
+                </td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="https://schema.org/name">sdo:name</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="source">
+        <h3>source<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://uri.fiware.org/ns/data-models#source</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    Specifies the URL to the source of this data (either organisation or where relevant more specific source)
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasname">
+        <h3>has name<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#hasName</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="https://uri.fiware.org/ns/data-models#name">fiware:name</a><sup class="sup-dp" title="datatype property">dp</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="Password">
+        <h3>Password<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/demeter/agri/agriCommon#password</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/demeter/agri/agriCommon#
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="UserName">
+        <h3>User Name<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/demeter/agri/agriCommon#userName</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/demeter/agri/agriCommon#
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasdescription">
+        <h3>has description<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/saref#hasDescription</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/saref#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A relationship providing a description of an entity (e.g., device)
+                </td>
+            </tr>
+            <tr>
+                <th>Equivalent properties</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#description">foodie:description</a><sup class="sup-dp" title="datatype property">dp</sup>
+                    <a href="https://uri.fiware.org/ns/data-models#description">fiware:description</a><sup class="sup-dp" title="datatype property">dp</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="annotationproperties">
+    <h2>Annotation Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#has_rank">has_rank</a></li>
+        <li><a href="#identifier">identifier</a></li>
+        <li><a href="#rights">rights</a></li>
+        <li><a href="#depiction">depiction</a></li>
+        <li><a href="#homepage">homepage</a></li>
+        <li><a href="#maker">maker</a></li>
+        <li><a href="#name">name</a></li>
+        <li><a href="#affiliation">affiliation</a></li>
+    </ul>
+    <div class="entity property" id="has_rank">
+        <h3>has_rank<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.obolibrary.org/obo/TAXRANK_1000000</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.obolibrary.org/obo/
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="identifier">
+        <h3>identifier<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/identifier</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="rights">
+        <h3>rights<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/rights</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="depiction">
+        <h3>depiction<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/depiction</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="homepage">
+        <h3>homepage<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/homepage</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="maker">
+        <h3>maker<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/maker</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="name">
+        <h3>name<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://xmlns.com/foaf/0.1/name</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="affiliation">
+        <h3>affiliation<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://schema.org/affiliation</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="properties">
+    <h2>Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#name1">name</a></li>
+        <li><a href="#telephone">telephone</a></li>
+    </ul>
+    <div class="entity property" id="name1">
+        <h3>name<sup title="property" class="sup-p">p</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://schema.org/name</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    https://schema.org/name
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The name of the item.
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="telephone">
+        <h3>telephone<sup title="property" class="sup-p">p</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://schema.org/telephone</code></td>
+            </tr>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    https://schema.org/telephone
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The telephone number.
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+    </ul>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>:</dt>
+        <dd><code>https://w3id.org/cybele/</code></dd>
+        <dt>act-inspire</dt>
+        <dd><code>http://inspire.ec.europa.eu/schemas/act-core/3.0#</code></dd>
+        <dt>af-inspire</dt>
+        <dd><code>http://inspire.ec.europa.eu/schemas/af/3.0#</code></dd>
+        <dt>common</dt>
+        <dd><code>http://portele.de/ont/inspire/baseInspire#</code></dd>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
+        <dt>dct</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>demeterAgriCommon</dt>
+        <dd><code>https://w3id.org/demeter/agri/agriCommon#</code></dd>
+        <dt>fiware</dt>
+        <dd><code>https://uri.fiware.org/ns/data-models#</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
+        <dt>foodie</dt>
+        <dd><code>http://foodie-cloud.com/model/foodie#</code></dd>
+        <dt>geo</dt>
+        <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
+        <dt>iso19103</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#</code></dd>
+        <dt>iso19109</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#</code></dd>
+        <dt>iso19115-citation</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#</code></dd>
+        <dt>iso19150-2</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#</code></dd>
+        <dt>ns1</dt>
+        <dd><code>http://www.w3.org/2003/06/sw-vocab-status/ns#</code></dd>
+        <dt>obo</dt>
+        <dd><code>http://purl.obolibrary.org/obo/</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>qb</dt>
+        <dd><code>http://purl.org/linked-data/cube#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>saref</dt>
+        <dd><code>https://w3id.org/saref#</code></dd>
+        <dt>saref4agri</dt>
+        <dd><code>https://w3id.org/def/saref4agri#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>sosa</dt>
+        <dd><code>http://www.w3.org/ns/sosa/</code></dd>
+        <dt>ssn</dt>
+        <dd><code>http://www.w3.org/ns/ssn/</code></dd>
+        <dt>stat</dt>
+        <dd><code>http://data.europa.eu/m8g/</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>

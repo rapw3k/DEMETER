@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DEMETER AgriSystem</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+
+        /* highlight imported definition */
+        .importeddef { background: #B88 }
+
+        /* highlight alignment */
+        .highlight-alignment { background: #8B8 }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://w3id.org/demeter/agri/agriSystem",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "DEMETER AgriSystem"
+      }
+    ],
+    "https://schema.org/rights": [
+      {
+        "@value": "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.8.4</span>
+  </div>
+  <h1>DEMETER AgriSystem</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>https://w3id.org/demeter/agri/agriSystem</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            
+    Raul Palma of 
+    PSNC<br/>
+        </dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor">Contributor</a>(s)</dt>
+        <dd>
+            
+    George Routis of 
+    ICCS<br/>
+            
+    Ioanna Roussaki of 
+    ICCS<br/>
+            
+    Rob Atkinson of 
+    OGC<br/>
+        </dd>
+        <dt>Version Information</dt>
+        <dd>1.0</dd>
+        <dt>Version URI</dt>
+        <dd><a href="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriSystem.ttl">https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriSystem.ttl</a></dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a><br/>
+            <a href="http://www.w3.org/ns/sosa">http://www.w3.org/ns/sosa</a><br/>
+            <a href="http://www.w3.org/ns/ssn">http://www.w3.org/ns/ssn</a><br/>
+            <a href="https://w3id.org/def/saref4agri">https://w3id.org/def/saref4agri</a><br/>
+            <a href="https://w3id.org/demeter/agri/agriCommon">https://w3id.org/demeter/agri/agriCommon</a><br/>
+            <a href="https://w3id.org/saref">https://w3id.org/saref</a><br/>
+        </dd>
+        <dt>Rights</dt>
+        <dd>This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="input.ttl">RDF (turtle)</a></dd>
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>
+    </div>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#namedindividuals">Named Individuals</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+            <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#Actuator">Actuator</a></li>
+        <li><a href="#Deployment">Deployment</a></li>
+        <li><a href="#Device">Device</a></li>
+        <li><a href="#Eatingactivitysensor">Eating activity sensor</a></li>
+        <li><a href="#Energy">Energy</a></li>
+        <li><a href="#MachineType">MachineType</a></li>
+        <li><a href="#Milkingsensor">Milking sensor</a></li>
+        <li><a href="#Movementactivitysensor">Movement activity sensor</a></li>
+        <li><a href="#Platform">Platform</a></li>
+        <li><a href="#Pluviometer">Pluviometer</a></li>
+        <li><a href="#RotationalSpeed">RotationalSpeed</a></li>
+        <li><a href="#Sensor">Sensor</a></li>
+        <li><a href="#Soiltensiometer">Soil tensiometer</a></li>
+        <li><a href="#System">System</a></li>
+        <li><a href="#Thermometer">Thermometer</a></li>
+        <li><a href="#TractorType">TractorType</a></li>
+        <li><a href="#Wateringgun">Watering gun</a></li>
+        <li><a href="#Wateringsystem">Watering system</a></li>
+        <li><a href="#Wateringvalve">Watering valve</a></li>
+        <li><a href="#Weatherstation">Weather station</a></li>
+        <li><a href="#Weightsensor">Weight sensor</a></li>
+    </ul>
+    <div class="entity class" id="MachineType">
+        <h3>MachineType<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#MachineType</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Datatype">iso19150-2:Datatype</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/Platform">sosa:Platform</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="TractorType">
+        <h3>TractorType<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://foodie-cloud.com/model/foodie#TractorType</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://foodie-cloud.com/model/foodie
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/sosa/Platform">sosa:Platform</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Datatype">iso19150-2:Datatype</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Energy">
+        <h3>Energy<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.oclc.org/NET/ssnx/qu/dim#Energy</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind">qu:QuantityKind</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="RotationalSpeed">
+        <h3>RotationalSpeed<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind">qu:QuantityKind</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Platform">
+        <h3>Platform<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/sosa/Platform</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.w3.org/ns/sosa/
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Example</th>
+                <td>
+                    <pre>
+                      A post, buoy, vehicle, ship, aircraft, satellite, cell-phone, human or animal may act as platforms for (technical or biological) sensors or actuators.
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.w3.org/ns/ssn/inDeployment">ssn:inDeployment</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/Deployment">ssn:Deployment</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/hosts">sosa:hosts</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="http://foodie-cloud.com/model/foodie#TractorType">foodie:TractorType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://foodie-cloud.com/model/foodie#MachineType">foodie:MachineType</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Deployment">
+        <h3>Deployment<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/ssn/Deployment</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.w3.org/ns/ssn/
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Example</th>
+                <td>
+                    <pre>
+                      For example, a temperature Sensor deployed on a wall, or a whole network of Sensors deployed for an Observation campaign.
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.w3.org/ns/ssn/forProperty">ssn:forProperty</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/Property">ssn:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/ssn/deployedOnPlatform">ssn:deployedOnPlatform</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/sosa/Platform">sosa:Platform</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/ssn/deployedSystem">ssn:deployedSystem</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="System">
+        <h3>System<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://www.w3.org/ns/ssn/System</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    http://www.w3.org/ns/ssn/
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems. (Definition taken from http://www.w3.org/ns/ssn/System)</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.w3.org/ns/ssn/implements">ssn:implements</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/sosa/Procedure">sosa:Procedure</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/isHostedBy">sosa:isHostedBy</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/sosa/Platform">sosa:Platform</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/ssn/hasSubSystem">ssn:hasSubSystem</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="ub22bL474C28">ub22bL474C28</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/ssn/hasDeployment">ssn:hasDeployment</a> <span class="cardinality">only</span> <a href="http://www.w3.org/ns/ssn/Deployment">ssn:Deployment</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#Device">saref:Device</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#WateringSystem">saref4agri:WateringSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#WeatherStation">saref4agri:WeatherStation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Eatingactivitysensor">
+        <h3>Eating activity sensor<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#EatingActivitySensor</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#Sensor">saref:Sensor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Milkingsensor">
+        <h3>Milking sensor<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#MilkingSensor</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#Sensor">saref:Sensor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Movementactivitysensor">
+        <h3>Movement activity sensor<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#MovementActivitySensor</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#Sensor">saref:Sensor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Pluviometer">
+        <h3>Pluviometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#Pluviometer</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A sensor that measures the rain fall.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#Sensor">saref:Sensor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Soiltensiometer">
+        <h3>Soil tensiometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#SoilTensiometer</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A sensor that measures the soil moisture.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#Sensor">saref:Sensor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Thermometer">
+        <h3>Thermometer<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#Thermometer</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#Sensor">saref:Sensor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Wateringgun">
+        <h3>Watering gun<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#WateringGun</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>An actuator to irrigate an space.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#Actuator">saref:Actuator</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Wateringsystem">
+        <h3>Watering system<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#WateringSystem</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Wateringvalve">
+        <h3>Watering valve<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#WateringValve</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#Actuator">saref:Actuator</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Weatherstation">
+        <h3>Weather station<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#WeatherStation</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A sensor o system that measure weather conditions.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#Sensor">saref:Sensor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Weightsensor">
+        <h3>Weight sensor<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/def/saref4agri#WeightSensor</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/def/saref4agri#
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#Sensor">saref:Sensor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Actuator">
+        <h3>Actuator<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/saref#Actuator</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/saref#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A device responsible for moving or controlling a mechanism or system by performing an actuating function</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#FunctionRelated">saref:FunctionRelated</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#Device">saref:Device</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/saref#hasFunction">saref:hasFunction</a> <span class="cardinality">some</span> <a href="https://w3id.org/saref#ActuatingFunction">saref:ActuatingFunction</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#WateringGun">saref4agri:WateringGun</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#WateringValve">saref4agri:WateringValve</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Device">
+        <h3>Device<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/saref#Device</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/saref#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A tangible object designed to accomplish a particular task in households, common public buildings or offices. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function. Devices can be structured in categories (subclasses) that reflect the different domain in which a device is used, e.g., smart appliances domain (subclass FunctionRelated) vs. building domain (subclass BuildingRelated) vs. smart grid domain (subclass EnergyRelated). New categories can be defined,if needed, to reflect other differences, for example different points of view, such as the point of view of the device's user vs. the point of view of the device's manufacturer. We propose a list of devices that are relevant for the purpose of SAREF, but this list can be extended.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/ssn/System">ssn:System</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/saref#isUsedFor">saref:isUsedFor</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Commodity">saref:Commodity</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#hasState">saref:hasState</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#State">saref:State</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#measuresProperty">saref:measuresProperty</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Property">saref:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#offers">saref:offers</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Service">saref:Service</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#hasFunction">saref:hasFunction</a> <span class="cardinality">min</span> 1 <a href="https://w3id.org/saref#Function">saref:Function</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#hasModel">saref:hasModel</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://w3id.org/saref#hasTypicalConsumption">saref:hasTypicalConsumption</a> <span class="cardinality">only</span> (<a href="https://w3id.org/saref#Energy">saref:Energy</a><sup class="sup-c" title="class">c</sup> or <a href="https://w3id.org/saref#Power">saref:Power</a><sup class="sup-c" title="class">c</sup>)<br/>
+                    <a href="https://w3id.org/saref#accomplishes">saref:accomplishes</a> <span class="cardinality">min</span> 1 <a href="https://w3id.org/saref#Task">saref:Task</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#controlsProperty">saref:controlsProperty</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Property">saref:Property</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#consistsOf">saref:consistsOf</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Device">saref:Device</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#hasManufacturer">saref:hasManufacturer</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="https://w3id.org/saref#makesMeasurement">saref:makesMeasurement</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Measurement">saref:Measurement</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#hasProfile">saref:hasProfile</a> <span class="cardinality">only</span> <a href="https://w3id.org/saref#Profile">saref:Profile</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#hasDescription">saref:hasDescription</a> <span class="cardinality">max</span> 1<br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#Actuator">saref:Actuator</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#Sensor">saref:Sensor</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Sensor">
+        <h3>Sensor<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>https://w3id.org/saref#Sensor</code></td>
+            </tr>
+            <tr class="importeddef">
+                <th>Is Defined By</th>
+                <td>
+                    https://w3id.org/saref#
+                </td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes. Further, a device of category saref:Sensor that performs a saref:SensingFunction.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="https://w3id.org/saref#FunctionRelated">saref:FunctionRelated</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/saref#Device">saref:Device</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="https://w3id.org/saref#hasFunction">saref:hasFunction</a> <span class="cardinality">some</span> <a href="https://w3id.org/saref#SensingFunction">saref:SensingFunction</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="https://w3id.org/def/saref4agri#WeatherStation">saref4agri:WeatherStation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#MilkingSensor">saref4agri:MilkingSensor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#Pluviometer">saref4agri:Pluviometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#MovementActivitySensor">saref4agri:MovementActivitySensor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#EatingActivitySensor">saref4agri:EatingActivitySensor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#WeightSensor">saref4agri:WeightSensor</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#SoilTensiometer">saref4agri:SoilTensiometer</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#Thermometer">saref4agri:Thermometer</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+  
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#AcousticsScheme">AcousticsScheme</a></li>
+        <li><a href="#MechanicsScheme">MechanicsScheme</a></li>
+        <li><a href="#PeriodicAndRelatedPhenomenaScheme">PeriodicAndRelatedPhenomenaScheme</a></li>
+        <li><a href="#SpaceAndTimeScheme">SpaceAndTimeScheme</a></li>
+        <li><a href="#criticalbuild-upspeed">critical build-up speed</a></li>
+        <li><a href="#criticaltorsionalspeed">critical torsional speed</a></li>
+        <li><a href="#criticalwhirlingspeed">critical whirling speed</a></li>
+        <li><a href="#property">property</a></li>
+        <li><a href="#pseudovectorProperty">pseudovectorProperty</a></li>
+        <li><a href="#rotationalspeed">rotational speed</a></li>
+        <li><a href="#synchronouspull-outtorque">synchronous pull-out torque</a></li>
+        <li><a href="#synchronousspeed">synchronous speed</a></li>
+        <li><a href="#torque">torque</a></li>
+    </ul>
+    <div class="entity named_individual" id="AcousticsScheme">
+        <h3>AcousticsScheme<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#Scheme">skos:Scheme</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="MechanicsScheme">
+        <h3>MechanicsScheme<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#Scheme">skos:Scheme</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="PeriodicAndRelatedPhenomenaScheme">
+        <h3>PeriodicAndRelatedPhenomenaScheme<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#Scheme">skos:Scheme</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="SpaceAndTimeScheme">
+        <h3>SpaceAndTimeScheme<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://www.w3.org/2004/02/skos/core#Scheme">skos:Scheme</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="criticalbuild-upspeed">
+        <h3>critical build-up speed<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/quantity#criticalBuildUpSpeed
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed">dim:RotationalSpeed</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="criticaltorsionalspeed">
+        <h3>critical torsional speed<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/quantity#criticalTorsionalSpeed
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed">dim:RotationalSpeed</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="criticalwhirlingspeed">
+        <h3>critical whirling speed<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/quantity#criticalWhirlingSpeed
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed">dim:RotationalSpeed</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="property">
+        <h3>property<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/quantity#property
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind">qu:PropertyKind</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="pseudovectorProperty">
+        <h3>pseudovectorProperty<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/quantity#pseudovectorProperty
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind">qu:PropertyKind</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="rotationalspeed">
+        <h3>rotational speed<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/quantity#rotationalSpeed
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed">dim:RotationalSpeed</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="synchronouspull-outtorque">
+        <h3>synchronous pull-out torque<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousPullOutTorque
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://purl.oclc.org/NET/ssnx/qu/dim#Energy">dim:Energy</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="synchronousspeed">
+        <h3>synchronous speed<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousSpeed
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed">dim:RotationalSpeed</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity named_individual" id="torque">
+        <h3>torque<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      http://purl.oclc.org/NET/ssnx/qu/quantity#torque
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="http://purl.oclc.org/NET/ssnx/qu/dim#Energy">dim:Energy</a><br/>
+            </dd>
+            <tr>
+                <th>Is Defined By</th>
+                <td>
+                    http://purl.oclc.org/NET/ssnx/qu/qu-rec20
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>:</dt>
+        <dd><code>https://w3id.org/cybele/</code></dd>
+        <dt>act-inspire</dt>
+        <dd><code>http://inspire.ec.europa.eu/schemas/act-core/3.0#</code></dd>
+        <dt>af-inspire</dt>
+        <dd><code>http://inspire.ec.europa.eu/schemas/af/3.0#</code></dd>
+        <dt>cf</dt>
+        <dd><code>http://purl.oclc.org/NET/ssnx/cf/cf-property#</code></dd>
+        <dt>cf-feature</dt>
+        <dd><code>http://purl.oclc.org/NET/ssnx/cf/cf-feature#</code></dd>
+        <dt>common</dt>
+        <dd><code>http://portele.de/ont/inspire/baseInspire#</code></dd>
+        <dt>dcat</dt>
+        <dd><code>http://www.w3.org/ns/dcat#</code></dd>
+        <dt>dct</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>dim</dt>
+        <dd><code>http://purl.oclc.org/NET/ssnx/qu/dim#</code></dd>
+        <dt>fiware</dt>
+        <dd><code>https://uri.fiware.org/ns/data-models#</code></dd>
+        <dt>foaf</dt>
+        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
+        <dt>foodie</dt>
+        <dd><code>http://foodie-cloud.com/model/foodie#</code></dd>
+        <dt>geo</dt>
+        <dd><code>http://www.opengis.net/ont/geosparql#</code></dd>
+        <dt>iso19109</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#</code></dd>
+        <dt>iso19150-2</dt>
+        <dd><code>http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#</code></dd>
+        <dt>ns1</dt>
+        <dd><code>http://www.w3.org/ns/dx/prof/</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>qb</dt>
+        <dd><code>http://purl.org/linked-data/cube#</code></dd>
+        <dt>qu</dt>
+        <dd><code>http://purl.oclc.org/NET/ssnx/qu/qu#</code></dd>
+        <dt>quantity</dt>
+        <dd><code>http://purl.oclc.org/NET/ssnx/qu/quantity#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>saref</dt>
+        <dd><code>https://w3id.org/saref#</code></dd>
+        <dt>saref4agri</dt>
+        <dd><code>https://w3id.org/def/saref4agri#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>sosa</dt>
+        <dd><code>http://www.w3.org/ns/sosa/</code></dd>
+        <dt>ssn</dt>
+        <dd><code>http://www.w3.org/ns/ssn/</code></dd>
+        <dt>stat</dt>
+        <dd><code>http://data.europa.eu/m8g/</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>

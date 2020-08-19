@@ -31,7 +31,7 @@
 			dct:conformsTo jsonld: ;
             dct:format "application/ld+json" ;
 		], [
-			prof:hasRole prof:cachedCopy ;
+			prof:hasRole prof:futureCachedCopy ;
 			prof:hasArtifact "lib/fiware.ttl" ;
 			dct:conformsTo owl: ;
             dct:format "text/turtle" ;
@@ -42,3 +42,85 @@
             dct:format "text/turtle" ;
 		] ;
 .
+
+<https://w3id.org/def/saref4agri> a prof:Profile ;
+	rdfs:label  "SAREF extension for Agriculture"@en ;
+	prof:hasResource 	[
+			prof:hasRole prof:cachedCopy ;
+			prof:hasArtifact "lib/saref4agri.ttl" ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+		prof:hasResource 	[
+			prof:hasRole prof:source ;
+			prof:hasArtifact <https://mariapoveda.github.io/saref-ext/OnToology/SAREF4AGRI/ontology/saref4agri.ttl/documentation/ontology.ttl> ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+.
+
+<http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation>  a prof:Profile ;
+	rdfs:label  "ISO 19115 citation"@en ;
+	prof:hasResource 	[
+			prof:hasRole prof:cachedCopy ;
+			prof:hasArtifact "lib/citation.ttl" ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+		prof:hasResource 	[
+			prof:hasRole prof:source ;
+			prof:hasArtifact <http://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/def.seegrid.csiro.au/isotc211--iso19115--2003--citation/2020.06.10-182041/isotc211--iso19115--2003--citation_type=parsed.ttl> ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+.
+
+<http://schema.org>  a prof:Profile ;
+	rdfs:label  "Schema.org schema"@en ;
+	prof:hasResource 	[
+			prof:hasRole prof:cachedCopy ;
+			prof:hasArtifact "lib/schemaorg.ttl" ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+		prof:hasResource 	[
+			prof:hasRole prof:source ;
+			prof:hasArtifact <https://raw.githubusercontent.com/antlr/grammars-v4/master/turtle/examples/schema.org.ttl> ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+.
+
+<http://www.opengis.net/ont/geosparql>  a prof:Profile ;
+	rdfs:label  "GeoSPARQL"@en ;
+	prof:hasResource 	[
+			prof:hasRole prof:cachedCopy ;
+			prof:hasArtifact "lib/geosparql.ttl" ;
+			dct:conformsTo owl:, rdfs: ;
+            dct:format "text/turtle" ;
+		] ;
+		prof:hasResource 	[
+			prof:hasRole prof:source ;
+			prof:hasArtifact <http://schemas.opengis.net/geosparql/1.0/geosparql_vocab_all.rdf> ;
+			dct:conformsTo owl: , rdfs: ;
+            dct:format "application/rdf+xml" ;
+		] ;
+.
+
+<http://www.opengis.net/ont/sf>  a prof:Profile ;
+	rdfs:label  "OGC Simple Features"@en ;
+	prof:hasResource 	[
+			prof:hasRole prof:cachedCopy ;
+			prof:hasArtifact "lib/ogc_sf.rdf" ;
+			dct:conformsTo owl:, rdfs: ;
+            dct:format "application/rdf+xml" ;
+		] ;
+		prof:hasResource 	[
+			prof:hasRole prof:source ;
+			prof:hasArtifact <hhttp://schemas.opengis.net/sf/1.0/simple_features_geometries.rdf> ;
+			dct:conformsTo owl: , rdfs: ;
+            dct:format "application/rdf+xml" ;
+		] ;
+.
+
+

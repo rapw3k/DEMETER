@@ -1,0 +1,113 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://w3id.org/demeter/agri/agriCrop?_profile=jsonschema",
+    "type": "object",
+    "properties": {
+        "saref4agri:Crop": {
+            "type": "object",
+            "properties": {
+                "obo:TAXRANK_1000000": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasPlantDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasHarvestDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "foodie:CropSpecies": {
+            "type": "object",
+            "properties": {
+                "prov:generatedAtTime": {
+                    "type": "string"
+                },
+                "prov:invalidatedAtTime": {
+                    "type": "string"
+                },
+                "foodie:cropArea": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "common:validFrom": {
+                    "type": "string"
+                },
+                "foodie:cropSpecies": {
+                    "type": "string"
+                },
+                "common:validTo": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "prov:generatedAtTime",
+                "foodie:cropArea",
+                "common:validFrom",
+                "foodie:cropSpecies"
+            ]
+        },
+        "foodie:CropType": {
+            "type": "object",
+            "properties": {
+                "foodie:description": {
+                    "type": "string"
+                },
+                "foodie:genus": {
+                    "type": "string"
+                },
+                "foodie:code": {
+                    "type": "string"
+                },
+                "foodie:variety": {
+                    "type": "string"
+                },
+                "foodie:notes": {
+                    "type": "string"
+                },
+                "foodie:family": {
+                    "type": "string"
+                },
+                "foodie:species": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "foodie:ProductionType": {
+            "type": "object",
+            "properties": {
+                "foodie:productionAmount": {
+                    "type": "string"
+                },
+                "foodie:productionDate": {
+                    "type": "string"
+                },
+                "foodie:variety": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "foodie:productionDate",
+                "foodie:variety"
+            ]
+        },
+        "fiware:AgriCrop": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    }
+}
