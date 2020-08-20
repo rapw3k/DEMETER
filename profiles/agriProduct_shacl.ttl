@@ -1,0 +1,90 @@
+@prefix schema: <https://schema.org/> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix ns1:   <http://www.w3.org/ns/dx/prof/> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#47c1e2559c61fa756b8f3c0121c37fb4> , <https://astrea.linkeddata.es/shapes#f07abf9215b6051ab31e82ee62200790> , <https://astrea.linkeddata.es/shapes#109937f9262d82fe198dd158384fbdda> , <https://astrea.linkeddata.es/shapes#3bf3299c5dc29feddd0c0cca3c2a723c> , <https://astrea.linkeddata.es/shapes#ba8e1b8fcfb09964556a872869d800d7> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/1963213088> , <https://astrea.linkeddata.es/report/01163512728> .
+
+<https://astrea.linkeddata.es/shapes#109937f9262d82fe198dd158384fbdda>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> ;
+        rdfs:label        "hasAgriProductTypeParent"@en , "Reference to the parent product type i.e. immediately above the entity in the hierarchy." ;
+        sh:description    "Reference to the parent product type i.e. immediately above the entity in the hierarchy." ;
+        sh:name           "hasAgriProductTypeParent"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:hasAgriProductTypeParent .
+
+<https://astrea.linkeddata.es/shapes#ba8e1b8fcfb09964556a872869d800d7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> ;
+        rdfs:label        "AgriProductType" ;
+        sh:description    "This entity contains a harmonised description of a generic agricultural product type. This entity is primarily associated with the agricultural vertical and related IoT applications. The AgriProductType includes a hierarchical structure that allows product types to be grouped in a flexible way." ;
+        sh:name           "AgriProductType" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware:AgriProductType .
+
+<https://astrea.linkeddata.es/report/1963213088>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/demeter/agri/agriCommon" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/report/01163512728>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://foodie-cloud.com/model/foodie" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#47c1e2559c61fa756b8f3c0121c37fb4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> ;
+        rdfs:label        "hasAgriProductTypeChildren"@en , "Reference to child product types i.e. immediately below this entity in the hierarchy." ;
+        sh:description    "Reference to child product types i.e. immediately below this entity in the hierarchy." ;
+        sh:name           "hasAgriProductTypeChildren"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:hasAgriProductTypeChildren .
+
+<https://astrea.linkeddata.es/shapes#3bf3299c5dc29feddd0c0cca3c2a723c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "hasAgriProductType"@en , "Reference to the AgriProductType used/ applied." ;
+        sh:description    "Reference to the AgriProductType used/ applied." ;
+        sh:name           "hasAgriProductType"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:hasAgriProductType .
+
+<https://astrea.linkeddata.es/shapes#f07abf9215b6051ab31e82ee62200790>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> ;
+        rdfs:label        "root"@en , "A logical indicator that this product is the root of an AgriProductType hierarchy. Logical true indicates it is the root." ;
+        sh:description    "A logical indicator that this product is the root of an AgriProductType hierarchy. Logical true indicates it is the root." ;
+        sh:name           "root"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:root .

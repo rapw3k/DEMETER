@@ -1,0 +1,219 @@
+@prefix schema: <https://schema.org/> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix af-inspire: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix ns1:   <http://www.w3.org/ns/dx/prof/> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<https://astrea.linkeddata.es/shapes#b6113b7c026f284e1dc73e09fe6e5ec3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "calvedBy"@en , "Mother of the animal" ;
+        sh:description    "Mother of the animal" ;
+        sh:name           "calvedBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:calvedBy .
+
+<https://astrea.linkeddata.es/shapes#7ac439ee81b8651107b120c31dae04f7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "locatedAt"@en , "AgriParcel relationship" ;
+        sh:description    "AgriParcel relationship" ;
+        sh:name           "locatedAt"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:locatedAt .
+
+<https://astrea.linkeddata.es/shapes#a037870373166f040e2eb7bb7f35935a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "species"@en , "Species to which the animal belongs (dairy cattle, beef cattle, sheep, goat, horse, pig)" ;
+        sh:description    "Species to which the animal belongs (dairy cattle, beef cattle, sheep, goat, horse, pig)" ;
+        sh:name           "species"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:species .
+
+<https://astrea.linkeddata.es/shapes#fd8dff26fee2da1ab28c70cb2cc60647>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "healthCondition"@en , "Health Condition of the animal" ;
+        sh:description    "Health Condition of the animal" ;
+        sh:name           "healthCondition"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:healthCondition .
+
+<https://astrea.linkeddata.es/shapes#c3cc8ba8b69f980217340a99151c2ee2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "birthdate"@en , "Animal’s birthdate" ;
+        sh:description    "Animal’s birthdate" ;
+        sh:name           "birthdate"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:birthdate .
+
+<https://astrea.linkeddata.es/shapes#b2e984c1224c8f63b3efbff65b641c1b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "welfareCondition"@en , "Indicator of the animal welfare" ;
+        sh:description    "Indicator of the animal welfare" ;
+        sh:name           "welfareCondition"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:welfareCondition .
+
+<https://astrea.linkeddata.es/shapes#5c90dfd90e3f32a443a047cb631787b0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "Animal" ;
+        sh:description    "The proposed animal data model has been made from a more general point of view, trying to adjust it to the information coming from the devices and sensors used in the UC." ;
+        sh:name           "Animal" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware:Animal .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#b6113b7c026f284e1dc73e09fe6e5ec3> , <https://astrea.linkeddata.es/shapes#8c03923175c5716526c38c4d357fd6fe> , <https://astrea.linkeddata.es/shapes#5c90dfd90e3f32a443a047cb631787b0> , <https://astrea.linkeddata.es/shapes#b2e984c1224c8f63b3efbff65b641c1b> , <https://astrea.linkeddata.es/shapes#c3cc8ba8b69f980217340a99151c2ee2> , <https://astrea.linkeddata.es/shapes#ca42dcd3e488a491f41cb610aae7b09d> , <https://astrea.linkeddata.es/shapes#d608b201e320443adb2b29602d3dce02> , <https://astrea.linkeddata.es/shapes#aff2f8d66fa4966ac88d4395c0ed82c1> , <https://astrea.linkeddata.es/shapes#f5913330dc3214b06473525103511a93> , <https://astrea.linkeddata.es/shapes#d0af053575dd9d79a42ed45f1900165d> , <https://astrea.linkeddata.es/shapes#952974f74933c23be9b6358c21ece57a> , <https://astrea.linkeddata.es/shapes#d702899e61acd0020cb11296353eec9d> , <https://astrea.linkeddata.es/shapes#7ac439ee81b8651107b120c31dae04f7> , <https://astrea.linkeddata.es/shapes#1587c852ac374ff783866802f52ca429> , <https://astrea.linkeddata.es/shapes#fd8dff26fee2da1ab28c70cb2cc60647> , <https://astrea.linkeddata.es/shapes#a037870373166f040e2eb7bb7f35935a> , <https://astrea.linkeddata.es/shapes#82a00e75812e0d6634a7777fd7ca6929> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1486927977> , <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/01163512728> , <https://astrea.linkeddata.es/report/01127642143> , <https://astrea.linkeddata.es/report/1963213088> .
+
+<https://astrea.linkeddata.es/shapes#952974f74933c23be9b6358c21ece57a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "siredBy"@en , "Father of the animal" ;
+        sh:description    "Father of the animal" ;
+        sh:name           "siredBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:siredBy .
+
+<https://astrea.linkeddata.es/shapes#ca42dcd3e488a491f41cb610aae7b09d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "sex"@en , "Sex of the animal" ;
+        sh:description    "Sex of the animal" ;
+        sh:name           "sex"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:sex .
+
+<https://astrea.linkeddata.es/shapes#d702899e61acd0020cb11296353eec9d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "weight"@en , "The weight of the animal as a number" ;
+        sh:description    "The weight of the animal as a number" ;
+        sh:name           "weight"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:weight .
+
+<https://astrea.linkeddata.es/report/01163512728>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://foodie-cloud.com/model/foodie" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/report/01127642143>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://inspire.ec.europa.eu/schemas/af/3.0" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#8c03923175c5716526c38c4d357fd6fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "fedWith"@en , "Food used for the animal" ;
+        sh:description    "Food used for the animal" ;
+        sh:name           "fedWith"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:fedWith .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#aff2f8d66fa4966ac88d4395c0ed82c1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "ownedBy"@en , "The owner of the animal" ;
+        sh:description    "The owner of the animal" ;
+        sh:name           "ownedBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:ownedBy .
+
+<https://astrea.linkeddata.es/report/1963213088>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/demeter/agri/agriCommon" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#d608b201e320443adb2b29602d3dce02>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "breed"@en , "Breed of the animal" ;
+        sh:description    "Breed of the animal" ;
+        sh:name           "breed"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:breed .
+
+<https://astrea.linkeddata.es/shapes#d0af053575dd9d79a42ed45f1900165d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "legalID"@en , "Legal ID of the animal" ;
+        sh:description    "Legal ID of the animal" ;
+        sh:name           "legalID"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:legalID .
+
+<https://astrea.linkeddata.es/shapes#1587c852ac374ff783866802f52ca429>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "phenologicalCondition"@en , "Phenological Condition of the animal" ;
+        sh:description    "Phenological Condition of the animal" ;
+        sh:name           "phenologicalCondition"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:phenologicalCondition .
+
+<https://astrea.linkeddata.es/shapes#f5913330dc3214b06473525103511a93>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "reproductiveCondition"@en , "Reproductive Condition of the animal" ;
+        sh:description    "Reproductive Condition of the animal" ;
+        sh:name           "reproductiveCondition"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:reproductiveCondition .
+
+<https://astrea.linkeddata.es/shapes#82a00e75812e0d6634a7777fd7ca6929>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+        rdfs:label        "relatedSource"@en , "ID of the animal in external applications" ;
+        sh:description    "ID of the animal in external applications" ;
+        sh:name           "relatedSource"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:relatedSource .
+
+<https://astrea.linkeddata.es/report/1486927977>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/def/saref4agri" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .

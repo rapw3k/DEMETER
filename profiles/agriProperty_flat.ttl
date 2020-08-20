@@ -1,0 +1,1129 @@
+@prefix cf: <http://purl.oclc.org/NET/ssnx/cf/cf-property#> .
+@prefix cf-feature: <http://purl.oclc.org/NET/ssnx/cf/cf-feature#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dim: <http://purl.oclc.org/NET/ssnx/qu/dim#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix ns1: <http://purl.org/dc/elements/1.1/> .
+@prefix ns2: <http://www.w3.org/ns/dx/prof/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
+@prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+foodie:productionAmount a owl:ObjectProperty ;
+    rdfs:range iso19103:Measure ;
+    rdfs:subPropertyOf saref:relatesToMeasurement ;
+    skos:prefLabel "productionAmount"@en .
+
+foodie:productionProperty a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:PropertyType ;
+    rdfs:subPropertyOf saref:hasProperty ;
+    skos:prefLabel "productionProperty"@en .
+
+foodie:soilProperty a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:PropertyType ;
+    rdfs:subPropertyOf saref:hasProperty ;
+    skos:prefLabel "soilProperty"@en .
+
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/electricConductivity> a saref:Property ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/organicMatter> a saref:Property ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/pH> a saref:Property ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilTexture> a saref:Property ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilType> a saref:Property ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+cf-feature:Layer a owl:Class ;
+    rdfs:label "Layer" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest>,
+        sosa:FeatureOfInterest .
+
+cf-feature:Medium a owl:Class ;
+    rdfs:label "Medium" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest>,
+        sosa:FeatureOfInterest .
+
+cf-feature:Precipitation a owl:Class ;
+    rdfs:label "Precipitation" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest>,
+        sosa:FeatureOfInterest .
+
+cf-feature:Surface a owl:Class ;
+    rdfs:label "Surface" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest>,
+        sosa:FeatureOfInterest .
+
+cf-feature:SurfaceLayer a owl:Class ;
+    rdfs:label "Surface Layer" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest>,
+        sosa:FeatureOfInterest .
+
+cf-feature:Wind a owl:Class ;
+    rdfs:label "Wind" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://purl.oclc.org/NET/ssnx/ssn#FeatureOfInterest>,
+        sosa:FeatureOfInterest .
+
+cf-feature:snowfall a owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    ssn:hasProperty cf:convective_snowfall_amount,
+        cf:convective_snowfall_flux,
+        cf:large_scale_snowfall_amount,
+        cf:large_scale_snowfall_flux,
+        cf:lwe_convective_snowfall_rate,
+        cf:lwe_large_scale_snowfall_rate,
+        cf:lwe_snowfall_rate,
+        cf:lwe_thickness_of_convective_snowfall_amount,
+        cf:lwe_thickness_of_large_scale_snowfall_amount,
+        cf:lwe_thickness_of_snowfall_amount,
+        cf:snowfall_amount,
+        cf:snowfall_flux,
+        cf:thickness_of_convective_snowfall_amount,
+        cf:thickness_of_large_scale_snowfall_amount,
+        cf:thickness_of_snowfall_amount .
+
+cf-feature:soil a owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    ssn:hasProperty cf:downward_heat_flux_in_soil,
+        cf:lwe_thickness_of_soil_moisture_content,
+        cf:mass_concentration_of_condensed_water_in_soil,
+        cf:soil_albedo,
+        cf:soil_carbon_content,
+        cf:soil_frozen_water_content,
+        cf:soil_hydraulic_conductivity_at_saturation,
+        cf:soil_moisture_content,
+        cf:soil_moisture_content_at_field_capacity,
+        cf:soil_porosity,
+        cf:soil_suction_at_saturation,
+        cf:soil_temperature,
+        cf:soil_thermal_capacity,
+        cf:soil_thermal_conductivity,
+        cf:soil_type,
+        cf:volume_fraction_of_clay_in_soil,
+        cf:volume_fraction_of_condensed_water_in_soil,
+        cf:volume_fraction_of_condensed_water_in_soil_at_critical_point,
+        cf:volume_fraction_of_condensed_water_in_soil_at_field_capacity,
+        cf:volume_fraction_of_condensed_water_in_soil_at_wilting_point,
+        cf:volume_fraction_of_frozen_water_in_soil,
+        cf:volume_fraction_of_sand_in_soil,
+        cf:volume_fraction_of_silt_in_soil,
+        cf:water_evaporation_flux_from_soil .
+
+cf-feature:soil_layer a owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    ssn:hasProperty cf:frozen_water_content_of_soil_layer,
+        cf:liquid_water_content_of_soil_layer,
+        cf:lwe_thickness_of_frozen_water_content_of_soil_layer,
+        cf:lwe_thickness_of_moisture_content_of_soil_layer,
+        cf:moisture_content_of_soil_layer,
+        cf:moisture_content_of_soil_layer_at_field_capacity .
+
+cf-feature:soil_pores a owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    ssn:hasProperty cf:volume_fraction_of_condensed_water_in_soil_pores .
+
+cf-feature:vegetation a owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    ssn:hasProperty cf:vegetation_area_fraction,
+        cf:vegetation_carbon_content .
+
+cf-feature:water a owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .
+
+cf:air_density a owl:NamedIndividual ;
+    rdfs:label "air density" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:atmosphere_mass_content_of_carbon_dioxide a owl:NamedIndividual ;
+    rdfs:label "atmosphere mass content of carbon dioxide" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:atmosphere_mass_content_of_carbon_monoxide a owl:NamedIndividual ;
+    rdfs:label "atmosphere mass content of carbon monoxide" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:atmosphere_water_vapor_content a owl:NamedIndividual ;
+    rdfs:label "atmosphere water vapor content" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:normalized_difference_vegetation_index a dim:Dimensionless,
+        owl:NamedIndividual ;
+    rdfs:label "normalized difference vegetation index" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:snow_density a dim:Density,
+        owl:NamedIndividual ;
+    rdfs:label "snow density" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:snow_grain_size a dim:Distance,
+        owl:NamedIndividual ;
+    rdfs:label "snow grain size" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:snow_soot_content a dim:SurfaceDensity,
+        owl:NamedIndividual ;
+    rdfs:label "snow soot content" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:snow_temperature a dim:Temperature,
+        owl:NamedIndividual ;
+    rdfs:label "snow temperature" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_respiration_carbon_flux a dim:MassPerTimePerArea,
+        owl:NamedIndividual ;
+    rdfs:label "soil respiration carbon flux" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:sound_intensity_in_air a owl:NamedIndividual ;
+    rdfs:label "sound intensity in air" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:sound_pressure_in_air a owl:NamedIndividual ;
+    rdfs:label "sound pressure in air" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:thickness_of_large_scale_rainfall_amount a owl:NamedIndividual ;
+    rdfs:label "thickness of large scale rainfall amount" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:thickness_of_rainfall_amount a owl:NamedIndividual ;
+    rdfs:label "thickness of rainfall amount" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+dim:SpecificEntropy a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:ThermalConductivity a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+quantity:acceleration a dim:Acceleration,
+        owl:NamedIndividual ;
+    rdfs:label "acceleration"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:SpaceAndTimeScheme .
+
+quantity:carbonContent a dim:Concentration,
+        owl:NamedIndividual ;
+    rdfs:label "carbon content"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme .
+
+quantity:compressibility a dim:Compressibility,
+        owl:NamedIndividual ;
+    rdfs:label "compressibility"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:HeatScheme,
+        dim:MechanicsScheme .
+
+quantity:concentration a dim:Concentration,
+        owl:NamedIndividual ;
+    rdfs:label "concentration"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme .
+
+quantity:density a dim:Density,
+        owl:NamedIndividual ;
+    rdfs:label "density"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme,
+        dim:MechanicsScheme,
+        dim:PhysicalChemistryAndMolecularPhysicsScheme .
+
+quantity:distance a dim:Distance,
+        owl:NamedIndividual ;
+    rdfs:label "distance"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:SpaceAndTimeScheme .
+
+quantity:energyFlowRate a qu:PropertyKind,
+        owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+quantity:fraction a qu:PropertyKind,
+        owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+quantity:length a dim:Distance,
+        owl:NamedIndividual ;
+    rdfs:label "length"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:SpaceAndTimeScheme .
+
+quantity:massPerTimePerArea a dim:MassPerTimePerArea,
+        owl:NamedIndividual ;
+    rdfs:label "mass per time per area"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:MechanicsScheme .
+
+quantity:power a dim:Power,
+        owl:NamedIndividual ;
+    rdfs:label "power"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:ElectricityAndMagnetismScheme,
+        dim:MechanicsScheme .
+
+quantity:pressure a dim:StressOrPressure,
+        owl:NamedIndividual ;
+    rdfs:label "pressure"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:MechanicsScheme .
+
+quantity:property a qu:PropertyKind,
+        owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+quantity:radianceExposure a dim:RadianceExposure,
+        owl:NamedIndividual ;
+    rdfs:label "radiance exposure"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme .
+
+quantity:scalarProperty a qu:PropertyKind,
+        owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+quantity:soundEnergyDensity a dim:EnergyDensity,
+        owl:NamedIndividual ;
+    rdfs:label "sound energy density"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme .
+
+quantity:soundIntensity a dim:EnergyFlux,
+        owl:NamedIndividual ;
+    rdfs:label "sound intensity"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme .
+
+quantity:soundPower a dim:Power,
+        owl:NamedIndividual ;
+    rdfs:label "sound power"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme .
+
+quantity:soundPressure a dim:StressOrPressure,
+        owl:NamedIndividual ;
+    rdfs:label "sound pressure"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme,
+        dim:MechanicsScheme .
+
+quantity:surfaceDensity a dim:SurfaceDensity,
+        owl:NamedIndividual ;
+    rdfs:label "surface density"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:MechanicsScheme .
+
+quantity:temperature a dim:Temperature,
+        owl:NamedIndividual ;
+    rdfs:label "temperature"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:HeatScheme,
+        dim:SolidStatePhysicsScheme .
+
+quantity:vapourCompressibility a dim:Compressibility,
+        owl:NamedIndividual ;
+    rdfs:label "vapour compressibility"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:HeatScheme,
+        dim:PhysicalChemistryAndMolecularPhysicsScheme .
+
+quantity:vapourPressure a dim:StressOrPressure,
+        owl:NamedIndividual ;
+    rdfs:label "vapour pressure"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:MechanicsScheme .
+
+quantity:vectorProperty a qu:PropertyKind,
+        owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+quantity:velocity a dim:VelocityOrSpeed,
+        owl:NamedIndividual ;
+    rdfs:label "velocity"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme,
+        dim:SpaceAndTimeScheme .
+
+ssn:hasProperty a owl:ObjectProperty ;
+    rdfs:label "has property"@en ;
+    rdfs:comment "A relation between a FeatureOfInterest and a Property of that feature." ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/ssn> ;
+    owl:equivalentProperty saref:hasProperty .
+
+fiware:AgriParcelRecord a owl:Class ;
+    rdfs:label "AgriParcelRecord" ;
+    rdfs:comment "This entity contains a harmonised description of the conditions recorded on a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
+
+fiware:WeatherForecast a owl:Class ;
+    rdfs:label "WeatherForecast" ;
+    rdfs:comment "A weather forecast for a period of time and a location." ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherForecast/doc/spec.html> ;
+    rdfs:subClassOf saref:FeatureOfInterest .
+
+fiware:WeatherObserved a owl:Class ;
+    rdfs:label "WeatherObserved" ;
+    rdfs:comment "A weather observation made over a period of time at a specific location" ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subClassOf saref:FeatureOfInterest .
+
+fiware:airTemperature a owl:DatatypeProperty ;
+    rdfs:label "airTemperature"@en ;
+    rdfs:comment "The observed air temperature (in the shade) nominally in degrees centigrade." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:atmosphericPressure a owl:DatatypeProperty ;
+    rdfs:label "atmosphericPressure"@en ;
+    rdfs:comment "The atmospheric pressure observed measured in Hecto Pascals" ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html>,
+        <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:dateObserved a owl:DatatypeProperty ;
+    rdfs:label "dateObserved"@en ;
+    rdfs:comment "The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval." ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subPropertyOf saref:hasTimestamp .
+
+fiware:dewPoint a owl:DatatypeProperty ;
+    rdfs:label "dewPoint"@en ;
+    rdfs:comment "The dew point encoded as a number." ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:hasDevice a owl:ObjectProperty ;
+    rdfs:label "hasDevice"@en ;
+    rdfs:comment "Reference to the IoT devices associated with this [entity] i.e. sensors, controls." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md>,
+        <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+
+fiware:illuminance a owl:DatatypeProperty ;
+    rdfs:label "illuminance"@en ;
+    rdfs:comment "The illumninance observed measured in lux (lx) or lumens per square metre (cd·sr·m−2)" ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:observedAt a owl:DatatypeProperty ;
+    rdfs:label "observedAt"@en ;
+    rdfs:comment "Indicates the date/time the record was observed/ last observed." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+    rdfs:subPropertyOf saref:hasTimestamp .
+
+fiware:precipitation a owl:DatatypeProperty ;
+    rdfs:label "precipitation"@en ;
+    rdfs:comment "Precipitation level observed." ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:pressureTendency a owl:DatatypeProperty ;
+    rdfs:label "pressureTendency"@en ;
+    rdfs:comment "Is the pressure rising or falling? It can be expressed in quantitative terms or qualitative terms (raising, falling, steady)" ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:recordHasAgriParcel a owl:ObjectProperty ;
+    rdfs:label "recordHasAgriParcel"@en ;
+    rdfs:comment "Reference to the AgriParcel to which this entity relates." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
+
+fiware:refDevice a owl:ObjectProperty ;
+    rdfs:label "refDevice"@en ;
+    rdfs:comment "A reference to the device(s) which captured this observation." ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    owl:equivalentProperty saref:measurementMadeBy .
+
+fiware:refPointOfInterest a owl:ObjectProperty ;
+    rdfs:label "refPointOfInterest"@en ;
+    rdfs:comment "A reference to a point of interest (usually a weather station) associated to this observation" ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .
+
+fiware:relativeHumidity a owl:DatatypeProperty ;
+    rdfs:label "relativeHumidity"@en ;
+    rdfs:comment "Air’s relative humidity observed (percentage, expressed in parts per one).",
+        "Relative Humidity a number between 0 and 1 representing the range of 0% to 100%. 0 ≤ relativeHumidity ≤ 1" ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html>,
+        <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:snowHeight a owl:DatatypeProperty ;
+    rdfs:label "snowHeight"@en ;
+    rdfs:comment "The snow height observed by generic snow depth measurement sensors, expressed in centimeters." ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:soilMoistureEc a owl:DatatypeProperty ;
+    rdfs:label "soilMoistureEc"@en ;
+    rdfs:comment "Measured as Electrical Conductivity, EC nominally in units of Siemens per meter (S/m)." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:soilMoistureVwc a owl:DatatypeProperty ;
+    rdfs:label "soilMoistureVwc"@en ;
+    rdfs:comment "Measured as Volumetric Water Content, VWC as a percentage. 0 ≤soilMoistureVwc ≤ 1" ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:soilTemperature a owl:DatatypeProperty ;
+    rdfs:label "soilTemperature"@en ;
+    rdfs:comment "The observed soil temperature nominally in degrees centigrade." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:solarRadiation a owl:DatatypeProperty ;
+    rdfs:label "solarRadiation"@en ;
+    rdfs:comment "Instantaneous solar radiation measured in kW/m2.",
+        "The solar radiation observed measured in Watts per square meter." ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html>,
+        <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:streamGauge a owl:DatatypeProperty ;
+    rdfs:label "streamGauge"@en ;
+    rdfs:comment "The water level surface elevation observed by Hydrometric measurement sensors, namely a Stream Gauge, expressed in centimeters." ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:temperature a owl:DatatypeProperty ;
+    rdfs:label "temperature"@en ;
+    rdfs:comment "Air’s temperature observed" ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:visibility a owl:DatatypeProperty ;
+    rdfs:label "visibility"@en ;
+    rdfs:comment "Visibility reported (veryPoor, poor, moderate, good, veryGood, excellent)" ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:weatherType a owl:DatatypeProperty ;
+    rdfs:label "weatherType"@en ;
+    rdfs:comment "The observed weather type. It is represented by a comma separated list of weather statuses, for instance overcast, lightRain." ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> .
+
+fiware:windDirection a owl:DatatypeProperty ;
+    rdfs:label "windDirection"@en ;
+    rdfs:comment "The wind direction expressed in decimal degrees compared to geographic North (measured clockwise), encoded as a Number. Range 0 to 360." ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+fiware:windSpeed a owl:DatatypeProperty ;
+    rdfs:label "windSpeed"@en ;
+    rdfs:comment "The observed wind speed in m/s, encoded as a Number." ;
+    rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+    rdfs:subPropertyOf saref:hasValue .
+
+saref4agri:AirTemperature rdfs:isDefinedBy saref4agri: .
+
+saref4agri:AmbientHumidity rdfs:isDefinedBy saref4agri: .
+
+saref4agri:IrrigationWater rdfs:isDefinedBy saref4agri: .
+
+saref4agri:PlantGrowthStage rdfs:isDefinedBy saref4agri: .
+
+saref4agri:Precipitation rdfs:isDefinedBy saref4agri: .
+
+saref4agri:Soil a owl:Class ;
+    rdfs:label "Soil" ;
+    rdfs:comment "Upper layer of the earth in which plants grow." ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:subClassOf saref:FeatureOfInterest .
+
+saref4agri:SoilMoisture rdfs:isDefinedBy saref4agri: .
+
+saref4agri:SoilTemperature rdfs:isDefinedBy saref4agri: ;
+    owl:sameAs cf:soil_temperature .
+
+<https://w3id.org/demeter/agri/agriProperty> a owl:Ontology,
+        prov:Entity ;
+    dct:contributor [ foaf:name "Ioanna Roussaki" ;
+            schema:affiliation [ foaf:name "ICCS" ] ],
+        [ foaf:name "George Routis" ;
+            schema:affiliation [ foaf:name "ICCS" ] ],
+        [ foaf:name "Rob Atkinson" ;
+            schema:affiliation [ foaf:name "OGC" ] ] ;
+    dct:creator [ rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+            foaf:name "Raul Palma" ;
+            schema:affiliation [ foaf:name "PSNC" ] ] ;
+    dct:description "The DEMETER AgriProperty is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+    dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+    dct:title "DEMETER AgriProperty"@en ;
+    rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    owl:imports <http://foodie-cloud.com/model/foodie>,
+        <http://purl.oclc.org/NET/ssnx/cf/cf-feature>,
+        <http://purl.oclc.org/NET/ssnx/qu/dim>,
+        <http://purl.oclc.org/NET/ssnx/qu/qu>,
+        <http://www.w3.org/ns/sosa>,
+        <https://w3id.org/def/saref4agri>,
+        <https://w3id.org/demeter/agri/agriCommon>,
+        <https://w3id.org/saref> ;
+    owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProperty.ttl> ;
+    owl:versionInfo "1.0" ;
+    ns2:isProfileOf <https://w3id.org/demeter/agri/agriProperty_profile4agriProperty_dim>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4cf-feature>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4foodie.ttl>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4qu>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4saref>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4saref4agri.ttl>,
+        <https://w3id.org/demeter/agri/agriProperty_profile4sosa> ;
+    ns2:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+        <http://purl.oclc.org/NET/ssnx/cf/cf-feature>,
+        <http://purl.oclc.org/NET/ssnx/qu/dim>,
+        <http://purl.oclc.org/NET/ssnx/qu/qu>,
+        <http://www.w3.org/ns/sosa>,
+        <https://w3id.org/def/saref4agri>,
+        <https://w3id.org/saref> ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriProperty.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriProperty.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            prov:endedAtTime "2020-08-18"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.3" ] ] ;
+    foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
+            foaf:name "DEMETER project" ] .
+
+saref:Humidity a owl:Class ;
+    rdfs:label "Humidity"^^xsd:string,
+        "Humidity",
+        "Humidity"@en,
+        "Humidiy"@en ;
+    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit",
+        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit"^^xsd:string ;
+    rdfs:isDefinedBy saref: ;
+    rdfs:subClassOf saref:Property .
+
+saref:Temperature a owl:Class ;
+    rdfs:label "Temperature",
+        "Temperature"^^xsd:string,
+        "Temperature"@en ;
+    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)",
+        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)"^^xsd:string ;
+    rdfs:isDefinedBy saref: ;
+    rdfs:subClassOf saref:Property ;
+    owl:equivalentClass dim:Temperature .
+
+foodie:PropertyTypeValue a owl:Class ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:subClassOf iso19150-2:Codelist,
+        skos:Concept ;
+    skos:prefLabel "PropertyTypeValue"@en .
+
+foodie:analysisDate a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range xsd:date,
+        xsd:dateTime ;
+    rdfs:subPropertyOf saref:hasTimestamp ;
+    skos:prefLabel "analysisDate"@en .
+
+foodie:nonQuantitativeProperty a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf saref:hasValue ;
+    skos:prefLabel "nonQuantitativeProperty"@en .
+
+foodie:propertyName a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf fiware:name ;
+    skos:prefLabel "propertyName"@en .
+
+foodie:propertyType a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:PropertyTypeValue ;
+    skos:prefLabel "propertyType"@en .
+
+foodie:quantitativeProperty a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range iso19103:Measure ;
+    rdfs:subPropertyOf saref:relatesToMeasurement ;
+    skos:prefLabel "quantitativeProperty"@en .
+
+cf:convective_snowfall_amount a owl:NamedIndividual ;
+    rdfs:label "convective snowfall amount" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:convective_snowfall_flux a owl:NamedIndividual ;
+    rdfs:label "convective snowfall flux" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:downward_heat_flux_in_soil a owl:NamedIndividual ;
+    rdfs:label "downward heat flux in soil" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:frozen_water_content_of_soil_layer a owl:NamedIndividual ;
+    rdfs:label "frozen water content of soil layer" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:large_scale_snowfall_amount a owl:NamedIndividual ;
+    rdfs:label "large scale snowfall amount" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:large_scale_snowfall_flux a owl:NamedIndividual ;
+    rdfs:label "large scale snowfall flux" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:liquid_water_content_of_soil_layer a owl:NamedIndividual ;
+    rdfs:label "liquid water content of soil layer" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:lwe_convective_snowfall_rate a owl:NamedIndividual ;
+    rdfs:label "lwe convective snowfall rate" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:lwe_large_scale_snowfall_rate a owl:NamedIndividual ;
+    rdfs:label "lwe large scale snowfall rate" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:lwe_snowfall_rate a owl:NamedIndividual ;
+    rdfs:label "lwe snowfall rate" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:lwe_thickness_of_convective_snowfall_amount a owl:NamedIndividual ;
+    rdfs:label "lwe thickness of convective snowfall amount" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:lwe_thickness_of_frozen_water_content_of_soil_layer a owl:NamedIndividual ;
+    rdfs:label "lwe thickness of frozen water content of soil layer" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:lwe_thickness_of_large_scale_snowfall_amount a owl:NamedIndividual ;
+    rdfs:label "lwe thickness of large scale snowfall amount" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:lwe_thickness_of_moisture_content_of_soil_layer a owl:NamedIndividual ;
+    rdfs:label "lwe thickness of moisture content of soil layer" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:lwe_thickness_of_snowfall_amount a owl:NamedIndividual ;
+    rdfs:label "lwe thickness of snowfall amount" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:lwe_thickness_of_soil_moisture_content a owl:NamedIndividual ;
+    rdfs:label "lwe thickness of soil moisture content" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:mass_concentration_of_condensed_water_in_soil a owl:NamedIndividual ;
+    rdfs:label "mass concentration of condensed water in soil" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:moisture_content_of_soil_layer a owl:NamedIndividual ;
+    rdfs:label "moisture content of soil layer" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:moisture_content_of_soil_layer_at_field_capacity a owl:NamedIndividual ;
+    rdfs:label "moisture content of soil layer at field capacity" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:snowfall_amount a owl:NamedIndividual ;
+    rdfs:label "snowfall amount" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:snowfall_flux a owl:NamedIndividual ;
+    rdfs:label "snowfall flux" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_albedo a owl:NamedIndividual ;
+    rdfs:label "soil albedo" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_carbon_content a owl:NamedIndividual ;
+    rdfs:label "soil carbon content" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_frozen_water_content a owl:NamedIndividual ;
+    rdfs:label "soil frozen water content" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_hydraulic_conductivity_at_saturation a owl:NamedIndividual ;
+    rdfs:label "soil hydraulic conductivity at saturation" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_moisture_content a owl:NamedIndividual ;
+    rdfs:label "soil moisture content" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_moisture_content_at_field_capacity a owl:NamedIndividual ;
+    rdfs:label "soil moisture content at field capacity" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_porosity a owl:NamedIndividual ;
+    rdfs:label "soil porosity" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_suction_at_saturation a owl:NamedIndividual ;
+    rdfs:label "soil suction at saturation" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_thermal_capacity a owl:NamedIndividual ;
+    rdfs:label "soil thermal capacity" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_thermal_conductivity a owl:NamedIndividual ;
+    rdfs:label "soil thermal conductivity" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:soil_type a owl:NamedIndividual ;
+    rdfs:label "soil type" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:thickness_of_convective_snowfall_amount a owl:NamedIndividual ;
+    rdfs:label "thickness of convective snowfall amount" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:thickness_of_large_scale_snowfall_amount a owl:NamedIndividual ;
+    rdfs:label "thickness of large scale snowfall amount" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:thickness_of_snowfall_amount a owl:NamedIndividual ;
+    rdfs:label "thickness of snowfall amount" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:vegetation_area_fraction a owl:NamedIndividual ;
+    rdfs:label "vegetation area fraction" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:vegetation_carbon_content a owl:NamedIndividual ;
+    rdfs:label "vegetation carbon content" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:volume_fraction_of_clay_in_soil a owl:NamedIndividual ;
+    rdfs:label "volume fraction of clay in soil" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:volume_fraction_of_condensed_water_in_soil a owl:NamedIndividual ;
+    rdfs:label "volume fraction of condensed water in soil" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:volume_fraction_of_condensed_water_in_soil_at_critical_point a owl:NamedIndividual ;
+    rdfs:label "volume fraction of condensed water in soil at critical point" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:volume_fraction_of_condensed_water_in_soil_at_field_capacity a owl:NamedIndividual ;
+    rdfs:label "volume fraction of condensed water in soil at field capacity" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:volume_fraction_of_condensed_water_in_soil_at_wilting_point a owl:NamedIndividual ;
+    rdfs:label "volume fraction of condensed water in soil at wilting point" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:volume_fraction_of_condensed_water_in_soil_pores a owl:NamedIndividual ;
+    rdfs:label "volume fraction of condensed water in soil pores" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:volume_fraction_of_frozen_water_in_soil a owl:NamedIndividual ;
+    rdfs:label "volume fraction of frozen water in soil" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:volume_fraction_of_sand_in_soil a owl:NamedIndividual ;
+    rdfs:label "volume fraction of sand in soil" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:volume_fraction_of_silt_in_soil a owl:NamedIndividual ;
+    rdfs:label "volume fraction of silt in soil" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+cf:water_evaporation_flux_from_soil a owl:NamedIndividual ;
+    rdfs:label "water evaporation flux from soil" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+dim:Acceleration a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Dimensionless a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:ElectricityAndMagnetismScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:EnergyDensity a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:EnergyFlux a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:RadianceExposure a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:SolidStatePhysicsScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:VelocityOrSpeed a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+cf:soil_temperature a owl:NamedIndividual ;
+    rdfs:label "soil temperature" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+dim:Compressibility a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Concentration a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Density a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:LightAndRelatedElectromagneticRadiationsScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:MassPerTimePerArea a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Power a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:SurfaceDensity a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+foodie:PropertyType a owl:Class ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:int ;
+            owl:onProperty foodie:quantitativeProperty ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:int ;
+            owl:onProperty foodie:propertyType ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty foodie:propertyName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:int ;
+            owl:onProperty foodie:nonQuantitativeProperty ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty foodie:analysisDate ],
+        iso19150-2:Datatype ;
+    skos:prefLabel "PropertyType"@en .
+
+dim:Distance a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:HeatScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:StressOrPressure a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Temperature a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+saref:Measurement a owl:Class ;
+    rdfs:label "Measurement"@en ;
+    rdfs:comment "Represents the measured value made over a property. It is also linked to the unit of measure in which the value is expressed and the timestamp of the measurement."@en ;
+    rdfs:isDefinedBy saref: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom saref:FeatureOfInterest ;
+            owl:onProperty saref:hasFeatureOfInterest ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:UnitOfMeasure ;
+            owl:onProperty saref:isMeasuredIn ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Property ;
+            owl:onProperty saref:relatesToProperty ],
+        [ a owl:Restriction ;
+            owl:onClass saref:UnitOfMeasure ;
+            owl:onProperty saref:isMeasuredIn ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass saref:Property ;
+            owl:onProperty saref:relatesToProperty ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty saref:hasTimestamp ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty saref:hasValue ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty saref:hasValue ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty saref:hasTimestamp ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:UnitOfMeasure ;
+            owl:onProperty saref:isMeasuredIn ],
+        [ a owl:Restriction ;
+            owl:onClass saref:Property ;
+            owl:onProperty saref:relatesToProperty ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass saref:UnitOfMeasure ;
+            owl:onProperty saref:isMeasuredIn ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Property ;
+            owl:onProperty saref:relatesToProperty ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:float ;
+            owl:onProperty saref:hasValue ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ;
+    owl:disjointWith saref:Property,
+        saref:UnitOfMeasure ;
+    owl:equivalentClass iso19103:Measure .
+
+dim:PhysicalChemistryAndMolecularPhysicsScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:SpaceAndTimeScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:AcousticsScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+qu:PropertyKind a owl:Class ;
+    rdfs:label "PropertyKind",
+        "PropertyKind " ;
+    rdfs:comment "A PropertyKind  is a meta-property which helps to characterise categories of properties e.g. scalar, vector" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20>,
+        "http://purl.oclc.org/NET/ssnx/qu" ;
+    rdfs:seeAlso "http://www.omgsysml.org/qudv#Quantity" .
+
+saref:FeatureOfInterest a owl:Class ;
+    rdfs:label "Feature of interest"@en ;
+    rdfs:comment saref: ;
+    rdfs:isDefinedBy saref: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom saref:Property ;
+            owl:onProperty saref:hasProperty ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Measurement ;
+            owl:onProperty saref:isFeatureOfInterestOf ] ;
+    owl:equivalentClass sosa:FeatureOfInterest .
+
+saref:UnitOfMeasure a owl:Class ;
+    rdfs:label "Unit of measure"^^xsd:string,
+        "Unit of measure"@en ;
+    rdfs:comment "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM).",
+        "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)."^^xsd:string,
+        "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of the Smart Appliances ontology, but this list can be extended."@en ;
+    rdfs:isDefinedBy <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure>,
+        saref: .
+
+sosa:FeatureOfInterest a owl:Class ;
+    rdfs:label "Feature Of Interest"@en ;
+    rdfs:comment "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en ;
+    rdfs:isDefinedBy sosa: ;
+    skos:definition "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en ;
+    skos:example "When measuring the height of a tree, the height is the observed ObservableProperty, 20m may be the Result of the Observation, and the tree is the FeatureOfInterest. A window is a FeatureOfInterest for an automatic window control Actuator."@en .
+
+dim:MechanicsScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+saref:Property a owl:Class ;
+    rdfs:label "Property"^^xsd:string,
+        "Property",
+        "Property"@en ;
+    rdfs:comment "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended."^^xsd:string,
+        "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended.",
+        "An aspect of an entity that can be observable by a sensor."@en ;
+    rdfs:isDefinedBy saref: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom saref:Device ;
+            owl:onProperty saref:isControlledByDevice ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Device ;
+            owl:onProperty saref:isMeasuredByDevice ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:FeatureOfInterest ;
+            owl:onProperty saref:isPropertyOf ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Measurement ;
+            owl:onProperty saref:relatesToMeasurement ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Device ;
+            owl:onProperty saref:isMeasuredByDevice ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Device ;
+            owl:onProperty saref:isControlledByDevice ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom saref:Measurement ;
+            owl:onProperty saref:relatesToMeasurement ] ;
+    owl:disjointWith saref:UnitOfMeasure ;
+    owl:equivalentClass foodie:PropertyType,
+        qu:QuantityKind .
+
+qu:QuantityKind a owl:Class ;
+    rdfs:label "QuantityKind" ;
+    ns1:source "skos:exactMatch 'QuantityKind' [SysML 1.2-QUDV] http://www.omgwiki.org/OMGSysML/doku.php?id=sysml-qudv:quantities_units_dimensions_values_qudv" ;
+    rdfs:comment """A QuantityKind is an abstract classifier that represents the [VIM] concept of "kind of quantity" that is defined as "aspect
+common to mutually comparable quantities." A QuantityKind represents the essence of a quantity without any numerical
+value or unit. Quantities of the same kind within a given system of quantities have the same quantity dimension. However,
+quantities of the same dimension are not necessarily of the same kind.""" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20>,
+        "http://purl.oclc.org/NET/ssnx/qu" ;
+    rdfs:seeAlso "http://www.omgsysml.org/qudv#Quantity" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass qu:Scale ;
+                        owl:onProperty qu:scale ] [ a owl:Restriction ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:name ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:symbol ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:definitionURI ] [ a owl:Restriction ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:description ] ) ] .
+
