@@ -45,11 +45,13 @@
 <https://astrea.linkeddata.es/shapes#f5d85329dd8373607183ef7a6a2c3fc7>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
-        rdfs:label        "observedAt"@en , "Indicates the date/time the record was observed/ last observed." ;
+        rdfs:label        "Indicates the date/time the record was observed/ last observed." , "observedAt"@en ;
+        sh:datatype       xsd:dateTime ;
         sh:description    "Indicates the date/time the record was observed/ last observed." ;
         sh:name           "observedAt"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           fiware:observedAt .
+        sh:path           fiware:observedAt ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
 <https://astrea.linkeddata.es/shapes#82da3f9677527f027e33a454c4a094d8>
         a            sh:PropertyShape ;
@@ -342,11 +344,13 @@
 <https://astrea.linkeddata.es/shapes#7d500845887f53beb750d2a134541b12>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
-        rdfs:label        "dateObserved"@en , "The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval." ;
+        rdfs:label        "The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval." , "dateObserved"@en ;
+        sh:datatype       xsd:dateTime ;
         sh:description    "The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval." ;
         sh:name           "dateObserved"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           fiware:dateObserved .
+        sh:path           fiware:dateObserved ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
 <https://astrea.linkeddata.es/shapes#96c5445ce9eb6c581ca247628a9b99fa>
         a                 sh:NodeShape ;

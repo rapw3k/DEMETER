@@ -360,11 +360,13 @@
 <https://astrea.linkeddata.es/shapes#c3cc8ba8b69f980217340a99151c2ee2>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
-        rdfs:label        "birthdate"@en , "Animal’s birthdate" ;
+        rdfs:label        "Animal’s birthdate" , "birthdate"@en ;
+        sh:datatype       xsd:dateTime ;
         sh:description    "Animal’s birthdate" ;
         sh:name           "birthdate"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           fiware:birthdate .
+        sh:path           fiware:birthdate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
 <https://astrea.linkeddata.es/shapes#ca42dcd3e488a491f41cb610aae7b09d>
         a                 sh:PropertyShape ;

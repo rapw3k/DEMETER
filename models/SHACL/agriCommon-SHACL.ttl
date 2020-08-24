@@ -97,12 +97,14 @@
 
 <https://astrea.linkeddata.es/shapes#9fef3b114595ed4aa13d030667f0542b>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
         rdfs:label        "createdAt"@en , "Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
+        sh:datatype       xsd:dateTime ;
         sh:description    "Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
         sh:name           "createdAt"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           fiware:createdAt .
+        sh:path           fiware:createdAt ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
 <https://astrea.linkeddata.es/shapes#a74ec6533109f056675b61ba243f5dd9>
         a                 sh:PropertyShape ;
@@ -235,10 +237,12 @@
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
         rdfs:label        "modifiedAt"@en , "Indicates the date/ time when the entity was last modified in ISO 8601 format. The value of this will be set by the server when the entity was modified, if the entity has not been modified it may have a null value." ;
+        sh:datatype       xsd:dateTime ;
         sh:description    "Indicates the date/ time when the entity was last modified in ISO 8601 format. The value of this will be set by the server when the entity was modified, if the entity has not been modified it may have a null value." ;
         sh:name           "modifiedAt"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           fiware:modifiedAt .
+        sh:path           fiware:modifiedAt ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
 <https://astrea.linkeddata.es/shapes#e8924a7f1da93fb4b400f5b6545d17c8>
         a                 sh:PropertyShape ;
@@ -367,9 +371,11 @@
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  saref: ;
         rdfs:label        "has timestamp"@en ;
+        sh:datatype       xsd:dateTime ;
         sh:name           "has timestamp"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           saref:hasTimestamp .
+        sh:path           saref:hasTimestamp ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
 <https://astrea.linkeddata.es/shapes#9e9cb48c1174c31afed273d1a674e5ba>
         a                 sh:NodeShape ;

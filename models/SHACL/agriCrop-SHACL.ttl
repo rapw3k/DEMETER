@@ -174,8 +174,8 @@
 <https://astrea.linkeddata.es/shapes#77e23c52096db830b65258a7a60f8cb1>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
-        rdfs:label        "plantingFrom"@en , "A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals: interval, description. Where interval is in the form of start date/end date --MM-DD/--MM-DD. Meaning repeat each year from this start date to this end date." ;
-        sh:description    "A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals: interval, description. Where interval is in the form of start date/end date --MM-DD/--MM-DD. Meaning repeat each year from this start date to this end date." ;
+        rdfs:label        "plantingFrom"@en , "A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\ninterval, description\nWhere interval is in the form of start date/end date\n--MM-DD/--MM-DD\nMeaning repeat each year from this start date to this end date." ;
+        sh:description    "A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\ninterval, description\nWhere interval is in the form of start date/end date\n--MM-DD/--MM-DD\nMeaning repeat each year from this start date to this end date." ;
         sh:name           "plantingFrom"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:plantingFrom .
@@ -223,8 +223,8 @@
 <https://astrea.linkeddata.es/shapes#6ee324d10fab92b43dda92b5d0a730fb>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
-        rdfs:label        "harvestingInterval"@en , "A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals: interval, description. Where interval is in the form of start date/end date --MM-DD/--MM-DD. Meaning repeat each year from this start date to this end date." ;
-        sh:description    "A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals: interval, description. Where interval is in the form of start date/end date --MM-DD/--MM-DD. Meaning repeat each year from this start date to this end date." ;
+        rdfs:label        "harvestingInterval"@en , "A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\ninterval, description\nWhere interval is in the form of start date/end date\n--MM-DD/--MM-DD\nMeaning repeat each year from this start date to this end date." ;
+        sh:description    "A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\ninterval, description\nWhere interval is in the form of start date/end date\n--MM-DD/--MM-DD\nMeaning repeat each year from this start date to this end date." ;
         sh:name           "harvestingInterval"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:harvestingInterval .
@@ -254,8 +254,10 @@
 <https://astrea.linkeddata.es/shapes#4ca0a3bf9404370610cee7850d518b09>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:dateTime ;
         sh:nodeKind       sh:Literal ;
-        sh:path           foodie:productionDate .
+        sh:path           foodie:productionDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
 <https://astrea.linkeddata.es/shapes#456f7c6743f2b12f83abbd722d752719>
         a            sh:PropertyShape ;

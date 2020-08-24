@@ -37,10 +37,12 @@
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
         rdfs:label        "lastPlantedAt"@en , "Indicates the date when the crop was last planted." ;
+        sh:datatype       xsd:dateTime ;
         sh:description    "Indicates the date when the crop was last planted." ;
         sh:name           "lastPlantedAt"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           fiware:lastPlantedAt .
+        sh:path           fiware:lastPlantedAt ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
 <https://astrea.linkeddata.es/shapes#94c94d6cfbd428c08f39ddc52cc55162>
         a            sh:PropertyShape ;
