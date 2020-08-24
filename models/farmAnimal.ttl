@@ -186,7 +186,8 @@ fiware:legalID	a      owl:DatatypeProperty ;
         rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .         
 
 ### https://uri.fiware.org/ns/data-models#birthdate
-fiware:birthdate	a      owl:DatatypeProperty ;     
+fiware:birthdate	a      owl:DatatypeProperty ;
+        rdfs:range 			 xsd:dateTime ;     
         rdfs:label   		"birthdate"@en ;
         rdfs:comment		"Animal’s birthdate" ;
         rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> . 

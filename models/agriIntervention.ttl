@@ -250,18 +250,14 @@ foodie:treatmentPlanCreation
   
 ### https://uri.fiware.org/ns/data-models#plannedStartAt
 fiware:plannedStartAt	a	owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;  
         rdfs:label   		"plannedStartAt"@en ;
         rdfs:comment		"The planned start date/timestamp for the operation. Note that this is advisory and the actual time the operation starts may be before or after the planned start." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
 
 ### https://uri.fiware.org/ns/data-models#plannedEndAt
 fiware:plannedEndAt	a   owl:DatatypeProperty ;
-        rdfs:label   		"plannedEndAt"@en ;
-        rdfs:comment		"The planned end date/timestamp for the operation. Note that this is advisory and the actual time the operation finishes may be before or after the planned end." ;
-        rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
-
-### https://uri.fiware.org/ns/data-models#plannedEndAt
-fiware:plannedEndAt	a      owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;  
         rdfs:label   		"plannedEndAt"@en ;
         rdfs:comment		"The planned end date/timestamp for the operation. Note that this is advisory and the actual time the operation finishes may be before or after the planned end." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
@@ -286,18 +282,21 @@ fiware:status	a      owl:DatatypeProperty ;
 
 ### https://uri.fiware.org/ns/data-models#startedAt
 fiware:startedAt	a     owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;  
         rdfs:label   		"startedAt"@en ;
         rdfs:comment		"Timestamp when the operation actually started to be performed." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
 
 ### https://uri.fiware.org/ns/data-models#endedAt
 fiware:endedAt	a       owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;  
         rdfs:label   		"endedAt"@en ;
         rdfs:comment		"Timestamp when the operation actually finished." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
         
 ### https://uri.fiware.org/ns/data-models#reportedAt
 fiware:reportedAt	a     owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;  
         rdfs:label   		"reportedAt"@en ;
         rdfs:comment		"Timestamp when the event/ fault was reported." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .  

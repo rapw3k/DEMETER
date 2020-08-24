@@ -268,12 +268,14 @@ fiware:relativeHumidity	a	owl:DatatypeProperty ;
                        
 ### https://uri.fiware.org/ns/data-models#observedAt
 fiware:observedAt	a     owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;  
         rdfs:label   		"observedAt"@en ;
         rdfs:comment		"Indicates the date/time the record was observed/ last observed." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .                        
 
 ### https://uri.fiware.org/ns/data-models#dateObserved
 fiware:dateObserved	a		owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;  
         rdfs:label   		"dateObserved"@en ;
         rdfs:comment		"The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval." ;
         rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> . 

@@ -136,18 +136,21 @@ fiware:address	a      owl:DatatypeProperty ;
         
 ### https://uri.fiware.org/ns/data-models#dateIssued
 fiware:dateIssued	a      owl:DatatypeProperty ;     
+        rdfs:range      xsd:dateTime ;
         rdfs:label   		"dateIssued"@en ;
         rdfs:comment		"The date and time the alert was issued by the alert generator in ISO8601 UTC format" ;
         rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> . 
         
 ### https://uri.fiware.org/ns/data-models#validFrom
-fiware:validFrom	a      owl:DatatypeProperty ;     
+fiware:validFrom	a      owl:DatatypeProperty ;  
+        rdfs:range      xsd:dateTime ;   
         rdfs:label   		"validFrom"@en ;
         rdfs:comment		"The start date of validity of the alert in ISO8601 UTC format." ;
         rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> .  
         
 ### https://uri.fiware.org/ns/data-models#validTo
-fiware:validTo	a      owl:DatatypeProperty ;     
+fiware:validTo	a      owl:DatatypeProperty ;    
+        rdfs:range      xsd:dateTime ; 
         rdfs:label   		"validTo"@en ;
         rdfs:comment		"The end date of validity of the alert in ISO8601 UTC format." ;
         rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> .                        

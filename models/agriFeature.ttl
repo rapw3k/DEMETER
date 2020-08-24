@@ -260,7 +260,8 @@ fiware:cropStatus	a      owl:DatatypeProperty ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                    
         
 ### https://uri.fiware.org/ns/data-models#lastPlantedAt
-fiware:lastPlantedAt	a owl:DatatypeProperty ;     
+fiware:lastPlantedAt	a owl:DatatypeProperty ;   
+        rdfs:range      xsd:dateTime ;  
         rdfs:label   		"lastPlantedAt"@en ;
         rdfs:comment		"Indicates the date when the crop was last planted." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .                            

@@ -172,6 +172,7 @@ saref4agri:hasName rdf:type owl:DatatypeProperty ;
 
 ###  https://w3id.org/saref#hasTimestamp
 <https://w3id.org/saref#hasTimestamp> rdf:type owl:DatatypeProperty ;
+                                      rdfs:range      xsd:dateTime ;  
                                       rdfs:isDefinedBy <https://w3id.org/saref#> ;
                                       rdfs:label "has timestamp"@en .                                                           
 
@@ -235,12 +236,14 @@ common:validTo	a        owl:DatatypeProperty ;
         
 ### https://uri.fiware.org/ns/data-models#createdAt
 fiware:createdAt	a      owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;  
         rdfs:label   		"createdAt"@en ;
         rdfs:comment		"Indicates the date/ time that the instance of the entity was created in ISO 8601 format. The value of this will be set by the server when the entity was created" ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md>.
 
 ### https://uri.fiware.org/ns/data-models#modifiedAt
 fiware:modifiedAt	a      owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;  
         rdfs:label   		"modifiedAt"@en ;
         rdfs:comment		"Indicates the date/ time when the entity was last modified in ISO 8601 format. The value of this will be set by the server when the entity was modified, if the entity has not been modified it may have a null value." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
