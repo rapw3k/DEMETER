@@ -442,10 +442,6 @@ af-inspire:Site  a           owl:Class ;
 ###  http://foodie-cloud.com/model/foodie#Plot
 foodie:Plot  a           owl:Class ;
         rdfs:subClassOf  iso19109:AnyFeature , geo:Feature , iso19150-2:FeatureType ;
-        rdfs:subClassOf  [ a                owl:Restriction ;
-                           owl:cardinality  "1"^^xsd:int ;
-                           owl:onProperty   foodie:originType
-                         ] ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:maxCardinality  "1"^^xsd:int ;
                            owl:onProperty      prov:invalidatedAtTime
