@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:ns0="https://schema.org/"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <owl:Ontology rdf:about="https://w3id.org/demeter/agri">
+    <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/demeterAgriProfile.ttl"/>
+    <dc:contributor>
+      <rdf:Description>
+        <ns0:affiliation>
+          <rdf:Description>
+            <foaf:name>OGC</foaf:name>
+          </rdf:Description>
+        </ns0:affiliation>
+        <foaf:name>Rob Atkinson</foaf:name>
+      </rdf:Description>
+    </dc:contributor>
+    <dc:contributor>
+      <rdf:Description>
+        <ns0:affiliation>
+          <rdf:Description>
+            <foaf:name>ICCS</foaf:name>
+          </rdf:Description>
+        </ns0:affiliation>
+        <foaf:name>Ioanna Roussaki</foaf:name>
+      </rdf:Description>
+    </dc:contributor>
+    <dc:creator>
+      <rdf:Description>
+        <ns0:affiliation>
+          <rdf:Description>
+            <foaf:name>PSNC</foaf:name>
+          </rdf:Description>
+        </ns0:affiliation>
+        <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+        <foaf:name>Raul Palma</foaf:name>
+      </rdf:Description>
+    </dc:creator>
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriFeature"/>
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCrop"/>
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriIntervention"/>
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriAlert"/>
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriProduct"/>
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriProperty"/>
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriSystem"/>
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriPest"/>
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/farmAnimal"/>
+    <dc:description xml:lang="en">The DEMETER Agri Profile is a master profile importing focused specific profiles/modules of DEMETER AIM.</dc:description>
+    <dc:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dc:rights>
+    <dc:title xml:lang="en">DEMETER Agriculture Information Model (AIM) domain ontology</dc:title>
+    <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
+    <owl:versionInfo>1.0</owl:versionInfo>
+    <foaf:maker>
+      <rdf:Description>
+        <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
+        <foaf:name>DEMETER project</foaf:name>
+      </rdf:Description>
+    </foaf:maker>
+  </owl:Ontology>
+</rdf:RDF>
