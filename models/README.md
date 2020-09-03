@@ -21,23 +21,19 @@ Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/e
 
 Note1: in the context I added the 10 individuals domain contexts; however in theory it should be possible to add just one: https://w3id.org/demeter/agri-context.jsonld which points to the all others, but in the json-ld playground this double refence is not processed)
 
-# Finding terms
+# Finding terms and retrieving annotations 
 
 Developers have different options to find terms in AIM:
 * Load whole ontology in ontology editor like Protege [https://w3id.org/demeter/agri](https://w3id.org/demeter/agri), and then search for terms. This may be useful only for those having some basic experience with ontologies.
-* All modules of AIM domain layer (e.g., [https://w3id.org/demeter/agri](https://w3id.org/demeter/agri), [https://w3id.org/demeter/agriCrop](https://w3id.org/demeter/agriCrop) take you to OGC definiton server (using any content negotiation except from TURTLE and RDF/XML). From there you can search terms. However, currently the search is restricted to each module.
+* All modules of AIM domain layer (e.g., [https://w3id.org/demeter/agri](https://w3id.org/demeter/agri), [https://w3id.org/demeter/agriCrop](https://w3id.org/demeter/agriCrop)) take you to OGC definiton server (using any content negotiation except from TURTLE and RDF/XML). From there you can search terms. However, currently the search is restricted to each module.
 * AIM domain layer is available via agroPortal: [http://agroportal.lirmm.fr/ontologies/DEMETER-AIM](http://agroportal.lirmm.fr/ontologies/DEMETER-AIM). From there you can browse classes, properties or mappgins if any (e.g., [http://agroportal.lirmm.fr/ontologies/DEMETER-AIM?p=classes](http://agroportal.lirmm.fr/ontologies/DEMETER-AIM?p=classes). Additionally, you can use recommendations and annotator functionalities of the portal. These feature are also available via API:
+	- *search for terms in AIM (e.g., Plot)*
+[http://data.agroportal.lirmm.fr/search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=plot](http://data.agroportal.lirmm.fr/search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=plot)
+	- *search for properties in AIM (e.g., hasAgriParcel)*
+[http://data.agroportal.lirmm.fr/property_search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=hasAgriParcel](http://data.agroportal.lirmm.fr/property_search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=hasAgriParcel)
+	- *get annotations (potential terms from AIM) given an input text (e.g., this parcel crop maize)*
+[http://data.agroportal.lirmm.fr/annotator?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&text=this+parcel+crop+maize](http://data.agroportal.lirmm.fr/annotator?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&text=this+parcel+crop+maize)
 
-```
--search for terms in AIM (e.g., Plot)
-http://data.agroportal.lirmm.fr/search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=plot
-
--search for properties in AIM (e.g., hasAgriParcel)
-http://data.agroportal.lirmm.fr/property_search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=hasAgriParcel
-
--get annotations (potential terms from AIM) given an input text (e.g., this parcel crop maize)
-http://data.agroportal.lirmm.fr/annotator?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&text=this+parcel+crop+maize
-```
 
 # How to validate your data is compliant with AIM (particularly the domain layer)
 
@@ -46,8 +42,8 @@ This is not validating the semantics though, just that elements are resolvable.
 
 * In order to validate the semantics, there are different tools we are evaluating still (and will provide some service).  
 For now, you can : 
-** use the online tool [https://shacl.org/playground/](https://shacl.org/playground/). However, this tool is not checking some restrictions (e.g., datetime format). New work was moved to library [https://github.com/zazuko/rdf-validate-shacl](https://github.com/zazuko/rdf-validate-shacl)
-** use Apache Jena SHACL [https://jena.apache.org/documentation/shacl/](https://jena.apache.org/documentation/shacl/), e.g.,
+	- use the online tool [https://shacl.org/playground/](https://shacl.org/playground/). However, this tool is not checking some restrictions (e.g., datetime format). New work was moved to library [https://github.com/zazuko/rdf-validate-shacl](https://github.com/zazuko/rdf-validate-shacl)
+	- use Apache Jena SHACL [https://jena.apache.org/documentation/shacl/](https://jena.apache.org/documentation/shacl/), e.g.,
 
 ```
 ./shacl v -s demeterAgriProfile-SHACL.ttl -d instance2-AIM.ttl
