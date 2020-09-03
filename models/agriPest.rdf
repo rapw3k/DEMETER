@@ -1,0 +1,74 @@
+<rdf:RDF
+    xmlns:af-inspire="http://inspire.ec.europa.eu/schemas/af/3.0#"
+    xmlns:common="http://portele.de/ont/inspire/baseInspire#"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:sosa="http://www.w3.org/ns/sosa/"
+    xmlns:iso19103="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:foodie="http://foodie-cloud.com/model/foodie#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:schema="https://schema.org/"
+    xmlns:iso19109="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#"
+    xmlns:iso19150-2="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#"
+    xmlns:stat="http://data.europa.eu/m8g/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:saref4agri="https://w3id.org/def/saref4agri#"
+    xmlns:fiware="https://uri.fiware.org/ns/data-models#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:qb="http://purl.org/linked-data/cube#"
+    xmlns:saref="https://w3id.org/saref#"
+    xmlns:geo="http://www.opengis.net/ont/geosparql#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns="https://w3id.org/cybele/"
+    xmlns:act-inspire="http://inspire.ec.europa.eu/schemas/act-core/3.0#"
+    xmlns:ssn="http://www.w3.org/ns/ssn/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/" > 
+  <rdf:Description rdf:nodeID="A0">
+    <foaf:name>PSNC</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <foaf:name>ICCS</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <foaf:name>OGC</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#AgriPest">
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md"/>
+    <rdfs:comment>This entity contains a harmonised description of an agricultural pest. This entity is primarily associated with the agricultural vertical and related IoT applications.</rdfs:comment>
+    <rdfs:label>AgriPest</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <foaf:name>Ioanna Roussaki</foaf:name>
+    <schema:affiliation rdf:nodeID="A1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <foaf:name>Raul Palma</foaf:name>
+    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+    <schema:affiliation rdf:nodeID="A0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <foaf:name>Rob Atkinson</foaf:name>
+    <schema:affiliation rdf:nodeID="A2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/demeter/agri/agriPest">
+    <dct:contributor rdf:nodeID="A3"/>
+    <dct:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dct:rights>
+    <foaf:maker rdf:nodeID="A6"/>
+    <dct:creator rdf:nodeID="A4"/>
+    <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
+    <dct:description xml:lang="en">The DEMETER AgriPest is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</dct:description>
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
+    <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriPest.ttl"/>
+    <dct:contributor rdf:nodeID="A5"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dct:title xml:lang="en">DEMETER AgriPest</dct:title>
+    <owl:versionInfo>1.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <foaf:name>DEMETER project</foaf:name>
+    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
+  </rdf:Description>
+</rdf:RDF>
