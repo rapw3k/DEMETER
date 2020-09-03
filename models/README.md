@@ -25,7 +25,7 @@ Note1: in the context I added the 10 individuals domain contexts; however in the
 
 Developers have different options to find terms in AIM:
 * Load whole ontology in ontology editor like Protege [https://w3id.org/demeter/agri](https://w3id.org/demeter/agri), and then search for terms. This may be useful only for those having some basic experience with ontologies.
-* All modules of AIM domain layer (e.g., [https://w3id.org/demeter/agri](https://w3id.org/demeter/agri, [https://w3id.org/demeter/agriCrop](https://w3id.org/demeter/agriCrop) take you to OGC definiton server (using any content negotiation except from TURTLE and RDF/XML). From there you can search terms. However, currently the search is restricted to each module.
+* All modules of AIM domain layer (e.g., [https://w3id.org/demeter/agri](https://w3id.org/demeter/agri), [https://w3id.org/demeter/agriCrop](https://w3id.org/demeter/agriCrop) take you to OGC definiton server (using any content negotiation except from TURTLE and RDF/XML). From there you can search terms. However, currently the search is restricted to each module.
 * AIM domain layer is available via agroPortal: [http://agroportal.lirmm.fr/ontologies/DEMETER-AIM](http://agroportal.lirmm.fr/ontologies/DEMETER-AIM). From there you can browse classes, properties or mappgins if any (e.g., [http://agroportal.lirmm.fr/ontologies/DEMETER-AIM?p=classes](http://agroportal.lirmm.fr/ontologies/DEMETER-AIM?p=classes). Additionally, you can use recommendations and annotator functionalities of the portal. These feature are also available via API:
 
 ```
