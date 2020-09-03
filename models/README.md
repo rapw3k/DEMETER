@@ -46,7 +46,74 @@ For now, you can :
 	- use Apache Jena SHACL [https://jena.apache.org/documentation/shacl/](https://jena.apache.org/documentation/shacl/), e.g.,
 
 ```
+./shacl v -s demeterAgriProfile-SHACL.ttl -d instance-AIM.ttl
+
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+[ a            sh:ValidationReport ;
+  sh:conforms  true
+] .
+```
+
+```
 ./shacl v -s demeterAgriProfile-SHACL.ttl -d instance2-AIM.ttl
+
+14:07:03 WARN  riot            :: [line: 18, col: 17] Lexical form '30/1/2019' not valid for datatype XSD dateTime
+14:07:03 WARN  riot            :: [line: 19, col: 15] Lexical form '30/6/2019' not valid for datatype XSD dateTime
+14:07:03 WARN  riot            :: [line: 29, col: 17] Lexical form '30/1/2020' not valid for datatype XSD dateTime
+14:07:03 WARN  riot            :: [line: 30, col: 15] Lexical form '30/6/2020' not valid for datatype XSD dateTime
+14:07:03 WARN  riot            :: [line: 40, col: 17] Lexical form '30/1/2019' not valid for datatype XSD dateTime
+14:07:03 WARN  riot            :: [line: 41, col: 15] Lexical form '30/6/2019' not valid for datatype XSD dateTime
+14:07:03 WARN  riot            :: [line: 51, col: 17] Lexical form '30/1/2020' not valid for datatype XSD dateTime
+14:07:03 WARN  riot            :: [line: 52, col: 15] Lexical form '30/6/2020' not valid for datatype XSD dateTime
+14:07:03 WARN  riot            :: [line: 103, col: 17] Lexical form '30/1/2010' not valid for datatype XSD dateTime
+14:07:03 WARN  riot            :: [line: 116, col: 17] Lexical form '30/1/2015' not valid for datatype XSD dateTime
+14:07:03 WARN  riot            :: [line: 138, col: 17] Lexical form '30/1/2000' not valid for datatype XSD dateTime
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+[ a            sh:ValidationReport ;
+  sh:conforms  true
+] .
+```
+
+```
+./shacl v -s demeterAgriProfile-SHACL.ttl -d instance-bad-AIM.ttl
+
+12:21:26 WARN  riot            :: [line: 42, col: 21] Lexical form 'test-bad-pattern' not valid for datatype XSD dateTime
+@prefix schema: <https://schema.org/> .
+@prefix :      <https://w3id.org/cybele/> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+...
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+
+[ a            sh:ValidationReport ;
+  sh:conforms  false ;
+  sh:result    [ a                             sh:ValidationResult ;
+                 sh:focusNode                  _:b0 ;
+                 sh:resultMessage              "NodeKind[IRI] : Expected IRI for _:B66d4aa0b5957b34d9b0a078c73906ff9" ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraintComponent  sh:NodeKindConstraintComponent ;
+                 sh:sourceShape                <https://astrea.linkeddata.es/shapes#cf6a37cc1bfa54fcde15de1df08c3452> ;
+                 sh:value                      _:b0
+               ] ;
+  sh:result    [ a                             sh:ValidationResult ;
+                 sh:focusNode                  _:b1 ;
+                 sh:resultMessage              "NodeKind[IRI] : Expected IRI for _:Bc7453547e4aaccae34bc58d15866a0c8" ;
+                 sh:resultSeverity             sh:Violation ;
+                 sh:sourceConstraintComponent  sh:NodeKindConstraintComponent ;
+                 sh:sourceShape                <https://astrea.linkeddata.es/shapes#cf6a37cc1bfa54fcde15de1df08c3452> ;
+                 sh:value                      _:b1
+               ]
+] .
 ```
 
 The SHACL definition for whole AIM domain layer is: [https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/SHACL/demeterAgriProfile-SHACL.ttl](https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/SHACL/demeterAgriProfile-SHACL.ttl)
