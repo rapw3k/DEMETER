@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:ns1="http://www.w3.org/ns/dx/prof/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:schema="https://schema.org/"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:ssn="http://www.w3.org/ns/ssn/"
+>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_frozen_water_in_soil">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>volume fraction of frozen water in soil</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#windDirection">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+    <rdfs:label xml:lang="en">windDirection</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment>The wind direction expressed in decimal degrees compared to geographic North (measured clockwise), encoded as a Number. Range 0 to 360.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea">
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_frozen_water_content_of_soil_layer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>lwe thickness of frozen water content of soil layer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/demeter/agri/agriProperty">
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
+    <ns1:isProfileOf rdf:resource="https://w3id.org/saref"/>
+    <ns1:isProfileOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu"/>
+    <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+    <ns1:isProfileOf rdf:resource="https://w3id.org/def/saref4agri"/>
+    <foaf:maker rdf:nodeID="cb152080e39a516462cfbcb8fa410f64cc60d7611ed9ee092419811856ae58ef782"/>
+    <owl:imports rdf:resource="https://w3id.org/saref"/>
+    <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
+    <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu"/>
+    <prov:wasGeneratedBy rdf:nodeID="N979af382297148d1adeda66dffd3abe1"/>
+    <owl:imports rdf:resource="https://w3id.org/def/saref4agri"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dcterms:description xml:lang="en">The DEMETER AgriProperty is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</dcterms:description>
+    <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProperty.ttl"/>
+    <ns1:isProfileOf rdf:resource="http://www.w3.org/ns/sosa"/>
+    <ns1:isProfileOf rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+    <dcterms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dcterms:rights>
+    <dcterms:contributor rdf:nodeID="cb1caf6096b22b87480cc25115bd87aa4dde25eb4d7307d95547b4de4cb79388636"/>
+    <ns1:isProfileOf rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <prov:wasDerivedFrom rdf:nodeID="N057d6b70b3e1401ea45bce44340d18aa"/>
+    <dcterms:contributor rdf:nodeID="cb17ddc790c145a7c7bd206b877c8c91b186555bd636f37176b58bc2b2905fde52f"/>
+    <owl:imports rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <dcterms:contributor rdf:nodeID="cb186295134eb4eb787aa1c12d0396ab13a29bd03423e2c89d7c1dac645438e9832"/>
+    <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim"/>
+    <owl:imports rdf:resource="http://www.w3.org/ns/sosa"/>
+    <owl:versionInfo>1.0</owl:versionInfo>
+    <ns1:isProfileOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim"/>
+    <dcterms:creator rdf:nodeID="cbd9edd1e34703633babd8a17b0d1e2066ee8b8ca7713452693cb65653a7c58e82"/>
+    <dcterms:title xml:lang="en">DEMETER AgriProperty</dcterms:title>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#power">
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#ElectricityAndMagnetismScheme"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">power</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Power"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_snowfall_rate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>lwe snowfall rate</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#propertyName">
+    <rdfs:subPropertyOf rdf:resource="https://uri.fiware.org/ns/data-models#name"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed">
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_snowfall_amount">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>thickness of large scale snowfall amount</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#snowHeight">
+    <rdfs:label xml:lang="en">snowHeight</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdfs:comment>The snow height observed by generic snow depth measurement sensors, expressed in centimeters.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N979af382297148d1adeda66dffd3abe1">
+    <prov:wasAssociatedWith rdf:nodeID="N8639a766f4824bae8b7190ece4248239"/>
+    <rdfs:label>ProfileWiz: Normalisation (source = ../models\agriProperty.ttl, force_local=False, profile libs : lib/profile_cat.ttl) </rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <prov:endedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-09-04</prov:endedAtTime>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_clay_in_soil">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>volume fraction of clay in soil</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#vapourCompressibility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vapour compressibility</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#soilMoistureVwc">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+    <rdfs:comment>Measured as Volumetric Water Content, VWC as a percentage. 0 ≤soilMoistureVwc ≤ 1</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">soilMoistureVwc</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/saref#Humidity">
+    <rdfs:label xml:lang="en">Humidity</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/saref#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#massPerTimePerArea">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass per time per area</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#AgriParcelRecord">
+    <rdfs:comment>This entity contains a harmonised description of the conditions recorded on a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications.</rdfs:comment>
+    <rdfs:label>AgriParcelRecord</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#snowfall">
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_large_scale_snowfall_amount"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_snowfall_rate"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_convective_snowfall_amount"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_snowfall_amount"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_flux"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_amount"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_amount"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_snowfall_amount"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_large_scale_snowfall_rate"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_flux"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_amount"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_flux"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_snowfall_amount"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_convective_snowfall_rate"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_convective_snowfall_amount"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_intensity_in_air">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>sound intensity in air</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#air_density">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>air density</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#soundPressure">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sound pressure</rdfs:label>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_suction_at_saturation">
+    <rdfs:label>soil suction at saturation</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_hydraulic_conductivity_at_saturation">
+    <rdfs:label>soil hydraulic conductivity at saturation</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#SolidStatePhysicsScheme">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#visibility">
+    <rdfs:comment>Visibility reported (veryPoor, poor, moderate, good, veryGood, excellent)</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdfs:label xml:lang="en">visibility</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#Precipitation">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_frozen_water_content">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>soil frozen water content</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#relativeHumidity">
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdfs:comment>Air’s relative humidity observed (percentage, expressed in parts per one).</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment>Relative Humidity a number between 0 and 1 representing the range of 0% to 100%. 0 ≤ relativeHumidity ≤ 1</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+    <rdfs:label xml:lang="en">relativeHumidity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_wilting_point">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>volume fraction of condensed water in soil at wilting point</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/saref#Temperature">
+    <owl:equivalentClass rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/saref#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#soundPower">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sound power</rdfs:label>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Power"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#pressureTendency">
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdfs:comment>Is the pressure rising or falling? It can be expressed in quantitative terms or qualitative terms (raising, falling, steady)</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+    <rdfs:label xml:lang="en">pressureTendency</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#solarRadiation">
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+    <rdfs:label xml:lang="en">solarRadiation</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment>The solar radiation observed measured in Watts per square meter.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdfs:comment>Instantaneous solar radiation measured in kW/m2.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#density">
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Density"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">density</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/electricConductivity">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdf:type rdf:resource="https://w3id.org/saref#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#carbonContent">
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carbon content</rdfs:label>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Concentration"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#atmosphericPressure">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+    <rdfs:comment>The atmospheric pressure observed measured in Hecto Pascals</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">atmosphericPressure</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#soilTemperature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">soilTemperature</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+    <rdfs:comment>The observed soil temperature nominally in degrees centigrade.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_porosity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>soil porosity</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#dewPoint">
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">dewPoint</rdfs:label>
+    <rdfs:comment>The dew point encoded as a number.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_amount">
+    <rdfs:label>convective snowfall amount</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil">
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_clay_in_soil"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content_at_field_capacity"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_sand_in_soil"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_porosity"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_frozen_water_in_soil"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#water_evaporation_flux_from_soil"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_wilting_point"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_soil_moisture_content"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_field_capacity"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#downward_heat_flux_in_soil"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_frozen_water_content"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_capacity"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_conductivity"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_hydraulic_conductivity_at_saturation"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_temperature"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_silt_in_soil"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_carbon_content"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_critical_point"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_type"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_albedo"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_suction_at_saturation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#mass_concentration_of_condensed_water_in_soil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#AmbientHumidity">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#WeatherObserved">
+    <rdfs:comment>A weather observation made over a period of time at a specific location</rdfs:comment>
+    <rdfs:label>WeatherObserved</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/saref#FeatureOfInterest"/>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_pores">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>volume fraction of condensed water in soil pores</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil">
+    <rdfs:label>volume fraction of condensed water in soil</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#hasDevice">
+    <rdfs:label xml:lang="en">hasDevice</rdfs:label>
+    <rdfs:comment>Reference to the IoT devices associated with this [entity] i.e. sensors, controls.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cbe9ca596fa370267097d19c9edb0f9b6e1076031aa902795c19a946ef1f459a82">
+    <foaf:name>ICCS</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#vectorProperty">
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_conductivity">
+    <rdfs:label>soil thermal conductivity</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_convective_snowfall_amount">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>lwe thickness of convective snowfall amount</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/hasProperty">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/ssn"/>
+    <rdfs:comment>A relation between a FeatureOfInterest and a Property of that feature.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:equivalentProperty rdf:resource="https://w3id.org/saref#hasProperty"/>
+    <rdfs:label xml:lang="en">has property</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content_at_field_capacity">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>soil moisture content at field capacity</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#soundIntensity">
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sound intensity</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_carbon_content">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>soil carbon content</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#liquid_water_content_of_soil_layer">
+    <rdfs:label>liquid water content of soil layer</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_large_scale_snowfall_amount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>lwe thickness of large scale snowfall amount</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#EnergyDensity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_amount">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>large scale snowfall amount</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#scalarProperty">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_temperature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>soil temperature</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_flux">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>convective snowfall flux</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#soundEnergyDensity">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sound energy density</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#EnergyDensity"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_sand_in_soil">
+    <rdfs:label>volume fraction of sand in soil</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/pH">
+    <rdf:type rdf:resource="https://w3id.org/saref#Property"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity">
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#nonQuantitativeProperty">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#analysisDate">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasTimestamp"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb1caf6096b22b87480cc25115bd87aa4dde25eb4d7307d95547b4de4cb79388636">
+    <foaf:name>Rob Atkinson</foaf:name>
+    <schema:affiliation rdf:nodeID="cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#water_evaporation_flux_from_soil">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>water evaporation flux from soil</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#dateObserved">
+    <rdfs:comment>The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasTimestamp"/>
+    <rdfs:label xml:lang="en">dateObserved</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#distance">
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distance</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>soil moisture content</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_rainfall_amount">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>thickness of rainfall amount</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#illuminance">
+    <rdfs:comment>The illumninance observed measured in lux (lx) or lumens per square metre (cd·sr·m−2)</rdfs:comment>
+    <rdfs:label xml:lang="en">illuminance</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_layer">
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer_at_field_capacity"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_frozen_water_content_of_soil_layer"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_moisture_content_of_soil_layer"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#liquid_water_content_of_soil_layer"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#frozen_water_content_of_soil_layer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#acceleration">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acceleration</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#observedAt">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasTimestamp"/>
+    <rdfs:label xml:lang="en">observedAt</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment>Indicates the date/time the record was observed/ last observed.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer_at_field_capacity">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>moisture content of soil layer at field capacity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_temperature">
+    <rdfs:label>snow temperature</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#refDevice">
+    <rdfs:comment>A reference to the device(s) which captured this observation.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:equivalentProperty rdf:resource="https://w3id.org/saref#measurementMadeBy"/>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdfs:label xml:lang="en">refDevice</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#velocity">
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">velocity</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#surfaceDensity">
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">surface density</rdfs:label>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_flux">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>large scale snowfall flux</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb17ddc790c145a7c7bd206b877c8c91b186555bd636f37176b58bc2b2905fde52f">
+    <foaf:name>Ioanna Roussaki</foaf:name>
+    <schema:affiliation rdf:nodeID="cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#fraction">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb7d7e372bd6d27d09a2842e065cfec77ff17a94b2bdba4102a668df08693b0872">
+    <foaf:name>PSNC</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N057d6b70b3e1401ea45bce44340d18aa">
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label>C:\repos\rob-metalinkage\DEMETER\models\agriProperty.ttl</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_soot_content">
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>snow soot content</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_grain_size">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>snow grain size</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_pores">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_pores"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#vapourPressure">
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vapour pressure</rdfs:label>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#water">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_carbon_content">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>vegetation carbon content</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_amount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>snowfall amount</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#normalized_difference_vegetation_index">
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>normalized difference vegetation index</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#windSpeed">
+    <rdfs:comment>The observed wind speed in m/s, encoded as a Number.</rdfs:comment>
+    <rdfs:label xml:lang="en">windSpeed</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>moisture content of soil layer</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_moisture_content_of_soil_layer">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>lwe thickness of moisture content of soil layer</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#temperature">
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SolidStatePhysicsScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temperature</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#soilProperty">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#mass_concentration_of_condensed_water_in_soil">
+    <rdfs:label>mass concentration of condensed water in soil</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#pressure">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pressure</rdfs:label>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceLayer">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#recordHasAgriParcel">
+    <rdfs:comment>Reference to the AgriParcel to which this entity relates.</rdfs:comment>
+    <rdfs:label xml:lang="en">recordHasAgriParcel</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#SoilMoisture">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux">
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#compressibility">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compressibility</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#energyFlowRate">
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_large_scale_snowfall_rate">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>lwe large scale snowfall rate</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_water_vapor_content">
+    <rdfs:label>atmosphere water vapor content</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#ElectricityAndMagnetismScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_flux">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>snowfall flux</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#weatherType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdfs:label xml:lang="en">weatherType</rdfs:label>
+    <rdfs:comment>The observed weather type. It is represented by a comma separated list of weather statuses, for instance overcast, lightRain.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#RadianceExposure">
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8639a766f4824bae8b7190ece4248239">
+    <rdfs:label>ProfileWiz 0.1.3</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_dioxide">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>atmosphere mass content of carbon dioxide</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#refPointOfInterest">
+    <rdfs:label xml:lang="en">refPointOfInterest</rdfs:label>
+    <rdfs:comment>A reference to a point of interest (usually a weather station) associated to this observation</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_snowfall_amount">
+    <rdfs:label>lwe thickness of snowfall amount</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_type">
+    <rdfs:label>soil type</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#radianceExposure">
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">radiance exposure</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#RadianceExposure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#downward_heat_flux_in_soil">
+    <rdfs:label>downward heat flux in soil</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_rainfall_amount">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>thickness of large scale rainfall amount</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#Wind">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#soilMoistureEc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">soilMoistureEc</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+    <rdfs:comment>Measured as Electrical Conductivity, EC nominally in units of Siemens per meter (S/m).</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_monoxide">
+    <rdfs:label>atmosphere mass content of carbon monoxide</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#quantitativeProperty">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#relatesToMeasurement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_field_capacity">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>volume fraction of condensed water in soil at field capacity</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb152080e39a516462cfbcb8fa410f64cc60d7611ed9ee092419811856ae58ef782">
+    <foaf:name>DEMETER project</foaf:name>
+    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_silt_in_soil">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>volume fraction of silt in soil</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_albedo">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>soil albedo</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#productionAmount">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#relatesToMeasurement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_convective_snowfall_rate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>lwe convective snowfall rate</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_soil_moisture_content">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>lwe thickness of soil moisture content</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#streamGauge">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+    <rdfs:label xml:lang="en">streamGauge</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdfs:comment>The water level surface elevation observed by Hydrometric measurement sensors, namely a Stream Gauge, expressed in centimeters.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#PropertyType">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_area_fraction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>vegetation area fraction</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#length">
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Distance"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length</rdfs:label>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#WeatherForecast">
+    <rdfs:subClassOf rdf:resource="https://w3id.org/saref#FeatureOfInterest"/>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherForecast/doc/spec.html"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>WeatherForecast</rdfs:label>
+    <rdfs:comment>A weather forecast for a period of time and a location.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_capacity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>soil thermal capacity</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cbd9edd1e34703633babd8a17b0d1e2066ee8b8ca7713452693cb65653a7c58e82">
+    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+    <schema:affiliation rdf:nodeID="cb7d7e372bd6d27d09a2842e065cfec77ff17a94b2bdba4102a668df08693b0872"/>
+    <foaf:name>Raul Palma</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless">
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#productionProperty">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilType">
+    <rdf:type rdf:resource="https://w3id.org/saref#Property"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind">
+    <rdfs:label>PropertyKind</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#PropertyTypeValue">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_density">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>snow density</rdfs:label>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Density"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#airTemperature">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+    <rdfs:comment>The observed air temperature (in the shade) nominally in degrees centigrade.</rdfs:comment>
+    <rdfs:label xml:lang="en">airTemperature</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_critical_point">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdfs:label>volume fraction of condensed water in soil at critical point</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Concentration">
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_respiration_carbon_flux">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"/>
+    <rdfs:label>soil respiration carbon flux</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#IrrigationWater">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#propertyType">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb186295134eb4eb787aa1c12d0396ab13a29bd03423e2c89d7c1dac645438e9832">
+    <schema:affiliation rdf:nodeID="cbe9ca596fa370267097d19c9edb0f9b6e1076031aa902795c19a946ef1f459a82"/>
+    <foaf:name>George Routis</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#SpecificEntropy">
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Temperature">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#temperature">
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment>Air’s temperature observed</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+    <rdfs:label xml:lang="en">temperature</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#frozen_water_content_of_soil_layer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>frozen water content of soil layer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/saref#FeatureOfInterest">
+    <owl:equivalentClass rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/saref#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#vegetation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_area_fraction"/>
+    <ssn:hasProperty rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_carbon_content"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#property">
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_convective_snowfall_amount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>thickness of convective snowfall amount</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/saref#Measurement">
+    <owl:equivalentClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilTexture">
+    <rdf:type rdf:resource="https://w3id.org/saref#Property"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#Soil">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#concentration">
+    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Concentration"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concentration</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/saref#Property">
+    <owl:equivalentClass rdf:resource="http://foodie-cloud.com/model/foodie#PropertyType"/>
+    <owl:equivalentClass rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5">
+    <foaf:name>OGC</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#precipitation">
+    <rdfs:comment>Precipitation level observed.</rdfs:comment>
+    <rdfs:label xml:lang="en">precipitation</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasValue"/>
+    <rdfs:isDefinedBy rdf:resource="https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#AirTemperature">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_snowfall_amount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:label>thickness of snowfall amount</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Density">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Distance">
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#SoilTemperature">
+    <owl:sameAs rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_temperature"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure">
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/organicMatter">
+    <rdf:type rdf:resource="https://w3id.org/saref#Property"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_pressure_in_air">
+    <rdfs:label>sound pressure in air</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#PlantGrowthStage">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/cf/cf-feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Power">
+    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5">
+    <foaf:name>ICCS</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#Precipitation">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
+  </rdf:Description>
+</rdf:RDF>
