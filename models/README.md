@@ -50,7 +50,7 @@ their rearing these are referred to as landless farms.
 products and services. This includes all infrastructure, equipment and materials.
 Land area used for a type of activity, e.g., arable land, grassland and vineyards. In particular NACE code, 
 e.g., A1.1.1 - Growing of cereals (except rice), leguminous crops and oil seeds. 
-LPIS data may be imported on the level of _Site_ feature which is equal to LPIS farmer's block level.
+LPIS data may be imported on the level of <Site> feature which is equal to LPIS farmer's block level.
 
 - Saref4Agri:Parcel = foodie:Plot = fiware:AgriParcel (Level 3)
 
@@ -63,7 +63,7 @@ and related IoT applications." (JSON-LD concept: AgriParcel)
 
 - foodie:ManagementZone (Level 4) (JSON-LD concept: ManagementZone)
 
-(foodie) A spatial subset of a _Plot_ that has specific properties like electric conductivity, organic matter, pH, soil texture, soil type or soil nutrients 
+(foodie) A spatial subset of a <Plot> that has specific properties like electric conductivity, organic matter, pH, soil texture, soil type or soil nutrients 
 ```
 
 Additionally, to represent the geographical area associated to the land, the following properties are used
