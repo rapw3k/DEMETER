@@ -21,7 +21,7 @@ Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/e
 
 Note1: in the context I added the 10 individuals domain contexts; however in theory it should be possible to add just one: https://w3id.org/demeter/agri-context.jsonld which points to the all others, but in the json-ld playground this double refence is not processed)
 
-###### Discussion of key terms (when to use which)
+#### Discussion of key terms (when to use which)
 The three underlying models have concepts to represent a portion of land where crops or animals are grown, 
 and since this is a major concept used in practically all agri applications, we provide here short 
 definitions for them, and how they are aligned, so developers will be able to decide which one is 
@@ -31,11 +31,11 @@ more suited for their needs.
 ```
 - Saref4Agri:Farm = inspire:Holding = fiware:AgriFarm (Level 1)
 
-(saref4agri) A plot of land used for the scope of farming which can contain buildings and parcels.
+(saref4agri) A plot of land used for the scope of farming which can contain buildings and parcels. (JSON-LD concept: Farm)
 (inspire) The whole area and all infrastructures included on it, covering the same or different sites, 
-under the control of an operator to perform agricultural or aquaculture activities.
+under the control of an operator to perform agricultural or aquaculture activities. (JSON-LD concept: Holding)
 (fiware) Harmonised description of a generic farm made up of buildings and parcels. 
-This entity is primarily associated with the agricultural vertical and related IoT applications.
+This entity is primarily associated with the agricultural vertical and related IoT applications. (JSON-LD concept: AgriFarm)
 
 From FAO: The holding or farm is all the land being utilized in full or in part for agricultural purposes which is located in a single parish. 
 The holding or farm may consist of one parcel of land or may be in several parcels. Where it comprises several parcels all parcels must be located 
@@ -44,7 +44,7 @@ Where a holding straddles (i.e. on the border of) two parishes, the parish where
 as the parish of location. A farm may comprise land in crops or it may be animals only. Where there are animals only, and no land dedicated to 
 their rearing these are referred to as landless farms.
 
-- inspire/foodie:Site (Level 2 - LPIS)
+- inspire/foodie:Site (Level 2 - LPIS) (JSON-LD concept: Site)
 
 (inspire/foodie) All land at the same or distinct geographic location under the management control of a holding covering activities, 
 products and services. This includes all infrastructure, equipment and materials.
@@ -55,13 +55,13 @@ LPIS data may be imported on the level of Site feature which is equal to LPIS 
 - Saref4Agri:Parcel = foodie:Plot = fiware:AgriParcel (Level 3)
 
 (saref4Agri) An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical 
-area of land which contains homogeneous items
+area of land which contains homogeneous items (JSON-LD concept: Parcel)
 (foodie) A continuous area of agricultural land with one type of crop species, cultivated by one user in one farming mode 
-(conventional vs. transitional vs. organic farming) 
+(conventional vs. transitional vs. organic farming) (JSON-LD concept: Plot)
 (fiware) Harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical 
-and related IoT applications."
+and related IoT applications." (JSON-LD concept: AgriParcel)
 
-- foodie:ManagementZone (Level 4)
+- foodie:ManagementZone (Level 4) (JSON-LD concept: ManagementZone)
 
 (foodie) A spatial subset of a Plot that has specific properties like electric conductivity, organic matter, pH, soil texture, soil type or soil nutrients 
 ```
@@ -69,20 +69,20 @@ and related IoT applications."
 Additionally, to represent the geographical area associated to the land, the following properties are used
 
 ```
-- wgs84_pos:location (generally used to associate countries/regions/municipalities where the land is located)
+- wgs84_pos:location (generally used to associate countries/regions/municipalities where the land is located) (JSON-LD property: location)
 
 The relation between something and the point, or other geometrical thing in space, where it is.
 The range is SpatialThing - anything with spatial extent, i.e. size, shape, or position. e.g. 
 people, places, bowling balls, as well as abstract areas like cubes.
 For instance, geonames features (countries/regions) like Poznan (https://sws.geonames.org/3088171/) are subclasses of SpatialThing (gn:Feature subclassOf SpatialThing)
 
-- geosparql:hasGeometry (generally used to associate a geometry, e.g., polygon to the land)
+- geosparql:hasGeometry (generally used to associate a geometry, e.g., polygon to the land) (JSON-LD property: hasGeometry)
 
 A spatial representation for a given feature.
 The range is a Geometry (e.g., Point, Polygon, MultiPolygon, etc.), which has associated the serialization of the geometry, 
 typically using the property asWKT to provide the WKT serialization e.g., POLYGON((15.54 50.61,14.14 49.02,17.12 48.32,19.06 49.59,19.76 51.60,15.54 50.61))
 
-- fiware:location (named locationGeoJson in AIM context) and fiware:landLocation (preferable not used to facilitate interoperability and linked data publication)
+- fiware:location (JSON-LD property: locationGeoJson) and fiware:landLocation (JSON-LD property: landLocation) - preferable not used to facilitate interoperability and linked data publication
 
 (location) The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty
 (landLocation). Geometry defining the boundaries of the farm land. Range is equivalent to GeoProperty
