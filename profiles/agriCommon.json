@@ -3,20 +3,10 @@
     "$id": "https://w3id.org/demeter/agri/agriCommon?_profile=jsonschema",
     "type": "object",
     "properties": {
-        "schema:Person": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "schema:Role": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
         "foaf:Agent": {
             "type": "object",
             "properties": {
-                "foaf:icqChatID": {
+                "foaf:made": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -34,13 +24,13 @@
                         "type": "string"
                     }
                 },
-                "foaf:jabberID": {
+                "foaf:openid": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "foaf:mbox": {
+                "foaf:jabberID": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -52,31 +42,7 @@
                         "type": "string"
                     }
                 },
-                "foaf:tipjar": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
                 "foaf:mbox_sha1sum": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:weblog": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:yahooChatID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:age": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -88,13 +54,31 @@
                         "type": "string"
                     }
                 },
+                "foaf:icqChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:weblog": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:mbox": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "foaf:gender": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "foaf:openid": {
+                "foaf:tipjar": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -106,7 +90,7 @@
                         "type": "string"
                     }
                 },
-                "foaf:made": {
+                "foaf:skypeID": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -118,19 +102,25 @@
                         "type": "string"
                     }
                 },
+                "foaf:msnChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "foaf:topic_interest": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "foaf:skypeID": {
+                "foaf:age": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "foaf:msnChatID": {
+                "foaf:yahooChatID": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -155,10 +145,26 @@
             "properties": {},
             "required": []
         },
+        "schema:Person": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "schema:Role": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
         "ns2:SpatialThing": {
             "type": "object",
             "properties": {
                 "foaf:based_near": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ns2:alt": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -175,12 +181,6 @@
                     "items": {
                         "type": "string"
                     }
-                },
-                "ns2:alt": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
                 }
             },
             "required": []
@@ -188,7 +188,7 @@
         "foaf:Person": {
             "type": "object",
             "properties": {
-                "foaf:firstName": {
+                "foaf:knows": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -200,13 +200,43 @@
                         "type": "string"
                     }
                 },
-                "foaf:family_name": {
+                "foaf:workplaceHomepage": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "foaf:surname": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:plan": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:family_name": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:geekcode": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:workInfoHomepage": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:familyName": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -224,7 +254,7 @@
                         "type": "string"
                     }
                 },
-                "foaf:knows": {
+                "foaf:firstName": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -236,43 +266,13 @@
                         "type": "string"
                     }
                 },
-                "foaf:familyName": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
                 "foaf:img": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "foaf:workplaceHomepage": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:geekcode": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:plan": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
                 "foaf:schoolHomepage": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:workInfoHomepage": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -323,6 +323,11 @@
             },
             "required": []
         },
+        "obo:TAXRANK_0000000": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
         "iso19115-citation:ResponsibleParty": {
             "type": "object",
             "properties": {
@@ -332,27 +337,22 @@
                 "iso19115-citation:positionName": {
                     "type": "string"
                 },
+                "iso19115-citation:individualName": {
+                    "type": "string"
+                },
+                "iso19115-citation:organisationName": {
+                    "type": "string"
+                },
                 "iso19115-citation:contactInfo": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
-                },
-                "iso19115-citation:organisationName": {
-                    "type": "string"
-                },
-                "iso19115-citation:individualName": {
-                    "type": "string"
                 }
             },
             "required": [
                 "iso19115-citation:role"
             ]
-        },
-        "obo:TAXRANK_0000000": {
-            "type": "object",
-            "properties": {},
-            "required": []
         }
     }
 }

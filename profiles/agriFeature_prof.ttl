@@ -10,46 +10,12 @@
         "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
     skos:historyNote "Ontology profile normalised using ProfileWiz" ;
     prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "Profile description as HTML" ;
-            dcterms:conformsTo prof: ;
-            dcterms:format "text/html" ;
-            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
-            prof:hasArtifact "agriFeature_source.html" ;
-            prof:hasRole prof:profile ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON-LD Context" ;
-            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dcterms:format "application/ld+json" ;
-            prof:hasArtifact "agriFeature.jsonld" ;
-            prof:hasRole prof:context ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "SHACL constraints for profile" ;
-            dcterms:conformsTo <http://www.w3.org/ns/shacl#> ;
-            dcterms:format "text/turtle" ;
-            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
-            prof:hasArtifact "agriFeature_flat_shacl.ttl" ;
-            prof:hasRole prof:validation ],
-        [ a prof:ResourceDescriptor ;
             rdfs:label "Normalised OWL with imports" ;
             dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "text/turtle" ;
+            dcterms:format "application/ld+json" ;
             rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
-            prof:hasArtifact "agriFeature.ttl" ;
+            prof:hasArtifact "agriFeature.jsonld" ;
             prof:hasRole prof:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "OWL documentation as HTML" ;
-            dcterms:conformsTo prof: ;
-            dcterms:format "text/html" ;
-            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
-            prof:hasArtifact "agriFeature.html" ;
-            prof:hasRole prof:profile ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "SHACL for minimal profile" ;
-            dcterms:conformsTo <http://www.w3.org/ns/shacl#> ;
-            dcterms:format "text/turtle" ;
-            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
-            prof:hasArtifact "agriFeature_shacl.ttl" ;
-            prof:hasRole prof:validation ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "JSON Schema" ;
             dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
@@ -64,18 +30,11 @@
             prof:hasArtifact "../models\\agriFeature.ttl" ;
             prof:hasRole prof:source ],
         [ a prof:ResourceDescriptor ;
-            rdfs:label "OWL with definition details from imports" ;
+            rdfs:label "Normalised OWL with imports" ;
             dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
             dcterms:format "text/turtle" ;
-            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
-            prof:hasArtifact "agriFeature_flat.ttl" ;
-            prof:hasRole prof:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "OWL with definition details from imports" ;
-            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "application/xml+rdf" ;
-            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
-            prof:hasArtifact "agriFeature_flat.xml" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriFeature.ttl" ;
             prof:hasRole prof:vocabulary ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "Profile description as HTML" ;
@@ -85,18 +44,17 @@
             prof:hasArtifact "agriFeature_prof.html" ;
             prof:hasRole prof:profile ],
         [ a prof:ResourceDescriptor ;
-            rdfs:label "Normalised OWL with imports" ;
-            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "application/xml+rdf" ;
-            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
-            prof:hasArtifact "agriFeature.xml" ;
-            prof:hasRole prof:vocabulary ],
-        [ a prof:ResourceDescriptor ;
             rdfs:label "Flattened JSON-LD context" ;
             dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
             dcterms:format "application/ld+json" ;
-            prof:hasArtifact "agriFeature_flat.jsonld" ;
-            prof:hasRole prof:contextflat ] ;
+            prof:hasArtifact "agriFeature_context_flat.jsonld" ;
+            prof:hasRole prof:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
+            dcterms:format "application/ld+json" ;
+            prof:hasArtifact "agriFeature_context.jsonld" ;
+            prof:hasRole prof:context ] ;
     prof:isProfileOf <http://foodie-cloud.com/model/foodie>,
         <http://inspire.ec.europa.eu/schemas/act-core/3.0>,
         <http://inspire.ec.europa.eu/schemas/af/3.0>,

@@ -1,53 +1,601 @@
-{
-    "@id": "https://w3id.org/demeter/agri/agriCrop",
-    "@context": [
-        "http://foodie-cloud.com/model/foodie",
-        "https://w3id.org/def/saref4agri",
-        "https://uri.fiware.org/ns/data-models",
-        {
-            "foodie": "http://foodie-cloud.com/model/foodie#",
-            "saref4agri": "https://w3id.org/def/saref4agri#",
-            "demeterAgriCrop": "https://w3id.org/demeter/agri/agriCrop#",
-            "fiware": "https://uri.fiware.org/ns/data-models#",
-            "AgriCrop": {
-                "@id": "fiware:AgriCrop"
-            },
-            "Crop": {
-                "@id": "saref4agri:Crop"
-            },
-            "hasAgriFertiliser": {
-                "@id": "fiware:hasAgriFertiliser",
-                "@type": "@id"
-            },
-            "hasAgriPest": {
-                "@id": "fiware:hasAgriPest",
-                "@type": "@id"
-            },
-            "cropHasAgriSoil": {
-                "@id": "fiware:cropHasAgriSoil",
-                "@type": "@id"
-            },
-            "plantingFrom": {
-                "@id": "fiware:plantingFrom"
-            },
-            "expectedBloomingEnd": {
-                "@id": "demeterAgriCrop:expectedBloomingEnd",
-                "@type": "xsd:dateTime"
-            },
-            "wateringFrequency": {
-                "@id": "fiware:wateringFrequency"
-            },
-            "harvestingInterval": {
-                "@id": "fiware:harvestingInterval"
-            },
-            "expectedBloomingStart": {
-                "@id": "demeterAgriCrop:expectedBloomingStart",
-                "@type": "xsd:dateTime"
-            },
-            "numberOfHivesNeeded": {
-                "@id": "demeterAgriCrop:numberOfHivesNeeded",
-                "@type": "xsd:dateTime"
-            }
-        }
+[
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#plantingFrom",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\r\ninterval, description\r\nWhere interval is in the form of start date/end date\r\n--MM-DD/--MM-DD\r\nMeaning repeat each year from this start date to this end date."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "plantingFrom"
+      }
     ]
-}
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#productionDate",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#production",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#variety",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasAgriFertiliser",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Reference to the recommended types of fertiliser suitable for growing this crop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasAgriFertiliser"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#cropSpecies",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#hasPlantDate",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#genus",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#AgriCrop",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This entity contains a harmonised description of a generic crop. This entity is primarily associated with the agricultural vertical and related IoT applications."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Agri Farm"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#Crop",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:cb1fa09e14ff069573148cd3a1a0557f80e2fddbc251a5c469413500536f525e99b"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "https://uri.fiware.org/ns/data-models#AgriCrop"
+      },
+      {
+        "@id": "http://foodie-cloud.com/model/foodie#CropSpecies"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb1fa09e14ff069573148cd3a1a0557f80e2fddbc251a5c469413500536f525e99b",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#hasPlantDate"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasAgriPest",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Reference to the pests known to attack this crop."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasAgriPest"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#wateringFrequency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A description of the recommended watering schedule. A choice from an enumerated list. One of: daily, weekly, biweekly, monthly, onDemand, other"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "wateringFrequency"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#species",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#hasHarvestDate",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentProperty": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie#productionDate"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#CropType",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#receives",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/demeter/agri/agriCrop#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Expected Blooming End"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#ProductionType",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#CropSpecies",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/demeter/agri/agriCrop",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology",
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@id": "_:cbb28e11ff039cd5934e832e3c1a3c8996759177f8149574c79f2a7f7f88f4b870"
+      },
+      {
+        "@id": "_:cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@id": "_:cb8d3e73198ad750da8a7d479942577d1b519be03aa1ccc81a120c83065aa35cf2"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "The DEMETER AgriCrop is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"
+      }
+    ],
+    "http://purl.org/dc/terms/rights": [
+      {
+        "@language": "en",
+        "@value": "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "DEMETER AgriCrop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "https://w3id.org/demeter/agri/agriCommon"
+      },
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      },
+      {
+        "@id": "https://w3id.org/def/saref4agri"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCrop.ttl"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "1.0"
+      }
+    ],
+    "http://www.w3.org/ns/dx/prof/isProfileOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri"
+      },
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasDerivedFrom": [
+      {
+        "@id": "_:Nf9c1de0bd0644446ad1c58ce4447fc15"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasGeneratedBy": [
+      {
+        "@id": "_:N3492eb2be9d440de9b6deaae1c4e5aa9"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/maker": [
+      {
+        "@id": "_:cbc777050d003e81d070dc7ffc2f3672cda44881e8dbf818bcf54b15da710dc535"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf9c1de0bd0644446ad1c58ce4447fc15",
+    "@type": [
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriCrop.ttl"
+      }
+    ]
+  },
+  {
+    "@id": "_:cbb28e11ff039cd5934e832e3c1a3c8996759177f8149574c79f2a7f7f88f4b870",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Ioanna Roussaki"
+      }
+    ],
+    "https://schema.org/affiliation": [
+      {
+        "@id": "_:cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "ICCS"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb8d3e73198ad750da8a7d479942577d1b519be03aa1ccc81a120c83065aa35cf2",
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "http://orcid.org/0000-0003-4289-4922"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Raul Palma"
+      }
+    ],
+    "https://schema.org/affiliation": [
+      {
+        "@id": "_:cb7d7e372bd6d27d09a2842e065cfec77ff17a94b2bdba4102a668df08693b0872"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb7d7e372bd6d27d09a2842e065cfec77ff17a94b2bdba4102a668df08693b0872",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "PSNC"
+      }
+    ]
+  },
+  {
+    "@id": "_:N3492eb2be9d440de9b6deaae1c4e5aa9",
+    "@type": [
+      "http://www.w3.org/ns/prov#Activity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ProfileWiz: Normalisation (source = ../models\\agriCrop.ttl, force_local=False, profile libs : lib/profile_cat.ttl) "
+      }
+    ],
+    "http://www.w3.org/ns/prov#endedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-09-10"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasAssociatedWith": [
+      {
+        "@id": "_:Nb3c9857666e24bdbae6d716be20b3a4a"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nb3c9857666e24bdbae6d716be20b3a4a",
+    "@type": [
+      "http://www.w3.org/ns/prov#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ProfileWiz 0.1.4"
+      }
+    ]
+  },
+  {
+    "@id": "_:cbc777050d003e81d070dc7ffc2f3672cda44881e8dbf818bcf54b15da710dc535",
+    "http://xmlns.com/foaf/0.1/homepage": [
+      {
+        "@id": "https://h2020-demeter.eu/"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "DEMETER project"
+      }
+    ]
+  },
+  {
+    "@id": "_:cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Rob Atkinson"
+      }
+    ],
+    "https://schema.org/affiliation": [
+      {
+        "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "OGC"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#productionAmount",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#cropHasAgriSoil",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Reference to the recommended types of soil suitable for growing this crop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "cropHasAgriSoil"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#generates",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/demeter/agri/agriCrop#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Number Of Hives Needed"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#harvestingInterval",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\r\ninterval, description\r\nWhere interval is in the form of start date/end date\r\n--MM-DD/--MM-DD\r\nMeaning repeat each year from this start date to this end date."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "harvestingInterval"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#cropArea",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#family",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/demeter/agri/agriCrop#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Expected Blooming Start"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  }
+]

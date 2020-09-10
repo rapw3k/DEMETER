@@ -1,0 +1,35 @@
+{
+    "@id": "https://w3id.org/demeter/agri/agriProduct",
+    "@context": [
+        "http://foodie-cloud.com/model/foodie",
+        "https://uri.fiware.org/ns/data-models",
+        {
+            "foodie": "http://foodie-cloud.com/model/foodie#",
+            "fiware": "https://uri.fiware.org/ns/data-models#",
+            "AgriProductType": {
+                "@id": "fiware:AgriProductType"
+            },
+            "hasAgriProductTypeChildren": {
+                "@id": "fiware:hasAgriProductTypeChildren",
+                "@type": "@id"
+            },
+            "hasAgriProductTypeParent": {
+                "@id": "fiware:hasAgriProductTypeParent",
+                "@type": "@id"
+            },
+            "ProductPreparation": {
+                "@id": "foodie:ProductPreparation"
+            },
+            "Product": {
+                "@id": "foodie:Product"
+            },
+            "hasAgriProductType": {
+                "@id": "fiware:hasAgriProductType",
+                "@type": "@id"
+            },
+            "root": {
+                "@id": "fiware:root"
+            }
+        }
+    ]
+}

@@ -8,23 +8,32 @@
             "properties": {},
             "required": []
         },
-        "foodie:ProductionType": {
+        "foodie:CropType": {
             "type": "object",
             "properties": {
+                "foodie:notes": {
+                    "type": "string"
+                },
+                "foodie:genus": {
+                    "type": "string"
+                },
+                "foodie:species": {
+                    "type": "string"
+                },
+                "foodie:family": {
+                    "type": "string"
+                },
+                "foodie:description": {
+                    "type": "string"
+                },
                 "foodie:variety": {
                     "type": "string"
                 },
-                "foodie:productionDate": {
-                    "type": "string"
-                },
-                "foodie:productionAmount": {
+                "foodie:code": {
                     "type": "string"
                 }
             },
-            "required": [
-                "foodie:variety",
-                "foodie:productionDate"
-            ]
+            "required": []
         },
         "iso19150-2:FeatureType": {
             "type": "object",
@@ -48,21 +57,16 @@
             },
             "required": []
         },
-        "dummy": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
         "geo:SpatialObject": {
             "type": "object",
             "properties": {
-                "geo:sfWithin": {
+                "geo:sfContains": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "geo:sfContains": {
+                "geo:sfWithin": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -71,64 +75,60 @@
             },
             "required": []
         },
+        "dummy": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
         "foodie:CropSpecies": {
             "type": "object",
             "properties": {
+                "foodie:cropSpecies": {
+                    "type": "string"
+                },
+                "prov:generatedAtTime": {
+                    "type": "string"
+                },
                 "foodie:cropArea": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "prov:generatedAtTime": {
-                    "type": "string"
-                },
-                "foodie:cropSpecies": {
-                    "type": "string"
-                },
-                "common:validTo": {
-                    "type": "string"
-                },
                 "prov:invalidatedAtTime": {
                     "type": "string"
                 },
                 "common:validFrom": {
                     "type": "string"
+                },
+                "common:validTo": {
+                    "type": "string"
                 }
             },
             "required": [
-                "foodie:cropArea",
-                "prov:generatedAtTime",
                 "foodie:cropSpecies",
+                "prov:generatedAtTime",
+                "foodie:cropArea",
                 "common:validFrom"
             ]
         },
-        "foodie:CropType": {
+        "foodie:ProductionType": {
             "type": "object",
             "properties": {
+                "foodie:productionAmount": {
+                    "type": "string"
+                },
+                "foodie:productionDate": {
+                    "type": "string"
+                },
                 "foodie:variety": {
-                    "type": "string"
-                },
-                "foodie:family": {
-                    "type": "string"
-                },
-                "foodie:genus": {
-                    "type": "string"
-                },
-                "foodie:code": {
-                    "type": "string"
-                },
-                "foodie:description": {
-                    "type": "string"
-                },
-                "foodie:notes": {
-                    "type": "string"
-                },
-                "foodie:species": {
                     "type": "string"
                 }
             },
-            "required": []
+            "required": [
+                "foodie:productionDate",
+                "foodie:variety"
+            ]
         },
         "saref:FeatureOfInterest": {
             "type": "object",
@@ -138,6 +138,12 @@
         "saref4agri:Crop": {
             "type": "object",
             "properties": {
+                "obo:TAXRANK_1000000": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "saref4agri:hasPlantDate": {
                     "type": "array",
                     "items": {
@@ -145,12 +151,6 @@
                     }
                 },
                 "saref4agri:hasHarvestDate": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "obo:TAXRANK_1000000": {
                     "type": "array",
                     "items": {
                         "type": "string"

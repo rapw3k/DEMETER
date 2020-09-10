@@ -3,23 +3,6 @@
     "$id": "https://w3id.org/demeter/core?_profile=jsonschema",
     "type": "object",
     "properties": {
-        "ngsi-ld:Value": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "ngsi-ld:Property": {
-            "type": "object",
-            "properties": {
-                "ngsi-ld:hasValue": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": []
-        },
         "ngsi-ld:Entity": {
             "type": "object",
             "properties": {
@@ -30,6 +13,11 @@
                     }
                 }
             },
+            "required": []
+        },
+        "ngsi-ld:Value": {
+            "type": "object",
+            "properties": {},
             "required": []
         }
     }
