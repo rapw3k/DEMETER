@@ -1,80 +1,80 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriFeature",
     "@context": [
-        "http://www.opengis.net/ont/sf",
         "http://foodie-cloud.com/model/foodie",
-        "http://inspire.ec.europa.eu/schemas/af/3.0",
         "http://www.opengis.net/ont/geosparql",
-        "http://inspire.ec.europa.eu/schemas/act-core/3.0",
+        "http://www.opengis.net/ont/sf",
         "https://uri.fiware.org/ns/data-models",
         "https://w3id.org/def/saref4agri",
+        "http://inspire.ec.europa.eu/schemas/af/3.0",
         "http://www.w3.org/2003/01/geo/wgs84_pos",
+        "http://inspire.ec.europa.eu/schemas/act-core/3.0",
         {
-            "sf": "http://www.opengis.net/ont/sf#",
             "foodie": "http://foodie-cloud.com/model/foodie#",
-            "af-inspire": "http://inspire.ec.europa.eu/schemas/af/3.0#",
             "geo": "http://www.opengis.net/ont/geosparql#",
-            "act-inspire": "http://inspire.ec.europa.eu/schemas/act-core/3.0#",
+            "sf": "http://www.opengis.net/ont/sf#",
             "fiware": "https://uri.fiware.org/ns/data-models#",
             "saref4agri": "https://w3id.org/def/saref4agri#",
+            "af-inspire": "http://inspire.ec.europa.eu/schemas/af/3.0#",
             "wgs84_pos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
-            "fiware:AgriGreenhouse": {
-                "@id": "fiware:AgriGreenhouse"
-            },
-            "fiware:AgriFarm": {
-                "@id": "fiware:AgriFarm"
-            },
-            "fiware:AgriParcel": {
+            "act-inspire": "http://inspire.ec.europa.eu/schemas/act-core/3.0#",
+            "AgriParcel": {
                 "@id": "fiware:AgriParcel"
             },
-            "saref4agri:Farm": {
-                "@id": "saref4agri:Farm"
+            "AgriFarm": {
+                "@id": "fiware:AgriFarm"
             },
-            "saref4agri:Parcel": {
+            "AgriGreenhouse": {
+                "@id": "fiware:AgriGreenhouse"
+            },
+            "Parcel": {
                 "@id": "saref4agri:Parcel"
             },
-            "af-inspire:Holding": {
+            "Holding": {
                 "@id": "af-inspire:Holding"
             },
-            "saref4agri:Building": {
+            "Building": {
                 "@id": "saref4agri:Building"
             },
-            "fiware:location": {
-                "@id": "fiware:location",
-                "@type": "@id"
+            "Farm": {
+                "@id": "saref4agri:Farm"
             },
-            "fiware:hasAgriParcelChildren": {
-                "@id": "fiware:hasAgriParcelChildren",
-                "@type": "@id"
-            },
-            "fiware:hasAgriParcelParent": {
-                "@id": "fiware:hasAgriParcelParent",
-                "@type": "@id"
-            },
-            "fiware:hasAgriParcel": {
+            "hasAgriParcel": {
                 "@id": "fiware:hasAgriParcel",
                 "@type": "@id"
             },
-            "fiware:landLocation": {
-                "@id": "fiware:landLocation",
+            "hasAgriParcelParent": {
+                "@id": "fiware:hasAgriParcelParent",
                 "@type": "@id"
             },
-            "fiware:hasAgriCrop": {
-                "@id": "fiware:hasAgriCrop",
+            "location": {
+                "@id": "fiware:location",
                 "@type": "@id"
             },
-            "fiware:hasAgriSoil": {
+            "hasAgriParcelChildren": {
+                "@id": "fiware:hasAgriParcelChildren",
+                "@type": "@id"
+            },
+            "hasAgriSoil": {
                 "@id": "fiware:hasAgriSoil",
                 "@type": "@id"
             },
-            "fiware:lastPlantedAt": {
+            "hasAgriCrop": {
+                "@id": "fiware:hasAgriCrop",
+                "@type": "@id"
+            },
+            "landLocation": {
+                "@id": "fiware:landLocation",
+                "@type": "@id"
+            },
+            "area": {
+                "@id": "fiware:area"
+            },
+            "lastPlantedAt": {
                 "@id": "fiware:lastPlantedAt"
             },
-            "fiware:cropStatus": {
+            "cropStatus": {
                 "@id": "fiware:cropStatus"
-            },
-            "fiware:area": {
-                "@id": "fiware:area"
             }
         }
     ]

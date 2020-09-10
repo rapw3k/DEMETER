@@ -8,58 +8,15 @@
             "properties": {},
             "required": []
         },
+        "schema:Role": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
         "foaf:Agent": {
             "type": "object",
             "properties": {
                 "foaf:icqChatID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:msnChatID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:made": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:skypeID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:mbox_sha1sum": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:yahooChatID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:interest": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:age": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:topic_interest": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -71,13 +28,7 @@
                         "type": "string"
                     }
                 },
-                "foaf:aimChatID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:birthday": {
+                "foaf:interest": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -89,13 +40,7 @@
                         "type": "string"
                     }
                 },
-                "foaf:openid": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:gender": {
+                "foaf:mbox": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -107,25 +52,85 @@
                         "type": "string"
                     }
                 },
-                "foaf:holdsAccount": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
                 "foaf:tipjar": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "foaf:mbox": {
+                "foaf:mbox_sha1sum": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "foaf:weblog": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:yahooChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:age": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:holdsAccount": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:gender": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:openid": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:birthday": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:made": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:aimChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:topic_interest": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:skypeID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:msnChatID": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -150,46 +155,9 @@
             "properties": {},
             "required": []
         },
-        "schema:Role": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "iso19115-citation:ResponsibleParty": {
-            "type": "object",
-            "properties": {
-                "iso19115-citation:organisationName": {
-                    "type": "string"
-                },
-                "iso19115-citation:contactInfo": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "iso19115-citation:role": {
-                    "type": "string"
-                },
-                "iso19115-citation:positionName": {
-                    "type": "string"
-                },
-                "iso19115-citation:individualName": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "iso19115-citation:role"
-            ]
-        },
         "ns2:SpatialThing": {
             "type": "object",
             "properties": {
-                "ns2:alt": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
                 "foaf:based_near": {
                     "type": "array",
                     "items": {
@@ -207,6 +175,12 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "ns2:alt": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             },
             "required": []
@@ -214,37 +188,7 @@
         "foaf:Person": {
             "type": "object",
             "properties": {
-                "foaf:publications": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:img": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:currentProject": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:surname": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:family_name": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:familyName": {
+                "foaf:firstName": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -256,19 +200,13 @@
                         "type": "string"
                     }
                 },
-                "foaf:schoolHomepage": {
+                "foaf:family_name": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "foaf:plan": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:pastProject": {
+                "foaf:surname": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -280,13 +218,31 @@
                         "type": "string"
                     }
                 },
+                "foaf:pastProject": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "foaf:knows": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "foaf:workInfoHomepage": {
+                "foaf:currentProject": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:familyName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:img": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -298,36 +254,31 @@
                         "type": "string"
                     }
                 },
-                "foaf:firstName": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
                 "foaf:geekcode": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
-                }
-            },
-            "required": []
-        },
-        "obo:TAXRANK_0000000": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "saref4agri:FarmHolding": {
-            "type": "object",
-            "properties": {
-                "saref4agri:hasName": {
+                },
+                "foaf:plan": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "saref4agri:managesFarm": {
+                "foaf:schoolHomepage": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:workInfoHomepage": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:publications": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -352,6 +303,55 @@
                     }
                 }
             },
+            "required": []
+        },
+        "saref4agri:FarmHolding": {
+            "type": "object",
+            "properties": {
+                "saref4agri:managesFarm": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "iso19115-citation:ResponsibleParty": {
+            "type": "object",
+            "properties": {
+                "iso19115-citation:role": {
+                    "type": "string"
+                },
+                "iso19115-citation:positionName": {
+                    "type": "string"
+                },
+                "iso19115-citation:contactInfo": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "iso19115-citation:organisationName": {
+                    "type": "string"
+                },
+                "iso19115-citation:individualName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "iso19115-citation:role"
+            ]
+        },
+        "obo:TAXRANK_0000000": {
+            "type": "object",
+            "properties": {},
             "required": []
         }
     }

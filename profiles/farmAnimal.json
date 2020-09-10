@@ -18,34 +18,10 @@
             "properties": {},
             "required": []
         },
-        "saref4agri:AnimalGroup": {
-            "type": "object",
-            "properties": {
-                "saref4agri:hasName": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref4agri:hasMember": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref4agri:isLocatedIn": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": []
-        },
         "saref4agri:Animal": {
             "type": "object",
             "properties": {
-                "saref4agri:isLocatedIn": {
+                "saref4agri:hasDeathDate": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -57,13 +33,13 @@
                         "type": "string"
                     }
                 },
-                "saref4agri:hasDeathDate": {
+                "saref4agri:hasBirthDate": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "saref4agri:hasBirthDate": {
+                "saref4agri:isLocatedIn": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -90,6 +66,30 @@
             },
             "required": []
         },
+        "saref4agri:AnimalGroup": {
+            "type": "object",
+            "properties": {
+                "saref4agri:isLocatedIn": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasMember": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
         "fiware:Animal": {
             "type": "object",
             "properties": {},
@@ -103,16 +103,16 @@
         "af-inspire:FarmAnimalSpecies": {
             "type": "object",
             "properties": {
-                "foodie:livestockNumber": {
+                "foodie:livestockType": {
                     "type": "string"
                 },
-                "foodie:livestockType": {
+                "foodie:livestockNumber": {
                     "type": "string"
                 }
             },
             "required": [
-                "foodie:livestockNumber",
-                "foodie:livestockType"
+                "foodie:livestockType",
+                "foodie:livestockNumber"
             ]
         }
     }

@@ -2,12 +2,16 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/v1/ontology#> .
-@prefix ns1: <http://www.w3.org/ns/dx/prof/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ngsi-ld:hasObject a owl:ObjectProperty ;
+    rdfs:domain ngsi-ld:Relationship ;
+    rdfs:range ngsi-ld:Entity .
 
 ngsi-ld:hasValue a owl:DatatypeProperty ;
     rdfs:domain ngsi-ld:Property .
@@ -25,18 +29,35 @@ ngsi-ld:hasValue a owl:DatatypeProperty ;
     dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
     dcterms:title "DEMETER core meta-model"@en ;
     rdfs:comment "The DEMETER core ontology is a profile (subset) of the ontology presented in Annex D of the NGSI-LD standard: ETSI GS CIM 006 V1.1.1 (2019-07), covering only the core property-graph entities."@en ;
-    owl:imports <https://uri.etsi.org/ngsi-ld/v1/ontology> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/demeterCore.ttl> ;
     owl:versionInfo "1.0" ;
-    ns1:isProfileOf :core_profile4demeterCore_ontology ;
-    ns1:isTransitiveProfileOf <https://uri.etsi.org/ngsi-ld/v1/ontology> ;
     prov:wasDerivedFrom [ a prov:Entity ;
             rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\demeterCore.ttl" ] ;
     prov:wasGeneratedBy [ a prov:Activity ;
             rdfs:label "ProfileWiz: Normalisation (source = ../models\\demeterCore.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
-            prov:endedAtTime "2020-08-18"^^xsd:date ;
+            prov:endedAtTime "2020-09-10"^^xsd:date ;
             prov:wasAssociatedWith [ a prov:Agent ;
                     rdfs:label "ProfileWiz 0.1.3" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
+
+ngsi-ld:Entity a owl:Class ;
+    owl:disjointWith ngsi-ld:Property,
+        ngsi-ld:Relationship,
+        ngsi-ld:Value .
+
+ngsi-ld:Property a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( ngsi-ld:Property ngsi-ld:Value ) ] ;
+    owl:disjointWith ngsi-ld:Relationship .
+
+ngsi-ld:Value a owl:Class .
+
+ngsi-ld:Relationship a owl:Class,
+        owl:ObjectProperty ;
+    rdfs:domain ngsi-ld:Entity ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( ngsi-ld:Entity ngsi-ld:Relationship ) ] ;
+    owl:disjointWith ngsi-ld:Value .
 

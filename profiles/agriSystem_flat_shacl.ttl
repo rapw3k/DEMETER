@@ -913,15 +913,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:accomplishes .
 
-<https://astrea.linkeddata.es/shapes#c058a40bb679abdf650145e1bdd5148e>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  ssn: ;
-        rdfs:label        "deployed system"@en , "Relation between a Deployment and a deployed System."@en ;
-        sh:description    "Relation between a Deployment and a deployed System."@en ;
-        sh:name           "deployed system"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           ssn:deployedSystem .
-
 <https://astrea.linkeddata.es/shapes#d612fdd162e689faba8044c30cda7043>
         a            sh:PropertyShape ;
         sh:minCount  "1"^^xsd:nonNegativeInteger ;
@@ -935,6 +926,15 @@
         sh:name         "Building related" ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:BuildingRelated .
+
+<https://astrea.linkeddata.es/shapes#c058a40bb679abdf650145e1bdd5148e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  ssn: ;
+        rdfs:label        "deployed system"@en , "Relation between a Deployment and a deployed System."@en ;
+        sh:description    "Relation between a Deployment and a deployed System."@en ;
+        sh:name           "deployed system"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:deployedSystem .
 
 <https://astrea.linkeddata.es/shapes#a4c3446b632c9a7213defa0b43d2811d>
         a               sh:NodeShape ;
@@ -1043,6 +1043,14 @@
         sh:property       <https://astrea.linkeddata.es/shapes#81f165e1fc40168485d8a79761fe64cd> , <https://astrea.linkeddata.es/shapes#be0b2262521d62d7cee57a165967ee92> , <https://astrea.linkeddata.es/shapes#bf60caee997a0dc5e4aa31de8ca04d15> ;
         sh:targetClass    ssn:Deployment .
 
+<https://astrea.linkeddata.es/shapes#2b02ceb19d3b7559e94106abe410df11>
+        a               sh:PropertyShape ;
+        rdfs:label      "has sensor type" , "A relationship identifying the sensing type of a sensor detection (i.e., Temperature, Occupancy, Humidity, Motion , Smoke, Pressure, etc.) " ;
+        sh:description  "A relationship identifying the sensing type of a sensor detection (i.e., Temperature, Occupancy, Humidity, Motion , Smoke, Pressure, etc.) " ;
+        sh:name         "has sensor type" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         saref:hasSensorType .
+
 <https://astrea.linkeddata.es/shapes#fcf319f0451bc10f3362d90ee1f989dd>
         a            sh:PropertyShape ;
         sh:class     sosa:Procedure ;
@@ -1063,14 +1071,6 @@
         sh:name           "in deployment"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           ssn:inDeployment .
-
-<https://astrea.linkeddata.es/shapes#2b02ceb19d3b7559e94106abe410df11>
-        a               sh:PropertyShape ;
-        rdfs:label      "has sensor type" , "A relationship identifying the sensing type of a sensor detection (i.e., Temperature, Occupancy, Humidity, Motion , Smoke, Pressure, etc.) " ;
-        sh:description  "A relationship identifying the sensing type of a sensor detection (i.e., Temperature, Occupancy, Humidity, Motion , Smoke, Pressure, etc.) " ;
-        sh:name         "has sensor type" ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         saref:hasSensorType .
 
 <https://astrea.linkeddata.es/shapes#61831577bcbf4588767fc1545d94c2bd>
         a               sh:PropertyShape ;
@@ -1110,6 +1110,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      ssn:wasOriginatedBy .
 
+<https://astrea.linkeddata.es/shapes#f4b3df753bc2c96f73b6c78451bbe220>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "made by sensor"@en , "Relation between an Observation and the Sensor which made the Observation."@en ;
+        sh:description    "Relation between an Observation and the Sensor which made the Observation."@en ;
+        sh:name           "made by sensor"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           sosa:madeBySensor .
+
 <https://astrea.linkeddata.es/shapes#8de6d464db225f24e56e4436c303bb51>
         a               sh:NodeShape ;
         rdfs:label      "Start stop function" ;
@@ -1125,15 +1134,6 @@
                         ) ;
         sh:property     <https://astrea.linkeddata.es/shapes#dbfe8edd99a969e4bb6583537cd3ae38> ;
         sh:targetClass  saref:StartStopFunction .
-
-<https://astrea.linkeddata.es/shapes#f4b3df753bc2c96f73b6c78451bbe220>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  sosa: ;
-        rdfs:label        "made by sensor"@en , "Relation between an Observation and the Sensor which made the Observation."@en ;
-        sh:description    "Relation between an Observation and the Sensor which made the Observation."@en ;
-        sh:name           "made by sensor"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           sosa:madeBySensor .
 
 <https://astrea.linkeddata.es/shapes#c8ba0e30ea76a68976d6ab2f0d9ce576>
         a                 sh:PropertyShape ;
@@ -1316,7 +1316,7 @@
         sh:description    "An act of Sampling carries out a sampling Procedure to create or transform one or more samples."@en ;
         sh:name           "Sampling"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#60c83dd4552d352d25b92aa351efcc18> , <https://astrea.linkeddata.es/shapes#890f09d251a34c954da61c6ff7fd186d> , <https://astrea.linkeddata.es/shapes#332db225382194124a73229a23672adb> , <https://astrea.linkeddata.es/shapes#75378174ae359e688981018a87484c02> , <https://astrea.linkeddata.es/shapes#417f249758906a730650755f57275b72> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#60c83dd4552d352d25b92aa351efcc18> , <https://astrea.linkeddata.es/shapes#890f09d251a34c954da61c6ff7fd186d> , <https://astrea.linkeddata.es/shapes#75378174ae359e688981018a87484c02> , <https://astrea.linkeddata.es/shapes#332db225382194124a73229a23672adb> , <https://astrea.linkeddata.es/shapes#417f249758906a730650755f57275b72> ;
         sh:targetClass    sosa:Sampling .
 
 <https://astrea.linkeddata.es/shapes#a1274c09fe1e4f470ebac9c08de6fb6f>
@@ -2201,7 +2201,7 @@
         sh:description    "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en ;
         sh:name           "Feature Of Interest"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#0bd19b86b36817f6b83b9c77c36aff1f> , <https://astrea.linkeddata.es/shapes#37d326bac283bb914605639aa82dfc51> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#37d326bac283bb914605639aa82dfc51> , <https://astrea.linkeddata.es/shapes#0bd19b86b36817f6b83b9c77c36aff1f> ;
         sh:targetClass    sosa:FeatureOfInterest .
 
 <https://astrea.linkeddata.es/shapes#27a32486bc042b8a48106960ede30c2f>

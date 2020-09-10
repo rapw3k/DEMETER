@@ -3,46 +3,42 @@
     "$id": "https://w3id.org/demeter/agri/agriProperty?_profile=jsonschema",
     "type": "object",
     "properties": {
-        "iso19150-2:Datatype": {
+        "ns2:FeatureOfInterest": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "foodie:PropertyType": {
-            "type": "object",
-            "properties": {
-                "foodie:quantitativeProperty": {
-                    "type": "string"
-                },
-                "foodie:nonQuantitativeProperty": {
-                    "type": "string"
-                },
-                "foodie:propertyType": {
-                    "type": "string"
-                },
-                "foodie:analysisDate": {
-                    "type": "string"
-                },
-                "foodie:propertyName": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "foodie:analysisDate",
-                "foodie:propertyName"
-            ]
-        },
-        "skos:Concept": {
+        "sosa:FeatureOfInterest": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "iso19150-2:Codelist": {
+        "cf-feature:Surface": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "foodie:PropertyTypeValue": {
+        "cf-feature:Wind": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "cf-feature:Precipitation": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "cf-feature:Layer": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "cf-feature:SurfaceLayer": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "cf-feature:Medium": {
             "type": "object",
             "properties": {},
             "required": []
@@ -75,47 +71,107 @@
             "properties": {},
             "required": []
         },
-        "fiware:AgriParcelRecord": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
         "fiware:WeatherForecast": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "saref:Property": {
+        "fiware:AgriParcelRecord": {
             "type": "object",
-            "properties": {
-                "saref:isMeasuredByDevice": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref:relatesToMeasurement": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref:isControlledByDevice": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref:isPropertyOf": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
+            "properties": {},
             "required": []
         },
-        "saref:Temperature": {
+        "qu:QuantityKind": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Compressibility": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Concentration": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:ThermalConductivity": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Density": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Temperature": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Distance": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:MassPerTimePerArea": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Dimensionless": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:StressOrPressure": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:RadianceExposure": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:EnergyFlux": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Acceleration": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:EnergyDensity": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:SpecificEntropy": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Power": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:VelocityOrSpeed": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:SurfaceDensity": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "qu:PropertyKind": {
             "type": "object",
             "properties": {},
             "required": []
@@ -123,13 +179,13 @@
         "saref:Measurement": {
             "type": "object",
             "properties": {
-                "saref:hasTimestamp": {
+                "saref:isMeasuredIn": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "saref:isMeasuredIn": {
+                "saref:hasTimestamp": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -160,142 +216,86 @@
             "properties": {},
             "required": []
         },
+        "saref:Property": {
+            "type": "object",
+            "properties": {
+                "saref:isMeasuredByDevice": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref:isControlledByDevice": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref:isPropertyOf": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref:relatesToMeasurement": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
         "saref:Humidity": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "qu:QuantityKind": {
+        "saref:Temperature": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "dim:Acceleration": {
+        "iso19150-2:Datatype": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "dim:Distance": {
+        "foodie:PropertyType": {
+            "type": "object",
+            "properties": {
+                "foodie:propertyName": {
+                    "type": "string"
+                },
+                "foodie:nonQuantitativeProperty": {
+                    "type": "string"
+                },
+                "foodie:quantitativeProperty": {
+                    "type": "string"
+                },
+                "foodie:propertyType": {
+                    "type": "string"
+                },
+                "foodie:analysisDate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "foodie:propertyName",
+                "foodie:analysisDate"
+            ]
+        },
+        "skos:Concept": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "dim:ThermalConductivity": {
+        "iso19150-2:Codelist": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "dim:Dimensionless": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:Power": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:SurfaceDensity": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:Density": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:StressOrPressure": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:Temperature": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:Compressibility": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:EnergyDensity": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:Concentration": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:MassPerTimePerArea": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:VelocityOrSpeed": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:SpecificEntropy": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:RadianceExposure": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:EnergyFlux": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sosa:FeatureOfInterest": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "ns2:FeatureOfInterest": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "cf-feature:Wind": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "cf-feature:Layer": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "cf-feature:Precipitation": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "cf-feature:Surface": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "cf-feature:Medium": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "cf-feature:SurfaceLayer": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "qu:PropertyKind": {
+        "foodie:PropertyTypeValue": {
             "type": "object",
             "properties": {},
             "required": []

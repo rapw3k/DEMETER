@@ -1,75 +1,91 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriCommon",
     "@context": [
+        "http://foodie-cloud.com/model/foodie",
+        "https://schema.org",
+        "http://xmlns.com/foaf/0.1",
+        "https://w3id.org/def/saref4agri",
         "https://uri.fiware.org/ns/data-models",
         "http://portele.de/ont/inspire/baseInspire",
-        "http://xmlns.com/foaf/0.1",
-        "https://w3id.org/demeter/agri/agriCommon",
-        "http://purl.obolibrary.org/obo",
-        "https://schema.org",
-        "https://w3id.org/saref",
-        "https://w3id.org/def/saref4agri",
-        "http://foodie-cloud.com/model/foodie",
         "http://www.w3.org/ns/prov",
         "http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation",
+        "https://w3id.org/saref",
+        "http://purl.obolibrary.org/obo",
         {
+            "foodie": "http://foodie-cloud.com/model/foodie#",
+            "schema": "https://schema.org/",
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "saref4agri": "https://w3id.org/def/saref4agri#",
+            "demeterAgriCommon": "https://w3id.org/demeter/agri/agriCommon#",
             "fiware": "https://uri.fiware.org/ns/data-models#",
             "common": "http://portele.de/ont/inspire/baseInspire#",
-            "foaf": "http://xmlns.com/foaf/0.1/",
-            "demeterAgriCommon": "https://w3id.org/demeter/agri/agriCommon#",
-            "obo": "http://purl.obolibrary.org/obo/",
-            "schema": "https://schema.org/",
-            "saref": "https://w3id.org/saref#",
-            "saref4agri": "https://w3id.org/def/saref4agri#",
-            "foodie": "http://foodie-cloud.com/model/foodie#",
             "prov": "http://www.w3.org/ns/prov#",
             "iso19115-citation": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#",
-            "saref4agri:Farmer": {
-                "@id": "saref4agri:Farmer"
+            "saref": "https://w3id.org/saref#",
+            "obo": "http://purl.obolibrary.org/obo/",
+            "Role": {
+                "@id": "schema:Role"
             },
-            "saref4agri:FarmHolding": {
+            "Person": {
+                "@id": "schema:Person"
+            },
+            "FarmHolding": {
                 "@id": "saref4agri:FarmHolding"
             },
-            "iso19115-citation:ResponsibleParty": {
+            "Farmer": {
+                "@id": "saref4agri:Farmer"
+            },
+            "ResponsibleParty": {
                 "@id": "iso19115-citation:ResponsibleParty"
             },
-            "fiware:category": {
+            "category": {
                 "@id": "fiware:category"
             },
-            "fiware:alternateName": {
-                "@id": "fiware:alternateName"
-            },
-            "fiware:entityVersion": {
+            "entityVersion": {
                 "@id": "fiware:entityVersion"
             },
-            "fiware:description": {
+            "description": {
                 "@id": "fiware:description"
             },
-            "fiware:source": {
-                "@id": "fiware:source"
-            },
-            "fiware:name": {
-                "@id": "fiware:name"
-            },
-            "fiware:agroVocConcept": {
-                "@id": "fiware:agroVocConcept"
-            },
-            "fiware:createdAt": {
-                "@id": "fiware:createdAt"
-            },
-            "demeterAgriCommon:userName": {
-                "@id": "demeterAgriCommon:userName",
-                "@type": "xsd:string"
-            },
-            "demeterAgriCommon:password": {
+            "password": {
                 "@id": "demeterAgriCommon:password",
                 "@type": "xsd:string"
             },
-            "fiware:dataProvider": {
+            "validFrom": {
+                "@id": "common:validFrom",
+                "@type": "xsd:dateTime"
+            },
+            "source": {
+                "@id": "fiware:source"
+            },
+            "createdAt": {
+                "@id": "fiware:createdAt"
+            },
+            "alternateName": {
+                "@id": "fiware:alternateName"
+            },
+            "name": {
+                "@id": "schema:name"
+            },
+            "userName": {
+                "@id": "demeterAgriCommon:userName",
+                "@type": "xsd:string"
+            },
+            "agroVocConcept": {
+                "@id": "fiware:agroVocConcept"
+            },
+            "validTo": {
+                "@id": "common:validTo",
+                "@type": "xsd:dateTime"
+            },
+            "modifiedAt": {
+                "@id": "fiware:modifiedAt"
+            },
+            "dataProvider": {
                 "@id": "fiware:dataProvider"
             },
-            "fiware:modifiedAt": {
-                "@id": "fiware:modifiedAt"
+            "telephone": {
+                "@id": "schema:telephone"
             }
         }
     ]

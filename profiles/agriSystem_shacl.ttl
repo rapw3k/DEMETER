@@ -183,6 +183,11 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         saref:hasProfile .
 
+<https://astrea.linkeddata.es/shapes#3bf1ed481b0d98867f9c7ad060c9301b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:hasCommand .
+
 <https://astrea.linkeddata.es/report/0674618880>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
@@ -193,11 +198,6 @@
                 "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#44f91f98c7d8c1be032ea8742a5cb191>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:hasCommand .
-
-<https://astrea.linkeddata.es/shapes#3bf1ed481b0d98867f9c7ad060c9301b>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasCommand .
@@ -1240,7 +1240,7 @@
         sh:description    "An act of Sampling carries out a sampling Procedure to create or transform one or more samples."@en ;
         sh:name           "Sampling"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#60c83dd4552d352d25b92aa351efcc18> , <https://astrea.linkeddata.es/shapes#890f09d251a34c954da61c6ff7fd186d> , <https://astrea.linkeddata.es/shapes#75378174ae359e688981018a87484c02> , <https://astrea.linkeddata.es/shapes#332db225382194124a73229a23672adb> , <https://astrea.linkeddata.es/shapes#417f249758906a730650755f57275b72> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#60c83dd4552d352d25b92aa351efcc18> , <https://astrea.linkeddata.es/shapes#890f09d251a34c954da61c6ff7fd186d> , <https://astrea.linkeddata.es/shapes#332db225382194124a73229a23672adb> , <https://astrea.linkeddata.es/shapes#75378174ae359e688981018a87484c02> , <https://astrea.linkeddata.es/shapes#417f249758906a730650755f57275b72> ;
         sh:targetClass    sosa:Sampling .
 
 <https://astrea.linkeddata.es/shapes#a1274c09fe1e4f470ebac9c08de6fb6f>
@@ -1644,6 +1644,14 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasCommand .
 
+<https://astrea.linkeddata.es/shapes#68157bd564db99247d6d7857297bf60e>
+        a               sh:PropertyShape ;
+        rdfs:label      "has command" , "A relationship between an entity (such as a function) and a command" ;
+        sh:description  "A relationship between an entity (such as a function) and a command" ;
+        sh:name         "has command" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         saref:hasCommand .
+
 <https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> ;
@@ -1653,24 +1661,10 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    saref:UnitOfMeasure .
 
-<https://astrea.linkeddata.es/shapes#68157bd564db99247d6d7857297bf60e>
-        a               sh:PropertyShape ;
-        rdfs:label      "has command" , "A relationship between an entity (such as a function) and a command" ;
-        sh:description  "A relationship between an entity (such as a function) and a command" ;
-        sh:name         "has command" ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         saref:hasCommand .
-
 <https://astrea.linkeddata.es/shapes#a63054539d67b719c20627268921009f>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:consistsOf .
-
-<https://astrea.linkeddata.es/shapes#98bde45f537b8f3fe691bfd885c8687c>
-        a            sh:PropertyShape ;
-        sh:class     saref:MultiLevelState ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:actsUpon .
 
 <https://astrea.linkeddata.es/shapes#ed2adc72397fdf193561014f7e0a34dd>
         a               sh:NodeShape ;
@@ -1687,6 +1681,12 @@
         sh:name         "Load" ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:Load .
+
+<https://astrea.linkeddata.es/shapes#98bde45f537b8f3fe691bfd885c8687c>
+        a            sh:PropertyShape ;
+        sh:class     saref:MultiLevelState ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:actsUpon .
 
 <https://astrea.linkeddata.es/shapes#f5964a49119d177c39d3573f1ede7cad>
         a            sh:PropertyShape ;
@@ -1740,16 +1740,16 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:Coal .
 
+<https://astrea.linkeddata.es/shapes#580893e949e91f23eb11d852d33b5700>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:represents .
+
 <https://astrea.linkeddata.es/shapes#cb80bd85bafbe58b54f275a70f12db12>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasManufacturer .
-
-<https://astrea.linkeddata.es/shapes#580893e949e91f23eb11d852d33b5700>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:represents .
 
 <https://astrea.linkeddata.es/shapes#2722caeacf7e53936cfb03abd535d679>
         a            sh:PropertyShape ;
@@ -1814,14 +1814,6 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:Network .
 
-<https://astrea.linkeddata.es/shapes#6700c174117da3e7eea079c1a2e0adc8>
-        a               sh:NodeShape ;
-        rdfs:label      "Pressure unit" ;
-        sh:description  "The unit of measure for pressure" ;
-        sh:name         "Pressure unit" ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  saref:PressureUnit .
-
 <https://astrea.linkeddata.es/shapes#6587ae3a6493ef6e8400062bebaeb230>
         a               sh:NodeShape ;
         rdfs:label      "Set relative level command" ;
@@ -1830,12 +1822,13 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:SetRelativeLevelCommand .
 
-<https://astrea.linkeddata.es/shapes#e7eacd32f5fbadbcf429982536da1cdc>
-        a                       sh:PropertyShape ;
-        sh:nodeKind             sh:IRIOrLiteral ;
-        sh:path                 saref:isOfferedBy ;
-        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
-        sh:qualifiedValueShape  [ sh:class  saref:Device ] .
+<https://astrea.linkeddata.es/shapes#6700c174117da3e7eea079c1a2e0adc8>
+        a               sh:NodeShape ;
+        rdfs:label      "Pressure unit" ;
+        sh:description  "The unit of measure for pressure" ;
+        sh:name         "Pressure unit" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  saref:PressureUnit .
 
 <https://astrea.linkeddata.es/shapes#a814fb83f610bebf6489cc07fe89504f>
         a            sh:PropertyShape ;
@@ -1843,11 +1836,12 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      ssn:isProxyFor .
 
-<https://astrea.linkeddata.es/shapes#359be00ad008aa0509fdf985b76d43b0>
-        a            sh:PropertyShape ;
-        sh:class     sosa:Sampling ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      sosa:madeSampling .
+<https://astrea.linkeddata.es/shapes#e7eacd32f5fbadbcf429982536da1cdc>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 saref:isOfferedBy ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  saref:Device ] .
 
 <https://astrea.linkeddata.es/shapes#84b5a1d4970db321df0b6a7de3b58953>
         a               sh:NodeShape ;
@@ -1866,6 +1860,12 @@
         sh:nodeKind     sh:IRI ;
         sh:property     <https://astrea.linkeddata.es/shapes#7b722600669ba01f596047cf2001951f> , <https://astrea.linkeddata.es/shapes#f5964a49119d177c39d3573f1ede7cad> , <https://astrea.linkeddata.es/shapes#38a7f272cc51d62974ed68d2627832e4> , <https://astrea.linkeddata.es/shapes#ac9b01412b3f8f24a9c3c7a9428ef6f2> ;
         sh:targetClass  saref:Measurement .
+
+<https://astrea.linkeddata.es/shapes#359be00ad008aa0509fdf985b76d43b0>
+        a            sh:PropertyShape ;
+        sh:class     sosa:Sampling ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      sosa:madeSampling .
 
 <https://astrea.linkeddata.es/shapes#c985da888f5f0369e41b1db2efe3b7b8>
         a            sh:PropertyShape ;
@@ -1956,14 +1956,6 @@
         <https://w3id.org/def/astrea#statusCode>
                 "400"^^xsd:int .
 
-<https://astrea.linkeddata.es/shapes#f47f83cfc80f60f1cbef92d413b7fac3>
-        a               sh:NodeShape ;
-        rdfs:label      "Illuminance unit" ;
-        sh:description  "The unit of measure for light" ;
-        sh:name         "Illuminance unit" ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  saref:IlluminanceUnit .
-
 <https://astrea.linkeddata.es/shapes#f8d39a8571f65103be4266433a282cd5>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  ssn: ;
@@ -1972,6 +1964,14 @@
         sh:name           "deployed on platform"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           ssn:deployedOnPlatform .
+
+<https://astrea.linkeddata.es/shapes#f47f83cfc80f60f1cbef92d413b7fac3>
+        a               sh:NodeShape ;
+        rdfs:label      "Illuminance unit" ;
+        sh:description  "The unit of measure for light" ;
+        sh:name         "Illuminance unit" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  saref:IlluminanceUnit .
 
 <https://astrea.linkeddata.es/shapes#5f8e1e862d26021410f9dbfe65685f66>
         a            sh:PropertyShape ;
@@ -2083,7 +2083,7 @@
         sh:description    "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en ;
         sh:name           "Feature Of Interest"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#0bd19b86b36817f6b83b9c77c36aff1f> , <https://astrea.linkeddata.es/shapes#37d326bac283bb914605639aa82dfc51> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#37d326bac283bb914605639aa82dfc51> , <https://astrea.linkeddata.es/shapes#0bd19b86b36817f6b83b9c77c36aff1f> ;
         sh:targetClass    sosa:FeatureOfInterest .
 
 <https://astrea.linkeddata.es/shapes#27a32486bc042b8a48106960ede30c2f>
@@ -2110,14 +2110,6 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:Occupancy .
 
-<https://astrea.linkeddata.es/shapes#a1a858296e6815cb8542d892a16bee0e>
-        a            sh:PropertyShape ;
-        sh:class     sosa:ObservableProperty ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:minCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      sosa:observedProperty .
-
 <https://astrea.linkeddata.es/shapes#15609d4ff3f98d85ae1884ba8dd0fdfd>
         a               sh:NodeShape ;
         rdfs:label      "Get sensing data command" ;
@@ -2131,6 +2123,14 @@
         sh:class     saref:Measurement ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasMeterReading .
+
+<https://astrea.linkeddata.es/shapes#a1a858296e6815cb8542d892a16bee0e>
+        a            sh:PropertyShape ;
+        sh:class     sosa:ObservableProperty ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      sosa:observedProperty .
 
 <https://astrea.linkeddata.es/shapes#c28a9bfd3b99f5da1c865b551408b5fe>
         a                 sh:PropertyShape ;
@@ -2371,6 +2371,11 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           sosa:madeObservation .
 
+<https://astrea.linkeddata.es/shapes#f09e338484cd7606e29e0fd0db6d9d28>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:consistsOf .
+
 <https://astrea.linkeddata.es/shapes#56688339943b44aed052d0489ea144d8>
         a         sh:PropertyShape ;
         sh:class  saref:OnCommand .
@@ -2383,11 +2388,6 @@
         sh:nodeKind     sh:IRI ;
         sh:property     <https://astrea.linkeddata.es/shapes#f09e338484cd7606e29e0fd0db6d9d28> , <https://astrea.linkeddata.es/shapes#d9db413b3474c67f6ba5a90a58214928> , <https://astrea.linkeddata.es/shapes#82ac507d83c8b3904c5e2382f59eff04> , <https://astrea.linkeddata.es/shapes#768e5160adb90708175a0f8739f07b9a> ;
         sh:targetClass  saref:DoorSwitch .
-
-<https://astrea.linkeddata.es/shapes#f09e338484cd7606e29e0fd0db6d9d28>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:consistsOf .
 
 <https://astrea.linkeddata.es/shapes#17df36668c68a2b8ece07442c26e334b>
         a               sh:NodeShape ;
@@ -2630,14 +2630,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasProfile .
 
-<https://astrea.linkeddata.es/shapes#6ad9985af98c9853889763298e7ca1ed>
-        a               sh:PropertyShape ;
-        rdfs:label      "relates to property"@en , "A relationship between a measurement and the property it relates to" ;
-        sh:description  "A relationship between a measurement and the property it relates to" ;
-        sh:name         "relates to property"@en ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         saref:relatesToProperty .
-
 <https://astrea.linkeddata.es/shapes#e73144e3fdab4cbeb62d6ea6448667cc>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
@@ -2648,3 +2640,11 @@
         sh:class     saref:Property ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:measuresProperty .
+
+<https://astrea.linkeddata.es/shapes#6ad9985af98c9853889763298e7ca1ed>
+        a               sh:PropertyShape ;
+        rdfs:label      "relates to property"@en , "A relationship between a measurement and the property it relates to" ;
+        sh:description  "A relationship between a measurement and the property it relates to" ;
+        sh:name         "relates to property"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         saref:relatesToProperty .

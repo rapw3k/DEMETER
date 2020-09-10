@@ -1,53 +1,52 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriCrop",
     "@context": [
-        "https://w3id.org/demeter/agri/agriCrop",
-        "https://w3id.org/def/saref4agri",
         "http://foodie-cloud.com/model/foodie",
+        "https://w3id.org/def/saref4agri",
         "https://uri.fiware.org/ns/data-models",
         {
-            "demeterAgriCrop": "https://w3id.org/demeter/agri/agriCrop#",
-            "saref4agri": "https://w3id.org/def/saref4agri#",
             "foodie": "http://foodie-cloud.com/model/foodie#",
+            "saref4agri": "https://w3id.org/def/saref4agri#",
+            "demeterAgriCrop": "https://w3id.org/demeter/agri/agriCrop#",
             "fiware": "https://uri.fiware.org/ns/data-models#",
-            "fiware:AgriCrop": {
+            "AgriCrop": {
                 "@id": "fiware:AgriCrop"
             },
-            "saref4agri:Crop": {
+            "Crop": {
                 "@id": "saref4agri:Crop"
             },
-            "fiware:cropHasAgriSoil": {
-                "@id": "fiware:cropHasAgriSoil",
-                "@type": "@id"
-            },
-            "fiware:hasAgriPest": {
-                "@id": "fiware:hasAgriPest",
-                "@type": "@id"
-            },
-            "fiware:hasAgriFertiliser": {
+            "hasAgriFertiliser": {
                 "@id": "fiware:hasAgriFertiliser",
                 "@type": "@id"
             },
-            "demeterAgriCrop:expectedBloomingStart": {
-                "@id": "demeterAgriCrop:expectedBloomingStart",
-                "@type": "xsd:dateTime"
+            "hasAgriPest": {
+                "@id": "fiware:hasAgriPest",
+                "@type": "@id"
             },
-            "fiware:plantingFrom": {
+            "cropHasAgriSoil": {
+                "@id": "fiware:cropHasAgriSoil",
+                "@type": "@id"
+            },
+            "plantingFrom": {
                 "@id": "fiware:plantingFrom"
             },
-            "fiware:wateringFrequency": {
-                "@id": "fiware:wateringFrequency"
-            },
-            "demeterAgriCrop:numberOfHivesNeeded": {
-                "@id": "demeterAgriCrop:numberOfHivesNeeded",
-                "@type": "xsd:dateTime"
-            },
-            "demeterAgriCrop:expectedBloomingEnd": {
+            "expectedBloomingEnd": {
                 "@id": "demeterAgriCrop:expectedBloomingEnd",
                 "@type": "xsd:dateTime"
             },
-            "fiware:harvestingInterval": {
+            "wateringFrequency": {
+                "@id": "fiware:wateringFrequency"
+            },
+            "harvestingInterval": {
                 "@id": "fiware:harvestingInterval"
+            },
+            "expectedBloomingStart": {
+                "@id": "demeterAgriCrop:expectedBloomingStart",
+                "@type": "xsd:dateTime"
+            },
+            "numberOfHivesNeeded": {
+                "@id": "demeterAgriCrop:numberOfHivesNeeded",
+                "@type": "xsd:dateTime"
             }
         }
     ]

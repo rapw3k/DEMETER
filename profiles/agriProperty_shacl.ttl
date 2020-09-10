@@ -105,9 +105,10 @@
         sh:targetClass  saref:Multimedia .
 
 <https://astrea.linkeddata.es/shapes#c38ddf7f7d575c414b91bceafbe9a23c>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:ThermalConductivity .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:ThermalConductivity .
 
 <https://astrea.linkeddata.es/shapes#dad58e91e147c45faec328d9577a92a5>
         a                 sh:NodeShape ;
@@ -191,6 +192,11 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           qu:dimension .
 
+<https://astrea.linkeddata.es/shapes#6e3dacc7490dc6b6067bb842c4ba6d00>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:consistsOf .
+
 <https://astrea.linkeddata.es/shapes#a88dc2248a9e2c46bf52ea803c7e76c2>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
@@ -202,15 +208,11 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           qu:quantityKind .
 
-<https://astrea.linkeddata.es/shapes#6e3dacc7490dc6b6067bb842c4ba6d00>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:consistsOf .
-
 <https://astrea.linkeddata.es/shapes#cd9445c64e106b75337259da0347cea3>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:Concentration .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Concentration .
 
 <https://astrea.linkeddata.es/shapes#7f8fae374fb6ef8f9f1e3a2af47a133d>
         a            sh:PropertyShape ;
@@ -286,9 +288,10 @@
         sh:path      saref:accomplishes .
 
 <https://astrea.linkeddata.es/shapes#e99d601b76a7db1b1132902175fa4f7e>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:Dimensionless .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Dimensionless .
 
 <https://astrea.linkeddata.es/shapes#83718e38eea071509b5ef7eef7d9ffb6>
         a               sh:PropertyShape ;
@@ -312,6 +315,11 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasCommand .
 
+<https://astrea.linkeddata.es/shapes#3bf1ed481b0d98867f9c7ad060c9301b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:hasCommand .
+
 <https://astrea.linkeddata.es/shapes#a0cd0f707abc214692cd178d1bcd6a24>
         a               sh:PropertyShape ;
         rdfs:label      "has meter reading" , "A relationship between a metering function and the measurement of the reading" ;
@@ -319,11 +327,6 @@
         sh:name         "has meter reading" ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         saref:hasMeterReading .
-
-<https://astrea.linkeddata.es/shapes#3bf1ed481b0d98867f9c7ad060c9301b>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:hasCommand .
 
 <https://astrea.linkeddata.es/shapes#a6817e192aa225c2bf51cd485554c628>
         a                 sh:NodeShape ;
@@ -389,12 +392,6 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:Currency .
 
-<https://astrea.linkeddata.es/shapes#df4ae458b4e554c080717d9bdb48e778>
-        a            sh:PropertyShape ;
-        sh:class     saref:Measurement ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:relatesToMeasurement .
-
 <https://astrea.linkeddata.es/shapes#7bf5a93636f246b0b32724c78dace32f>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  sosa: ;
@@ -403,6 +400,12 @@
         sh:name           "Actuatable Property"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    sosa:ActuatableProperty .
+
+<https://astrea.linkeddata.es/shapes#df4ae458b4e554c080717d9bdb48e778>
+        a            sh:PropertyShape ;
+        sh:class     saref:Measurement ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:relatesToMeasurement .
 
 <https://astrea.linkeddata.es/shapes#808bb94a225e8bf7ff74dd3f4500ec5f>
         a                 sh:NodeShape ;
@@ -595,14 +598,6 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:atmosphericPressure .
 
-<https://astrea.linkeddata.es/shapes#577857b06622ab1523b5e75d28f19b43>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
-        rdfs:label        "Surface" ;
-        sh:name           "Surface" ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    cf-feature:Surface .
-
 <https://astrea.linkeddata.es/shapes#bc07fcdae237c3a2f15b7195f36c5a6b>
         a               sh:NodeShape ;
         rdfs:label      "On off function" ;
@@ -621,6 +616,14 @@
                         ) ;
         sh:property     <https://astrea.linkeddata.es/shapes#44f91f98c7d8c1be032ea8742a5cb191> ;
         sh:targetClass  saref:OnOffFunction .
+
+<https://astrea.linkeddata.es/shapes#577857b06622ab1523b5e75d28f19b43>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+        rdfs:label        "Surface" ;
+        sh:name           "Surface" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    cf-feature:Surface .
 
 <https://astrea.linkeddata.es/shapes#379f09a741318a075ec1d1be4f9ae3c9>
         a                 sh:PropertyShape ;
@@ -690,9 +693,10 @@
         sh:targetClass    sosa:Actuation .
 
 <https://astrea.linkeddata.es/shapes#1dcc4d9d13d84acd7cd750d36aa7363d>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:SpecificEntropy .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:SpecificEntropy .
 
 <https://astrea.linkeddata.es/shapes#40cac3f9a1397b5ef47c697cccc0d6b8>
         a            sh:PropertyShape ;
@@ -711,9 +715,10 @@
         sh:targetClass    qu:QuantityKindFactor .
 
 <https://astrea.linkeddata.es/shapes#3612b2c16ebce72371e3646a901384d2>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:VelocityOrSpeed .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:VelocityOrSpeed .
 
 <https://astrea.linkeddata.es/shapes#82ac507d83c8b3904c5e2382f59eff04>
         a            sh:PropertyShape ;
@@ -725,6 +730,12 @@
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasState .
+
+<https://astrea.linkeddata.es/shapes#95a1939989677b5cd3aacdd30d3d72a0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Compressibility .
 
 <https://astrea.linkeddata.es/shapes#ebbf090ee1d6333a8b3df19f598a5559>
         a               sh:NodeShape ;
@@ -749,9 +760,10 @@
         sh:targetClass  saref:LevelControlFunction .
 
 <https://astrea.linkeddata.es/shapes#125eef08b12ba43d878ac29d6ea9c5bc>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:Distance .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Distance .
 
 <https://astrea.linkeddata.es/shapes#897d246cc9092c1f175842dd53152cc9>
         a            sh:PropertyShape ;
@@ -1027,9 +1039,10 @@
         sh:targetClass  ssn:FeatureOfInterest .
 
 <https://astrea.linkeddata.es/shapes#feb55fa4be1793183a97c77e8da8b390>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:EnergyFlux .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:EnergyFlux .
 
 <https://astrea.linkeddata.es/shapes#d4eb42a3214d2e6288bf7e4ed9acc398>
         a            sh:PropertyShape ;
@@ -1378,6 +1391,13 @@
         sh:description  "A function that allows to get data from a meter, such as current meter reading or instantaneous demand" ;
         sh:name         "Metering function" ;
         sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  saref:Commodity ;
+                            sh:path   saref:hasMeterReadingType
+                          ]
+                          [ sh:class  saref:Property ;
+                            sh:path   saref:hasMeterReadingType
+                          ]
+                        ) ;
         sh:or           ( [ sh:class  saref:GetCurrentMeterValueCommand ;
                             sh:path   saref:hasCommand
                           ]
@@ -1386,13 +1406,6 @@
                           ]
                           [ sh:class  saref:GetMeterHistoryCommand ;
                             sh:path   saref:hasCommand
-                          ]
-                        ) ;
-        sh:or           ( [ sh:class  saref:Commodity ;
-                            sh:path   saref:hasMeterReadingType
-                          ]
-                          [ sh:class  saref:Property ;
-                            sh:path   saref:hasMeterReadingType
                           ]
                         ) ;
         sh:property     <https://astrea.linkeddata.es/shapes#d4eb42a3214d2e6288bf7e4ed9acc398> , <https://astrea.linkeddata.es/shapes#54d78d2ef08bbece51ef04d5edd58ffe> , <https://astrea.linkeddata.es/shapes#3bf1ed481b0d98867f9c7ad060c9301b> ;
@@ -1615,26 +1628,17 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:soilMoistureVwc .
 
-<https://astrea.linkeddata.es/shapes#fe4b23a836e2b99e7e2855b46819502d>
-        a            sh:PropertyShape ;
-        sh:class     saref:StartStopState ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:actsUpon .
-
 <https://astrea.linkeddata.es/shapes#3933211e53db4ade80eb3bcd84002baa>
         a            sh:PropertyShape ;
         sh:class     saref:Time ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasTime .
 
-<https://astrea.linkeddata.es/report/1105901718>
-        a       <https://w3id.org/def/astrea#ReportEntry> ;
-        <https://w3id.org/def/astrea#message>
-                "2020-08-18 08:26:12.034  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.oclc.org:80: The target server failed to respond2020-08-18 08:26:12.034  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.oclc.org:80\n" ;
-        <https://w3id.org/def/astrea#source>
-                "http://purl.oclc.org/NET/ssnx/cf/cf-feature" ;
-        <https://w3id.org/def/astrea#statusCode>
-                "206"^^xsd:int .
+<https://astrea.linkeddata.es/shapes#fe4b23a836e2b99e7e2855b46819502d>
+        a            sh:PropertyShape ;
+        sh:class     saref:StartStopState ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:actsUpon .
 
 <https://astrea.linkeddata.es/shapes#30ab1a291b0aed26d808710625b09ecc>
         a               sh:PropertyShape ;
@@ -1654,6 +1658,15 @@
         sh:name           "observes"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           sosa:observes .
+
+<https://astrea.linkeddata.es/report/1105901718>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "2020-09-04 07:37:56.771  INFO 1 --- [nio-8080-exec-5] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.oclc.org:80: The target server failed to respond2020-09-04 07:37:56.772  INFO 1 --- [nio-8080-exec-5] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.oclc.org:80\n" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.oclc.org/NET/ssnx/cf/cf-feature" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "206"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#d54b4c87a631215ff004ce07edf2e2e0>
         a               sh:NodeShape ;
@@ -1707,11 +1720,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           sosa:phenomenonTime .
 
-<https://astrea.linkeddata.es/shapes#02d4c25304447141a9742f21145f29eb>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:MassPerTimePerArea .
-
 <https://astrea.linkeddata.es/shapes#b28f1a50b3141c95955799dfa1cd4295>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  sosa: ;
@@ -1720,6 +1728,12 @@
         sh:name           "observed property"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           sosa:observedProperty .
+
+<https://astrea.linkeddata.es/shapes#02d4c25304447141a9742f21145f29eb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:MassPerTimePerArea .
 
 <https://astrea.linkeddata.es/shapes#ac9b01412b3f8f24a9c3c7a9428ef6f2>
         a            sh:PropertyShape ;
@@ -1745,7 +1759,7 @@
 <http://astrea.linkeddata.es/report>
         a       <https://w3id.org/def/astrea#ShapeReport> ;
         <https://w3id.org/def/astrea#contains>
-                <https://astrea.linkeddata.es/shapes#8fd4d42bfe155b8df21974cd007bbc82> , <https://astrea.linkeddata.es/shapes#aee01a797435564ab1947c674c856799> , <https://astrea.linkeddata.es/shapes#0a2b867642501c3a01c0904eeee8313b> , <https://astrea.linkeddata.es/shapes#a670d7e6c38c53c4e4aff3f37f1bf2f0> , <https://astrea.linkeddata.es/shapes#1c20aeaf56b91e5b9b6adf8be31fd11d> , <https://astrea.linkeddata.es/shapes#33d77d4315d8f307662c4b006b17390a> , <https://astrea.linkeddata.es/shapes#4a34bd8e758095e4d0b20965a17b3ace> , <https://astrea.linkeddata.es/shapes#73fdddf0a990c4784c6646f0d41ea2c1> , <https://astrea.linkeddata.es/shapes#548fb1dd16f41050fa50b83f821a2bb3> , <https://astrea.linkeddata.es/shapes#dd89ff14e086370dc5c0dcf6c31a7182> , <https://astrea.linkeddata.es/shapes#17df36668c68a2b8ece07442c26e334b> , <https://astrea.linkeddata.es/shapes#468722d9cde6848ad6307f441a630f9a> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#32319b7a828ca197237b94ce44f632b1> , <https://astrea.linkeddata.es/shapes#2d2aef11edecda777deba9f663cd2aaf> , <https://astrea.linkeddata.es/shapes#2a6b5cf95e8c00c09c7e75c56525b6f2> , <https://astrea.linkeddata.es/shapes#df8c377ccad4ca847cedf1d1bf05948a> , <https://astrea.linkeddata.es/shapes#2b2890d59075f54bc73193c9d2a1c211> , <https://astrea.linkeddata.es/shapes#2f8ef2d7f1cd1506a08ea35adc2a7ee4> , <https://astrea.linkeddata.es/shapes#a423601afd6165ee21086ea8eaa15b1d> , <https://astrea.linkeddata.es/shapes#61fb9b5ac3e189a73816fd32363d0c7b> , <https://astrea.linkeddata.es/shapes#83b7f8163e2d75c668715725094b5549> , <https://astrea.linkeddata.es/shapes#5b2697b48ed9899bf1c491ee597a7a89> , <https://astrea.linkeddata.es/shapes#1f4b716b8f6628e9c868e13eec22b16a> , <https://astrea.linkeddata.es/shapes#bb69f9714072d38c37219ae2170b632d> , <https://astrea.linkeddata.es/shapes#5b6c076601567335c58ce0790e17f7f8> , <https://astrea.linkeddata.es/shapes#394c76137f5143ef42ff73606dec84af> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> , <https://astrea.linkeddata.es/shapes#21e87ae54ee2f9e68cf4b18b30541c13> , <https://astrea.linkeddata.es/shapes#46aaaec0bd6ff6e19e55a4801decd885> , <https://astrea.linkeddata.es/shapes#7245e8301c1af63fc6ffd61bb4b724c0> , <https://astrea.linkeddata.es/shapes#4d39c2281f87bb788c625efc6da8f50b> , <https://astrea.linkeddata.es/shapes#19af5c88d1b17ea20f3301b5b5c1fc3d> , <https://astrea.linkeddata.es/shapes#de48b7c1c93892f52c414a1b55aa4514> , <https://astrea.linkeddata.es/shapes#b28b5d4a91569e0d8a27c9880369d8d3> , <https://astrea.linkeddata.es/shapes#6cda955a3a9aae985a535e093808a047> , <https://astrea.linkeddata.es/shapes#db49d6f405896c02ea54de26499f8b30> , <https://astrea.linkeddata.es/shapes#16d9766d2a0759a967d7ca0089fd80da> , <https://astrea.linkeddata.es/shapes#5bb1a7b5d109bf2543068bbefef5ea70> , <https://astrea.linkeddata.es/shapes#4c030077aa447210569bad795fa706f7> , <https://astrea.linkeddata.es/shapes#d7fc215d256ad3e5c4dd33d2c2f1998e> , <https://astrea.linkeddata.es/shapes#1a094022eb81b9d695efce6620198c95> , <https://astrea.linkeddata.es/shapes#c985da888f5f0369e41b1db2efe3b7b8> , <https://astrea.linkeddata.es/shapes#45bbb0fe9fe39ab90c6586892aa47d3c> , <https://astrea.linkeddata.es/shapes#8de6d464db225f24e56e4436c303bb51> , <https://astrea.linkeddata.es/shapes#6b2e03dac56c60303e15fac566cda4a6> , <https://astrea.linkeddata.es/shapes#fec126fd6a63d4b5cdce4daa1563be69> , <https://astrea.linkeddata.es/shapes#898de55fa6d29ad1ab177d8f13569e87> , <https://astrea.linkeddata.es/shapes#1f110dda595949f70c66acd4e0e254d3> , <https://astrea.linkeddata.es/shapes#38a7f272cc51d62974ed68d2627832e4> , <https://astrea.linkeddata.es/shapes#89b5017e76a20bfaef9c023845f326cc> , <https://astrea.linkeddata.es/shapes#75297a18edc4ac9972201f0cccd5d71d> , <https://astrea.linkeddata.es/shapes#e99d601b76a7db1b1132902175fa4f7e> , <https://astrea.linkeddata.es/shapes#b7d24d320a65d844155465474a7d27d2> , <https://astrea.linkeddata.es/shapes#1542e8e8bcfbfc73c93f9ea3bc52506b> , <https://astrea.linkeddata.es/shapes#643862ab34e4b9e4ea63a3bcf0519803> , <https://astrea.linkeddata.es/shapes#d68db5bf14c04bcfe66eea6d53cfc655> , <https://astrea.linkeddata.es/shapes#4a0fe07d77e1568c9f6119967b7b3d3a> , <https://astrea.linkeddata.es/shapes#5f126655bae82556cee93619e59685a6> , <https://astrea.linkeddata.es/shapes#7f5fdb94657518c4be3f8ebe3ba276c0> , <https://astrea.linkeddata.es/shapes#fe11765e00847de730d2087ccc877805> , <https://astrea.linkeddata.es/shapes#577857b06622ab1523b5e75d28f19b43> , <https://astrea.linkeddata.es/shapes#e99322833d42d63386c87c9e65ce623b> , <https://astrea.linkeddata.es/shapes#a88dc2248a9e2c46bf52ea803c7e76c2> , <https://astrea.linkeddata.es/shapes#c3450a44805b9f78df37e37c47a862f1> , <https://astrea.linkeddata.es/shapes#8902e106a5e9663e690199331d695f9a> , <https://astrea.linkeddata.es/shapes#689b2c96f4b3ecd0c4267d70c0fc2620> , <https://astrea.linkeddata.es/shapes#c8c81abe5cf9187c1569ec55c4b86602> , <https://astrea.linkeddata.es/shapes#83718e38eea071509b5ef7eef7d9ffb6> , <https://astrea.linkeddata.es/shapes#82ac507d83c8b3904c5e2382f59eff04> , <https://astrea.linkeddata.es/shapes#f2b8bc7d0e880ae8382b58193d34e8cc> , <https://astrea.linkeddata.es/shapes#4e1ef53871298c387cd2aaeabdaeae58> , <https://astrea.linkeddata.es/shapes#5e4785ff12f3c570d6b7a8f8714d25ac> , <https://astrea.linkeddata.es/shapes#ac9b01412b3f8f24a9c3c7a9428ef6f2> , <https://astrea.linkeddata.es/shapes#e77cb2b9d17546c484285eae4f0f49e1> , <https://astrea.linkeddata.es/shapes#10ea40f0e1046a0e064489a86081f0a8> , <https://astrea.linkeddata.es/shapes#607515d5b9ae633668b5c04525bd0db8> , <https://astrea.linkeddata.es/shapes#b7d1393014d51c7f574155ae6b8d8080> , <https://astrea.linkeddata.es/shapes#798f5efed7706e1ab95b8bff19b57ed8> , <https://astrea.linkeddata.es/shapes#d54b4c87a631215ff004ce07edf2e2e0> , <https://astrea.linkeddata.es/shapes#2de172e4c22ca8c50616973487d2e701> , <https://astrea.linkeddata.es/shapes#57a8c41bff032939733d67bf16e7e326> , <https://astrea.linkeddata.es/shapes#21fc777093a942aa6c153efcb1be7a5d> , <https://astrea.linkeddata.es/shapes#b44fb04a68de358717a4bd8f19dcc4e0> , <https://astrea.linkeddata.es/shapes#61831577bcbf4588767fc1545d94c2bd> , <https://astrea.linkeddata.es/shapes#cd9445c64e106b75337259da0347cea3> , <https://astrea.linkeddata.es/shapes#05a2a0327adb57d04df61028a942a824> , <https://astrea.linkeddata.es/shapes#8e5d61bda38d9f3dbaa3af4a7f4243ff> , <https://astrea.linkeddata.es/shapes#e2931e7b6c2eb60ddface78eccba4bd9> , <https://astrea.linkeddata.es/shapes#ac8afdfdb7fc454bed42a349120eb098> , <https://astrea.linkeddata.es/shapes#0f23d0915625cb7cc2816127c2d186a0> , <https://astrea.linkeddata.es/shapes#5706699741f27ad60a0210d7537d2186> , <https://astrea.linkeddata.es/shapes#87dba1bff46eb4a192d32b25b6cda251> , <https://astrea.linkeddata.es/shapes#c186b1044a6b8571d5484d0488dd2d7b> , <https://astrea.linkeddata.es/shapes#ea19dd675b41662cdf03ea6ae4c05cb1> , <https://astrea.linkeddata.es/shapes#83a0df004510a40b573b850aca7b2d8e> , <https://astrea.linkeddata.es/shapes#5c17a4f48dda67c3c2bc1e14ede84a57> , <https://astrea.linkeddata.es/shapes#5926b5fb51e175f71511952d746bcdc5> , <https://astrea.linkeddata.es/shapes#779eab72c7f3493ff32472663577097c> , <https://astrea.linkeddata.es/shapes#b28f1a50b3141c95955799dfa1cd4295> , <https://astrea.linkeddata.es/shapes#3132020a7b2f6e7d394eb2741be51927> , <https://astrea.linkeddata.es/shapes#ebbf090ee1d6333a8b3df19f598a5559> , <https://astrea.linkeddata.es/shapes#08191c6d9534b6c3d4a1f4c9a42567bc> , <https://astrea.linkeddata.es/shapes#65c715d5d2f2d31d44acef9806b5664e> , <https://astrea.linkeddata.es/shapes#fd054ffa837be3f7ac861e3ae4b26dc6> , <https://astrea.linkeddata.es/shapes#c025879e0e4583bbf19131e096984e60> , <https://astrea.linkeddata.es/shapes#098daf704aee441eb24565f14854312f> , <https://astrea.linkeddata.es/shapes#487bc94758b5d2fb6d916a24b46d0a9c> , <https://astrea.linkeddata.es/shapes#50d46638569363bac480e3988a01f2d0> , <https://astrea.linkeddata.es/shapes#e73144e3fdab4cbeb62d6ea6448667cc> , <https://astrea.linkeddata.es/shapes#98d17899830bfb0b663bb677dd2455c1> , <https://astrea.linkeddata.es/shapes#802a4dba0a589611f691761c3c580637> , <https://astrea.linkeddata.es/shapes#5f8e1e862d26021410f9dbfe65685f66> , <https://astrea.linkeddata.es/shapes#379f09a741318a075ec1d1be4f9ae3c9> , <https://astrea.linkeddata.es/shapes#c3fb6ea8abe3a615c4212b0c35aadd3c> , <https://astrea.linkeddata.es/shapes#dcb836dc41e696a8522e9028968b48c7> , <https://astrea.linkeddata.es/shapes#b750c456a22cd04db1ce4147d857b041> , <https://astrea.linkeddata.es/shapes#0a1ee340fb0944c53b93c6322875e2d8> , <https://astrea.linkeddata.es/shapes#1d7fb132731b122e143d02c675f64438> , <https://astrea.linkeddata.es/shapes#3a264685c22f90f1af14fbea487fd467> , <https://astrea.linkeddata.es/shapes#9f16489c93ddfe2236d2e2c2b6c4700f> , <https://astrea.linkeddata.es/shapes#636d1bfe1946c777bf2e0fe2fbaac905> , <https://astrea.linkeddata.es/shapes#961eb491cb7a752046d004275a41621c> , <https://astrea.linkeddata.es/shapes#e430adaa23e66b39a964338be9224c0b> , <https://astrea.linkeddata.es/shapes#a03bd8d0abc770f9e188f1ababd7667a> , <https://astrea.linkeddata.es/shapes#f1ae3fa4ffe533f93b1ba23ec8571eba> , <https://astrea.linkeddata.es/shapes#a4c3446b632c9a7213defa0b43d2811d> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#f92b3a74b332e8a8a7387cf080997918> , <https://astrea.linkeddata.es/shapes#43e06f22e93661c0366559118b6d0477> , <https://astrea.linkeddata.es/shapes#2d378c42f164a2bb87a8311a9cc5c097> , <https://astrea.linkeddata.es/shapes#f6b42c80f4c9c46b5e5254095d073516> , <https://astrea.linkeddata.es/shapes#5258ce1a485658ad7a21ad40e9acc514> , <https://astrea.linkeddata.es/shapes#2ae928ab7bbe9850835343f5bb85f6a4> , <https://astrea.linkeddata.es/shapes#a3ef14fb43495b52572e522bd0b2bae6> , <https://astrea.linkeddata.es/shapes#855c13a96203a98862df45eb050f8227> , <https://astrea.linkeddata.es/shapes#df4ae458b4e554c080717d9bdb48e778> , <https://astrea.linkeddata.es/shapes#6700c174117da3e7eea079c1a2e0adc8> , <https://astrea.linkeddata.es/shapes#27a32486bc042b8a48106960ede30c2f> , <https://astrea.linkeddata.es/shapes#768e5160adb90708175a0f8739f07b9a> , <https://astrea.linkeddata.es/shapes#c3abec14372379675b0e3b2033b73a7c> , <https://astrea.linkeddata.es/shapes#96c5445ce9eb6c581ca247628a9b99fa> , <https://astrea.linkeddata.es/shapes#eb8f17239ec2fed40fa1a6a768668eda> , <https://astrea.linkeddata.es/shapes#22aa3af262ee8d42dfedef7558ae805b> , <https://astrea.linkeddata.es/shapes#468764bdf230b449a74ffdf9fd48fcb7> , <https://astrea.linkeddata.es/shapes#6cacec640b22f38ebdfa4352d3c57935> , <https://astrea.linkeddata.es/shapes#257d1d4fb32144c6805c2c0cd390d6cd> , <https://astrea.linkeddata.es/shapes#fe4b23a836e2b99e7e2855b46819502d> , <https://astrea.linkeddata.es/shapes#b011747329f202f73cb847724acf4cca> , <https://astrea.linkeddata.es/shapes#38b85f306514636db9a5f1b81e81bd46> , <https://astrea.linkeddata.es/shapes#6c91e833ee67bdaace3a659fda2454ba> , <https://astrea.linkeddata.es/shapes#1a4d1c4c36e3570cb230a6eb9711b165> , <https://astrea.linkeddata.es/shapes#6dd47d423f965d1736f5e8f6da63218b> , <https://astrea.linkeddata.es/shapes#dcab4bdbfe6acda4587c461732a4f224> , <https://astrea.linkeddata.es/shapes#99f0582a1ab2bbd75e88e362a2cac1c8> , <https://astrea.linkeddata.es/shapes#aa7211975d97f6f030e83e189f81d344> , <https://astrea.linkeddata.es/shapes#83b63f2c944eee695fe7c5cd372f824e> , <https://astrea.linkeddata.es/shapes#e996a29e0ce6abd80d0b3923eed782c6> , <https://astrea.linkeddata.es/shapes#b19452b0b8bd7434c87b8c11ba30fb3d> , <https://astrea.linkeddata.es/shapes#e7eacd32f5fbadbcf429982536da1cdc> , <https://astrea.linkeddata.es/shapes#297286adc02d203b9486773c8e2b5ac8> , <https://astrea.linkeddata.es/shapes#8462c23f6dc48c6a6045e96b9170a9d3> , <https://astrea.linkeddata.es/shapes#c26c0e7d115dd66675c440d4256798db> , <https://astrea.linkeddata.es/shapes#1dcc4d9d13d84acd7cd750d36aa7363d> , <https://astrea.linkeddata.es/shapes#25572302a24cfe24f6f87d3ffc7b5d60> , <https://astrea.linkeddata.es/shapes#754272aab1eea0a28803777ac7806022> , <https://astrea.linkeddata.es/shapes#18eae720f8bb0af37acdae085e61611e> , <https://astrea.linkeddata.es/shapes#68157bd564db99247d6d7857297bf60e> , <https://astrea.linkeddata.es/shapes#3bf1ed481b0d98867f9c7ad060c9301b> , <https://astrea.linkeddata.es/shapes#063d7966d5bb5967dca9c2fed9e1416a> , <https://astrea.linkeddata.es/shapes#3b03bab9f8bf5207ae7c517190972ec0> , <https://astrea.linkeddata.es/shapes#5818b8db0fd6fa6667b40650961724e7> , <https://astrea.linkeddata.es/shapes#4de4494ab1d2cc7a5b56181054bf5abb> , <https://astrea.linkeddata.es/shapes#5aaaac2c509407252e1feafc2a9daf4c> , <https://astrea.linkeddata.es/shapes#c0999a39d1d16e852d05c72afa7d1f48> , <https://astrea.linkeddata.es/shapes#1c6392fea2e8a77dedb5e0129770d8f0> , <https://astrea.linkeddata.es/shapes#56688339943b44aed052d0489ea144d8> , <https://astrea.linkeddata.es/shapes#41a8155d9eb158f2643e3bd1479e13d3> , <https://astrea.linkeddata.es/shapes#125eef08b12ba43d878ac29d6ea9c5bc> , <https://astrea.linkeddata.es/shapes#15609d4ff3f98d85ae1884ba8dd0fdfd> , <https://astrea.linkeddata.es/shapes#eee370cde05c335263d0a1c53dbf1a84> , <https://astrea.linkeddata.es/shapes#44f91f98c7d8c1be032ea8742a5cb191> , <https://astrea.linkeddata.es/shapes#20fc8ea7fdb61f6c5aef921fb228ad07> , <https://astrea.linkeddata.es/shapes#3c142191e14e161eec2d2483985edbd2> , <https://astrea.linkeddata.es/shapes#2aa953921b521e1eff447dd5561f95fa> , <https://astrea.linkeddata.es/shapes#2f49c73ea8cdfd3904c125c55708fc20> , <https://astrea.linkeddata.es/shapes#f5964a49119d177c39d3573f1ede7cad> , <https://astrea.linkeddata.es/shapes#e61935f1cc0fbdc80be67c061e1cbf71> , <https://astrea.linkeddata.es/shapes#a0cd0f707abc214692cd178d1bcd6a24> , <https://astrea.linkeddata.es/shapes#82ac0ee2607c4d742aa0dafe16a38558> , <https://astrea.linkeddata.es/shapes#f4b3df753bc2c96f73b6c78451bbe220> , <https://astrea.linkeddata.es/shapes#5453083c225aa37c4672bab4857c43e4> , <https://astrea.linkeddata.es/shapes#5c7717c33067d857e389b65b223270fe> , <https://astrea.linkeddata.es/shapes#4752e3e2bb553f8a78c5302130c05719> , <https://astrea.linkeddata.es/shapes#7bf5a93636f246b0b32724c78dace32f> , <https://astrea.linkeddata.es/shapes#84b03bbedb195b34cdeb73e5ff52ebb2> , <https://astrea.linkeddata.es/shapes#7d684700384c6350f9e618896dfcdd77> , <https://astrea.linkeddata.es/shapes#570e251d885fe83c81ffb787ce4307aa> , <https://astrea.linkeddata.es/shapes#8a4625974fc3cbc57d1601d7005f1cd0> , <https://astrea.linkeddata.es/shapes#f375943a701fec0cf1ba00f4b927a82a> , <https://astrea.linkeddata.es/shapes#466029394f8f44718cce25b40440d323> , <https://astrea.linkeddata.es/shapes#34240d68cbd95d757a10bdbf2fe6b7c0> , <https://astrea.linkeddata.es/shapes#920c723a171beec6f70658f325acb00a> , <https://astrea.linkeddata.es/shapes#dd9c035ef1278f80b71435acc3a9d5b5> , <https://astrea.linkeddata.es/shapes#82caee242ef256c679f7c3bdd4bfc395> , <https://astrea.linkeddata.es/shapes#bc07fcdae237c3a2f15b7195f36c5a6b> , <https://astrea.linkeddata.es/shapes#8db5c28465666e686048cf8d0545729c> , <https://astrea.linkeddata.es/shapes#06a692eadd6331421063dd3840122720> , <https://astrea.linkeddata.es/shapes#98d2c68148c99faa90891194c403210e> , <https://astrea.linkeddata.es/shapes#74e67477b87aaf06f40669aecccc9e99> , <https://astrea.linkeddata.es/shapes#1060f31bb77710178ed8201af7ef9e56> , <https://astrea.linkeddata.es/shapes#c7b7c4e4ab86f2561cb227663eacdc4f> , <https://astrea.linkeddata.es/shapes#b6000dce974b8261fa496fd3b7b23353> , <https://astrea.linkeddata.es/shapes#3c5570fd3a90ea38dc64ca5505137d1f> , <https://astrea.linkeddata.es/shapes#d4eb42a3214d2e6288bf7e4ed9acc398> , <https://astrea.linkeddata.es/shapes#feb55fa4be1793183a97c77e8da8b390> , <https://astrea.linkeddata.es/shapes#80ac542d05037be9e1b5881c0bdcf1f7> , <https://astrea.linkeddata.es/shapes#6efbad5dab330c319cc5133bbfd0a50f> , <https://astrea.linkeddata.es/shapes#2b02ceb19d3b7559e94106abe410df11> , <https://astrea.linkeddata.es/shapes#dad58e91e147c45faec328d9577a92a5> , <https://astrea.linkeddata.es/shapes#b86ef9430c7d9114e680abe5bda48aae> , <https://astrea.linkeddata.es/shapes#5fd06c839186229be4ec2c930fc9f74d> , <https://astrea.linkeddata.es/shapes#e4642e23b38422e11d63eda349ed93be> , <https://astrea.linkeddata.es/shapes#edb2695a3728b35eeb8a441152718c2b> , <https://astrea.linkeddata.es/shapes#0107c258bf73c305b3a37725ecc7b835> , <https://astrea.linkeddata.es/shapes#4a63813f935a62a88293b4e1006c1693> , <https://astrea.linkeddata.es/shapes#451955837f2f3fb64b9de33a543020ff> , <https://astrea.linkeddata.es/shapes#3ad79f0649c026ffdf495d36eb7e98e5> , <https://astrea.linkeddata.es/shapes#5df41e27a6a109010ffe856646bac71a> , <https://astrea.linkeddata.es/shapes#7ef9556b6a447372290246838b1a4c72> , <https://astrea.linkeddata.es/shapes#a8f649af6278cf191aa3b5b2e20bdeb3> , <https://astrea.linkeddata.es/shapes#28ccb211e6cd2daa5a1a4831b1581a83> , <https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913> , <https://astrea.linkeddata.es/shapes#a6817e192aa225c2bf51cd485554c628> , <https://astrea.linkeddata.es/shapes#66277b8b569d2bcf2a451366fd7acf1e> , <https://astrea.linkeddata.es/shapes#4bacfd9a756cf25bde1c319b1621e85e> , <https://astrea.linkeddata.es/shapes#92d0fd6fe9d12c9f390a2276eb2bb086> , <https://astrea.linkeddata.es/shapes#ed8e20ca8f8a7d959083f202a998156b> , <https://astrea.linkeddata.es/shapes#e6e6154c2f0e3fe47bbdafd881aa55fd> , <https://astrea.linkeddata.es/shapes#cb80bd85bafbe58b54f275a70f12db12> , <https://astrea.linkeddata.es/shapes#3933211e53db4ade80eb3bcd84002baa> , <https://astrea.linkeddata.es/shapes#063f206ce3739840972aeccecf104496> , <https://astrea.linkeddata.es/shapes#db1e73518bc80255e9e0f11ecfe948bb> , <https://astrea.linkeddata.es/shapes#d56d6da0515253a66ef070930c8e3ad9> , <https://astrea.linkeddata.es/shapes#5c47686cf45addd4ad6230c9b9d05605> , <https://astrea.linkeddata.es/shapes#0ad78ef4a148458820fd268c84c3cffb> , <https://astrea.linkeddata.es/shapes#871a9caef8a8e750588ceb07d16c34ec> , <https://astrea.linkeddata.es/shapes#897d246cc9092c1f175842dd53152cc9> , <https://astrea.linkeddata.es/shapes#7fff9641138e13287267d7ad56e4adca> , <https://astrea.linkeddata.es/shapes#ed9c731f1f75287b14a99580be1e8174> , <https://astrea.linkeddata.es/shapes#87ebd80fe327e6311afdcaaa6280ea90> , <https://astrea.linkeddata.es/shapes#f60e29fbf38423f9128662ce155fdc53> , <https://astrea.linkeddata.es/shapes#5a87a8eab5f34b1229b8e92f0b1d26b8> , <https://astrea.linkeddata.es/shapes#25cb2c5124a0e53b34efba951e826a6d> , <https://astrea.linkeddata.es/shapes#fbd4ab2d5fae631f5508a529d1eec812> , <https://astrea.linkeddata.es/shapes#2a1b73f5b3561d40652763c609a399e2> , <https://astrea.linkeddata.es/shapes#83f4c95b13e93e398a09d7bb4247f703> , <https://astrea.linkeddata.es/shapes#fbcc40060f75e11f92b20f2d4d9dd477> , <https://astrea.linkeddata.es/shapes#c2aebc129413bd0aa864433578053ae6> , <https://astrea.linkeddata.es/shapes#3adb57e2d654b433129a5a2a98216730> , <https://astrea.linkeddata.es/shapes#c78adf719f2fc347d9729f079d86324b> , <https://astrea.linkeddata.es/shapes#e85f7f569c1b43b31809a79038a33ed0> , <https://astrea.linkeddata.es/shapes#c942d12c5bed2663eb227336ba3f7f5a> , <https://astrea.linkeddata.es/shapes#3e18b0f9fac2d3bdcd51a2fdadcbda53> , <https://astrea.linkeddata.es/shapes#50baca2eef7949ed1209990cdaef6ada> , <https://astrea.linkeddata.es/shapes#22d75286767ff927dec284ee9c13b57a> , <https://astrea.linkeddata.es/shapes#7589745be47bb5791f38a6c316c4d49b> , <https://astrea.linkeddata.es/shapes#5ebba26c88846b9b0b5f22fed6348d77> , <https://astrea.linkeddata.es/shapes#02d4c25304447141a9742f21145f29eb> , <https://astrea.linkeddata.es/shapes#ed2adc72397fdf193561014f7e0a34dd> , <https://astrea.linkeddata.es/shapes#4d290cbb157661e6d494cb7abe4ac474> , <https://astrea.linkeddata.es/shapes#07e45c08a41b1575b2a6d026d0b81a61> , <https://astrea.linkeddata.es/shapes#e1d72611382749881eb86502f8d8d1a2> , <https://astrea.linkeddata.es/shapes#270f18ac0c6b3eb3bdd1a55435c63347> , <https://astrea.linkeddata.es/shapes#39d1ecd631df57a466e1fc6925da9757> , <https://astrea.linkeddata.es/shapes#112db86e65af71537d268825b1c4b128> , <https://astrea.linkeddata.es/shapes#410eaae2da74d85bf8fb9ae30b8c2a32> , <https://astrea.linkeddata.es/shapes#8b225cf5c703f5ce6d3e4742791a71dc> , <https://astrea.linkeddata.es/shapes#f7d65002baadc56dec918af054414ed3> , <https://astrea.linkeddata.es/shapes#9448f013a659c4c2c89845301bed10e8> , <https://astrea.linkeddata.es/shapes#3f9e551a825c0cee22258194111a01d6> , <https://astrea.linkeddata.es/shapes#56557bc9303fc90a597d12a094b83eb3> , <https://astrea.linkeddata.es/shapes#477a31758c58ec2a31f728133ae9e4e8> , <https://astrea.linkeddata.es/shapes#c8ba0e30ea76a68976d6ab2f0d9ce576> , <https://astrea.linkeddata.es/shapes#37c075f87b776640dc062b79bb5c2a53> , <https://astrea.linkeddata.es/shapes#6fe7446209c7d0657bea56e0dd818d93> , <https://astrea.linkeddata.es/shapes#84b5a1d4970db321df0b6a7de3b58953> , <https://astrea.linkeddata.es/shapes#d9db413b3474c67f6ba5a90a58214928> , <https://astrea.linkeddata.es/shapes#000e19f8d9f47e324c31c5b9b25b0444> , <https://astrea.linkeddata.es/shapes#047d975865d1af5c63337e793869831a> , <https://astrea.linkeddata.es/shapes#811ef72b6ccea344721cf0bcfa6618ba> , <https://astrea.linkeddata.es/shapes#eef4e9102f8c4e433815a9af41e4f720> , <https://astrea.linkeddata.es/shapes#ae8c5ac5837d36975de840c60a822844> , <https://astrea.linkeddata.es/shapes#56487261d280b09314be009f40dc4ade> , <https://astrea.linkeddata.es/shapes#b139d149be15b6e60e6c8b1bef46b4fa> , <https://astrea.linkeddata.es/shapes#0e35d5b328815701fde9211392322bfd> , <https://astrea.linkeddata.es/shapes#755df39f6ca0ab87e37300d204232668> , <https://astrea.linkeddata.es/shapes#14bff52ed0013a49a4b750d0eaaf307f> , <https://astrea.linkeddata.es/shapes#4c4f3b83b8eb028ccc757e332d6e9f57> , <https://astrea.linkeddata.es/shapes#9dcc08c0472a9cda70fddcd762b0c1af> , <https://astrea.linkeddata.es/shapes#aaa037d320da9052369a6b3d7e78aacc> , <https://astrea.linkeddata.es/shapes#798b30dcccd3c570da21a81eb00ab057> , <https://astrea.linkeddata.es/shapes#a5a696e5b06bf30114a1356c733dc27d> , <https://astrea.linkeddata.es/shapes#f09e338484cd7606e29e0fd0db6d9d28> , <https://astrea.linkeddata.es/shapes#6e3dacc7490dc6b6067bb842c4ba6d00> , <https://astrea.linkeddata.es/shapes#c76ba196dfc654e7d5a0061e7055c066> , <https://astrea.linkeddata.es/shapes#6ad9985af98c9853889763298e7ca1ed> , <https://astrea.linkeddata.es/shapes#9292ed038e80185c3094631a79d8781b> , <https://astrea.linkeddata.es/shapes#3b5c594b18161fe8932fbae3f5531ff7> , <https://astrea.linkeddata.es/shapes#c57d0ed1ad797ad59d5335ca7736ddb9> , <https://astrea.linkeddata.es/shapes#76d946f237723fcb053de3aab8bae24d> , <https://astrea.linkeddata.es/shapes#2fd289bcdf3043cdc841e996d97871e5> , <https://astrea.linkeddata.es/shapes#095f9984c5d4662d997b832984a4966e> , <https://astrea.linkeddata.es/shapes#3355ae85fe3a2cc8061e585346686eb5> , <https://astrea.linkeddata.es/shapes#73b993de0c7bc44886ce480f66966d7a> , <https://astrea.linkeddata.es/shapes#c967b0fdd8f53ecc88b36db8a1959138> , <https://astrea.linkeddata.es/shapes#cebe638a518f8b9e21c7dc04ae61b255> , <https://astrea.linkeddata.es/shapes#fe1d20defb55d9b091cee4f590f01aca> , <https://astrea.linkeddata.es/shapes#d532b2de3a96f5dc7f56a5b3684b73b3> , <https://astrea.linkeddata.es/shapes#38995bc35cbd41e6acd12abf657016f8> , <https://astrea.linkeddata.es/shapes#dd483516b608e138566e0eb23372bfc3> , <https://astrea.linkeddata.es/shapes#f47f83cfc80f60f1cbef92d413b7fac3> , <https://astrea.linkeddata.es/shapes#cb225dedec2709de81ed65ac557167f4> , <https://astrea.linkeddata.es/shapes#e7d09ea75472fdab925bd7954ab0a2f4> , <https://astrea.linkeddata.es/shapes#e5e60481891a7ecc2c20aa0dac64f94f> , <https://astrea.linkeddata.es/shapes#a63054539d67b719c20627268921009f> , <https://astrea.linkeddata.es/shapes#afd881c94c9eb18386fa899988124bb4> , <https://astrea.linkeddata.es/shapes#cc632e14c8ed1048c2f016b616a6454d> , <https://astrea.linkeddata.es/shapes#843894ab099b0bfd41efcc870b3ac339> , <https://astrea.linkeddata.es/shapes#ac3508ad06531d8955179421477e79cb> , <https://astrea.linkeddata.es/shapes#4517fb767ce2af2c860f4e549d19871c> , <https://astrea.linkeddata.es/shapes#539f41797854d781d70decd8feed571d> , <https://astrea.linkeddata.es/shapes#dbfe8edd99a969e4bb6583537cd3ae38> , <https://astrea.linkeddata.es/shapes#9a09ebbeaabdba0737e070115179fc1d> , <https://astrea.linkeddata.es/shapes#57df1a65a25865c0167ecebb2c6535d8> , <https://astrea.linkeddata.es/shapes#b0e4858dd6a7fdf0deca7b1a3e325357> , <https://astrea.linkeddata.es/shapes#0e9df4f49cf1f0a3373861594f2772a3> , <https://astrea.linkeddata.es/shapes#0bebc2e37b964b598b618f6c7f41a3f3> , <https://astrea.linkeddata.es/shapes#aa82fa1bc8a3081b7a39871dcbc1f301> , <https://astrea.linkeddata.es/shapes#38216e38dcc5d3e0224732e739df6f81> , <https://astrea.linkeddata.es/shapes#3612b2c16ebce72371e3646a901384d2> , <https://astrea.linkeddata.es/shapes#d8098cbc63e6db922b998548f87f3ae9> , <https://astrea.linkeddata.es/shapes#eeb016c42986216ec41a2da9c118ff0e> , <https://astrea.linkeddata.es/shapes#c38ddf7f7d575c414b91bceafbe9a23c> , <https://astrea.linkeddata.es/shapes#2aab3df6f573f96c7d1e2431fedacf52> , <https://astrea.linkeddata.es/shapes#610036490e2def125196e3d2f5fa2a4e> , <https://astrea.linkeddata.es/shapes#e4f82017b8b17d08ed7612a5ee150437> , <https://astrea.linkeddata.es/shapes#af91459a67d2874d9cca016091bf8161> , <https://astrea.linkeddata.es/shapes#13209cf65cdd0c3a1b603290aec1f52e> , <https://astrea.linkeddata.es/shapes#580893e949e91f23eb11d852d33b5700> , <https://astrea.linkeddata.es/shapes#5bdcba1dc7cc5ac1893b212e1d1a277c> , <https://astrea.linkeddata.es/shapes#94e3ae02ec7964676d0ad071c6fefb15> , <https://astrea.linkeddata.es/shapes#4808aa6a5fec224bbb79201d761f6908> , <https://astrea.linkeddata.es/shapes#62cb8babef7c4e3f1314042944af7c21> , <https://astrea.linkeddata.es/shapes#6587ae3a6493ef6e8400062bebaeb230> , <https://astrea.linkeddata.es/shapes#9b91556fe784bbe422cac71335042a93> , <https://astrea.linkeddata.es/shapes#fdab135e5e2ec74649a756159a8bbc93> , <https://astrea.linkeddata.es/shapes#d5b423bb5578e4aa5c0b5191bf42123f> , <https://astrea.linkeddata.es/shapes#fc529fa0ca7b5b1ef8c07f3af14ccff6> , <https://astrea.linkeddata.es/shapes#30ab1a291b0aed26d808710625b09ecc> , <https://astrea.linkeddata.es/shapes#d546865e49ff69c8b949c05094184315> , <https://astrea.linkeddata.es/shapes#4c6b24d90f0552a8df061124f285506d> , <https://astrea.linkeddata.es/shapes#b535da7230882d997bbb3971b733031b> , <https://astrea.linkeddata.es/shapes#0bc5c70f247c5857422f1e2ab68a94aa> , <https://astrea.linkeddata.es/shapes#a581d506f76f32455fbb3dce8a9a5b20> , <https://astrea.linkeddata.es/shapes#98bde45f537b8f3fe691bfd885c8687c> , <https://astrea.linkeddata.es/shapes#b33a4c13d391551e9a03969aa670e005> , <https://astrea.linkeddata.es/shapes#2f6546bb55152be079a5e220e4620fed> , <https://astrea.linkeddata.es/shapes#48ea695aa98408a6ade8ae77c99c7bb4> , <https://astrea.linkeddata.es/shapes#6c4eb5c4906d5ba4c081f85367dd0edd> , <https://astrea.linkeddata.es/shapes#725bbb5e075a321c737dde30db7d3a76> , <https://astrea.linkeddata.es/shapes#7b722600669ba01f596047cf2001951f> , <https://astrea.linkeddata.es/shapes#a6f9f94a4804975b719b55a6f8aa4722> , <https://astrea.linkeddata.es/shapes#28652149370937211205956d2ff50fee> , <https://astrea.linkeddata.es/shapes#7bbadd0bbac06211e246d5a7f9767dfa> , <https://astrea.linkeddata.es/shapes#0ca183e17743880a2cdf5c24617b00f9> , <https://astrea.linkeddata.es/shapes#54d78d2ef08bbece51ef04d5edd58ffe> , <https://astrea.linkeddata.es/shapes#40cac3f9a1397b5ef47c697cccc0d6b8> , <https://astrea.linkeddata.es/shapes#e7eab2baf1b1ffa91b1b54df1093d0d4> , <https://astrea.linkeddata.es/shapes#21f0db7aa625ef75f1d7d3a797b749b3> , <https://astrea.linkeddata.es/shapes#f5d85329dd8373607183ef7a6a2c3fc7> , <https://astrea.linkeddata.es/shapes#77918fa8f252700e8866b9d9abb6e2e0> , <https://astrea.linkeddata.es/shapes#30df6b1dbb766688d020b40f9baf3fdf> , <https://astrea.linkeddata.es/shapes#a15cdb5fb0143770c399bc65f0e94507> , <https://astrea.linkeddata.es/shapes#30a3e0c3410ac783ff60746e28e25466> , <https://astrea.linkeddata.es/shapes#595adf0af2e65af0e92e8fbc57687966> , <https://astrea.linkeddata.es/shapes#3fd1c3e6ac5ad7421513b9e7a712c7f6> , <https://astrea.linkeddata.es/shapes#689c09fb8ab0bd55e47f98874f59f4c6> , <https://astrea.linkeddata.es/shapes#7f8fae374fb6ef8f9f1e3a2af47a133d> , <https://astrea.linkeddata.es/shapes#c463b532073d795f36681ecf2862ee2f> , <https://astrea.linkeddata.es/shapes#6276e1a70bb0b70c72b8fd5a1ef6c3a9> , <https://astrea.linkeddata.es/shapes#0660a2d94bd01787143ebd014b317cb6> , <https://astrea.linkeddata.es/shapes#46deb4072bf7272b8ec8fdba42635e4b> , <https://astrea.linkeddata.es/shapes#029d592e0ac3da5837e903875e79156b> , <https://astrea.linkeddata.es/shapes#c955bb6c63c6bc2aa62af1a203aa7507> , <https://astrea.linkeddata.es/shapes#808bb94a225e8bf7ff74dd3f4500ec5f> , <https://astrea.linkeddata.es/shapes#ef9430edbb6f03b952872ba3a7898127> , <https://astrea.linkeddata.es/shapes#74953b7bbea2dde22e4019b4ed90465b> , <https://astrea.linkeddata.es/shapes#f87e10c40a586b7b4bcad3b379f43a6a> , <https://astrea.linkeddata.es/shapes#7d500845887f53beb750d2a134541b12> ;
+                <https://astrea.linkeddata.es/shapes#8fd4d42bfe155b8df21974cd007bbc82> , <https://astrea.linkeddata.es/shapes#aee01a797435564ab1947c674c856799> , <https://astrea.linkeddata.es/shapes#0a2b867642501c3a01c0904eeee8313b> , <https://astrea.linkeddata.es/shapes#a670d7e6c38c53c4e4aff3f37f1bf2f0> , <https://astrea.linkeddata.es/shapes#1c20aeaf56b91e5b9b6adf8be31fd11d> , <https://astrea.linkeddata.es/shapes#33d77d4315d8f307662c4b006b17390a> , <https://astrea.linkeddata.es/shapes#4a34bd8e758095e4d0b20965a17b3ace> , <https://astrea.linkeddata.es/shapes#73fdddf0a990c4784c6646f0d41ea2c1> , <https://astrea.linkeddata.es/shapes#548fb1dd16f41050fa50b83f821a2bb3> , <https://astrea.linkeddata.es/shapes#dd89ff14e086370dc5c0dcf6c31a7182> , <https://astrea.linkeddata.es/shapes#17df36668c68a2b8ece07442c26e334b> , <https://astrea.linkeddata.es/shapes#468722d9cde6848ad6307f441a630f9a> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#32319b7a828ca197237b94ce44f632b1> , <https://astrea.linkeddata.es/shapes#2d2aef11edecda777deba9f663cd2aaf> , <https://astrea.linkeddata.es/shapes#2a6b5cf95e8c00c09c7e75c56525b6f2> , <https://astrea.linkeddata.es/shapes#df8c377ccad4ca847cedf1d1bf05948a> , <https://astrea.linkeddata.es/shapes#2b2890d59075f54bc73193c9d2a1c211> , <https://astrea.linkeddata.es/shapes#2f8ef2d7f1cd1506a08ea35adc2a7ee4> , <https://astrea.linkeddata.es/shapes#a423601afd6165ee21086ea8eaa15b1d> , <https://astrea.linkeddata.es/shapes#61fb9b5ac3e189a73816fd32363d0c7b> , <https://astrea.linkeddata.es/shapes#83b7f8163e2d75c668715725094b5549> , <https://astrea.linkeddata.es/shapes#5b2697b48ed9899bf1c491ee597a7a89> , <https://astrea.linkeddata.es/shapes#1f4b716b8f6628e9c868e13eec22b16a> , <https://astrea.linkeddata.es/shapes#bb69f9714072d38c37219ae2170b632d> , <https://astrea.linkeddata.es/shapes#5b6c076601567335c58ce0790e17f7f8> , <https://astrea.linkeddata.es/shapes#394c76137f5143ef42ff73606dec84af> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> , <https://astrea.linkeddata.es/shapes#21e87ae54ee2f9e68cf4b18b30541c13> , <https://astrea.linkeddata.es/shapes#46aaaec0bd6ff6e19e55a4801decd885> , <https://astrea.linkeddata.es/shapes#7245e8301c1af63fc6ffd61bb4b724c0> , <https://astrea.linkeddata.es/shapes#4d39c2281f87bb788c625efc6da8f50b> , <https://astrea.linkeddata.es/shapes#19af5c88d1b17ea20f3301b5b5c1fc3d> , <https://astrea.linkeddata.es/shapes#de48b7c1c93892f52c414a1b55aa4514> , <https://astrea.linkeddata.es/shapes#b28b5d4a91569e0d8a27c9880369d8d3> , <https://astrea.linkeddata.es/shapes#6cda955a3a9aae985a535e093808a047> , <https://astrea.linkeddata.es/shapes#db49d6f405896c02ea54de26499f8b30> , <https://astrea.linkeddata.es/shapes#95a1939989677b5cd3aacdd30d3d72a0> , <https://astrea.linkeddata.es/shapes#16d9766d2a0759a967d7ca0089fd80da> , <https://astrea.linkeddata.es/shapes#5bb1a7b5d109bf2543068bbefef5ea70> , <https://astrea.linkeddata.es/shapes#4c030077aa447210569bad795fa706f7> , <https://astrea.linkeddata.es/shapes#d7fc215d256ad3e5c4dd33d2c2f1998e> , <https://astrea.linkeddata.es/shapes#1a094022eb81b9d695efce6620198c95> , <https://astrea.linkeddata.es/shapes#c985da888f5f0369e41b1db2efe3b7b8> , <https://astrea.linkeddata.es/shapes#45bbb0fe9fe39ab90c6586892aa47d3c> , <https://astrea.linkeddata.es/shapes#8de6d464db225f24e56e4436c303bb51> , <https://astrea.linkeddata.es/shapes#6b2e03dac56c60303e15fac566cda4a6> , <https://astrea.linkeddata.es/shapes#fec126fd6a63d4b5cdce4daa1563be69> , <https://astrea.linkeddata.es/shapes#898de55fa6d29ad1ab177d8f13569e87> , <https://astrea.linkeddata.es/shapes#1f110dda595949f70c66acd4e0e254d3> , <https://astrea.linkeddata.es/shapes#38a7f272cc51d62974ed68d2627832e4> , <https://astrea.linkeddata.es/shapes#89b5017e76a20bfaef9c023845f326cc> , <https://astrea.linkeddata.es/shapes#75297a18edc4ac9972201f0cccd5d71d> , <https://astrea.linkeddata.es/shapes#e99d601b76a7db1b1132902175fa4f7e> , <https://astrea.linkeddata.es/shapes#b7d24d320a65d844155465474a7d27d2> , <https://astrea.linkeddata.es/shapes#1542e8e8bcfbfc73c93f9ea3bc52506b> , <https://astrea.linkeddata.es/shapes#643862ab34e4b9e4ea63a3bcf0519803> , <https://astrea.linkeddata.es/shapes#d68db5bf14c04bcfe66eea6d53cfc655> , <https://astrea.linkeddata.es/shapes#4a0fe07d77e1568c9f6119967b7b3d3a> , <https://astrea.linkeddata.es/shapes#5f126655bae82556cee93619e59685a6> , <https://astrea.linkeddata.es/shapes#7f5fdb94657518c4be3f8ebe3ba276c0> , <https://astrea.linkeddata.es/shapes#fe11765e00847de730d2087ccc877805> , <https://astrea.linkeddata.es/shapes#577857b06622ab1523b5e75d28f19b43> , <https://astrea.linkeddata.es/shapes#e99322833d42d63386c87c9e65ce623b> , <https://astrea.linkeddata.es/shapes#a88dc2248a9e2c46bf52ea803c7e76c2> , <https://astrea.linkeddata.es/shapes#c3450a44805b9f78df37e37c47a862f1> , <https://astrea.linkeddata.es/shapes#8902e106a5e9663e690199331d695f9a> , <https://astrea.linkeddata.es/shapes#689b2c96f4b3ecd0c4267d70c0fc2620> , <https://astrea.linkeddata.es/shapes#c8c81abe5cf9187c1569ec55c4b86602> , <https://astrea.linkeddata.es/shapes#83718e38eea071509b5ef7eef7d9ffb6> , <https://astrea.linkeddata.es/shapes#82ac507d83c8b3904c5e2382f59eff04> , <https://astrea.linkeddata.es/shapes#f2b8bc7d0e880ae8382b58193d34e8cc> , <https://astrea.linkeddata.es/shapes#4e1ef53871298c387cd2aaeabdaeae58> , <https://astrea.linkeddata.es/shapes#5e4785ff12f3c570d6b7a8f8714d25ac> , <https://astrea.linkeddata.es/shapes#ac9b01412b3f8f24a9c3c7a9428ef6f2> , <https://astrea.linkeddata.es/shapes#e77cb2b9d17546c484285eae4f0f49e1> , <https://astrea.linkeddata.es/shapes#10ea40f0e1046a0e064489a86081f0a8> , <https://astrea.linkeddata.es/shapes#607515d5b9ae633668b5c04525bd0db8> , <https://astrea.linkeddata.es/shapes#b7d1393014d51c7f574155ae6b8d8080> , <https://astrea.linkeddata.es/shapes#798f5efed7706e1ab95b8bff19b57ed8> , <https://astrea.linkeddata.es/shapes#d54b4c87a631215ff004ce07edf2e2e0> , <https://astrea.linkeddata.es/shapes#2de172e4c22ca8c50616973487d2e701> , <https://astrea.linkeddata.es/shapes#57a8c41bff032939733d67bf16e7e326> , <https://astrea.linkeddata.es/shapes#21fc777093a942aa6c153efcb1be7a5d> , <https://astrea.linkeddata.es/shapes#b44fb04a68de358717a4bd8f19dcc4e0> , <https://astrea.linkeddata.es/shapes#61831577bcbf4588767fc1545d94c2bd> , <https://astrea.linkeddata.es/shapes#cd9445c64e106b75337259da0347cea3> , <https://astrea.linkeddata.es/shapes#05a2a0327adb57d04df61028a942a824> , <https://astrea.linkeddata.es/shapes#8e5d61bda38d9f3dbaa3af4a7f4243ff> , <https://astrea.linkeddata.es/shapes#e2931e7b6c2eb60ddface78eccba4bd9> , <https://astrea.linkeddata.es/shapes#ac8afdfdb7fc454bed42a349120eb098> , <https://astrea.linkeddata.es/shapes#0f23d0915625cb7cc2816127c2d186a0> , <https://astrea.linkeddata.es/shapes#5706699741f27ad60a0210d7537d2186> , <https://astrea.linkeddata.es/shapes#87dba1bff46eb4a192d32b25b6cda251> , <https://astrea.linkeddata.es/shapes#c186b1044a6b8571d5484d0488dd2d7b> , <https://astrea.linkeddata.es/shapes#ea19dd675b41662cdf03ea6ae4c05cb1> , <https://astrea.linkeddata.es/shapes#83a0df004510a40b573b850aca7b2d8e> , <https://astrea.linkeddata.es/shapes#5c17a4f48dda67c3c2bc1e14ede84a57> , <https://astrea.linkeddata.es/shapes#5926b5fb51e175f71511952d746bcdc5> , <https://astrea.linkeddata.es/shapes#779eab72c7f3493ff32472663577097c> , <https://astrea.linkeddata.es/shapes#b28f1a50b3141c95955799dfa1cd4295> , <https://astrea.linkeddata.es/shapes#3132020a7b2f6e7d394eb2741be51927> , <https://astrea.linkeddata.es/shapes#ebbf090ee1d6333a8b3df19f598a5559> , <https://astrea.linkeddata.es/shapes#08191c6d9534b6c3d4a1f4c9a42567bc> , <https://astrea.linkeddata.es/shapes#65c715d5d2f2d31d44acef9806b5664e> , <https://astrea.linkeddata.es/shapes#fd054ffa837be3f7ac861e3ae4b26dc6> , <https://astrea.linkeddata.es/shapes#c025879e0e4583bbf19131e096984e60> , <https://astrea.linkeddata.es/shapes#098daf704aee441eb24565f14854312f> , <https://astrea.linkeddata.es/shapes#487bc94758b5d2fb6d916a24b46d0a9c> , <https://astrea.linkeddata.es/shapes#50d46638569363bac480e3988a01f2d0> , <https://astrea.linkeddata.es/shapes#e73144e3fdab4cbeb62d6ea6448667cc> , <https://astrea.linkeddata.es/shapes#98d17899830bfb0b663bb677dd2455c1> , <https://astrea.linkeddata.es/shapes#802a4dba0a589611f691761c3c580637> , <https://astrea.linkeddata.es/shapes#5f8e1e862d26021410f9dbfe65685f66> , <https://astrea.linkeddata.es/shapes#379f09a741318a075ec1d1be4f9ae3c9> , <https://astrea.linkeddata.es/shapes#c3fb6ea8abe3a615c4212b0c35aadd3c> , <https://astrea.linkeddata.es/shapes#dcb836dc41e696a8522e9028968b48c7> , <https://astrea.linkeddata.es/shapes#b750c456a22cd04db1ce4147d857b041> , <https://astrea.linkeddata.es/shapes#0a1ee340fb0944c53b93c6322875e2d8> , <https://astrea.linkeddata.es/shapes#1d7fb132731b122e143d02c675f64438> , <https://astrea.linkeddata.es/shapes#3a264685c22f90f1af14fbea487fd467> , <https://astrea.linkeddata.es/shapes#9f16489c93ddfe2236d2e2c2b6c4700f> , <https://astrea.linkeddata.es/shapes#636d1bfe1946c777bf2e0fe2fbaac905> , <https://astrea.linkeddata.es/shapes#961eb491cb7a752046d004275a41621c> , <https://astrea.linkeddata.es/shapes#e430adaa23e66b39a964338be9224c0b> , <https://astrea.linkeddata.es/shapes#a03bd8d0abc770f9e188f1ababd7667a> , <https://astrea.linkeddata.es/shapes#f1ae3fa4ffe533f93b1ba23ec8571eba> , <https://astrea.linkeddata.es/shapes#a4c3446b632c9a7213defa0b43d2811d> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#f92b3a74b332e8a8a7387cf080997918> , <https://astrea.linkeddata.es/shapes#43e06f22e93661c0366559118b6d0477> , <https://astrea.linkeddata.es/shapes#2d378c42f164a2bb87a8311a9cc5c097> , <https://astrea.linkeddata.es/shapes#f6b42c80f4c9c46b5e5254095d073516> , <https://astrea.linkeddata.es/shapes#5258ce1a485658ad7a21ad40e9acc514> , <https://astrea.linkeddata.es/shapes#2ae928ab7bbe9850835343f5bb85f6a4> , <https://astrea.linkeddata.es/shapes#a3ef14fb43495b52572e522bd0b2bae6> , <https://astrea.linkeddata.es/shapes#855c13a96203a98862df45eb050f8227> , <https://astrea.linkeddata.es/shapes#df4ae458b4e554c080717d9bdb48e778> , <https://astrea.linkeddata.es/shapes#6700c174117da3e7eea079c1a2e0adc8> , <https://astrea.linkeddata.es/shapes#27a32486bc042b8a48106960ede30c2f> , <https://astrea.linkeddata.es/shapes#768e5160adb90708175a0f8739f07b9a> , <https://astrea.linkeddata.es/shapes#c3abec14372379675b0e3b2033b73a7c> , <https://astrea.linkeddata.es/shapes#96c5445ce9eb6c581ca247628a9b99fa> , <https://astrea.linkeddata.es/shapes#eb8f17239ec2fed40fa1a6a768668eda> , <https://astrea.linkeddata.es/shapes#22aa3af262ee8d42dfedef7558ae805b> , <https://astrea.linkeddata.es/shapes#468764bdf230b449a74ffdf9fd48fcb7> , <https://astrea.linkeddata.es/shapes#6cacec640b22f38ebdfa4352d3c57935> , <https://astrea.linkeddata.es/shapes#257d1d4fb32144c6805c2c0cd390d6cd> , <https://astrea.linkeddata.es/shapes#fe4b23a836e2b99e7e2855b46819502d> , <https://astrea.linkeddata.es/shapes#b011747329f202f73cb847724acf4cca> , <https://astrea.linkeddata.es/shapes#38b85f306514636db9a5f1b81e81bd46> , <https://astrea.linkeddata.es/shapes#6c91e833ee67bdaace3a659fda2454ba> , <https://astrea.linkeddata.es/shapes#1a4d1c4c36e3570cb230a6eb9711b165> , <https://astrea.linkeddata.es/shapes#6dd47d423f965d1736f5e8f6da63218b> , <https://astrea.linkeddata.es/shapes#dcab4bdbfe6acda4587c461732a4f224> , <https://astrea.linkeddata.es/shapes#99f0582a1ab2bbd75e88e362a2cac1c8> , <https://astrea.linkeddata.es/shapes#aa7211975d97f6f030e83e189f81d344> , <https://astrea.linkeddata.es/shapes#83b63f2c944eee695fe7c5cd372f824e> , <https://astrea.linkeddata.es/shapes#e996a29e0ce6abd80d0b3923eed782c6> , <https://astrea.linkeddata.es/shapes#b19452b0b8bd7434c87b8c11ba30fb3d> , <https://astrea.linkeddata.es/shapes#e7eacd32f5fbadbcf429982536da1cdc> , <https://astrea.linkeddata.es/shapes#297286adc02d203b9486773c8e2b5ac8> , <https://astrea.linkeddata.es/shapes#8462c23f6dc48c6a6045e96b9170a9d3> , <https://astrea.linkeddata.es/shapes#c26c0e7d115dd66675c440d4256798db> , <https://astrea.linkeddata.es/shapes#1dcc4d9d13d84acd7cd750d36aa7363d> , <https://astrea.linkeddata.es/shapes#25572302a24cfe24f6f87d3ffc7b5d60> , <https://astrea.linkeddata.es/shapes#754272aab1eea0a28803777ac7806022> , <https://astrea.linkeddata.es/shapes#18eae720f8bb0af37acdae085e61611e> , <https://astrea.linkeddata.es/shapes#68157bd564db99247d6d7857297bf60e> , <https://astrea.linkeddata.es/shapes#3bf1ed481b0d98867f9c7ad060c9301b> , <https://astrea.linkeddata.es/shapes#063d7966d5bb5967dca9c2fed9e1416a> , <https://astrea.linkeddata.es/shapes#3cadcceeb4d136522f36af7913b4481e> , <https://astrea.linkeddata.es/shapes#3b03bab9f8bf5207ae7c517190972ec0> , <https://astrea.linkeddata.es/shapes#5818b8db0fd6fa6667b40650961724e7> , <https://astrea.linkeddata.es/shapes#4de4494ab1d2cc7a5b56181054bf5abb> , <https://astrea.linkeddata.es/shapes#5aaaac2c509407252e1feafc2a9daf4c> , <https://astrea.linkeddata.es/shapes#c0999a39d1d16e852d05c72afa7d1f48> , <https://astrea.linkeddata.es/shapes#1c6392fea2e8a77dedb5e0129770d8f0> , <https://astrea.linkeddata.es/shapes#56688339943b44aed052d0489ea144d8> , <https://astrea.linkeddata.es/shapes#41a8155d9eb158f2643e3bd1479e13d3> , <https://astrea.linkeddata.es/shapes#125eef08b12ba43d878ac29d6ea9c5bc> , <https://astrea.linkeddata.es/shapes#15609d4ff3f98d85ae1884ba8dd0fdfd> , <https://astrea.linkeddata.es/shapes#eee370cde05c335263d0a1c53dbf1a84> , <https://astrea.linkeddata.es/shapes#44f91f98c7d8c1be032ea8742a5cb191> , <https://astrea.linkeddata.es/shapes#20fc8ea7fdb61f6c5aef921fb228ad07> , <https://astrea.linkeddata.es/shapes#3c142191e14e161eec2d2483985edbd2> , <https://astrea.linkeddata.es/shapes#2aa953921b521e1eff447dd5561f95fa> , <https://astrea.linkeddata.es/shapes#2f49c73ea8cdfd3904c125c55708fc20> , <https://astrea.linkeddata.es/shapes#f5964a49119d177c39d3573f1ede7cad> , <https://astrea.linkeddata.es/shapes#e61935f1cc0fbdc80be67c061e1cbf71> , <https://astrea.linkeddata.es/shapes#a0cd0f707abc214692cd178d1bcd6a24> , <https://astrea.linkeddata.es/shapes#82ac0ee2607c4d742aa0dafe16a38558> , <https://astrea.linkeddata.es/shapes#f4b3df753bc2c96f73b6c78451bbe220> , <https://astrea.linkeddata.es/shapes#5453083c225aa37c4672bab4857c43e4> , <https://astrea.linkeddata.es/shapes#5c7717c33067d857e389b65b223270fe> , <https://astrea.linkeddata.es/shapes#4752e3e2bb553f8a78c5302130c05719> , <https://astrea.linkeddata.es/shapes#7bf5a93636f246b0b32724c78dace32f> , <https://astrea.linkeddata.es/shapes#84b03bbedb195b34cdeb73e5ff52ebb2> , <https://astrea.linkeddata.es/shapes#7d684700384c6350f9e618896dfcdd77> , <https://astrea.linkeddata.es/shapes#570e251d885fe83c81ffb787ce4307aa> , <https://astrea.linkeddata.es/shapes#8a4625974fc3cbc57d1601d7005f1cd0> , <https://astrea.linkeddata.es/shapes#f375943a701fec0cf1ba00f4b927a82a> , <https://astrea.linkeddata.es/shapes#466029394f8f44718cce25b40440d323> , <https://astrea.linkeddata.es/shapes#34240d68cbd95d757a10bdbf2fe6b7c0> , <https://astrea.linkeddata.es/shapes#920c723a171beec6f70658f325acb00a> , <https://astrea.linkeddata.es/shapes#dd9c035ef1278f80b71435acc3a9d5b5> , <https://astrea.linkeddata.es/shapes#82caee242ef256c679f7c3bdd4bfc395> , <https://astrea.linkeddata.es/shapes#bc07fcdae237c3a2f15b7195f36c5a6b> , <https://astrea.linkeddata.es/shapes#8db5c28465666e686048cf8d0545729c> , <https://astrea.linkeddata.es/shapes#06a692eadd6331421063dd3840122720> , <https://astrea.linkeddata.es/shapes#98d2c68148c99faa90891194c403210e> , <https://astrea.linkeddata.es/shapes#74e67477b87aaf06f40669aecccc9e99> , <https://astrea.linkeddata.es/shapes#1060f31bb77710178ed8201af7ef9e56> , <https://astrea.linkeddata.es/shapes#c7b7c4e4ab86f2561cb227663eacdc4f> , <https://astrea.linkeddata.es/shapes#b6000dce974b8261fa496fd3b7b23353> , <https://astrea.linkeddata.es/shapes#3c5570fd3a90ea38dc64ca5505137d1f> , <https://astrea.linkeddata.es/shapes#d4eb42a3214d2e6288bf7e4ed9acc398> , <https://astrea.linkeddata.es/shapes#feb55fa4be1793183a97c77e8da8b390> , <https://astrea.linkeddata.es/shapes#80ac542d05037be9e1b5881c0bdcf1f7> , <https://astrea.linkeddata.es/shapes#6efbad5dab330c319cc5133bbfd0a50f> , <https://astrea.linkeddata.es/shapes#2b02ceb19d3b7559e94106abe410df11> , <https://astrea.linkeddata.es/shapes#dad58e91e147c45faec328d9577a92a5> , <https://astrea.linkeddata.es/shapes#b86ef9430c7d9114e680abe5bda48aae> , <https://astrea.linkeddata.es/shapes#5fd06c839186229be4ec2c930fc9f74d> , <https://astrea.linkeddata.es/shapes#e4642e23b38422e11d63eda349ed93be> , <https://astrea.linkeddata.es/shapes#edb2695a3728b35eeb8a441152718c2b> , <https://astrea.linkeddata.es/shapes#0107c258bf73c305b3a37725ecc7b835> , <https://astrea.linkeddata.es/shapes#4a63813f935a62a88293b4e1006c1693> , <https://astrea.linkeddata.es/shapes#451955837f2f3fb64b9de33a543020ff> , <https://astrea.linkeddata.es/shapes#3ad79f0649c026ffdf495d36eb7e98e5> , <https://astrea.linkeddata.es/shapes#5df41e27a6a109010ffe856646bac71a> , <https://astrea.linkeddata.es/shapes#7ef9556b6a447372290246838b1a4c72> , <https://astrea.linkeddata.es/shapes#a8f649af6278cf191aa3b5b2e20bdeb3> , <https://astrea.linkeddata.es/shapes#28ccb211e6cd2daa5a1a4831b1581a83> , <https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913> , <https://astrea.linkeddata.es/shapes#a6817e192aa225c2bf51cd485554c628> , <https://astrea.linkeddata.es/shapes#66277b8b569d2bcf2a451366fd7acf1e> , <https://astrea.linkeddata.es/shapes#4bacfd9a756cf25bde1c319b1621e85e> , <https://astrea.linkeddata.es/shapes#92d0fd6fe9d12c9f390a2276eb2bb086> , <https://astrea.linkeddata.es/shapes#ed8e20ca8f8a7d959083f202a998156b> , <https://astrea.linkeddata.es/shapes#e6e6154c2f0e3fe47bbdafd881aa55fd> , <https://astrea.linkeddata.es/shapes#cb80bd85bafbe58b54f275a70f12db12> , <https://astrea.linkeddata.es/shapes#3933211e53db4ade80eb3bcd84002baa> , <https://astrea.linkeddata.es/shapes#063f206ce3739840972aeccecf104496> , <https://astrea.linkeddata.es/shapes#db1e73518bc80255e9e0f11ecfe948bb> , <https://astrea.linkeddata.es/shapes#d56d6da0515253a66ef070930c8e3ad9> , <https://astrea.linkeddata.es/shapes#5c47686cf45addd4ad6230c9b9d05605> , <https://astrea.linkeddata.es/shapes#0ad78ef4a148458820fd268c84c3cffb> , <https://astrea.linkeddata.es/shapes#871a9caef8a8e750588ceb07d16c34ec> , <https://astrea.linkeddata.es/shapes#897d246cc9092c1f175842dd53152cc9> , <https://astrea.linkeddata.es/shapes#7fff9641138e13287267d7ad56e4adca> , <https://astrea.linkeddata.es/shapes#ed9c731f1f75287b14a99580be1e8174> , <https://astrea.linkeddata.es/shapes#87ebd80fe327e6311afdcaaa6280ea90> , <https://astrea.linkeddata.es/shapes#f60e29fbf38423f9128662ce155fdc53> , <https://astrea.linkeddata.es/shapes#5a87a8eab5f34b1229b8e92f0b1d26b8> , <https://astrea.linkeddata.es/shapes#25cb2c5124a0e53b34efba951e826a6d> , <https://astrea.linkeddata.es/shapes#fbd4ab2d5fae631f5508a529d1eec812> , <https://astrea.linkeddata.es/shapes#2a1b73f5b3561d40652763c609a399e2> , <https://astrea.linkeddata.es/shapes#83f4c95b13e93e398a09d7bb4247f703> , <https://astrea.linkeddata.es/shapes#fbcc40060f75e11f92b20f2d4d9dd477> , <https://astrea.linkeddata.es/shapes#c2aebc129413bd0aa864433578053ae6> , <https://astrea.linkeddata.es/shapes#3adb57e2d654b433129a5a2a98216730> , <https://astrea.linkeddata.es/shapes#c78adf719f2fc347d9729f079d86324b> , <https://astrea.linkeddata.es/shapes#e85f7f569c1b43b31809a79038a33ed0> , <https://astrea.linkeddata.es/shapes#c942d12c5bed2663eb227336ba3f7f5a> , <https://astrea.linkeddata.es/shapes#3e18b0f9fac2d3bdcd51a2fdadcbda53> , <https://astrea.linkeddata.es/shapes#50baca2eef7949ed1209990cdaef6ada> , <https://astrea.linkeddata.es/shapes#22d75286767ff927dec284ee9c13b57a> , <https://astrea.linkeddata.es/shapes#7589745be47bb5791f38a6c316c4d49b> , <https://astrea.linkeddata.es/shapes#5ebba26c88846b9b0b5f22fed6348d77> , <https://astrea.linkeddata.es/shapes#02d4c25304447141a9742f21145f29eb> , <https://astrea.linkeddata.es/shapes#ed2adc72397fdf193561014f7e0a34dd> , <https://astrea.linkeddata.es/shapes#4d290cbb157661e6d494cb7abe4ac474> , <https://astrea.linkeddata.es/shapes#07e45c08a41b1575b2a6d026d0b81a61> , <https://astrea.linkeddata.es/shapes#e1d72611382749881eb86502f8d8d1a2> , <https://astrea.linkeddata.es/shapes#270f18ac0c6b3eb3bdd1a55435c63347> , <https://astrea.linkeddata.es/shapes#39d1ecd631df57a466e1fc6925da9757> , <https://astrea.linkeddata.es/shapes#112db86e65af71537d268825b1c4b128> , <https://astrea.linkeddata.es/shapes#410eaae2da74d85bf8fb9ae30b8c2a32> , <https://astrea.linkeddata.es/shapes#8b225cf5c703f5ce6d3e4742791a71dc> , <https://astrea.linkeddata.es/shapes#f7d65002baadc56dec918af054414ed3> , <https://astrea.linkeddata.es/shapes#9448f013a659c4c2c89845301bed10e8> , <https://astrea.linkeddata.es/shapes#3f9e551a825c0cee22258194111a01d6> , <https://astrea.linkeddata.es/shapes#56557bc9303fc90a597d12a094b83eb3> , <https://astrea.linkeddata.es/shapes#477a31758c58ec2a31f728133ae9e4e8> , <https://astrea.linkeddata.es/shapes#c8ba0e30ea76a68976d6ab2f0d9ce576> , <https://astrea.linkeddata.es/shapes#37c075f87b776640dc062b79bb5c2a53> , <https://astrea.linkeddata.es/shapes#6fe7446209c7d0657bea56e0dd818d93> , <https://astrea.linkeddata.es/shapes#84b5a1d4970db321df0b6a7de3b58953> , <https://astrea.linkeddata.es/shapes#d9db413b3474c67f6ba5a90a58214928> , <https://astrea.linkeddata.es/shapes#000e19f8d9f47e324c31c5b9b25b0444> , <https://astrea.linkeddata.es/shapes#047d975865d1af5c63337e793869831a> , <https://astrea.linkeddata.es/shapes#811ef72b6ccea344721cf0bcfa6618ba> , <https://astrea.linkeddata.es/shapes#eef4e9102f8c4e433815a9af41e4f720> , <https://astrea.linkeddata.es/shapes#ae8c5ac5837d36975de840c60a822844> , <https://astrea.linkeddata.es/shapes#56487261d280b09314be009f40dc4ade> , <https://astrea.linkeddata.es/shapes#b139d149be15b6e60e6c8b1bef46b4fa> , <https://astrea.linkeddata.es/shapes#0e35d5b328815701fde9211392322bfd> , <https://astrea.linkeddata.es/shapes#755df39f6ca0ab87e37300d204232668> , <https://astrea.linkeddata.es/shapes#14bff52ed0013a49a4b750d0eaaf307f> , <https://astrea.linkeddata.es/shapes#4c4f3b83b8eb028ccc757e332d6e9f57> , <https://astrea.linkeddata.es/shapes#9dcc08c0472a9cda70fddcd762b0c1af> , <https://astrea.linkeddata.es/shapes#aaa037d320da9052369a6b3d7e78aacc> , <https://astrea.linkeddata.es/shapes#798b30dcccd3c570da21a81eb00ab057> , <https://astrea.linkeddata.es/shapes#a5a696e5b06bf30114a1356c733dc27d> , <https://astrea.linkeddata.es/shapes#f09e338484cd7606e29e0fd0db6d9d28> , <https://astrea.linkeddata.es/shapes#6e3dacc7490dc6b6067bb842c4ba6d00> , <https://astrea.linkeddata.es/shapes#c76ba196dfc654e7d5a0061e7055c066> , <https://astrea.linkeddata.es/shapes#6ad9985af98c9853889763298e7ca1ed> , <https://astrea.linkeddata.es/shapes#9292ed038e80185c3094631a79d8781b> , <https://astrea.linkeddata.es/shapes#3b5c594b18161fe8932fbae3f5531ff7> , <https://astrea.linkeddata.es/shapes#c57d0ed1ad797ad59d5335ca7736ddb9> , <https://astrea.linkeddata.es/shapes#76d946f237723fcb053de3aab8bae24d> , <https://astrea.linkeddata.es/shapes#2fd289bcdf3043cdc841e996d97871e5> , <https://astrea.linkeddata.es/shapes#095f9984c5d4662d997b832984a4966e> , <https://astrea.linkeddata.es/shapes#3355ae85fe3a2cc8061e585346686eb5> , <https://astrea.linkeddata.es/shapes#73b993de0c7bc44886ce480f66966d7a> , <https://astrea.linkeddata.es/shapes#c967b0fdd8f53ecc88b36db8a1959138> , <https://astrea.linkeddata.es/shapes#cebe638a518f8b9e21c7dc04ae61b255> , <https://astrea.linkeddata.es/shapes#fe1d20defb55d9b091cee4f590f01aca> , <https://astrea.linkeddata.es/shapes#d532b2de3a96f5dc7f56a5b3684b73b3> , <https://astrea.linkeddata.es/shapes#38995bc35cbd41e6acd12abf657016f8> , <https://astrea.linkeddata.es/shapes#dd483516b608e138566e0eb23372bfc3> , <https://astrea.linkeddata.es/shapes#f47f83cfc80f60f1cbef92d413b7fac3> , <https://astrea.linkeddata.es/shapes#cb225dedec2709de81ed65ac557167f4> , <https://astrea.linkeddata.es/shapes#e7d09ea75472fdab925bd7954ab0a2f4> , <https://astrea.linkeddata.es/shapes#e5e60481891a7ecc2c20aa0dac64f94f> , <https://astrea.linkeddata.es/shapes#a63054539d67b719c20627268921009f> , <https://astrea.linkeddata.es/shapes#afd881c94c9eb18386fa899988124bb4> , <https://astrea.linkeddata.es/shapes#cc632e14c8ed1048c2f016b616a6454d> , <https://astrea.linkeddata.es/shapes#843894ab099b0bfd41efcc870b3ac339> , <https://astrea.linkeddata.es/shapes#ac3508ad06531d8955179421477e79cb> , <https://astrea.linkeddata.es/shapes#4517fb767ce2af2c860f4e549d19871c> , <https://astrea.linkeddata.es/shapes#539f41797854d781d70decd8feed571d> , <https://astrea.linkeddata.es/shapes#dbfe8edd99a969e4bb6583537cd3ae38> , <https://astrea.linkeddata.es/shapes#9a09ebbeaabdba0737e070115179fc1d> , <https://astrea.linkeddata.es/shapes#57df1a65a25865c0167ecebb2c6535d8> , <https://astrea.linkeddata.es/shapes#b0e4858dd6a7fdf0deca7b1a3e325357> , <https://astrea.linkeddata.es/shapes#0e9df4f49cf1f0a3373861594f2772a3> , <https://astrea.linkeddata.es/shapes#0bebc2e37b964b598b618f6c7f41a3f3> , <https://astrea.linkeddata.es/shapes#aa82fa1bc8a3081b7a39871dcbc1f301> , <https://astrea.linkeddata.es/shapes#38216e38dcc5d3e0224732e739df6f81> , <https://astrea.linkeddata.es/shapes#3612b2c16ebce72371e3646a901384d2> , <https://astrea.linkeddata.es/shapes#d8098cbc63e6db922b998548f87f3ae9> , <https://astrea.linkeddata.es/shapes#eeb016c42986216ec41a2da9c118ff0e> , <https://astrea.linkeddata.es/shapes#c38ddf7f7d575c414b91bceafbe9a23c> , <https://astrea.linkeddata.es/shapes#2aab3df6f573f96c7d1e2431fedacf52> , <https://astrea.linkeddata.es/shapes#610036490e2def125196e3d2f5fa2a4e> , <https://astrea.linkeddata.es/shapes#e4f82017b8b17d08ed7612a5ee150437> , <https://astrea.linkeddata.es/shapes#af91459a67d2874d9cca016091bf8161> , <https://astrea.linkeddata.es/shapes#13209cf65cdd0c3a1b603290aec1f52e> , <https://astrea.linkeddata.es/shapes#580893e949e91f23eb11d852d33b5700> , <https://astrea.linkeddata.es/shapes#5bdcba1dc7cc5ac1893b212e1d1a277c> , <https://astrea.linkeddata.es/shapes#94e3ae02ec7964676d0ad071c6fefb15> , <https://astrea.linkeddata.es/shapes#4808aa6a5fec224bbb79201d761f6908> , <https://astrea.linkeddata.es/shapes#62cb8babef7c4e3f1314042944af7c21> , <https://astrea.linkeddata.es/shapes#6587ae3a6493ef6e8400062bebaeb230> , <https://astrea.linkeddata.es/shapes#9b91556fe784bbe422cac71335042a93> , <https://astrea.linkeddata.es/shapes#fdab135e5e2ec74649a756159a8bbc93> , <https://astrea.linkeddata.es/shapes#d5b423bb5578e4aa5c0b5191bf42123f> , <https://astrea.linkeddata.es/shapes#fc529fa0ca7b5b1ef8c07f3af14ccff6> , <https://astrea.linkeddata.es/shapes#30ab1a291b0aed26d808710625b09ecc> , <https://astrea.linkeddata.es/shapes#d546865e49ff69c8b949c05094184315> , <https://astrea.linkeddata.es/shapes#4c6b24d90f0552a8df061124f285506d> , <https://astrea.linkeddata.es/shapes#b535da7230882d997bbb3971b733031b> , <https://astrea.linkeddata.es/shapes#0bc5c70f247c5857422f1e2ab68a94aa> , <https://astrea.linkeddata.es/shapes#a581d506f76f32455fbb3dce8a9a5b20> , <https://astrea.linkeddata.es/shapes#98bde45f537b8f3fe691bfd885c8687c> , <https://astrea.linkeddata.es/shapes#b33a4c13d391551e9a03969aa670e005> , <https://astrea.linkeddata.es/shapes#2f6546bb55152be079a5e220e4620fed> , <https://astrea.linkeddata.es/shapes#48ea695aa98408a6ade8ae77c99c7bb4> , <https://astrea.linkeddata.es/shapes#6c4eb5c4906d5ba4c081f85367dd0edd> , <https://astrea.linkeddata.es/shapes#725bbb5e075a321c737dde30db7d3a76> , <https://astrea.linkeddata.es/shapes#7b722600669ba01f596047cf2001951f> , <https://astrea.linkeddata.es/shapes#a6f9f94a4804975b719b55a6f8aa4722> , <https://astrea.linkeddata.es/shapes#28652149370937211205956d2ff50fee> , <https://astrea.linkeddata.es/shapes#7bbadd0bbac06211e246d5a7f9767dfa> , <https://astrea.linkeddata.es/shapes#0ca183e17743880a2cdf5c24617b00f9> , <https://astrea.linkeddata.es/shapes#54d78d2ef08bbece51ef04d5edd58ffe> , <https://astrea.linkeddata.es/shapes#40cac3f9a1397b5ef47c697cccc0d6b8> , <https://astrea.linkeddata.es/shapes#e7eab2baf1b1ffa91b1b54df1093d0d4> , <https://astrea.linkeddata.es/shapes#21f0db7aa625ef75f1d7d3a797b749b3> , <https://astrea.linkeddata.es/shapes#f5d85329dd8373607183ef7a6a2c3fc7> , <https://astrea.linkeddata.es/shapes#77918fa8f252700e8866b9d9abb6e2e0> , <https://astrea.linkeddata.es/shapes#30df6b1dbb766688d020b40f9baf3fdf> , <https://astrea.linkeddata.es/shapes#a15cdb5fb0143770c399bc65f0e94507> , <https://astrea.linkeddata.es/shapes#30a3e0c3410ac783ff60746e28e25466> , <https://astrea.linkeddata.es/shapes#595adf0af2e65af0e92e8fbc57687966> , <https://astrea.linkeddata.es/shapes#3fd1c3e6ac5ad7421513b9e7a712c7f6> , <https://astrea.linkeddata.es/shapes#689c09fb8ab0bd55e47f98874f59f4c6> , <https://astrea.linkeddata.es/shapes#7f8fae374fb6ef8f9f1e3a2af47a133d> , <https://astrea.linkeddata.es/shapes#c463b532073d795f36681ecf2862ee2f> , <https://astrea.linkeddata.es/shapes#6276e1a70bb0b70c72b8fd5a1ef6c3a9> , <https://astrea.linkeddata.es/shapes#0660a2d94bd01787143ebd014b317cb6> , <https://astrea.linkeddata.es/shapes#46deb4072bf7272b8ec8fdba42635e4b> , <https://astrea.linkeddata.es/shapes#029d592e0ac3da5837e903875e79156b> , <https://astrea.linkeddata.es/shapes#c955bb6c63c6bc2aa62af1a203aa7507> , <https://astrea.linkeddata.es/shapes#808bb94a225e8bf7ff74dd3f4500ec5f> , <https://astrea.linkeddata.es/shapes#ef9430edbb6f03b952872ba3a7898127> , <https://astrea.linkeddata.es/shapes#74953b7bbea2dde22e4019b4ed90465b> , <https://astrea.linkeddata.es/shapes#f87e10c40a586b7b4bcad3b379f43a6a> , <https://astrea.linkeddata.es/shapes#7d500845887f53beb750d2a134541b12> ;
         <https://w3id.org/def/astrea#generatedShapesFrom>
                 <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/1105901718> , <https://astrea.linkeddata.es/report/2053321677> , <https://astrea.linkeddata.es/report/0771550209> , <https://astrea.linkeddata.es/report/1486927977> , <https://astrea.linkeddata.es/report/01401279310> , <https://astrea.linkeddata.es/report/01163512728> , <https://astrea.linkeddata.es/report/0674618880> , <https://astrea.linkeddata.es/report/1963213088> .
 
@@ -1887,9 +1901,10 @@
         sh:targetClass  saref:OffCommand .
 
 <https://astrea.linkeddata.es/shapes#6c4eb5c4906d5ba4c081f85367dd0edd>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:RadianceExposure .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:RadianceExposure .
 
 <https://astrea.linkeddata.es/shapes#c76ba196dfc654e7d5a0061e7055c066>
         a                 sh:PropertyShape ;
@@ -1908,9 +1923,10 @@
         sh:path      saref:hasCommand .
 
 <https://astrea.linkeddata.es/shapes#063f206ce3739840972aeccecf104496>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:Power .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Power .
 
 <https://astrea.linkeddata.es/shapes#73fdddf0a990c4784c6646f0d41ea2c1>
         a         sh:PropertyShape ;
@@ -2017,11 +2033,6 @@
         <https://w3id.org/def/astrea#statusCode>
                 "200"^^xsd:int .
 
-<https://astrea.linkeddata.es/shapes#898de55fa6d29ad1ab177d8f13569e87>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:hasFunction .
-
 <https://astrea.linkeddata.es/shapes#30df6b1dbb766688d020b40f9baf3fdf>
         a               sh:NodeShape ;
         rdfs:label      "On off state" ;
@@ -2029,6 +2040,11 @@
         sh:name         "On off state" ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:OnOffState .
+
+<https://astrea.linkeddata.es/shapes#898de55fa6d29ad1ab177d8f13569e87>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:hasFunction .
 
 <https://astrea.linkeddata.es/shapes#fbd4ab2d5fae631f5508a529d1eec812>
         a                 sh:PropertyShape ;
@@ -2085,9 +2101,10 @@
         sh:path         saref:hasCommand .
 
 <https://astrea.linkeddata.es/shapes#e7d09ea75472fdab925bd7954ab0a2f4>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:Acceleration .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Acceleration .
 
 <https://astrea.linkeddata.es/shapes#6c91e833ee67bdaace3a659fda2454ba>
         a               sh:NodeShape ;
@@ -2238,9 +2255,10 @@
         sh:targetClass    qu:Unit .
 
 <https://astrea.linkeddata.es/shapes#095f9984c5d4662d997b832984a4966e>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:StressOrPressure .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:StressOrPressure .
 
 <https://astrea.linkeddata.es/shapes#c942d12c5bed2663eb227336ba3f7f5a>
         a                 sh:PropertyShape ;
@@ -2304,14 +2322,13 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:SetRelativeLevelCommand .
 
-<https://astrea.linkeddata.es/shapes#84b5a1d4970db321df0b6a7de3b58953>
+<https://astrea.linkeddata.es/shapes#6700c174117da3e7eea079c1a2e0adc8>
         a               sh:NodeShape ;
-        rdfs:label      "Set level command" ;
-        sh:description  "A type of command" ;
-        sh:name         "Set level command" ;
+        rdfs:label      "Pressure unit" ;
+        sh:description  "The unit of measure for pressure" ;
+        sh:name         "Pressure unit" ;
         sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#7f8fae374fb6ef8f9f1e3a2af47a133d> ;
-        sh:targetClass  saref:SetLevelCommand .
+        sh:targetClass  saref:PressureUnit .
 
 <https://astrea.linkeddata.es/shapes#46deb4072bf7272b8ec8fdba42635e4b>
         a                 sh:PropertyShape ;
@@ -2331,13 +2348,14 @@
         sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
         sh:qualifiedValueShape  [ sh:class  saref:Device ] .
 
-<https://astrea.linkeddata.es/shapes#6700c174117da3e7eea079c1a2e0adc8>
+<https://astrea.linkeddata.es/shapes#84b5a1d4970db321df0b6a7de3b58953>
         a               sh:NodeShape ;
-        rdfs:label      "Pressure unit" ;
-        sh:description  "The unit of measure for pressure" ;
-        sh:name         "Pressure unit" ;
+        rdfs:label      "Set level command" ;
+        sh:description  "A type of command" ;
+        sh:name         "Set level command" ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  saref:PressureUnit .
+        sh:property     <https://astrea.linkeddata.es/shapes#7f8fae374fb6ef8f9f1e3a2af47a133d> ;
+        sh:targetClass  saref:SetLevelCommand .
 
 <https://astrea.linkeddata.es/shapes#725bbb5e075a321c737dde30db7d3a76>
         a               sh:NodeShape ;
@@ -2362,14 +2380,6 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    cf-feature:Medium .
 
-<https://astrea.linkeddata.es/shapes#c3450a44805b9f78df37e37c47a862f1>
-        a               sh:NodeShape ;
-        rdfs:label      "Power" ;
-        sh:description  "A saref:Property related to some measurements that are characterized by a certain value that is measured in a power unit (such as watt or kilowatt).  Further specializations of the saref:Power class can be found in the SAREF4ENER extension, where classes such as PowerMax, PowerMin and PowerExpected are defined." ;
-        sh:name         "Power" ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  saref:Power .
-
 <https://astrea.linkeddata.es/shapes#38216e38dcc5d3e0224732e739df6f81>
         a               sh:NodeShape ;
         rdfs:label      "Energy unit" ;
@@ -2377,6 +2387,14 @@
         sh:name         "Energy unit" ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:EnergyUnit .
+
+<https://astrea.linkeddata.es/shapes#c3450a44805b9f78df37e37c47a862f1>
+        a               sh:NodeShape ;
+        rdfs:label      "Power" ;
+        sh:description  "A saref:Property related to some measurements that are characterized by a certain value that is measured in a power unit (such as watt or kilowatt).  Further specializations of the saref:Power class can be found in the SAREF4ENER extension, where classes such as PowerMax, PowerMin and PowerExpected are defined." ;
+        sh:name         "Power" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  saref:Power .
 
 <https://astrea.linkeddata.es/shapes#bb69f9714072d38c37219ae2170b632d>
         a                 sh:PropertyShape ;
@@ -2435,9 +2453,10 @@
         sh:targetClass  saref:Switch .
 
 <https://astrea.linkeddata.es/shapes#798f5efed7706e1ab95b8bff19b57ed8>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:SurfaceDensity .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:SurfaceDensity .
 
 <https://astrea.linkeddata.es/shapes#3355ae85fe3a2cc8061e585346686eb5>
         a               sh:NodeShape ;
@@ -2611,9 +2630,10 @@
         sh:targetClass    cf-feature:Layer .
 
 <https://astrea.linkeddata.es/shapes#96c5445ce9eb6c581ca247628a9b99fa>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:Density .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Density .
 
 <https://astrea.linkeddata.es/shapes#e85f7f569c1b43b31809a79038a33ed0>
         a                 sh:NodeShape ;
@@ -2988,6 +3008,12 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         saref:measuresProperty .
 
+<https://astrea.linkeddata.es/shapes#3cadcceeb4d136522f36af7913b4481e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:EnergyDensity .
+
 <https://astrea.linkeddata.es/shapes#eeb016c42986216ec41a2da9c118ff0e>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
@@ -3110,9 +3136,10 @@
         sh:targetClass  saref:HVAC .
 
 <https://astrea.linkeddata.es/shapes#5df41e27a6a109010ffe856646bac71a>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:Temperature .
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Temperature .
 
 <https://astrea.linkeddata.es/shapes#f92b3a74b332e8a8a7387cf080997918>
         a                 sh:PropertyShape ;
