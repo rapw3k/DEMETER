@@ -35,14 +35,19 @@ The AIM models are profiled using "profilewiz", a python toolkit using the follo
 
 6) invoke profilewiz with the following arguments:
 
-* 	-a (all artefacts)
-* 	-n (normalise)
+* 	-a (all derived artefacts - not including rdf/xml serialisation)
+* 	-x (include RDF/XML)
+* 	-n (normalise - extract specific profile from imported copies)
 *	-q (use Qnames (short form))
-*	-p lib/profile_cat.ttl
-*	../models/*.ttl
+*	-p lib/profile_cat.ttl (lib of otherwise inaccessible imports in includes for different representations)
+*	../models/*.ttl  (glob-friendly list of models to profile)
 
 '''
-python -m profilewiz -a -q - -p lib/profile_cat.ttl ../models/*.ttl
+profilewiz -n -a -q -x -p lib/profile_cat.ttl ../models/*.ttl
+'''
+
+'''
+python -m profilewiz -n -a -q -x -p lib/profile_cat.ttl ../models/*.ttl
 '''
 
 
