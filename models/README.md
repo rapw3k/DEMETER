@@ -108,10 +108,12 @@ Developers have different options to find terms in AIM:
 * In order to make sure all elements are valid AIM elements you can use the json-ld playground: [https://json-ld.org/playground/](https://json-ld.org/playground/). 
 This is not validating the semantics though, just that elements are resolvable.
 
-* In order to validate the semantics, there are different tools we are evaluating still (and will provide some service).  
+* In order to validate the semantics, there are different tools we are evaluating still.
+The goal is to provide a service for for validation, which developers will be able to use from their components, reusing existing solutions if available.  
 For now, you can : 
 	- use the online tool [https://shacl.org/playground/](https://shacl.org/playground/). However, this tool is not checking some restrictions (e.g., datetime format). New work was moved to library [https://github.com/zazuko/rdf-validate-shacl](https://github.com/zazuko/rdf-validate-shacl)
-	- use Apache Jena SHACL [https://jena.apache.org/documentation/shacl/](https://jena.apache.org/documentation/shacl/), e.g.,
+	- use Apache Jena SHACL [https://jena.apache.org/documentation/shacl/](https://jena.apache.org/documentation/shacl/) - see examples below
+	- use [Astrea Web Service](https://astrea.linkeddata.es/). This is a service under testing, but provides a good basis for reusing.
 
 ```
 ./shacl v -s demeterAgriProfile-SHACL.ttl -d instance-AIM.ttl
