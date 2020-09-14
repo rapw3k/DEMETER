@@ -184,4 +184,5 @@ For now, you can :
 ] .
 ```
 
-The SHACL definition for whole AIM domain layer is: [https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/SHACL/demeterAgriProfile-SHACL.ttl](https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/SHACL/demeterAgriProfile-SHACL.ttl)
+The SHACL definition for whole AIM domain layer, which was generated using [Astrea Web Service](https://astrea.linkeddata.es/), is: 
+[https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/SHACL/demeterAgriProfile-SHACL.ttl](https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/SHACL/demeterAgriProfile-SHACL.ttl)
