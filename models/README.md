@@ -109,7 +109,7 @@ Developers have different options to find terms in AIM:
 This is not validating the semantics though, just that elements are resolvable.
 
 * In order to validate the semantics, there are different tools we are evaluating still.
-The goal is to provide a service for for validation, which developers will be able to use from their components, reusing existing solutions if available.  
+The goal is to provide a service for validation, which developers will be able to use from their components, reusing existing solutions if available.  
 For now, you can : 
 	- use the online tool [https://shacl.org/playground/](https://shacl.org/playground/). However, this tool is not checking some restrictions (e.g., datetime format). New work was moved to library [https://github.com/zazuko/rdf-validate-shacl](https://github.com/zazuko/rdf-validate-shacl)
 	- use Apache Jena SHACL [https://jena.apache.org/documentation/shacl/](https://jena.apache.org/documentation/shacl/) - see examples below
