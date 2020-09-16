@@ -7,15 +7,13 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix jsonld:  <https://www.w3.org/TR/json-ld/> .
+@prefix jsoncontext: <http://www.opengis.net/def/ogc-na/profiles/json_ld_context> .
+@prefix proxy: <https://w3id.org/demeter/agri/proxy/> .
 
 <http://foodie-cloud.com/model/foodie> a prof:Profile ;
 	rdfs:label "Foodie Ontology" ;
-	prof:hasResource [ 
-			prof:hasRole prof:schema ;
-			prof:hasArtifact "foodie.jsonld" ;
-			dct:conformsTo jsonld: ;
-            dct:format "application/ld+json" ;
-		], [
+	rdfs:comment "content negotation using base URI results in a security error for https - so need to use a proxy object in the short term" ;
+	prof:hasResource  [
 			prof:hasRole prof:cachedCopy ;
 			prof:hasArtifact "lib/foodie.ttl" ;
 			dct:conformsTo owl: ;
@@ -23,15 +21,28 @@
 		] ;
 .
 
+proxy:foodie a prof:Profile ;
+	rdfs:label "Foodie Ontology" ;
+	prof:isProfileOf <http://foodie-cloud.com/model/foodie> ;
+	prof:hasResource [ 
+			prof:hasRole prof:schema ;
+			prof:hasArtifact <https://w3id.org/demeter/agri/proxy/foodie?_profile=jsoncontext> ;
+			rdfs:comment "self_referential as URI supports content negotation" ;
+			dct:conformsTo jsoncontext:  ;
+            dct:format "application/ld+json" ;
+		] ;
+.
+
 <https://uri.fiware.org/ns/data-models> a prof:Profile ;
 	rdfs:label "FIWARE data models" ;
 	prof:hasResource [ 
 			prof:hasRole prof:schema ;
-			prof:hasArtifact "https://fiware.github.io/data-models/full-context.jsonld" ;
-			dct:conformsTo jsonld: ;
+			prof:hasArtifact <https://fiware.github.io/data-models/full-context.jsonld> ;
+			rdfs:comment "fiware jsonld is rather cumbersome aggregation of many things - it would be better it the references to this namespace were finer grained and handled by explicit owl:imports or prof:isProfileOf links." ;
+			dct:conformsTo jsoncontext: ;
             dct:format "application/ld+json" ;
 		], [
-			prof:hasRole prof:futureCachedCopy ;
+			prof:hasRole prof:cachedCopy ;
 			prof:hasArtifact "lib/fiware.ttl" ;
 			dct:conformsTo owl: ;
             dct:format "text/turtle" ;
@@ -56,6 +67,19 @@
 			prof:hasArtifact <https://mariapoveda.github.io/saref-ext/OnToology/SAREF4AGRI/ontology/saref4agri.ttl/documentation/ontology.ttl> ;
 			dct:conformsTo owl: ;
             dct:format "text/turtle" ;
+		] ;
+.
+
+proxy:saref4agri a prof:Profile ;
+	prof:isProfileOf <https://w3id.org/def/saref4agri> ;
+	rdfs:label  "DEMETER profile of SAREF extension for Agriculture"@en ;
+	rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+	prof:hasResource  [ 
+			prof:hasRole prof:schema ;
+			prof:hasArtifact <https://w3id.org/demeter/agri/proxy/saref4agri?_profile=jsoncontext> ;
+			rdfs:comment "This URI correctly handles content negotiation but does not offer a json-ld context representation" ;
+			dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
 		] ;
 .
 
