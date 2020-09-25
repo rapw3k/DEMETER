@@ -1,31 +1,24 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriFeature",
     "@context": [
-        "https://w3id.org/def/saref4agri",
-        "https://fiware.github.io/data-models/full-context.jsonld",
+        "extracted\\agriFeature_geosparql.ttl_context.jsonld",
+        "extracted\\agriFeature_foodie.ttl_context.jsonld",
+        "extracted\\agriFeature_saref4agri.ttl_context.jsonld",
+        "extracted\\agriFeature_fiware.ttl_context.jsonld",
+        "extracted\\agriFeature_ogc_sf.rdf_context.jsonld",
+        "extracted\\agriFeature_wgs84_pos_context.jsonld",
         {
-            "saref4agri": "https://w3id.org/def/saref4agri#",
+            "@vocab": "https://w3id.org/demeter/agri/agriFeature",
+            "geo": "http://www.opengis.net/ont/geosparql#",
             "af-inspire": "http://inspire.ec.europa.eu/schemas/af/3.0#",
+            "foodie": "http://foodie-cloud.com/model/foodie#",
+            "saref4agri": "https://w3id.org/def/saref4agri#",
             "fiware": "https://uri.fiware.org/ns/data-models#",
             "sf": "http://www.opengis.net/ont/sf#",
-            "geo": "http://www.opengis.net/ont/geosparql#",
-            "foodie": "http://foodie-cloud.com/model/foodie#",
-            "wgs84_pos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
             "act-inspire": "http://inspire.ec.europa.eu/schemas/act-core/3.0#",
-            "AgriGreenhouse": {
-                "@id": "fiware:AgriGreenhouse"
-            },
-            "AgriFarm": {
-                "@id": "fiware:AgriFarm"
-            },
-            "AgriParcel": {
-                "@id": "fiware:AgriParcel"
-            },
+            "wgs84_pos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
             "Building": {
                 "@id": "saref4agri:Building"
-            },
-            "Holding": {
-                "@id": "af-inspire:Holding"
             },
             "Farm": {
                 "@id": "saref4agri:Farm"
@@ -33,32 +26,20 @@
             "Parcel": {
                 "@id": "saref4agri:Parcel"
             },
-            "hasAgriParcelChildren": {
-                "@id": "fiware:hasAgriParcelChildren",
-                "@type": "@id"
-            },
-            "hasAgriParcel": {
-                "@id": "fiware:hasAgriParcel",
-                "@type": "@id"
-            },
             "hasAgriSoil": {
                 "@id": "fiware:hasAgriSoil",
                 "@type": "@id"
             },
+            "location": {
+                "@id": "wgs84_pos:location",
+                "@type": "@id"
+            },
+            "crop": {
+                "@id": "foodie:crop",
+                "@type": "@id"
+            },
             "hasAgriCrop": {
                 "@id": "fiware:hasAgriCrop",
-                "@type": "@id"
-            },
-            "hasAgriParcelParent": {
-                "@id": "fiware:hasAgriParcelParent",
-                "@type": "@id"
-            },
-            "landLocation": {
-                "@id": "fiware:landLocation",
-                "@type": "@id"
-            },
-            "location": {
-                "@id": "fiware:location",
                 "@type": "@id"
             },
             "cropStatus": {
