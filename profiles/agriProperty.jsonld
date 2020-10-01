@@ -1,9 +1,348 @@
 [
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#power",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#property",
     "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Power",
+      "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind",
       "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_area_fraction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "vegetation area fraction"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilType",
+    "@type": [
+      "https://w3id.org/saref#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_density",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Density"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "snow density"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_frozen_water_in_soil",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "volume fraction of frozen water in soil"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Density",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_field_capacity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "volume fraction of condensed water in soil at field capacity"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#AgriParcelRecord",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This entity contains a harmonised description of the conditions recorded on a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "AgriParcelRecord"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/saref#Humidity",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/saref#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Humidity"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#analysisDate",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasTimestamp"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_convective_snowfall_rate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "lwe convective snowfall rate"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_sand_in_soil",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "volume fraction of sand in soil"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#snowfall",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
+      }
+    ],
+    "http://www.w3.org/ns/ssn/hasProperty": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_flux"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_flux"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_snowfall_amount"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_convective_snowfall_amount"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_convective_snowfall_amount"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_amount"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_snowfall_amount"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_amount"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_snowfall_rate"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_flux"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_convective_snowfall_rate"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_snowfall_amount"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_amount"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_large_scale_snowfall_amount"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_large_scale_snowfall_rate"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_large_scale_snowfall_amount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "lwe thickness of large scale snowfall amount"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#water",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Precipitation",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/FeatureOfInterest"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_carbon_content",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "vegetation carbon content"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Scheme",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#pressureTendency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Is the pressure rising or falling? It can be expressed in quantitative terms or qualitative terms (raising, falling, steady)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "pressureTendency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasValue"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#distance",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Distance"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -12,20 +351,30 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "power"
+        "@value": "distance"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#ElectricityAndMagnetismScheme"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_capacity",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#RadianceExposure",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -36,15 +385,66 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "soil thermal capacity"
+        "@value": "soil moisture content"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_grain_size",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#surfaceDensity",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Distance"
+      "http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "surface density"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#recordHasAgriParcel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Reference to the AgriParcel to which this entity relates."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "recordHasAgriParcel"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_rainfall_amount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -53,15 +453,45 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "snow grain size"
+        "@value": "thickness of large scale rainfall amount"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/def/saref4agri#Precipitation",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Power",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://w3id.org/def/saref4agri#"
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#scalarProperty",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceLayer",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/FeatureOfInterest"
       }
     ]
   },
@@ -78,67 +508,6 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "lwe thickness of convective snowfall amount"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyDensity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/FeatureOfInterest"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_flux",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "convective snowfall flux"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_moisture_content_of_soil_layer",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "lwe thickness of moisture content of soil layer"
       }
     ]
   },
@@ -170,26 +539,13 @@
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#airTemperature",
+    "@id": "https://uri.fiware.org/ns/data-models#soilTemperature",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "The observed air temperature (in the shade) nominally in degrees centigrade."
+        "@value": "The observed soil temperature nominally in degrees centigrade."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -200,7 +556,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "airTemperature"
+        "@value": "soilTemperature"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
@@ -210,32 +566,20 @@
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#compressibility",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility"
-    ],
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Temperature",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@value": "compressibility"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_hydraulic_conductivity_at_saturation",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_dioxide",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -246,12 +590,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "soil hydraulic conductivity at saturation"
+        "@value": "atmosphere mass content of carbon dioxide"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#ElectricityAndMagnetismScheme",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SolidStatePhysicsScheme",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Scheme",
       "http://www.w3.org/2002/07/owl#NamedIndividual"
@@ -259,629 +603,6 @@
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#IrrigationWater",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_amount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "large scale snowfall amount"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#temperature",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Air’s temperature observed"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "temperature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasValue"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "moisture content of soil layer"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_frozen_water_content_of_soil_layer",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "lwe thickness of frozen water content of soil layer"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_type",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "soil type"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#velocity",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "velocity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#windDirection",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The wind direction expressed in decimal degrees compared to geographic North (measured clockwise), encoded as a Number. Range 0 to 360."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "windDirection"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasValue"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpecificEntropy",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#pressure",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "pressure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/saref#FeatureOfInterest",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/saref#"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/FeatureOfInterest"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#WeatherObserved",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "A weather observation made over a period of time at a specific location"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "WeatherObserved"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/saref#FeatureOfInterest"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Scheme",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "PropertyKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#refDevice",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "A reference to the device(s) which captured this observation."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "refDevice"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentProperty": [
-      {
-        "@id": "https://w3id.org/saref#measurementMadeBy"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#water",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Scheme",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#soundIntensity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "sound intensity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#snowHeight",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The snow height observed by generic snow depth measurement sensors, expressed in centimeters."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "snowHeight"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasValue"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_silt_in_soil",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "volume fraction of silt in soil"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_frozen_water_content",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "soil frozen water content"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Density",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#productionAmount",
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#relatesToMeasurement"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_water_vapor_content",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "atmosphere water vapor content"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_snowfall_amount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "thickness of large scale snowfall amount"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Scheme",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_intensity_in_air",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "sound intensity in air"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_flux",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "snowfall flux"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#weatherType",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The observed weather type. It is represented by a comma separated list of weather statuses, for instance overcast, lightRain."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "weatherType"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#carbonContent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Concentration"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "carbon content"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#relativeHumidity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Relative Humidity a number between 0 and 1 representing the range of 0% to 100%. 0 ≤ relativeHumidity ≤ 1"
-      },
-      {
-        "@value": "Air’s relative humidity observed (percentage, expressed in parts per one)."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
-      },
-      {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "relativeHumidity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasValue"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_conductivity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "soil thermal conductivity"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Power",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
       }
     ]
   },
@@ -902,47 +623,19 @@
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#density",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#vectorProperty",
     "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Density",
+      "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind",
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
       }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "density"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
-      }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#property",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_pressure_in_air",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content_at_field_capacity",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -953,58 +646,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "sound pressure in air"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#windSpeed",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The observed wind speed in m/s, encoded as a Number."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "windSpeed"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasValue"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#AirTemperature",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_convective_snowfall_rate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "lwe convective snowfall rate"
+        "@value": "soil moisture content at field capacity"
       }
     ]
   },
@@ -1036,7 +678,59 @@
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_convective_snowfall_amount",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#soilProperty",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasProperty"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#SoilTemperature",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#sameAs": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_temperature"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#mass_concentration_of_condensed_water_in_soil",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -1047,14 +741,61 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "thickness of convective snowfall amount"
+        "@value": "mass concentration of condensed water in soil"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#length",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil",
     "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Distance",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "volume fraction of condensed water in soil"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_layer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
+      }
+    ],
+    "http://www.w3.org/ns/ssn/hasProperty": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer_at_field_capacity"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#frozen_water_content_of_soil_layer"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_moisture_content_of_soil_layer"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_frozen_water_content_of_soil_layer"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#liquid_water_content_of_soil_layer"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#vapourPressure",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure",
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1064,143 +805,57 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "length"
+        "@value": "vapour pressure"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#air_density",
+    "@id": "http://www.w3.org/ns/ssn/hasProperty",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "air density"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer_at_field_capacity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "moisture content of soil layer at field capacity"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#liquid_water_content_of_soil_layer",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "liquid water content of soil layer"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_wilting_point",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "volume fraction of condensed water in soil at wilting point"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#solarRadiation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Instantaneous solar radiation measured in kW/m2."
-      },
-      {
-        "@value": "The solar radiation observed measured in Watts per square meter."
+        "@value": "A relation between a FeatureOfInterest and a Property of that feature."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
-      },
-      {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+        "@id": "http://purl.oclc.org/NET/ssnx/ssn"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "solarRadiation"
+        "@value": "has property"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "http://www.w3.org/2002/07/owl#equivalentProperty": [
       {
-        "@id": "https://w3id.org/saref#hasValue"
+        "@id": "https://w3id.org/saref#hasProperty"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_porosity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
+    "@id": "https://w3id.org/saref#FeatureOfInterest",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+        "@id": "https://w3id.org/saref#"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "soil porosity"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Wind",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
       {
         "@id": "http://www.w3.org/ns/sosa/FeatureOfInterest"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_rainfall_amount",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_snowfall_amount",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -1211,18 +866,95 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "thickness of large scale rainfall amount"
+        "@value": "lwe thickness of snowfall amount"
       }
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#dewPoint",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.w3.org/2004/02/skos/core#Scheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#soundPressure",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "sound pressure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#water_evaporation_flux_from_soil",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "water evaporation flux from soil"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_pores",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "volume fraction of condensed water in soil pores"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#productionAmount",
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#relatesToMeasurement"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#precipitation",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "The dew point encoded as a number."
+        "@value": "Precipitation level observed."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1233,7 +965,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "dewPoint"
+        "@value": "precipitation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
@@ -1243,14 +975,34 @@
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_water_vapor_content",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#Scheme",
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "atmosphere water vapor content"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_pores",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
+      }
+    ],
+    "http://www.w3.org/ns/ssn/hasProperty": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_pores"
       }
     ]
   },
@@ -1271,15 +1023,29 @@
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#PropertyType",
+    "@id": "https://uri.fiware.org/ns/data-models#refPointOfInterest",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A reference to a point of interest (usually a weather station) associated to this observation"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://foodie-cloud.com/model/foodie"
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "refPointOfInterest"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_soil_moisture_content",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_frozen_water_content_of_soil_layer",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -1290,7 +1056,71 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "lwe thickness of soil moisture content"
+        "@value": "lwe thickness of frozen water content of soil layer"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#soundEnergyDensity",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyDensity",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "sound energy density"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_critical_point",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "volume fraction of condensed water in soil at critical point"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#WeatherObserved",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A weather observation made over a period of time at a specific location"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "WeatherObserved"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/saref#FeatureOfInterest"
       }
     ]
   },
@@ -1306,18 +1136,10 @@
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_field_capacity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
+    "@id": "http://foodie-cloud.com/model/foodie#propertyType",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "volume fraction of condensed water in soil at field capacity"
+        "@id": "http://foodie-cloud.com/model/foodie"
       }
     ]
   },
@@ -1335,39 +1157,69 @@
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#soilProperty",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#frozen_water_content_of_soil_layer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://foodie-cloud.com/model/foodie"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "https://w3id.org/saref#hasProperty"
+        "@value": "frozen water content of soil layer"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#vegetation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
       }
     ],
-    "http://www.w3.org/ns/ssn/hasProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_area_fraction"
+        "@id": "http://www.w3.org/ns/sosa/FeatureOfInterest"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#PlantGrowthStage",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#velocity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "velocity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"
       },
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_carbon_content"
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_area_fraction",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_large_scale_snowfall_rate",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -1378,23 +1230,40 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "vegetation area fraction"
+        "@value": "lwe large scale snowfall rate"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#downward_heat_flux_in_soil",
+    "@id": "https://uri.fiware.org/ns/data-models#relativeHumidity",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Relative Humidity a number between 0 and 1 representing the range of 0% to 100%. 0 ≤ relativeHumidity ≤ 1"
+      },
+      {
+        "@value": "Air’s relative humidity observed (percentage, expressed in parts per one)."
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+      },
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "downward heat flux in soil"
+        "@language": "en",
+        "@value": "relativeHumidity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasValue"
       }
     ]
   },
@@ -1426,117 +1295,23 @@
     ]
   },
   {
-    "@id": "https://w3id.org/saref#Temperature",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://w3id.org/saref#"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_pores",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
-      }
-    ],
-    "http://www.w3.org/ns/ssn/hasProperty": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_pores"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#productionProperty",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasProperty"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilType",
-    "@type": [
-      "https://w3id.org/saref#Property"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#AgriParcelRecord",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "This entity contains a harmonised description of the conditions recorded on a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "AgriParcelRecord"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#PropertyTypeValue",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Precipitation",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/ns/sosa/FeatureOfInterest"
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#compressibility",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#Scheme",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility",
       "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#concentration",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Concentration"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -1545,50 +1320,20 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "concentration"
+        "@value": "compressibility"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#normalized_difference_vegetation_index",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "normalized difference vegetation index"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_sand_in_soil",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "volume fraction of sand in soil"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_layer",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -1599,38 +1344,106 @@
     ],
     "http://www.w3.org/ns/ssn/hasProperty": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer_at_field_capacity"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content"
       },
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_frozen_water_content_of_soil_layer"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_frozen_water_in_soil"
       },
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_moisture_content_of_soil_layer"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_frozen_water_content"
       },
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#liquid_water_content_of_soil_layer"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_critical_point"
       },
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#frozen_water_content_of_soil_layer"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content_at_field_capacity"
       },
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_sand_in_soil"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_suction_at_saturation"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_temperature"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_hydraulic_conductivity_at_saturation"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#downward_heat_flux_in_soil"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_porosity"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_silt_in_soil"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_soil_moisture_content"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_clay_in_soil"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#mass_concentration_of_condensed_water_in_soil"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_carbon_content"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#water_evaporation_flux_from_soil"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_capacity"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_type"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_albedo"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_conductivity"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_wilting_point"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_field_capacity"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_monoxide",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#pressure",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "atmosphere mass content of carbon monoxide"
+        "@value": "pressure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#SoilMoisture",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
       }
     ]
   },
@@ -1646,10 +1459,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
       },
       {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1665,156 +1478,54 @@
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#WeatherForecast",
+    "@id": "https://uri.fiware.org/ns/data-models#windSpeed",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "A weather forecast for a period of time and a location."
+        "@value": "The observed wind speed in m/s, encoded as a Number."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherForecast/doc/spec.html"
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "WeatherForecast"
+        "@language": "en",
+        "@value": "windSpeed"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://w3id.org/saref#FeatureOfInterest"
+        "@id": "https://w3id.org/saref#hasValue"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_clay_in_soil",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "volume fraction of clay in soil"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_snowfall_amount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "thickness of snowfall amount"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#vapourCompressibility",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "vapour compressibility"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#soundPressure",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "sound pressure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#soundEnergyDensity",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyDensity",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "sound energy density"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_carbon_content",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "vegetation carbon content"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#scalarProperty",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_temperature",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "snow temperature"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#energyFlowRate",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -1823,7 +1534,7 @@
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
@@ -1836,32 +1547,81 @@
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_convective_snowfall_amount",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://www.w3.org/2004/02/skos/core#Scheme"
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "thickness of convective snowfall amount"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_conductivity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "soil thermal conductivity"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#air_density",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "air density"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#nonQuantitativeProperty",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasValue"
       }
     ]
   },
   {
     "@id": "https://w3id.org/demeter/agri/agriProperty",
     "@type": [
-      "http://www.w3.org/ns/prov#Entity",
-      "http://www.w3.org/2002/07/owl#Ontology"
+      "http://www.w3.org/2002/07/owl#Ontology",
+      "http://www.w3.org/ns/prov#Entity"
     ],
     "http://purl.org/dc/terms/contributor": [
-      {
-        "@id": "_:cb1caf6096b22b87480cc25115bd87aa4dde25eb4d7307d95547b4de4cb79388636"
-      },
       {
         "@id": "_:cb186295134eb4eb787aa1c12d0396ab13a29bd03423e2c89d7c1dac645438e9832"
       },
       {
         "@id": "_:cb17ddc790c145a7c7bd206b877c8c91b186555bd636f37176b58bc2b2905fde52f"
+      },
+      {
+        "@id": "_:cb1caf6096b22b87480cc25115bd87aa4dde25eb4d7307d95547b4de4cb79388636"
       }
     ],
     "http://purl.org/dc/terms/creator": [
@@ -1895,28 +1655,28 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
-        "@id": "http://foodie-cloud.com/model/foodie"
+        "@id": "https://w3id.org/demeter/agri/agriCommon"
       },
       {
         "@id": "https://w3id.org/def/saref4agri"
       },
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu"
-      },
-      {
-        "@id": "https://w3id.org/demeter/agri/agriCommon"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
       },
       {
         "@id": "https://w3id.org/saref"
       },
       {
-        "@id": "http://www.w3.org/ns/sosa"
+        "@id": "http://foodie-cloud.com/model/foodie"
       },
       {
         "@id": "http://purl.oclc.org/NET/ssnx/qu/dim"
       },
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
+        "@id": "http://www.w3.org/ns/sosa"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionIRI": [
@@ -1931,61 +1691,40 @@
     ],
     "http://www.w3.org/ns/dx/prof/isProfileOf": [
       {
-        "@id": "http://www.w3.org/ns/sosa"
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim"
       },
       {
         "@id": "http://foodie-cloud.com/model/foodie"
       },
       {
-        "@id": "https://w3id.org/saref"
+        "@id": "http://www.w3.org/ns/sosa"
       },
       {
         "@id": "https://w3id.org/def/saref4agri"
       },
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
+      },
+      {
+        "@id": "https://w3id.org/saref"
       },
       {
         "@id": "http://purl.oclc.org/NET/ssnx/qu/qu"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
       }
     ],
     "http://www.w3.org/ns/prov#wasDerivedFrom": [
       {
-        "@id": "_:N7846bb15bc9541e5925fc934174f3a26"
+        "@id": "_:N261a146024b24bef9bca5b0f8fef2c42"
       }
     ],
     "http://www.w3.org/ns/prov#wasGeneratedBy": [
       {
-        "@id": "_:N2a82d316efd84ad2ac9d43f5fd00ea11"
+        "@id": "_:N5c22cbe0112f4d6a9ee63cc94208f5dc"
       }
     ],
     "http://xmlns.com/foaf/0.1/maker": [
       {
         "@id": "_:cb152080e39a516462cfbcb8fa410f64cc60d7611ed9ee092419811856ae58ef782"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb1caf6096b22b87480cc25115bd87aa4dde25eb4d7307d95547b4de4cb79388636",
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "Rob Atkinson"
-      }
-    ],
-    "https://schema.org/affiliation": [
-      {
-        "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5",
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "OGC"
       }
     ]
   },
@@ -2004,27 +1743,6 @@
   },
   {
     "@id": "_:cbe9ca596fa370267097d19c9edb0f9b6e1076031aa902795c19a946ef1f459a82",
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "ICCS"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb17ddc790c145a7c7bd206b877c8c91b186555bd636f37176b58bc2b2905fde52f",
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "Ioanna Roussaki"
-      }
-    ],
-    "https://schema.org/affiliation": [
-      {
-        "@id": "_:cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5",
     "http://xmlns.com/foaf/0.1/name": [
       {
         "@value": "ICCS"
@@ -2071,7 +1789,7 @@
     ]
   },
   {
-    "@id": "_:N7846bb15bc9541e5925fc934174f3a26",
+    "@id": "_:N261a146024b24bef9bca5b0f8fef2c42",
     "@type": [
       "http://www.w3.org/ns/prov#Entity"
     ],
@@ -2082,7 +1800,49 @@
     ]
   },
   {
-    "@id": "_:N2a82d316efd84ad2ac9d43f5fd00ea11",
+    "@id": "_:cb17ddc790c145a7c7bd206b877c8c91b186555bd636f37176b58bc2b2905fde52f",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Ioanna Roussaki"
+      }
+    ],
+    "https://schema.org/affiliation": [
+      {
+        "@id": "_:cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "ICCS"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb1caf6096b22b87480cc25115bd87aa4dde25eb4d7307d95547b4de4cb79388636",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Rob Atkinson"
+      }
+    ],
+    "https://schema.org/affiliation": [
+      {
+        "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "OGC"
+      }
+    ]
+  },
+  {
+    "@id": "_:N5c22cbe0112f4d6a9ee63cc94208f5dc",
     "@type": [
       "http://www.w3.org/ns/prov#Activity"
     ],
@@ -2094,28 +1854,72 @@
     "http://www.w3.org/ns/prov#endedAtTime": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-09-10"
+        "@value": "2020-10-01"
       }
     ],
     "http://www.w3.org/ns/prov#wasAssociatedWith": [
       {
-        "@id": "_:N8fc28842f7b3458ab85fea5090b904b4"
+        "@id": "_:N3dda75aaf59b43ac9e52526424ae2481"
       }
     ]
   },
   {
-    "@id": "_:N8fc28842f7b3458ab85fea5090b904b4",
+    "@id": "_:N3dda75aaf59b43ac9e52526424ae2481",
     "@type": [
       "http://www.w3.org/ns/prov#Agent"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "ProfileWiz 0.1.4"
+        "@value": "ProfileWiz 0.1.5"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_frozen_water_in_soil",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#radianceExposure",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#RadianceExposure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "radiance exposure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/saref#Property",
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      },
+      {
+        "@id": "http://foodie-cloud.com/model/foodie#PropertyType"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/organicMatter",
+    "@type": [
+      "https://w3id.org/saref#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_snowfall_amount",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -2126,18 +1930,18 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "volume fraction of frozen water in soil"
+        "@value": "thickness of snowfall amount"
       }
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#observedAt",
+    "@id": "https://uri.fiware.org/ns/data-models#airTemperature",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Indicates the date/time the record was observed/ last observed."
+        "@value": "The observed air temperature (in the shade) nominally in degrees centigrade."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -2148,17 +1952,60 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "observedAt"
+        "@value": "airTemperature"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://w3id.org/saref#hasTimestamp"
+        "@id": "https://w3id.org/saref#hasValue"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#frozen_water_content_of_soil_layer",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#windDirection",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The wind direction expressed in decimal degrees compared to geographic North (measured clockwise), encoded as a Number. Range 0 to 360."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "windDirection"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasValue"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_flux",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -2169,7 +2016,206 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "frozen water content of soil layer"
+        "@value": "convective snowfall flux"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_amount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "large scale snowfall amount"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/FeatureOfInterest"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Wind",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/sosa/FeatureOfInterest"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#concentration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Concentration"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "concentration"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyDensity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "moisture content of soil layer"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#soundIntensity",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "sound intensity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_intensity_in_air",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "sound intensity in air"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#snowHeight",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The snow height observed by generic snow depth measurement sensors, expressed in centimeters."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "snowHeight"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasValue"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#carbonContent",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Concentration",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "carbon content"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_frozen_water_content",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "soil frozen water content"
       }
     ]
   },
@@ -2186,6 +2232,104 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "soil albedo"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_silt_in_soil",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "volume fraction of silt in soil"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Concentration",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#Soil",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#downward_heat_flux_in_soil",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "downward heat flux in soil"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Scheme",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_soot_content",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "snow soot content"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_monoxide",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "atmosphere mass content of carbon monoxide"
       }
     ]
   },
@@ -2215,19 +2359,7 @@
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#vectorProperty",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_flux",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -2238,368 +2370,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "volume fraction of condensed water in soil"
+        "@value": "snowfall flux"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#mass_concentration_of_condensed_water_in_soil",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "mass concentration of condensed water in soil"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_pores",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "volume fraction of condensed water in soil pores"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#radianceExposure",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/dim#RadianceExposure"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "radiance exposure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#surfaceDensity",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "surface density"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_snowfall_rate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "lwe snowfall rate"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/electricConductivity",
-    "@type": [
-      "https://w3id.org/saref#Property"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_large_scale_snowfall_rate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "lwe large scale snowfall rate"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "soil moisture content"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#pressureTendency",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Is the pressure rising or falling? It can be expressed in quantitative terms or qualitative terms (raising, falling, steady)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "pressureTendency"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasValue"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#propertyType",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Temperature",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#SoilTemperature",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#sameAs": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_temperature"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/FeatureOfInterest"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_soot_content",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "snow soot content"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#Soil",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_snowfall_amount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "lwe thickness of snowfall amount"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_dioxide",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "atmosphere mass content of carbon dioxide"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content_at_field_capacity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "soil moisture content at field capacity"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/ns/ssn/hasProperty",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "A relation between a FeatureOfInterest and a Property of that feature."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/ssn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has property"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentProperty": [
-      {
-        "@id": "https://w3id.org/saref#hasProperty"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#vegetation",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -2610,98 +2386,15 @@
     ],
     "http://www.w3.org/ns/ssn/hasProperty": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_clay_in_soil"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_area_fraction"
       },
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_type"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_carbon_content"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_frozen_water_in_soil"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_porosity"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_sand_in_soil"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#water_evaporation_flux_from_soil"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_conductivity"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content_at_field_capacity"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_field_capacity"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_critical_point"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_suction_at_saturation"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#mass_concentration_of_condensed_water_in_soil"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_wilting_point"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#downward_heat_flux_in_soil"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_temperature"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_albedo"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_silt_in_soil"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_soil_moisture_content"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_capacity"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_frozen_water_content"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_hydraulic_conductivity_at_saturation"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_carbon_content"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_temperature",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Temperature",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "snow temperature"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_critical_point",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_moisture_content_of_soil_layer",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -2712,126 +2405,14 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "volume fraction of condensed water in soil at critical point"
+        "@value": "lwe thickness of moisture content of soil layer"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#energyFlowRate",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#normalized_difference_vegetation_index",
     "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#PlantGrowthStage",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#hasDevice",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Reference to the IoT devices associated with this [entity] i.e. sensors, controls."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
-      },
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "hasDevice"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/saref#Property",
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie#PropertyType"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SolidStatePhysicsScheme",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Scheme",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilTexture",
-    "@type": [
-      "https://w3id.org/saref#Property"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#SoilMoisture",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Distance",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_carbon_content",
-    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless",
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -2841,282 +2422,18 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "soil carbon content"
+        "@value": "normalized difference vegetation index"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceLayer",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/sosa/FeatureOfInterest"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_amount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "convective snowfall amount"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#RadianceExposure",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/organicMatter",
-    "@type": [
-      "https://w3id.org/saref#Property"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#massPerTimePerArea",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "mass per time per area"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#soundPower",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Power",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "sound power"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_density",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Density"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "snow density"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#soilMoistureVwc",
+    "@id": "https://uri.fiware.org/ns/data-models#temperature",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Measured as Volumetric Water Content, VWC as a percentage. 0 ≤soilMoistureVwc ≤ 1"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "soilMoistureVwc"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasValue"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#acceleration",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "acceleration"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#snowfall",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-feature"
-      }
-    ],
-    "http://www.w3.org/ns/ssn/hasProperty": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_snowfall_amount"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_large_scale_snowfall_rate"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_flux"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_amount"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_snowfall_amount"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_snowfall_rate"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_amount"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_large_scale_snowfall_amount"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_convective_snowfall_amount"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_amount"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_flux"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_convective_snowfall_rate"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_convective_snowfall_amount"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_snowfall_amount"
-      },
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_flux"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#soilMoistureEc",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Measured as Electrical Conductivity, EC nominally in units of Siemens per meter (S/m)."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "soilMoistureEc"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasValue"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_suction_at_saturation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "soil suction at saturation"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#refPointOfInterest",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "A reference to a point of interest (usually a weather station) associated to this observation"
+        "@value": "Air’s temperature observed"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -3127,120 +2444,12 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "refPointOfInterest"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#nonQuantitativeProperty",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
+        "@value": "temperature"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "https://w3id.org/saref#hasValue"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#AmbientHumidity",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/saref#Humidity",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/saref#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Humidity"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#precipitation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Precipitation level observed."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "precipitation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasValue"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_respiration_carbon_flux",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea",
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "soil respiration carbon flux"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_rainfall_amount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "thickness of rainfall amount"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#analysisDate",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasTimestamp"
       }
     ]
   },
@@ -3272,6 +2481,62 @@
     ]
   },
   {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#soilMoistureEc",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Measured as Electrical Conductivity, EC nominally in units of Siemens per meter (S/m)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "soilMoistureEc"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasValue"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_snowfall_rate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "lwe snowfall rate"
+      }
+    ]
+  },
+  {
     "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_amount",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
@@ -3284,6 +2549,104 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "snowfall amount"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#density",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Density",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "density"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_rainfall_amount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "thickness of rainfall amount"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/saref#Temperature",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/saref#"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_clay_in_soil",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "volume fraction of clay in soil"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasDevice",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Reference to the IoT devices associated with this [entity] i.e. sensors, controls."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      },
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasDevice"
       }
     ]
   },
@@ -3301,10 +2664,40 @@
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility",
+    "@id": "https://uri.fiware.org/ns/data-models#solarRadiation",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Instantaneous solar radiation measured in kW/m2."
+      },
+      {
+        "@value": "The solar radiation observed measured in Watts per square meter."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
+      },
+      {
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "solarRadiation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasValue"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
@@ -3317,29 +2710,7 @@
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#recordHasAgriParcel",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Reference to the AgriParcel to which this entity relates."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "recordHasAgriParcel"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_large_scale_snowfall_amount",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_capacity",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -3350,7 +2721,573 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "lwe thickness of large scale snowfall amount"
+        "@value": "soil thermal capacity"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilTexture",
+    "@type": [
+      "https://w3id.org/saref#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_grain_size",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Distance"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "snow grain size"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_hydraulic_conductivity_at_saturation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "soil hydraulic conductivity at saturation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#AmbientHumidity",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_porosity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "soil porosity"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#productionProperty",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasProperty"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#IrrigationWater",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#power",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Power"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "power"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#ElectricityAndMagnetismScheme"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Scheme",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#soundPower",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Power",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "sound power"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.w3.org/2004/02/skos/core#Scheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpecificEntropy",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "PropertyKind"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Distance",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#AirTemperature",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#length",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Distance"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "length"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://www.w3.org/2004/02/skos/core#Scheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#acceleration",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "acceleration"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/electricConductivity",
+    "@type": [
+      "https://w3id.org/saref#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#liquid_water_content_of_soil_layer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "liquid water content of soil layer"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#massPerTimePerArea",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "mass per time per area"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#ElectricityAndMagnetismScheme",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Scheme",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#soilMoistureVwc",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Measured as Volumetric Water Content, VWC as a percentage. 0 ≤soilMoistureVwc ≤ 1"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "soilMoistureVwc"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasValue"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_wilting_point",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "volume fraction of condensed water in soil at wilting point"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_pressure_in_air",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "sound pressure in air"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_respiration_carbon_flux",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "soil respiration carbon flux"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#WeatherForecast",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A weather forecast for a period of time and a location."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherForecast/doc/spec.html"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "WeatherForecast"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/saref#FeatureOfInterest"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#refDevice",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A reference to the device(s) which captured this observation."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "refDevice"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentProperty": [
+      {
+        "@id": "https://w3id.org/saref#measurementMadeBy"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#vapourCompressibility",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "vapour compressibility"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme"
+      },
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#dewPoint",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The dew point encoded as a number."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "dewPoint"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasValue"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_carbon_content",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "soil carbon content"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#Precipitation",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#PropertyTypeValue",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_type",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "soil type"
       }
     ]
   },
@@ -3363,90 +3300,31 @@
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#soilTemperature",
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_amount",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The observed soil temperature nominally in degrees centigrade."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "soilTemperature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/saref#hasValue"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#fraction",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#distance",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#NamedIndividual",
-      "http://purl.oclc.org/NET/ssnx/qu/dim#Distance"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "distance"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"
-      }
-    ]
-  },
-  {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#vapourPressure",
-    "@type": [
-      "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure",
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "vapour pressure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"
+        "@value": "convective snowfall amount"
       }
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#Concentration",
+    "@id": "http://foodie-cloud.com/model/foodie#PropertyType",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
@@ -3459,7 +3337,19 @@
     ]
   },
   {
-    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#water_evaporation_flux_from_soil",
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/quantity#fraction",
+    "@type": [
+      "http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind",
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_soil_moisture_content",
     "@type": [
       "http://www.w3.org/2002/07/owl#NamedIndividual"
     ],
@@ -3470,7 +3360,117 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "water evaporation flux from soil"
+        "@value": "lwe thickness of soil moisture content"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#weatherType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The observed weather type. It is represented by a comma separated list of weather statuses, for instance overcast, lightRain."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "weatherType"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer_at_field_capacity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "moisture content of soil layer at field capacity"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu-rec20"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_snowfall_amount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "thickness of large scale snowfall amount"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#observedAt",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Indicates the date/time the record was observed/ last observed."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "observedAt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/saref#hasTimestamp"
+      }
+    ]
+  },
+  {
+    "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_suction_at_saturation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "soil suction at saturation"
       }
     ]
   }

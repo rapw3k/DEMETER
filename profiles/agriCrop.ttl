@@ -3,8 +3,8 @@
 @prefix fiware: <https://uri.fiware.org/ns/data-models#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
-@prefix ns1: <http://www.w3.org/ns/dx/prof/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
@@ -101,15 +101,15 @@ saref4agri:receives rdfs:isDefinedBy saref4agri: .
         <https://w3id.org/demeter/agri/agriCommon> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCrop.ttl> ;
     owl:versionInfo "1.0" ;
-    ns1:isProfileOf <http://foodie-cloud.com/model/foodie>,
+    prof:isProfileOf <http://foodie-cloud.com/model/foodie>,
         <https://w3id.org/def/saref4agri> ;
     prov:wasDerivedFrom [ a prov:Entity ;
             rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriCrop.ttl" ] ;
     prov:wasGeneratedBy [ a prov:Activity ;
             rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriCrop.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
-            prov:endedAtTime "2020-09-10"^^xsd:date ;
+            prov:endedAtTime "2020-10-01"^^xsd:date ;
             prov:wasAssociatedWith [ a prov:Agent ;
-                    rdfs:label "ProfileWiz 0.1.4" ] ] ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 

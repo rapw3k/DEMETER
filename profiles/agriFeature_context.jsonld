@@ -1,56 +1,19 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriFeature",
     "@context": [
-        "extracted\\agriFeature_geosparql.ttl_context.jsonld",
-        "extracted\\agriFeature_foodie.ttl_context.jsonld",
-        "extracted\\agriFeature_saref4agri.ttl_context.jsonld",
-        "extracted\\agriFeature_fiware.ttl_context.jsonld",
-        "extracted\\agriFeature_ogc_sf.rdf_context.jsonld",
-        "extracted\\agriFeature_wgs84_pos_context.jsonld",
+        "https://w3id.org/demeter/agri/proxy/saref4agri?_profile=jsoncontext",
+        "https://fiware.github.io/data-models/full-context.jsonld",
+        "agriCommon_context.jsonld",
         {
             "@vocab": "https://w3id.org/demeter/agri/agriFeature",
-            "geo": "http://www.opengis.net/ont/geosparql#",
-            "af-inspire": "http://inspire.ec.europa.eu/schemas/af/3.0#",
-            "foodie": "http://foodie-cloud.com/model/foodie#",
-            "saref4agri": "https://w3id.org/def/saref4agri#",
-            "fiware": "https://uri.fiware.org/ns/data-models#",
             "sf": "http://www.opengis.net/ont/sf#",
+            "saref4agri": "https://w3id.org/def/saref4agri#",
+            "geo": "http://www.opengis.net/ont/geosparql#",
+            "fiware": "https://uri.fiware.org/ns/data-models#",
+            "foodie": "http://foodie-cloud.com/model/foodie#",
+            "af-inspire": "http://inspire.ec.europa.eu/schemas/af/3.0#",
             "act-inspire": "http://inspire.ec.europa.eu/schemas/act-core/3.0#",
-            "wgs84_pos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
-            "Building": {
-                "@id": "saref4agri:Building"
-            },
-            "Farm": {
-                "@id": "saref4agri:Farm"
-            },
-            "Parcel": {
-                "@id": "saref4agri:Parcel"
-            },
-            "hasAgriSoil": {
-                "@id": "fiware:hasAgriSoil",
-                "@type": "@id"
-            },
-            "location": {
-                "@id": "wgs84_pos:location",
-                "@type": "@id"
-            },
-            "crop": {
-                "@id": "foodie:crop",
-                "@type": "@id"
-            },
-            "hasAgriCrop": {
-                "@id": "fiware:hasAgriCrop",
-                "@type": "@id"
-            },
-            "cropStatus": {
-                "@id": "fiware:cropStatus"
-            },
-            "lastPlantedAt": {
-                "@id": "fiware:lastPlantedAt"
-            },
-            "area": {
-                "@id": "fiware:area"
-            }
+            "wgs84_pos": "http://www.w3.org/2003/01/geo/wgs84_pos#"
         }
     ]
 }

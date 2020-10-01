@@ -1,0 +1,46 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://schema.org> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriCommon.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: extraction of used terms from unavailable namespace" ;
+            prov:endedAtTime "2020-09-30"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+
+schema:Organization a owl:Class ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment "An organization such as a school, NGO, corporation, club, etc."@en ;
+    rdfs:isDefinedBy schema:Organization ;
+    rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
+
+schema:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:comment "A person (alive, dead, undead, or fictional)."@en ;
+    rdfs:isDefinedBy schema:Person ;
+    owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+
+schema:Role a owl:Class ;
+    rdfs:label "Role"@en ;
+    rdfs:comment """Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.<br/><br/>\r
+\r
+See also <a href="http://blog.schema.org/2014/06/introducing-role.html">blog post</a>."""@en ;
+    rdfs:isDefinedBy schema:Role .
+
+schema:name a rdf:Property ;
+    rdfs:label "name"@en ;
+    rdfs:comment "The name of the item." ;
+    rdfs:isDefinedBy schema:name .
+
+schema:telephone a rdf:Property ;
+    rdfs:label "telephone"@en ;
+    rdfs:comment "The telephone number." ;
+    rdfs:isDefinedBy schema:telephone .
+

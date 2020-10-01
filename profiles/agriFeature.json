@@ -3,213 +3,31 @@
     "$id": "https://w3id.org/demeter/agri/agriFeature?_profile=jsonschema",
     "type": "object",
     "properties": {
-        "geo:SpatialObject": {
-            "type": "object",
-            "properties": {
-                "geo:rcc8ntpp": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:rcc8ntppi": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:sfEquals": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:rcc8tppi": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:ehCoveredBy": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:sfContains": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:sfDisjoint": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:ehContains": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:rcc8tpp": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:ehOverlap": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:rcc8po": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:ehMeet": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:ehCovers": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:ehEquals": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:rcc8dc": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:sfTouches": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:sfOverlaps": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:rcc8eq": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:ehInside": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:sfIntersects": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:sfCrosses": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:sfWithin": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:rcc8ec": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:ehDisjoint": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:hasGeometry": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "wgs84_pos:location": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": []
-        },
-        "dummy": {
+        "sf:MultiSurface": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "geo:Feature": {
+        "sf:GeometryCollection": {
             "type": "object",
-            "properties": {
-                "geo:defaultGeometry": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:hasGeometry": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
+            "properties": {},
+            "required": []
+        },
+        "sf:Geometry": {
+            "type": "object",
+            "properties": {},
             "required": []
         },
         "geo:Geometry": {
             "type": "object",
             "properties": {
-                "geo:hasSerialization": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:isEmpty": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:spatialDimension": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
                 "geo:isSimple": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:hasSerialization": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -221,13 +39,25 @@
                         "type": "string"
                     }
                 },
-                "geo:asWKT": {
+                "geo:dimension": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "geo:dimension": {
+                "geo:spatialDimension": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:isEmpty": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:asWKT": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -242,13 +72,160 @@
             },
             "required": []
         },
-        "saref4agri:Farm": {
+        "geo:SpatialObject": {
             "type": "object",
             "properties": {
-                "saref4agri:hasName": {
-                    "type": "string"
+                "geo:rcc8ec": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
-                "saref4agri:contains": {
+                "geo:sfWithin": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfEquals": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8po": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfTouches": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehDisjoint": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8ntpp": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehOverlap": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehCoveredBy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehCovers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfContains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfIntersects": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8ntppi": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehInside": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8dc": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehEquals": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8eq": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfOverlaps": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8tpp": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8tppi": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfCrosses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehContains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehMeet": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfDisjoint": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "wgs84_pos:location": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:hasGeometry": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -257,16 +234,86 @@
             },
             "required": []
         },
-        "saref4agri:Parcel": {
+        "sf:MultiPolygon": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Curve": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:LineString": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:LinearRing": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiCurve": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Polygon": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Surface": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Triangle": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Point": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Line": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:PolyhedralSurface": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:TIN": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiLineString": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiPoint": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "geo:Feature": {
             "type": "object",
             "properties": {
-                "saref4agri:hasName": {
+                "geo:hasGeometry": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "saref4agri:contains": {
+                "geo:defaultGeometry": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -290,7 +337,70 @@
             },
             "required": []
         },
+        "saref4agri:Farm": {
+            "type": "object",
+            "properties": {
+                "saref4agri:contains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "saref4agri:Parcel": {
+            "type": "object",
+            "properties": {
+                "saref4agri:contains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
         "saref4agri:BuildingSpace": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "fiware:AgriParcel": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "fiware:AgriFarm": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "fiware:AgriGreenhouse": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "skos:Concept": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "iso19150-2:Codelist": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foodie:OriginTypeValue": {
             "type": "object",
             "properties": {},
             "required": []
@@ -305,83 +415,19 @@
             "properties": {},
             "required": []
         },
-        "act-inspire:ActivityComplex": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "af-inspire:Holding": {
-            "type": "object",
-            "properties": {
-                "af-inspire:contains": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "geo:hasGeometry": {
-                    "type": "string"
-                },
-                "foodie:userId": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "af-inspire:contains",
-                "geo:hasGeometry",
-                "foodie:userId"
-            ]
-        },
-        "af-inspire:Site": {
-            "type": "object",
-            "properties": {
-                "common:validTo": {
-                    "type": "string"
-                },
-                "prov:generatedAtTime": {
-                    "type": "string"
-                },
-                "prov:invalidatedAtTime": {
-                    "type": "string"
-                },
-                "common:validFrom": {
-                    "type": "string"
-                },
-                "geo:hasGeometry": {
-                    "type": "string"
-                },
-                "af-inspire:activity": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foodie:code": {
-                    "type": "string"
-                },
-                "foodie:containsPlot": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": [
-                "prov:generatedAtTime",
-                "common:validFrom",
-                "geo:hasGeometry",
-                "af-inspire:activity",
-                "foodie:code",
-                "foodie:containsPlot"
-            ]
-        },
         "foodie:ManagementZone": {
             "type": "object",
             "properties": {
-                "common:validFrom": {
+                "foodie:notes": {
                     "type": "string"
                 },
-                "prov:generatedAtTime": {
+                "common:validTo": {
+                    "type": "string"
+                },
+                "foodie:code": {
+                    "type": "string"
+                },
+                "prov:invalidatedAtTime": {
                     "type": "string"
                 },
                 "geo:hasGeometry": {
@@ -390,39 +436,27 @@
                         "type": "string"
                     }
                 },
-                "foodie:notes": {
+                "prov:generatedAtTime": {
                     "type": "string"
                 },
-                "foodie:code": {
-                    "type": "string"
-                },
-                "common:validTo": {
-                    "type": "string"
-                },
-                "prov:invalidatedAtTime": {
+                "common:validFrom": {
                     "type": "string"
                 }
             },
             "required": [
-                "prov:generatedAtTime",
-                "geo:hasGeometry",
                 "foodie:notes",
-                "foodie:code"
+                "foodie:code",
+                "geo:hasGeometry",
+                "prov:generatedAtTime"
             ]
         },
         "foodie:Plot": {
             "type": "object",
             "properties": {
+                "common:validTo": {
+                    "type": "string"
+                },
                 "foodie:code": {
-                    "type": "string"
-                },
-                "foodie:description": {
-                    "type": "string"
-                },
-                "prov:invalidatedAtTime": {
-                    "type": "string"
-                },
-                "prov:generatedAtTime": {
                     "type": "string"
                 },
                 "foodie:originType": {
@@ -437,129 +471,95 @@
                         "type": "string"
                     }
                 },
-                "common:validTo": {
+                "prov:generatedAtTime": {
+                    "type": "string"
+                },
+                "prov:invalidatedAtTime": {
+                    "type": "string"
+                },
+                "foodie:description": {
                     "type": "string"
                 }
             },
             "required": [
                 "foodie:code",
-                "prov:generatedAtTime",
                 "foodie:originType",
                 "common:validFrom",
+                "geo:hasGeometry",
+                "prov:generatedAtTime"
+            ]
+        },
+        "af-inspire:Site": {
+            "type": "object",
+            "properties": {
+                "common:validFrom": {
+                    "type": "string"
+                },
+                "prov:generatedAtTime": {
+                    "type": "string"
+                },
+                "foodie:containsPlot": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "af-inspire:activity": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foodie:code": {
+                    "type": "string"
+                },
+                "geo:hasGeometry": {
+                    "type": "string"
+                },
+                "common:validTo": {
+                    "type": "string"
+                },
+                "prov:invalidatedAtTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "common:validFrom",
+                "prov:generatedAtTime",
+                "foodie:containsPlot",
+                "af-inspire:activity",
+                "foodie:code",
                 "geo:hasGeometry"
             ]
         },
-        "iso19150-2:Codelist": {
+        "act-inspire:ActivityComplex": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "skos:Concept": {
+        "af-inspire:Holding": {
             "type": "object",
-            "properties": {},
-            "required": []
+            "properties": {
+                "geo:hasGeometry": {
+                    "type": "string"
+                },
+                "af-inspire:contains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foodie:userId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "geo:hasGeometry",
+                "af-inspire:contains",
+                "foodie:userId"
+            ]
         },
-        "foodie:OriginTypeValue": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "fiware:AgriParcel": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "fiware:AgriGreenhouse": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "fiware:AgriFarm": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:GeometryCollection": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:Geometry": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:MultiPoint": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:MultiCurve": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:MultiSurface": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:MultiLineString": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:Surface": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:PolyhedralSurface": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:TIN": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:MultiPolygon": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:Point": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:Curve": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:LineString": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:LinearRing": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:Line": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:Polygon": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "sf:Triangle": {
+        "act-inspire:EconomicActivityNACEValue": {
             "type": "object",
             "properties": {},
             "required": []
@@ -573,13 +573,13 @@
                         "type": "string"
                     }
                 },
-                "wgs84_pos:long": {
+                "wgs84_pos:alt": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "wgs84_pos:alt": {
+                "wgs84_pos:long": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -589,11 +589,6 @@
             "required": []
         },
         "wgs84_pos:Point": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "act-inspire:EconomicActivityNACEValue": {
             "type": "object",
             "properties": {},
             "required": []

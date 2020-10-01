@@ -1,0 +1,30 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+wgs84_pos:Point a owl:Class ;
+    rdfs:label "Point"@en ;
+    rdfs:comment """ \r
+Uniquely identified by lat/long/alt. i.e.\r
+\r
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),\r
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).\r
+\r
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).\r
+  """,
+        "A point, typically described using a coordinate system relative to Earth, such as WGS84." ;
+    rdfs:isDefinedBy wgs84_pos: ;
+    rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> .
+
+<https://w3id.org/demeter/agri/proxy/wgs84_pos> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+            prov:endedAtTime "2020-09-30"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+

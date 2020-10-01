@@ -5,9 +5,9 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix iso19115-citation: <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#> .
-@prefix ns1: <http://www.w3.org/ns/dx/prof/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -139,7 +139,7 @@ saref4agri:Farmer rdfs:subClassOf [ a owl:Restriction ;
         <https://w3id.org/saref> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl> ;
     owl:versionInfo "1.0" ;
-    ns1:isProfileOf <http://foodie-cloud.com/model/foodie>,
+    prof:isProfileOf <http://foodie-cloud.com/model/foodie>,
         <http://purl.obolibrary.org/obo>,
         <http://www.w3.org/ns/prov>,
         <http://xmlns.com/foaf/0.1>,
@@ -150,9 +150,9 @@ saref4agri:Farmer rdfs:subClassOf [ a owl:Restriction ;
             rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriCommon.ttl" ] ;
     prov:wasGeneratedBy [ a prov:Activity ;
             rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriCommon.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
-            prov:endedAtTime "2020-09-10"^^xsd:date ;
+            prov:endedAtTime "2020-10-01"^^xsd:date ;
             prov:wasAssociatedWith [ a prov:Agent ;
-                    rdfs:label "ProfileWiz 0.1.4" ] ] ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 

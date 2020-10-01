@@ -1,12 +1,25 @@
 [
   {
-    "@id": "https://uri.fiware.org/ns/data-models#siredBy",
+    "@id": "http://foodie-cloud.com/model/foodie#livestockNumber",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentProperty": [
+      {
+        "@id": "https://uri.fiware.org/ns/data-models#legalID"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#species",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Father of the animal"
+        "@value": "Species to which the animal belongs (dairy cattle, beef cattle, sheep, goat, horse, pig)"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -17,7 +30,64 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "siredBy"
+        "@value": "species"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#weight",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The weight of the animal as a number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "weight"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#hasMember",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A relation to represent the members of an AnimalGroup."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#phenologicalCondition",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Phenological Condition of the animal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "phenologicalCondition"
       }
     ]
   },
@@ -49,19 +119,6 @@
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#livestockType",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentProperty": [
-      {
-        "@id": "https://uri.fiware.org/ns/data-models#species"
-      }
-    ]
-  },
-  {
     "@id": "https://uri.fiware.org/ns/data-models#sex",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -84,13 +141,13 @@
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#relatedSource",
+    "@id": "https://uri.fiware.org/ns/data-models#welfareCondition",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "ID of the animal in external applications"
+        "@value": "Indicator of the animal welfare"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -101,267 +158,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "relatedSource"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#isMemberOf",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#fedWith",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Food used for the animal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "fedWith"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#species",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Species to which the animal belongs (dairy cattle, beef cattle, sheep, goat, horse, pig)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "species"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#phenologicalCondition",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Phenological Condition of the animal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "phenologicalCondition"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#hasBirthDate",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentProperty": [
-      {
-        "@id": "https://uri.fiware.org/ns/data-models#birthdate"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#ID",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#weight",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The weight of the animal as a number"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "weight"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#AnimalGroup",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:cb20d7a7982b908a4593880e620863eb33b4f0e4c2ccd6c705575c09983173b9761"
-      },
-      {
-        "@id": "_:cb34d4fce18d91205846fdbca6cfe37b0b03b8ac21264a06e1e88fa661570050132"
-      },
-      {
-        "@id": "_:cb2af1d05bd74f045402d59315a0343f2869999b983cb07b9af53c8e6c81101386d"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb20d7a7982b908a4593880e620863eb33b4f0e4c2ccd6c705575c09983173b9761",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#isLocatedIn"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#Feature"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb34d4fce18d91205846fdbca6cfe37b0b03b8ac21264a06e1e88fa661570050132",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onDataRange": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#hasName"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb2af1d05bd74f045402d59315a0343f2869999b983cb07b9af53c8e6c81101386d",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#hasMember"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#Animal"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#legalID",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Legal ID of the animal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "legalID"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#ownedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The owner of the animal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "ownedBy"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#livestockNumber",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentProperty": [
-      {
-        "@id": "https://uri.fiware.org/ns/data-models#legalID"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#hasMember",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "A relation to represent the members of an AnimalGroup."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
+        "@value": "welfareCondition"
       }
     ]
   },
@@ -388,28 +185,7 @@
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#Animal",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The proposed animal data model has been made from a more general point of view, trying to adjust it to the information coming from the devices and sensors used in the UC."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Animal"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#isLocatedIn",
+    "@id": "https://w3id.org/def/saref4agri#hasDeathDate",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/def/saref4agri#"
@@ -417,35 +193,26 @@
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#birthdate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Animal’s birthdate"
-      }
-    ],
+    "@id": "http://foodie-cloud.com/model/foodie#livestockType",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+        "@id": "http://foodie-cloud.com/model/foodie"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/2002/07/owl#equivalentProperty": [
       {
-        "@language": "en",
-        "@value": "birthdate"
+        "@id": "https://uri.fiware.org/ns/data-models#species"
       }
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#breed",
+    "@id": "https://uri.fiware.org/ns/data-models#legalID",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Breed of the animal"
+        "@value": "Legal ID of the animal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -456,7 +223,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "breed"
+        "@value": "legalID"
       }
     ]
   },
@@ -469,65 +236,6 @@
     ]
   },
   {
-    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#Animal"
-      }
-    ]
-  },
-  {
-    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#hasID",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#hasDeathDate",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#healthCondition",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Health Condition of the animal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "healthCondition"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/def/saref4agri#Animal",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -536,10 +244,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:cb272f4a52d1457f5cfad3ca79f7ae0c855cdf9be103633063ac1c3f02f4755eff5"
-      },
-      {
-        "@id": "_:cb2adb824fb34706bf7e9f06945834f2a349883a50def63812eb2719ffafa0791a1"
+        "@id": "_:cb197eb828cbed0f8c8c19adbcc69e2a9855d18e8ce4229bbb8756e504cc609e48f"
       },
       {
         "@id": "_:cb2325dd954295e35174e4a5d18646bfeea41d6e0e31cb1ca7790218f57aa3af133"
@@ -548,12 +253,69 @@
         "@id": "_:cb2d7c0d722deda59f3f8f5c018e1dba6fa49955eb3d95db98188a81cdf1ed34e60"
       },
       {
-        "@id": "_:cb197eb828cbed0f8c8c19adbcc69e2a9855d18e8ce4229bbb8756e504cc609e48f"
+        "@id": "_:cb272f4a52d1457f5cfad3ca79f7ae0c855cdf9be103633063ac1c3f02f4755eff5"
+      },
+      {
+        "@id": "_:cb2adb824fb34706bf7e9f06945834f2a349883a50def63812eb2719ffafa0791a1"
       }
     ],
     "http://www.w3.org/2002/07/owl#equivalentClass": [
       {
         "@id": "https://uri.fiware.org/ns/data-models#Animal"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb197eb828cbed0f8c8c19adbcc69e2a9855d18e8ce4229bbb8756e504cc609e48f",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#isLocatedIn"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#Feature"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb2325dd954295e35174e4a5d18646bfeea41d6e0e31cb1ca7790218f57aa3af133",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#isMemberOf"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#AnimalGroup"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb2d7c0d722deda59f3f8f5c018e1dba6fa49955eb3d95db98188a81cdf1ed34e60",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onDataRange": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#hasName"
       }
     ]
   },
@@ -602,56 +364,156 @@
     ]
   },
   {
-    "@id": "_:cb2325dd954295e35174e4a5d18646bfeea41d6e0e31cb1ca7790218f57aa3af133",
+    "@id": "https://uri.fiware.org/ns/data-models#relatedSource",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@id": "https://w3id.org/def/saref4agri#isMemberOf"
+        "@value": "ID of the animal in external applications"
       }
     ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://w3id.org/def/saref4agri#AnimalGroup"
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "relatedSource"
       }
     ]
   },
   {
-    "@id": "_:cb2d7c0d722deda59f3f8f5c018e1dba6fa49955eb3d95db98188a81cdf1ed34e60",
+    "@id": "https://uri.fiware.org/ns/data-models#healthCondition",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
-    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
+        "@value": "Health Condition of the animal"
       }
     ],
-    "http://www.w3.org/2002/07/owl#onDataRange": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
       }
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "https://w3id.org/def/saref4agri#hasName"
+        "@language": "en",
+        "@value": "healthCondition"
       }
     ]
   },
   {
-    "@id": "_:cb197eb828cbed0f8c8c19adbcc69e2a9855d18e8ce4229bbb8756e504cc609e48f",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "@id": "https://w3id.org/def/saref4agri#hasBirthDate",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://w3id.org/def/saref4agri#isLocatedIn"
+        "@id": "https://w3id.org/def/saref4agri#"
       }
     ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+    "http://www.w3.org/2002/07/owl#equivalentProperty": [
       {
-        "@id": "http://www.opengis.net/ont/geosparql#Feature"
+        "@id": "https://uri.fiware.org/ns/data-models#birthdate"
+      }
+    ]
+  },
+  {
+    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#hasID",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#birthdate",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Animal’s birthdate"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "birthdate"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#isLocatedIn",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#breed",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Breed of the animal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "breed"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#Animal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The proposed animal data model has been made from a more general point of view, trying to adjust it to the information coming from the devices and sensors used in the UC."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Animal"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#isMemberOf",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
       }
     ]
   },
@@ -678,6 +540,144 @@
     ]
   },
   {
+    "@id": "https://uri.fiware.org/ns/data-models#ownedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The owner of the animal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "ownedBy"
+      }
+    ]
+  },
+  {
+    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#Animal"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#siredBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Father of the animal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "siredBy"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#ID",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#AnimalGroup",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:cb2af1d05bd74f045402d59315a0343f2869999b983cb07b9af53c8e6c81101386d"
+      },
+      {
+        "@id": "_:cb20d7a7982b908a4593880e620863eb33b4f0e4c2ccd6c705575c09983173b9761"
+      },
+      {
+        "@id": "_:cb34d4fce18d91205846fdbca6cfe37b0b03b8ac21264a06e1e88fa661570050132"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb2af1d05bd74f045402d59315a0343f2869999b983cb07b9af53c8e6c81101386d",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#hasMember"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#Animal"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb20d7a7982b908a4593880e620863eb33b4f0e4c2ccd6c705575c09983173b9761",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#isLocatedIn"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#Feature"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb34d4fce18d91205846fdbca6cfe37b0b03b8ac21264a06e1e88fa661570050132",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onDataRange": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#hasName"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/demeter/agri/farmAnimal",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology",
@@ -685,10 +685,10 @@
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@id": "_:cbb28e11ff039cd5934e832e3c1a3c8996759177f8149574c79f2a7f7f88f4b870"
+        "@id": "_:cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977"
       },
       {
-        "@id": "_:cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977"
+        "@id": "_:cbb28e11ff039cd5934e832e3c1a3c8996759177f8149574c79f2a7f7f88f4b870"
       }
     ],
     "http://purl.org/dc/terms/creator": [
@@ -725,10 +725,10 @@
         "@id": "http://inspire.ec.europa.eu/schemas/af/3.0"
       },
       {
-        "@id": "https://w3id.org/demeter/agri/agriCommon"
+        "@id": "https://w3id.org/def/saref4agri"
       },
       {
-        "@id": "https://w3id.org/def/saref4agri"
+        "@id": "https://w3id.org/demeter/agri/agriCommon"
       },
       {
         "@id": "http://foodie-cloud.com/model/foodie"
@@ -746,94 +746,28 @@
     ],
     "http://www.w3.org/ns/dx/prof/isProfileOf": [
       {
-        "@id": "https://w3id.org/def/saref4agri"
-      },
-      {
         "@id": "http://foodie-cloud.com/model/foodie"
       },
       {
         "@id": "http://inspire.ec.europa.eu/schemas/af/3.0"
+      },
+      {
+        "@id": "https://w3id.org/def/saref4agri"
       }
     ],
     "http://www.w3.org/ns/prov#wasDerivedFrom": [
       {
-        "@id": "_:Nbccd4244e8d043a1956bbaa35d9d1141"
+        "@id": "_:Na93547c551aa4b24b0927411eb1c019f"
       }
     ],
     "http://www.w3.org/ns/prov#wasGeneratedBy": [
       {
-        "@id": "_:Nb5e2fca396884dbfabf5852107b2600f"
+        "@id": "_:N4138e5955e00451098d305d18bd35c46"
       }
     ],
     "http://xmlns.com/foaf/0.1/maker": [
       {
         "@id": "_:cbc777050d003e81d070dc7ffc2f3672cda44881e8dbf818bcf54b15da710dc535"
-      }
-    ]
-  },
-  {
-    "@id": "_:cbb28e11ff039cd5934e832e3c1a3c8996759177f8149574c79f2a7f7f88f4b870",
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "Ioanna Roussaki"
-      }
-    ],
-    "https://schema.org/affiliation": [
-      {
-        "@id": "_:cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5",
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "ICCS"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nbccd4244e8d043a1956bbaa35d9d1141",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\farmAnimal.ttl"
-      }
-    ]
-  },
-  {
-    "@id": "_:cbc777050d003e81d070dc7ffc2f3672cda44881e8dbf818bcf54b15da710dc535",
-    "http://xmlns.com/foaf/0.1/homepage": [
-      {
-        "@id": "https://h2020-demeter.eu/"
-      }
-    ],
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "DEMETER project"
-      }
-    ]
-  },
-  {
-    "@id": "_:cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977",
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "Rob Atkinson"
-      }
-    ],
-    "https://schema.org/affiliation": [
-      {
-        "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5",
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "OGC"
       }
     ]
   },
@@ -864,7 +798,7 @@
     ]
   },
   {
-    "@id": "_:Nb5e2fca396884dbfabf5852107b2600f",
+    "@id": "_:N4138e5955e00451098d305d18bd35c46",
     "@type": [
       "http://www.w3.org/ns/prov#Activity"
     ],
@@ -876,34 +810,100 @@
     "http://www.w3.org/ns/prov#endedAtTime": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-09-10"
+        "@value": "2020-10-01"
       }
     ],
     "http://www.w3.org/ns/prov#wasAssociatedWith": [
       {
-        "@id": "_:Na28f8751038345378af979c902d293a3"
+        "@id": "_:Ne12a861c66fa432ea181c79a8a220ae3"
       }
     ]
   },
   {
-    "@id": "_:Na28f8751038345378af979c902d293a3",
+    "@id": "_:Ne12a861c66fa432ea181c79a8a220ae3",
     "@type": [
       "http://www.w3.org/ns/prov#Agent"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "ProfileWiz 0.1.4"
+        "@value": "ProfileWiz 0.1.5"
       }
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#welfareCondition",
+    "@id": "_:Na93547c551aa4b24b0927411eb1c019f",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\farmAnimal.ttl"
+      }
+    ]
+  },
+  {
+    "@id": "_:cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Rob Atkinson"
+      }
+    ],
+    "https://schema.org/affiliation": [
+      {
+        "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "OGC"
+      }
+    ]
+  },
+  {
+    "@id": "_:cbb28e11ff039cd5934e832e3c1a3c8996759177f8149574c79f2a7f7f88f4b870",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Ioanna Roussaki"
+      }
+    ],
+    "https://schema.org/affiliation": [
+      {
+        "@id": "_:cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "ICCS"
+      }
+    ]
+  },
+  {
+    "@id": "_:cbc777050d003e81d070dc7ffc2f3672cda44881e8dbf818bcf54b15da710dc535",
+    "http://xmlns.com/foaf/0.1/homepage": [
+      {
+        "@id": "https://h2020-demeter.eu/"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "DEMETER project"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#fedWith",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "Indicator of the animal welfare"
+        "@value": "Food used for the animal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -914,7 +914,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "welfareCondition"
+        "@value": "fedWith"
       }
     ]
   }

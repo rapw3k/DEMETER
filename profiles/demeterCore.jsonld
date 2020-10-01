@@ -1,31 +1,32 @@
 [
   {
-    "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#hasObject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Entity"
-      }
-    ]
-  },
-  {
     "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Value",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
+    "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Entity",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Property"
+      },
+      {
+        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship"
+      },
+      {
+        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Value"
+      }
+    ]
+  },
+  {
     "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
@@ -62,38 +63,10 @@
     ]
   },
   {
-    "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#hasValue",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Property"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Entity",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
-      {
-        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship"
-      },
-      {
-        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Property"
-      },
-      {
-        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Value"
-      }
-    ]
-  },
-  {
     "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Property",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
@@ -121,6 +94,33 @@
             "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Value"
           }
         ]
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#hasObject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Entity"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#hasValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://uri.etsi.org/ngsi-ld/v1/ontology#Property"
       }
     ]
   },
@@ -179,28 +179,17 @@
     ],
     "http://www.w3.org/ns/prov#wasDerivedFrom": [
       {
-        "@id": "_:N4df846882fb74beda4f9de675dd0cbc1"
+        "@id": "_:Nc1da4605ea08432197c001a4073a96ff"
       }
     ],
     "http://www.w3.org/ns/prov#wasGeneratedBy": [
       {
-        "@id": "_:N0379d8ece294495db7fbb0b50c3fd3c0"
+        "@id": "_:N514c1ed6f4e84c2f9ddae52e95487159"
       }
     ],
     "http://xmlns.com/foaf/0.1/maker": [
       {
         "@id": "_:cbc777050d003e81d070dc7ffc2f3672cda44881e8dbf818bcf54b15da710dc535"
-      }
-    ]
-  },
-  {
-    "@id": "_:N4df846882fb74beda4f9de675dd0cbc1",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\demeterCore.ttl"
       }
     ]
   },
@@ -231,6 +220,19 @@
     ]
   },
   {
+    "@id": "_:cbc777050d003e81d070dc7ffc2f3672cda44881e8dbf818bcf54b15da710dc535",
+    "http://xmlns.com/foaf/0.1/homepage": [
+      {
+        "@id": "https://h2020-demeter.eu/"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "DEMETER project"
+      }
+    ]
+  },
+  {
     "@id": "_:cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977",
     "http://xmlns.com/foaf/0.1/name": [
       {
@@ -252,6 +254,50 @@
     ]
   },
   {
+    "@id": "_:N514c1ed6f4e84c2f9ddae52e95487159",
+    "@type": [
+      "http://www.w3.org/ns/prov#Activity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ProfileWiz: Normalisation (source = ../models\\demeterCore.ttl, force_local=False, profile libs : lib/profile_cat.ttl) "
+      }
+    ],
+    "http://www.w3.org/ns/prov#endedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-10-01"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasAssociatedWith": [
+      {
+        "@id": "_:N4fd034ef46b4457e99625d5ad9379465"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4fd034ef46b4457e99625d5ad9379465",
+    "@type": [
+      "http://www.w3.org/ns/prov#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ProfileWiz 0.1.5"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc1da4605ea08432197c001a4073a96ff",
+    "@type": [
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\demeterCore.ttl"
+      }
+    ]
+  },
+  {
     "@id": "_:cbb28e11ff039cd5934e832e3c1a3c8996759177f8149574c79f2a7f7f88f4b870",
     "http://xmlns.com/foaf/0.1/name": [
       {
@@ -269,52 +315,6 @@
     "http://xmlns.com/foaf/0.1/name": [
       {
         "@value": "ICCS"
-      }
-    ]
-  },
-  {
-    "@id": "_:N0379d8ece294495db7fbb0b50c3fd3c0",
-    "@type": [
-      "http://www.w3.org/ns/prov#Activity"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "ProfileWiz: Normalisation (source = ../models\\demeterCore.ttl, force_local=False, profile libs : lib/profile_cat.ttl) "
-      }
-    ],
-    "http://www.w3.org/ns/prov#endedAtTime": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-09-10"
-      }
-    ],
-    "http://www.w3.org/ns/prov#wasAssociatedWith": [
-      {
-        "@id": "_:Naced29fbb1f24f1991668cd336741cd7"
-      }
-    ]
-  },
-  {
-    "@id": "_:Naced29fbb1f24f1991668cd336741cd7",
-    "@type": [
-      "http://www.w3.org/ns/prov#Agent"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "ProfileWiz 0.1.4"
-      }
-    ]
-  },
-  {
-    "@id": "_:cbc777050d003e81d070dc7ffc2f3672cda44881e8dbf818bcf54b15da710dc535",
-    "http://xmlns.com/foaf/0.1/homepage": [
-      {
-        "@id": "https://h2020-demeter.eu/"
-      }
-    ],
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "DEMETER project"
       }
     ]
   }

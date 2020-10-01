@@ -11,10 +11,7 @@
         "foodie:CropType": {
             "type": "object",
             "properties": {
-                "foodie:notes": {
-                    "type": "string"
-                },
-                "foodie:genus": {
+                "foodie:code": {
                     "type": "string"
                 },
                 "foodie:species": {
@@ -23,17 +20,38 @@
                 "foodie:family": {
                     "type": "string"
                 },
-                "foodie:description": {
+                "foodie:genus": {
                     "type": "string"
                 },
                 "foodie:variety": {
                     "type": "string"
                 },
-                "foodie:code": {
+                "foodie:description": {
+                    "type": "string"
+                },
+                "foodie:notes": {
                     "type": "string"
                 }
             },
             "required": []
+        },
+        "foodie:ProductionType": {
+            "type": "object",
+            "properties": {
+                "foodie:variety": {
+                    "type": "string"
+                },
+                "foodie:productionAmount": {
+                    "type": "string"
+                },
+                "foodie:productionDate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "foodie:variety",
+                "foodie:productionDate"
+            ]
         },
         "iso19150-2:FeatureType": {
             "type": "object",
@@ -75,59 +93,36 @@
             },
             "required": []
         },
-        "dummy": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
         "foodie:CropSpecies": {
             "type": "object",
             "properties": {
-                "foodie:cropSpecies": {
-                    "type": "string"
-                },
-                "prov:generatedAtTime": {
-                    "type": "string"
-                },
                 "foodie:cropArea": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
+                "common:validTo": {
+                    "type": "string"
+                },
+                "prov:generatedAtTime": {
+                    "type": "string"
+                },
+                "foodie:cropSpecies": {
+                    "type": "string"
+                },
                 "prov:invalidatedAtTime": {
                     "type": "string"
                 },
                 "common:validFrom": {
                     "type": "string"
-                },
-                "common:validTo": {
-                    "type": "string"
                 }
             },
             "required": [
-                "foodie:cropSpecies",
-                "prov:generatedAtTime",
                 "foodie:cropArea",
+                "prov:generatedAtTime",
+                "foodie:cropSpecies",
                 "common:validFrom"
-            ]
-        },
-        "foodie:ProductionType": {
-            "type": "object",
-            "properties": {
-                "foodie:productionAmount": {
-                    "type": "string"
-                },
-                "foodie:productionDate": {
-                    "type": "string"
-                },
-                "foodie:variety": {
-                    "type": "string"
-                }
-            },
-            "required": [
-                "foodie:productionDate",
-                "foodie:variety"
             ]
         },
         "saref:FeatureOfInterest": {
@@ -138,7 +133,7 @@
         "saref4agri:Crop": {
             "type": "object",
             "properties": {
-                "obo:TAXRANK_1000000": {
+                "saref4agri:hasHarvestDate": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -150,7 +145,7 @@
                         "type": "string"
                     }
                 },
-                "saref4agri:hasHarvestDate": {
+                "obo:TAXRANK_1000000": {
                     "type": "array",
                     "items": {
                         "type": "string"

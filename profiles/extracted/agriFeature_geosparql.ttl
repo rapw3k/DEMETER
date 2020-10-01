@@ -1,0 +1,91 @@
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+geo:asWKT a owl:DatatypeProperty ;
+    rdfs:label "has serialization"@en ;
+    rdfs:comment "The WKT serialization of a geometry"@en ;
+    rdfs:domain geo:Geometry ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:range geo:wktLiteral ;
+    rdfs:subPropertyOf geo:hasSerialization .
+
+<https://w3id.org/demeter/agri/proxy/geosparql> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+            prov:endedAtTime "2020-09-30"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+
+geo:Feature a owl:Class ;
+    rdfs:label "Feature"@en ;
+    rdfs:comment "This class represents the top-level feature type. This class is equivalent to GFI_Feature defined in ISO 19156:2011, and it is superclass of all feature types."@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/ont/gml> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geo:Geometry ;
+            owl:onProperty geo:hasGeometry ],
+        geo:SpatialObject ;
+    owl:disjointWith geo:Geometry .
+
+geo:hasSerialization a owl:DatatypeProperty ;
+    rdfs:label "has serialization"@en ;
+    rdfs:comment "Connects a geometry object with its text-based serialization"@en ;
+    rdfs:domain geo:Geometry ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:range rdfs:Literal .
+
+geo:sfContains a owl:ObjectProperty ;
+    rdfs:label "contains"@en ;
+    rdfs:comment "Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
+    rdfs:domain geo:SpatialObject ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:range geo:SpatialObject .
+
+geo:sfWithin a owl:ObjectProperty ;
+    rdfs:label "within"@en ;
+    rdfs:comment "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
+    rdfs:domain geo:SpatialObject ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:range geo:SpatialObject .
+
+geo:hasGeometry a owl:ObjectProperty ;
+    rdfs:label "has geometry"@en ;
+    rdfs:comment "A spatial representation for a given feature."@en ;
+    rdfs:domain geo:Feature ;
+    rdfs:isDefinedBy geo: ;
+    rdfs:range geo:Geometry ;
+    owl:equivalentProperty <http://www.w3.org/2003/01/geo/wgs84_pos#location> .
+
+geo:Geometry a owl:Class ;
+    rdfs:label "Geometry"@en ;
+    rdfs:comment "The class represents the top-level geometry type. This class is equivalent to the UML class GM_Object defined in ISO 19107, and it is superclass of all geometry types."@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+    rdfs:subClassOf geo:SpatialObject .
+
+geo:SpatialObject a owl:Class ;
+    rdfs:label "SpatialObject"@en ;
+    rdfs:comment "The class spatial-object represents everything that can have a spatial representation. It is superclass of feature and geometry."@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geo:Geometry ;
+            owl:onProperty geo:hasGeometry ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geo:SpatialObject ;
+            owl:onProperty geo:sfContains ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geo:SpatialObject ;
+            owl:onProperty geo:sfWithin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+            owl:onProperty <http://www.w3.org/2003/01/geo/wgs84_pos#location> ] .
+

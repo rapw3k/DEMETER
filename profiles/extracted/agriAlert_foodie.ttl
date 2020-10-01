@@ -1,0 +1,84 @@
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+foodie:alertPlot a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:Plot ;
+    owl:inverseOf foodie:plotAlert ;
+    ns1:prefLabel "alertPlot"@en .
+
+foodie:alertSpecies a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:CropSpecies ;
+    owl:inverseOf foodie:speciesAlert ;
+    ns1:prefLabel "alertSpecies"@en .
+
+foodie:alertZone a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:ManagementZone ;
+    owl:inverseOf foodie:zoneAlert ;
+    ns1:prefLabel "alertZone"@en .
+
+<https://w3id.org/demeter/agri/proxy/foodie> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriAlert.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+            prov:endedAtTime "2020-09-30"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+
+foodie:alertDate a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range xsd:dateTime ;
+    ns1:prefLabel "alertDate"@en .
+
+foodie:alertGeometry a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range <http://www.opengis.net/ont/geosparql#Geometry> ;
+    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+    ns1:prefLabel "alertGeometry"@en .
+
+foodie:plotAlert a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:Alert ;
+    ns1:prefLabel "plotAlert"@en .
+
+foodie:speciesAlert a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:Alert ;
+    ns1:prefLabel "speciesAlert"@en .
+
+foodie:zoneAlert a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:Alert ;
+    ns1:prefLabel "zoneAlert"@en .
+
+foodie:Alert a owl:Class ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:int ;
+            owl:onProperty foodie:alertGeometry ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty foodie:code ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty foodie:alertDate ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:int ;
+            owl:onProperty foodie:type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:int ;
+            owl:onProperty foodie:description ],
+        <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature>,
+        <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType>,
+        <http://www.opengis.net/ont/geosparql#Feature> ;
+    owl:equivalentClass <https://uri.fiware.org/ns/data-models#Alert> ;
+    ns1:prefLabel "Alert"@en .
+

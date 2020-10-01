@@ -1,0 +1,45 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+saref4agri:FarmHolding a owl:Class ;
+    rdfs:label "Farm holding"@en ;
+    rdfs:comment "A class to decsribe a saref4agri farm holding as subcass of an org:Organization" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty saref4agri:managesFarm ;
+            owl:someValuesFrom saref4agri:Farm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty saref4agri:hasName ],
+        <https://schema.org/Organization> .
+
+saref4agri:Farmer a owl:Class ;
+    rdfs:label "Farmer"@en ;
+    rdfs:comment "A class to decsribe a saref4agri farmer as subcass of a foaf:Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty saref4agri:managesFarm ;
+            owl:someValuesFrom saref4agri:Farm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty saref4agri:hasName ],
+        <http://xmlns.com/foaf/0.1/Person> .
+
+<https://w3id.org/demeter/agri/proxy/saref4agri> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriCommon.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+            prov:endedAtTime "2020-09-30"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+
+saref4agri:hasName a owl:DatatypeProperty ;
+    rdfs:label "A relation to express the name of an entity (e.g.,animal).",
+        "has name" ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty <https://uri.fiware.org/ns/data-models#name> .
+

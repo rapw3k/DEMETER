@@ -1,69 +1,50 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriAlert",
     "@context": [
-        "https://uri.fiware.org/ns/data-models",
-        "http://foodie-cloud.com/model/foodie",
         {
+            "@vocab": "https://w3id.org/demeter/agri/agriAlert",
             "fiware": "https://uri.fiware.org/ns/data-models#",
             "foodie": "http://foodie-cloud.com/model/foodie#",
             "Alert": {
                 "@id": "foodie:Alert"
             },
-            "speciesAlert": {
-                "@id": "foodie:speciesAlert",
-                "@type": "@id"
-            },
-            "alertSpecies": {
-                "@id": "foodie:alertSpecies",
-                "@type": "@id"
-            },
-            "zoneAlert": {
-                "@id": "foodie:zoneAlert",
-                "@type": "@id"
-            },
-            "plotAlert": {
-                "@id": "foodie:plotAlert",
-                "@type": "@id"
-            },
-            "alertGeometry": {
-                "@id": "foodie:alertGeometry",
+            "alertZone": {
+                "@id": "foodie:alertZone",
                 "@type": "@id"
             },
             "alertPlot": {
                 "@id": "foodie:alertPlot",
                 "@type": "@id"
             },
-            "alertZone": {
-                "@id": "foodie:alertZone",
+            "zoneAlert": {
+                "@id": "foodie:zoneAlert",
                 "@type": "@id"
             },
-            "alertDate": {
-                "@id": "foodie:alertDate",
-                "@type": "xsd:dateTime"
+            "alertGeometry": {
+                "@id": "foodie:alertGeometry",
+                "@type": "@id"
             },
-            "subCategory": {
-                "@id": "fiware:subCategory"
+            "alertSpecies": {
+                "@id": "foodie:alertSpecies",
+                "@type": "@id"
             },
-            "address": {
-                "@id": "fiware:address"
+            "plotAlert": {
+                "@id": "foodie:plotAlert",
+                "@type": "@id"
             },
-            "alertSource": {
-                "@id": "fiware:alertSource"
+            "speciesAlert": {
+                "@id": "foodie:speciesAlert",
+                "@type": "@id"
             },
             "validFrom": {
                 "@id": "fiware:validFrom"
             },
-            "severity": {
-                "@id": "fiware:severity"
+            "alertDate": {
+                "@id": "foodie:alertDate",
+                "@type": "xsd:date"
             },
             "validTo": {
                 "@id": "fiware:validTo"
-            },
-            "dateIssued": {
-                "@id": "fiware:dateIssued"
-            },
-            "data": {
-                "@id": "fiware:data"
             }
         }
     ]

@@ -1,181 +1,20 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriProperty",
     "@context": [
-        "http://purl.oclc.org/NET/ssnx/cf/cf-feature",
-        "http://purl.oclc.org/NET/ssnx/qu/dim",
-        "https://uri.fiware.org/ns/data-models",
-        "http://foodie-cloud.com/model/foodie",
-        "https://w3id.org/saref",
-        "http://purl.oclc.org/NET/ssnx/qu/qu",
-        "https://w3id.org/def/saref4agri",
-        "http://www.w3.org/ns/sosa",
+        "agriCommon_context.jsonld",
+        "agriCommon_context.jsonld",
+        "https://fiware.github.io/data-models/full-context.jsonld",
+        "agriFeature_context.jsonld",
         {
+            "@vocab": "https://w3id.org/demeter/agri/agriProperty",
             "cf-feature": "http://purl.oclc.org/NET/ssnx/cf/cf-feature#",
             "dim": "http://purl.oclc.org/NET/ssnx/qu/dim#",
-            "fiware": "https://uri.fiware.org/ns/data-models#",
-            "foodie": "http://foodie-cloud.com/model/foodie#",
             "saref": "https://w3id.org/saref#",
+            "foodie": "http://foodie-cloud.com/model/foodie#",
+            "fiware": "https://uri.fiware.org/ns/data-models#",
             "qu": "http://purl.oclc.org/NET/ssnx/qu/qu#",
             "saref4agri": "https://w3id.org/def/saref4agri#",
-            "sosa": "http://www.w3.org/ns/sosa/",
-            "EnergyDensity": {
-                "@id": "dim:EnergyDensity"
-            },
-            "WeatherObserved": {
-                "@id": "fiware:WeatherObserved"
-            },
-            "Compressibility": {
-                "@id": "dim:Compressibility"
-            },
-            "WeatherForecast": {
-                "@id": "fiware:WeatherForecast"
-            },
-            "AgriParcelRecord": {
-                "@id": "fiware:AgriParcelRecord"
-            },
-            "StressOrPressure": {
-                "@id": "dim:StressOrPressure"
-            },
-            "Surface": {
-                "@id": "cf-feature:Surface"
-            },
-            "Wind": {
-                "@id": "cf-feature:Wind"
-            },
-            "MassPerTimePerArea": {
-                "@id": "dim:MassPerTimePerArea"
-            },
-            "Temperature": {
-                "@id": "dim:Temperature"
-            },
-            "Density": {
-                "@id": "dim:Density"
-            },
-            "Concentration": {
-                "@id": "dim:Concentration"
-            },
-            "Acceleration": {
-                "@id": "dim:Acceleration"
-            },
-            "SurfaceLayer": {
-                "@id": "cf-feature:SurfaceLayer"
-            },
-            "Distance": {
-                "@id": "dim:Distance"
-            },
-            "Precipitation": {
-                "@id": "cf-feature:Precipitation"
-            },
-            "Dimensionless": {
-                "@id": "dim:Dimensionless"
-            },
-            "VelocityOrSpeed": {
-                "@id": "dim:VelocityOrSpeed"
-            },
-            "Medium": {
-                "@id": "cf-feature:Medium"
-            },
-            "SurfaceDensity": {
-                "@id": "dim:SurfaceDensity"
-            },
-            "Layer": {
-                "@id": "cf-feature:Layer"
-            },
-            "Power": {
-                "@id": "dim:Power"
-            },
-            "SpecificEntropy": {
-                "@id": "dim:SpecificEntropy"
-            },
-            "RadianceExposure": {
-                "@id": "dim:RadianceExposure"
-            },
-            "EnergyFlux": {
-                "@id": "dim:EnergyFlux"
-            },
-            "ThermalConductivity": {
-                "@id": "dim:ThermalConductivity"
-            },
-            "recordHasAgriParcel": {
-                "@id": "fiware:recordHasAgriParcel",
-                "@type": "@id"
-            },
-            "refPointOfInterest": {
-                "@id": "fiware:refPointOfInterest",
-                "@type": "@id"
-            },
-            "refDevice": {
-                "@id": "fiware:refDevice",
-                "@type": "@id"
-            },
-            "hasProperty": {
-                "@id": "ssn:hasProperty",
-                "@type": "@id"
-            },
-            "hasDevice": {
-                "@id": "fiware:hasDevice",
-                "@type": "@id"
-            },
-            "temperature": {
-                "@id": "fiware:temperature"
-            },
-            "solarRadiation": {
-                "@id": "fiware:solarRadiation"
-            },
-            "visibility": {
-                "@id": "fiware:visibility"
-            },
-            "snowHeight": {
-                "@id": "fiware:snowHeight"
-            },
-            "observedAt": {
-                "@id": "fiware:observedAt"
-            },
-            "streamGauge": {
-                "@id": "fiware:streamGauge"
-            },
-            "soilTemperature": {
-                "@id": "fiware:soilTemperature"
-            },
-            "dewPoint": {
-                "@id": "fiware:dewPoint"
-            },
-            "pressureTendency": {
-                "@id": "fiware:pressureTendency"
-            },
-            "illuminance": {
-                "@id": "fiware:illuminance"
-            },
-            "soilMoistureEc": {
-                "@id": "fiware:soilMoistureEc"
-            },
-            "dateObserved": {
-                "@id": "fiware:dateObserved"
-            },
-            "airTemperature": {
-                "@id": "fiware:airTemperature"
-            },
-            "precipitation": {
-                "@id": "fiware:precipitation"
-            },
-            "windSpeed": {
-                "@id": "fiware:windSpeed"
-            },
-            "relativeHumidity": {
-                "@id": "fiware:relativeHumidity"
-            },
-            "weatherType": {
-                "@id": "fiware:weatherType"
-            },
-            "soilMoistureVwc": {
-                "@id": "fiware:soilMoistureVwc"
-            },
-            "atmosphericPressure": {
-                "@id": "fiware:atmosphericPressure"
-            },
-            "windDirection": {
-                "@id": "fiware:windDirection"
-            }
+            "sosa": "http://www.w3.org/ns/sosa/"
         }
     ]
 }

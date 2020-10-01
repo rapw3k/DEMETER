@@ -1,53 +1,15 @@
 {
     "@id": "https://w3id.org/demeter/agri/agriCrop",
     "@context": [
-        "http://foodie-cloud.com/model/foodie",
-        "https://w3id.org/def/saref4agri",
-        "https://uri.fiware.org/ns/data-models",
+        "agriCommon_context.jsonld",
+        "https://w3id.org/demeter/agri/proxy/saref4agri?_profile=jsoncontext",
+        "https://fiware.github.io/data-models/full-context.jsonld",
         {
+            "@vocab": "https://w3id.org/demeter/agri/agriCrop",
             "foodie": "http://foodie-cloud.com/model/foodie#",
             "saref4agri": "https://w3id.org/def/saref4agri#",
-            "fiware": "https://uri.fiware.org/ns/data-models#",
             "demeterAgriCrop": "https://w3id.org/demeter/agri/agriCrop#",
-            "AgriCrop": {
-                "@id": "fiware:AgriCrop"
-            },
-            "Crop": {
-                "@id": "saref4agri:Crop"
-            },
-            "hasAgriFertiliser": {
-                "@id": "fiware:hasAgriFertiliser",
-                "@type": "@id"
-            },
-            "hasAgriPest": {
-                "@id": "fiware:hasAgriPest",
-                "@type": "@id"
-            },
-            "cropHasAgriSoil": {
-                "@id": "fiware:cropHasAgriSoil",
-                "@type": "@id"
-            },
-            "numberOfHivesNeeded": {
-                "@id": "demeterAgriCrop:numberOfHivesNeeded",
-                "@type": "xsd:dateTime"
-            },
-            "expectedBloomingEnd": {
-                "@id": "demeterAgriCrop:expectedBloomingEnd",
-                "@type": "xsd:dateTime"
-            },
-            "harvestingInterval": {
-                "@id": "fiware:harvestingInterval"
-            },
-            "wateringFrequency": {
-                "@id": "fiware:wateringFrequency"
-            },
-            "expectedBloomingStart": {
-                "@id": "demeterAgriCrop:expectedBloomingStart",
-                "@type": "xsd:dateTime"
-            },
-            "plantingFrom": {
-                "@id": "fiware:plantingFrom"
-            }
+            "fiware": "https://uri.fiware.org/ns/data-models#"
         }
     ]
 }

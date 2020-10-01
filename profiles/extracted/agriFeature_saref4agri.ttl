@@ -1,0 +1,76 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+saref4agri:Farm a owl:Class ;
+    rdfs:label "Farm" ;
+    rdfs:comment "A plot of land used for the scope of farming which can contain buildings and parcels."@en ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty saref4agri:contains ;
+            owl:someValuesFrom saref4agri:Building ],
+        [ a owl:Restriction ;
+            owl:onProperty saref4agri:contains ;
+            owl:someValuesFrom saref4agri:Parcel ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty saref4agri:hasName ],
+        <http://www.opengis.net/ont/geosparql#Feature> ;
+    owl:equivalentClass <http://inspire.ec.europa.eu/schemas/af/3.0#Holding>,
+        <https://uri.fiware.org/ns/data-models#AgriFarm> .
+
+<https://w3id.org/demeter/agri/proxy/saref4agri> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+            prov:endedAtTime "2020-09-29"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+
+saref4agri:Building a owl:Class ;
+    rdfs:label "Building" ;
+    rdfs:comment "A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space)."@en ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty saref4agri:contains ;
+            owl:someValuesFrom saref4agri:BuildingSpace ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty saref4agri:hasName ],
+        <http://www.opengis.net/ont/geosparql#Feature> .
+
+saref4agri:BuildingSpace a owl:Class ;
+    rdfs:label "Building space"@en ;
+    rdfs:comment "An entity used to define the physical spaces of the building. A building space contains devices or building objects."@en ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> .
+
+saref4agri:Parcel a owl:Class ;
+    rdfs:label "Parcel" ;
+    rdfs:comment "An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items."@en ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty saref4agri:contains ;
+            owl:someValuesFrom saref4agri:Crop ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty saref4agri:hasName ],
+        <http://www.opengis.net/ont/geosparql#Feature> ;
+    owl:equivalentClass <http://foodie-cloud.com/model/foodie#Plot>,
+        <https://uri.fiware.org/ns/data-models#AgriParcel> .
+
+saref4agri:isContainedIn a owl:ObjectProperty ;
+    rdfs:label "is contained in"@en ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> .
+
+saref4agri:contains a owl:ObjectProperty ;
+    rdfs:isDefinedBy saref4agri: ;
+    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfContains> ;
+    owl:inverseOf saref4agri:isContainedIn .
+

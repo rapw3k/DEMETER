@@ -13,12 +13,12 @@
             "properties": {},
             "required": []
         },
-        "iso19150-2:FeatureType": {
+        "geo:Feature": {
             "type": "object",
             "properties": {},
             "required": []
         },
-        "geo:Feature": {
+        "iso19150-2:FeatureType": {
             "type": "object",
             "properties": {},
             "required": []
@@ -29,13 +29,7 @@
                 "foodie:code": {
                     "type": "string"
                 },
-                "foodie:type": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foodie:alertDate": {
+                "foodie:description": {
                     "type": "string"
                 },
                 "foodie:alertGeometry": {
@@ -44,15 +38,21 @@
                         "type": "string"
                     }
                 },
-                "foodie:description": {
+                "foodie:type": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foodie:alertDate": {
                     "type": "string"
                 }
             },
             "required": [
                 "foodie:code",
+                "foodie:alertGeometry",
                 "foodie:type",
-                "foodie:alertDate",
-                "foodie:alertGeometry"
+                "foodie:alertDate"
             ]
         }
     }

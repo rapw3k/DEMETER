@@ -1,0 +1,27 @@
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fiware:Animal a owl:Class ;
+    rdfs:label "Animal" ;
+    rdfs:comment "The proposed animal data model has been made from a more general point of view, trying to adjust it to the information coming from the devices and sensors used in the UC." ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
+fiware:locatedAt a owl:ObjectProperty ;
+    rdfs:label "locatedAt"@en ;
+    rdfs:comment "AgriParcel relationship" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+    rdfs:subPropertyOf <https://w3id.org/def/saref4agri#isLocatedIn> .
+
+<https://w3id.org/demeter/agri/proxy/data-models> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\farmAnimal.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+            prov:endedAtTime "2020-10-01"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+

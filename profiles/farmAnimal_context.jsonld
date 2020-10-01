@@ -1,77 +1,16 @@
 {
     "@id": "https://w3id.org/demeter/agri/farmAnimal",
     "@context": [
-        "https://w3id.org/def/saref4agri",
-        "https://uri.fiware.org/ns/data-models",
-        "http://foodie-cloud.com/model/foodie",
-        "http://inspire.ec.europa.eu/schemas/af/3.0",
+        "https://fiware.github.io/data-models/full-context.jsonld",
+        "agriFeature_context.jsonld",
+        "agriFeature_context.jsonld",
+        "agriProperty_context.jsonld",
         {
-            "saref4agri": "https://w3id.org/def/saref4agri#",
+            "@vocab": "https://w3id.org/demeter/agri/farmAnimal",
             "fiware": "https://uri.fiware.org/ns/data-models#",
-            "foodie": "http://foodie-cloud.com/model/foodie#",
             "af-inspire": "http://inspire.ec.europa.eu/schemas/af/3.0#",
-            "Animal": {
-                "@id": "saref4agri:Animal"
-            },
-            "AnimalGroup": {
-                "@id": "saref4agri:AnimalGroup"
-            },
-            "FarmAnimalSpecies": {
-                "@id": "af-inspire:FarmAnimalSpecies"
-            },
-            "calvedBy": {
-                "@id": "fiware:calvedBy",
-                "@type": "@id"
-            },
-            "ownedBy": {
-                "@id": "fiware:ownedBy",
-                "@type": "@id"
-            },
-            "locatedAt": {
-                "@id": "fiware:locatedAt",
-                "@type": "@id"
-            },
-            "siredBy": {
-                "@id": "fiware:siredBy",
-                "@type": "@id"
-            },
-            "fedWith": {
-                "@id": "fiware:fedWith",
-                "@type": "@id"
-            },
-            "welfareCondition": {
-                "@id": "fiware:welfareCondition"
-            },
-            "healthCondition": {
-                "@id": "fiware:healthCondition"
-            },
-            "birthdate": {
-                "@id": "fiware:birthdate"
-            },
-            "breed": {
-                "@id": "fiware:breed"
-            },
-            "phenologicalCondition": {
-                "@id": "fiware:phenologicalCondition"
-            },
-            "sex": {
-                "@id": "fiware:sex"
-            },
-            "weight": {
-                "@id": "fiware:weight"
-            },
-            "relatedSource": {
-                "@id": "fiware:relatedSource"
-            },
-            "species": {
-                "@id": "fiware:species"
-            },
-            "legalID": {
-                "@id": "fiware:legalID"
-            },
-            "reproductiveCondition": {
-                "@id": "fiware:reproductiveCondition"
-            }
+            "saref4agri": "https://w3id.org/def/saref4agri#",
+            "foodie": "http://foodie-cloud.com/model/foodie#"
         }
     ]
 }

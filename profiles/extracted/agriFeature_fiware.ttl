@@ -1,0 +1,63 @@
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fiware:AgriFarm a owl:Class ;
+    rdfs:label "Agri Farm" ;
+    rdfs:comment "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> .
+
+fiware:AgriGreenhouse a owl:Class ;
+    rdfs:label "Agri Greenhouse" ;
+    rdfs:comment "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Greenhouse.md> ;
+    rdfs:subClassOf fiware:AgriParcel .
+
+fiware:hasAgriParcel a owl:ObjectProperty ;
+    rdfs:label "hasAgriParcel"@en ;
+    rdfs:comment "List of agri parcels belonging to the farm" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> ;
+    rdfs:subPropertyOf <https://w3id.org/def/saref4agri#contains> .
+
+fiware:hasAgriParcelChildren a owl:ObjectProperty ;
+    rdfs:label "hasAgriParcelChildren"@en ;
+    rdfs:comment "An optional reference to lower level (child) AgriParcel records to which this entity relates." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
+    rdfs:subPropertyOf <https://w3id.org/def/saref4agri#contains> .
+
+fiware:hasAgriParcelParent a owl:ObjectProperty ;
+    rdfs:label "hasAgriParcelParent"@en ;
+    rdfs:comment "An optional reference to a higher level (parent) AgriParcel entity to which this entity relates." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
+    rdfs:subPropertyOf <https://w3id.org/def/saref4agri#isContainedIn> .
+
+fiware:landLocation a owl:ObjectProperty ;
+    rdfs:label "landLocation"@en ;
+    rdfs:comment "Geometry defining the boundaries of the farm land" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> ;
+    rdfs:subPropertyOf fiware:location .
+
+<https://w3id.org/demeter/agri/proxy/data-models> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+            prov:endedAtTime "2020-09-29"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+
+fiware:AgriParcel a owl:Class ;
+    rdfs:label "Agri Parcel" ;
+    rdfs:comment "This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+    rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
+
+fiware:location a owl:ObjectProperty ;
+    rdfs:label "location"@en ;
+    rdfs:comment "The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md>,
+        <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
+    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> .
+
