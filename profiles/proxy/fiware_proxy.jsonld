@@ -1,6 +1,112 @@
 [
   {
-    "@id": "https://w3id.org/demeter/agri/proxy/foodie",
+    "@id": "_:cb11b84530ea1eea7c478f7ef1044d5b5be7bd850a16bcd4d4490c25b2c3a24da75",
+    "@type": [
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\farmAnimal.ttl"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb123dc11a50bfc9d977dd9b600215e3b4d892edbf2869f7f616b13ab3019c40215",
+    "@type": [
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#landLocation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Geometry defining the boundaries of the farm land"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "landLocation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://uri.fiware.org/ns/data-models#location"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasAgriParcelChildren",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "An optional reference to lower level (child) AgriParcel records to which this entity relates."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasAgriParcelChildren"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#contains"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#location",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      },
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "location"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/demeter/agri/proxy/fiware",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology",
       "http://www.w3.org/ns/prov#Entity"
@@ -17,28 +123,17 @@
     ],
     "http://www.w3.org/ns/prov#wasDerivedFrom": [
       {
-        "@id": "_:N7eb1049652494b04bd47f6b7b487e6c7"
+        "@id": "_:N064a884f5f2e4cdd8109f7aaebb452e5"
       }
     ],
     "http://www.w3.org/ns/prov#wasGeneratedBy": [
       {
-        "@id": "_:N53ad61fd671548cdbe43252835ccbd76"
+        "@id": "_:N927e603dd4b2410a9f58436a48a010d2"
       }
     ]
   },
   {
-    "@id": "_:N7eb1049652494b04bd47f6b7b487e6c7",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\profiles\\merge_temp.ttl"
-      }
-    ]
-  },
-  {
-    "@id": "_:N53ad61fd671548cdbe43252835ccbd76",
+    "@id": "_:N927e603dd4b2410a9f58436a48a010d2",
     "@type": [
       "http://www.w3.org/ns/prov#Activity"
     ],
@@ -55,12 +150,169 @@
     ],
     "http://www.w3.org/ns/prov#wasAssociatedWith": [
       {
-        "@id": "_:N21e0a3a491314eacaba6ff65c1546359"
+        "@id": "_:N8ea5892a3afe4da6903248d7806a09af"
       }
     ]
   },
   {
-    "@id": "_:N21e0a3a491314eacaba6ff65c1546359",
+    "@id": "_:N8ea5892a3afe4da6903248d7806a09af",
+    "@type": [
+      "http://www.w3.org/ns/prov#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ProfileWiz 0.1.5"
+      }
+    ]
+  },
+  {
+    "@id": "_:N064a884f5f2e4cdd8109f7aaebb452e5",
+    "@type": [
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\profiles\\merge_temp.ttl"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb117c10b1e340377fb26d6e62ace8bdc8baea1c631b024881a97be78b40cec49ae",
+    "@type": [
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriAlert.ttl"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#Animal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The proposed animal data model has been made from a more general point of view, trying to adjust it to the information coming from the devices and sensors used in the UC."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Animal"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#locatedAt",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "AgriParcel relationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "locatedAt"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#isLocatedIn"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasAgriParcelParent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "An optional reference to a higher level (parent) AgriParcel entity to which this entity relates."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasAgriParcelParent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#isContainedIn"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasAgriParcel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "List of agri parcels belonging to the farm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasAgriParcel"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#contains"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb147cd8e943f3613b6fc42f8b29889135f579d6e4a3ff1f37bb5311b60a58d25a9",
+    "@type": [
+      "http://www.w3.org/ns/prov#Activity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ProfileWiz: subset of used terms from available ontology"
+      }
+    ],
+    "http://www.w3.org/ns/prov#endedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-10-01"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasAssociatedWith": [
+      {
+        "@id": "_:cb161a679d6bef03da9b52f592be78c10580d2479fe569a84c49347dcb2b3a6e14a"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb161a679d6bef03da9b52f592be78c10580d2479fe569a84c49347dcb2b3a6e14a",
     "@type": [
       "http://www.w3.org/ns/prov#Agent"
     ],
@@ -104,33 +356,6 @@
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#landLocation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Geometry defining the boundaries of the farm land"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "landLocation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://uri.fiware.org/ns/data-models#location"
-      }
-    ]
-  },
-  {
     "@id": "https://uri.fiware.org/ns/data-models#AgriFarm",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -152,13 +377,13 @@
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#hasAgriParcelParent",
+    "@id": "https://uri.fiware.org/ns/data-models#AgriParcel",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "An optional reference to a higher level (parent) AgriParcel entity to which this entity relates."
+        "@value": "This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -168,70 +393,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "hasAgriParcelParent"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#isContainedIn"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#location",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
-      },
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "location"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#hasAgriParcelChildren",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "An optional reference to lower level (child) AgriParcel records to which this entity relates."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "hasAgriParcelChildren"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#contains"
+        "@value": "Agri Parcel"
       }
     ]
   },
@@ -253,12 +415,12 @@
     ],
     "http://www.w3.org/ns/prov#wasAssociatedWith": [
       {
-        "@id": "_:cb161a679d6bef03da9b52f592be78c10580d2479fe569a84c49347dcb2b3a6e14a"
+        "@id": "_:cb184fa4839d2dc20877b92afe8fc1f0bc448c5359c27ac287cd87db28cd19bff72"
       }
     ]
   },
   {
-    "@id": "_:cb161a679d6bef03da9b52f592be78c10580d2479fe569a84c49347dcb2b3a6e14a",
+    "@id": "_:cb184fa4839d2dc20877b92afe8fc1f0bc448c5359c27ac287cd87db28cd19bff72",
     "@type": [
       "http://www.w3.org/ns/prov#Agent"
     ],
@@ -291,76 +453,6 @@
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "https://uri.fiware.org/ns/data-models#AgriParcel"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#hasAgriParcel",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "List of agri parcels belonging to the farm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "hasAgriParcel"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#contains"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb117c10b1e340377fb26d6e62ace8bdc8baea1c631b024881a97be78b40cec49ae",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriAlert.ttl"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#AgriParcel",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Agri Parcel"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb123dc11a50bfc9d977dd9b600215e3b4d892edbf2869f7f616b13ab3019c40215",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl"
       }
     ]
   }

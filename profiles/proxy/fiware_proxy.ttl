@@ -16,6 +16,11 @@ fiware:AgriGreenhouse a owl:Class ;
     rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Greenhouse.md> ;
     rdfs:subClassOf fiware:AgriParcel .
 
+fiware:Animal a owl:Class ;
+    rdfs:label "Animal" ;
+    rdfs:comment "The proposed animal data model has been made from a more general point of view, trying to adjust it to the information coming from the devices and sensors used in the UC." ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+
 fiware:hasAgriParcel a owl:ObjectProperty ;
     rdfs:label "hasAgriParcel"@en ;
     rdfs:comment "List of agri parcels belonging to the farm" ;
@@ -40,7 +45,13 @@ fiware:landLocation a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> ;
     rdfs:subPropertyOf fiware:location .
 
-<https://w3id.org/demeter/agri/proxy/foodie> a owl:Ontology,
+fiware:locatedAt a owl:ObjectProperty ;
+    rdfs:label "locatedAt"@en ;
+    rdfs:comment "AgriParcel relationship" ;
+    rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> ;
+    rdfs:subPropertyOf <https://w3id.org/def/saref4agri#isLocatedIn> .
+
+<https://w3id.org/demeter/agri/proxy/fiware> a owl:Ontology,
         prov:Entity ;
     owl:imports <https://uri.fiware.org/ns/data-models> ;
     prof:isProfileOf <https://uri.fiware.org/ns/data-models> ;
@@ -68,11 +79,20 @@ fiware:location a owl:ObjectProperty ;
     rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriAlert.ttl" .
 
 [] a prov:Entity ;
+    rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\farmAnimal.ttl" .
+
+[] a prov:Entity ;
     rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl" .
 
 [] a prov:Activity ;
     rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
     prov:endedAtTime "2020-09-30"^^xsd:date ;
+    prov:wasAssociatedWith [ a prov:Agent ;
+            rdfs:label "ProfileWiz 0.1.5" ] .
+
+[] a prov:Activity ;
+    rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+    prov:endedAtTime "2020-10-01"^^xsd:date ;
     prov:wasAssociatedWith [ a prov:Agent ;
             rdfs:label "ProfileWiz 0.1.5" ] .
 

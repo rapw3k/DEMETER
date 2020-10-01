@@ -1,23 +1,30 @@
 {
-    "@id": "https://w3id.org/demeter/agri/proxy/foodie",
+    "@id": "https://w3id.org/demeter/agri/proxy/fiware",
     "@context": [
         {
-            "@vocab": "https://w3id.org/demeter/agri/proxy/foodie",
+            "@vocab": "https://w3id.org/demeter/agri/proxy/fiware",
             "fiware": "https://uri.fiware.org/ns/data-models#",
-            "fiware:AgriFarm": {
-                "@id": "fiware:AgriFarm"
-            },
             "fiware:AgriParcel": {
                 "@id": "fiware:AgriParcel"
             },
             "fiware:Alert": {
                 "@id": "fiware:Alert"
             },
+            "fiware:Animal": {
+                "@id": "fiware:Animal"
+            },
             "fiware:AgriGreenhouse": {
                 "@id": "fiware:AgriGreenhouse"
             },
+            "fiware:AgriFarm": {
+                "@id": "fiware:AgriFarm"
+            },
             "fiware:hasAgriParcelParent": {
                 "@id": "fiware:hasAgriParcelParent",
+                "@type": "@id"
+            },
+            "fiware:hasAgriParcelChildren": {
+                "@id": "fiware:hasAgriParcelChildren",
                 "@type": "@id"
             },
             "fiware:landLocation": {
@@ -32,15 +39,15 @@
                 "@id": "fiware:location",
                 "@type": "@id"
             },
-            "fiware:hasAgriParcelChildren": {
-                "@id": "fiware:hasAgriParcelChildren",
+            "fiware:locatedAt": {
+                "@id": "fiware:locatedAt",
                 "@type": "@id"
-            },
-            "fiware:validTo": {
-                "@id": "fiware:validTo"
             },
             "fiware:validFrom": {
                 "@id": "fiware:validFrom"
+            },
+            "fiware:validTo": {
+                "@id": "fiware:validTo"
             }
         }
     ]
