@@ -85,6 +85,60 @@ proxy:saref4agri a prof:Profile ;
 		] ;
 .
 
+proxy:saref a prof:Profile ;
+	prof:isProfileOf <https://w3id.org/saref> ;
+	rdfs:label  "DEMETER profile of SAREF"@en ;
+	rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+	prof:hasResource  [ 
+			prof:hasRole profrole:context ;
+			prof:hasArtifact <https://w3id.org/demeter/agri/proxy/saref?_profile=jsoncontext> ;
+			rdfs:comment "This URI correctly handles content negotiation but does not offer a json-ld context representation" ;
+			dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+		] ;
+.
+
+proxy:prov a prof:Profile ;
+	prof:isProfileOf <http://www.w3.org/ns/prov> ;
+	rdfs:label  "DEMETER profile of PROV"@en ;
+	rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+	prof:hasResource  [ 
+			prof:hasRole profrole:context ;
+			prof:hasArtifact <https://w3id.org/demeter/agri/proxy/prov?_profile=jsoncontext> ;
+			rdfs:comment "This URI correctly handles content negotiation but does not offer a json-ld context representation" ;
+			dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+		] ;
+.
+
+
+proxy:foaf a prof:Profile ;
+	prof:isProfileOf <http://xmlns.com/foaf/0.1> ;
+	rdfs:label  "DEMETER profile of FOAF"@en ;
+	rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+	prof:hasResource  [ 
+			prof:hasRole profrole:context ;
+			prof:hasArtifact <https://w3id.org/demeter/agri/proxy/foaf?_profile=jsoncontext> ;
+			rdfs:comment "This URI correctly handles content negotiation but does not offer a json-ld context representation" ;
+			dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+		] ;
+.
+
+proxy:citation a prof:Profile ;
+	prof:isProfileOf <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation> ;
+	rdfs:label  "DEMETER profile of ISO19115 citation model"@en ;
+	rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+	prof:hasResource  [ 
+			prof:hasRole profrole:context ;
+			prof:hasArtifact <https://w3id.org/demeter/agri/proxy/foaf?_profile=jsoncontext> ;
+			rdfs:comment "This URI correctly handles content negotiation but does not offer a json-ld context representation" ;
+			dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+		] ;
+.
+
+
 <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation>  a prof:Profile ;
 	rdfs:label  "ISO 19115 citation"@en ;
 	prof:hasResource 	[
@@ -101,6 +155,24 @@ proxy:saref4agri a prof:Profile ;
 		] ;
 .
 
+<https://schema.org>  a prof:Profile ;
+	prof:isProfileOf <http://schema.org> ;
+	rdfs:comment "Experimental approach for equivalence of http and https for this" ;
+	prof:hasResource 	[
+			prof:hasRole profrole:cachedCopy ;
+			prof:hasArtifact "lib/schemaorg_https.ttl" ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+	prof:hasResource  [ 
+			prof:hasRole profrole:context ;
+			prof:hasArtifact <http://schema.org> ;
+			rdfs:comment "This URI correctly handles content negotiation to offer a json-ld context representation" ;
+			dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+		] ;
+.
+	
 <http://schema.org>  a prof:Profile ;
 	rdfs:label  "Schema.org schema"@en ;
 	prof:hasResource 	[
@@ -150,7 +222,7 @@ proxy:saref4agri a prof:Profile ;
 		] ;
 		prof:hasResource 	[
 			prof:hasRole profrole:source ;
-			prof:hasArtifact <hhttp://schemas.opengis.net/sf/1.0/simple_features_geometries.rdf> ;
+			prof:hasArtifact <http://schemas.opengis.net/sf/1.0/simple_features_geometries.rdf> ;
 			dct:conformsTo owl: , rdfs: ;
             dct:format "application/rdf+xml" ;
 		] ;
@@ -160,4 +232,48 @@ proxy:saref4agri a prof:Profile ;
     a prof:Profile ;
 	rdfs:label  "OBO"@en ;
 	rdfs:comment "Is this actually the ontology to be referenced here";
+	prof:hasResource 	[
+			prof:hasRole profrole:cachedCopy ;
+			prof:hasArtifact "proxy/obo_proxy.ttl" ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+.
+
+proxy:obo a prof:Profile ;
+	prof:isProfileOf <http://purl.obolibrary.org/obo>  ;
+	rdfs:label  "DEMETER profile of OBO"@en ;
+	rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+	prof:hasResource  [ 
+			prof:hasRole profrole:context ;
+			prof:hasArtifact <https://w3id.org/demeter/agri/proxy/sobo?_profile=jsoncontext> ;
+			rdfs:comment "Provise local profile and json-ld context representation" ;
+			dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+		] ;
+.
+
+<http://portele.de/ont/inspire/baseInspire> 
+	a prof:Profile ;
+	rdfs:comment "Not acessible" ;
+		prof:hasResource 	[
+			prof:hasRole profrole:cachedCopy ;
+			prof:hasArtifact "proxy/baseInspire_proxy.ttl" ;
+			dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+		] ;
+.
+
+proxy:baseInspire a prof:Profile ;
+	prof:isProfileOf <http://portele.de/ont/inspire/baseInspire>   ;
+	rdfs:label  "DEMETER profile of OBO"@en ;
+	rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+	prof:hasResource  [ 
+			prof:hasRole profrole:context ;
+			prof:hasArtifact <https://w3id.org/demeter/agri/proxy/baseInspire?_profile=jsoncontext> ;
+			rdfs:comment "Provise local profile and json-ld context representation" ;
+			dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+		] ;
+
 .

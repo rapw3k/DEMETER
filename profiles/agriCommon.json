@@ -3,192 +3,28 @@
     "$id": "https://w3id.org/demeter/agri/agriCommon?_profile=jsonschema",
     "type": "object",
     "properties": {
-        "obo:TAXRANK_0000000": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "foaf:Agent": {
-            "type": "object",
-            "properties": {
-                "foaf:interest": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:age": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:birthday": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:mbox": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:openid": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:yahooChatID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:topic_interest": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:tipjar": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:mbox_sha1sum": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:skypeID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:icqChatID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:gender": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:aimChatID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:status": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:jabberID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:made": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:weblog": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:account": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:msnChatID": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:holdsAccount": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:member": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": []
-        },
-        "schema:Organization": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "schema:Role": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "schema:Person": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "ns1:SpatialThing": {
-            "type": "object",
-            "properties": {
-                "ns1:long": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "ns1:lat": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:based_near": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "ns1:alt": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": []
-        },
         "foaf:Person": {
             "type": "object",
             "properties": {
-                "foaf:geekcode": {
+                "foaf:knows": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:pastProject": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:schoolHomepage": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:img": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -200,13 +36,7 @@
                         "type": "string"
                     }
                 },
-                "foaf:lastName": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:family_name": {
+                "foaf:firstName": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -224,7 +54,7 @@
                         "type": "string"
                     }
                 },
-                "foaf:workInfoHomepage": {
+                "foaf:family_name": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -236,19 +66,7 @@
                         "type": "string"
                     }
                 },
-                "foaf:pastProject": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:img": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "foaf:publications": {
+                "foaf:lastName": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -260,7 +78,7 @@
                         "type": "string"
                     }
                 },
-                "foaf:knows": {
+                "foaf:publications": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -272,13 +90,13 @@
                         "type": "string"
                     }
                 },
-                "foaf:firstName": {
+                "foaf:geekcode": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "foaf:schoolHomepage": {
+                "foaf:workInfoHomepage": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -287,16 +105,160 @@
             },
             "required": []
         },
-        "saref4agri:FarmHolding": {
+        "foaf:Agent": {
             "type": "object",
             "properties": {
-                "saref4agri:hasName": {
+                "foaf:interest": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "saref4agri:managesFarm": {
+                "foaf:yahooChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:aimChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:topic_interest": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:msnChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:age": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:jabberID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:weblog": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:mbox": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:mbox_sha1sum": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:icqChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:tipjar": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:gender": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:holdsAccount": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:made": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:openid": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:skypeID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:status": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:account": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:birthday": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:member": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ns1:SpatialThing": {
+            "type": "object",
+            "properties": {
+                "ns1:alt": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ns1:lat": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ns1:long": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:based_near": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -308,13 +270,324 @@
         "saref4agri:Farmer": {
             "type": "object",
             "properties": {
-                "saref4agri:hasName": {
+                "saref4agri:managesFarm": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
+                "saref4agri:hasName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "schema:Organization": {
+            "type": "object",
+            "properties": {
+                "schema:founders": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:founder": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:subOrganization": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:foundingDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:department": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:employees": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:employee": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:legalName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:member": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:members": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "schema:Thing": {
+            "type": "object",
+            "properties": {
+                "schema:url": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:description": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:name": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:image": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:alternateName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:additionalType": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:sameAs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "saref4agri:FarmHolding": {
+            "type": "object",
+            "properties": {
                 "saref4agri:managesFarm": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "schema:Role": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "schema:Person": {
+            "type": "object",
+            "properties": {
+                "schema:children": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:spouse": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:parent": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:homeLocation": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:gender": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:affiliation": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:sibling": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:follows": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:nationality": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:familyName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:givenName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:performerIn": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:workLocation": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:memberOf": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:honorificSuffix": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:knows": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:parents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:worksFor": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:additionalName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:colleague": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:siblings": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:colleagues": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:relatedTo": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:alumniOf": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:deathDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:jobTitle": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:birthDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:honorificPrefix": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -326,13 +599,13 @@
         "iso19115-citation:ResponsibleParty": {
             "type": "object",
             "properties": {
-                "iso19115-citation:individualName": {
-                    "type": "string"
-                },
                 "iso19115-citation:organisationName": {
                     "type": "string"
                 },
                 "iso19115-citation:role": {
+                    "type": "string"
+                },
+                "iso19115-citation:individualName": {
                     "type": "string"
                 },
                 "iso19115-citation:positionName": {
@@ -348,6 +621,11 @@
             "required": [
                 "iso19115-citation:role"
             ]
+        },
+        "obo:TAXRANK_0000000": {
+            "type": "object",
+            "properties": {},
+            "required": []
         }
     }
 }

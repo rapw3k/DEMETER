@@ -1,4 +1,3 @@
-@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix demeterAgriCommon: <https://w3id.org/demeter/agri/agriCommon#> .
 @prefix fiware: <https://uri.fiware.org/ns/data-models#> .
@@ -9,12 +8,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix saref: <https://w3id.org/saref#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
 @prefix schema: <https://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 iso19115-citation:ResponsibleParty rdfs:subClassOf foaf:Agent .
@@ -24,19 +21,6 @@ foodie:code rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 foodie:notes rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 foodie:price rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
-
-common:validFrom a owl:DatatypeProperty ;
-    rdfs:isDefinedBy common: ;
-    rdfs:range xsd:dateTime ;
-    skos:prefLabel "begin of real-world phenomenon"@en .
-
-common:validTo a owl:DatatypeProperty ;
-    rdfs:isDefinedBy common: ;
-    rdfs:range xsd:dateTime ;
-    skos:prefLabel "end of real-world phenomenon"@en .
-
-obo:TAXRANK_0000000 rdfs:label "taxonomic_rank"@en ;
-    rdfs:isDefinedBy obo: .
 
 obo:TAXRANK_1000000 a owl:AnnotationProperty ;
     rdfs:label "has_rank"@en ;
@@ -131,6 +115,7 @@ saref4agri:Farmer rdfs:subClassOf [ a owl:Restriction ;
     dcterms:title "DEMETER AgriCommon"@en ;
     rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
     owl:imports <http://foodie-cloud.com/model/foodie>,
+        <http://portele.de/ont/inspire/baseInspire>,
         <http://purl.obolibrary.org/obo>,
         <http://www.w3.org/ns/prov>,
         <http://xmlns.com/foaf/0.1>,
@@ -140,6 +125,7 @@ saref4agri:Farmer rdfs:subClassOf [ a owl:Restriction ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl> ;
     owl:versionInfo "1.0" ;
     prof:isProfileOf <http://foodie-cloud.com/model/foodie>,
+        <http://portele.de/ont/inspire/baseInspire>,
         <http://purl.obolibrary.org/obo>,
         <http://www.w3.org/ns/prov>,
         <http://xmlns.com/foaf/0.1>,
@@ -150,7 +136,7 @@ saref4agri:Farmer rdfs:subClassOf [ a owl:Restriction ;
             rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriCommon.ttl" ] ;
     prov:wasGeneratedBy [ a prov:Activity ;
             rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriCommon.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
-            prov:endedAtTime "2020-10-01"^^xsd:date ;
+            prov:endedAtTime "2020-10-02"^^xsd:date ;
             prov:wasAssociatedWith [ a prov:Agent ;
                     rdfs:label "ProfileWiz 0.1.5" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
@@ -180,7 +166,6 @@ schema:Organization rdfs:comment "An organization such as a school, NGO, corpora
     rdfs:isDefinedBy schema:Organization .
 
 schema:Person a owl:Class ;
-    rdfs:label "Person"@en ;
     rdfs:comment "A person (alive, dead, undead, or fictional)."@en ;
     rdfs:isDefinedBy schema:Person ;
     owl:equivalentClass foaf:Person .
@@ -192,13 +177,11 @@ schema:Role a owl:Class ;
 See also <a href="http://blog.schema.org/2014/06/introducing-role.html">blog post</a>."""@en ;
     rdfs:isDefinedBy schema:Role .
 
-schema:telephone a rdf:Property ;
-    rdfs:label "telephone"@en ;
+schema:telephone rdfs:label "telephone"@en ;
     rdfs:comment "The telephone number." ;
     rdfs:isDefinedBy schema:telephone .
 
-schema:name a rdf:Property ;
-    rdfs:label "name"@en ;
+schema:name rdfs:label "name"@en ;
     rdfs:comment "The name of the item." ;
     rdfs:isDefinedBy schema:name .
 

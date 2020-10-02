@@ -2,16 +2,15 @@
     "@id": "https://w3id.org/demeter/agri/farmAnimal",
     "@context": [
         {
-            "@vocab": "https://w3id.org/demeter/agri/farmAnimal",
             "fiware": "https://uri.fiware.org/ns/data-models#",
-            "af-inspire": "http://inspire.ec.europa.eu/schemas/af/3.0#",
             "saref4agri": "https://w3id.org/def/saref4agri#",
             "foodie": "http://foodie-cloud.com/model/foodie#",
-            "FarmAnimalSpecies": {
-                "@id": "af-inspire:FarmAnimalSpecies"
-            },
+            "af-inspire": "http://inspire.ec.europa.eu/schemas/af/3.0#",
             "Animal": {
                 "@id": "saref4agri:Animal"
+            },
+            "FarmAnimalSpecies": {
+                "@id": "af-inspire:FarmAnimalSpecies"
             },
             "AnimalGroup": {
                 "@id": "saref4agri:AnimalGroup"
@@ -19,24 +18,12 @@
             "ID": {
                 "@id": "saref4agri:ID"
             },
-            "siredBy": {
-                "@id": "fiware:siredBy",
-                "@type": "@id"
-            },
-            "fedWith": {
-                "@id": "fiware:fedWith",
-                "@type": "@id"
-            },
-            "locatedAt": {
-                "@id": "fiware:locatedAt",
-                "@type": "@id"
-            },
             "ownedBy": {
                 "@id": "fiware:ownedBy",
                 "@type": "@id"
             },
-            "calvedBy": {
-                "@id": "fiware:calvedBy",
+            "locatedAt": {
+                "@id": "fiware:locatedAt",
                 "@type": "@id"
             },
             "includesAnimal": {
@@ -47,9 +34,47 @@
                 "@id": "saref4agri:hasID",
                 "@type": "@id"
             },
+            "siredBy": {
+                "@id": "fiware:siredBy",
+                "@type": "@id"
+            },
+            "fedWith": {
+                "@id": "fiware:fedWith",
+                "@type": "@id"
+            },
+            "calvedBy": {
+                "@id": "fiware:calvedBy",
+                "@type": "@id"
+            },
+            "welfareCondition": {
+                "@id": "fiware:welfareCondition"
+            },
+            "species": {
+                "@id": "fiware:species"
+            },
+            "livestockType": {
+                "@id": "foodie:livestockType",
+                "@type": "xsd:string"
+            },
+            "phenologicalCondition": {
+                "@id": "fiware:phenologicalCondition"
+            },
+            "hasBirthDate": {
+                "@id": "saref4agri:hasBirthDate",
+                "@type": "xsd:dateTime"
+            },
+            "sex": {
+                "@id": "fiware:sex"
+            },
             "livestockNumber": {
                 "@id": "foodie:livestockNumber",
                 "@type": "xsd:decimal"
+            },
+            "weight": {
+                "@id": "fiware:weight"
+            },
+            "relatedSource": {
+                "@id": "fiware:relatedSource"
             },
             "birthdate": {
                 "@id": "fiware:birthdate"
@@ -58,43 +83,17 @@
                 "@id": "saref4agri:hasDeathDate",
                 "@type": "xsd:dateTime"
             },
-            "phenologicalCondition": {
-                "@id": "fiware:phenologicalCondition"
-            },
-            "healthCondition": {
-                "@id": "fiware:healthCondition"
-            },
-            "hasBirthDate": {
-                "@id": "saref4agri:hasBirthDate",
-                "@type": "xsd:dateTime"
-            },
             "legalID": {
                 "@id": "fiware:legalID"
-            },
-            "sex": {
-                "@id": "fiware:sex"
-            },
-            "livestockType": {
-                "@id": "foodie:livestockType",
-                "@type": "xsd:string"
-            },
-            "breed": {
-                "@id": "fiware:breed"
-            },
-            "welfareCondition": {
-                "@id": "fiware:welfareCondition"
-            },
-            "relatedSource": {
-                "@id": "fiware:relatedSource"
-            },
-            "weight": {
-                "@id": "fiware:weight"
             },
             "reproductiveCondition": {
                 "@id": "fiware:reproductiveCondition"
             },
-            "species": {
-                "@id": "fiware:species"
+            "breed": {
+                "@id": "fiware:breed"
+            },
+            "healthCondition": {
+                "@id": "fiware:healthCondition"
             }
         }
     ]

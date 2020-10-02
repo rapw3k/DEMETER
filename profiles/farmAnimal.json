@@ -8,16 +8,57 @@
             "properties": {},
             "required": []
         },
-        "saref4agri:Animal": {
+        "saref:FeatureOfInterest": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "saref4agri:AnimalGroup": {
             "type": "object",
             "properties": {
-                "saref4agri:hasID": {
+                "saref4agri:hasMember": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "saref4agri:hasName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:isLocatedIn": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "saref4agri:Animal": {
+            "type": "object",
+            "properties": {
+                "saref4agri:hasBirthDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasDeathDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "obo:TAXRANK_1000000": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -35,19 +76,7 @@
                         "type": "string"
                     }
                 },
-                "saref4agri:hasBirthDate": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref4agri:hasDeathDate": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "obo:TAXRANK_1000000": {
+                "saref4agri:hasName": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -56,7 +85,7 @@
             },
             "required": []
         },
-        "saref:FeatureOfInterest": {
+        "saref4agri:ID": {
             "type": "object",
             "properties": {},
             "required": []
@@ -80,35 +109,6 @@
                 "foodie:livestockType",
                 "foodie:livestockNumber"
             ]
-        },
-        "saref4agri:ID": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "saref4agri:AnimalGroup": {
-            "type": "object",
-            "properties": {
-                "saref4agri:hasMember": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref4agri:isLocatedIn": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref4agri:hasName": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": []
         }
     }
 }

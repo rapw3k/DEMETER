@@ -3,9 +3,40 @@
     "$id": "https://w3id.org/demeter/agri/agriSystem?_profile=jsonschema",
     "type": "object",
     "properties": {
-        "saref:FunctionRelated": {
+        "ssn:System": {
             "type": "object",
-            "properties": {},
+            "properties": {
+                "ssn:hasDeployment": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ssn:hasSubSystem": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sosa:isHostedBy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ssn:implements": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "dummy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
             "required": []
         },
         "saref:Device": {
@@ -17,16 +48,13 @@
                         "type": "string"
                     }
                 },
-                "saref:hasManufacturer": {
-                    "type": "string"
-                },
-                "saref:controlsProperty": {
+                "saref:measuresProperty": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "saref:hasState": {
+                "saref:hasProfile": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -35,13 +63,10 @@
                 "saref:hasDescription": {
                     "type": "string"
                 },
-                "saref:hasFunction": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                "saref:hasManufacturer": {
+                    "type": "string"
                 },
-                "saref:measuresProperty": {
+                "saref:hasFunction": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -62,19 +87,7 @@
                         "type": "string"
                     }
                 },
-                "saref:isUsedFor": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref:makesMeasurement": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref:hasProfile": {
+                "saref:hasState": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -85,44 +98,31 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "saref:isUsedFor": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref:controlsProperty": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref:makesMeasurement": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             },
             "required": []
         },
-        "ssn:System": {
+        "saref:FunctionRelated": {
             "type": "object",
-            "properties": {
-                "ssn:hasDeployment": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "ssn:implements": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "ssn:hasSubSystem": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "dummy": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "sosa:isHostedBy": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
+            "properties": {},
             "required": []
         },
         "saref:Actuator": {
@@ -149,37 +149,12 @@
             },
             "required": []
         },
-        "qu:QuantityKind": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:Energy": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "dim:RotationalSpeed": {
+        "saref4agri:WateringValve": {
             "type": "object",
             "properties": {},
             "required": []
         },
         "saref4agri:MovementActivitySensor": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "saref4agri:EatingActivitySensor": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "saref4agri:SoilTensiometer": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "saref4agri:WateringSystem": {
             "type": "object",
             "properties": {},
             "required": []
@@ -194,7 +169,12 @@
             "properties": {},
             "required": []
         },
-        "saref4agri:WeightSensor": {
+        "saref4agri:WateringSystem": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "saref4agri:EatingActivitySensor": {
             "type": "object",
             "properties": {},
             "required": []
@@ -204,12 +184,7 @@
             "properties": {},
             "required": []
         },
-        "saref4agri:WateringValve": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "saref4agri:Thermometer": {
+        "saref4agri:WeightSensor": {
             "type": "object",
             "properties": {},
             "required": []
@@ -219,7 +194,51 @@
             "properties": {},
             "required": []
         },
-        "iso19150-2:Datatype": {
+        "saref4agri:Thermometer": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "saref4agri:SoilTensiometer": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "ssn:Deployment": {
+            "type": "object",
+            "properties": {
+                "ssn:deployedSystem": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ssn:deployedOnPlatform": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ssn:forProperty": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "qu:QuantityKind": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:RotationalSpeed": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Energy": {
             "type": "object",
             "properties": {},
             "required": []
@@ -240,6 +259,11 @@
                     }
                 }
             },
+            "required": []
+        },
+        "iso19150-2:Datatype": {
+            "type": "object",
+            "properties": {},
             "required": []
         },
         "foodie:TractorType": {
@@ -263,30 +287,6 @@
             "required": [
                 "foodie:code"
             ]
-        },
-        "ssn:Deployment": {
-            "type": "object",
-            "properties": {
-                "ssn:deployedOnPlatform": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "ssn:forProperty": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "ssn:deployedSystem": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": []
         }
     }
 }

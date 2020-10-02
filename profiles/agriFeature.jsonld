@@ -1,5 +1,506 @@
 [
   {
+    "@id": "http://www.opengis.net/ont/sf#MultiPoint",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA MultiPoint is a 0-dimensional GeometryCollection. The elements of a MultiPoint are restricted to Points. ThePoints are not connected or ordered in any semantically important way.\r\nA MultiPoint is simple if no two Points in the MultiPoint are equal (have identical coordinate values in X and Y).\r\nEvery MultiPoint is spatially equal to a simple Multipoint.\r\nThe boundary of a MultiPoint is the empty set.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#originType",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasAgriParcel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "List of agri parcels belonging to the farm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasAgriParcel"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#contains"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/geosparql#asWKT",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "The WKT serialization of a geometry"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has serialization"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#contains",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#Polygon",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon.\r\nThe exterior boundary LinearRing defines the top of the surface which is the side of the surface from which the exterior boundary appears to traverse the boundary in a counter clockwise direction. The interior LinearRings will have the opposite orientation, and appear as clockwise when viewed from the top,\r\nThe assertions for Polygons (the rules that define valid Polygons) are as follows:\r\na) Polygons are topologically closed;\r\nb) The boundary of a Polygon consists of a set of LinearRings that make up its exterior and interior boundaries;\r\nc) No two Rings in the boundary cross and the Rings in the boundary of a Polygon may intersect at a Point but only as a tangent.\r\nd) A Polygon may not have cut lines, spikes or punctures.\r\ne) The interior of every Polygon is a connected point set;\r\nf) The exterior of a Polygon with 1 or more holes is not connected. Each hole defines a connected component of the exterior.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasAgriParcelChildren",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "An optional reference to lower level (child) AgriParcel records to which this entity relates."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasAgriParcelChildren"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#contains"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#BuildingSpace",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ]
+  },
+  {
+    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#Site",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#Surface",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA Surface is a 2-dimensional geometric object.\r\nA simple Surface may consists of a single patch that is associated with one exterior boundary and 0 or more interior boundaries. A single such Surface patch in 3-dimensional space is isometric to planar Surfaces, by a simple affine rotation matrix that rotates the patch onto the plane z = 0. If the patch is not vertical, the projection onto the same plane is an isomorphism, and can be represented as a linear transformation, i.e. an affine.\r\nPolyhedral Surfaces are formed by stitching together such simple Surfaces patches along their common boundaries. Such polyhedral Surfaces in a 3-dimensional space may not be planar as a whole, depending on the orientation of their planar normals. If all the patches are in alignment (their normals are parallel), then the whole stitched polyhedral surface is co-planar and can be represented as a single patch if it is connected.\r\nThe boundary of a simple Surface is the set of closed Curves corresponding to its exterior and interior boundaries.\r\nA Polygon is a simple Surface that is planar. A PolyhedralSurface is a simple surface, consisting of some number of Polygon patches or facets. If a PolyhedralSurface is closed, then it bounds a solid. A MultiSurface containing a set of closed PolyhedralSurfaces can be used to represent a Solid object with holes.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#LinearRing",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA LinearRing is a LineString that is both closed and simple.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#activity",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#machine",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": " \r\nUniquely identified by lat/long/alt. i.e.\r\n\r\nspaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),\r\n  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).\r\n\r\nsameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).\r\n  "
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#containsZone",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#contains"
+      }
+    ]
+  },
+  {
+    "@id": "http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://inspire.ec.europa.eu/schemas/act-core/3.0#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "EconomicActivityNACEValue"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasAgriSoil",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Reference to the soil associated with this parcel of land."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasAgriSoil"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#AgriParcel",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Agri Parcel"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#OriginTypeValue",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#cropStatus",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "cropStatus"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#containsPlot",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#contains"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#AgriGreenhouse",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Greenhouse.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Agri Greenhouse"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://uri.fiware.org/ns/data-models#AgriParcel"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasAgriCrop",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Reference to the crop associated with this parcel"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasAgriCrop"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#AgriFarm",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Agri Farm"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#MultiLineString",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA MultiLineString is a MultiCurve whose elements are LineStrings.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#MultiCurve",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.\r\nA MultiCurve defines a set of methods for its subclasses and is included for reasons of extensibility.\r\nA MultiCurve is simple if and only if all of its elements are simple and the only intersections between any two elements occur at Points that are on the boundaries of both elements.\r\nThe boundary of a MultiCurve is obtained by applying the mod 2 union rule: A Point is in the boundary of a MultiCurve if it is in the boundaries of an odd number of elements of the MultiCurve.\r\nA MultiCurve is closed if all of its elements are closed. The boundary of a closed MultiCurve is always empty.\r\nA MultiCurve is defined as topologically closed.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#Farm",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:cb17e3c60ce55d3fe4f91bdcf3d313814dad92422ace8ccca2b7efd0837f42cc35e"
+      },
+      {
+        "@id": "_:cb16e7db70fe92e86ff2f36011682041cb763e5c15ff19d01d38753079b17e615bb"
+      },
+      {
+        "@id": "_:cbddbaf7fdaf1fb9fcff5a0bde9308249a097a9691a50583a9ba673b1b281badfc"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "https://uri.fiware.org/ns/data-models#AgriFarm"
+      },
+      {
+        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#Holding"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb17e3c60ce55d3fe4f91bdcf3d313814dad92422ace8ccca2b7efd0837f42cc35e",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#contains"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#Building"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb16e7db70fe92e86ff2f36011682041cb763e5c15ff19d01d38753079b17e615bb",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#hasName"
+      }
+    ]
+  },
+  {
+    "@id": "_:cbddbaf7fdaf1fb9fcff5a0bde9308249a097a9691a50583a9ba673b1b281badfc",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#contains"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#Parcel"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#location",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
+      },
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "location"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#Line",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA Line is a LineString with exactly 2 Points.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#holdingPlot",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#isContainedIn"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#holdingSite",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#isContainedIn"
+      }
+    ]
+  },
+  {
     "@id": "http://foodie-cloud.com/model/foodie#crop",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -13,24 +514,106 @@
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#lastPlantedAt",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Indicates the date when the crop was last planted."
-      }
-    ],
+    "@id": "http://foodie-cloud.com/model/foodie#tractor",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+        "@id": "http://foodie-cloud.com/model/foodie"
       }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#ManagementZone",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#TIN",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "lastPlantedAt"
+        "@value": "\r\nA TIN (triangulated irregular network) is a PolyhedralSurface consisting only of Triangle patches.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#MultiPolygon",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA MultiPolygon is a MultiSurface whose elements are Polygons.\r\nThe assertions for MultiPolygons are as follows.\r\na) The interiors of 2 Polygons that are elements of a MultiPolygon may not intersect.\r\nb) The boundaries of any 2 Polygons that are elements of a MultiPolygon may not cross and may touch at only a finite number of Points.\r\nc) A MultiPolygon is defined as topologically closed.\r\nd) A MultiPolygon may not have cut lines, spikes or punctures, a MultiPolygon is a regular closed Point set,\r\ne) The interior of a MultiPolygon with more than 1 Polygon is not connected; the number of connected components of the interior of a MultiPolygon is equal to the number of Polygons in the MultiPolygon. \r\nThe boundary of a MultiPolygon is a set of closed Curves (LineStrings) corresponding to the boundaries of its element Polygons. Each Curve in the boundary of the MultiPolygon is in the boundary of exactly 1 element Polygon, and every Curve in the boundary of an element Polygon is in the boundary of the MultiPolygon.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#Holding",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:cb29085718dbc2c6a02d1b24ed8ad9effcbeb1e4c9d072e426712fc90cf584abbed"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb29085718dbc2c6a02d1b24ed8ad9effcbeb1e4c9d072e426712fc90cf584abbed",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#int",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#Geometry",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nGeometry is the root class of the hierarchy.\r\nThe instantiable subclasses of Geometry are restricted to 0, 1 and 2-dimensional geometric objects that exist in 2, 3 or 4-dimensional coordinate space (R2, R3 or R4). Geometry values in R2 have points with coordinate values for x and y. Geometry values in R3 have points with coordinate values for x, y and z or for x, y and m. Geometry values in R4 have points with coordinate values for x, y, z and m.\r\nThe interpretation of the coordinates is subject to the coordinate reference systems associated to the point. All coordinates within a geometry object should be in the same coordinate reference systems. Each coordinate shall be unambiguously associated to a coordinate reference system either directly or through its containing geometry. The z coordinate of a point is typically, but not necessarily, represents altitude or elevation. The m coordinate represents a measurement.\r\nAll Geometry classes described in this specification are defined so that instances of Geometry are topologically closed, i.e. all represented geometries include their boundary as point sets. This does not affect their representation, and open version of the same classes may be used in other circumstances, such as topological representations.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#Point",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA Point is a 0-dimensional geometric object and represents a single location in coordinate space. \r\nA Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.\r\nThe boundary of a Point is the empty set.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#contains",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#contains"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#MultiSurface",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA MultiSurface is a 2-dimensional GeometryCollection whose elements are Surfaces, all using coordinates from the same coordinate reference system. The geometric interiors of any two Surfaces in a MultiSurface may not intersect in the full coordinate system. The boundaries of any two coplanar elements in a MultiSurface may intersect, at most, at a finite number of Points. If they were to meet along a curve, they could be merged into a single surface.\r\nA MultiSurface may be used to represent heterogeneous surfaces collections of polygons and polyhedral surfaces. It defines a set of methods for its subclasses. The subclass of MultiSurface is MultiPolygon corresponding to a collection of Polygons only. Other collections shall use MultiSurface.\r\n    "
       }
     ]
   },
@@ -82,16 +665,10 @@
         "@id": "https://w3id.org/demeter/agri/agriCommon"
       },
       {
-        "@id": "https://w3id.org/def/saref4agri"
+        "@id": "http://www.opengis.net/ont/sf"
       },
       {
         "@id": "http://inspire.ec.europa.eu/schemas/af/3.0"
-      },
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      },
-      {
-        "@id": "http://www.opengis.net/ont/geosparql"
       },
       {
         "@id": "http://www.w3.org/2003/01/geo/wgs84_pos"
@@ -100,7 +677,13 @@
         "@id": "http://inspire.ec.europa.eu/schemas/act-core/3.0"
       },
       {
-        "@id": "http://www.opengis.net/ont/sf"
+        "@id": "http://www.opengis.net/ont/geosparql"
+      },
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      },
+      {
+        "@id": "https://w3id.org/def/saref4agri"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionIRI": [
@@ -115,123 +698,40 @@
     ],
     "http://www.w3.org/ns/dx/prof/isProfileOf": [
       {
-        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0"
-      },
-      {
-        "@id": "http://www.opengis.net/ont/sf"
-      },
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
+        "@id": "http://inspire.ec.europa.eu/schemas/act-core/3.0"
       },
       {
         "@id": "http://www.opengis.net/ont/geosparql"
       },
       {
-        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos"
-      },
-      {
-        "@id": "http://inspire.ec.europa.eu/schemas/act-core/3.0"
+        "@id": "http://foodie-cloud.com/model/foodie"
       },
       {
         "@id": "https://w3id.org/def/saref4agri"
+      },
+      {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos"
+      },
+      {
+        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0"
+      },
+      {
+        "@id": "http://www.opengis.net/ont/sf"
       }
     ],
     "http://www.w3.org/ns/prov#wasDerivedFrom": [
       {
-        "@id": "_:N515783e11ab745b9be8b8448847fe4d5"
+        "@id": "_:Nd6c6eaf8f3be4814b93d704a207c9297"
       }
     ],
     "http://www.w3.org/ns/prov#wasGeneratedBy": [
       {
-        "@id": "_:N98a3ff5592a9460ca51da31de345c52c"
+        "@id": "_:N5976f9d416aa46dd8ea5e9a7f945d3e4"
       }
     ],
     "http://xmlns.com/foaf/0.1/maker": [
       {
         "@id": "_:cbc777050d003e81d070dc7ffc2f3672cda44881e8dbf818bcf54b15da710dc535"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb8d3e73198ad750da8a7d479942577d1b519be03aa1ccc81a120c83065aa35cf2",
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "http://orcid.org/0000-0003-4289-4922"
-      }
-    ],
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "Raul Palma"
-      }
-    ],
-    "https://schema.org/affiliation": [
-      {
-        "@id": "_:cb7d7e372bd6d27d09a2842e065cfec77ff17a94b2bdba4102a668df08693b0872"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb7d7e372bd6d27d09a2842e065cfec77ff17a94b2bdba4102a668df08693b0872",
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "PSNC"
-      }
-    ]
-  },
-  {
-    "@id": "_:N515783e11ab745b9be8b8448847fe4d5",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl"
-      }
-    ]
-  },
-  {
-    "@id": "_:N98a3ff5592a9460ca51da31de345c52c",
-    "@type": [
-      "http://www.w3.org/ns/prov#Activity"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "ProfileWiz: Normalisation (source = ../models\\agriFeature.ttl, force_local=False, profile libs : lib/profile_cat.ttl) "
-      }
-    ],
-    "http://www.w3.org/ns/prov#endedAtTime": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-10-01"
-      }
-    ],
-    "http://www.w3.org/ns/prov#wasAssociatedWith": [
-      {
-        "@id": "_:N44f67d13dd0144e7bfaa55ec62b117cb"
-      }
-    ]
-  },
-  {
-    "@id": "_:N44f67d13dd0144e7bfaa55ec62b117cb",
-    "@type": [
-      "http://www.w3.org/ns/prov#Agent"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "ProfileWiz 0.1.5"
-      }
-    ]
-  },
-  {
-    "@id": "_:cbc777050d003e81d070dc7ffc2f3672cda44881e8dbf818bcf54b15da710dc535",
-    "http://xmlns.com/foaf/0.1/homepage": [
-      {
-        "@id": "https://h2020-demeter.eu/"
-      }
-    ],
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "DEMETER project"
       }
     ]
   },
@@ -278,7 +778,112 @@
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#holdingSite",
+    "@id": "_:Nd6c6eaf8f3be4814b93d704a207c9297",
+    "@type": [
+      "http://www.w3.org/ns/prov#Entity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl"
+      }
+    ]
+  },
+  {
+    "@id": "_:N5976f9d416aa46dd8ea5e9a7f945d3e4",
+    "@type": [
+      "http://www.w3.org/ns/prov#Activity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ProfileWiz: Normalisation (source = ../models\\agriFeature.ttl, force_local=False, profile libs : lib/profile_cat.ttl) "
+      }
+    ],
+    "http://www.w3.org/ns/prov#endedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-10-02"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasAssociatedWith": [
+      {
+        "@id": "_:N666065d828bf4b0c8daa0f6b4cce302e"
+      }
+    ]
+  },
+  {
+    "@id": "_:N666065d828bf4b0c8daa0f6b4cce302e",
+    "@type": [
+      "http://www.w3.org/ns/prov#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ProfileWiz 0.1.5"
+      }
+    ]
+  },
+  {
+    "@id": "_:cbc777050d003e81d070dc7ffc2f3672cda44881e8dbf818bcf54b15da710dc535",
+    "http://xmlns.com/foaf/0.1/homepage": [
+      {
+        "@id": "https://h2020-demeter.eu/"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "DEMETER project"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb8d3e73198ad750da8a7d479942577d1b519be03aa1ccc81a120c83065aa35cf2",
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "http://orcid.org/0000-0003-4289-4922"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Raul Palma"
+      }
+    ],
+    "https://schema.org/affiliation": [
+      {
+        "@id": "_:cb7d7e372bd6d27d09a2842e065cfec77ff17a94b2bdba4102a668df08693b0872"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb7d7e372bd6d27d09a2842e065cfec77ff17a94b2bdba4102a668df08693b0872",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "PSNC"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#area",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The area of the parcel nominally in square meters."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "area"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#holdingZone",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://foodie-cloud.com/model/foodie"
@@ -287,23 +892,6 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "https://w3id.org/def/saref4agri#isContainedIn"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#LineString",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#contains",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
       }
     ]
   },
@@ -335,37 +923,29 @@
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#area",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
+    "@id": "http://www.opengis.net/ont/sf#Curve",
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "The area of the parcel nominally in square meters."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
         "@language": "en",
-        "@value": "area"
+        "@value": "\r\nA Curve is a 1-dimensional geometric object usually stored as a sequence of Points, with the subtype of Curve specifying the form of the interpolation between Points. This specification defines only one subclass of Curve, LineString, which uses linear interpolation between Points.\r\nA Curve is a 1-dimensional geometric object that is the homeomorphic image of a real, closed, interval.\r\nA Curve is simple if it does not pass through the same Point twice with the possible exception of the two end\r\npoints.\r\nA Curve is closed if its start Point is equal to its end Point.\r\nThe boundary of a closed Curve is empty.\r\nA Curve that is simple and closed is a Ring.\r\nThe boundary of a non-closed Curve consists of its two end Points.\r\nA Curve is defined as topologically closed, that is, it contains its endpoints f(a) and f(b).\r\n    "
       }
     ]
   },
   {
-    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#activity",
+    "@id": "https://w3id.org/def/saref4agri#isContainedIn",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#sfWithin"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/def/saref4agri#Farm",
+    "@id": "https://w3id.org/def/saref4agri#Building",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/def/saref4agri#"
@@ -373,58 +953,15 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:cbddbaf7fdaf1fb9fcff5a0bde9308249a097a9691a50583a9ba673b1b281badfc"
+        "@id": "_:cb22db9b589d4480cff2a0a6679085804a56e8eaba97a2b5dd93856872fd6332b10"
       },
       {
-        "@id": "_:cb17e3c60ce55d3fe4f91bdcf3d313814dad92422ace8ccca2b7efd0837f42cc35e"
-      },
-      {
-        "@id": "_:cb16e7db70fe92e86ff2f36011682041cb763e5c15ff19d01d38753079b17e615bb"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "https://uri.fiware.org/ns/data-models#AgriFarm"
-      },
-      {
-        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#Holding"
+        "@id": "_:cb28d75022fdbaed5bf66a7f6d539c6911430ce4ac74676005dcabf1df3542fd509"
       }
     ]
   },
   {
-    "@id": "_:cbddbaf7fdaf1fb9fcff5a0bde9308249a097a9691a50583a9ba673b1b281badfc",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#contains"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#Parcel"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb17e3c60ce55d3fe4f91bdcf3d313814dad92422ace8ccca2b7efd0837f42cc35e",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#contains"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#Building"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb16e7db70fe92e86ff2f36011682041cb763e5c15ff19d01d38753079b17e615bb",
+    "@id": "_:cb22db9b589d4480cff2a0a6679085804a56e8eaba97a2b5dd93856872fd6332b10",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -437,6 +974,162 @@
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
         "@id": "https://w3id.org/def/saref4agri#hasName"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb28d75022fdbaed5bf66a7f6d539c6911430ce4ac74676005dcabf1df3542fd509",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#contains"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#BuildingSpace"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/geosparql#hasGeometry",
+    "http://www.w3.org/2002/07/owl#equivalentProperty": [
+      {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#location"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#Plot",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#location",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The relation between something and the point, or other geometrical thing in space, where it is."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#LineString",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#lastPlantedAt",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Indicates the date when the crop was last planted."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "lastPlantedAt"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#GeometryCollection",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA GeometryCollection is a geometric object that is a collection of some number of geometric objects.\r\nAll the elements in a GeometryCollection shall be in the same Spatial Reference System. This is also the Spatial Reference System for the GeometryCollection.\r\nGeometryCollection places no other constraints on its elements. Subclasses of GeometryCollection may restrict membership based on dimension and may also place other constraints on the degree of spatial overlap between elements.\r\n    "
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/def/saref4agri#Parcel",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:cb12b6cb3582499a35d48f68adc926fdb601ad35ef3ba9fab4209788f2072dc5a5e"
+      },
+      {
+        "@id": "_:cb26584098485118d395e25fb18ac3cfc711401f12f7dc064221d2eb7ca10144197"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "https://uri.fiware.org/ns/data-models#AgriParcel"
+      },
+      {
+        "@id": "http://foodie-cloud.com/model/foodie#Plot"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb12b6cb3582499a35d48f68adc926fdb601ad35ef3ba9fab4209788f2072dc5a5e",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#contains"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#Crop"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb26584098485118d395e25fb18ac3cfc711401f12f7dc064221d2eb7ca10144197",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onDataRange": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/def/saref4agri#hasName"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.opengis.net/ont/sf#PolyhedralSurface",
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "\r\nA PolyhedralSurface is a contiguous collection of polygons, which share common boundary segments. For each pair of polygons that touch, the common boundary shall be expressible as a finite collection of LineStrings. Each such LineString shall be part of the boundary of at most 2 Polygon patches. \r\nFor any two polygons that share a common boundary, the top of the polygon shall be consistent. This means that when two LinearRings from these two Polygons traverse the common boundary segment, they do so in opposite directions. Since the Polyhedral surface is contiguous, all polygons will be thus consistently oriented. This means that a non-oriented surface (such as Mbius band) shall not have single surface representations. They may be represented by a MultiSurface.\r\nIf each such LineString is the boundary of exactly 2 Polygon patches, then the PolyhedralSurface is a simple, closed polyhedron and is topologically isomorphic to the surface of a sphere. By the Jordan Surface Theorem (Jordans Theorem for 2-spheres), such polyhedrons enclose a solid topologically isomorphic to the interior of a sphere; the ball. In this case, the top of the surface will either point inward or outward of the enclosed finite solid. If outward, the surface is the exterior boundary of the enclosed surface. If inward, the surface is the interior of the infinite complement of the enclosed solid. A Ball with some number of voids (holes) inside can thus be presented as one exterior boundary shell, and some number in interior boundary shells.\r\n    "
       }
     ]
   },
@@ -468,95 +1161,11 @@
     ]
   },
   {
-    "@id": "http://www.opengis.net/ont/geosparql#hasSerialization",
+    "@id": "http://www.opengis.net/ont/geosparql#wktLiteral",
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "Connects a geometry object with its text-based serialization"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#MultiLineString",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA MultiLineString is a MultiCurve whose elements are LineStrings.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#AgriFarm",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Agri Farm"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#hasAgriParcelChildren",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "An optional reference to lower level (child) AgriParcel records to which this entity relates."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "hasAgriParcelChildren"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#contains"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#MultiPolygon",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA MultiPolygon is a MultiSurface whose elements are Polygons.\r\nThe assertions for MultiPolygons are as follows.\r\na) The interiors of 2 Polygons that are elements of a MultiPolygon may not intersect.\r\nb) The boundaries of any 2 Polygons that are elements of a MultiPolygon may not cross and may touch at only a finite number of Points.\r\nc) A MultiPolygon is defined as topologically closed.\r\nd) A MultiPolygon may not have cut lines, spikes or punctures, a MultiPolygon is a regular closed Point set,\r\ne) The interior of a MultiPolygon with more than 1 Polygon is not connected; the number of connected components of the interior of a MultiPolygon is equal to the number of Polygons in the MultiPolygon. \r\nThe boundary of a MultiPolygon is a set of closed Curves (LineStrings) corresponding to the boundaries of its element Polygons. Each Curve in the boundary of the MultiPolygon is in the boundary of exactly 1 element Polygon, and every Curve in the boundary of an element Polygon is in the boundary of the MultiPolygon.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#MultiCurve",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.\r\nA MultiCurve defines a set of methods for its subclasses and is included for reasons of extensibility.\r\nA MultiCurve is simple if and only if all of its elements are simple and the only intersections between any two elements occur at Points that are on the boundaries of both elements.\r\nThe boundary of a MultiCurve is obtained by applying the mod 2 union rule: A Point is in the boundary of a MultiCurve if it is in the boundaries of an odd number of elements of the MultiCurve.\r\nA MultiCurve is closed if all of its elements are closed. The boundary of a closed MultiCurve is always empty.\r\nA MultiCurve is defined as topologically closed.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#Curve",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA Curve is a 1-dimensional geometric object usually stored as a sequence of Points, with the subtype of Curve specifying the form of the interpolation between Points. This specification defines only one subclass of Curve, LineString, which uses linear interpolation between Points.\r\nA Curve is a 1-dimensional geometric object that is the homeomorphic image of a real, closed, interval.\r\nA Curve is simple if it does not pass through the same Point twice with the possible exception of the two end\r\npoints.\r\nA Curve is closed if its start Point is equal to its end Point.\r\nThe boundary of a closed Curve is empty.\r\nA Curve that is simple and closed is a Ring.\r\nThe boundary of a non-closed Curve consists of its two end Points.\r\nA Curve is defined as topologically closed, that is, it contains its endpoints f(a) and f(b).\r\n    "
+        "@value": "A Well-known Text serialization of a geometry object."
       }
     ]
   },
@@ -570,620 +1179,11 @@
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#holdingZone",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#isContainedIn"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#hasAgriSoil",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Reference to the soil associated with this parcel of land."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "hasAgriSoil"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#Polygon",
+    "@id": "http://www.opengis.net/ont/geosparql#hasSerialization",
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
         "@language": "en",
-        "@value": "\r\nA Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon.\r\nThe exterior boundary LinearRing defines the top of the surface which is the side of the surface from which the exterior boundary appears to traverse the boundary in a counter clockwise direction. The interior LinearRings will have the opposite orientation, and appear as clockwise when viewed from the top,\r\nThe assertions for Polygons (the rules that define valid Polygons) are as follows:\r\na) Polygons are topologically closed;\r\nb) The boundary of a Polygon consists of a set of LinearRings that make up its exterior and interior boundaries;\r\nc) No two Rings in the boundary cross and the Rings in the boundary of a Polygon may intersect at a Point but only as a tangent.\r\nd) A Polygon may not have cut lines, spikes or punctures.\r\ne) The interior of every Polygon is a connected point set;\r\nf) The exterior of a Polygon with 1 or more holes is not connected. Each hole defines a connected component of the exterior.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/geosparql#hasGeometry",
-    "http://www.w3.org/2002/07/owl#equivalentProperty": [
-      {
-        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#location"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#Geometry",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nGeometry is the root class of the hierarchy.\r\nThe instantiable subclasses of Geometry are restricted to 0, 1 and 2-dimensional geometric objects that exist in 2, 3 or 4-dimensional coordinate space (R2, R3 or R4). Geometry values in R2 have points with coordinate values for x and y. Geometry values in R3 have points with coordinate values for x, y and z or for x, y and m. Geometry values in R4 have points with coordinate values for x, y, z and m.\r\nThe interpretation of the coordinates is subject to the coordinate reference systems associated to the point. All coordinates within a geometry object should be in the same coordinate reference systems. Each coordinate shall be unambiguously associated to a coordinate reference system either directly or through its containing geometry. The z coordinate of a point is typically, but not necessarily, represents altitude or elevation. The m coordinate represents a measurement.\r\nAll Geometry classes described in this specification are defined so that instances of Geometry are topologically closed, i.e. all represented geometries include their boundary as point sets. This does not affect their representation, and open version of the same classes may be used in other circumstances, such as topological representations.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#cropStatus",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "cropStatus"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#Point",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA Point is a 0-dimensional geometric object and represents a single location in coordinate space. \r\nA Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.\r\nThe boundary of a Point is the empty set.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#contains",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#contains"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#Parcel",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:cb26584098485118d395e25fb18ac3cfc711401f12f7dc064221d2eb7ca10144197"
-      },
-      {
-        "@id": "_:cb12b6cb3582499a35d48f68adc926fdb601ad35ef3ba9fab4209788f2072dc5a5e"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie#Plot"
-      },
-      {
-        "@id": "https://uri.fiware.org/ns/data-models#AgriParcel"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb26584098485118d395e25fb18ac3cfc711401f12f7dc064221d2eb7ca10144197",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onDataRange": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#hasName"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb12b6cb3582499a35d48f68adc926fdb601ad35ef3ba9fab4209788f2072dc5a5e",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#contains"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#Crop"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#PolyhedralSurface",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA PolyhedralSurface is a contiguous collection of polygons, which share common boundary segments. For each pair of polygons that touch, the common boundary shall be expressible as a finite collection of LineStrings. Each such LineString shall be part of the boundary of at most 2 Polygon patches. \r\nFor any two polygons that share a common boundary, the top of the polygon shall be consistent. This means that when two LinearRings from these two Polygons traverse the common boundary segment, they do so in opposite directions. Since the Polyhedral surface is contiguous, all polygons will be thus consistently oriented. This means that a non-oriented surface (such as Mbius band) shall not have single surface representations. They may be represented by a MultiSurface.\r\nIf each such LineString is the boundary of exactly 2 Polygon patches, then the PolyhedralSurface is a simple, closed polyhedron and is topologically isomorphic to the surface of a sphere. By the Jordan Surface Theorem (Jordans Theorem for 2-spheres), such polyhedrons enclose a solid topologically isomorphic to the interior of a sphere; the ball. In this case, the top of the surface will either point inward or outward of the enclosed finite solid. If outward, the surface is the exterior boundary of the enclosed surface. If inward, the surface is the interior of the infinite complement of the enclosed solid. A Ball with some number of voids (holes) inside can thus be presented as one exterior boundary shell, and some number in interior boundary shells.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#tractor",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#ManagementZone",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#AgriGreenhouse",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Greenhouse.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Agri Greenhouse"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://uri.fiware.org/ns/data-models#AgriParcel"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#isContainedIn",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#sfWithin"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#machine",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#Building",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:cb28d75022fdbaed5bf66a7f6d539c6911430ce4ac74676005dcabf1df3542fd509"
-      },
-      {
-        "@id": "_:cb22db9b589d4480cff2a0a6679085804a56e8eaba97a2b5dd93856872fd6332b10"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb28d75022fdbaed5bf66a7f6d539c6911430ce4ac74676005dcabf1df3542fd509",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#contains"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#BuildingSpace"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb22db9b589d4480cff2a0a6679085804a56e8eaba97a2b5dd93856872fd6332b10",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#maxCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#hasName"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/geosparql#asWKT",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "The WKT serialization of a geometry"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has serialization"
-      }
-    ]
-  },
-  {
-    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#Site",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
-      }
-    ]
-  },
-  {
-    "@id": "http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://inspire.ec.europa.eu/schemas/act-core/3.0#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "EconomicActivityNACEValue"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#LinearRing",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA LinearRing is a LineString that is both closed and simple.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/geosparql#wktLiteral",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A Well-known Text serialization of a geometry object."
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#location",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md"
-      },
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "location"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#location",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "The relation between something and the point, or other geometrical thing in space, where it is."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#OriginTypeValue",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#containsZone",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#contains"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#originType",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#Holding",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://inspire.ec.europa.eu/schemas/af/3.0#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:cb29085718dbc2c6a02d1b24ed8ad9effcbeb1e4c9d072e426712fc90cf584abbed"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb29085718dbc2c6a02d1b24ed8ad9effcbeb1e4c9d072e426712fc90cf584abbed",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#int",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#Line",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA Line is a LineString with exactly 2 Points.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#AgriParcel",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Agri Parcel"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#hasAgriCrop",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Reference to the crop associated with this parcel"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "hasAgriCrop"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#hasAgriParcel",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "List of agri parcels belonging to the farm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "hasAgriParcel"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#contains"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#MultiSurface",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA MultiSurface is a 2-dimensional GeometryCollection whose elements are Surfaces, all using coordinates from the same coordinate reference system. The geometric interiors of any two Surfaces in a MultiSurface may not intersect in the full coordinate system. The boundaries of any two coplanar elements in a MultiSurface may intersect, at most, at a finite number of Points. If they were to meet along a curve, they could be merged into a single surface.\r\nA MultiSurface may be used to represent heterogeneous surfaces collections of polygons and polyhedral surfaces. It defines a set of methods for its subclasses. The subclass of MultiSurface is MultiPolygon corresponding to a collection of Polygons only. Other collections shall use MultiSurface.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#MultiPoint",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA MultiPoint is a 0-dimensional GeometryCollection. The elements of a MultiPoint are restricted to Points. ThePoints are not connected or ordered in any semantically important way.\r\nA MultiPoint is simple if no two Points in the MultiPoint are equal (have identical coordinate values in X and Y).\r\nEvery MultiPoint is spatially equal to a simple Multipoint.\r\nThe boundary of a MultiPoint is the empty set.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#Plot",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#containsPlot",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#contains"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": " \r\nUniquely identified by lat/long/alt. i.e.\r\n\r\nspaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),\r\n  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).\r\n\r\nsameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).\r\n  "
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#GeometryCollection",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA GeometryCollection is a geometric object that is a collection of some number of geometric objects.\r\nAll the elements in a GeometryCollection shall be in the same Spatial Reference System. This is also the Spatial Reference System for the GeometryCollection.\r\nGeometryCollection places no other constraints on its elements. Subclasses of GeometryCollection may restrict membership based on dimension and may also place other constraints on the degree of spatial overlap between elements.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#TIN",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA TIN (triangulated irregular network) is a PolyhedralSurface consisting only of Triangle patches.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/def/saref4agri#BuildingSpace",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.opengis.net/ont/sf#Surface",
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "\r\nA Surface is a 2-dimensional geometric object.\r\nA simple Surface may consists of a single patch that is associated with one exterior boundary and 0 or more interior boundaries. A single such Surface patch in 3-dimensional space is isometric to planar Surfaces, by a simple affine rotation matrix that rotates the patch onto the plane z = 0. If the patch is not vertical, the projection onto the same plane is an isomorphism, and can be represented as a linear transformation, i.e. an affine.\r\nPolyhedral Surfaces are formed by stitching together such simple Surfaces patches along their common boundaries. Such polyhedral Surfaces in a 3-dimensional space may not be planar as a whole, depending on the orientation of their planar normals. If all the patches are in alignment (their normals are parallel), then the whole stitched polyhedral surface is co-planar and can be represented as a single patch if it is connected.\r\nThe boundary of a simple Surface is the set of closed Curves corresponding to its exterior and interior boundaries.\r\nA Polygon is a simple Surface that is planar. A PolyhedralSurface is a simple surface, consisting of some number of Polygon patches or facets. If a PolyhedralSurface is closed, then it bounds a solid. A MultiSurface containing a set of closed PolyhedralSurfaces can be used to represent a Solid object with holes.\r\n    "
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#holdingPlot",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/def/saref4agri#isContainedIn"
+        "@value": "Connects a geometry object with its text-based serialization"
       }
     ]
   }

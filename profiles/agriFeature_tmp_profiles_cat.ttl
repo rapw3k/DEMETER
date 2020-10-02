@@ -1,5 +1,5 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix jsoncontext: <http://www.opengis.net/def/ogc-na/profiles/json_ld_context> .
+@prefix jsoncontext: <http://www.opengis.net/def/metamodel/profiles/json_ld_context> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix profrole: <http://www.w3.org/ns/dx/prof/role/> .
@@ -10,25 +10,198 @@
 
 <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation> a prof:Profile ;
     rdfs:label "ISO 19115 citation"@en ;
-    prof:hasResource [ dct:conformsTo owl: ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
             dct:format "text/turtle" ;
             prof:hasArtifact "lib/citation.ttl" ;
-            prof:hasRole prof:cachedCopy ],
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/citation.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
         [ dct:conformsTo owl: ;
             dct:format "text/turtle" ;
             prof:hasArtifact <http://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/def.seegrid.csiro.au/isotc211--iso19115--2003--citation/2020.06.10-182041/isotc211--iso19115--2003--citation_type=parsed.ttl> ;
-            prof:hasRole prof:source ] .
+            prof:hasRole profrole:source ] .
 
-<http://schema.org> a prof:Profile ;
-    rdfs:label "Schema.org schema"@en ;
-    prof:hasResource [ dct:conformsTo owl: ;
+<http://portele.de/ont/inspire/baseInspire> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
             dct:format "text/turtle" ;
-            prof:hasArtifact "lib/schemaorg.ttl" ;
-            prof:hasRole prof:cachedCopy ],
-        [ dct:conformsTo owl: ;
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<https://w3id.org/demeter/agri/agriAlert> a prof:Profile ;
+    rdfs:label "DEMETER AgriAlert"@en ;
+    dct:description "The DEMETER AgriAlert is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+    dct:title "DEMETER AgriAlert"@en ;
+    rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriAlert_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
             dct:format "text/turtle" ;
-            prof:hasArtifact <https://raw.githubusercontent.com/antlr/grammars-v4/master/turtle/examples/schema.org.ttl> ;
-            prof:hasRole prof:source ] .
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriAlert.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriAlert_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriAlert.jsonld" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriAlert?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriAlert.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriAlert.json" ;
+            prof:hasRole profrole:schema ] ;
+    prof:isProfileOf <http://foodie-cloud.com/model/foodie>,
+        <https://uri.fiware.org/ns/data-models> ;
+    prov:wasDerivedFrom "../models\\agriAlert.ttl" .
+
+<https://w3id.org/demeter/agri/agriCommon> a prof:Profile ;
+    rdfs:label "DEMETER AgriCommon"@en ;
+    dct:description "The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+    dct:title "DEMETER AgriCommon"@en ;
+    rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriCommon.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriCommon.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriCommon.jsonld" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriCommon_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriCommon?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriCommon_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriCommon.json" ;
+            prof:hasRole profrole:schema ] ;
+    prof:isProfileOf <http://foodie-cloud.com/model/foodie>,
+        <http://purl.obolibrary.org/obo>,
+        <http://www.w3.org/ns/prov>,
+        <http://xmlns.com/foaf/0.1>,
+        <https://schema.org>,
+        <https://w3id.org/def/saref4agri>,
+        <https://w3id.org/saref> ;
+    prov:wasDerivedFrom "../models\\agriCommon.ttl" .
+
+<https://w3id.org/demeter/agri/agriCrop> a prof:Profile ;
+    rdfs:label "DEMETER AgriCrop"@en ;
+    dct:description "The DEMETER AgriCrop is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+    dct:title "DEMETER AgriCrop"@en ;
+    rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriCrop.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriCrop_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriCrop?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriCrop.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriCrop_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriCrop.jsonld" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriCrop.ttl" ;
+            prof:hasRole profrole:vocabulary ] ;
+    prof:isProfileOf <http://foodie-cloud.com/model/foodie>,
+        <https://w3id.org/def/saref4agri> ;
+    prov:wasDerivedFrom "../models\\agriCrop.ttl" .
 
 <https://w3id.org/demeter/agri/agriFeature> a prof:Profile ;
     rdfs:label "DEMETER AgriFeature"@en ;
@@ -37,26 +210,6 @@
     rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
     skos:historyNote "Ontology profile normalised using ProfileWiz" ;
     prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "Normalised OWL with imports" ;
-            dct:conformsTo owl: ;
-            dct:format "text/turtle" ;
-            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
-            prof:hasArtifact "agriFeature.ttl" ;
-            prof:hasRole profrole:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Normalised OWL with imports" ;
-            dct:conformsTo owl: ;
-            dct:format "application/ld+json" ;
-            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
-            prof:hasArtifact "agriFeature.jsonld" ;
-            prof:hasRole profrole:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON-LD Context" ;
-            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact "agriFeature_context.jsonld" ;
-            prof:hasRole profrole:context ],
-        [ a prof:ResourceDescriptor ;
             rdfs:label "JSON Schema" ;
             dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
             dct:format "application/json" ;
@@ -70,241 +223,235 @@
             prof:hasArtifact "../models\\agriFeature.ttl" ;
             prof:hasRole profrole:source ],
         [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriFeature_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriFeature?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriFeature.jsonld" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
             rdfs:label "Flattened JSON-LD context" ;
-            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
+            dct:conformsTo jsoncontext: ;
             dct:format "application/ld+json" ;
             prof:hasArtifact "agriFeature_context_flat.jsonld" ;
-            prof:hasRole profrole:contextflat ] ;
-    prof:isProfileOf proxy:agriFeature_act-core,
-        proxy:agriFeature_af,
-        proxy:fiware.ttl,
-        proxy:foodie.ttl,
-        proxy:geosparql.ttl,
-        proxy:ogc_sf.rdf,
-        proxy:saref4agri.ttl,
-        proxy:wgs84_pos ;
-    prof:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriFeature.ttl" ;
+            prof:hasRole profrole:vocabulary ] ;
+    prof:isProfileOf <http://foodie-cloud.com/model/foodie>,
         <http://inspire.ec.europa.eu/schemas/act-core/3.0>,
         <http://inspire.ec.europa.eu/schemas/af/3.0>,
         <http://www.opengis.net/ont/geosparql>,
         <http://www.opengis.net/ont/sf>,
         <http://www.w3.org/2003/01/geo/wgs84_pos>,
-        <https://uri.fiware.org/ns/data-models>,
         <https://w3id.org/def/saref4agri> ;
     prov:wasDerivedFrom "../models\\agriFeature.ttl" .
 
-proxy:data-models a prof:Profile ;
-    rdfs:label "Inferred profile of https://uri.fiware.org/ns/data-models" ;
-    prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON-LD Context for generated profile of https://uri.fiware.org/ns/data-models" ;
-            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact "extracted\\agriFeature_fiware.ttl_context.jsonld" ;
-            prof:hasRole profrole:context ] ;
-    prof:isProfileOf <https://uri.fiware.org/ns/data-models> .
-
 proxy:foodie a prof:Profile ;
-    rdfs:label "Foodie Ontology",
-        "Inferred profile of http://foodie-cloud.com/model/foodie" ;
-    prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON-LD Context for generated profile of http://foodie-cloud.com/model/foodie" ;
-            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact "extracted\\agriFeature_foodie.ttl_context.jsonld" ;
-            prof:hasRole profrole:context ],
-        [ dct:conformsTo jsoncontext: ;
+    rdfs:label "Foodie Ontology" ;
+    prof:hasResource [ dct:conformsTo jsoncontext: ;
             dct:format "application/ld+json" ;
             rdfs:comment "self_referential as URI supports content negotation" ;
             prof:hasArtifact <https://w3id.org/demeter/agri/proxy/foodie?_profile=jsoncontext> ;
-            prof:hasRole prof:schema ] ;
+            prof:hasRole profrole:context ] ;
     prof:isProfileOf <http://foodie-cloud.com/model/foodie> .
 
-proxy:geosparql a prof:Profile ;
-    rdfs:label "Inferred profile of http://www.opengis.net/ont/geosparql" ;
-    prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON-LD Context for generated profile of http://www.opengis.net/ont/geosparql" ;
-            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact "extracted\\agriFeature_geosparql.ttl_context.jsonld" ;
-            prof:hasRole profrole:context ] ;
-    prof:isProfileOf <http://www.opengis.net/ont/geosparql> .
-
 proxy:saref4agri a prof:Profile ;
-    rdfs:label "Inferred profile of https://w3id.org/def/saref4agri",
-        "DEMETER profile of SAREF extension for Agriculture"@en ;
+    rdfs:label "DEMETER profile of SAREF extension for Agriculture"@en ;
     rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
-    prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON-LD Context for generated profile of https://w3id.org/def/saref4agri" ;
-            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact "extracted\\agriFeature_saref4agri.ttl_context.jsonld" ;
-            prof:hasRole profrole:context ],
-        [ dct:conformsTo jsoncontext: ;
+    prof:hasResource [ dct:conformsTo jsoncontext: ;
             dct:format "application/ld+json" ;
             rdfs:comment "This URI correctly handles content negotiation but does not offer a json-ld context representation" ;
             prof:hasArtifact <https://w3id.org/demeter/agri/proxy/saref4agri?_profile=jsoncontext> ;
-            prof:hasRole prof:schema ] ;
-    prof:isProfileOf <https://w3id.org/def/saref4agri> .
-
-proxy:sf a prof:Profile ;
-    rdfs:label "Inferred profile of http://www.opengis.net/ont/sf" ;
-    prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON-LD Context for generated profile of http://www.opengis.net/ont/sf" ;
-            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact "extracted\\agriFeature_ogc_sf.rdf_context.jsonld" ;
             prof:hasRole profrole:context ] ;
-    prof:isProfileOf <http://www.opengis.net/ont/sf> .
-
-proxy:agriFeature_act-core a prof:Profile ;
-    prof:isProfileOf <http://inspire.ec.europa.eu/schemas/act-core/3.0> .
-
-proxy:agriFeature_af a prof:Profile ;
-    prof:isProfileOf <http://inspire.ec.europa.eu/schemas/af/3.0> .
-
-proxy:fiware.ttl a prof:Profile ;
-    prof:isProfileOf <https://uri.fiware.org/ns/data-models> .
-
-proxy:foodie.ttl a prof:Profile ;
-    prof:isProfileOf <http://foodie-cloud.com/model/foodie> .
-
-proxy:geosparql.ttl a prof:Profile ;
-    prof:isProfileOf <http://www.opengis.net/ont/geosparql> .
-
-proxy:ogc_sf.rdf a prof:Profile ;
-    prof:isProfileOf <http://www.opengis.net/ont/sf> .
-
-proxy:saref4agri.ttl a prof:Profile ;
     prof:isProfileOf <https://w3id.org/def/saref4agri> .
-
-proxy:wgs84_pos a prof:Profile ;
-    rdfs:label "Inferred profile of http://www.w3.org/2003/01/geo/wgs84_pos" ;
-    prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON-LD Context for generated profile of http://www.w3.org/2003/01/geo/wgs84_pos" ;
-            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact "extracted\\agriFeature_wgs84_pos_context.jsonld" ;
-            prof:hasRole profrole:context ] ;
-    prof:isProfileOf <http://www.w3.org/2003/01/geo/wgs84_pos> .
 
 <http://inspire.ec.europa.eu/schemas/act-core/3.0> a prof:Profile ;
     prof:hasResource [ a prof:ResourceDescriptor ;
             rdfs:label "Cached OWL copy" ;
             dct:conformsTo owl:Ontology ;
             dct:format "text/turtle" ;
-            prof:hasArtifact "cache/act-core.ttl" ;
-            prof:hasRole prof:cachedCopy ] .
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
 
 <http://inspire.ec.europa.eu/schemas/af/3.0> a prof:Profile ;
     prof:hasResource [ a prof:ResourceDescriptor ;
             rdfs:label "Cached OWL copy" ;
             dct:conformsTo owl:Ontology ;
             dct:format "text/turtle" ;
-            prof:hasArtifact "cache/af.ttl" ;
-            prof:hasRole prof:cachedCopy ] .
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://purl.obolibrary.org/obo> a prof:Profile ;
+    rdfs:label "OBO"@en ;
+    rdfs:comment "Is this actually the ontology to be referenced here" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://schema.org> a prof:Profile ;
+    rdfs:label "Schema.org schema"@en ;
+    prof:hasResource [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/schemaorg.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/antlr/grammars-v4/master/turtle/examples/schema.org.ttl> ;
+            prof:hasRole profrole:source ],
+        [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This URI correctly handles content negotiation to offer a json-ld context representation" ;
+            prof:hasArtifact <http://schema.org> ;
+            prof:hasRole profrole:context ] .
+
+<http://www.opengis.net/ont/geosparql> a prof:Profile ;
+    rdfs:label "GeoSPARQL"@en ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/geosparql.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo rdfs:,
+                owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/geosparql.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo rdfs:,
+                owl: ;
+            dct:format "application/rdf+xml" ;
+            prof:hasArtifact <http://schemas.opengis.net/geosparql/1.0/geosparql_vocab_all.rdf> ;
+            prof:hasRole profrole:source ] .
+
+<http://www.opengis.net/ont/sf> a prof:Profile ;
+    rdfs:label "OGC Simple Features"@en ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/ogc_sf.rdf" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo rdfs:,
+                owl: ;
+            dct:format "application/rdf+xml" ;
+            prof:hasArtifact "lib/ogc_sf.rdf" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo rdfs:,
+                owl: ;
+            dct:format "application/rdf+xml" ;
+            prof:hasArtifact <hhttp://schemas.opengis.net/sf/1.0/simple_features_geometries.rdf> ;
+            prof:hasRole profrole:source ] .
 
 <http://www.w3.org/2003/01/geo/wgs84_pos> a prof:Profile ;
-    rdfs:label "http://www.w3.org/2003/01/geo/wgs84_pos" ;
     prof:hasResource [ a prof:ResourceDescriptor ;
             rdfs:label "Cached OWL copy" ;
             dct:conformsTo owl:Ontology ;
             dct:format "text/turtle" ;
             prof:hasArtifact "cache/wgs84_pos.ttl" ;
-            prof:hasRole prof:cachedCopy ] .
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://www.w3.org/ns/prov> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/prov.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://xmlns.com/foaf/0.1> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/foaf.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<https://schema.org> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<https://uri.fiware.org/ns/data-models> a prof:Profile ;
+    rdfs:label "FIWARE data models" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/fiware.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "fiware jsonld is rather cumbersome aggregation of many things - it would be better it the references to this namespace were finer grained and handled by explicit owl:imports or prof:isProfileOf links." ;
+            prof:hasArtifact <https://fiware.github.io/data-models/full-context.jsonld> ;
+            prof:hasRole profrole:context ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/fiware.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/fiware.ttl" ;
+            prof:hasRole profrole:specification ] .
+
+<https://w3id.org/saref> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/saref.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<https://w3id.org/def/saref4agri> a prof:Profile ;
+    rdfs:label "SAREF extension for Agriculture"@en ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/saref4agri.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/saref4agri.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://mariapoveda.github.io/saref-ext/OnToology/SAREF4AGRI/ontology/saref4agri.ttl/documentation/ontology.ttl> ;
+            prof:hasRole profrole:source ] .
 
 <http://foodie-cloud.com/model/foodie> a prof:Profile ;
-    rdfs:label "Foodie Ontology",
-        "http://foodie-cloud.com/model/foodie" ;
+    rdfs:label "Foodie Ontology" ;
     rdfs:comment "content negotation using base URI results in a security error for https - so need to use a proxy object in the short term" ;
     prof:hasResource [ a prof:ResourceDescriptor ;
             rdfs:label "Cached OWL copy" ;
             dct:conformsTo owl:Ontology ;
             dct:format "text/turtle" ;
             prof:hasArtifact "lib/foodie.ttl" ;
-            prof:hasRole prof:cachedCopy ],
+            prof:hasRole profrole:cachedCopy ],
         [ dct:conformsTo owl: ;
             dct:format "text/turtle" ;
             prof:hasArtifact "lib/foodie.ttl" ;
-            prof:hasRole prof:cachedCopy ] .
-
-<http://www.opengis.net/ont/geosparql> a prof:Profile ;
-    rdfs:label "http://www.opengis.net/ont/geosparql",
-        "GeoSPARQL"@en ;
-    prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "Cached OWL copy" ;
-            dct:conformsTo owl:Ontology ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact "lib/geosparql.ttl" ;
-            prof:hasRole prof:cachedCopy ],
-        [ dct:conformsTo rdfs:,
-                owl: ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact "lib/geosparql.ttl" ;
-            prof:hasRole prof:cachedCopy ],
-        [ dct:conformsTo rdfs:,
-                owl: ;
-            dct:format "application/rdf+xml" ;
-            prof:hasArtifact <http://schemas.opengis.net/geosparql/1.0/geosparql_vocab_all.rdf> ;
-            prof:hasRole prof:source ] .
-
-<http://www.opengis.net/ont/sf> a prof:Profile ;
-    rdfs:label "http://www.opengis.net/ont/sf",
-        "OGC Simple Features"@en ;
-    prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "Cached OWL copy" ;
-            dct:conformsTo owl:Ontology ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact "lib/ogc_sf.rdf" ;
-            prof:hasRole prof:cachedCopy ],
-        [ dct:conformsTo rdfs:,
-                owl: ;
-            dct:format "application/rdf+xml" ;
-            prof:hasArtifact "lib/ogc_sf.rdf" ;
-            prof:hasRole prof:cachedCopy ],
-        [ dct:conformsTo rdfs:,
-                owl: ;
-            dct:format "application/rdf+xml" ;
-            prof:hasArtifact <hhttp://schemas.opengis.net/sf/1.0/simple_features_geometries.rdf> ;
-            prof:hasRole prof:source ] .
-
-<https://uri.fiware.org/ns/data-models> a prof:Profile ;
-    rdfs:label "FIWARE data models",
-        "https://uri.fiware.org/ns/data-models" ;
-    prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "Cached OWL copy" ;
-            dct:conformsTo owl:Ontology ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact "lib/fiware.ttl" ;
-            prof:hasRole prof:cachedCopy ],
-        [ dct:conformsTo jsoncontext: ;
-            dct:format "application/ld+json" ;
-            rdfs:comment "fiware jsonld is rather cumbersome aggregation of many things - it would be better it the references to this namespace were finer grained and handled by explicit owl:imports or prof:isProfileOf links." ;
-            prof:hasArtifact <https://fiware.github.io/data-models/full-context.jsonld> ;
-            prof:hasRole prof:schema ],
-        [ dct:conformsTo owl: ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact "lib/fiware.ttl" ;
-            prof:hasRole prof:cachedCopy ],
-        [ dct:conformsTo owl: ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact "lib/fiware.ttl" ;
-            prof:hasRole prof:specification ] .
-
-<https://w3id.org/def/saref4agri> a prof:Profile ;
-    rdfs:label "https://w3id.org/def/saref4agri",
-        "SAREF extension for Agriculture"@en ;
-    prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "Cached OWL copy" ;
-            dct:conformsTo owl:Ontology ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact "lib/saref4agri.ttl" ;
-            prof:hasRole prof:cachedCopy ],
-        [ dct:conformsTo owl: ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact "lib/saref4agri.ttl" ;
-            prof:hasRole prof:cachedCopy ],
-        [ dct:conformsTo owl: ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact <https://mariapoveda.github.io/saref-ext/OnToology/SAREF4AGRI/ontology/saref4agri.ttl/documentation/ontology.ttl> ;
-            prof:hasRole prof:source ] .
+            prof:hasRole profrole:cachedCopy ] .
 

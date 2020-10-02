@@ -1,88 +1,5 @@
 [
   {
-    "@id": "http://foodie-cloud.com/model/foodie#storageHandling",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#nutrient",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#nutrientProduct",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#ingredientAmount",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#solventQuantity",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#productCode",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#hasAgriProductTypeChildren",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Reference to child product types i.e. immediately below this entity in the hierarchy."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "hasAgriProductTypeChildren"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://uri.fiware.org/ns/data-models#hasAgriProductType"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#safetyPeriod",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
     "@id": "http://foodie-cloud.com/model/foodie#nutrientName",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -96,7 +13,7 @@
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#registrationCode",
+    "@id": "http://foodie-cloud.com/model/foodie#productQuantity",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://foodie-cloud.com/model/foodie"
@@ -104,33 +21,15 @@
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#ingredientName",
+    "@id": "http://foodie-cloud.com/model/foodie#productType",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://foodie-cloud.com/model/foodie"
       }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://uri.fiware.org/ns/data-models#name"
-      }
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#productName",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://uri.fiware.org/ns/data-models#name"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#nutrientMeasure",
+    "@id": "http://foodie-cloud.com/model/foodie#ProductKindValue",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://foodie-cloud.com/model/foodie"
@@ -146,10 +45,139 @@
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#nutrientAmount",
+    "@id": "http://foodie-cloud.com/model/foodie#manufacturer",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#Product",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:cb12c291f446cb7cb9ba5b461fbe049069aa4cf31a9b182d562ee6767f0ecadb108"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#equivalentClass": [
+      {
+        "@id": "https://uri.fiware.org/ns/data-models#AgriProductType"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb12c291f446cb7cb9ba5b461fbe049069aa4cf31a9b182d562ee6767f0ecadb108",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#int",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie#storageHandling"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#ingredientAmount",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#ActiveIngredients",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#ProductNutrients",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#registrationCode",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#nutrientProduct",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasAgriProductType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Reference to the AgriProductType used/ applied."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
+      },
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasAgriProductType"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#nutrient",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#AgriProductType",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This entity contains a harmonised description of a generic agricultural product type. This entity is primarily associated with the agricultural vertical and related IoT applications. The AgriProductType includes a hierarchical structure that allows product types to be grouped in a flexible way."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "AgriProductType"
       }
     ]
   },
@@ -161,10 +189,10 @@
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@id": "_:cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977"
+        "@id": "_:cbb28e11ff039cd5934e832e3c1a3c8996759177f8149574c79f2a7f7f88f4b870"
       },
       {
-        "@id": "_:cbb28e11ff039cd5934e832e3c1a3c8996759177f8149574c79f2a7f7f88f4b870"
+        "@id": "_:cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977"
       }
     ],
     "http://purl.org/dc/terms/creator": [
@@ -221,82 +249,17 @@
     ],
     "http://www.w3.org/ns/prov#wasDerivedFrom": [
       {
-        "@id": "_:N99a142001e3b4fb58a662099c9628d3f"
+        "@id": "_:N3409669e4593407db62ca6c8a4322f5c"
       }
     ],
     "http://www.w3.org/ns/prov#wasGeneratedBy": [
       {
-        "@id": "_:Nfbed05f4648c4e1d8979d147fd83a3ef"
+        "@id": "_:N5d30b4e0f15d4df1b5703301f5e26371"
       }
     ],
     "http://xmlns.com/foaf/0.1/maker": [
       {
         "@id": "_:cb41c9a4643e8bc336ab672c46f3cf43eda7265f7ba526cf62d26edb7f88324cd7"
-      }
-    ]
-  },
-  {
-    "@id": "_:cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977",
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "Rob Atkinson"
-      }
-    ],
-    "https://schema.org/affiliation": [
-      {
-        "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5",
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "OGC"
-      }
-    ]
-  },
-  {
-    "@id": "_:N99a142001e3b4fb58a662099c9628d3f",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriProduct.ttl"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nfbed05f4648c4e1d8979d147fd83a3ef",
-    "@type": [
-      "http://www.w3.org/ns/prov#Activity"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "ProfileWiz: Normalisation (source = ../models\\agriProduct.ttl, force_local=False, profile libs : lib/profile_cat.ttl) "
-      }
-    ],
-    "http://www.w3.org/ns/prov#endedAtTime": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-09-10"
-      }
-    ],
-    "http://www.w3.org/ns/prov#wasAssociatedWith": [
-      {
-        "@id": "_:N948f77672aed4bf8a91b42fb57bbae7c"
-      }
-    ]
-  },
-  {
-    "@id": "_:N948f77672aed4bf8a91b42fb57bbae7c",
-    "@type": [
-      "http://www.w3.org/ns/prov#Agent"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "ProfileWiz 0.1.4"
       }
     ]
   },
@@ -348,6 +311,39 @@
     ]
   },
   {
+    "@id": "_:N5d30b4e0f15d4df1b5703301f5e26371",
+    "@type": [
+      "http://www.w3.org/ns/prov#Activity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ProfileWiz: Normalisation (source = ../models\\agriProduct.ttl, force_local=False, profile libs : lib/profile_cat.ttl) "
+      }
+    ],
+    "http://www.w3.org/ns/prov#endedAtTime": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-10-02"
+      }
+    ],
+    "http://www.w3.org/ns/prov#wasAssociatedWith": [
+      {
+        "@id": "_:N5d44be8777664ca8a4e4862fa2941de6"
+      }
+    ]
+  },
+  {
+    "@id": "_:N5d44be8777664ca8a4e4862fa2941de6",
+    "@type": [
+      "http://www.w3.org/ns/prov#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ProfileWiz 0.1.5"
+      }
+    ]
+  },
+  {
     "@id": "_:cb41c9a4643e8bc336ab672c46f3cf43eda7265f7ba526cf62d26edb7f88324cd7",
     "http://xmlns.com/foaf/0.1/homepage": [
       {
@@ -361,73 +357,42 @@
     ]
   },
   {
-    "@id": "https://uri.fiware.org/ns/data-models#hasAgriProductType",
+    "@id": "_:cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Rob Atkinson"
+      }
+    ],
+    "https://schema.org/affiliation": [
+      {
+        "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5",
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "OGC"
+      }
+    ]
+  },
+  {
+    "@id": "_:N3409669e4593407db62ca6c8a4322f5c",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Reference to the AgriProductType used/ applied."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md"
-      },
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"
-      }
+      "http://www.w3.org/ns/prov#Entity"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@language": "en",
-        "@value": "hasAgriProductType"
+        "@value": "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriProduct.ttl"
       }
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#ProductNutrients",
+    "@id": "http://foodie-cloud.com/model/foodie#registerUrl",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#ProductKindValue",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#productSubType",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#root",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "A logical indicator that this product is the root of an AgriProductType hierarchy. Logical true indicates it is the root."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "root"
       }
     ]
   },
@@ -459,72 +424,13 @@
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#ActiveIngredients",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#registerUrl",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#productKind",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#Product",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:cb12c291f446cb7cb9ba5b461fbe049069aa4cf31a9b182d562ee6767f0ecadb108"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#equivalentClass": [
-      {
-        "@id": "https://uri.fiware.org/ns/data-models#AgriProductType"
-      }
-    ]
-  },
-  {
-    "@id": "_:cb12c291f446cb7cb9ba5b461fbe049069aa4cf31a9b182d562ee6767f0ecadb108",
+    "@id": "https://uri.fiware.org/ns/data-models#root",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#maxCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#int",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://foodie-cloud.com/model/foodie#storageHandling"
-      }
-    ]
-  },
-  {
-    "@id": "https://uri.fiware.org/ns/data-models#AgriProductType",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "This entity contains a harmonised description of a generic agricultural product type. This entity is primarily associated with the agricultural vertical and related IoT applications. The AgriProductType includes a hierarchical structure that allows product types to be grouped in a flexible way."
+        "@value": "A logical indicator that this product is the root of an AgriProductType hierarchy. Logical true indicates it is the root."
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -534,28 +440,39 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "AgriProductType"
+        "@language": "en",
+        "@value": "root"
       }
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#productQuantity",
+    "@id": "http://foodie-cloud.com/model/foodie#ingredientName",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://foodie-cloud.com/model/foodie"
       }
-    ]
-  },
-  {
-    "@id": "http://foodie-cloud.com/model/foodie#manufacturer",
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://foodie-cloud.com/model/foodie"
+        "@id": "https://uri.fiware.org/ns/data-models#name"
       }
     ]
   },
   {
-    "@id": "http://foodie-cloud.com/model/foodie#productType",
+    "@id": "http://foodie-cloud.com/model/foodie#productName",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://uri.fiware.org/ns/data-models#name"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#nutrientMeasure",
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "http://foodie-cloud.com/model/foodie"
@@ -571,10 +488,27 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:cbe9fac7743721c8a686318e9801d4bab679321df18d1e1a778db6c42ef6d6f6e8"
+        "@id": "_:cb15f09e228872871e8e1e9aabd380abb1b2e51a94811d96088c38611d915a6428"
       },
       {
-        "@id": "_:cb15f09e228872871e8e1e9aabd380abb1b2e51a94811d96088c38611d915a6428"
+        "@id": "_:cbe9fac7743721c8a686318e9801d4bab679321df18d1e1a778db6c42ef6d6f6e8"
+      }
+    ]
+  },
+  {
+    "@id": "_:cb15f09e228872871e8e1e9aabd380abb1b2e51a94811d96088c38611d915a6428",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#int",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie#safetyPeriod"
       }
     ]
   },
@@ -596,19 +530,85 @@
     ]
   },
   {
-    "@id": "_:cb15f09e228872871e8e1e9aabd380abb1b2e51a94811d96088c38611d915a6428",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
+    "@id": "http://foodie-cloud.com/model/foodie#storageHandling",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#int",
-        "@value": "1"
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#productKind",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#productCode",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#solventQuantity",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "https://uri.fiware.org/ns/data-models#hasAgriProductTypeChildren",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Reference to child product types i.e. immediately below this entity in the hierarchy."
       }
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "http://foodie-cloud.com/model/foodie#safetyPeriod"
+        "@id": "https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "hasAgriProductTypeChildren"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://uri.fiware.org/ns/data-models#hasAgriProductType"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#safetyPeriod",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#productSubType",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
+      }
+    ]
+  },
+  {
+    "@id": "http://foodie-cloud.com/model/foodie#nutrientAmount",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "http://foodie-cloud.com/model/foodie"
       }
     ]
   }
