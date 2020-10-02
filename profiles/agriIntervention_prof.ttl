@@ -1,60 +1,30 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://www.w3.org/ns/prov#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix profrole: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://w3id.org/demeter/agri/agriIntervention> a prof:Profile ;
     rdfs:label "DEMETER AgriIntervention"@en ;
-    rdfs:comment "The DEMETER AgriIntervention is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
-        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    dcterms:description "The DEMETER AgriIntervention is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+    dcterms:title "DEMETER AgriIntervention"@en ;
+    rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
     skos:historyNote "Ontology profile normalised using ProfileWiz" ;
     prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "Normalised OWL with imports" ;
+            rdfs:label "Original Source OWL model" ;
             dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "application/ld+json" ;
-            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
-            prof:hasArtifact "agriIntervention.jsonld" ;
-            prof:hasRole prof:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON-LD Context" ;
-            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dcterms:format "application/ld+json" ;
-            prof:hasArtifact "agriIntervention_context.jsonld" ;
-            prof:hasRole prof:context ],
+            dcterms:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriIntervention.ttl" ;
+            prof:hasRole profrole:source ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "Normalised OWL with imports" ;
             dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
             dcterms:format "text/turtle" ;
             rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
             prof:hasArtifact "agriIntervention.ttl" ;
-            prof:hasRole prof:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Flattened JSON-LD context" ;
-            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dcterms:format "application/ld+json" ;
-            prof:hasArtifact "agriIntervention_context_flat.jsonld" ;
-            prof:hasRole prof:contextflat ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Original Source OWL model" ;
-            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "text/turtle" ;
-            rdfs:comment "Source OWL model used to derive normalised profile views." ;
-            prof:hasArtifact "../models\\agriIntervention.ttl" ;
-            prof:hasRole prof:source ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON Schema" ;
-            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
-            dcterms:format "application/json" ;
-            prof:hasArtifact "agriIntervention.json" ;
-            prof:hasRole prof:schema ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Profile description as HTML" ;
-            dcterms:conformsTo prof: ;
-            dcterms:format "text/html" ;
-            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
-            prof:hasArtifact "agriIntervention_prof.html" ;
-            prof:hasRole prof:profile ] ;
-    prof:isProfileOf <http://foodie-cloud.com/model/foodie> ;
-    ns1:wasDerivedFrom "../models\\agriIntervention.ttl" .
+            prof:hasRole profrole:vocabulary ] ;
+    prof:isProfileOf <https://w3id.org/demeter/agri/proxy/foodie> ;
+    prov:wasDerivedFrom "../models\\agriIntervention.ttl" .
 

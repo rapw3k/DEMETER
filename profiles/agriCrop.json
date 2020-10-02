@@ -3,9 +3,65 @@
     "$id": "https://w3id.org/demeter/agri/agriCrop?_profile=jsonschema",
     "type": "object",
     "properties": {
-        "iso19109:AnyFeature": {
+        "saref:FeatureOfInterest": {
             "type": "object",
             "properties": {},
+            "required": []
+        },
+        "saref4agri:Crop": {
+            "type": "object",
+            "properties": {
+                "saref4agri:hasHarvestDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "obo:TAXRANK_1000000": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasPlantDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "iso19150-2:Datatype": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foodie:CropType": {
+            "type": "object",
+            "properties": {
+                "foodie:notes": {
+                    "type": "string"
+                },
+                "foodie:variety": {
+                    "type": "string"
+                },
+                "foodie:species": {
+                    "type": "string"
+                },
+                "foodie:family": {
+                    "type": "string"
+                },
+                "foodie:description": {
+                    "type": "string"
+                },
+                "foodie:code": {
+                    "type": "string"
+                },
+                "foodie:genus": {
+                    "type": "string"
+                }
+            },
             "required": []
         },
         "geo:Feature": {
@@ -43,22 +99,21 @@
             "properties": {},
             "required": []
         },
+        "iso19109:AnyFeature": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
         "foodie:CropSpecies": {
             "type": "object",
             "properties": {
-                "prov:generatedAtTime": {
-                    "type": "string"
-                },
                 "prov:invalidatedAtTime": {
                     "type": "string"
                 },
-                "foodie:cropSpecies": {
-                    "type": "string"
-                },
-                "common:validTo": {
-                    "type": "string"
-                },
                 "common:validFrom": {
+                    "type": "string"
+                },
+                "foodie:cropSpecies": {
                     "type": "string"
                 },
                 "foodie:cropArea": {
@@ -66,97 +121,42 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "common:validTo": {
+                    "type": "string"
+                },
+                "prov:generatedAtTime": {
+                    "type": "string"
                 }
             },
             "required": [
-                "prov:generatedAtTime",
-                "foodie:cropSpecies",
                 "common:validFrom",
-                "foodie:cropArea"
+                "foodie:cropSpecies",
+                "foodie:cropArea",
+                "prov:generatedAtTime"
             ]
-        },
-        "iso19150-2:Datatype": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "foodie:CropType": {
-            "type": "object",
-            "properties": {
-                "foodie:code": {
-                    "type": "string"
-                },
-                "foodie:variety": {
-                    "type": "string"
-                },
-                "foodie:genus": {
-                    "type": "string"
-                },
-                "foodie:family": {
-                    "type": "string"
-                },
-                "foodie:species": {
-                    "type": "string"
-                },
-                "foodie:description": {
-                    "type": "string"
-                },
-                "foodie:notes": {
-                    "type": "string"
-                }
-            },
-            "required": []
         },
         "foodie:ProductionType": {
             "type": "object",
             "properties": {
-                "foodie:productionDate": {
+                "foodie:productionAmount": {
                     "type": "string"
                 },
                 "foodie:variety": {
                     "type": "string"
                 },
-                "foodie:productionAmount": {
+                "foodie:productionDate": {
                     "type": "string"
                 }
             },
             "required": [
-                "foodie:productionDate",
-                "foodie:variety"
+                "foodie:variety",
+                "foodie:productionDate"
             ]
         },
         "fiware:AgriCrop": {
             "type": "object",
             "properties": {},
-            "required": []
-        },
-        "saref:FeatureOfInterest": {
-            "type": "object",
-            "properties": {},
-            "required": []
-        },
-        "saref4agri:Crop": {
-            "type": "object",
-            "properties": {
-                "saref4agri:hasPlantDate": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "obo:TAXRANK_1000000": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "saref4agri:hasHarvestDate": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
             "required": []
         }
     }

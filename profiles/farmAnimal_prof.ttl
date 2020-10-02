@@ -1,62 +1,32 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://www.w3.org/ns/prov#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix profrole: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 <https://w3id.org/demeter/agri/farmAnimal> a prof:Profile ;
     rdfs:label "DEMETER FarmAnimal"@en ;
-    rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en,
-        "The DEMETER FarmAnimal is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+    dcterms:description "The DEMETER FarmAnimal is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+    dcterms:title "DEMETER FarmAnimal"@en ;
+    rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
     skos:historyNote "Ontology profile normalised using ProfileWiz" ;
     prof:hasResource [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON-LD Context" ;
-            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dcterms:format "application/ld+json" ;
-            prof:hasArtifact "farmAnimal_context.jsonld" ;
-            prof:hasRole prof:context ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Profile description as HTML" ;
-            dcterms:conformsTo prof: ;
-            dcterms:format "text/html" ;
-            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
-            prof:hasArtifact "farmAnimal_prof.html" ;
-            prof:hasRole prof:profile ],
-        [ a prof:ResourceDescriptor ;
             rdfs:label "Normalised OWL with imports" ;
             dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
             dcterms:format "text/turtle" ;
             rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
             prof:hasArtifact "farmAnimal.ttl" ;
-            prof:hasRole prof:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "JSON Schema" ;
-            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
-            dcterms:format "application/json" ;
-            prof:hasArtifact "farmAnimal.json" ;
-            prof:hasRole prof:schema ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Normalised OWL with imports" ;
-            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
-            dcterms:format "application/ld+json" ;
-            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
-            prof:hasArtifact "farmAnimal.jsonld" ;
-            prof:hasRole prof:vocabulary ],
-        [ a prof:ResourceDescriptor ;
-            rdfs:label "Flattened JSON-LD context" ;
-            dcterms:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_ld_context> ;
-            dcterms:format "application/ld+json" ;
-            prof:hasArtifact "farmAnimal_context_flat.jsonld" ;
-            prof:hasRole prof:contextflat ],
+            prof:hasRole profrole:vocabulary ],
         [ a prof:ResourceDescriptor ;
             rdfs:label "Original Source OWL model" ;
             dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
             dcterms:format "text/turtle" ;
             rdfs:comment "Source OWL model used to derive normalised profile views." ;
             prof:hasArtifact "../models\\farmAnimal.ttl" ;
-            prof:hasRole prof:source ] ;
-    prof:isProfileOf <http://foodie-cloud.com/model/foodie>,
-        <http://inspire.ec.europa.eu/schemas/af/3.0>,
-        <https://w3id.org/def/saref4agri> ;
-    ns1:wasDerivedFrom "../models\\farmAnimal.ttl" .
+            prof:hasRole profrole:source ] ;
+    prof:isProfileOf <https://w3id.org/demeter/agri/agriFeature>,
+        <https://w3id.org/demeter/agri/proxy/foodie>,
+        <https://w3id.org/demeter/agri/proxy/saref4agri> ;
+    prov:wasDerivedFrom "../models\\farmAnimal.ttl" .
 

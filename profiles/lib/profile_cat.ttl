@@ -111,7 +111,10 @@ proxy:prov a prof:Profile ;
 		] ;
 .
 
-
+<http://xmlns.com/foaf/0.1> a prof:Profile ;
+	rdfs:label "FOAF"
+	.
+	
 proxy:foaf a prof:Profile ;
 	prof:isProfileOf <http://xmlns.com/foaf/0.1> ;
 	rdfs:label  "DEMETER profile of FOAF"@en ;
@@ -255,6 +258,7 @@ proxy:obo a prof:Profile ;
 
 <http://portele.de/ont/inspire/baseInspire> 
 	a prof:Profile ;
+	rdfs:label "INSPIRE Base Feature model" ;
 	rdfs:comment "Not acessible" ;
 		prof:hasResource 	[
 			prof:hasRole profrole:cachedCopy ;
