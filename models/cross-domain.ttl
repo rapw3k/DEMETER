@@ -25,7 +25,7 @@
 @base <https://w3id.org/demeter/crossDomain> .
 
 <https://w3id.org/demeter/crossDomain> rdf:type owl:Ontology ;
-                                         owl:versionIRI <https://gitlab.com/demeterproject/wp2/agriculturalinformationmodel/crossdomainontology/-/raw/master/cross-domain.ttl> ;
+                                         owl:versionIRI <https://w3id.org/demeter/crossDomain/1.0> ;
                                          dct:contributor [ rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
                                                            foaf:name "Raul Palma" ;
                                                            schema:affiliation [ foaf:name "PSNC"
@@ -115,17 +115,42 @@ foaf:maker rdf:type owl:AnnotationProperty .
 ###  http://xmlns.com/foaf/0.1/name
 foaf:name rdf:type owl:AnnotationProperty .
 
+#################################################################
+#    RDF properties
+#################################################################
 
 ###  https://schema.org/affiliation
-schema:affiliation rdf:type owl:AnnotationProperty .
-
+schema:affiliation rdf:type rdf:Property ;
+                   rdfs:label "Affiliation"@en ;
+                   rdfs:comment "An organization that this person is affiliated with. For example, a school/university, a club, or a team."@en ;
+                   rdfs:isDefinedBy <http://schema.org/Person> .
 
 ###  https://schema.org/domainIncludes
-schema:domainIncludes rdf:type owl:AnnotationProperty .
-
+schema:domainIncludes rdf:type rdf:Property ;
+                      rdfs:label "Domain Includes"@en ;
+                      rdfs:comment "Relates a property to a class that is (one of) the type(s) the property is expected to be used on."@en ;
+                      rdfs:isDefinedBy <http://schema.org/Property> .
 
 ###  https://schema.org/rangeIncludes
-schema:rangeIncludes rdf:type owl:AnnotationProperty .
+schema:rangeIncludes rdf:type rdf:Property ;
+                     rdfs:label "Range Includes"@en ;
+                     rdfs:comment "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property."@en ;
+                     rdfs:isDefinedBy <http://schema.org/Property> .
+
+###  https://schema.org/name
+schema:name rdf:type rdf:Property ;
+            rdfs:label "name"@en ;
+            rdfs:comment "The name of the item." ;
+            rdfs:isDefinedBy <http://schema.org/Thing> .
+
+###  https://schema.org/telephone
+schema:telephone rdf:type rdf:Property ;
+                 rdfs:label "telephone"@en ;
+                 rdfs:comment "The telephone number." ;
+                 rdfs:isDefinedBy <http://schema.org/Person>;
+                 rdfs:isDefinedBy <http://schema.org/ContactPoint>;
+                 rdfs:isDefinedBy <http://schema.org/Place>;
+                 rdfs:isDefinedBy <http://schema.org/Organization> .
 
 
 #################################################################
@@ -138,11 +163,6 @@ geo:wktLiteral rdf:type rdfs:Datatype ;
                rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
                                 <http://www.opengis.net/spec/geosparql/1.0> ;
                rdfs:label "Well-known Text Literal"@en .
-
-
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
-
 
 #################################################################
 #    Object Properties
@@ -170,13 +190,6 @@ geo:hasGeometry rdf:type owl:ObjectProperty ;
     """@en ;
                 skos:prefLabel "hasGeometry"@en .
 
-
-###  http://www.opengis.net/ont/geosparql#hasSerialization
-geo:hasSerialization rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf <https://w3id.org/demeter/core#Property> ;
-                     rdfs:domain geo:Geometry .
-
-
 ###  http://www.opengis.net/ont/geosparql#sfContains
 geo:sfContains rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf <https://w3id.org/demeter/core#Property> ;
@@ -186,7 +199,6 @@ geo:sfContains rdf:type owl:ObjectProperty ;
                rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
                                 <http://www.opengis.net/spec/geosparql/1.0> ;
                rdfs:label "contains"@en .
-
 
 ###  http://www.opengis.net/ont/geosparql#sfWithin
 geo:sfWithin rdf:type owl:ObjectProperty ;
@@ -198,14 +210,12 @@ geo:sfWithin rdf:type owl:ObjectProperty ;
                               <http://www.opengis.net/spec/geosparql/1.0> ;
              rdfs:label "within"@en .
 
-
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#location
 wgs84_pos:location rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
                    rdfs:comment "The relation between something and the point, or other geometrical thing in space, where it is." ;
                    rdfs:isDefinedBy wgs84_pos: ;
                    rdfs:label "location" .
-
 
 ###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
 sosa:hasFeatureOfInterest rdf:type owl:ObjectProperty ;
@@ -222,7 +232,6 @@ sosa:hasFeatureOfInterest rdf:type owl:ObjectProperty ;
                           schema:rangeIncludes sosa:FeatureOfInterest ,
                                                sosa:Sample .
 
-
 ###  http://www.w3.org/ns/sosa/hosts
 sosa:hosts rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
@@ -230,7 +239,6 @@ sosa:hosts rdf:type owl:ObjectProperty ;
            rdfs:comment "Relation between a platform and the systems it hosts."@en ;
            rdfs:isDefinedBy sosa: ;
            rdfs:label "host"@en .
-
 
 ###  http://www.w3.org/ns/sosa/isFeatureOfInterestOf
 sosa:isFeatureOfInterestOf rdf:type owl:ObjectProperty ;
@@ -245,17 +253,14 @@ sosa:isFeatureOfInterestOf rdf:type owl:ObjectProperty ;
                                                 sosa:Observation ,
                                                 sosa:Sampling .
 
-
 ###  http://www.w3.org/ns/sosa/isHostedBy
 sosa:isHostedBy rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> .
-
 
 ###  http://www.w3.org/ns/sosa/madeBySensor
 sosa:madeBySensor rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
                   owl:inverseOf sosa:madeObservation .
-
 
 ###  http://www.w3.org/ns/sosa/madeObservation
 sosa:madeObservation rdf:type owl:ObjectProperty ;
@@ -266,12 +271,10 @@ sosa:madeObservation rdf:type owl:ObjectProperty ;
                      skos:definition "Relation between a Sensor and an Observation made by the Sensor."@en ;
                      schema:rangeIncludes sosa:Observation .
 
-
 ###  http://www.w3.org/ns/sosa/observedProperty
 sosa:observedProperty rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
                       dct:description "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation." .
-
 
 ###  http://www.w3.org/ns/ssn/deployedOnPlatform
 ssn:deployedOnPlatform rdf:type owl:ObjectProperty ;
@@ -281,7 +284,6 @@ ssn:deployedOnPlatform rdf:type owl:ObjectProperty ;
                        rdfs:isDefinedBy ssn: ;
                        rdfs:label "deployed on platform"@en .
 
-
 ###  http://www.w3.org/ns/ssn/deployedSystem
 ssn:deployedSystem rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
@@ -290,11 +292,9 @@ ssn:deployedSystem rdf:type owl:ObjectProperty ;
                    rdfs:isDefinedBy ssn: ;
                    rdfs:label "deployed system"@en .
 
-
 ###  http://www.w3.org/ns/ssn/hasDeployment
 ssn:hasDeployment rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> .
-
 
 ###  http://www.w3.org/ns/ssn/hasProperty
 ssn:hasProperty rdf:type owl:ObjectProperty ;
@@ -302,16 +302,13 @@ ssn:hasProperty rdf:type owl:ObjectProperty ;
                 rdfs:comment "A relation between a FeatureOfInterest and a Property of that feature." ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/ssn> .
 
-
 ###  http://www.w3.org/ns/ssn/hasSubSystem
 ssn:hasSubSystem rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> .
 
-
 ###  http://www.w3.org/ns/ssn/implements
 ssn:implements rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> .
-
 
 ###  http://www.w3.org/ns/ssn/inDeployment
 ssn:inDeployment rdf:type owl:ObjectProperty ;
@@ -320,11 +317,9 @@ ssn:inDeployment rdf:type owl:ObjectProperty ;
                  rdfs:isDefinedBy ssn: ;
                  rdfs:label "in deployment"@en .
 
-
 ###  http://www.w3.org/ns/ssn/isPropertyOf
 ssn:isPropertyOf rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> .
-
 
 ###  http://xmlns.com/foaf/0.1/member
 foaf:member rdf:type owl:ObjectProperty ;
@@ -332,10 +327,8 @@ foaf:member rdf:type owl:ObjectProperty ;
             rdfs:isDefinedBy foaf: ;
             rdfs:label "member" .
 
-
 ###  https://w3id.org/demeter/core#Property
 <https://w3id.org/demeter/core#Property> rdf:type owl:ObjectProperty .
-
 
 ###  https://w3id.org/demeter/core#Relationship
 <https://w3id.org/demeter/core#Relationship> rdf:type owl:ObjectProperty .
@@ -444,14 +437,18 @@ geo:asWKT rdf:type owl:DatatypeProperty ;
           rdfs:range geo:wktLiteral ;
           rdfs:comment "The WKT serialization of a geometry"@en ;
           rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
-                           <http://www.opengis.net/spec/geosparql/1.0> .
-
+                           <http://www.opengis.net/spec/geosparql/1.0> ;
+          rdfs:label "asWKT"@en .
 
 ###  http://www.opengis.net/ont/geosparql#hasSerialization
 geo:hasSerialization rdf:type owl:DatatypeProperty ;
-                     rdfs:range rdfs:Literal .
+                     rdfs:domain geo:Geometry ;
+                     rdfs:range rdfs:Literal ;
+                     rdfs:comment "Connects a geometry object with its text-based serialization"@en ;
+                     rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
+                                      <http://www.opengis.net/spec/geosparql/1.0> ;
+                     rdfs:label "has serialization"@en .   
 
-	
 qb:order a owl:DatatypeProperty;
     rdfs:label "order"@en;
     rdfs:comment """indicates a priority order for the components of sets with this structure, used to guide presentations - lower order numbers come before higher numbers, un-numbered components come last"""@en;
@@ -469,126 +466,105 @@ iso19109:AnyFeature rdf:type owl:Class ;
                                         geo:Feature ;
                     rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
 
-
 ###  http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType
 iso19150-2:FeatureType rdf:type owl:Class ;
                        owl:equivalentClass geo:Feature ;
                        rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
-
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration
 dim:Acceleration rdf:type owl:Class ;
                  rdfs:subClassOf qu:QuantityKind ;
                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
-
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility
 dim:Compressibility rdf:type owl:Class ;
                     rdfs:subClassOf qu:QuantityKind ;
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Concentration
 dim:Concentration rdf:type owl:Class ;
                   rdfs:subClassOf qu:QuantityKind ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
-
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Density
 dim:Density rdf:type owl:Class ;
             rdfs:subClassOf qu:QuantityKind ;
             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless
 dim:Dimensionless rdf:type owl:Class ;
                   rdfs:subClassOf qu:QuantityKind ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
-
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Distance
 dim:Distance rdf:type owl:Class ;
              rdfs:subClassOf qu:QuantityKind ;
              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Energy
 dim:Energy rdf:type owl:Class ;
            rdfs:subClassOf qu:QuantityKind ;
            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
-
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#EnergyDensity
 dim:EnergyDensity rdf:type owl:Class ;
                   rdfs:subClassOf qu:QuantityKind ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux
 dim:EnergyFlux rdf:type owl:Class ;
                rdfs:subClassOf qu:QuantityKind ;
                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
-
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea
 dim:MassPerTimePerArea rdf:type owl:Class ;
                        rdfs:subClassOf qu:QuantityKind ;
                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Power
 dim:Power rdf:type owl:Class ;
           rdfs:subClassOf qu:QuantityKind ;
           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
-
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#RadianceExposure
 dim:RadianceExposure rdf:type owl:Class ;
                      rdfs:subClassOf qu:QuantityKind ;
                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed
 dim:RotationalSpeed rdf:type owl:Class ;
                     rdfs:subClassOf qu:QuantityKind ;
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
-
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#SpecificEntropy
 dim:SpecificEntropy rdf:type owl:Class ;
                     rdfs:subClassOf qu:QuantityKind ;
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure
 dim:StressOrPressure rdf:type owl:Class ;
                      rdfs:subClassOf qu:QuantityKind ;
                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
-
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity
 dim:SurfaceDensity rdf:type owl:Class ;
                    rdfs:subClassOf qu:QuantityKind ;
                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Temperature
 dim:Temperature rdf:type owl:Class ;
                 rdfs:subClassOf qu:QuantityKind ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
-
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity
 dim:ThermalConductivity rdf:type owl:Class ;
                         rdfs:subClassOf qu:QuantityKind ;
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
-
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed
 dim:VelocityOrSpeed rdf:type owl:Class ;
                     rdfs:subClassOf qu:QuantityKind ;
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
 
 ###  http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind
 qu:PropertyKind rdf:type owl:Class ;
@@ -596,17 +572,19 @@ qu:PropertyKind rdf:type owl:Class ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                 rdfs:label "PropertyKind" .
 
-
 ###  http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind
 qu:QuantityKind rdf:type owl:Class ;
                 rdfs:subClassOf skos:Scheme ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                 rdfs:label "QuantityKind" .
 
-
 ###  http://www.opengis.net/ont/geosparql#Feature
 geo:Feature rdf:type owl:Class ;
-            rdfs:subClassOf geo:SpatialObject ;
+            rdfs:subClassOf geo:SpatialObject ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty geo:hasGeometry ;
+              owl:allValuesFrom geo:Geometry
+            ] ;
             owl:disjointWith geo:Geometry ;
             dct:contributor "Matthew Perry" ;
             dct:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
@@ -630,7 +608,6 @@ geo:Feature rdf:type owl:Class ;
       superclass of all feature types.
     """@en ;
             skos:prefLabel "Feature"@en .
-
 
 ###  http://www.opengis.net/ont/geosparql#Geometry
 geo:Geometry rdf:type owl:Class ;
@@ -658,7 +635,6 @@ geo:Geometry rdf:type owl:Class ;
     """@en ;
              skos:prefLabel "Geometry"@en .
 
-
 ###  http://www.opengis.net/ont/geosparql#SpatialObject
 geo:SpatialObject rdf:type owl:Class ;
                   rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ,
@@ -682,7 +658,6 @@ geo:SpatialObject rdf:type owl:Class ;
                   rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
                   rdfs:label "SpatialObject"@en .
 
-
 ###  http://www.opengis.net/ont/sf#Curve
 sf:Curve rdf:type owl:Class ;
          rdfs:subClassOf sf:Geometry ;
@@ -700,7 +675,6 @@ A Curve is defined as topologically closed, that is, it contains its endpoints f
          rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
          rdfs:label "Curve"@en .
 
-
 ###  http://www.opengis.net/ont/sf#Geometry
 sf:Geometry rdf:type owl:Class ;
             rdfs:subClassOf geo:Geometry ;
@@ -713,7 +687,6 @@ All Geometry classes described in this specification are defined so that instanc
             rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
             rdfs:label "Geometry"@en .
 
-
 ###  http://www.opengis.net/ont/sf#GeometryCollection
 sf:GeometryCollection rdf:type owl:Class ;
                       rdfs:subClassOf sf:Geometry ;
@@ -725,7 +698,6 @@ GeometryCollection places no other constraints on its elements. Subclasses of Ge
                       rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
                       rdfs:label "Geometry Collection"@en .
 
-
 ###  http://www.opengis.net/ont/sf#Line
 sf:Line rdf:type owl:Class ;
         rdfs:subClassOf sf:LineString ;
@@ -734,7 +706,6 @@ A Line is a LineString with exactly 2 Points.
     """@en ;
         rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
         rdfs:label "Line"@en .
-
 
 ###  http://www.opengis.net/ont/sf#LineString
 sf:LineString rdf:type owl:Class ;
@@ -745,7 +716,6 @@ A LineString is a Curve with linear interpolation between Points. Each consecuti
               rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
               rdfs:label "Line String"@en .
 
-
 ###  http://www.opengis.net/ont/sf#LinearRing
 sf:LinearRing rdf:type owl:Class ;
               rdfs:subClassOf sf:LineString ;
@@ -754,7 +724,6 @@ A LinearRing is a LineString that is both closed and simple.
     """@en ;
               rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
               rdfs:label "Linear Ring"@en .
-
 
 ###  http://www.opengis.net/ont/sf#MultiCurve
 sf:MultiCurve rdf:type owl:Class ;
@@ -770,7 +739,6 @@ A MultiCurve is defined as topologically closed.
               rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
               rdfs:label "Multi Curve"@en .
 
-
 ###  http://www.opengis.net/ont/sf#MultiLineString
 sf:MultiLineString rdf:type owl:Class ;
                    rdfs:subClassOf sf:MultiCurve ;
@@ -779,7 +747,6 @@ A MultiLineString is a MultiCurve whose elements are LineStrings.
     """@en ;
                    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
                    rdfs:label "Multi Line String"@en .
-
 
 ###  http://www.opengis.net/ont/sf#MultiPoint
 sf:MultiPoint rdf:type owl:Class ;
@@ -792,7 +759,6 @@ The boundary of a MultiPoint is the empty set.
     """@en ;
               rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
               rdfs:label "Multi Point"@en .
-
 
 ###  http://www.opengis.net/ont/sf#MultiPolygon
 sf:MultiPolygon rdf:type owl:Class ;
@@ -810,7 +776,6 @@ The boundary of a MultiPolygon is a set of closed Curves (LineStrings) correspon
                 rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
                 rdfs:label "Multi Polygon"@en .
 
-
 ###  http://www.opengis.net/ont/sf#MultiSurface
 sf:MultiSurface rdf:type owl:Class ;
                 rdfs:subClassOf sf:GeometryCollection ;
@@ -820,7 +785,6 @@ A MultiSurface may be used to represent heterogeneous surfaces collections of po
     """@en ;
                 rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
                 rdfs:label "Multi Surface"@en .
-
 
 ###  http://www.opengis.net/ont/sf#Point
 sf:Point rdf:type owl:Class ;
@@ -832,7 +796,6 @@ The boundary of a Point is the empty set.
     """@en ;
          rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
          rdfs:label "Point"@en .
-
 
 ###  http://www.opengis.net/ont/sf#Polygon
 sf:Polygon rdf:type owl:Class ;
@@ -851,7 +814,6 @@ f) The exterior of a Polygon with 1 or more holes is not connected. Each hole de
            rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
            rdfs:label "Polygon"@en .
 
-
 ###  http://www.opengis.net/ont/sf#PolyhedralSurface
 sf:PolyhedralSurface rdf:type owl:Class ;
                      rdfs:subClassOf sf:Surface ;
@@ -862,7 +824,6 @@ If each such LineString is the boundary of exactly 2 Polygon patches, then the P
     """@en ;
                      rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
                      rdfs:label "Polyhedral Surface"@en .
-
 
 ###  http://www.opengis.net/ont/sf#Surface
 sf:Surface rdf:type owl:Class ;
@@ -877,7 +838,6 @@ A Polygon is a simple Surface that is planar. A PolyhedralSurface is a simple su
            rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
            rdfs:label "Surface"@en .
 
-
 ###  http://www.opengis.net/ont/sf#TIN
 sf:TIN rdf:type owl:Class ;
        rdfs:subClassOf sf:PolyhedralSurface ;
@@ -887,7 +847,6 @@ A TIN (triangulated irregular network) is a PolyhedralSurface consisting only of
        rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
        rdfs:label "Triangulated Irregular Network"@en .
 
-
 ###  http://www.opengis.net/ont/sf#Triangle
 sf:Triangle rdf:type owl:Class ;
             rdfs:subClassOf sf:Polygon ;
@@ -896,7 +855,6 @@ sf:Triangle rdf:type owl:Class ;
     """@en ;
             rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
             rdfs:label "Triangle"@en .
-
 
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#Point
 wgs84_pos:Point rdf:type owl:Class ;
@@ -913,16 +871,13 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
                 rdfs:isDefinedBy wgs84_pos: ;
                 rdfs:label "Point"@en .
 
-
 ###  http://www.w3.org/2004/02/skos/core#Scheme
 skos:Scheme rdf:type owl:Class ;
             rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
 
-
 ###  http://www.w3.org/ns/sosa/ActuatableProperty
 sosa:ActuatableProperty rdf:type owl:Class ;
                         rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
-
 
 ###  http://www.w3.org/ns/sosa/FeatureOfInterest
 sosa:FeatureOfInterest rdf:type owl:Class ;
@@ -930,16 +885,13 @@ sosa:FeatureOfInterest rdf:type owl:Class ;
                        rdfs:isDefinedBy sosa: ;
                        rdfs:label "Feature Of Interest"@en .
 
-
 ###  http://www.w3.org/ns/sosa/ObservableProperty
 sosa:ObservableProperty rdf:type owl:Class ;
                         rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
 
-
 ###  http://www.w3.org/ns/sosa/Observation
 sosa:Observation rdf:type owl:Class ;
                  rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
-
 
 ###  http://www.w3.org/ns/sosa/Platform
 sosa:Platform rdf:type owl:Class ;
@@ -948,18 +900,15 @@ sosa:Platform rdf:type owl:Class ;
               rdfs:isDefinedBy sosa: ;
               rdfs:label "Platform"@en .
 
-
 ###  http://www.w3.org/ns/ssn/Deployment
 ssn:Deployment rdf:type owl:Class ;
                rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ;
                rdfs:isDefinedBy ssn: ;
                rdfs:label "Deployment"@en .
 
-
 ###  http://www.w3.org/ns/ssn/Property
 ssn:Property rdf:type owl:Class ;
              rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
-
 
 ###  http://www.w3.org/ns/ssn/System
 ssn:System rdf:type owl:Class ;
@@ -967,7 +916,6 @@ ssn:System rdf:type owl:Class ;
            rdfs:comment "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems. (Definition taken from http://www.w3.org/ns/ssn/System)"@en ;
            rdfs:isDefinedBy ssn: ;
            rdfs:label "System"@en .
-
 
 ###  http://xmlns.com/foaf/0.1/Agent
 foaf:Agent rdf:type owl:Class ;
@@ -979,14 +927,12 @@ foaf:Agent rdf:type owl:Class ;
            rdfs:isDefinedBy foaf: ;
            rdfs:label "Agent"@en .
 
-
 ###  http://xmlns.com/foaf/0.1/Person
 foaf:Person rdf:type owl:Class ;
             owl:equivalentClass schema:Person ;
             rdfs:subClassOf foaf:Agent ;
             rdfs:isDefinedBy foaf: ;
             rdfs:label "Person"@en .
-
 
 ###  https://schema.org/Organization
 schema:Organization rdf:type owl:Class ;
@@ -995,7 +941,6 @@ schema:Organization rdf:type owl:Class ;
                     rdfs:isDefinedBy schema:Organization ;
                     rdfs:label "Organization"@en .
 
-
 ###  https://schema.org/Person
 schema:Person rdf:type owl:Class ;
               rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ;
@@ -1003,13 +948,11 @@ schema:Person rdf:type owl:Class ;
               rdfs:isDefinedBy schema:Person ;
               rdfs:label "Person"@en .
 
-
 ###  https://schema.org/Role
 schema:Role rdf:type owl:Class ;
             rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ;
             rdfs:comment "Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.<br/><br/> " ;
             rdfs:label "Role"@en .
-
 
 ###  https://w3id.org/demeter/core#Entity
 <https://w3id.org/demeter/core#Entity> rdf:type owl:Class .
@@ -1330,50 +1273,7 @@ quantity:velocity rdf:type owl:NamedIndividual ,
                   skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme ,
                                 dim:SpaceAndTimeScheme .
 
-
-[ rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
-  foaf:name "Raul Palma" ;
-  schema:affiliation [ foaf:name "PSNC"
-                     ]
-] .
-
-[ foaf:name "Ioanna Roussaki" ;
-   schema:affiliation [ foaf:name "ICCS"
-                      ]
- ] .
-
-[ foaf:name "Rob Atkinson" ;
-   schema:affiliation [ foaf:name "OGC"
-                      ]
- ] .
-
-[ foaf:name "Till Döhmen" ;
-   schema:affiliation [ foaf:name "Fraunhofer FIT"
-                      ]
- ] .
-
-[ foaf:homepage <https://h2020-demeter.eu/> ;
-   foaf:name "DEMETER project"
- ] .
-
-[ foaf:homepage <https://h2020-demeter.eu/> ;
-   foaf:name "DEMETER project"
- ] .
-
-[ rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
-   foaf:name "Raul Palma" ;
-   schema:affiliation [ foaf:name "PSNC"
-                      ]
- ] .
-
 #################################################################
 #    Annotations
 #################################################################
 
-geo:hasSerialization rdfs:label "has serialization"@en ;
-                      rdfs:comment "Connects a geometry object with its text-based serialization"@en ;
-                      rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ,
-                                       <http://www.opengis.net/spec/geosparql/1.0> .
-
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
