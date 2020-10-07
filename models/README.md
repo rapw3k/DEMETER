@@ -105,7 +105,7 @@ Developers have different options to find terms in AIM:
 
 # How to create your JSON-LD content using AIM
 
-JSON-LD is designed around the concept of a "context" to provide mappings from JSON to an RDF model, allowing applications to use shortcut terms to communicate with one another more efficiently, but without losing accuracy.
+JSON-LD is designed around the concept of a "context" to provide mappings from JSON to a shared/common model, allowing applications to use shortcut terms to communicate with one another more efficiently, but without losing accuracy.
 The context links terms in a JSON document to elements in an ontology or vocabulary, i.e., AIM in the case of DEMETER.
 So, in order to generate AIM-based JSON-lD content, you need to define the @context in your document, and reference AIM JSON-LD context(s) from there.
 In general, you should be able to specify just the main AIM context as below.
@@ -115,9 +115,11 @@ In general, you should be able to specify just the main AIM context as below.
   "@context": "https://w3id.org/demeter/agri-context.jsonld",
   ....
 }
+```
 
 Note, however, that since this context is just an entry point that redirects to the actual contexts, some tools may not be able to process it (e.g., JSON-LD playground).
-If that is the case, you should reference the specific AIM contexts in your document as below.  
+If that is the case, you should reference the specific AIM contexts in your document as below:
+ 
 ```
 {
   "@context": [
