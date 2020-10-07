@@ -103,6 +103,40 @@ Developers have different options to find terms in AIM:
 [http://data.agroportal.lirmm.fr/annotator?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&text=this+parcel+crop+maize](http://data.agroportal.lirmm.fr/annotator?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&text=this+parcel+crop+maize)
 
 
+# How to create your JSON-LD content using AIM
+
+JSON-LD is designed around the concept of a "context" to provide mappings from JSON to an RDF model, allowing applications to use shortcut terms to communicate with one another more efficiently, but without losing accuracy.
+The context links terms in a JSON document to elements in an ontology or vocabulary, i.e., AIM in the case of DEMETER.
+So, in order to generate AIM-based JSON-lD content, you need to define the @context in your document, and reference AIM JSON-LD context(s) from there.
+In general, you should be able to specify just the main AIM context as below.
+
+```
+{
+  "@context": "https://w3id.org/demeter/agri-context.jsonld",
+  ....
+}
+
+Note, however, that since this context is just an entry point that redirects to the actual contexts, some tools may not be able to process it (e.g., JSON-LD playground).
+If that is the case, you should reference the specific AIM contexts in your document as below.  
+```
+{
+  "@context": [
+    	"https://w3id.org/demeter/agri/agriFeature-context.jsonld",
+			"https://w3id.org/demeter/agri/agriCrop-context.jsonld",
+			"https://w3id.org/demeter/agri/agriCommon-context.jsonld",
+			"https://w3id.org/demeter/agri/agriIntervention-context.jsonld",
+			"https://w3id.org/demeter/agri/agriAlert-context.jsonld",
+			"https://w3id.org/demeter/agri/agriProduct-context.jsonld",
+			"https://w3id.org/demeter/agri/agriProperty-context.jsonld",
+			"https://w3id.org/demeter/agri/agriSystem-context.jsonld",
+			"https://w3id.org/demeter/agri/agriPest-context.jsonld",
+			"https://w3id.org/demeter/agri/farmAnimal-context.jsonld"
+   ],
+   ...
+}
+```
+We are currently analysing if it will be better, due to the technology support, to have the actual elements in the main context.
+
 # How to validate your data is compliant with AIM (particularly the domain layer)
 
 * In order to make sure all elements are valid AIM elements you can use the json-ld playground: [https://json-ld.org/playground/](https://json-ld.org/playground/). 
