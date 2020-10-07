@@ -28,9 +28,17 @@
     xmlns:act-inspire="http://inspire.ec.europa.eu/schemas/act-core/3.0#"
     xmlns:ssn="http://www.w3.org/ns/ssn/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/" > 
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#invalidatedAtTime">
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en">The time at which an entity was invalidated (i.e., no longer usable).</rdfs:comment>
+    <rdfs:label>invalidatedAtTime</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
   <rdf:Description rdf:nodeID="A0">
-    <foaf:name>DEMETER project</foaf:name>
-    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
+    <owl:someValuesFrom rdf:resource="https://w3id.org/def/saref4agri#Farm"/>
+    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#managesFarm"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#generatedAtTime">
     <rdfs:subPropertyOf rdf:resource="https://w3id.org/saref#hasTimestamp"/>
@@ -39,6 +47,14 @@
     <rdfs:comment xml:lang="en">The time at which an entity was completely created and is available for use.</rdfs:comment>
     <rdfs:label>generatedAtTime</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <foaf:name>Rob Atkinson</foaf:name>
+    <schema:affiliation rdf:nodeID="A2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <foaf:name>DEMETER project</foaf:name>
+    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.obolibrary.org/obo/TAXRANK_1000000">
     <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/"/>
@@ -55,14 +71,28 @@
     <rdfs:label xml:lang="en">name</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/rights">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:nodeID="A4">
+    <foaf:name>Raul Palma</foaf:name>
+    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+    <schema:affiliation rdf:nodeID="A5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/saref#hasTimestamp">
+    <rdfs:label xml:lang="en">has timestamp</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/saref#"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <foaf:name>ICCS</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <foaf:name>PSNC</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#FarmHolding">
     <rdfs:label xml:lang="en">Farm holding</rdfs:label>
     <rdfs:comment>A class to decsribe a saref4agri farm holding as subcass of an org:Organization</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A1"/>
-    <rdfs:subClassOf rdf:nodeID="A2"/>
+    <rdfs:subClassOf rdf:nodeID="A7"/>
+    <rdfs:subClassOf rdf:nodeID="A0"/>
     <rdfs:subClassOf rdf:resource="https://schema.org/Organization"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
@@ -70,6 +100,11 @@
     <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/"/>
     <rdfs:label xml:lang="en">taxonomic_rank</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/def/saref4agri#Farm"/>
+    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#managesFarm"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#alternateName">
     <rdfs:subPropertyOf rdf:resource="https://uri.fiware.org/ns/data-models#name"/>
@@ -86,19 +121,26 @@
     <rdfs:label xml:lang="en">category</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://schema.org/Role">
-    <rdfs:isDefinedBy rdf:resource="https://schema.org/Role"/>
-    <rdfs:comment xml:lang="en">Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.&lt;br/&gt;&lt;br/&gt;
-
-See also &lt;a href="http://blog.schema.org/2014/06/introducing-role.html"&gt;blog post&lt;/a&gt;.</rdfs:comment>
-    <rdfs:label xml:lang="en">Role</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A7">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#hasName"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#code">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">code</skos:prefLabel>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#price">
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
     <skos:prefLabel xml:lang="en">price</skos:prefLabel>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <foaf:name>Ioanna Roussaki</foaf:name>
+    <schema:affiliation rdf:nodeID="A6"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/saref#hasDescription">
     <owl:equivalentProperty rdf:resource="https://uri.fiware.org/ns/data-models#description"/>
@@ -115,12 +157,8 @@ See also &lt;a href="http://blog.schema.org/2014/06/introducing-role.html"&gt;bl
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://schema.org/Person">
-    <rdfs:isDefinedBy rdf:resource="https://schema.org/Person"/>
-    <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-    <rdfs:comment xml:lang="en">A person (alive, dead, undead, or fictional).</rdfs:comment>
-    <rdfs:label xml:lang="en">Person</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A2">
+    <foaf:name>OGC</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#hasName">
     <owl:equivalentProperty rdf:resource="https://uri.fiware.org/ns/data-models#name"/>
@@ -130,10 +168,25 @@ See also &lt;a href="http://blog.schema.org/2014/06/introducing-role.html"&gt;bl
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A3">
-    <owl:someValuesFrom rdf:resource="https://w3id.org/def/saref4agri#Farm"/>
-    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#managesFarm"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#dataProvider">
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"/>
+    <rdfs:comment>Specifies the URL to information about the provider of this information</rdfs:comment>
+    <rdfs:label xml:lang="en">dataProvider</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/demeter/agri/agriCommon">
+    <dct:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dct:rights>
+    <dct:contributor rdf:nodeID="A1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:imports rdf:resource="https://w3id.org/demeter/crossDomain"/>
+    <dct:creator rdf:nodeID="A4"/>
+    <dct:contributor rdf:nodeID="A9"/>
+    <owl:versionInfo>2.0</owl:versionInfo>
+    <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon/2.0"/>
+    <dct:title xml:lang="en">DEMETER AgriCommon</dct:title>
+    <foaf:maker rdf:nodeID="A3"/>
+    <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
+    <dct:description xml:lang="en">The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</dct:description>
   </rdf:Description>
   <rdf:Description rdf:about="http://portele.de/ont/inspire/baseInspire#validFrom">
     <rdfs:isDefinedBy rdf:resource="http://portele.de/ont/inspire/baseInspire#"/>
@@ -146,142 +199,6 @@ See also &lt;a href="http://blog.schema.org/2014/06/introducing-role.html"&gt;bl
     <skos:prefLabel xml:lang="en">type</skos:prefLabel>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person">
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-    <rdfs:label xml:lang="en">Person</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#source">
-    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"/>
-    <rdfs:comment>Specifies the URL to the source of this data (either organisation or where relevant more specific source)</rdfs:comment>
-    <rdfs:label xml:lang="en">source</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A1">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#hasName"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A4">
-    <foaf:name>Raul Palma</foaf:name>
-    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
-    <schema:affiliation rdf:nodeID="A5"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#description">
-    <owl:equivalentProperty rdf:resource="https://uri.fiware.org/ns/data-models#description"/>
-    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
-    <skos:prefLabel xml:lang="en">description</skos:prefLabel>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A5">
-    <foaf:name>PSNC</foaf:name>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A6">
-    <foaf:name>OGC</foaf:name>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/depiction">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/maker">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://schema.org/name">
-    <rdfs:isDefinedBy rdf:resource="https://schema.org/name"/>
-    <rdfs:comment>The name of the item.</rdfs:comment>
-    <rdfs:label xml:lang="en">name</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#modifiedAt">
-    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"/>
-    <rdfs:comment>Indicates the date/ time when the entity was last modified in ISO 8601 format. The value of this will be set by the server when the entity was modified, if the entity has not been modified it may have a null value.</rdfs:comment>
-    <rdfs:label xml:lang="en">modifiedAt</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://portele.de/ont/inspire/baseInspire#validTo">
-    <rdfs:isDefinedBy rdf:resource="http://portele.de/ont/inspire/baseInspire#"/>
-    <skos:prefLabel xml:lang="en">end of real-world phenomenon</skos:prefLabel>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/prov#invalidatedAtTime">
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:comment xml:lang="en">The time at which an entity was invalidated (i.e., no longer usable).</rdfs:comment>
-    <rdfs:label>invalidatedAtTime</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/saref#hasTimestamp">
-    <rdfs:label xml:lang="en">has timestamp</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/saref#"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A7">
-    <foaf:name>Rob Atkinson</foaf:name>
-    <schema:affiliation rdf:nodeID="A6"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A8">
-    <foaf:name>ICCS</foaf:name>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/name">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/homepage">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#code">
-    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
-    <skos:prefLabel xml:lang="en">code</skos:prefLabel>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A9">
-    <foaf:name>Ioanna Roussaki</foaf:name>
-    <schema:affiliation rdf:nodeID="A8"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/contributor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/member">
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-    <rdfs:label>member</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/identifier">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#dataProvider">
-    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"/>
-    <rdfs:comment>Specifies the URL to information about the provider of this information</rdfs:comment>
-    <rdfs:label xml:lang="en">dataProvider</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/demeter/agri/agriCommon">
-    <dct:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dct:rights>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <dct:contributor rdf:nodeID="A9"/>
-    <dct:title xml:lang="en">DEMETER AgriCommon</dct:title>
-    <owl:versionInfo>1.0</owl:versionInfo>
-    <dct:contributor rdf:nodeID="A7"/>
-    <foaf:maker rdf:nodeID="A0"/>
-    <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
-    <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl"/>
-    <dct:creator rdf:nodeID="A4"/>
-    <dct:description xml:lang="en">The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</dct:description>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#notes">
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
@@ -301,28 +218,30 @@ See also &lt;a href="http://blog.schema.org/2014/06/introducing-role.html"&gt;bl
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A10">
-    <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-    <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/member"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/demeter/agri/agriCommon#userName">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/demeter/agri/agriCommon#"/>
     <rdfs:label>User Name</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://schema.org/telephone">
-    <rdfs:isDefinedBy rdf:resource="https://schema.org/telephone"/>
-    <rdfs:comment>The telephone number.</rdfs:comment>
-    <rdfs:label xml:lang="en">telephone</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#source">
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"/>
+    <rdfs:comment>Specifies the URL to the source of this data (either organisation or where relevant more specific source)</rdfs:comment>
+    <rdfs:label xml:lang="en">source</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#managesFarm">
     <rdfs:label xml:lang="en">manages farm</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A11">
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#description">
+    <owl:equivalentProperty rdf:resource="https://uri.fiware.org/ns/data-models#description"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">description</skos:prefLabel>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
     <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#hasName"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
@@ -330,15 +249,10 @@ See also &lt;a href="http://blog.schema.org/2014/06/introducing-role.html"&gt;bl
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#Farmer">
     <rdfs:label xml:lang="en">Farmer</rdfs:label>
     <rdfs:comment>A class to decsribe a saref4agri farmer as subcass of a foaf:Person</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A11"/>
-    <rdfs:subClassOf rdf:nodeID="A3"/>
+    <rdfs:subClassOf rdf:nodeID="A10"/>
+    <rdfs:subClassOf rdf:nodeID="A8"/>
     <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A2">
-    <owl:someValuesFrom rdf:resource="https://w3id.org/def/saref4agri#Farm"/>
-    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#managesFarm"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#description">
     <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md"/>
@@ -348,22 +262,6 @@ See also &lt;a href="http://blog.schema.org/2014/06/introducing-role.html"&gt;bl
     <rdfs:comment>A description of the [entity].</rdfs:comment>
     <rdfs:label xml:lang="en">description</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://schema.org/Organization">
-    <rdfs:isDefinedBy rdf:resource="https://schema.org/Organization"/>
-    <rdfs:comment xml:lang="en">An organization such as a school, NGO, corporation, club, etc.</rdfs:comment>
-    <rdfs:label xml:lang="en">Organization</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent">
-    <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-    <rdfs:label xml:lang="en">Agent</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="A10"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://schema.org/affiliation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#agroVocConcept">
     <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json"/>
@@ -375,6 +273,19 @@ See also &lt;a href="http://blog.schema.org/2014/06/introducing-role.html"&gt;bl
     <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"/>
     <rdfs:comment>The entity specification version as a number. A version number of 2.0 or later denotes the entity is represented using NGSI-LD</rdfs:comment>
     <rdfs:label xml:lang="en">entityVersion</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#modifiedAt">
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"/>
+    <rdfs:comment>Indicates the date/ time when the entity was last modified in ISO 8601 format. The value of this will be set by the server when the entity was modified, if the entity has not been modified it may have a null value.</rdfs:comment>
+    <rdfs:label xml:lang="en">modifiedAt</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://portele.de/ont/inspire/baseInspire#validTo">
+    <rdfs:isDefinedBy rdf:resource="http://portele.de/ont/inspire/baseInspire#"/>
+    <skos:prefLabel xml:lang="en">end of real-world phenomenon</skos:prefLabel>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
 </rdf:RDF>
