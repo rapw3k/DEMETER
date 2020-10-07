@@ -107,7 +107,7 @@ Developers have different options to find terms in AIM:
 
 JSON-LD is designed around the concept of a "context" to provide mappings from JSON to a shared/common model, allowing applications to use shortcut terms to communicate with one another more efficiently, but without losing accuracy.
 The context links terms in a JSON document to elements in an ontology or vocabulary, i.e., AIM in the case of DEMETER.
-So, in order to generate AIM-based JSON-lD content, you need to define the @context in your document, and reference AIM JSON-LD context(s) from there.
+So, in order to generate AIM-based JSON-LD content, you need to define the @context in your JSON document, and reference AIM context(s) from there.
 In general, you should be able to specify just the main AIM context as below.
 
 ```
