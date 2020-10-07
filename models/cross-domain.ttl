@@ -17,6 +17,7 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix aim-core: <https://w3id.org/demeter/core> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/v1/ontology#> .
 @prefix schema: <https://schema.org/> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
 @prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
@@ -170,7 +171,7 @@ geo:wktLiteral rdf:type rdfs:Datatype ;
 
 ###  http://www.opengis.net/ont/geosparql#hasGeometry
 geo:hasGeometry rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+                rdfs:subPropertyOf ngsi-ld:Relationship ;
                 rdfs:domain geo:Feature ;
                 rdfs:range geo:Geometry ;
                 dct:contributor "Matthew Perry" ;
@@ -192,7 +193,7 @@ geo:hasGeometry rdf:type owl:ObjectProperty ;
 
 ###  http://www.opengis.net/ont/geosparql#sfContains
 geo:sfContains rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf <https://w3id.org/demeter/core#Property> ;
+               rdfs:subPropertyOf ngsi-ld:Property ;
                rdfs:domain geo:SpatialObject ;
                rdfs:range geo:SpatialObject ;
                rdfs:comment "Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
@@ -202,7 +203,7 @@ geo:sfContains rdf:type owl:ObjectProperty ;
 
 ###  http://www.opengis.net/ont/geosparql#sfWithin
 geo:sfWithin rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <https://w3id.org/demeter/core#Property> ;
+             rdfs:subPropertyOf ngsi-ld:Property ;
              rdfs:domain geo:SpatialObject ;
              rdfs:range geo:SpatialObject ;
              rdfs:comment "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
@@ -212,14 +213,14 @@ geo:sfWithin rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/2003/01/geo/wgs84_pos#location
 wgs84_pos:location rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+                   rdfs:subPropertyOf ngsi-ld:Relationship ;
                    rdfs:comment "The relation between something and the point, or other geometrical thing in space, where it is." ;
                    rdfs:isDefinedBy wgs84_pos: ;
                    rdfs:label "location" .
 
 ###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
 sosa:hasFeatureOfInterest rdf:type owl:ObjectProperty ;
-                          rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+                          rdfs:subPropertyOf ngsi-ld:Relationship ;
                           owl:inverseOf sosa:isFeatureOfInterestOf ;
                           rdfs:comment "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en ;
                           rdfs:isDefinedBy sosa: ;
@@ -234,7 +235,7 @@ sosa:hasFeatureOfInterest rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/ns/sosa/hosts
 sosa:hosts rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+           rdfs:subPropertyOf ngsi-ld:Relationship ;
            owl:inverseOf sosa:isHostedBy ;
            rdfs:comment "Relation between a platform and the systems it hosts."@en ;
            rdfs:isDefinedBy sosa: ;
@@ -242,7 +243,7 @@ sosa:hosts rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/ns/sosa/isFeatureOfInterestOf
 sosa:isFeatureOfInterestOf rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+                           rdfs:subPropertyOf ngsi-ld:Relationship ;
                            rdfs:comment "A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it."@en ;
                            rdfs:isDefinedBy sosa: ;
                            rdfs:label "is feature of interest of"@en ;
@@ -255,16 +256,16 @@ sosa:isFeatureOfInterestOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/ns/sosa/isHostedBy
 sosa:isHostedBy rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> .
+                rdfs:subPropertyOf ngsi-ld:Relationship .
 
 ###  http://www.w3.org/ns/sosa/madeBySensor
 sosa:madeBySensor rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+                  rdfs:subPropertyOf ngsi-ld:Relationship ;
                   owl:inverseOf sosa:madeObservation .
 
 ###  http://www.w3.org/ns/sosa/madeObservation
 sosa:madeObservation rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+                     rdfs:subPropertyOf ngsi-ld:Relationship ;
                      rdfs:comment "Relation between a Sensor and an Observation made by the Sensor."@en ;
                      rdfs:isDefinedBy sosa: ;
                      rdfs:label "made observation"@en ;
@@ -273,12 +274,12 @@ sosa:madeObservation rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/ns/sosa/observedProperty
 sosa:observedProperty rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+                      rdfs:subPropertyOf ngsi-ld:Relationship ;
                       dct:description "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation." .
 
 ###  http://www.w3.org/ns/ssn/deployedOnPlatform
 ssn:deployedOnPlatform rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+                       rdfs:subPropertyOf ngsi-ld:Relationship ;
                        owl:inverseOf ssn:inDeployment ;
                        rdfs:comment "Relation between a deployment and the platform(s) involved in the deployment."@en ;
                        rdfs:isDefinedBy ssn: ;
@@ -286,7 +287,7 @@ ssn:deployedOnPlatform rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/ns/ssn/deployedSystem
 ssn:deployedSystem rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+                   rdfs:subPropertyOf ngsi-ld:Relationship ;
                    owl:inverseOf ssn:hasDeployment ;
                    rdfs:comment "Relation between a deployment and the system deployed."@en ;
                    rdfs:isDefinedBy ssn: ;
@@ -294,44 +295,44 @@ ssn:deployedSystem rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/ns/ssn/hasDeployment
 ssn:hasDeployment rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> .
+                  rdfs:subPropertyOf ngsi-ld:Relationship .
 
 ###  http://www.w3.org/ns/ssn/hasProperty
 ssn:hasProperty rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+                rdfs:subPropertyOf ngsi-ld:Relationship ;
                 rdfs:comment "A relation between a FeatureOfInterest and a Property of that feature." ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/ssn> .
 
 ###  http://www.w3.org/ns/ssn/hasSubSystem
 ssn:hasSubSystem rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> .
+                 rdfs:subPropertyOf ngsi-ld:Relationship .
 
 ###  http://www.w3.org/ns/ssn/implements
 ssn:implements rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> .
+               rdfs:subPropertyOf ngsi-ld:Relationship .
 
 ###  http://www.w3.org/ns/ssn/inDeployment
 ssn:inDeployment rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+                 rdfs:subPropertyOf ngsi-ld:Relationship ;
                  rdfs:comment "Relation between a platform and the deployment(s) that takes place in the platform."@en ;
                  rdfs:isDefinedBy ssn: ;
                  rdfs:label "in deployment"@en .
 
 ###  http://www.w3.org/ns/ssn/isPropertyOf
 ssn:isPropertyOf rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> .
+                 rdfs:subPropertyOf ngsi-ld:Relationship .
 
 ###  http://xmlns.com/foaf/0.1/member
 foaf:member rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship> ;
+            rdfs:subPropertyOf ngsi-ld:Relationship ;
             rdfs:isDefinedBy foaf: ;
             rdfs:label "member" .
 
-###  https://w3id.org/demeter/core#Property
-<https://w3id.org/demeter/core#Property> rdf:type owl:ObjectProperty .
+###  https://uri.etsi.org/ngsi-ld/v1/ontology#Property
+ngsi-ld:Property rdf:type owl:ObjectProperty .
 
-###  https://w3id.org/demeter/core#Relationship
-<https://w3id.org/demeter/core#Relationship> rdf:type owl:ObjectProperty .
+###  https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship
+ngsi-ld:Relationship rdf:type owl:ObjectProperty .
 
 qb:dimension a rdf:Property, owl:ObjectProperty;
     rdfs:label "dimension"@en;
@@ -345,7 +346,7 @@ qb:componentAttachment a rdf:Property;
     rdfs:comment """Indicates the level at which the component property should be attached, this might an qb:DataSet, qb:Slice or qb:Observation, or a qb:MeasureProperty."""@en;
     rdfs:domain qb:ComponentSpecification;
     rdfs:range  rdfs:Class;
-	rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship>;
+	rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:componentProperty a rdf:Property, owl:ObjectProperty;
@@ -353,7 +354,7 @@ qb:componentProperty a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates a ComponentProperty (i.e. attribute/dimension) expected on a DataSet, or a dimension fixed in a SliceKey"@en;
     rdfs:domain qb:ComponentSet;
     rdfs:range qb:ComponentProperty;
-	rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship>;
+	rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:concept a rdf:Property, owl:ObjectProperty;
@@ -361,14 +362,14 @@ qb:concept a rdf:Property, owl:ObjectProperty;
     rdfs:comment "gives the concept which is being measured or indicated by a ComponentProperty"@en;
     rdfs:domain qb:ComponentProperty;
     rdfs:range skos:Concept;
-	rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship>;
+	rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:observationGroup a rdf:Property, owl:ObjectProperty;
     rdfs:label "observation group"@en;
     rdfs:comment "Indicates a group of observations. The domain of this property is left open so that a group may be attached to different resources and need not be restricted to a single DataSet"@en;
     rdfs:range qb:ObservationGroup;
-	rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship>;
+	rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> . 
 	
 qb:slice a rdf:Property, owl:ObjectProperty;
@@ -384,7 +385,7 @@ qb:component a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates a component specification which is included in the structure of the dataset"@en;
     rdfs:domain qb:DataStructureDefinition;
     rdfs:range qb:ComponentSpecification;
-	rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship>;
+	rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:sliceKey a rdf:Property, owl:ObjectProperty;
@@ -392,7 +393,7 @@ qb:sliceKey a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates a slice key which is used for slices in this dataset"@en;
     rdfs:domain qb:DataStructureDefinition;
     rdfs:range  qb:SliceKey;
-	rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship>;
+	rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:measure a rdf:Property, owl:ObjectProperty;
@@ -407,7 +408,7 @@ qb:sliceStructure a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates the sub-key corresponding to this slice"@en;
     rdfs:domain qb:Slice;
     rdfs:range  qb:SliceKey;
-	rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship>;
+	rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:observation a rdf:Property, owl:ObjectProperty;
@@ -415,7 +416,7 @@ qb:observation a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates a observation contained within this slice of the data set"@en;
     rdfs:domain qb:ObservationGroup;
     rdfs:range qb:Observation;
-	rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship>;
+	rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:dataSet a rdf:Property, owl:ObjectProperty;
@@ -423,7 +424,7 @@ qb:dataSet a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates the data set of which this observation is a part"@en;
     rdfs:domain qb:Observation;
     rdfs:range qb:DataSet;
-	rdfs:subPropertyOf <https://w3id.org/demeter/core#Relationship>;
+	rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 
 #################################################################
@@ -464,12 +465,12 @@ qb:order a owl:DatatypeProperty;
 iso19109:AnyFeature rdf:type owl:Class ;
                     owl:equivalentClass iso19150-2:FeatureType ,
                                         geo:Feature ;
-                    rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
+                    rdfs:subClassOf ngsi-ld:Entity .
 
 ###  http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType
 iso19150-2:FeatureType rdf:type owl:Class ;
                        owl:equivalentClass geo:Feature ;
-                       rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
+                       rdfs:subClassOf ngsi-ld:Entity .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration
 dim:Acceleration rdf:type owl:Class ;
@@ -568,7 +569,7 @@ dim:VelocityOrSpeed rdf:type owl:Class ;
 
 ###  http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind
 qu:PropertyKind rdf:type owl:Class ;
-                rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ;
+                rdfs:subClassOf ngsi-ld:Entity ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                 rdfs:label "PropertyKind" .
 
@@ -637,7 +638,7 @@ geo:Geometry rdf:type owl:Class ;
 
 ###  http://www.opengis.net/ont/geosparql#SpatialObject
 geo:SpatialObject rdf:type owl:Class ;
-                  rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ,
+                  rdfs:subClassOf ngsi-ld:Entity ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty geo:hasGeometry ;
                                     owl:allValuesFrom geo:Geometry
@@ -873,53 +874,53 @@ sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P
 
 ###  http://www.w3.org/2004/02/skos/core#Scheme
 skos:Scheme rdf:type owl:Class ;
-            rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
+            rdfs:subClassOf ngsi-ld:Entity .
 
 ###  http://www.w3.org/ns/sosa/ActuatableProperty
 sosa:ActuatableProperty rdf:type owl:Class ;
-                        rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
+                        rdfs:subClassOf ngsi-ld:Entity .
 
 ###  http://www.w3.org/ns/sosa/FeatureOfInterest
 sosa:FeatureOfInterest rdf:type owl:Class ;
-                       rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ;
+                       rdfs:subClassOf ngsi-ld:Entity ;
                        rdfs:isDefinedBy sosa: ;
                        rdfs:label "Feature Of Interest"@en .
 
 ###  http://www.w3.org/ns/sosa/ObservableProperty
 sosa:ObservableProperty rdf:type owl:Class ;
-                        rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
+                        rdfs:subClassOf ngsi-ld:Entity .
 
 ###  http://www.w3.org/ns/sosa/Observation
 sosa:Observation rdf:type owl:Class ;
-                 rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
+                 rdfs:subClassOf ngsi-ld:Entity .
 
 ###  http://www.w3.org/ns/sosa/Platform
 sosa:Platform rdf:type owl:Class ;
-              rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ;
+              rdfs:subClassOf ngsi-ld:Entity ;
               rdfs:comment "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms (definition taken from http://www.w3.org/ns/sosa/Platform)"@en ;
               rdfs:isDefinedBy sosa: ;
               rdfs:label "Platform"@en .
 
 ###  http://www.w3.org/ns/ssn/Deployment
 ssn:Deployment rdf:type owl:Class ;
-               rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ;
+               rdfs:subClassOf ngsi-ld:Entity ;
                rdfs:isDefinedBy ssn: ;
                rdfs:label "Deployment"@en .
 
 ###  http://www.w3.org/ns/ssn/Property
 ssn:Property rdf:type owl:Class ;
-             rdfs:subClassOf <https://w3id.org/demeter/core#Entity> .
+             rdfs:subClassOf ngsi-ld:Entity .
 
 ###  http://www.w3.org/ns/ssn/System
 ssn:System rdf:type owl:Class ;
-           rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ;
+           rdfs:subClassOf ngsi-ld:Entity ;
            rdfs:comment "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems. (Definition taken from http://www.w3.org/ns/ssn/System)"@en ;
            rdfs:isDefinedBy ssn: ;
            rdfs:label "System"@en .
 
 ###  http://xmlns.com/foaf/0.1/Agent
 foaf:Agent rdf:type owl:Class ;
-           rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ,
+           rdfs:subClassOf ngsi-ld:Entity ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty foaf:member ;
                              owl:someValuesFrom foaf:Agent
@@ -943,36 +944,36 @@ schema:Organization rdf:type owl:Class ;
 
 ###  https://schema.org/Person
 schema:Person rdf:type owl:Class ;
-              rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ;
+              rdfs:subClassOf ngsi-ld:Entity ;
               rdfs:comment "A person (alive, dead, undead, or fictional)."@en ;
               rdfs:isDefinedBy schema:Person ;
               rdfs:label "Person"@en .
 
 ###  https://schema.org/Role
 schema:Role rdf:type owl:Class ;
-            rdfs:subClassOf <https://w3id.org/demeter/core#Entity> ;
+            rdfs:subClassOf ngsi-ld:Entity ;
             rdfs:comment "Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.<br/><br/> " ;
             rdfs:label "Role"@en .
 
-###  https://w3id.org/demeter/core#Entity
-<https://w3id.org/demeter/core#Entity> rdf:type owl:Class .
+###  https://uri.etsi.org/ngsi-ld/v1/ontology#Entity
+ngsi-ld:Entity rdf:type owl:Class .
 
 qb:Attachable a rdfs:Class, owl:Class;
     rdfs:label "Attachable (abstract)"@en;
     rdfs:comment "Abstract superclass for everything that can have attributes and dimensions"@en;
-	rdfs:subClassOf <https://w3id.org/demeter/core#Entity>;
+	rdfs:subClassOf ngsi-ld:Entity;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:ComponentSet a rdfs:Class, owl:Class;
     rdfs:label "Component set"@en;
     rdfs:comment "Abstract class of things which reference one or more ComponentProperties"@en;
-	rdfs:subClassOf <https://w3id.org/demeter/core#Entity>;
+	rdfs:subClassOf ngsi-ld:Entity;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:ComponentProperty a rdfs:Class, owl:Class;
     rdfs:label "Component property (abstract)"@en;
     rdfs:subClassOf rdf:Property;
-	rdfs:subClassOf <https://w3id.org/demeter/core#Entity>;
+	rdfs:subClassOf ngsi-ld:Entity;
     rdfs:comment "Abstract super-property of all properties representing dimensions, attributes or measures"@en;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
@@ -991,7 +992,7 @@ qb:ComponentSpecification a rdfs:Class, owl:Class ;
 qb:ObservationGroup a rdfs:Class, owl:Class;
     rdfs:label "Observation Group"@en;
     rdfs:comment "A, possibly arbitrary, group of observations."@en;
-	rdfs:subClassOf <https://w3id.org/demeter/core#Entity>;
+	rdfs:subClassOf ngsi-ld:Entity;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:AttributeProperty a rdfs:Class, owl:Class;
@@ -1004,7 +1005,7 @@ qb:AttributeProperty a rdfs:Class, owl:Class;
 qb:DataSet a rdfs:Class, owl:Class;
     rdfs:label "Data set"@en;
     rdfs:comment "Represents a collection of observations, possibly organized into various slices, conforming to some common dimensional structure."@en;
-	rdfs:subClassOf <https://w3id.org/demeter/core#Entity>;
+	rdfs:subClassOf ngsi-ld:Entity;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:DataStructureDefinition a rdfs:Class, owl:Class;
