@@ -274,7 +274,7 @@ saref4agri:Parcel rdf:type owl:Class ;
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#Holding
 af-inspire:Holding  a           owl:Class ;
-        rdfs:subClassOf  act-inspire:ActivityComplex, iso19109:AnyFeature , iso19150-2:FeatureType , geo:Feature ;
+        rdfs:subClassOf  act-inspire:ActivityComplex, geo:Feature ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:minCardinality  "1"^^xsd:int ;
                            owl:onProperty      af-inspire:contains
@@ -288,7 +288,7 @@ af-inspire:Holding  a           owl:Class ;
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#Site
 af-inspire:Site  a           owl:Class ;
-        rdfs:subClassOf  iso19109:AnyFeature , iso19150-2:FeatureType , geo:Feature ;
+        rdfs:subClassOf  geo:Feature ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:minCardinality  "1"^^xsd:int ;
                            owl:onProperty      af-inspire:activity
@@ -326,7 +326,7 @@ af-inspire:Site  a           owl:Class ;
 
 ###  http://foodie-cloud.com/model/foodie#Plot
 foodie:Plot  a           owl:Class ;
-        rdfs:subClassOf  iso19109:AnyFeature , geo:Feature , iso19150-2:FeatureType ;
+        rdfs:subClassOf  geo:Feature ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:maxCardinality  "1"^^xsd:int ;
                            owl:onProperty      prov:invalidatedAtTime
@@ -361,7 +361,7 @@ foodie:Plot  a           owl:Class ;
 ###  http://foodie-cloud.com/model/foodie#ManagementZone
 foodie:ManagementZone
         a                owl:Class ;
-        rdfs:subClassOf  geo:Feature , iso19150-2:FeatureType , iso19109:AnyFeature ;
+        rdfs:subClassOf  geo:Feature ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:maxCardinality  "1"^^xsd:int ;
                            owl:onProperty      prov:invalidatedAtTime

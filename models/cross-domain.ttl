@@ -23,6 +23,9 @@
 @prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
 @prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix iso19156_SF:  <http://def.isotc211.org/iso19156/2011/SamplingFeature#> .
+@prefix iso19156_GFI: 	<http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#> .
+@prefix iso19156_OB: <http://def.isotc211.org/iso19156/2011/Observation#> .
 @base <https://w3id.org/demeter/crossDomain> .
 
 <https://w3id.org/demeter/crossDomain> rdf:type owl:Ontology ;
@@ -460,17 +463,6 @@ qb:order a owl:DatatypeProperty;
 #################################################################
 #    Classes
 #################################################################
-
-###  http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature
-iso19109:AnyFeature rdf:type owl:Class ;
-                    owl:equivalentClass iso19150-2:FeatureType ,
-                                        geo:Feature ;
-                    rdfs:subClassOf ngsi-ld:Entity .
-
-###  http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType
-iso19150-2:FeatureType rdf:type owl:Class ;
-                       owl:equivalentClass geo:Feature ;
-                       rdfs:subClassOf ngsi-ld:Entity .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration
 dim:Acceleration rdf:type owl:Class ;
@@ -1048,6 +1040,56 @@ qb:Observation a rdfs:Class, owl:Class;
     rdfs:comment "A single observation in the cube, may have one or more associated measured values"@en;
     rdfs:subClassOf qb:Attachable;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
+ 
+
+#################################################################
+#    ISO FEATURES AND ALIGNMENTS
+#################################################################
+
+
+iso19156_GFI:GFI_Feature
+  a owl:Class ;
+  rdfs:label "GFI_Feature" ;
+  skos:definition "The class GFI_Feature (Figure 2) is an instance of the .og.metaclass.cg. GF_FeatureType (ISO 19109). It represents the set of all classes which are feature types. NOTE	GFI_Feature is implemented in GML (ISO 19136:2007) by the element gml:AbstractFeature and type gml:AbstractFeatureType. In an implementation this abstract class shall be substituted by a concrete class representing a feature type from an application schema associated with a domain of discourse (ISO 19109, ISO 19101). Sampling Features (Clause 8) are a class of feature-types whose role is primarily associated with observations. " ;
+  rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> .
+  
+iso19156_GFI:GFI_DomainFeature
+  a owl:Class ;
+  rdfs:label "GFI_DomainFeature" ;
+  skos:definition "The class GFI_DomainFeature represents 'real-world' features which are the ultimate subject of an observation campaign, i.e. the features from an application domain that are .lt.i.gt.not .lt..sl.i.gt.artefacts of the observation process (sampling features). " ;
+  rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> ;
+  rdfs:subClassOf iso19156_GFI:GFI_Feature .
+
+iso19156_SF:SF_SamplingFeature
+  a owl:Class ;
+  rdfs:label "SF_SamplingFeature" ;
+  skos:definition ".lt.ul.gt.	.lt.li.gt..lt.b.gt.Role of sampling features.lt..sl.b.gt..lt..sl.li.gt..lt..sl.ul.gt.Sampling features are artefacts of an observational strategy, and have no significant function outside of their role in the observation process. The physical characteristics of the features themselves are of little interest, except perhaps to the manager of a sampling campaign.EXAMPLE	A .ldq.station.rdq. is essentially an identifiable locality where a sensor system or procedure may be deployed and an observation made. In the context of the observation model, it connotes the .ldq.world in the vicinity of the station.rdq., so the observed properties relate to the physical medium at the station, and not to any physical artefact such as a mooring, buoy, benchmark, monument, well, etc. NOTE	A transient sampling feature, such as a ships-track or flight-line, may be identified and described, but is unlikely to be revisited exactly. A sampling feature is intended to sample some feature of interest in an application domain. However, in some cases the identity, and even the exact type, of the sampled feature may not be known when observations are made using the sampling features. .lt.ul.gt.	.lt.li.gt..lt.b.gt.Classification of sampling features.lt..sl.b.gt..lt..sl.li.gt..lt..sl.ul.gt.A small number of sampling patterns are common across disciplines in observational science. These provide a basis for processing and portrayal tools which are similar across domains, and depend primarily on the geometry of the sample design. Common names for sampling features include specimen, station, profile, transect, path, swath, and scene. These are classified primarily by their topological dimension. Point-located samples are defined in this Clause, extensive samples of various dimensions in Clause 9 and specimens in Clause 10." ;
+  rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> ;
+  rdfs:subClassOf <http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature> .
+
+iso19156_OB:OM_Observation
+  a owl:Class ;
+  rdfs:label "Observation" ;
+  skos:definition "Observation process is a subtype of OM_Process. It is a process used to generate the result of the observation."  ;
+  rdfs:isDefinedBy <https://www.iso.org/standard/44595.html> .
+
+iso19156_SF:SF_SamplingFeature.sampledFeature 
+  a owl:ObjectProperty ;
+  rdfs:label "sampledFeature" ;
+  rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> ;
+  rdfs:domain iso19156_SF:SF_SamplingFeature ;
+  rdfs:range iso19156_GFI:GFI_DomainFeature, iso19156_GFI:GFI_Feature .  
+
+#################################################################
+#    ALIGNMENTS (FROM DOCUMENTATION)
+#################################################################
+
+geo:Feature owl:equivalentClass iso19156_GFI:GFI_Feature .
+sosa:FeatureOfInterest rdfs:subClassOf iso19156_GFI:GFI_DomainFeature .
+sosa:Sample owl:equivalentClass iso19156_SF:SF_SamplingFeature .
+sosa:isSampleOf owl:equivalentProperty iso19156_SF:SF_SamplingFeature.sampledFeature .
+sosa:Observation owl:equivalentClass iso19156_OB:OM_Observation .
+
 
 #################################################################
 #    Individuals
