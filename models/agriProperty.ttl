@@ -33,7 +33,7 @@
 @base <https://w3id.org/demeter/> .
 
 <https://w3id.org/demeter/agri/agriProperty> rdf:type owl:Ontology ;
-                            owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProperty.ttl> ;
+                            owl:versionIRI <https://w3id.org/demeter/agri/agriProperty/2.0> ;
                             dct:contributor [ schema:affiliation [ foaf:name "OGC"
                                                                  ] ;
                                               foaf:name "Rob Atkinson"
@@ -56,7 +56,7 @@
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "DEMETER AgriProperty"@en ;
                             rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
-                            owl:versionInfo "1.0" ;
+                            owl:versionInfo "2.0" ;
                             foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
                                          foaf:name "DEMETER project"
                                        ] .
@@ -195,12 +195,6 @@ fiware:hasDevice	a      owl:ObjectProperty ;
         rdfs:label   		"hasDevice"@en ;
         rdfs:comment		"Reference to the IoT devices associated with this [entity] i.e. sensors, controls." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> .
-
-### http://www.w3.org/ns/ssn/hasProperty
-ssn:hasProperty rdf:type owl:ObjectProperty ;
-								rdfs:label "has property"@en ;
-                rdfs:comment "A relation between a FeatureOfInterest and a Property of that feature." ;
-                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/ssn> .
 
 
 #################################################################
@@ -530,101 +524,6 @@ fiware:WeatherForecast	rdf:type owl:Class ;
 			rdfs:comment "A weather forecast for a period of time and a location." ;
 			rdfs:isDefinedBy <https://fiware.github.io/data-models/specs/Weather/WeatherForecast/doc/spec.html> .
 			
-###  http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind
-qu:QuantityKind rdf:type owl:Class ;
-      rdfs:label "QuantityKind" ;   
-			rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .			
-
-###  http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration
-dim:Acceleration rdf:type owl:Class ;
-                 rdfs:subClassOf qu:QuantityKind ;
-                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                 
-###  http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility
-dim:Compressibility rdf:type owl:Class ;
-                    rdfs:subClassOf qu:QuantityKind ;
-                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                    
-###  http://purl.oclc.org/NET/ssnx/qu/dim#Concentration
-dim:Concentration rdf:type owl:Class ;
-                  rdfs:subClassOf qu:QuantityKind ;
-                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
-
-###  http://purl.oclc.org/NET/ssnx/qu/dim#Density
-dim:Density rdf:type owl:Class ;
-            rdfs:subClassOf qu:QuantityKind ;
-            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
-            
-###  http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless
-dim:Dimensionless rdf:type owl:Class ;
-                  rdfs:subClassOf qu:QuantityKind ;
-                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
-                  
-###  http://purl.oclc.org/NET/ssnx/qu/dim#Distance
-dim:Distance rdf:type owl:Class ;
-             rdfs:subClassOf qu:QuantityKind ;
-             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
-             
-###  http://purl.oclc.org/NET/ssnx/qu/dim#EnergyDensity
-dim:EnergyDensity rdf:type owl:Class ;
-                  rdfs:subClassOf qu:QuantityKind ;
-                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
-                  
-###  http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux
-dim:EnergyFlux rdf:type owl:Class ;
-               rdfs:subClassOf qu:QuantityKind ;                  
-               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
-               
-###  http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea
-dim:MassPerTimePerArea rdf:type owl:Class ;
-                       rdfs:subClassOf qu:QuantityKind ;
-                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                       
-###  http://purl.oclc.org/NET/ssnx/qu/dim#Power
-dim:Power rdf:type owl:Class ;
-          rdfs:subClassOf qu:QuantityKind ;
-          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-          
-###  http://purl.oclc.org/NET/ssnx/qu/dim#RadianceExposure
-dim:RadianceExposure rdf:type owl:Class ;
-                     rdfs:subClassOf qu:QuantityKind ;
-                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                     
-###  http://purl.oclc.org/NET/ssnx/qu/dim#SpecificEntropy
-dim:SpecificEntropy rdf:type owl:Class ;
-                    rdfs:subClassOf qu:QuantityKind ;
-                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                     
-###  http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure
-dim:StressOrPressure rdf:type owl:Class ;
-                     rdfs:subClassOf qu:QuantityKind ;
-                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                     
-###  http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity
-dim:SurfaceDensity rdf:type owl:Class ;
-                   rdfs:subClassOf qu:QuantityKind ;
-                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                   
-###  http://purl.oclc.org/NET/ssnx/qu/dim#Temperature
-dim:Temperature rdf:type owl:Class ;
-                rdfs:subClassOf qu:QuantityKind ;
-                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .       
-                
-###  http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity
-dim:ThermalConductivity rdf:type owl:Class ;
-                        rdfs:subClassOf qu:QuantityKind ;
-                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .       
-                        
-###  http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed
-dim:VelocityOrSpeed rdf:type owl:Class ;
-                    rdfs:subClassOf qu:QuantityKind ;
-                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .                              
-                                                              
-###  http://www.w3.org/ns/sosa/FeatureOfInterest
-sosa:FeatureOfInterest rdf:type owl:Class ;
-											 rdfs:label "Feature Of Interest"@en ;
-											 rdfs:isDefinedBy sosa: .
-
 ###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer
 cf-feature:Layer rdf:type owl:Class ;
                  rdfs:subClassOf sosa:FeatureOfInterest ;
@@ -662,12 +561,6 @@ cf-feature:Wind rdf:type owl:Class ;
                 rdfs:subClassOf sosa:FeatureOfInterest ;
                 rdfs:label "Wind" ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> .                                          
-
-
-###  http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind
-qu:PropertyKind rdf:type owl:Class ;
-								rdfs:label "PropertyKind" ;
-                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .  
 
 
 #################################################################
@@ -1321,217 +1214,3 @@ cf:water_evaporation_flux_from_soil rdf:type owl:NamedIndividual ,
                                     rdfs:label "water evaporation flux from soil" ;
                                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
 
-###  http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme
-dim:AcousticsScheme rdf:type owl:NamedIndividual ,
-                             skos:Scheme ;
-                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                             
-###  http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme
-dim:HeatScheme rdf:type owl:NamedIndividual ,
-                        skos:Scheme ;
-                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                        
-###  http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme
-dim:MechanicsScheme rdf:type owl:NamedIndividual ,
-                             skos:Scheme ;
-                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
-###  http://purl.oclc.org/NET/ssnx/qu/dim#ElectricityAndMagnetismScheme
-dim:ElectricityAndMagnetismScheme rdf:type owl:NamedIndividual ,
-                                           skos:Scheme ;
-                                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                             
-###  http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme
-dim:PhysicalChemistryAndMolecularPhysicsScheme rdf:type owl:NamedIndividual ,
-                                                        skos:Scheme ;
-                                                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                                                        
-###  http://purl.oclc.org/NET/ssnx/qu/dim#SolidStatePhysicsScheme
-dim:SolidStatePhysicsScheme rdf:type owl:NamedIndividual ,
-                                     skos:Scheme ;
-                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
-###  http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme
-dim:LightAndRelatedElectromagneticRadiationsScheme rdf:type owl:NamedIndividual ,
-                                                            skos:Scheme ;
-                                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
-###  http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme
-dim:SpaceAndTimeScheme rdf:type owl:NamedIndividual ,
-                                skos:Scheme ;
-                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#acceleration
-quantity:acceleration rdf:type owl:NamedIndividual ,
-                               dim:Acceleration ;
-                      skos:inScheme dim:SpaceAndTimeScheme ;
-                      rdfs:label "acceleration"^^xsd:string ;
-                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                      
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#carbonContent
-quantity:carbonContent rdf:type owl:NamedIndividual ,
-                                dim:Concentration ;
-                       skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme ;
-                       rdfs:label "carbon content"^^xsd:string ;
-                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                      
-                                                        
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#compressibility
-quantity:compressibility rdf:type owl:NamedIndividual ,
-                                  dim:Compressibility ;
-                         skos:inScheme dim:HeatScheme ,
-                                       dim:MechanicsScheme ;
-                         rdfs:label "compressibility"^^xsd:string ;
-                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#concentration
-quantity:concentration rdf:type owl:NamedIndividual ,
-                                dim:Concentration ;
-                       skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme ;
-                       rdfs:label "concentration"^^xsd:string ;
-                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#density
-quantity:density rdf:type owl:NamedIndividual ,
-                          dim:Density ;     
-                 skos:inScheme dim:AcousticsScheme ,
-                               dim:MechanicsScheme ,
-                               dim:PhysicalChemistryAndMolecularPhysicsScheme ;            
-                 rdfs:label "density"^^xsd:string ;
-                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                 
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#distance
-quantity:distance rdf:type owl:NamedIndividual ,
-                           dim:Distance ;
-                  skos:inScheme dim:SpaceAndTimeScheme ;
-                  rdfs:label "distance"^^xsd:string ;
-                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#energyFlowRate
-quantity:energyFlowRate rdf:type owl:NamedIndividual ,
-                                 qu:PropertyKind ;
-                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                                 
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#fraction
-quantity:fraction rdf:type owl:NamedIndividual ,
-                           qu:PropertyKind ;
-                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#length
-quantity:length rdf:type owl:NamedIndividual ,
-                         dim:Distance ;
-                skos:inScheme dim:SpaceAndTimeScheme ;
-                rdfs:label "length"^^xsd:string ;
-                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#massPerTimePerArea
-quantity:massPerTimePerArea rdf:type owl:NamedIndividual ,
-                                     dim:MassPerTimePerArea ;
-                            skos:inScheme dim:MechanicsScheme ;
-                            rdfs:label "mass per time per area"^^xsd:string ;
-                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                            
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#power
-quantity:power rdf:type owl:NamedIndividual ,
-                        dim:Power ;
-               skos:inScheme dim:ElectricityAndMagnetismScheme ,
-                             dim:MechanicsScheme ;
-               rdfs:label "power"^^xsd:string ;
-               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-               
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#pressure
-quantity:pressure rdf:type owl:NamedIndividual ,
-                           dim:StressOrPressure ;
-                  skos:inScheme dim:MechanicsScheme ;
-                  rdfs:label "pressure"^^xsd:string ;
-                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                  
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#property
-quantity:property rdf:type owl:NamedIndividual ,
-                           qu:PropertyKind ;
-                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                  
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#radianceExposure
-quantity:radianceExposure rdf:type owl:NamedIndividual ,
-                                   dim:RadianceExposure ;
-                          skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme ;
-                          rdfs:label "radiance exposure"^^xsd:string ;
-                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                  
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#scalarProperty
-quantity:scalarProperty rdf:type owl:NamedIndividual ,
-                                 qu:PropertyKind ;
-                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                        
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#soundEnergyDensity
-quantity:soundEnergyDensity rdf:type owl:NamedIndividual ,
-                                     dim:EnergyDensity ;
-                            skos:inScheme dim:AcousticsScheme ;
-                            rdfs:label "sound energy density"^^xsd:string ;
-                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#soundIntensity
-quantity:soundIntensity rdf:type owl:NamedIndividual ,
-                                 dim:EnergyFlux ;
-                        skos:inScheme dim:AcousticsScheme ;
-                        rdfs:label "sound intensity"^^xsd:string ;
-                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-               
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#soundPower
-quantity:soundPower rdf:type owl:NamedIndividual ,
-                             dim:Power ;
-                    skos:inScheme dim:AcousticsScheme ;
-                    rdfs:label "sound power"^^xsd:string ;
-                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                    
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#soundPressure
-quantity:soundPressure rdf:type owl:NamedIndividual ,
-                                dim:StressOrPressure ;
-                       skos:inScheme dim:AcousticsScheme ,
-                                     dim:MechanicsScheme ;
-                       rdfs:label "sound pressure"^^xsd:string ;
-                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                   
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#surfaceDensity
-quantity:surfaceDensity rdf:type owl:NamedIndividual ,
-                                 dim:SurfaceDensity ;
-                        skos:inScheme dim:MechanicsScheme ;
-                        rdfs:label "surface density"^^xsd:string ;
-                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                  
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#temperature
-quantity:temperature rdf:type owl:NamedIndividual ,
-                              dim:Temperature ;
-                     skos:inScheme dim:HeatScheme ,
-                                   dim:SolidStatePhysicsScheme ;
-                     rdfs:label "temperature"^^xsd:string ;
-                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#vapourCompressibility
-quantity:vapourCompressibility rdf:type owl:NamedIndividual ,
-                                        dim:Compressibility ;
-                               skos:inScheme dim:HeatScheme ,
-                                             dim:PhysicalChemistryAndMolecularPhysicsScheme ;
-                               rdfs:label "vapour compressibility"^^xsd:string ;
-                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                               
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#vapourPressure
-quantity:vapourPressure rdf:type owl:NamedIndividual ,
-                                 dim:StressOrPressure ;
-                        skos:inScheme dim:MechanicsScheme ;
-                        rdfs:label "vapour pressure"^^xsd:string ;
-                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                        
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#vectorProperty
-quantity:vectorProperty rdf:type owl:NamedIndividual ,
-                                 qu:PropertyKind ;
-                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
-                        
-###  http://purl.oclc.org/NET/ssnx/qu/quantity#velocity
-quantity:velocity rdf:type owl:NamedIndividual ,
-                           dim:VelocityOrSpeed ;
-                  skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme ,
-                                dim:SpaceAndTimeScheme ;
-                  rdfs:label "velocity"^^xsd:string ;
-                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .                     
-                        

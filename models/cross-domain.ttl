@@ -272,6 +272,9 @@ sosa:isFeatureOfInterestOf rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/ns/sosa/isHostedBy
 sosa:isHostedBy rdf:type owl:ObjectProperty ;
+								rdfs:comment "Relation between a system and its hosting platform."@en ;
+								rdfs:isDefinedBy sosa: ;
+                rdfs:label "is hosted by"@en ;
                 rdfs:subPropertyOf ngsi-ld:Relationship .
 
 ###  http://www.w3.org/ns/sosa/madeBySensor
@@ -311,6 +314,8 @@ ssn:deployedSystem rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/ns/ssn/hasDeployment
 ssn:hasDeployment rdf:type owl:ObjectProperty ;
+									rdfs:isDefinedBy ssn: ;
+                  rdfs:label "has deployment"@en ;
                   rdfs:subPropertyOf ngsi-ld:Relationship .
 
 ###  http://www.w3.org/ns/ssn/hasProperty
@@ -321,6 +326,8 @@ ssn:hasProperty rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/ns/ssn/hasSubSystem
 ssn:hasSubSystem rdf:type owl:ObjectProperty ;
+								 rdfs:isDefinedBy ssn: ;
+                 rdfs:label "has subsystem"@en ;
                  rdfs:subPropertyOf ngsi-ld:Relationship .
 
 ###  http://www.w3.org/ns/ssn/implements
@@ -1168,6 +1175,30 @@ dim:SpaceAndTimeScheme rdf:type owl:NamedIndividual ,
                                 skos:Scheme ;
                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
+###  http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme
+dim:HeatScheme rdf:type owl:NamedIndividual ,
+                        skos:Scheme ;
+                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/dim#ElectricityAndMagnetismScheme
+dim:ElectricityAndMagnetismScheme rdf:type owl:NamedIndividual ,
+                                           skos:Scheme ;
+                                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                             
+###  http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme
+dim:PhysicalChemistryAndMolecularPhysicsScheme rdf:type owl:NamedIndividual ,
+                                                        skos:Scheme ;
+                                                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                                                        
+###  http://purl.oclc.org/NET/ssnx/qu/dim#SolidStatePhysicsScheme
+dim:SolidStatePhysicsScheme rdf:type owl:NamedIndividual ,
+                                     skos:Scheme ;
+                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+###  http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme
+dim:LightAndRelatedElectromagneticRadiationsScheme rdf:type owl:NamedIndividual ,
+                                                            skos:Scheme ;
+                                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#acceleration
 quantity:acceleration rdf:type owl:NamedIndividual ,
@@ -1365,6 +1396,67 @@ quantity:velocity rdf:type owl:NamedIndividual ,
                   rdfs:label "velocity"^^xsd:string ;
                   skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme ,
                                 dim:SpaceAndTimeScheme .
+                                
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#criticalBuildUpSpeed
+quantity:criticalBuildUpSpeed rdf:type owl:NamedIndividual ,
+                                       dim:RotationalSpeed ;
+                              skos:inScheme dim:AcousticsScheme ,
+                                            dim:PeriodicAndRelatedPhenomenaScheme ;
+                              rdfs:label "critical build-up speed"^^xsd:string ;
+                              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                              
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#criticalTorsionalSpeed
+quantity:criticalTorsionalSpeed rdf:type owl:NamedIndividual ,
+                                         dim:RotationalSpeed ;
+                                skos:inScheme dim:AcousticsScheme ,
+                                              dim:PeriodicAndRelatedPhenomenaScheme ;
+                                rdfs:label "critical torsional speed"^^xsd:string ;
+                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#criticalWhirlingSpeed
+quantity:criticalWhirlingSpeed rdf:type owl:NamedIndividual ,
+                                        dim:RotationalSpeed ;
+                               skos:inScheme dim:AcousticsScheme ,
+                                             dim:PeriodicAndRelatedPhenomenaScheme ;
+                               rdfs:label "critical whirling speed"^^xsd:string ;
+                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .   
+                               
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#pseudovectorProperty
+quantity:pseudovectorProperty rdf:type owl:NamedIndividual ,
+                                       qu:PropertyKind ;
+                              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+                                                                
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#rotationalSpeed
+quantity:rotationalSpeed rdf:type owl:NamedIndividual ,
+                                  dim:RotationalSpeed ;
+                         skos:inScheme dim:AcousticsScheme ,
+                                       dim:PeriodicAndRelatedPhenomenaScheme ,
+                                       dim:SpaceAndTimeScheme ;
+                         rdfs:label "rotational speed"^^xsd:string ;
+                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .                           
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousPullOutTorque
+quantity:synchronousPullOutTorque rdf:type owl:NamedIndividual ,
+                                           dim:Energy ;
+                                  skos:inScheme dim:MechanicsScheme ;
+                                  rdfs:label "synchronous pull-out torque"^^xsd:string ;
+                                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousSpeed
+quantity:synchronousSpeed rdf:type owl:NamedIndividual ,
+                                   dim:RotationalSpeed ;
+                          skos:inScheme dim:AcousticsScheme ,
+                                        dim:PeriodicAndRelatedPhenomenaScheme ;
+                          rdfs:label "synchronous speed"^^xsd:string ;
+                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+
+###  http://purl.oclc.org/NET/ssnx/qu/quantity#torque
+quantity:torque rdf:type owl:NamedIndividual ,
+                         dim:Energy ;
+                skos:inScheme dim:MechanicsScheme ;
+                rdfs:label "torque"^^xsd:string ;
+                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
+
 
 #################################################################
 #    Annotations

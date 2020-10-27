@@ -28,7 +28,7 @@
 @base <https://w3id.org/demeter/> .
 
 <https://w3id.org/demeter/agri/agriAlert> rdf:type owl:Ontology ;
-                            owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriAlert.ttl> ;
+                            owl:versionIRI <https://w3id.org/demeter/agri/agriAlert/2.0> ;
                             dct:contributor [ schema:affiliation [ foaf:name "OGC"
                                                                  ] ;
                                               foaf:name "Rob Atkinson"
@@ -47,7 +47,7 @@
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "DEMETER AgriAlert"@en ;
                             rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
-                            owl:versionInfo "1.0" ;
+                            owl:versionInfo "2.0" ;
                             foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
                                          foaf:name "DEMETER project"
                                        ] .
@@ -179,7 +179,7 @@ fiware:severity	a      owl:DatatypeProperty ;
 
 ### http://foodie-cloud.com/model/foodie#Alert                                        
 foodie:Alert  a          owl:Class ;
-        rdfs:subClassOf  iso19109:AnyFeature , iso19150-2:FeatureType , geo:Feature ;
+        rdfs:subClassOf  geo:Feature ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:minCardinality  "1"^^xsd:int ;
                            owl:onProperty      foodie:alertGeometry

@@ -30,7 +30,7 @@
 @base <https://w3id.org/demeter/> .
 
 <https://w3id.org/demeter/agri/agriIntervention> rdf:type owl:Ontology ;
-                            owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriIntervention.ttl> ;
+                            owl:versionIRI <https://w3id.org/demeter/agri/agriIntervention/2.0> ;
                             dct:contributor [ schema:affiliation [ foaf:name "OGC"
                                                                  ] ;
                                               foaf:name "Rob Atkinson"
@@ -49,7 +49,7 @@
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "DEMETER AgriIntervention"@en ;
                             rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
-                            owl:versionInfo "1.0" ;
+                            owl:versionInfo "2.0" ;
                             foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
                                          foaf:name "DEMETER project"
                                        ] .
@@ -319,7 +319,7 @@ fiware:waterSource	a   owl:DatatypeProperty ;
 
 ### http://foodie-cloud.com/model/foodie#Intervention
 foodie:Intervention  a   owl:Class ;
-        rdfs:subClassOf  iso19150-2:FeatureType , geo:Feature , iso19109:AnyFeature ;
+        rdfs:subClassOf  geo:Feature;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:maxCardinality  "1"^^xsd:int ;
                            owl:onProperty      foodie:notes
@@ -373,7 +373,7 @@ foodie:Intervention  a   owl:Class ;
         
 ### http://foodie-cloud.com/model/foodie#Treatment
 foodie:Treatment  a      owl:Class ;
-        rdfs:subClassOf  geo:Feature , iso19150-2:FeatureType , iso19109:AnyFeature , foodie:Intervention ;
+        rdfs:subClassOf  geo:Feature , foodie:Intervention ;
         rdfs:subClassOf  [ a                owl:Restriction ;
                            owl:cardinality  "1"^^xsd:int ;
                            owl:onProperty   foodie:formOfTreatment
@@ -423,7 +423,7 @@ foodie:Treatment  a      owl:Class ;
 
 ### http://foodie-cloud.com/model/foodie#TreatmentPlan        
 foodie:TreatmentPlan  a  owl:Class ;
-        rdfs:subClassOf  iso19109:AnyFeature , iso19150-2:FeatureType , geo:Feature ;
+        rdfs:subClassOf  geo:Feature ;
         rdfs:subClassOf  [ a                owl:Restriction ;
                            owl:cardinality  "1"^^xsd:int ;
                            owl:onProperty   foodie:type
