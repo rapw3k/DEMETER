@@ -182,7 +182,6 @@ saref4agri:MovementActivitySensor rdf:type owl:Class ;
 
 ### http://foodie-cloud.com/model/foodie#MachineType                        
 foodie:MachineType  a       owl:Class ;
-        rdfs:subClassOf  iso19150-2:Datatype ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:cardinality  "1"^^xsd:int ;
                            owl:onProperty      foodie:code
@@ -192,7 +191,6 @@ foodie:MachineType  a       owl:Class ;
 
 ### http://foodie-cloud.com/model/foodie#TractorType                                
 foodie:TractorType  a       owl:Class ;
-        rdfs:subClassOf  iso19150-2:Datatype ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:cardinality  "1"^^xsd:int ;
                            owl:onProperty      foodie:code
