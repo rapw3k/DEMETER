@@ -477,7 +477,8 @@ saref4agri:Farm a owl:Class ;
     owl:equivalentClass af-inspire:Holding,
         fiware:AgriFarm .
 
-<https://w3id.org/demeter/agri/agriFeature> a owl:Ontology ;
+<https://w3id.org/demeter/agri/agriFeature> a owl:Ontology,
+        prov:Entity ;
     dct:contributor [ foaf:name "Ioanna Roussaki" ;
             schema:affiliation [ foaf:name "ICCS" ] ],
         [ foaf:name "Rob Atkinson" ;
@@ -499,20 +500,20 @@ saref4agri:Farm a owl:Class ;
         <https://w3id.org/demeter/agri/agriCommon> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriFeature.ttl> ;
     owl:versionInfo "1.0" ;
-    ns2:isProfileOf <https://w3id.org/demeter/agri/agriFeature_profile4agriFeature_act-core>,
-        <https://w3id.org/demeter/agri/agriFeature_profile4agriFeature_af>,
-        <https://w3id.org/demeter/agri/agriFeature_profile4foodie.ttl>,
-        <https://w3id.org/demeter/agri/agriFeature_profile4geosparql.ttl>,
-        <https://w3id.org/demeter/agri/agriFeature_profile4ogc_sf.rdf>,
-        <https://w3id.org/demeter/agri/agriFeature_profile4saref4agri.ttl>,
-        <https://w3id.org/demeter/agri/agriFeature_profile4wgs84_pos> ;
-    ns2:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+    ns2:isProfileOf <http://foodie-cloud.com/model/foodie>,
         <http://inspire.ec.europa.eu/schemas/act-core/3.0>,
         <http://inspire.ec.europa.eu/schemas/af/3.0>,
         <http://www.opengis.net/ont/geosparql>,
         <http://www.opengis.net/ont/sf>,
         <http://www.w3.org/2003/01/geo/wgs84_pos>,
         <https://w3id.org/def/saref4agri> ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriFeature.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            prov:endedAtTime "2020-09-04"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.3" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 
@@ -624,8 +625,6 @@ af-inspire:Holding a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:int ;
             owl:onProperty geo:hasGeometry ],
-        [ ],
-        [ ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:int ;
             owl:onProperty foodie:userId ],
@@ -640,15 +639,7 @@ af-inspire:Holding a owl:Class ;
 
 af-inspire:Site a owl:Class ;
     rdfs:isDefinedBy af-inspire: ;
-    rdfs:subClassOf [ ],
-        [ ],
-        [ ],
-        [ ],
-        [ ],
-        [ ],
-        [ ],
-        [ ],
-        [ a owl:Restriction ;
+    rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality "1"^^xsd:int ;
             owl:onProperty af-inspire:activity ],
         [ a owl:Restriction ;

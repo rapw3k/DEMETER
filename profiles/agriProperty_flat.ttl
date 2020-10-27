@@ -7,8 +7,8 @@
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
-@prefix ns1: <http://purl.org/dc/elements/1.1/> .
-@prefix ns2: <http://www.w3.org/ns/dx/prof/> .
+@prefix ns1: <http://www.w3.org/ns/dx/prof/> .
+@prefix ns2: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
@@ -590,14 +590,7 @@ saref4agri:SoilTemperature rdfs:isDefinedBy saref4agri: ;
         <https://w3id.org/saref> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProperty.ttl> ;
     owl:versionInfo "1.0" ;
-    ns2:isProfileOf <https://w3id.org/demeter/agri/agriProperty_profile4agriProperty_dim>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4cf-feature>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4foodie.ttl>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4qu>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4saref>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4saref4agri.ttl>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4sosa> ;
-    ns2:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+    ns1:isProfileOf <http://foodie-cloud.com/model/foodie>,
         <http://purl.oclc.org/NET/ssnx/cf/cf-feature>,
         <http://purl.oclc.org/NET/ssnx/qu/dim>,
         <http://purl.oclc.org/NET/ssnx/qu/qu>,
@@ -608,19 +601,19 @@ saref4agri:SoilTemperature rdfs:isDefinedBy saref4agri: ;
             rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriProperty.ttl" ] ;
     prov:wasGeneratedBy [ a prov:Activity ;
             rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriProperty.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
-            prov:endedAtTime "2020-08-18"^^xsd:date ;
+            prov:endedAtTime "2020-09-04"^^xsd:date ;
             prov:wasAssociatedWith [ a prov:Agent ;
                     rdfs:label "ProfileWiz 0.1.3" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 
 saref:Humidity a owl:Class ;
-    rdfs:label "Humidity"^^xsd:string,
-        "Humidity",
+    rdfs:label "Humidity",
+        "Humidity"^^xsd:string,
         "Humidity"@en,
         "Humidiy"@en ;
-    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit",
-        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit"^^xsd:string ;
+    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit"^^xsd:string,
+        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit" ;
     rdfs:isDefinedBy saref: ;
     rdfs:subClassOf saref:Property .
 
@@ -628,8 +621,8 @@ saref:Temperature a owl:Class ;
     rdfs:label "Temperature",
         "Temperature"^^xsd:string,
         "Temperature"@en ;
-    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)",
-        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)"^^xsd:string ;
+    rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)"^^xsd:string,
+        "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)" ;
     rdfs:isDefinedBy saref: ;
     rdfs:subClassOf saref:Property ;
     owl:equivalentClass dim:Temperature .
@@ -1049,8 +1042,8 @@ saref:FeatureOfInterest a owl:Class ;
 saref:UnitOfMeasure a owl:Class ;
     rdfs:label "Unit of measure"^^xsd:string,
         "Unit of measure"@en ;
-    rdfs:comment "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM).",
-        "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)."^^xsd:string,
+    rdfs:comment "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)."^^xsd:string,
+        "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM).",
         "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of the Smart Appliances ontology, but this list can be extended."@en ;
     rdfs:isDefinedBy <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure>,
         saref: .
@@ -1067,11 +1060,11 @@ dim:MechanicsScheme a owl:NamedIndividual,
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 saref:Property a owl:Class ;
-    rdfs:label "Property"^^xsd:string,
-        "Property",
+    rdfs:label "Property",
+        "Property"^^xsd:string,
         "Property"@en ;
-    rdfs:comment "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended."^^xsd:string,
-        "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended.",
+    rdfs:comment "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended.",
+        "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended."^^xsd:string,
         "An aspect of an entity that can be observable by a sensor."@en ;
     rdfs:isDefinedBy saref: ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -1101,7 +1094,7 @@ saref:Property a owl:Class ;
 
 qu:QuantityKind a owl:Class ;
     rdfs:label "QuantityKind" ;
-    ns1:source "skos:exactMatch 'QuantityKind' [SysML 1.2-QUDV] http://www.omgwiki.org/OMGSysML/doku.php?id=sysml-qudv:quantities_units_dimensions_values_qudv" ;
+    ns2:source "skos:exactMatch 'QuantityKind' [SysML 1.2-QUDV] http://www.omgwiki.org/OMGSysML/doku.php?id=sysml-qudv:quantities_units_dimensions_values_qudv" ;
     rdfs:comment """A QuantityKind is an abstract classifier that represents the [VIM] concept of "kind of quantity" that is defined as "aspect
 common to mutually comparable quantities." A QuantityKind represents the essence of a quantity without any numerical
 value or unit. Quantities of the same kind within a given system of quantities have the same quantity dimension. However,

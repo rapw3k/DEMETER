@@ -1,0 +1,33 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+qu:PropertyKind rdfs:label "PropertyKind" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+qu:QuantityKind rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+<https://w3id.org/demeter/agri/proxy/foodie> a owl:Ontology,
+        prov:Entity ;
+    owl:imports <http://purl.oclc.org/NET/ssnx/qu/qu> ;
+    prof:isProfileOf <http://purl.oclc.org/NET/ssnx/qu/qu> ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\profiles\\merge_temp.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = merge_temp.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            prov:endedAtTime "2020-10-01"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+
+[] a prov:Activity ;
+    rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+    prov:endedAtTime "2020-09-30"^^xsd:date ;
+    prov:wasAssociatedWith [ a prov:Agent ;
+            rdfs:label "ProfileWiz 0.1.5" ] .
+
+[] a prov:Entity ;
+    rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriProperty.ttl" .
+

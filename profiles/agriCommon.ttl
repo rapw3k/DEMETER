@@ -1,4 +1,4 @@
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix demeterAgriCommon: <https://w3id.org/demeter/agri/agriCommon#> .
 @prefix fiware: <https://uri.fiware.org/ns/data-models#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -6,6 +6,7 @@
 @prefix iso19115-citation: <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix saref: <https://w3id.org/saref#> .
@@ -25,9 +26,9 @@ obo:TAXRANK_1000000 a owl:AnnotationProperty ;
     rdfs:label "has_rank"@en ;
     rdfs:isDefinedBy obo: .
 
-dct:identifier a owl:AnnotationProperty .
+dcterms:identifier a owl:AnnotationProperty .
 
-dct:rights a owl:AnnotationProperty .
+dcterms:rights a owl:AnnotationProperty .
 
 prov:generatedAtTime rdfs:subPropertyOf saref:hasTimestamp .
 
@@ -100,17 +101,18 @@ saref4agri:Farmer rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty saref4agri:managesFarm ;
             owl:someValuesFrom saref4agri:Farm ] .
 
-<https://w3id.org/demeter/agri/agriCommon> a owl:Ontology ;
-    dct:contributor [ foaf:name "Ioanna Roussaki" ;
+<https://w3id.org/demeter/agri/agriCommon> a owl:Ontology,
+        prov:Entity ;
+    dcterms:contributor [ foaf:name "Ioanna Roussaki" ;
             schema:affiliation [ foaf:name "ICCS" ] ],
         [ foaf:name "Rob Atkinson" ;
             schema:affiliation [ foaf:name "OGC" ] ] ;
-    dct:creator [ rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+    dcterms:creator [ rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
             foaf:name "Raul Palma" ;
             schema:affiliation [ foaf:name "PSNC" ] ] ;
-    dct:description "The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
-    dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
-    dct:title "DEMETER AgriCommon"@en ;
+    dcterms:description "The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+    dcterms:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+    dcterms:title "DEMETER AgriCommon"@en ;
     rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
     owl:imports <http://foodie-cloud.com/model/foodie>,
         <http://portele.de/ont/inspire/baseInspire>,
@@ -122,6 +124,21 @@ saref4agri:Farmer rdfs:subClassOf [ a owl:Restriction ;
         <https://w3id.org/saref> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl> ;
     owl:versionInfo "1.0" ;
+    prof:isProfileOf <https://schema.org>,
+        <https://w3id.org/demeter/agri/proxy/baseInspire>,
+        <https://w3id.org/demeter/agri/proxy/foaf>,
+        <https://w3id.org/demeter/agri/proxy/foodie>,
+        <https://w3id.org/demeter/agri/proxy/obo>,
+        <https://w3id.org/demeter/agri/proxy/prov>,
+        <https://w3id.org/demeter/agri/proxy/saref>,
+        <https://w3id.org/demeter/agri/proxy/saref4agri> ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriCommon.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriCommon.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            prov:endedAtTime "2020-10-02"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 
@@ -144,6 +161,29 @@ foodie:description rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
 foodie:type rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 foaf:Agent rdfs:isDefinedBy foaf: .
+
+schema:Organization rdfs:comment "An organization such as a school, NGO, corporation, club, etc."@en ;
+    rdfs:isDefinedBy schema:Organization .
+
+schema:Person a owl:Class ;
+    rdfs:comment "A person (alive, dead, undead, or fictional)."@en ;
+    rdfs:isDefinedBy schema:Person ;
+    owl:equivalentClass foaf:Person .
+
+schema:Role a owl:Class ;
+    rdfs:label "Role"@en ;
+    rdfs:comment """Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.<br/><br/>\r
+\r
+See also <a href="http://blog.schema.org/2014/06/introducing-role.html">blog post</a>."""@en ;
+    rdfs:isDefinedBy schema:Role .
+
+schema:telephone rdfs:label "telephone"@en ;
+    rdfs:comment "The telephone number." ;
+    rdfs:isDefinedBy schema:telephone .
+
+schema:name rdfs:label "name"@en ;
+    rdfs:comment "The name of the item." ;
+    rdfs:isDefinedBy schema:name .
 
 fiware:description a owl:DatatypeProperty ;
     rdfs:label "description"@en ;

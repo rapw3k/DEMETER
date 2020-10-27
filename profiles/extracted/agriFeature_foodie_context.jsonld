@@ -1,0 +1,540 @@
+{
+    "@id": "https://w3id.org/demeter/agri/proxy/foodie",
+    "@context": [
+        {
+            "@vocab": "https://w3id.org/demeter/agri/proxy/foodie",
+            "ProductNutrients": {
+                "@id": "foodie:ProductNutrients"
+            },
+            "FormOfTreatmentValue": {
+                "@id": "foodie:FormOfTreatmentValue"
+            },
+            "Function": {
+                "@id": "act-inspire:Function"
+            },
+            "PropertyType": {
+                "@id": "foodie:PropertyType"
+            },
+            "PropertyTypeValue": {
+                "@id": "foodie:PropertyTypeValue"
+            },
+            "Product": {
+                "@id": "foodie:Product"
+            },
+            "Holding": {
+                "@id": "af-inspire:Holding"
+            },
+            "ProductKindValue": {
+                "@id": "foodie:ProductKindValue"
+            },
+            "Treatment": {
+                "@id": "foodie:Treatment"
+            },
+            "ActivityComplex": {
+                "@id": "act-inspire:ActivityComplex"
+            },
+            "DoseUnit": {
+                "@id": "foodie:DoseUnit"
+            },
+            "MachineType": {
+                "@id": "foodie:MachineType"
+            },
+            "TractorType": {
+                "@id": "foodie:TractorType"
+            },
+            "ActiveIngredients": {
+                "@id": "foodie:ActiveIngredients"
+            },
+            "OriginTypeValue": {
+                "@id": "foodie:OriginTypeValue"
+            },
+            "ManagementZone": {
+                "@id": "foodie:ManagementZone"
+            },
+            "Intervention": {
+                "@id": "foodie:Intervention"
+            },
+            "CropSpecies": {
+                "@id": "foodie:CropSpecies"
+            },
+            "CropType": {
+                "@id": "foodie:CropType"
+            },
+            "Site": {
+                "@id": "af-inspire:Site"
+            },
+            "SoilNutrients": {
+                "@id": "foodie:SoilNutrients"
+            },
+            "ProductPreparation": {
+                "@id": "foodie:ProductPreparation"
+            },
+            "CampaignType": {
+                "@id": "foodie:CampaignType"
+            },
+            "UserCheckType": {
+                "@id": "foodie:UserCheckType"
+            },
+            "TreatmentPlan": {
+                "@id": "foodie:TreatmentPlan"
+            },
+            "NutrientsType": {
+                "@id": "foodie:NutrientsType"
+            },
+            "TreatmentPurposeValue": {
+                "@id": "foodie:TreatmentPurposeValue"
+            },
+            "FarmAnimalSpecies": {
+                "@id": "af-inspire:FarmAnimalSpecies"
+            },
+            "Alert": {
+                "@id": "foodie:Alert"
+            },
+            "EconomicActivityNACEValue": {
+                "@id": "act-inspire:EconomicActivityNACEValue"
+            },
+            "Plot": {
+                "@id": "foodie:Plot"
+            },
+            "ProductionType": {
+                "@id": "foodie:ProductionType"
+            },
+            "interventionGeometry": {
+                "@id": "foodie:interventionGeometry",
+                "@type": "@id"
+            },
+            "productKind": {
+                "@id": "foodie:productKind",
+                "@type": "@id"
+            },
+            "quantity": {
+                "@id": "foodie:quantity",
+                "@type": "@id"
+            },
+            "production": {
+                "@id": "foodie:production",
+                "@type": "@id"
+            },
+            "motionSpeed": {
+                "@id": "foodie:motionSpeed",
+                "@type": "@id"
+            },
+            "manufacturer": {
+                "@id": "foodie:manufacturer",
+                "@type": "@id"
+            },
+            "containsZone": {
+                "@id": "foodie:containsZone",
+                "@type": "@id"
+            },
+            "ingredientProduct": {
+                "@id": "foodie:ingredientProduct",
+                "@type": "@id"
+            },
+            "plotAlert": {
+                "@id": "foodie:plotAlert",
+                "@type": "@id"
+            },
+            "holdingZone": {
+                "@id": "foodie:holdingZone",
+                "@type": "@id"
+            },
+            "treatmentProduct": {
+                "@id": "foodie:treatmentProduct",
+                "@type": "@id"
+            },
+            "cropSpecies": {
+                "@id": "foodie:cropSpecies",
+                "@type": "@id"
+            },
+            "caO": {
+                "@id": "foodie:caO",
+                "@type": "@id"
+            },
+            "cropArea": {
+                "@id": "foodie:cropArea",
+                "@type": "@id"
+            },
+            "holdingPlot": {
+                "@id": "foodie:holdingPlot",
+                "@type": "@id"
+            },
+            "period": {
+                "@id": "foodie:period",
+                "@type": "@id"
+            },
+            "ingredientAmount": {
+                "@id": "foodie:ingredientAmount",
+                "@type": "@id"
+            },
+            "speciesAlert": {
+                "@id": "foodie:speciesAlert",
+                "@type": "@id"
+            },
+            "quantitativeProperty": {
+                "@id": "foodie:quantitativeProperty",
+                "@type": "@id"
+            },
+            "zoneNutrients": {
+                "@id": "foodie:zoneNutrients",
+                "@type": "@id"
+            },
+            "alertSpecies": {
+                "@id": "foodie:alertSpecies",
+                "@type": "@id"
+            },
+            "k2O": {
+                "@id": "foodie:k2O",
+                "@type": "@id"
+            },
+            "nutrientZone": {
+                "@id": "foodie:nutrientZone",
+                "@type": "@id"
+            },
+            "responsibleParty": {
+                "@id": "foodie:responsibleParty",
+                "@type": "@id"
+            },
+            "solventQuantity": {
+                "@id": "foodie:solventQuantity",
+                "@type": "@id"
+            },
+            "applicationWidth": {
+                "@id": "foodie:applicationWidth",
+                "@type": "@id"
+            },
+            "areaDose": {
+                "@id": "foodie:areaDose",
+                "@type": "@id"
+            },
+            "speciesPlot": {
+                "@id": "foodie:speciesPlot",
+                "@type": "@id"
+            },
+            "fe": {
+                "@id": "foodie:fe",
+                "@type": "@id"
+            },
+            "activity": {
+                "@id": "af-inspire:activity",
+                "@type": "@id"
+            },
+            "formOfTreatment": {
+                "@id": "foodie:formOfTreatment",
+                "@type": "@id"
+            },
+            "minimumDose": {
+                "@id": "foodie:minimumDose",
+                "@type": "@id"
+            },
+            "holdingSite": {
+                "@id": "foodie:holdingSite",
+                "@type": "@id"
+            },
+            "p2O5": {
+                "@id": "foodie:p2O5",
+                "@type": "@id"
+            },
+            "productPlan": {
+                "@id": "foodie:productPlan",
+                "@type": "@id"
+            },
+            "evidenceParty": {
+                "@id": "foodie:evidenceParty",
+                "@type": "@id"
+            },
+            "zn": {
+                "@id": "foodie:zn",
+                "@type": "@id"
+            },
+            "productionProperty": {
+                "@id": "foodie:productionProperty",
+                "@type": "@id"
+            },
+            "alertPlot": {
+                "@id": "foodie:alertPlot",
+                "@type": "@id"
+            },
+            "alertZone": {
+                "@id": "foodie:alertZone",
+                "@type": "@id"
+            },
+            "nutrientProduct": {
+                "@id": "foodie:nutrientProduct",
+                "@type": "@id"
+            },
+            "mo": {
+                "@id": "foodie:mo",
+                "@type": "@id"
+            },
+            "interventionZone": {
+                "@id": "foodie:interventionZone",
+                "@type": "@id"
+            },
+            "productionAmount": {
+                "@id": "foodie:productionAmount",
+                "@type": "@id"
+            },
+            "preparation": {
+                "@id": "foodie:preparation",
+                "@type": "@id"
+            },
+            "function": {
+                "@id": "act-inspire:function",
+                "@type": "@id"
+            },
+            "mn": {
+                "@id": "foodie:mn",
+                "@type": "@id"
+            },
+            "pressure": {
+                "@id": "foodie:pressure",
+                "@type": "@id"
+            },
+            "nutrient": {
+                "@id": "foodie:nutrient",
+                "@type": "@id"
+            },
+            "thematicId": {
+                "@id": "act-inspire:thematicId",
+                "@type": "@id"
+            },
+            "interventionPlot": {
+                "@id": "foodie:interventionPlot",
+                "@type": "@id"
+            },
+            "includesAnimal": {
+                "@id": "af-inspire:includesAnimal",
+                "@type": "@id"
+            },
+            "safetyPeriod": {
+                "@id": "foodie:safetyPeriod",
+                "@type": "@id"
+            },
+            "preparationPlan": {
+                "@id": "foodie:preparationPlan",
+                "@type": "@id"
+            },
+            "treatmentPurpose": {
+                "@id": "foodie:treatmentPurpose",
+                "@type": "@id"
+            },
+            "n": {
+                "@id": "foodie:n",
+                "@type": "@id"
+            },
+            "crop": {
+                "@id": "foodie:crop",
+                "@type": "@id"
+            },
+            "soilProperty": {
+                "@id": "foodie:soilProperty",
+                "@type": "@id"
+            },
+            "s": {
+                "@id": "foodie:s",
+                "@type": "@id"
+            },
+            "originType": {
+                "@id": "foodie:originType",
+                "@type": "@id"
+            },
+            "nutrientAmount": {
+                "@id": "foodie:nutrientAmount",
+                "@type": "@id"
+            },
+            "maximumDose": {
+                "@id": "foodie:maximumDose",
+                "@type": "@id"
+            },
+            "alertGeometry": {
+                "@id": "foodie:alertGeometry",
+                "@type": "@id"
+            },
+            "zoneAlert": {
+                "@id": "foodie:zoneAlert",
+                "@type": "@id"
+            },
+            "machine": {
+                "@id": "foodie:machine",
+                "@type": "@id"
+            },
+            "plan": {
+                "@id": "foodie:plan",
+                "@type": "@id"
+            },
+            "productQuantity": {
+                "@id": "foodie:productQuantity",
+                "@type": "@id"
+            },
+            "cu": {
+                "@id": "foodie:cu",
+                "@type": "@id"
+            },
+            "preparationProduct": {
+                "@id": "foodie:preparationProduct",
+                "@type": "@id"
+            },
+            "tractor": {
+                "@id": "foodie:tractor",
+                "@type": "@id"
+            },
+            "contains": {
+                "@id": "af-inspire:contains",
+                "@type": "@id"
+            },
+            "operator": {
+                "@id": "foodie:operator",
+                "@type": "@id"
+            },
+            "mgO": {
+                "@id": "foodie:mgO",
+                "@type": "@id"
+            },
+            "supervisor": {
+                "@id": "foodie:supervisor",
+                "@type": "@id"
+            },
+            "productTreatment": {
+                "@id": "foodie:productTreatment",
+                "@type": "@id"
+            },
+            "campaign": {
+                "@id": "foodie:campaign",
+                "@type": "@id"
+            },
+            "userCheck": {
+                "@id": "foodie:userCheck",
+                "@type": "@id"
+            },
+            "propertyType": {
+                "@id": "foodie:propertyType",
+                "@type": "@id"
+            },
+            "planProduct": {
+                "@id": "foodie:planProduct",
+                "@type": "@id"
+            },
+            "containsPlot": {
+                "@id": "foodie:containsPlot",
+                "@type": "@id"
+            },
+            "flowAdjustment": {
+                "@id": "foodie:flowAdjustment",
+                "@type": "@id"
+            },
+            "b": {
+                "@id": "foodie:b",
+                "@type": "@id"
+            },
+            "genus": {
+                "@id": "foodie:genus"
+            },
+            "productionDate": {
+                "@id": "foodie:productionDate"
+            },
+            "price": {
+                "@id": "foodie:price"
+            },
+            "nonQuantitativeProperty": {
+                "@id": "foodie:nonQuantitativeProperty"
+            },
+            "productName": {
+                "@id": "foodie:productName"
+            },
+            "variety": {
+                "@id": "foodie:variety"
+            },
+            "nutrientName": {
+                "@id": "foodie:nutrientName"
+            },
+            "notes": {
+                "@id": "foodie:notes"
+            },
+            "treatmentDescription": {
+                "@id": "foodie:treatmentDescription"
+            },
+            "treatmentPlanCode": {
+                "@id": "foodie:treatmentPlanCode"
+            },
+            "invalidatedAtTime": {
+                "@id": "prov:invalidatedAtTime"
+            },
+            "safetyInstructions": {
+                "@id": "foodie:safetyInstructions"
+            },
+            "treatmentPlanCreation": {
+                "@id": "foodie:treatmentPlanCreation"
+            },
+            "type": {
+                "@id": "foodie:type"
+            },
+            "creationDateTime": {
+                "@id": "foodie:creationDateTime"
+            },
+            "registerUrl": {
+                "@id": "foodie:registerUrl"
+            },
+            "analysisDate": {
+                "@id": "foodie:analysisDate"
+            },
+            "species": {
+                "@id": "foodie:species"
+            },
+            "storageHandling": {
+                "@id": "foodie:storageHandling"
+            },
+            "productCode": {
+                "@id": "foodie:productCode"
+            },
+            "description": {
+                "@id": "foodie:description"
+            },
+            "propertyName": {
+                "@id": "foodie:propertyName"
+            },
+            "generatedAtTime": {
+                "@id": "prov:generatedAtTime"
+            },
+            "code": {
+                "@id": "foodie:code"
+            },
+            "alertDate": {
+                "@id": "foodie:alertDate"
+            },
+            "family": {
+                "@id": "foodie:family"
+            },
+            "livestockNumber": {
+                "@id": "foodie:livestockNumber"
+            },
+            "registrationCode": {
+                "@id": "foodie:registrationCode"
+            },
+            "ingredientName": {
+                "@id": "foodie:ingredientName"
+            },
+            "status": {
+                "@id": "foodie:status"
+            },
+            "checkedByUser": {
+                "@id": "foodie:checkedByUser"
+            },
+            "livestockType": {
+                "@id": "foodie:livestockType"
+            },
+            "nutrientMeasure": {
+                "@id": "foodie:nutrientMeasure"
+            },
+            "productType": {
+                "@id": "foodie:productType"
+            },
+            "userId": {
+                "@id": "foodie:userId"
+            },
+            "productSubType": {
+                "@id": "foodie:productSubType"
+            }
+        }
+    ]
+}

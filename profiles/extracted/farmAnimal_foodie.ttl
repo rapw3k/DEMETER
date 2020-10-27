@@ -1,0 +1,29 @@
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+foodie:livestockNumber a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range xsd:decimal ;
+    owl:equivalentProperty <https://uri.fiware.org/ns/data-models#legalID> ;
+    ns1:prefLabel "livestockNumber"@en .
+
+foodie:livestockType a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty <https://uri.fiware.org/ns/data-models#species> ;
+    ns1:prefLabel "livestockType"@en .
+
+<https://w3id.org/demeter/agri/proxy/foodie> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\farmAnimal.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+            prov:endedAtTime "2020-10-01"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+

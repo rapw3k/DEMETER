@@ -1,0 +1,46 @@
+@prefix cf-feature: <http://purl.oclc.org/NET/ssnx/cf/cf-feature#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cf-feature:Layer a owl:Class ;
+    rdfs:label "Layer" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+
+cf-feature:Medium a owl:Class ;
+    rdfs:label "Medium" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+
+cf-feature:Precipitation a owl:Class ;
+    rdfs:label "Precipitation" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+
+cf-feature:Surface a owl:Class ;
+    rdfs:label "Surface" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+
+cf-feature:SurfaceLayer a owl:Class ;
+    rdfs:label "Surface Layer" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+
+cf-feature:Wind a owl:Class ;
+    rdfs:label "Wind" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+    rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+
+<https://w3id.org/demeter/agri/proxy/cf-feature> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriProperty.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+            prov:endedAtTime "2020-09-30"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+

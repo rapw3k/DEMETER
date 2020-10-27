@@ -94,7 +94,8 @@ saref4agri:receives a owl:ObjectProperty ;
     rdfs:isDefinedBy saref4agri: ;
     rdfs:subPropertyOf saref:hasProperty .
 
-<https://w3id.org/demeter/agri/agriCrop> a owl:Ontology ;
+<https://w3id.org/demeter/agri/agriCrop> a owl:Ontology,
+        prov:Entity ;
     dct:contributor [ foaf:name "Ioanna Roussaki" ;
             schema:affiliation [ foaf:name "ICCS" ] ],
         [ foaf:name "Rob Atkinson" ;
@@ -111,10 +112,15 @@ saref4agri:receives a owl:ObjectProperty ;
         <https://w3id.org/demeter/agri/agriCommon> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCrop.ttl> ;
     owl:versionInfo "1.0" ;
-    ns1:isProfileOf <https://w3id.org/demeter/agri/agriCrop_profile4foodie.ttl>,
-        <https://w3id.org/demeter/agri/agriCrop_profile4saref4agri.ttl> ;
-    ns1:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
+    ns1:isProfileOf <http://foodie-cloud.com/model/foodie>,
         <https://w3id.org/def/saref4agri> ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriCrop.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriCrop.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            prov:endedAtTime "2020-09-04"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.3" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 

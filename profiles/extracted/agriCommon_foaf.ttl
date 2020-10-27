@@ -1,0 +1,34 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+foaf:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:isDefinedBy foaf: ;
+    rdfs:subClassOf foaf:Agent .
+
+<https://w3id.org/demeter/agri/proxy/foaf> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriCommon.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+            prov:endedAtTime "2020-09-30"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+
+foaf:member a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "member" ;
+    rdfs:isDefinedBy foaf: .
+
+foaf:Agent a owl:Class ;
+    rdfs:label "Agent"@en ;
+    rdfs:isDefinedBy foaf: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty foaf:member ;
+            owl:someValuesFrom foaf:Agent ] .
+

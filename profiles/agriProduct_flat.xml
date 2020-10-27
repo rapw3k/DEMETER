@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:ns1="http://www.w3.org/ns/dx/prof/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:prov="http://www.w3.org/ns/prov#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:schema="https://schema.org/"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#productSubType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">productSubType</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#storageHandling">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:prefLabel xml:lang="en">storageHandling</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#nutrientAmount">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">nutrientAmount</skos:prefLabel>
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#ProductPreparation">
+    <skos:prefLabel xml:lang="en">ProductPreparation</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+    <rdfs:subClassOf rdf:nodeID="cbe9fac7743721c8a686318e9801d4bab679321df18d1e1a778db6c42ef6d6f6e8"/>
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdfs:subClassOf rdf:nodeID="cb15f09e228872871e8e1e9aabd380abb1b2e51a94811d96088c38611d915a6428"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL606C26"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL598C26"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL602C26"/>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#nutrientName">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subPropertyOf rdf:resource="https://uri.fiware.org/ns/data-models#name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:prefLabel xml:lang="en">nutrientName</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#ProductNutrients">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL485C26"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL477C26"/>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL489C26"/>
+    <skos:prefLabel xml:lang="en">ProductNutrients</skos:prefLabel>
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL481C26"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL859C26">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#manufacturer"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL847C26">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#storageHandling"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#ProductKindValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Codelist"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">ProductKindValue</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#nutrientMeasure">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:prefLabel xml:lang="en">nutrientMeasure</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5">
+    <foaf:name>OGC</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL555C26">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#productName">
+    <skos:prefLabel xml:lang="en">productName</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subPropertyOf rdf:resource="https://uri.fiware.org/ns/data-models#name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#hasAgriProductTypeChildren">
+    <rdfs:comment>Reference to child product types i.e. immediately below this entity in the hierarchy.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md"/>
+    <rdfs:label xml:lang="en">hasAgriProductTypeChildren</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://uri.fiware.org/ns/data-models#hasAgriProductType"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL481C26">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#nutrientMeasure"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL602C26">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#safetyPeriod"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#ActiveIngredients">
+    <rdfs:subClassOf rdf:nodeID="ub3bL551C26"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL547C26"/>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Datatype"/>
+    <skos:prefLabel xml:lang="en">ActiveIngredients</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL555C26"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#registrationCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">registrationCode</skos:prefLabel>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#nutrient">
+    <rdfs:range rdf:resource="http://foodie-cloud.com/model/foodie#ProductNutrients"/>
+    <skos:prefLabel xml:lang="en">nutrient</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb7d7e372bd6d27d09a2842e065cfec77ff17a94b2bdba4102a668df08693b0872">
+    <foaf:name>PSNC</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/demeter/agri/agriProduct">
+    <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
+    <dct:contributor rdf:nodeID="cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977"/>
+    <prov:wasGeneratedBy rdf:nodeID="N341439519e4a46709997884b4c39d04c"/>
+    <prov:wasDerivedFrom rdf:nodeID="N92b58ea5f9c14dc8b71827786ff97f83"/>
+    <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProduct.ttl"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dct:creator rdf:nodeID="cb5fc97942c86fc270fc4f2fe329e5a725817a42453dfa5b5a0dee083b5ce1da61"/>
+    <dct:contributor rdf:nodeID="cbb28e11ff039cd5934e832e3c1a3c8996759177f8149574c79f2a7f7f88f4b870"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <owl:imports rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <dct:description xml:lang="en">The DEMETER AgriProduct is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</dct:description>
+    <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
+    <dct:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dct:rights>
+    <ns1:isProfileOf rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <foaf:maker rdf:nodeID="cb41c9a4643e8bc336ab672c46f3cf43eda7265f7ba526cf62d26edb7f88324cd7"/>
+    <dct:title xml:lang="en">DEMETER AgriProduct</dct:title>
+    <owl:versionInfo>1.0</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL485C26">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#nutrientAmount"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#hasAgriProductType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md"/>
+    <rdfs:comment>Reference to the AgriProductType used/ applied.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md"/>
+    <rdfs:label xml:lang="en">hasAgriProductType</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL831C26">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#description"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL598C26">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#solventQuantity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#productCode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:prefLabel xml:lang="en">productCode</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL547C26">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#ingredientName"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#productKind">
+    <skos:prefLabel xml:lang="en">productKind</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:range rdf:resource="http://foodie-cloud.com/model/foodie#ProductKindValue"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#solventQuantity">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">solventQuantity</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#productType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:prefLabel xml:lang="en">productType</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#nutrientProduct">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://foodie-cloud.com/model/foodie#Product"/>
+    <skos:prefLabel xml:lang="en">nutrientProduct</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#hasAgriProductTypeParent">
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md"/>
+    <rdfs:comment>Reference to the parent product type i.e. immediately above the entity in the hierarchy.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://uri.fiware.org/ns/data-models#hasAgriProductType"/>
+    <rdfs:label xml:lang="en">hasAgriProductTypeParent</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N92b58ea5f9c14dc8b71827786ff97f83">
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label>C:\repos\rob-metalinkage\DEMETER\models\agriProduct.ttl</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#Product">
+    <rdfs:subClassOf rdf:nodeID="ub3bL839C26"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL855C26"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL851C26"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL847C26"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">Product</skos:prefLabel>
+    <rdfs:subClassOf rdf:nodeID="ub3bL859C26"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL843C26"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL835C26"/>
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <owl:equivalentClass rdf:resource="https://uri.fiware.org/ns/data-models#AgriProductType"/>
+    <rdfs:subClassOf rdf:nodeID="cb12c291f446cb7cb9ba5b461fbe049069aa4cf31a9b182d562ee6767f0ecadb108"/>
+    <rdfs:subClassOf rdf:nodeID="ub3bL831C26"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#safetyInstructions">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">safetyInstructions</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#ingredientAmount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">ingredientAmount</skos:prefLabel>
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#manufacturer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">manufacturer</skos:prefLabel>
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL843C26">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#productType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#AgriProductType">
+    <rdfs:comment>This entity contains a harmonised description of a generic agricultural product type. This entity is primarily associated with the agricultural vertical and related IoT applications. The AgriProductType includes a hierarchical structure that allows product types to be grouped in a flexible way.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md"/>
+    <rdfs:label>AgriProductType</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL477C26">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#nutrientName"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#productQuantity">
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">productQuantity</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N341439519e4a46709997884b4c39d04c">
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <prov:endedAtTime rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-09-04</prov:endedAtTime>
+    <rdfs:label>ProfileWiz: Normalisation (source = ../models\agriProduct.ttl, force_local=False, profile libs : lib/profile_cat.ttl) </rdfs:label>
+    <prov:wasAssociatedWith rdf:nodeID="N0f7db304bc744c67959f83b46efbfb95"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL489C26">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#nutrientProduct"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb12c291f446cb7cb9ba5b461fbe049069aa4cf31a9b182d562ee6767f0ecadb108">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#storageHandling"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#root">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment>A logical indicator that this product is the root of an AgriProductType hierarchy. Logical true indicates it is the root.</rdfs:comment>
+    <rdfs:label xml:lang="en">root</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL551C26">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#ingredientAmount"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL851C26">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#productName"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cbe9fac7743721c8a686318e9801d4bab679321df18d1e1a778db6c42ef6d6f6e8">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#solventQuantity"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL606C26">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#productQuantity"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#registerUrl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <skos:prefLabel xml:lang="en">registerUrl</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb15f09e228872871e8e1e9aabd380abb1b2e51a94811d96088c38611d915a6428">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#safetyPeriod"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cbb28e11ff039cd5934e832e3c1a3c8996759177f8149574c79f2a7f7f88f4b870">
+    <schema:affiliation rdf:nodeID="cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5"/>
+    <foaf:name>Ioanna Roussaki</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0f7db304bc744c67959f83b46efbfb95">
+    <rdfs:label>ProfileWiz 0.1.3</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL839C26">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#price"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL835C26">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#productKind"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#ingredientName">
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subPropertyOf rdf:resource="https://uri.fiware.org/ns/data-models#name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:prefLabel xml:lang="en">ingredientName</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#safetyPeriod">
+    <skos:prefLabel xml:lang="en">safetyPeriod</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub3bL855C26">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#safetyInstructions"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb8886948a2a2a1a5f923b87b1beb75b17363036441d761189599edf06fd48faf5">
+    <foaf:name>ICCS</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cbffa7a25e11facd9848a1872029ee135bf29a6f6bd5dbf2b0c1bc3921fc2f5977">
+    <schema:affiliation rdf:nodeID="cb11924aa017a94aa4235b550f7523d1e9baf338c60076d72e23f917003afabae5"/>
+    <foaf:name>Rob Atkinson</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb5fc97942c86fc270fc4f2fe329e5a725817a42453dfa5b5a0dee083b5ce1da61">
+    <foaf:name>Raul Palma</foaf:name>
+    <schema:affiliation rdf:nodeID="cb7d7e372bd6d27d09a2842e065cfec77ff17a94b2bdba4102a668df08693b0872"/>
+    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb41c9a4643e8bc336ab672c46f3cf43eda7265f7ba526cf62d26edb7f88324cd7">
+    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
+    <foaf:name>DEMETER project</foaf:name>
+  </rdf:Description>
+</rdf:RDF>

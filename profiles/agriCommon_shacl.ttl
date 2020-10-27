@@ -8,10 +8,10 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix ns1:   <http://www.w3.org/ns/dx/prof/> .
 @prefix dc11:  <http://purl.org/dc/elements/1.1/> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
-@prefix dct:   <http://purl.org/dc/terms/> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh:    <http://www.w3.org/ns/shacl#> .
 @prefix iso19115-citation: <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#> .
@@ -1199,15 +1199,6 @@
         sh:path           common:validFrom ;
         sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
-<https://astrea.linkeddata.es/shapes#7b722600669ba01f596047cf2001951f>
-        a                       sh:PropertyShape ;
-        sh:class                saref:UnitOfMeasure ;
-        sh:nodeKind             sh:IRIOrLiteral ;
-        sh:path                 saref:isMeasuredIn ;
-        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
-        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
-        sh:qualifiedValueShape  [ sh:class  saref:UnitOfMeasure ] .
-
 <https://astrea.linkeddata.es/shapes#82caee242ef256c679f7c3bdd4bfc395>
         a               sh:NodeShape ;
         rdfs:label      "Get meter history command" ;
@@ -1225,6 +1216,15 @@
         sh:name           "qualifiedAttribution" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:qualifiedAttribution .
+
+<https://astrea.linkeddata.es/shapes#7b722600669ba01f596047cf2001951f>
+        a                       sh:PropertyShape ;
+        sh:class                saref:UnitOfMeasure ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 saref:isMeasuredIn ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  saref:UnitOfMeasure ] .
 
 <https://astrea.linkeddata.es/shapes#d5b423bb5578e4aa5c0b5191bf42123f>
         a            sh:PropertyShape ;
@@ -1260,6 +1260,16 @@
         sh:nodeKind       sh:Literal ;
         sh:path           prov:removedKey .
 
+<https://astrea.linkeddata.es/shapes#5913f72a078e5af1dcaa733fce6b46f6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "qualifiedPrimarySource" , "If this Entity prov:hadPrimarySource Entity :e, then it can qualify how using prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :e; :foo :bar ]."@en ;
+        sh:class          prov:PrimarySource ;
+        sh:description    "If this Entity prov:hadPrimarySource Entity :e, then it can qualify how using prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :e; :foo :bar ]."@en ;
+        sh:name           "qualifiedPrimarySource" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:qualifiedPrimarySource .
+
 <https://astrea.linkeddata.es/shapes#4c2452e1fd79d252bb94ad3ca839741d>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -1271,16 +1281,6 @@
         sh:name           "jabber ID" ;
         sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
         sh:path           foaf:jabberID .
-
-<https://astrea.linkeddata.es/shapes#5913f72a078e5af1dcaa733fce6b46f6>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
-        rdfs:label        "qualifiedPrimarySource" , "If this Entity prov:hadPrimarySource Entity :e, then it can qualify how using prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :e; :foo :bar ]."@en ;
-        sh:class          prov:PrimarySource ;
-        sh:description    "If this Entity prov:hadPrimarySource Entity :e, then it can qualify how using prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :e; :foo :bar ]."@en ;
-        sh:name           "qualifiedPrimarySource" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           prov:qualifiedPrimarySource .
 
 <https://astrea.linkeddata.es/shapes#75297a18edc4ac9972201f0cccd5d71d>
         a               sh:NodeShape ;
@@ -1577,6 +1577,13 @@
         sh:description  "A function that allows to get data from a meter, such as current meter reading or instantaneous demand" ;
         sh:name         "Metering function" ;
         sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  saref:Commodity ;
+                            sh:path   saref:hasMeterReadingType
+                          ]
+                          [ sh:class  saref:Property ;
+                            sh:path   saref:hasMeterReadingType
+                          ]
+                        ) ;
         sh:or           ( [ sh:class  saref:GetCurrentMeterValueCommand ;
                             sh:path   saref:hasCommand
                           ]
@@ -1585,13 +1592,6 @@
                           ]
                           [ sh:class  saref:GetMeterHistoryCommand ;
                             sh:path   saref:hasCommand
-                          ]
-                        ) ;
-        sh:or           ( [ sh:class  saref:Commodity ;
-                            sh:path   saref:hasMeterReadingType
-                          ]
-                          [ sh:class  saref:Property ;
-                            sh:path   saref:hasMeterReadingType
                           ]
                         ) ;
         sh:property     <https://astrea.linkeddata.es/shapes#d4eb42a3214d2e6288bf7e4ed9acc398> , <https://astrea.linkeddata.es/shapes#54d78d2ef08bbece51ef04d5edd58ffe> , <https://astrea.linkeddata.es/shapes#3bf1ed481b0d98867f9c7ad060c9301b> ;
@@ -1644,11 +1644,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasProfile .
 
-<https://astrea.linkeddata.es/shapes#3ad79f0649c026ffdf495d36eb7e98e5>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:hasCommand .
-
 <https://astrea.linkeddata.es/shapes#af0dcee41400d6d266b52ca3337dd234>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
@@ -1658,6 +1653,11 @@
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#623827bfacb9cfe772f674bcd8c5d797> , <https://astrea.linkeddata.es/shapes#f16be92d549f1a5334c97a17c328b860> , <https://astrea.linkeddata.es/shapes#b05cc576efd2431a32d0bffa5fcbecaa> ;
         sh:targetClass    prov:Derivation .
+
+<https://astrea.linkeddata.es/shapes#3ad79f0649c026ffdf495d36eb7e98e5>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:hasCommand .
 
 <https://astrea.linkeddata.es/shapes#1a4d1c4c36e3570cb230a6eb9711b165>
         a               sh:NodeShape ;
@@ -2708,21 +2708,6 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:SetRelativeLevelCommand .
 
-<https://astrea.linkeddata.es/shapes#6700c174117da3e7eea079c1a2e0adc8>
-        a               sh:NodeShape ;
-        rdfs:label      "Pressure unit" ;
-        sh:description  "The unit of measure for pressure" ;
-        sh:name         "Pressure unit" ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  saref:PressureUnit .
-
-<https://astrea.linkeddata.es/shapes#e7eacd32f5fbadbcf429982536da1cdc>
-        a                       sh:PropertyShape ;
-        sh:nodeKind             sh:IRIOrLiteral ;
-        sh:path                 saref:isOfferedBy ;
-        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
-        sh:qualifiedValueShape  [ sh:class  saref:Device ] .
-
 <https://astrea.linkeddata.es/shapes#84b5a1d4970db321df0b6a7de3b58953>
         a               sh:NodeShape ;
         rdfs:label      "Set level command" ;
@@ -2731,6 +2716,21 @@
         sh:nodeKind     sh:IRI ;
         sh:property     <https://astrea.linkeddata.es/shapes#7f8fae374fb6ef8f9f1e3a2af47a133d> ;
         sh:targetClass  saref:SetLevelCommand .
+
+<https://astrea.linkeddata.es/shapes#e7eacd32f5fbadbcf429982536da1cdc>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 saref:isOfferedBy ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  saref:Device ] .
+
+<https://astrea.linkeddata.es/shapes#6700c174117da3e7eea079c1a2e0adc8>
+        a               sh:NodeShape ;
+        rdfs:label      "Pressure unit" ;
+        sh:description  "The unit of measure for pressure" ;
+        sh:name         "Pressure unit" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  saref:PressureUnit .
 
 <https://astrea.linkeddata.es/shapes#725bbb5e075a321c737dde30db7d3a76>
         a               sh:NodeShape ;
@@ -3349,16 +3349,6 @@
         sh:nodeKind       sh:Literal ;
         sh:path           foaf:myersBriggs .
 
-<https://astrea.linkeddata.es/shapes#113c70fb8cba2ec4fb119517d75b54a6>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  foaf: ;
-        rdfs:label        "publications" , "A link to the publications of this person." ;
-        sh:class          foaf:Document ;
-        sh:description    "A link to the publications of this person." ;
-        sh:name           "publications" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foaf:publications .
-
 <https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -3368,6 +3358,16 @@
         sh:nodeKind       sh:IRI ;
         sh:not            <https://astrea.linkeddata.es/shapes#1b029595b6c9f13e6782755fc4355c3e> , <https://astrea.linkeddata.es/shapes#34bdf5930c6edb6fdb1d16d232c918a4> ;
         sh:targetClass    foaf:Organization .
+
+<https://astrea.linkeddata.es/shapes#113c70fb8cba2ec4fb119517d75b54a6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "publications" , "A link to the publications of this person." ;
+        sh:class          foaf:Document ;
+        sh:description    "A link to the publications of this person." ;
+        sh:name           "publications" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:publications .
 
 <https://astrea.linkeddata.es/shapes#5a9206803db160bd9e016cc72e257fbc>
         a                 sh:PropertyShape ;
@@ -3832,15 +3832,21 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:dataProvider .
 
-<https://astrea.linkeddata.es/shapes#14bff52ed0013a49a4b750d0eaaf307f>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:hasProfile .
-
 <https://astrea.linkeddata.es/shapes#e73144e3fdab4cbeb62d6ea6448667cc>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasFunction .
+
+<https://astrea.linkeddata.es/shapes#8db5c28465666e686048cf8d0545729c>
+        a            sh:PropertyShape ;
+        sh:class     saref:Property ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:measuresProperty .
+
+<https://astrea.linkeddata.es/shapes#14bff52ed0013a49a4b750d0eaaf307f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:hasProfile .
 
 <https://astrea.linkeddata.es/shapes#b84bf3e03fb67d4848c1eb874e0aa192>
         a                 sh:NodeShape ;
@@ -3850,12 +3856,6 @@
         sh:name           "Invalidation" ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    prov:Invalidation .
-
-<https://astrea.linkeddata.es/shapes#8db5c28465666e686048cf8d0545729c>
-        a            sh:PropertyShape ;
-        sh:class     saref:Property ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:measuresProperty .
 
 <https://astrea.linkeddata.es/shapes#6ad9985af98c9853889763298e7ca1ed>
         a               sh:PropertyShape ;

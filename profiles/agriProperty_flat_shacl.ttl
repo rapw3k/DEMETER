@@ -8,8 +8,8 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix dim:   <http://purl.oclc.org/NET/ssnx/qu/dim#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ns2:   <http://www.w3.org/ns/dx/prof/> .
-@prefix ns1:   <http://purl.org/dc/elements/1.1/> .
+@prefix ns2:   <http://purl.org/dc/elements/1.1/> .
+@prefix ns1:   <http://www.w3.org/ns/dx/prof/> .
 @prefix fiware: <https://uri.fiware.org/ns/data-models#> .
 @prefix ssn:   <http://purl.oclc.org/NET/ssnx/ssn#> .
 @prefix dct:   <http://purl.org/dc/terms/> .
@@ -550,6 +550,15 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         saref:isMeasuredIn .
 
+<https://astrea.linkeddata.es/shapes#610036490e2def125196e3d2f5fa2a4e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "made by actuator"@en , "Relation linking an Actuation to the Actuator that made that Actuation."@en ;
+        sh:description    "Relation linking an Actuation to the Actuator that made that Actuation."@en ;
+        sh:name           "made by actuator"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           sosa:madeByActuator .
+
 <https://astrea.linkeddata.es/report/01401279310>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
@@ -577,15 +586,6 @@
         sh:name           "temperature"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:temperature .
-
-<https://astrea.linkeddata.es/shapes#610036490e2def125196e3d2f5fa2a4e>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  sosa: ;
-        rdfs:label        "made by actuator"@en , "Relation linking an Actuation to the Actuator that made that Actuation."@en ;
-        sh:description    "Relation linking an Actuation to the Actuator that made that Actuation."@en ;
-        sh:name           "made by actuator"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           sosa:madeByActuator .
 
 <https://astrea.linkeddata.es/shapes#5fd06c839186229be4ec2c930fc9f74d>
         a                       sh:PropertyShape ;
@@ -1465,13 +1465,6 @@
         sh:description  "A function that allows to get data from a meter, such as current meter reading or instantaneous demand" ;
         sh:name         "Metering function" ;
         sh:nodeKind     sh:IRI ;
-        sh:or           ( [ sh:class  saref:Commodity ;
-                            sh:path   saref:hasMeterReadingType
-                          ]
-                          [ sh:class  saref:Property ;
-                            sh:path   saref:hasMeterReadingType
-                          ]
-                        ) ;
         sh:or           ( [ sh:class  saref:GetCurrentMeterValueCommand ;
                             sh:path   saref:hasCommand
                           ]
@@ -1480,6 +1473,13 @@
                           ]
                           [ sh:class  saref:GetMeterHistoryCommand ;
                             sh:path   saref:hasCommand
+                          ]
+                        ) ;
+        sh:or           ( [ sh:class  saref:Commodity ;
+                            sh:path   saref:hasMeterReadingType
+                          ]
+                          [ sh:class  saref:Property ;
+                            sh:path   saref:hasMeterReadingType
                           ]
                         ) ;
         sh:property     <https://astrea.linkeddata.es/shapes#d4eb42a3214d2e6288bf7e4ed9acc398> , <https://astrea.linkeddata.es/shapes#54d78d2ef08bbece51ef04d5edd58ffe> , <https://astrea.linkeddata.es/shapes#3bf1ed481b0d98867f9c7ad060c9301b> ;
@@ -2179,6 +2179,16 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasCommand .
 
+<https://astrea.linkeddata.es/shapes#a63054539d67b719c20627268921009f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:consistsOf .
+
+<https://astrea.linkeddata.es/shapes#ed9c731f1f75287b14a99580be1e8174>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dim:DynamicViscosity .
+
 <https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> , saref: ;
@@ -2188,11 +2198,6 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    saref:UnitOfMeasure .
 
-<https://astrea.linkeddata.es/shapes#ed9c731f1f75287b14a99580be1e8174>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:DynamicViscosity .
-
 <https://astrea.linkeddata.es/shapes#68157bd564db99247d6d7857297bf60e>
         a               sh:PropertyShape ;
         rdfs:label      "has command" , "A relationship between an entity (such as a function) and a command" ;
@@ -2201,21 +2206,16 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         saref:hasCommand .
 
-<https://astrea.linkeddata.es/shapes#e7d09ea75472fdab925bd7954ab0a2f4>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    dim:Acceleration .
-
 <https://astrea.linkeddata.es/shapes#6c91e833ee67bdaace3a659fda2454ba>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  dim:Angle .
 
-<https://astrea.linkeddata.es/shapes#a63054539d67b719c20627268921009f>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:consistsOf .
+<https://astrea.linkeddata.es/shapes#e7d09ea75472fdab925bd7954ab0a2f4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Acceleration .
 
 <https://astrea.linkeddata.es/shapes#ed2adc72397fdf193561014f7e0a34dd>
         a               sh:NodeShape ;
@@ -2250,6 +2250,12 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           qu:generalQuantityKind .
 
+<https://astrea.linkeddata.es/shapes#f5964a49119d177c39d3573f1ede7cad>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:dateTime ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:hasTimestamp .
+
 <https://astrea.linkeddata.es/shapes#ac8afdfdb7fc454bed42a349120eb098>
         a               sh:NodeShape ;
         rdfs:label      "On command" ;
@@ -2258,12 +2264,6 @@
         sh:nodeKind     sh:IRI ;
         sh:property     <https://astrea.linkeddata.es/shapes#3f9e551a825c0cee22258194111a01d6> ;
         sh:targetClass  saref:OnCommand .
-
-<https://astrea.linkeddata.es/shapes#f5964a49119d177c39d3573f1ede7cad>
-        a            sh:PropertyShape ;
-        sh:datatype  xsd:dateTime ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:hasTimestamp .
 
 <https://astrea.linkeddata.es/shapes#539f41797854d781d70decd8feed571d>
         a                       sh:PropertyShape ;
@@ -2568,15 +2568,15 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  saref:OpenState .
 
-<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  foaf:Agent .
-
 <https://astrea.linkeddata.es/shapes#636d1bfe1946c777bf2e0fe2fbaac905>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref:hasFunction .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  foaf:Agent .
 
 <https://astrea.linkeddata.es/shapes#e6e6154c2f0e3fe47bbdafd881aa55fd>
         a               sh:NodeShape ;
@@ -2680,15 +2680,6 @@
         sh:nodeKind     sh:Literal ;
         sh:path         saref:hasValue .
 
-<https://astrea.linkeddata.es/shapes#92d0fd6fe9d12c9f390a2276eb2bb086>
-        a               sh:NodeShape ;
-        rdfs:label      "Washing machine" ;
-        sh:description  "A device of category saref:Appliance and saref:Load that accomplishes the task saref:Washing, performs an actuating function of type saref:StartStopFunction, can be found in the state saref:StartStopState, and can have a saref:Profile that characterizes its energy consumption. " ;
-        sh:name         "Washing machine" ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#8e5d61bda38d9f3dbaa3af4a7f4243ff> , <https://astrea.linkeddata.es/shapes#5aaaac2c509407252e1feafc2a9daf4c> , <https://astrea.linkeddata.es/shapes#14bff52ed0013a49a4b750d0eaaf307f> , <https://astrea.linkeddata.es/shapes#5f8e1e862d26021410f9dbfe65685f66> ;
-        sh:targetClass  saref:WashingMachine .
-
 <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
@@ -2698,6 +2689,15 @@
         a            sh:PropertyShape ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      ssn:hasProperty .
+
+<https://astrea.linkeddata.es/shapes#92d0fd6fe9d12c9f390a2276eb2bb086>
+        a               sh:NodeShape ;
+        rdfs:label      "Washing machine" ;
+        sh:description  "A device of category saref:Appliance and saref:Load that accomplishes the task saref:Washing, performs an actuating function of type saref:StartStopFunction, can be found in the state saref:StartStopState, and can have a saref:Profile that characterizes its energy consumption. " ;
+        sh:name         "Washing machine" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8e5d61bda38d9f3dbaa3af4a7f4243ff> , <https://astrea.linkeddata.es/shapes#5aaaac2c509407252e1feafc2a9daf4c> , <https://astrea.linkeddata.es/shapes#14bff52ed0013a49a4b750d0eaaf307f> , <https://astrea.linkeddata.es/shapes#5f8e1e862d26021410f9dbfe65685f66> ;
+        sh:targetClass  saref:WashingMachine .
 
 <https://astrea.linkeddata.es/shapes#57a8c41bff032939733d67bf16e7e326>
         a                 sh:PropertyShape ;
