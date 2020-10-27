@@ -24,20 +24,15 @@
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#" > 
   <rdf:Description rdf:nodeID="A0">
-    <foaf:name>ICCS</foaf:name>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A1">
-    <owl:onProperty rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#activity"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A2">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <foaf:name>OGC</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry">
     <owl:equivalentProperty rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#location"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#crop">
     <owl:equivalentProperty rdf:resource="https://uri.fiware.org/ns/data-models#hasAgriCrop"/>
@@ -48,12 +43,8 @@
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#OriginTypeValue">
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
     <skos:prefLabel xml:lang="en">OriginTypeValue</skos:prefLabel>
-    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Codelist"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A3">
-    <foaf:name>PSNC</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#containsZone">
     <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/saref4agri#contains"/>
@@ -68,11 +59,6 @@
     <rdfs:label xml:lang="en">hasAgriSoil</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A4">
-    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#hasAgriParcelChildren">
     <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/saref4agri#contains"/>
     <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"/>
@@ -80,13 +66,9 @@
     <rdfs:label xml:lang="en">hasAgriParcelChildren</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A5">
-    <foaf:name>OGC</foaf:name>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A6">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A2">
+    <foaf:name>Ioanna Roussaki</foaf:name>
+    <schema:affiliation rdf:nodeID="A3"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#AgriGreenhouse">
     <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Greenhouse.md"/>
@@ -95,9 +77,14 @@
     <rdfs:subClassOf rdf:resource="https://uri.fiware.org/ns/data-models#AgriParcel"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A7">
-    <owl:someValuesFrom rdf:resource="https://w3id.org/def/saref4agri#Parcel"/>
-    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#contains"/>
+  <rdf:Description rdf:nodeID="A4">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#containsPlot"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#location">
@@ -108,13 +95,13 @@
     <rdfs:label xml:lang="en">location</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A8">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
+  <rdf:Description rdf:nodeID="A6">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A9">
-    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validTo"/>
+  <rdf:Description rdf:nodeID="A7">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
@@ -124,9 +111,9 @@
     <rdfs:label xml:lang="en">cropStatus</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A10">
-    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validFrom"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+  <rdf:Description rdf:nodeID="A8">
+    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validTo"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#holdingPlot">
@@ -143,70 +130,49 @@
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A11">
-    <owl:someValuesFrom rdf:resource="https://w3id.org/def/saref4agri#Building"/>
-    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#contains"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A12">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+  <rdf:Description rdf:nodeID="A9">
+    <owl:onProperty rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#activity"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/demeter/agri/agriFeature">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/agriFeature/2.0"/>
     <dct:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dct:rights>
+    <dct:creator rdf:nodeID="A10"/>
     <dct:title xml:lang="en">DEMETER AgriFeature</dct:title>
     <dct:description xml:lang="en">The DEMETER AgriFeature is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</dct:description>
-    <dct:creator rdf:nodeID="A13"/>
     <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
     <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
-    <foaf:maker rdf:nodeID="A14"/>
-    <dct:contributor rdf:nodeID="A15"/>
+    <dct:contributor rdf:nodeID="A2"/>
+    <foaf:maker rdf:nodeID="A11"/>
+    <dct:contributor rdf:nodeID="A12"/>
     <owl:versionInfo>2.0</owl:versionInfo>
-    <dct:contributor rdf:nodeID="A16"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#Farm">
-    <rdfs:subClassOf rdf:nodeID="A17"/>
+    <rdfs:subClassOf rdf:nodeID="A14"/>
     <rdfs:comment xml:lang="en">A plot of land used for the scope of farming which can contain buildings and parcels.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A15"/>
     <owl:equivalentClass rdf:resource="https://uri.fiware.org/ns/data-models#AgriFarm"/>
     <rdfs:label>Farm</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="A7"/>
-    <rdfs:subClassOf rdf:nodeID="A11"/>
     <owl:equivalentClass rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#Holding"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A18">
-    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validFrom"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <rdfs:subClassOf rdf:nodeID="A16"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue">
     <rdfs:isDefinedBy rdf:resource="http://inspire.ec.europa.eu/schemas/act-core/3.0#"/>
     <rdfs:label>EconomicActivityNACEValue</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A19">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A14">
-    <foaf:name>DEMETER project</foaf:name>
-    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A20">
-    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A21">
-    <owl:onProperty rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#contains"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A17">
+    <foaf:name>PSNC</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#BuildingSpace">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
@@ -222,6 +188,10 @@
     <rdfs:range rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#Site"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <foaf:name>DEMETER project</foaf:name>
+    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#holdingSite">
     <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/saref4agri#isContainedIn"/>
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
@@ -229,43 +199,39 @@
     <rdfs:range rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#Holding"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A22">
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#ManagementZone">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdfs:subClassOf rdf:nodeID="A18"/>
+    <rdfs:subClassOf rdf:nodeID="A19"/>
+    <rdfs:subClassOf rdf:nodeID="A13"/>
+    <rdfs:subClassOf rdf:nodeID="A20"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <rdfs:subClassOf rdf:nodeID="A21"/>
+    <skos:prefLabel xml:lang="en">ManagementZone</skos:prefLabel>
+    <rdfs:subClassOf rdf:nodeID="A8"/>
+    <rdfs:subClassOf rdf:nodeID="A22"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/def/saref4agri#Parcel"/>
+    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#contains"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#hasName"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <foaf:name>ICCS</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
     <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
     <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A23">
+  <rdf:Description rdf:nodeID="A22">
     <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validFrom"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#ManagementZone">
-    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
-    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-    <rdfs:subClassOf rdf:nodeID="A2"/>
-    <rdfs:subClassOf rdf:nodeID="A20"/>
-    <rdfs:subClassOf rdf:nodeID="A24"/>
-    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
-    <rdfs:subClassOf rdf:nodeID="A6"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
-    <rdfs:subClassOf rdf:nodeID="A18"/>
-    <skos:prefLabel xml:lang="en">ManagementZone</skos:prefLabel>
-    <rdfs:subClassOf rdf:nodeID="A8"/>
-    <rdfs:subClassOf rdf:nodeID="A25"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A26">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A27">
-    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A28">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
@@ -275,45 +241,46 @@
     <rdfs:label xml:lang="en">is contained in</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A29">
-    <owl:someValuesFrom rdf:resource="https://w3id.org/def/saref4agri#Crop"/>
-    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#contains"/>
+  <rdf:Description rdf:nodeID="A24">
+    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validTo"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://inspire.ec.europa.eu/schemas/af/3.0#Holding">
     <rdfs:isDefinedBy rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#"/>
     <skos:prefLabel xml:lang="en">Holding</skos:prefLabel>
+    <rdfs:subClassOf rdf:nodeID="A26"/>
     <rdfs:subClassOf rdf:nodeID="A27"/>
-    <rdfs:subClassOf rdf:nodeID="A21"/>
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
-    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
     <rdfs:subClassOf rdf:resource="http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#Plot">
-    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
-    <rdfs:subClassOf rdf:nodeID="A12"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
-    <rdfs:subClassOf rdf:nodeID="A30"/>
-    <rdfs:subClassOf rdf:nodeID="A19"/>
-    <rdfs:subClassOf rdf:nodeID="A22"/>
-    <rdfs:subClassOf rdf:nodeID="A9"/>
-    <skos:prefLabel xml:lang="en">Plot</skos:prefLabel>
     <rdfs:subClassOf rdf:nodeID="A23"/>
-    <rdfs:subClassOf rdf:nodeID="A31"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="A24"/>
+    <rdfs:subClassOf rdf:nodeID="A7"/>
+    <rdfs:subClassOf rdf:nodeID="A28"/>
+    <rdfs:subClassOf rdf:nodeID="A1"/>
+    <rdfs:subClassOf rdf:nodeID="A29"/>
+    <skos:prefLabel xml:lang="en">Plot</skos:prefLabel>
+    <rdfs:subClassOf rdf:nodeID="A6"/>
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A32">
+  <rdf:Description rdf:nodeID="A30">
     <owl:someValuesFrom rdf:resource="https://w3id.org/def/saref4agri#BuildingSpace"/>
     <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#contains"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A33">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+  <rdf:Description rdf:nodeID="A18">
+    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#contains">
@@ -322,38 +289,34 @@
     <owl:inverseOf rdf:resource="https://w3id.org/def/saref4agri#isContainedIn"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A16">
-    <foaf:name>Rob Atkinson</foaf:name>
-    <schema:affiliation rdf:nodeID="A5"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A15">
-    <foaf:name>Ioanna Roussaki</foaf:name>
-    <schema:affiliation rdf:nodeID="A0"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A17">
+  <rdf:Description rdf:nodeID="A31">
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
     <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#hasName"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <foaf:name>Raul Palma</foaf:name>
+    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+    <schema:affiliation rdf:nodeID="A17"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://inspire.ec.europa.eu/schemas/af/3.0#Site">
     <skos:prefLabel xml:lang="en">Site</skos:prefLabel>
+    <rdfs:subClassOf rdf:nodeID="A5"/>
+    <rdfs:subClassOf rdf:nodeID="A32"/>
     <rdfs:isDefinedBy rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#"/>
-    <rdfs:subClassOf rdf:nodeID="A34"/>
     <rdfs:subClassOf rdf:nodeID="A33"/>
-    <rdfs:subClassOf rdf:nodeID="A1"/>
-    <rdfs:subClassOf rdf:nodeID="A26"/>
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"/>
+    <rdfs:subClassOf rdf:nodeID="A25"/>
     <rdfs:subClassOf rdf:nodeID="A4"/>
-    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
-    <rdfs:subClassOf rdf:nodeID="A35"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:nodeID="A28"/>
-    <rdfs:subClassOf rdf:nodeID="A10"/>
+    <rdfs:subClassOf rdf:nodeID="A9"/>
+    <rdfs:subClassOf rdf:nodeID="A34"/>
+    <rdfs:subClassOf rdf:nodeID="A35"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A31">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+  <rdf:Description rdf:nodeID="A36">
+    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#hasName"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#holdingZone">
@@ -369,6 +332,16 @@
     <rdfs:label>Agri Parcel</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A33">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A28">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#description"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#hasAgriCrop">
     <rdfs:isDefinedBy rdf:resource="https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md"/>
     <rdfs:comment>Reference to the crop associated with this parcel</rdfs:comment>
@@ -380,6 +353,16 @@
     <skos:prefLabel xml:lang="en">originType</skos:prefLabel>
     <rdfs:range rdf:resource="http://foodie-cloud.com/model/foodie#OriginTypeValue"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#notes"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/def/saref4agri#Building"/>
+    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#contains"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#tractor">
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
@@ -400,10 +383,19 @@
     <rdfs:range rdf:resource="http://foodie-cloud.com/model/foodie#MachineType"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A36">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#hasName"/>
+  <rdf:Description rdf:nodeID="A37">
+    <owl:someValuesFrom rdf:resource="https://w3id.org/def/saref4agri#Crop"/>
+    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#contains"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A19">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <foaf:name>Rob Atkinson</foaf:name>
+    <schema:affiliation rdf:nodeID="A0"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#Parcel">
     <owl:equivalentClass rdf:resource="https://uri.fiware.org/ns/data-models#AgriParcel"/>
@@ -411,20 +403,10 @@
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
     <rdfs:label>Parcel</rdfs:label>
     <rdfs:comment xml:lang="en">An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A36"/>
     <rdfs:subClassOf rdf:nodeID="A37"/>
-    <rdfs:subClassOf rdf:nodeID="A29"/>
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A35">
-    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validTo"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A13">
-    <foaf:name>Raul Palma</foaf:name>
-    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
-    <schema:affiliation rdf:nodeID="A3"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#hasAgriParcel">
     <rdfs:subPropertyOf rdf:resource="https://w3id.org/def/saref4agri#contains"/>
@@ -432,6 +414,11 @@
     <rdfs:comment>List of agri parcels belonging to the farm</rdfs:comment>
     <rdfs:label xml:lang="en">hasAgriParcel</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://uri.fiware.org/ns/data-models#AgriFarm">
     <rdfs:isDefinedBy rdf:resource="https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json"/>
@@ -446,8 +433,13 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A34">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#containsPlot"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A26">
+    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#containsPlot">
@@ -463,22 +455,22 @@
     <rdfs:range rdf:resource="http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A30">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#description"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+  <rdf:Description rdf:nodeID="A27">
+    <owl:onProperty rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#contains"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A25">
-    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validTo"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+  <rdf:Description rdf:nodeID="A29">
+    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validFrom"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#Building">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
     <rdfs:label>Building</rdfs:label>
     <rdfs:comment xml:lang="en">A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space).</rdfs:comment>
-    <rdfs:subClassOf rdf:nodeID="A36"/>
-    <rdfs:subClassOf rdf:nodeID="A32"/>
+    <rdfs:subClassOf rdf:nodeID="A31"/>
+    <rdfs:subClassOf rdf:nodeID="A30"/>
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
@@ -489,15 +481,14 @@
     <rdfs:label xml:lang="en">hasAgriParcelParent</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A24">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#notes"/>
+  <rdf:Description rdf:nodeID="A35">
+    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validTo"/>
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A37">
-    <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-    <owl:onProperty rdf:resource="https://w3id.org/def/saref4agri#hasName"/>
+  <rdf:Description rdf:nodeID="A32">
+    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validFrom"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
 </rdf:RDF>

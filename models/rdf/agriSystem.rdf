@@ -29,166 +29,24 @@
     xmlns:act-inspire="http://inspire.ec.europa.eu/schemas/act-core/3.0#"
     xmlns:ssn="http://www.w3.org/ns/ssn/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/" > 
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#property">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
   <rdf:Description rdf:nodeID="A0">
-    <foaf:name>PSNC</foaf:name>
+    <foaf:name>ICCS</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A1">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#criticalWhirlingSpeed">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdfs:label>critical whirling speed</rdfs:label>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme"/>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"/>
-    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#MachineType">
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
-    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
-    <skos:prefLabel xml:lang="en">MachineType</skos:prefLabel>
-    <rdfs:subClassOf rdf:nodeID="A2"/>
-    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Datatype"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A3">
-    <foaf:name>OGC</foaf:name>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/System">
-    <rdfs:label xml:lang="en">System</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
-    <rdfs:comment xml:lang="en">System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems. (Definition taken from http://www.w3.org/ns/ssn/System)</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/hasSubSystem">
-    <rdfs:label xml:lang="en">has subsystem</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#MilkingSensor">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
-    <rdfs:label xml:lang="en">Milking sensor</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/deployedSystem">
-    <rdfs:label xml:lang="en">deployed system</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
-    <rdfs:comment xml:lang="en">Relation between a deployment and the system deployed.</rdfs:comment>
-    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasDeployment"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Platform">
-    <rdfs:label xml:lang="en">Platform</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    <rdfs:comment xml:lang="en">A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms (definition taken from http://www.w3.org/ns/sosa/Platform)</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A4">
-    <foaf:name>DEMETER project</foaf:name>
-    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#Thermometer">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
-    <rdfs:label xml:lang="en">Thermometer</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A5">
-    <foaf:name>ICCS</foaf:name>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isHostedBy">
-    <rdfs:label xml:lang="en">is hosted by</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    <rdfs:comment xml:lang="en">Relation between a system and its hosting platform.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A6">
-    <foaf:name>Raul Palma</foaf:name>
-    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
-    <schema:affiliation rdf:nodeID="A0"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#SoilTensiometer">
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
-    <rdfs:label xml:lang="en">Soil tensiometer</rdfs:label>
-    <rdfs:comment xml:lang="en">A sensor that measures the soil moisture.</rdfs:comment>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#rotationalSpeed">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdfs:label>rotational speed</rdfs:label>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme"/>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme"/>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"/>
-    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A7">
-    <foaf:name>ICCS</foaf:name>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A2">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#pseudovectorProperty">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/saref#Sensor">
-    <rdfs:label xml:lang="en">Sensor</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/saref#"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Device"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/inDeployment">
-    <rdfs:label xml:lang="en">in deployment</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
-    <rdfs:comment xml:lang="en">Relation between a platform and the deployment(s) that takes place in the platform.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousSpeed">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdfs:label>synchronous speed</rdfs:label>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme"/>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"/>
-    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A8">
-    <foaf:name>Rob Atkinson</foaf:name>
-    <schema:affiliation rdf:nodeID="A3"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousPullOutTorque">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdfs:label>synchronous pull-out torque</rdfs:label>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"/>
-    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Energy"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <foaf:name>Ioanna Roussaki</foaf:name>
+    <schema:affiliation rdf:nodeID="A2"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/saref#Actuator">
     <rdfs:label xml:lang="en">Actuator</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/saref#"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Device"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#MachineType">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+    <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+    <skos:prefLabel xml:lang="en">MachineType</skos:prefLabel>
+    <rdfs:subClassOf rdf:nodeID="A3"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#EatingActivitySensor">
@@ -197,61 +55,59 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <foaf:name>Rob Atkinson</foaf:name>
+    <schema:affiliation rdf:nodeID="A5"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#TractorType">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
     <skos:prefLabel xml:lang="en">TractorType</skos:prefLabel>
-    <rdfs:subClassOf rdf:nodeID="A1"/>
-    <rdfs:subClassOf rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Datatype"/>
+    <rdfs:subClassOf rdf:nodeID="A6"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/demeter/agri/agriSystem">
-    <dct:creator rdf:nodeID="A6"/>
-    <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriSystem.ttl"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <dct:contributor rdf:nodeID="A9"/>
-    <dct:contributor rdf:nodeID="A8"/>
+    <dct:creator rdf:nodeID="A7"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/agriSystem/2.0"/>
     <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
     <dct:description xml:lang="en">The DEMETER AgriSystem is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</dct:description>
-    <foaf:maker rdf:nodeID="A4"/>
+    <owl:versionInfo>2.0</owl:versionInfo>
+    <dct:contributor rdf:nodeID="A1"/>
+    <foaf:maker rdf:nodeID="A8"/>
+    <dct:contributor rdf:nodeID="A4"/>
     <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
+    <dct:contributor rdf:nodeID="A9"/>
     <dct:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dct:rights>
     <dct:title xml:lang="en">DEMETER AgriSystem</dct:title>
-    <dct:contributor rdf:nodeID="A10"/>
-    <owl:versionInfo>1.0</owl:versionInfo>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/hasDeployment">
-    <rdfs:label xml:lang="en">has deployment</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#MilkingSensor">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
+    <rdfs:label xml:lang="en">Milking sensor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:Description rdf:nodeID="A5">
+    <foaf:name>OGC</foaf:name>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Scheme"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#Thermometer">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
+    <rdfs:label xml:lang="en">Thermometer</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#torque">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdfs:label>torque</rdfs:label>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme"/>
-    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#Energy"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:Description rdf:nodeID="A8">
+    <foaf:name>DEMETER project</foaf:name>
+    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A10">
+  <rdf:Description rdf:nodeID="A9">
     <foaf:name>George Routis</foaf:name>
-    <schema:affiliation rdf:nodeID="A5"/>
+    <schema:affiliation rdf:nodeID="A0"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/deployedOnPlatform">
-    <rdfs:label xml:lang="en">deployed on platform</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
-    <rdfs:comment xml:lang="en">Relation between a deployment and the platform(s) involved in the deployment.</rdfs:comment>
-    <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/inDeployment"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  <rdf:Description rdf:nodeID="A3">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/saref#Device">
     <rdfs:label xml:lang="en">Device</rdfs:label>
@@ -273,13 +129,16 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Actuator"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A9">
-    <foaf:name>Ioanna Roussaki</foaf:name>
-    <schema:affiliation rdf:nodeID="A7"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#MovementActivitySensor">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
     <rdfs:label xml:lang="en">Movement activity sensor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/def/saref4agri#SoilTensiometer">
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
+    <rdfs:label xml:lang="en">Soil tensiometer</rdfs:label>
+    <rdfs:comment xml:lang="en">A sensor that measures the soil moisture.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
@@ -289,24 +148,6 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/ssn/Deployment">
-    <rdfs:label xml:lang="en">Deployment</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/ssn/"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#criticalBuildUpSpeed">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdfs:label>critical build-up speed</rdfs:label>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme"/>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"/>
-    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#Pluviometer">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
     <rdfs:label xml:lang="en">Pluviometer</rdfs:label>
@@ -314,16 +155,19 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/dim#Energy">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:nodeID="A7">
+    <foaf:name>Raul Palma</foaf:name>
+    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+    <schema:affiliation rdf:nodeID="A10"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#WateringSystem">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
     <rdfs:label xml:lang="en">Watering system</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <foaf:name>PSNC</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#WateringGun">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
@@ -332,19 +176,18 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Actuator"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.oclc.org/NET/ssnx/qu/quantity#criticalTorsionalSpeed">
-    <rdfs:isDefinedBy rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu-rec20"/>
-    <rdfs:label>critical torsional speed</rdfs:label>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme"/>
-    <skos:inScheme rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme"/>
-    <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:Description rdf:nodeID="A6">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hosts">
-    <rdfs:label xml:lang="en">host</rdfs:label>
-    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
-    <rdfs:comment xml:lang="en">Relation between a platform and the systems it hosts.</rdfs:comment>
-    <owl:inverseOf rdf:resource="http://www.w3.org/ns/sosa/isHostedBy"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  <rdf:Description rdf:nodeID="A2">
+    <foaf:name>ICCS</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/saref#Sensor">
+    <rdfs:label xml:lang="en">Sensor</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/saref#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Device"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
 </rdf:RDF>
