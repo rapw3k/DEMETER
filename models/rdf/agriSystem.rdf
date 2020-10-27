@@ -30,11 +30,19 @@
     xmlns:ssn="http://www.w3.org/ns/ssn/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/" > 
   <rdf:Description rdf:nodeID="A0">
-    <foaf:name>ICCS</foaf:name>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A1">
-    <foaf:name>Ioanna Roussaki</foaf:name>
-    <schema:affiliation rdf:nodeID="A2"/>
+    <foaf:name>PSNC</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <foaf:name>George Routis</foaf:name>
+    <schema:affiliation rdf:nodeID="A3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <foaf:name>ICCS</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/saref#Actuator">
     <rdfs:label xml:lang="en">Actuator</rdfs:label>
@@ -46,7 +54,7 @@
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
     <skos:prefLabel xml:lang="en">MachineType</skos:prefLabel>
-    <rdfs:subClassOf rdf:nodeID="A3"/>
+    <rdfs:subClassOf rdf:nodeID="A5"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#EatingActivitySensor">
@@ -55,30 +63,26 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A4">
-    <foaf:name>Rob Atkinson</foaf:name>
-    <schema:affiliation rdf:nodeID="A5"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#TractorType">
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
     <skos:prefLabel xml:lang="en">TractorType</skos:prefLabel>
-    <rdfs:subClassOf rdf:nodeID="A6"/>
+    <rdfs:subClassOf rdf:nodeID="A0"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/demeter/agri/agriSystem">
+    <dct:contributor rdf:nodeID="A6"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <dct:creator rdf:nodeID="A7"/>
     <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/agriSystem/2.0"/>
     <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
     <dct:description xml:lang="en">The DEMETER AgriSystem is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</dct:description>
     <owl:versionInfo>2.0</owl:versionInfo>
-    <dct:contributor rdf:nodeID="A1"/>
-    <foaf:maker rdf:nodeID="A8"/>
-    <dct:contributor rdf:nodeID="A4"/>
+    <foaf:maker rdf:nodeID="A7"/>
     <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
-    <dct:contributor rdf:nodeID="A9"/>
     <dct:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dct:rights>
+    <dct:creator rdf:nodeID="A8"/>
+    <dct:contributor rdf:nodeID="A2"/>
+    <dct:contributor rdf:nodeID="A9"/>
     <dct:title xml:lang="en">DEMETER AgriSystem</dct:title>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#MilkingSensor">
@@ -87,8 +91,20 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A5">
+  <rdf:Description rdf:nodeID="A10">
     <foaf:name>OGC</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <foaf:name>ICCS</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <foaf:name>Ioanna Roussaki</foaf:name>
+    <schema:affiliation rdf:nodeID="A4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <foaf:name>Raul Palma</foaf:name>
+    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+    <schema:affiliation rdf:nodeID="A1"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#Thermometer">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
@@ -96,24 +112,24 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A8">
-    <foaf:name>DEMETER project</foaf:name>
-    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A9">
-    <foaf:name>George Routis</foaf:name>
-    <schema:affiliation rdf:nodeID="A0"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A3">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A6">
+    <foaf:name>Rob Atkinson</foaf:name>
+    <schema:affiliation rdf:nodeID="A10"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/saref#Device">
     <rdfs:label xml:lang="en">Device</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/saref#"/>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <foaf:name>DEMETER project</foaf:name>
+    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#WeatherStation">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
@@ -155,19 +171,11 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Sensor"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A7">
-    <foaf:name>Raul Palma</foaf:name>
-    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
-    <schema:affiliation rdf:nodeID="A10"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#WateringSystem">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
     <rdfs:label xml:lang="en">Watering system</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A10">
-    <foaf:name>PSNC</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/def/saref4agri#WateringGun">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/def/saref4agri#"/>
@@ -175,14 +183,6 @@
     <rdfs:comment xml:lang="en">An actuator to irrigate an space.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://w3id.org/saref#Actuator"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A6">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A2">
-    <foaf:name>ICCS</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/saref#Sensor">
     <rdfs:label xml:lang="en">Sensor</rdfs:label>
