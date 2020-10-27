@@ -13,6 +13,10 @@
     "TAXRANK_0000000" : {
       "@id" : "http://purl.obolibrary.org/obo/TAXRANK_0000000"
     },
+    "member" : {
+      "@id" : "http://xmlns.com/foaf/0.1/member",
+      "@type" : "@id"
+    },
     "versionInfo" : {
       "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
     },
@@ -44,6 +48,9 @@
     "dataProvider" : {
       "@id" : "https://uri.fiware.org/ns/data-models#dataProvider"
     },
+    "depiction" : {
+      "@id" : "http://xmlns.com/foaf/0.1/depiction"
+    },
     "maker" : {
       "@id" : "http://xmlns.com/foaf/0.1/maker"
     },
@@ -66,7 +73,7 @@
       "@id" : "http://purl.org/dc/terms/creator"
     },
     "name" : {
-      "@id" : "https://schema.org/name"
+      "@id" : "https://uri.fiware.org/ns/data-models#name"
     },
     "rights" : {
       "@id" : "http://purl.org/dc/terms/rights"
@@ -74,15 +81,14 @@
     "Farm" : {
       "@id" : "https://w3id.org/def/saref4agri#Farm"
     },
-    "userName" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#userName",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
     "isDefinedBy" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
     },
     "title" : {
       "@id" : "http://purl.org/dc/terms/title"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/terms/identifier"
     },
     "validTo" : {
       "@id" : "http://portele.de/ont/inspire/baseInspire#validTo",
@@ -98,10 +104,6 @@
     "managesFarm" : {
       "@id" : "https://w3id.org/def/saref4agri#managesFarm",
       "@type" : "@id"
-    },
-    "password" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#password",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "seeAlso" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
@@ -146,6 +148,9 @@
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
     "description" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#description"
+    },
+    "entityDescription" : {
       "@id" : "https://uri.fiware.org/ns/data-models#description"
     },
     "ResponsibleParty" : {
@@ -153,6 +158,30 @@
     },
     "Farmer" : {
       "@id" : "https://w3id.org/def/saref4agri#Farmer"
+    },
+    "foaf.name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "schema.name" : {
+      "@id" : "https://schema.org/name"
+    },
+    "telephone" : {
+      "@id" : "https://schema.org/telephone"
+    },
+    "schema.Person" : {
+      "@id" : "https://schema.org/Person"
+    },
+    "Role" : {
+      "@id" : "https://schema.org/Role"
+    },
+    "userName" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#userName"
+    },
+    "password" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#password"
+    },
+    "dct.description" : {
+      "@id" : "http://purl.org/dc/terms/description"
     }
   }
 }

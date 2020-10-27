@@ -1,0 +1,326 @@
+{
+  "@context" : {
+    "invalidatedAtTime" : {
+      "@id" : "http://www.w3.org/ns/prov#invalidatedAtTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Crop" : {
+      "@id" : "https://w3id.org/def/saref4agri#Crop"
+    },
+    "hasAgriCrop" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriCrop",
+      "@type" : "@id"
+    },
+    "affiliation" : {
+      "@id" : "https://schema.org/affiliation"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "generatedAtTime" : {
+      "@id" : "http://www.w3.org/ns/prov#generatedAtTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "validFrom" : {
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validFrom",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "hasAgriParcelParent" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriParcelParent",
+      "@type" : "@id"
+    },
+    "crop" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#crop",
+      "@type" : "@id"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "Codelist" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Codelist"
+    },
+    "hasName" : {
+      "@id" : "https://w3id.org/def/saref4agri#hasName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "lastPlantedAt" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#lastPlantedAt",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "OriginTypeValue" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#OriginTypeValue"
+    },
+    "area" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#area"
+    },
+    "Geometry" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#Geometry"
+    },
+    "originType" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#originType",
+      "@type" : "@id"
+    },
+    "FeatureType" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType"
+    },
+    "maker" : {
+      "@id" : "http://xmlns.com/foaf/0.1/maker"
+    },
+    "sfWithin" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#sfWithin",
+      "@type" : "@id"
+    },
+    "AgriFarm" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#AgriFarm"
+    },
+    "activity" : {
+      "@id" : "http://inspire.ec.europa.eu/schemas/af/3.0#activity",
+      "@type" : "@id"
+    },
+    "Feature" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "contains" : {
+      "@id" : "https://w3id.org/def/saref4agri#contains",
+      "@type" : "@id"
+    },
+    "containsSite" : {
+      "@id" : "http://inspire.ec.europa.eu/schemas/af/3.0#contains",
+      "@type" : "@id"
+    },
+    "landLocation" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#landLocation",
+      "@type" : "@id"
+    },
+    "Concept" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "ActivityComplex" : {
+      "@id" : "http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex"
+    },
+    "holdingSite" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#holdingSite",
+      "@type" : "@id"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "holdingPlot" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#holdingPlot",
+      "@type" : "@id"
+    },
+    "foaf.name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "holdingZone" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#holdingZone",
+      "@type" : "@id"
+    },
+    "hasSerialization" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#hasSerialization",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "cropStatus" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#cropStatus"
+    },
+    "hasAgriSoil" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriSoil",
+      "@type" : "@id"
+    },
+    "Building" : {
+      "@id" : "https://w3id.org/def/saref4agri#Building"
+    },
+    "isContainedIn" : {
+      "@id" : "https://w3id.org/def/saref4agri#isContainedIn",
+      "@type" : "@id"
+    },
+    "locationGeoJson" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#location",
+      "@type" : "@id"
+    },
+    "location" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#location",
+      "@type" : "@id"
+    },
+    "TractorType" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#TractorType"
+    },
+    "AgriGreenhouse" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#AgriGreenhouse"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights"
+    },
+    "containsPlot" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#containsPlot",
+      "@type" : "@id"
+    },
+    "Farm" : {
+      "@id" : "https://w3id.org/def/saref4agri#Farm"
+    },
+    "hasAgriParcel" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriParcel",
+      "@type" : "@id"
+    },
+    "machine" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#machine",
+      "@type" : "@id"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "wgs84.Point" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+    },
+    "hasGeometry" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry",
+      "@type" : "@id"
+    },
+    "sfContains" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#sfContains",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "validTo" : {
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validTo",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Holding" : {
+      "@id" : "http://inspire.ec.europa.eu/schemas/af/3.0#Holding"
+    },
+    "Parcel" : {
+      "@id" : "https://w3id.org/def/saref4agri#Parcel"
+    },
+    "SpatialObject" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#SpatialObject"
+    },
+    "Plot" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#Plot"
+    },
+    "Site" : {
+      "@id" : "http://inspire.ec.europa.eu/schemas/af/3.0#Site"
+    },
+    "hasAgriParcelChildren" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriParcelChildren",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "MachineType" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#MachineType"
+    },
+    "notes" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#notes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "EconomicActivityNACEValue" : {
+      "@id" : "http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue"
+    },
+    "BuildingSpace" : {
+      "@id" : "https://w3id.org/def/saref4agri#BuildingSpace"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "contributor" : {
+      "@id" : "http://purl.org/dc/terms/contributor"
+    },
+    "containsZone" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#containsZone",
+      "@type" : "@id"
+    },
+    "tractor" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#tractor",
+      "@type" : "@id"
+    },
+    "code" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#code",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "AgriParcel" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#AgriParcel"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "description" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ManagementZone" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#ManagementZone"
+    },
+    "AnyFeature" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"
+    },    
+    "asWKT" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#asWKT"
+    },
+    "wktLiteral" : {
+      "@id" : "http://www.opengis.net/ont/geosparql#wktLiteral"
+    },
+    "Triangle" : {
+      "@id" : "http://www.opengis.net/ont/sf#Triangle"
+    },
+    "TIN" : {
+      "@id" : "http://www.opengis.net/ont/sf#TIN"
+    },
+    "SurfaceSF" : {
+      "@id" : "http://www.opengis.net/ont/sf#Surface"
+    },
+    "PolyhedralSurface" : {
+      "@id" : "http://www.opengis.net/ont/sf#PolyhedralSurface"
+    },
+    "Polygon" : {
+      "@id" : "http://www.opengis.net/ont/sf#Polygon"
+    },
+    "Point" : {
+      "@id" : "http://www.opengis.net/ont/sf#Point"
+    },
+    "MultiSurface" : {
+      "@id" : "http://www.opengis.net/ont/sf#MultiSurface"
+    },
+    "MultiPolygon" : {
+      "@id" : "http://www.opengis.net/ont/sf#MultiPolygon"
+    },
+    "MultiPoint" : {
+      "@id" : "http://www.opengis.net/ont/sf#MultiPoint"
+    },
+    "MultiLineString" : {
+      "@id" : "http://www.opengis.net/ont/sf#MultiLineString"
+    },
+    "MultiCurve" : {
+      "@id" : "http://www.opengis.net/ont/sf#MultiCurve"
+    },
+    "LinearRing" : {
+      "@id" : "http://www.opengis.net/ont/sf#LinearRing"
+    },
+    "LineString" : {
+      "@id" : "http://www.opengis.net/ont/sf#LineString"
+    },
+    "Line" : {
+      "@id" : "http://www.opengis.net/ont/sf#Line"
+    },
+    "GeometryCollection" : {
+      "@id" : "http://www.opengis.net/ont/sf#GeometryCollection"
+    },
+    "GeometrySF" : {
+      "@id" : "http://www.opengis.net/ont/sf#Geometry"
+    },
+    "Curve" : {
+      "@id" : "http://www.opengis.net/ont/sf#Curve"
+    },
+    "dct.description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    }
+  }
+}
