@@ -457,7 +457,6 @@ foodie:TreatmentPlan  a  owl:Class ;
         
 ### http://foodie-cloud.com/model/foodie#DoseUnit                
 foodie:DoseUnit  a       owl:Class ;
-        rdfs:subClassOf  iso19150-2:Datatype ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:maxCardinality  "1"^^xsd:int ;
                            owl:onProperty      foodie:minimumDose
@@ -472,7 +471,6 @@ foodie:DoseUnit  a       owl:Class ;
 
 ### http://foodie-cloud.com/model/foodie#CampaignType                
 foodie:CampaignType  a           owl:Class ;
-				rdfs:subClassOf  iso19150-2:Datatype ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:minCardinality  "1"^^xsd:int ;
                            owl:onProperty      foodie:period
@@ -483,14 +481,14 @@ foodie:CampaignType  a           owl:Class ;
 ### http://foodie-cloud.com/model/foodie#TreatmentPurposeValue                
 foodie:TreatmentPurposeValue
         a                owl:Class ;
-        rdfs:subClassOf  skos:Concept , iso19150-2:Codelist ;
+        rdfs:subClassOf  skos:Concept ;
         skos:prefLabel   "TreatmentPurposeValue"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### http://foodie-cloud.com/model/foodie#FormOfTreatmentValue                                        
 foodie:FormOfTreatmentValue
         a                owl:Class ;
-        rdfs:subClassOf  skos:Concept , iso19150-2:Codelist ;
+        rdfs:subClassOf  skos:Concept ;
         skos:prefLabel   "FormOfTreatmentValue"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 

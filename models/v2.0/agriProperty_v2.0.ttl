@@ -475,7 +475,6 @@ fiware:snowHeight	a      owl:DatatypeProperty ;
 
 ### http://foodie-cloud.com/model/foodie#PropertyType
 foodie:PropertyType  a   owl:Class ;
-        rdfs:subClassOf  iso19150-2:Datatype ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:maxCardinality  "1"^^xsd:int ;
                            owl:onProperty      foodie:quantitativeProperty
@@ -502,7 +501,7 @@ foodie:PropertyType  a   owl:Class ;
 ### http://foodie-cloud.com/model/foodie#PropertyTypeValue       
 foodie:PropertyTypeValue
         a                owl:Class ;
-        rdfs:subClassOf  skos:Concept , iso19150-2:Codelist ;
+        rdfs:subClassOf  skos:Concept ;
         skos:prefLabel   "PropertyTypeValue"@en ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
         

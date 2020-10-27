@@ -280,7 +280,6 @@ foodie:CropSpecies  a    owl:Class ;
         
 ### http://foodie-cloud.com/model/foodie#CropType
 foodie:CropType  a       owl:Class ;
-        rdfs:subClassOf  iso19150-2:Datatype ;
         rdfs:subClassOf  [ a                   owl:Restriction ;
                            owl:maxCardinality  "1"^^xsd:int ;
                            owl:onProperty      foodie:code
@@ -315,7 +314,6 @@ foodie:CropType  a       owl:Class ;
 ### http://foodie-cloud.com/model/foodie#ProductionType
 foodie:ProductionType
         a                owl:Class ;
-        rdfs:subClassOf  iso19150-2:Datatype ;
         rdfs:subClassOf  [ a                owl:Restriction ;
                            owl:cardinality  "1"^^xsd:int ;
                            owl:onProperty   foodie:variety
