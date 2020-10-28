@@ -12,7 +12,7 @@ The modules have been structured based on topics similar to the FIWARE agrifood 
 * Cross-domain ontology finalized
 * Full alignment of cross-domain and domain layers
 * JSON-LD context for cross-domain layer 
-* Besides updated JSON-LD contexts for each domain module, one flat and normalized JSON-LD context including all terms of the cross-domain and domain layer 
+* Updated JSON-LD contexts for each domain module, including the main context which has been flattened and normalized to include all terms of the cross-domain and domain layer 
 * Updated SHACL
 * Updated examples
 
