@@ -31,6 +31,76 @@
 @prefix iso19115-citation: <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#> .
 @prefix obo:   <http://purl.obolibrary.org/obo/> .
 
+<https://astrea.linkeddata.es/shapes#1a05d3b9fe79227f9bcbedbfb5656d4f>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:hasName .
+
+<https://astrea.linkeddata.es/shapes#37de2065ed2f84f6b6abc75343470d48>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  common: ;
+        sh:datatype       xsd:dateTime ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           common:validTo ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#22cd46dde8953830a6e5244fced5a303>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:managesFarm .
+
+<https://astrea.linkeddata.es/shapes#b3f81eca38904455db8f71dbf8317387>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:code ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#92ceb1c2593f6ec3bdb3019e44a64dfc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:notes ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#fa221ce52859ceec8f84e607ba0095ac>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  obo: ;
+        rdfs:label        "taxonomic_rank"@en ;
+        sh:name           "taxonomic_rank"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    obo:TAXRANK_0000000 .
+
+<https://astrea.linkeddata.es/shapes#7c43f3f788bfa14a479241aebc5b17b8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
+        rdfs:label        "dataProvider"@en , "Specifies the URL to information about the provider of this information" ;
+        sh:description    "Specifies the URL to information about the provider of this information" ;
+        sh:name           "dataProvider"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:dataProvider .
+
+<https://astrea.linkeddata.es/shapes#497a2f9ed31a7d70fdbf4108e3bd274c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:type ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#43e06f22e93661c0366559118b6d0477>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "has timestamp"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "has timestamp"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           saref:hasTimestamp ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
 <https://astrea.linkeddata.es/shapes#39f03359b20315c9711b1ea426ca3462>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  saref4agri: ;
@@ -42,6 +112,12 @@
         sh:path           saref4agri:hasName ;
         sh:pattern        ".*" .
 
+<https://astrea.linkeddata.es/shapes#6354aa33cca2c364c92d3fbafa4a1079>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:hasName .
+
 <https://astrea.linkeddata.es/shapes#f4d90415f5e9d6fcd19af24755bd434e>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> ;
@@ -51,49 +127,31 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:agroVocConcept .
 
-<https://astrea.linkeddata.es/shapes#497a2f9ed31a7d70fdbf4108e3bd274c>
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#1a05d3b9fe79227f9bcbedbfb5656d4f> , <https://astrea.linkeddata.es/shapes#1a3d7a1ed18965087c91359834d60df4> , <https://astrea.linkeddata.es/shapes#1e4b18a5bd47914de5037ef0bb5f98e5> , <https://astrea.linkeddata.es/shapes#a67bc63ef9d2e2c81c529fcf31a56c93> , <https://astrea.linkeddata.es/shapes#dca7312f034502b7f870ffa09ac382fc> , <https://astrea.linkeddata.es/shapes#7c43f3f788bfa14a479241aebc5b17b8> , <https://astrea.linkeddata.es/shapes#37de2065ed2f84f6b6abc75343470d48> , <https://astrea.linkeddata.es/shapes#39f03359b20315c9711b1ea426ca3462> , <https://astrea.linkeddata.es/shapes#6b9038cdae642483bf87853d93c46b60> , <https://astrea.linkeddata.es/shapes#cfc20da821fd68ec0a54e6cc5e492f52> , <https://astrea.linkeddata.es/shapes#fa221ce52859ceec8f84e607ba0095ac> , <https://astrea.linkeddata.es/shapes#92ceb1c2593f6ec3bdb3019e44a64dfc> , <https://astrea.linkeddata.es/shapes#b3f81eca38904455db8f71dbf8317387> , <https://astrea.linkeddata.es/shapes#e8924a7f1da93fb4b400f5b6545d17c8> , <https://astrea.linkeddata.es/shapes#497a2f9ed31a7d70fdbf4108e3bd274c> , <https://astrea.linkeddata.es/shapes#176d6868c726544c5477ac0fb503b142> , <https://astrea.linkeddata.es/shapes#22cd46dde8953830a6e5244fced5a303> , <https://astrea.linkeddata.es/shapes#c7bfd558152fdd447ea5230b0d708747> , <https://astrea.linkeddata.es/shapes#f05250f16c115f2d8e978b14a6da76eb> , <https://astrea.linkeddata.es/shapes#917a03a4e98e9b45105c8bd428ee27a1> , <https://astrea.linkeddata.es/shapes#a74ec6533109f056675b61ba243f5dd9> , <https://astrea.linkeddata.es/shapes#4c6b24d90f0552a8df061124f285506d> , <https://astrea.linkeddata.es/shapes#f4d90415f5e9d6fcd19af24755bd434e> , <https://astrea.linkeddata.es/shapes#6c87b3fbc0f4085d69421982c72ecfb8> , <https://astrea.linkeddata.es/shapes#a36d1842a0736a976406b312e2d3ba03> , <https://astrea.linkeddata.es/shapes#9fef3b114595ed4aa13d030667f0542b> , <https://astrea.linkeddata.es/shapes#43e06f22e93661c0366559118b6d0477> , <https://astrea.linkeddata.es/shapes#874ca680d48398aba67aa7c89d44b614> , <https://astrea.linkeddata.es/shapes#ac2d4132e2d16c28b67d59b2419f2f0c> , <https://astrea.linkeddata.es/shapes#6354aa33cca2c364c92d3fbafa4a1079> , <https://astrea.linkeddata.es/shapes#b9f782f84471e60ee95cbd1c340c4cf5> , <https://astrea.linkeddata.es/shapes#48634e5542ecb3d5688c02ece3e54f64> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/2056155360> .
+
+<https://astrea.linkeddata.es/report/2056155360>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#a67bc63ef9d2e2c81c529fcf31a56c93>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:isDefinedBy  demeterAgriCommon: ;
+        rdfs:label        "User Name" ;
         sh:datatype       xsd:string ;
+        sh:name           "User Name" ;
         sh:nodeKind       sh:Literal ;
-        sh:path           foodie:type ;
+        sh:path           demeterAgriCommon:userName ;
         sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#37de2065ed2f84f6b6abc75343470d48>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  common: ;
-        sh:datatype       xsd:dateTime ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           common:validTo ;
-        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
-
-<https://astrea.linkeddata.es/shapes#7c43f3f788bfa14a479241aebc5b17b8>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "dataProvider"@en , "Specifies the URL to information about the provider of this information" ;
-        sh:description    "Specifies the URL to information about the provider of this information" ;
-        sh:name           "dataProvider"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:dataProvider .
-
-<https://astrea.linkeddata.es/shapes#6c87b3fbc0f4085d69421982c72ecfb8>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "entityVersion"@en , "The entity specification version as a number. A version number of 2.0 or later denotes the entity is represented using NGSI-LD" ;
-        sh:description    "The entity specification version as a number. A version number of 2.0 or later denotes the entity is represented using NGSI-LD" ;
-        sh:name           "entityVersion"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:entityVersion .
-
-<https://astrea.linkeddata.es/shapes#b9f782f84471e60ee95cbd1c340c4cf5>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "category"@en , "The category of the entity, e.g., parcel of land (arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland), alert (Traffic jam, accidents, weather conditions, high level of pollutants)." ;
-        sh:description    "The category of the entity, e.g., parcel of land (arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland), alert (Traffic jam, accidents, weather conditions, high level of pollutants)." ;
-        sh:equals         foodie:type ;
-        sh:name           "category"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:category .
 
 <https://astrea.linkeddata.es/shapes#9fef3b114595ed4aa13d030667f0542b>
         a                 sh:PropertyShape ;
@@ -105,122 +163,6 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:createdAt ;
         sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
-
-<https://astrea.linkeddata.es/shapes#a74ec6533109f056675b61ba243f5dd9>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "A description of the [entity]." , "description"@en ;
-        sh:description    "A description of the [entity]." ;
-        sh:name           "description"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:description .
-
-<https://astrea.linkeddata.es/shapes#67887954de7f456192f7a2bbf8e8241c>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      foaf:member .
-
-<https://astrea.linkeddata.es/shapes#176d6868c726544c5477ac0fb503b142>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  common: ;
-        sh:datatype       xsd:dateTime ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           common:validFrom ;
-        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
-
-<https://astrea.linkeddata.es/shapes#1a05d3b9fe79227f9bcbedbfb5656d4f>
-        a            sh:PropertyShape ;
-        sh:datatype  xsd:string ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:hasName .
-
-<https://astrea.linkeddata.es/shapes#4c6b24d90f0552a8df061124f285506d>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  saref: ;
-        rdfs:label        "A relationship providing a description of an entity (e.g., device)" , "has description"@en ;
-        sh:datatype       xsd:string ;
-        sh:description    "A relationship providing a description of an entity (e.g., device)" ;
-        sh:equals         foodie:description , fiware:description ;
-        sh:name           "has description"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           saref:hasDescription ;
-        sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#1e4b18a5bd47914de5037ef0bb5f98e5>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
-        rdfs:label        "invalidatedAtTime" , "The time at which an entity was invalidated (i.e., no longer usable)."@en ;
-        sh:datatype       xsd:dateTime ;
-        sh:description    "The time at which an entity was invalidated (i.e., no longer usable)."@en ;
-        sh:name           "invalidatedAtTime" ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           prov:invalidatedAtTime ;
-        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
-
-<https://astrea.linkeddata.es/shapes#1a3d7a1ed18965087c91359834d60df4>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:price ;
-        sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#f05250f16c115f2d8e978b14a6da76eb>
-        a               sh:NodeShape ;
-        rdfs:label      "Farm holding"@en ;
-        sh:description  "A class to decsribe a saref4agri farm holding as subcass of an org:Organization" ;
-        sh:name         "Farm holding"@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#22cd46dde8953830a6e5244fced5a303> , <https://astrea.linkeddata.es/shapes#1a05d3b9fe79227f9bcbedbfb5656d4f> ;
-        sh:targetClass  saref4agri:FarmHolding .
-
-<https://astrea.linkeddata.es/shapes#6354aa33cca2c364c92d3fbafa4a1079>
-        a            sh:PropertyShape ;
-        sh:datatype  xsd:string ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:hasName .
-
-<https://astrea.linkeddata.es/shapes#b3f81eca38904455db8f71dbf8317387>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foodie:code ;
-        sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#c08dff0e53e0b76f625bc3a192fdc520>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  schema:Role ;
-        rdfs:label        "Role"@en ;
-        sh:description    "Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.<br/><br/>\n\nSee also <a href=\"http://blog.schema.org/2014/06/introducing-role.html\">blog post</a>."@en ;
-        sh:name           "Role"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    schema:Role .
-
-<https://astrea.linkeddata.es/report/2056155360>
-        a       <https://w3id.org/def/astrea#ReportEntry> ;
-        <https://w3id.org/def/astrea#message>
-                "Shapes generated with no errors" ;
-        <https://w3id.org/def/astrea#source>
-                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl" ;
-        <https://w3id.org/def/astrea#statusCode>
-                "200"^^xsd:int .
-
-<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  foaf: ;
-        rdfs:label        "Person"@en ;
-        sh:name           "Person"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    foaf:Person .
-
-<https://astrea.linkeddata.es/shapes#fa221ce52859ceec8f84e607ba0095ac>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  obo: ;
-        rdfs:label        "taxonomic_rank"@en ;
-        sh:name           "taxonomic_rank"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    obo:TAXRANK_0000000 .
 
 <https://astrea.linkeddata.es/shapes#6b9038cdae642483bf87853d93c46b60>
         a                 sh:PropertyShape ;
@@ -244,6 +186,36 @@
         sh:path           fiware:modifiedAt ;
         sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
+<https://astrea.linkeddata.es/shapes#f05250f16c115f2d8e978b14a6da76eb>
+        a               sh:NodeShape ;
+        rdfs:label      "Farm holding"@en ;
+        sh:description  "A class to decsribe a saref4agri farm holding as subcass of an org:Organization" ;
+        sh:name         "Farm holding"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#22cd46dde8953830a6e5244fced5a303> , <https://astrea.linkeddata.es/shapes#1a05d3b9fe79227f9bcbedbfb5656d4f> ;
+        sh:targetClass  saref4agri:FarmHolding .
+
+<https://astrea.linkeddata.es/shapes#917a03a4e98e9b45105c8bd428ee27a1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:managesFarm .
+
+<https://astrea.linkeddata.es/shapes#874ca680d48398aba67aa7c89d44b614>
+        a            sh:PropertyShape ;
+        rdfs:label   "manages farm"@en ;
+        sh:name      "manages farm"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      saref4agri:managesFarm .
+
+<https://astrea.linkeddata.es/shapes#c7bfd558152fdd447ea5230b0d708747>
+        a               sh:NodeShape ;
+        rdfs:label      "Farmer"@en ;
+        sh:description  "A class to decsribe a saref4agri farmer as subcass of a foaf:Person" ;
+        sh:name         "Farmer"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#917a03a4e98e9b45105c8bd428ee27a1> , <https://astrea.linkeddata.es/shapes#6354aa33cca2c364c92d3fbafa4a1079> ;
+        sh:targetClass  saref4agri:Farmer .
+
 <https://astrea.linkeddata.es/shapes#e8924a7f1da93fb4b400f5b6545d17c8>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
@@ -253,14 +225,73 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:source .
 
-<https://astrea.linkeddata.es/shapes#ac2d4132e2d16c28b67d59b2419f2f0c>
+<https://astrea.linkeddata.es/shapes#4c6b24d90f0552a8df061124f285506d>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
-        rdfs:label        "alternateName"@en , "An alternative name for this [entity]" ;
-        sh:description    "An alternative name for this [entity]" ;
-        sh:name           "alternateName"@en ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "A relationship providing a description of an entity (e.g., device)" , "has description"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "A relationship providing a description of an entity (e.g., device)" ;
+        sh:equals         foodie:description , fiware:description ;
+        sh:name           "has description"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           fiware:alternateName .
+        sh:path           saref:hasDescription ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#1a3d7a1ed18965087c91359834d60df4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:price ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#1e4b18a5bd47914de5037ef0bb5f98e5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "invalidatedAtTime" , "The time at which an entity was invalidated (i.e., no longer usable)."@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The time at which an entity was invalidated (i.e., no longer usable)."@en ;
+        sh:name           "invalidatedAtTime" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           prov:invalidatedAtTime ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#b9f782f84471e60ee95cbd1c340c4cf5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
+        rdfs:label        "category"@en , "The category of the entity, e.g., parcel of land (arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland), alert (Traffic jam, accidents, weather conditions, high level of pollutants)." ;
+        sh:description    "The category of the entity, e.g., parcel of land (arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland), alert (Traffic jam, accidents, weather conditions, high level of pollutants)." ;
+        sh:equals         foodie:type ;
+        sh:name           "category"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:category .
+
+<https://astrea.linkeddata.es/shapes#dca7312f034502b7f870ffa09ac382fc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> ;
+        rdfs:label        "The name of this [entity]" , "name"@en ;
+        sh:description    "The name of this [entity]" ;
+        sh:name           "name"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:name .
+
+<https://astrea.linkeddata.es/shapes#6c87b3fbc0f4085d69421982c72ecfb8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
+        rdfs:label        "entityVersion"@en , "The entity specification version as a number. A version number of 2.0 or later denotes the entity is represented using NGSI-LD" ;
+        sh:description    "The entity specification version as a number. A version number of 2.0 or later denotes the entity is represented using NGSI-LD" ;
+        sh:name           "entityVersion"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:entityVersion .
+
+<https://astrea.linkeddata.es/shapes#cfc20da821fd68ec0a54e6cc5e492f52>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:equals         fiware:description ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:description ;
+        sh:pattern        ".*" .
 
 <https://astrea.linkeddata.es/shapes#48634e5542ecb3d5688c02ece3e54f64>
         a                 sh:PropertyShape ;
@@ -272,116 +303,28 @@
         sh:path           demeterAgriCommon:password ;
         sh:pattern        ".*" .
 
-<https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8>
+<https://astrea.linkeddata.es/shapes#ac2d4132e2d16c28b67d59b2419f2f0c>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  foaf: ;
-        rdfs:label        "member" ;
-        sh:name           "member" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foaf:member .
-
-<http://astrea.linkeddata.es/report>
-        a       <https://w3id.org/def/astrea#ShapeReport> ;
-        <https://w3id.org/def/astrea#contains>
-                <https://astrea.linkeddata.es/shapes#43e06f22e93661c0366559118b6d0477> , <https://astrea.linkeddata.es/shapes#37de2065ed2f84f6b6abc75343470d48> , <https://astrea.linkeddata.es/shapes#e8924a7f1da93fb4b400f5b6545d17c8> , <https://astrea.linkeddata.es/shapes#917a03a4e98e9b45105c8bd428ee27a1> , <https://astrea.linkeddata.es/shapes#f05250f16c115f2d8e978b14a6da76eb> , <https://astrea.linkeddata.es/shapes#22cd46dde8953830a6e5244fced5a303> , <https://astrea.linkeddata.es/shapes#ac2d4132e2d16c28b67d59b2419f2f0c> , <https://astrea.linkeddata.es/shapes#92ceb1c2593f6ec3bdb3019e44a64dfc> , <https://astrea.linkeddata.es/shapes#874ca680d48398aba67aa7c89d44b614> , <https://astrea.linkeddata.es/shapes#b3f81eca38904455db8f71dbf8317387> , <https://astrea.linkeddata.es/shapes#dca7312f034502b7f870ffa09ac382fc> , <https://astrea.linkeddata.es/shapes#67887954de7f456192f7a2bbf8e8241c> , <https://astrea.linkeddata.es/shapes#a74ec6533109f056675b61ba243f5dd9> , <https://astrea.linkeddata.es/shapes#1a3d7a1ed18965087c91359834d60df4> , <https://astrea.linkeddata.es/shapes#a36d1842a0736a976406b312e2d3ba03> , <https://astrea.linkeddata.es/shapes#b9f782f84471e60ee95cbd1c340c4cf5> , <https://astrea.linkeddata.es/shapes#6b9038cdae642483bf87853d93c46b60> , <https://astrea.linkeddata.es/shapes#c08dff0e53e0b76f625bc3a192fdc520> , <https://astrea.linkeddata.es/shapes#9fef3b114595ed4aa13d030667f0542b> , <https://astrea.linkeddata.es/shapes#f4d90415f5e9d6fcd19af24755bd434e> , <https://astrea.linkeddata.es/shapes#1a05d3b9fe79227f9bcbedbfb5656d4f> , <https://astrea.linkeddata.es/shapes#4c6b24d90f0552a8df061124f285506d> , <https://astrea.linkeddata.es/shapes#fa221ce52859ceec8f84e607ba0095ac> , <https://astrea.linkeddata.es/shapes#7c43f3f788bfa14a479241aebc5b17b8> , <https://astrea.linkeddata.es/shapes#48634e5542ecb3d5688c02ece3e54f64> , <https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8> , <https://astrea.linkeddata.es/shapes#a67bc63ef9d2e2c81c529fcf31a56c93> , <https://astrea.linkeddata.es/shapes#c7bfd558152fdd447ea5230b0d708747> , <https://astrea.linkeddata.es/shapes#497a2f9ed31a7d70fdbf4108e3bd274c> , <https://astrea.linkeddata.es/shapes#176d6868c726544c5477ac0fb503b142> , <https://astrea.linkeddata.es/shapes#7d31e878918619ad12be68dcc0363395> , <https://astrea.linkeddata.es/shapes#39f03359b20315c9711b1ea426ca3462> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#cfc20da821fd68ec0a54e6cc5e492f52> , <https://astrea.linkeddata.es/shapes#6354aa33cca2c364c92d3fbafa4a1079> , <https://astrea.linkeddata.es/shapes#9e9cb48c1174c31afed273d1a674e5ba> , <https://astrea.linkeddata.es/shapes#6c87b3fbc0f4085d69421982c72ecfb8> , <https://astrea.linkeddata.es/shapes#1e4b18a5bd47914de5037ef0bb5f98e5> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
-        <https://w3id.org/def/astrea#generatedShapesFrom>
-                <https://astrea.linkeddata.es/report/2056155360> .
-
-<https://astrea.linkeddata.es/shapes#874ca680d48398aba67aa7c89d44b614>
-        a            sh:PropertyShape ;
-        rdfs:label   "manages farm"@en ;
-        sh:name      "manages farm"@en ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      saref4agri:managesFarm .
-
-<https://astrea.linkeddata.es/shapes#917a03a4e98e9b45105c8bd428ee27a1>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:managesFarm .
-
-<https://astrea.linkeddata.es/shapes#22cd46dde8953830a6e5244fced5a303>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:managesFarm .
-
-<https://astrea.linkeddata.es/shapes#cfc20da821fd68ec0a54e6cc5e492f52>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
-        sh:equals         fiware:description ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "alternateName"@en , "An alternative name for this [entity]" ;
+        sh:description    "An alternative name for this [entity]" ;
+        sh:name           "alternateName"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           foodie:description ;
-        sh:pattern        ".*" .
+        sh:path           fiware:alternateName .
 
-<https://astrea.linkeddata.es/shapes#c7bfd558152fdd447ea5230b0d708747>
-        a               sh:NodeShape ;
-        rdfs:label      "Farmer"@en ;
-        sh:description  "A class to decsribe a saref4agri farmer as subcass of a foaf:Person" ;
-        sh:name         "Farmer"@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#917a03a4e98e9b45105c8bd428ee27a1> , <https://astrea.linkeddata.es/shapes#6354aa33cca2c364c92d3fbafa4a1079> ;
-        sh:targetClass  saref4agri:Farmer .
-
-<https://astrea.linkeddata.es/shapes#92ceb1c2593f6ec3bdb3019e44a64dfc>
+<https://astrea.linkeddata.es/shapes#a74ec6533109f056675b61ba243f5dd9>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:datatype       xsd:string ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
+        rdfs:label        "A description of the [entity]." , "description"@en ;
+        sh:description    "A description of the [entity]." ;
+        sh:name           "description"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           foodie:notes ;
-        sh:pattern        ".*" .
+        sh:path           fiware:description .
 
-<https://astrea.linkeddata.es/shapes#7d31e878918619ad12be68dcc0363395>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  schema:Organization ;
-        rdfs:label        "Organization"@en ;
-        sh:description    "An organization such as a school, NGO, corporation, club, etc."@en ;
-        sh:name           "Organization"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    schema:Organization .
-
-<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  foaf: ;
-        rdfs:label        "Agent"@en ;
-        sh:name           "Agent"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#67887954de7f456192f7a2bbf8e8241c> ;
-        sh:targetClass    foaf:Agent .
-
-<https://astrea.linkeddata.es/shapes#dca7312f034502b7f870ffa09ac382fc>
+<https://astrea.linkeddata.es/shapes#176d6868c726544c5477ac0fb503b142>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md> ;
-        rdfs:label        "The name of this [entity]" , "name"@en ;
-        sh:description    "The name of this [entity]" ;
-        sh:name           "name"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:name .
-
-<https://astrea.linkeddata.es/shapes#a67bc63ef9d2e2c81c529fcf31a56c93>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  demeterAgriCommon: ;
-        rdfs:label        "User Name" ;
-        sh:datatype       xsd:string ;
-        sh:name           "User Name" ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           demeterAgriCommon:userName ;
-        sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#43e06f22e93661c0366559118b6d0477>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  saref: ;
-        rdfs:label        "has timestamp"@en ;
+        rdfs:isDefinedBy  common: ;
         sh:datatype       xsd:dateTime ;
-        sh:name           "has timestamp"@en ;
         sh:nodeKind       sh:Literal ;
-        sh:path           saref:hasTimestamp ;
+        sh:path           common:validFrom ;
         sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
-
-<https://astrea.linkeddata.es/shapes#9e9cb48c1174c31afed273d1a674e5ba>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  schema:Person ;
-        rdfs:label        "Person"@en ;
-        sh:description    "A person (alive, dead, undead, or fictional)."@en ;
-        sh:name           "Person"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    schema:Person , foaf:Person .

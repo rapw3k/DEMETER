@@ -1,0 +1,1144 @@
+@prefix schema: <https://schema.org/> .
+@prefix :      <https://w3id.org/demeter/crossDomain#> .
+@prefix qudt:  <http://qudt.org/schema/qudt/> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/v1/ontology#> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix iso19156_GFI: <http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dim:   <http://purl.oclc.org/NET/ssnx/qu/dim#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aim-core: <https://w3id.org/demeter/core> .
+@prefix ssn:   <http://www.w3.org/ns/ssn/> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix qb:    <http://purl.org/linked-data/cube#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix sf:    <http://www.opengis.net/ont/sf#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix sosa:  <http://www.w3.org/ns/sosa/> .
+@prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
+@prefix qu:    <http://purl.oclc.org/NET/ssnx/qu/qu#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix iso19156_OB: <http://def.isotc211.org/iso19156/2011/Observation#> .
+@prefix iso19156_SF: <http://def.isotc211.org/iso19156/2011/SamplingFeature#> .
+@prefix time:  <http://www.w3.org/2006/time#> .
+
+<https://astrea.linkeddata.es/shapes#ae83a7fbdc4c12ed8789e7b8d38428d5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://standards.iso.org/iso/19156/ed-1/en/> ;
+        rdfs:label        "GFI_Feature" ;
+        sh:name           "GFI_Feature" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    iso19156_GFI:GFI_Feature .
+
+<https://astrea.linkeddata.es/shapes#345d2f0764a7c6b4e60a85749fedc13d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> ;
+        rdfs:label        "Quantity Kind" ;
+        sh:name           "Quantity Kind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qudt:QuantityKind .
+
+<https://astrea.linkeddata.es/shapes#be1c6bcec411d57176afa44ebe0ffa44>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      ngsi-ld:Property .
+
+<https://astrea.linkeddata.es/shapes#1bc257992e4584fa4ec247decbd920d5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> ;
+        rdfs:label        "Unit" ;
+        sh:name           "Unit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qudt:Unit .
+
+<https://astrea.linkeddata.es/shapes#733c015d5afbfee34b891410275696c6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Dimension property"@en ;
+        sh:description    "The class of components which represent the dimensions of the cube"@en ;
+        sh:name           "Dimension property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#2756c97972402dcea46d42e487344cda> ;
+        sh:targetClass    qb:DimensionProperty .
+
+<https://astrea.linkeddata.es/shapes#6139dbdac2e61aac420a8fa177e36402>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://standards.iso.org/iso/19156/ed-1/en/> ;
+        rdfs:label        "sampledFeature" ;
+        sh:class          iso19156_GFI:GFI_Feature , iso19156_GFI:GFI_DomainFeature ;
+        sh:name           "sampledFeature" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           iso19156_SF:SF_SamplingFeature.sampledFeature .
+
+<https://astrea.linkeddata.es/shapes#9f3f156f683d37683f9c2798ebd9c3a6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Curve"@en ;
+        sh:description    "\nA Curve is a 1-dimensional geometric object usually stored as a sequence of Points, with the subtype of Curve specifying the form of the interpolation between Points. This specification defines only one subclass of Curve, LineString, which uses linear interpolation between Points.\nA Curve is a 1-dimensional geometric object that is the homeomorphic image of a real, closed, interval.\nA Curve is simple if it does not pass through the same Point twice with the possible exception of the two end\npoints.\nA Curve is closed if its start Point is equal to its end Point.\nThe boundary of a closed Curve is empty.\nA Curve that is simple and closed is a Ring.\nThe boundary of a non-closed Curve consists of its two end Points.\nA Curve is defined as topologically closed, that is, it contains its endpoints f(a) and f(b).\n    "@en ;
+        sh:name           "Curve"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Curve .
+
+<https://astrea.linkeddata.es/shapes#e0599d95572fe81e4b21d3a2baee101e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> ;
+        rdfs:label        "unit" ;
+        sh:class          qudt:Unit ;
+        sh:name           "unit" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qudt:unit .
+
+<https://astrea.linkeddata.es/shapes#e7d09ea75472fdab925bd7954ab0a2f4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Acceleration .
+
+<https://astrea.linkeddata.es/shapes#fa78cfbce37dbcb34ab378481e7243c2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> ;
+        rdfs:label        "Quantity value" ;
+        sh:name           "Quantity value" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qudt:QuantityValue .
+
+<https://astrea.linkeddata.es/shapes#ce137a6ae8005973ea185df81f79ee37>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  ssn: ;
+        rdfs:label        "has deployment"@en ;
+        sh:name           "has deployment"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasDeployment .
+
+<https://astrea.linkeddata.es/shapes#a6fc85850e8eaf3606f2059efa9f8fb3>
+        a            sh:PropertyShape ;
+        sh:class     geo:Geometry ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      geo:hasGeometry .
+
+<https://astrea.linkeddata.es/shapes#561d7681316bbbc7f832f6f814fa96dd>
+        a            sh:PropertyShape ;
+        sh:class     wgs84_pos:Point ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      wgs84_pos:location .
+
+<https://astrea.linkeddata.es/shapes#0e9df4f49cf1f0a3373861594f2772a3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        rdfs:label        "QuantityKind" ;
+        sh:name           "QuantityKind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qu:QuantityKind .
+
+<https://astrea.linkeddata.es/shapes#2b2c87e5aca5b65a28d66b3e9a96621a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "component"@en , "indicates a ComponentProperty (i.e. attribute/dimension) expected on a DataSet, or a dimension fixed in a SliceKey"@en ;
+        sh:class          qb:ComponentProperty ;
+        sh:description    "indicates a ComponentProperty (i.e. attribute/dimension) expected on a DataSet, or a dimension fixed in a SliceKey"@en ;
+        sh:name           "component"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:componentProperty .
+
+<https://astrea.linkeddata.es/shapes#02d4c25304447141a9742f21145f29eb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:MassPerTimePerArea .
+
+<https://astrea.linkeddata.es/shapes#cf6a37cc1bfa54fcde15de1df08c3452>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Polygon"@en ;
+        sh:description    "\nA Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon.\nThe exterior boundary LinearRing defines the top of the surface which is the side of the surface from which the exterior boundary appears to traverse the boundary in a counter clockwise direction. The interior LinearRings will have the opposite orientation, and appear as clockwise when viewed from the top,\nThe assertions for Polygons (the rules that define valid Polygons) are as follows:\na) Polygons are topologically closed;\nb) The boundary of a Polygon consists of a set of LinearRings that make up its exterior and interior boundaries;\nc) No two Rings in the boundary cross and the Rings in the boundary of a Polygon may intersect at a Point but only as a tangent.\nd) A Polygon may not have cut lines, spikes or punctures.\ne) The interior of every Polygon is a connected point set;\nf) The exterior of a Polygon with 1 or more holes is not connected. Each hole defines a connected component of the exterior.\n    "@en ;
+        sh:name           "Polygon"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Polygon .
+
+<https://astrea.linkeddata.es/shapes#95a1939989677b5cd3aacdd30d3d72a0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Compressibility .
+
+<https://astrea.linkeddata.es/shapes#1587eda7f8d0cb9f91d8d4d32a0e1ac3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "observation"@en , "indicates a observation contained within this slice of the data set"@en ;
+        sh:class          qb:Observation ;
+        sh:description    "indicates a observation contained within this slice of the data set"@en ;
+        sh:name           "observation"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:observation .
+
+<https://astrea.linkeddata.es/shapes#e94ea9bef8e93d35e2fe9f1f528dffd3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Surface"@en ;
+        sh:description    "\nA Surface is a 2-dimensional geometric object.\nA simple Surface may consists of a single patch that is associated with one exterior boundary and 0 or more interior boundaries. A single such Surface patch in 3-dimensional space is isometric to planar Surfaces, by a simple affine rotation matrix that rotates the patch onto the plane z = 0. If the patch is not vertical, the projection onto the same plane is an isomorphism, and can be represented as a linear transformation, i.e. an affine.\nPolyhedral Surfaces are formed by stitching together such simple Surfaces patches along their common boundaries. Such polyhedral Surfaces in a 3-dimensional space may not be planar as a whole, depending on the orientation of their planar normals. If all the patches are in alignment (their normals are parallel), then the whole stitched polyhedral surface is co-planar and can be represented as a single patch if it is connected.\nThe boundary of a simple Surface is the set of closed Curves corresponding to its exterior and interior boundaries.\nA Polygon is a simple Surface that is planar. A PolyhedralSurface is a simple surface, consisting of some number of Polygon patches or facets. If a PolyhedralSurface is closed, then it bounds a solid. A MultiSurface containing a set of closed PolyhedralSurfaces can be used to represent a Solid object with holes.\n    "@en ;
+        sh:name           "Surface"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Surface .
+
+<https://astrea.linkeddata.es/shapes#30c875aa3fb49c00876e67703be9061a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "order"@en , "indicates a priority order for the components of sets with this structure, used to guide presentations - lower order numbers come before higher numbers, un-numbered components come last"@en ;
+        sh:datatype       xsd:int ;
+        sh:description    "indicates a priority order for the components of sets with this structure, used to guide presentations - lower order numbers come before higher numbers, un-numbered components come last"@en ;
+        sh:maxInclusive   2147483647 ;
+        sh:minInclusive   -2147483648 ;
+        sh:name           "order"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           qb:order ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#bf1be28f61b0bbde317423ecb2f7d2a7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Triangle"@en ;
+        sh:description    "\n A Triangle is a polygon with 3 distinct, non-collinear vertices and no interior boundary.\n    "@en ;
+        sh:name           "Triangle"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Triangle .
+
+<https://astrea.linkeddata.es/shapes#467f9b0187d4c9cb09e9552fd853c424>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "within"@en , "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
+        sh:name           "within"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:sfWithin .
+
+<https://astrea.linkeddata.es/shapes#e61935f1cc0fbdc80be67c061e1cbf71>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sosa:Observation , iso19156_OB:OM_Observation .
+
+<https://astrea.linkeddata.es/shapes#1f9e8b971e9dc04d5f604cd9c0d23055>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "observation group"@en , "Indicates a group of observations. The domain of this property is left open so that a group may be attached to different resources and need not be restricted to a single DataSet"@en ;
+        sh:class          qb:ObservationGroup ;
+        sh:description    "Indicates a group of observations. The domain of this property is left open so that a group may be attached to different resources and need not be restricted to a single DataSet"@en ;
+        sh:name           "observation group"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:observationGroup .
+
+<https://astrea.linkeddata.es/shapes#1747a03e68342090168eaf0538c06be3>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ssn:Property .
+
+<https://astrea.linkeddata.es/shapes#d08c8bff5e5972b2aab823fd3a6af5f1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Attribute property"@en ;
+        sh:description    "The class of components which represent attributes of observations in the cube, e.g. unit of measurement"@en ;
+        sh:name           "Attribute property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#2756c97972402dcea46d42e487344cda> ;
+        sh:targetClass    qb:AttributeProperty .
+
+<https://astrea.linkeddata.es/shapes#1dcc4d9d13d84acd7cd750d36aa7363d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:SpecificEntropy .
+
+<https://astrea.linkeddata.es/shapes#e99d601b76a7db1b1132902175fa4f7e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Dimensionless .
+
+<https://astrea.linkeddata.es/shapes#b994e8e9c0db40dfd02f9652c2e400cf>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Coded property"@en ;
+        sh:description    "Superclass of all coded ComponentProperties"@en ;
+        sh:name           "Coded property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qb:CodedProperty .
+
+<https://astrea.linkeddata.es/shapes#6eb96a3d9f4aeed62414ab53a4d9e516>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> ;
+        rdfs:label        "numeric value" ;
+        sh:name           "numeric value" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           qudt:numericValue .
+
+<https://astrea.linkeddata.es/shapes#e7b516b5764ab14aac9d4b2dcbe92e80>
+        a            sh:PropertyShape ;
+        sh:class     geo:SpatialObject ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      geo:sfContains .
+
+<https://astrea.linkeddata.es/shapes#378884c9a8a498df70f2e193093df0af>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  ssn: ;
+        rdfs:label        "System"@en ;
+        sh:description    "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems. (Definition taken from http://www.w3.org/ns/ssn/System)"@en ;
+        sh:name           "System"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:System .
+
+<https://astrea.linkeddata.es/shapes#498ecea4906de70915739bdbdf3d1bc0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "SpatialObject"@en ;
+        sh:description    "The class spatial-object represents everything that can have a spatial representation. It is superclass of feature and geometry."@en ;
+        sh:name           "SpatialObject"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#561d7681316bbbc7f832f6f814fa96dd> , <https://astrea.linkeddata.es/shapes#467f9b0187d4c9cb09e9552fd853c424> , <https://astrea.linkeddata.es/shapes#a6fc85850e8eaf3606f2059efa9f8fb3> , <https://astrea.linkeddata.es/shapes#e7b516b5764ab14aac9d4b2dcbe92e80> , <https://astrea.linkeddata.es/shapes#8355820918b8f052e2489eb782a08ab2> , <https://astrea.linkeddata.es/shapes#eb47bba04f59dfa4446ff67663f33e76> ;
+        sh:targetClass    geo:SpatialObject .
+
+<https://astrea.linkeddata.es/shapes#c9012e927a0e4a0781e8572502310c2c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "slice structure"@en , "indicates the sub-key corresponding to this slice"@en ;
+        sh:class          qb:SliceKey ;
+        sh:description    "indicates the sub-key corresponding to this slice"@en ;
+        sh:name           "slice structure"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:sliceStructure .
+
+<https://astrea.linkeddata.es/shapes#3b03bab9f8bf5207ae7c517190972ec0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        rdfs:label        "PropertyKind" ;
+        sh:name           "PropertyKind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qu:PropertyKind .
+
+<https://astrea.linkeddata.es/shapes#67887954de7f456192f7a2bbf8e8241c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foaf:member .
+
+<https://astrea.linkeddata.es/shapes#cd9445c64e106b75337259da0347cea3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Concentration .
+
+<https://astrea.linkeddata.es/shapes#4b0de082e19a0eddd94cfeeef929fe10>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Energy .
+
+<https://astrea.linkeddata.es/shapes#9e81a8547fd8cabc79752e243c8d2b67>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "Geometry"@en ;
+        sh:description    "\n      The class represents the top-level geometry type. This class is \n      equivalent to the UML class GM_Object defined in ISO 19107, and \n      it is superclass of all geometry types.\n    "@en ;
+        sh:name           "Geometry"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0f6502053608fc059a721676b6e67115> , <https://astrea.linkeddata.es/shapes#ea758cf93a4a6fcb568c859d464061d1> ;
+        sh:targetClass    geo:Geometry .
+
+<https://astrea.linkeddata.es/report/0522250327>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/cross-domain.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b5058f72d9f76b4d536b009317669251>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Data structure definition"@en ;
+        sh:description    "Defines the structure of a DataSet or slice"@en ;
+        sh:name           "Data structure definition"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#625bd4edbe377be2d701fd9706a480d1> , <https://astrea.linkeddata.es/shapes#f782702500d81dd4edaa6a038a4963c1> ;
+        sh:targetClass    qb:DataStructureDefinition .
+
+<https://astrea.linkeddata.es/shapes#f4b3df753bc2c96f73b6c78451bbe220>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      sosa:madeBySensor .
+
+<https://astrea.linkeddata.es/shapes#25c3adb40ac09192c2b49de35c64abad>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Geometry Collection"@en ;
+        sh:description    "\nA GeometryCollection is a geometric object that is a collection of some number of geometric objects.\nAll the elements in a GeometryCollection shall be in the same Spatial Reference System. This is also the Spatial Reference System for the GeometryCollection.\nGeometryCollection places no other constraints on its elements. Subclasses of GeometryCollection may restrict membership based on dimension and may also place other constraints on the degree of spatial overlap between elements.\n    "@en ;
+        sh:name           "Geometry Collection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:GeometryCollection .
+
+<https://astrea.linkeddata.es/shapes#feb55fa4be1793183a97c77e8da8b390>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:EnergyFlux .
+
+<https://astrea.linkeddata.es/shapes#3fb3d7e699b8cb63253d30f5333e189d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "data set"@en , "indicates the data set of which this observation is a part"@en ;
+        sh:class          qb:DataSet ;
+        sh:description    "indicates the data set of which this observation is a part"@en ;
+        sh:name           "data set"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:dataSet .
+
+<https://astrea.linkeddata.es/shapes#fd268784d770a61cc9487f7932e3e9ec>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  ssn: ;
+        rdfs:label        "has subsystem"@en ;
+        sh:name           "has subsystem"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasSubSystem .
+
+<https://astrea.linkeddata.es/shapes#2892a1d5ac68741abb1b8f96a9763d31>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:RotationalSpeed .
+
+<https://astrea.linkeddata.es/shapes#96c5445ce9eb6c581ca247628a9b99fa>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Density .
+
+<https://astrea.linkeddata.es/shapes#4c2a7071ea33639d68e5a51243e69b08>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://standards.iso.org/iso/19156/ed-1/en/> ;
+        rdfs:label        "SF_SamplingFeature" ;
+        sh:name           "SF_SamplingFeature" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6139dbdac2e61aac420a8fa177e36402> ;
+        sh:targetClass    iso19156_SF:SF_SamplingFeature .
+
+<https://astrea.linkeddata.es/shapes#82ac0ee2607c4d742aa0dafe16a38558>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "result time"@en , "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en ;
+        sh:name           "result time"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           sosa:resultTime ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#2d1397475113b7db235fc471ef1ae5d3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Line"@en ;
+        sh:description    "\nA Line is a LineString with exactly 2 Points.\n    "@en ;
+        sh:name           "Line"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Line .
+
+<https://astrea.linkeddata.es/shapes#45ac58583e103c7299ab53cc169bf85e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Data set"@en ;
+        sh:description    "Represents a collection of observations, possibly organized into various slices, conforming to some common dimensional structure."@en ;
+        sh:name           "Data set"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#35dd5ad4c024b78e066ab979557ce53e> ;
+        sh:targetClass    qb:DataSet .
+
+<https://astrea.linkeddata.es/shapes#95da19ec76b5a8a3977cc858fc374ee8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Curve"@en ;
+        sh:description    "\nA MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.\nA MultiCurve defines a set of methods for its subclasses and is included for reasons of extensibility.\nA MultiCurve is simple if and only if all of its elements are simple and the only intersections between any two elements occur at Points that are on the boundaries of both elements.\nThe boundary of a MultiCurve is obtained by applying the mod 2 union rule: A Point is in the boundary of a MultiCurve if it is in the boundaries of an odd number of elements of the MultiCurve.\nA MultiCurve is closed if all of its elements are closed. The boundary of a closed MultiCurve is always empty.\nA MultiCurve is defined as topologically closed.\n    "@en ;
+        sh:name           "Multi Curve"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiCurve .
+
+<https://astrea.linkeddata.es/shapes#798f5efed7706e1ab95b8bff19b57ed8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:SurfaceDensity .
+
+<https://astrea.linkeddata.es/shapes#aa5038b3045842c3467135022934c084>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Triangulated Irregular Network"@en ;
+        sh:description    "\nA TIN (triangulated irregular network) is a PolyhedralSurface consisting only of Triangle patches.\n    "@en ;
+        sh:name           "Triangulated Irregular Network"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:TIN .
+
+<https://astrea.linkeddata.es/shapes#3612b2c16ebce72371e3646a901384d2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:VelocityOrSpeed .
+
+<https://astrea.linkeddata.es/shapes#c08dff0e53e0b76f625bc3a192fdc520>
+        a               sh:NodeShape ;
+        rdfs:label      "Role"@en ;
+        sh:description  "Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.<br/><br/> " ;
+        sh:name         "Role"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  schema:Role .
+
+<https://astrea.linkeddata.es/shapes#81921484f3bd8f24202abc510618144d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ngsi-ld:Entity .
+
+<https://astrea.linkeddata.es/shapes#c1d157bf8bbdcb60f5d63d86bced7915>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  skos:Scheme .
+
+<https://astrea.linkeddata.es/shapes#8c9f0a3ef50fe390869f7c693885d425>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "Feature"@en ;
+        sh:description    "\n      This class represents the top-level feature type. This class is \n      equivalent to GFI_Feature defined in ISO 19156:2011, and it is \n      superclass of all feature types.\n    "@en ;
+        sh:name           "Feature"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#16b639b6c59786f5c650e18b0080386b> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3f6891594ac2d163a004bec00f8db48a> , <https://astrea.linkeddata.es/shapes#3348f96caa15fb50d86f0a2231585642> ;
+        sh:targetClass    geo:Feature , iso19156_GFI:GFI_Feature .
+
+<https://astrea.linkeddata.es/shapes#c8592f59b9f1f31ba0fc9d468fd8eb93>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Linear Ring"@en ;
+        sh:description    "\nA LinearRing is a LineString that is both closed and simple.\n    "@en ;
+        sh:name           "Linear Ring"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:LinearRing .
+
+<https://astrea.linkeddata.es/shapes#c058a40bb679abdf650145e1bdd5148e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  ssn: ;
+        rdfs:label        "deployed system"@en , "Relation between a deployment and the system deployed."@en ;
+        sh:description    "Relation between a deployment and the system deployed."@en ;
+        sh:name           "deployed system"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:deployedSystem .
+
+<https://astrea.linkeddata.es/shapes#d1b9c96629799d5323309fb5b564aa36>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Observation Group"@en ;
+        sh:description    "A, possibly arbitrary, group of observations."@en ;
+        sh:name           "Observation Group"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1587eda7f8d0cb9f91d8d4d32a0e1ac3> ;
+        sh:targetClass    qb:ObservationGroup .
+
+<https://astrea.linkeddata.es/shapes#35dd5ad4c024b78e066ab979557ce53e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "slice"@en , "Indicates a subset of a DataSet defined by fixing a subset of the dimensional values"@en ;
+        sh:class          qb:Slice ;
+        sh:description    "Indicates a subset of a DataSet defined by fixing a subset of the dimensional values"@en ;
+        sh:name           "slice"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:slice .
+
+<https://astrea.linkeddata.es/shapes#f2457c74a6bad939d7352214edada504>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Surface"@en ;
+        sh:description    "\nA MultiSurface is a 2-dimensional GeometryCollection whose elements are Surfaces, all using coordinates from the same coordinate reference system. The geometric interiors of any two Surfaces in a MultiSurface may not intersect in the full coordinate system. The boundaries of any two coplanar elements in a MultiSurface may intersect, at most, at a finite number of Points. If they were to meet along a curve, they could be merged into a single surface.\nA MultiSurface may be used to represent heterogeneous surfaces collections of polygons and polyhedral surfaces. It defines a set of methods for its subclasses. The subclass of MultiSurface is MultiPolygon corresponding to a collection of Polygons only. Other collections shall use MultiSurface.\n    "@en ;
+        sh:name           "Multi Surface"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiSurface .
+
+<https://astrea.linkeddata.es/shapes#163744438032c52e32bf3c7c8bb195e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Point"@en ;
+        sh:description    "\nA Point is a 0-dimensional geometric object and represents a single location in coordinate space. \nA Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.\nThe boundary of a Point is the empty set.\n    "@en ;
+        sh:name           "Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Point .
+
+<https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  wgs84_pos: ;
+        rdfs:label        "Point"@en ;
+        sh:description    "A point, typically described using a coordinate system relative to Earth, such as WGS84." , " \nUniquely identified by lat/long/alt. i.e.\n\nspaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),\n  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).\n\nsameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).\n  " ;
+        sh:name           "Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    wgs84_pos:Point .
+
+<https://astrea.linkeddata.es/shapes#0f6502053608fc059a721676b6e67115>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "has serialization"@en , "Connects a geometry object with its text-based serialization"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "Connects a geometry object with its text-based serialization"@en ;
+        sh:name           "has serialization"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           geo:hasSerialization .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Person"@en ;
+        sh:name           "Person"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foaf:Person , schema:Person .
+
+<https://astrea.linkeddata.es/shapes#2756c97972402dcea46d42e487344cda>
+        a         sh:PropertyShape ;
+        sh:class  qb:MeasureProperty .
+
+<https://astrea.linkeddata.es/shapes#b28f1a50b3141c95955799dfa1cd4295>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      sosa:observedProperty .
+
+<https://astrea.linkeddata.es/shapes#16b639b6c59786f5c650e18b0080386b>
+        a         sh:PropertyShape ;
+        sh:class  geo:Geometry .
+
+<https://astrea.linkeddata.es/shapes#c38ddf7f7d575c414b91bceafbe9a23c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:ThermalConductivity .
+
+<https://astrea.linkeddata.es/shapes#fb6802dcb5981650418c16b60628a52a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Component specification"@en ;
+        sh:description    "Used to define properties of a component (attribute, dimension etc) which are specific to its usage in a DSD."@en ;
+        sh:name           "Component specification"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#30c875aa3fb49c00876e67703be9061a> ;
+        sh:targetClass    qb:ComponentSpecification .
+
+<https://astrea.linkeddata.es/shapes#c186b1044a6b8571d5484d0488dd2d7b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "Platform"@en ;
+        sh:description    "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms (definition taken from http://www.w3.org/ns/sosa/Platform)"@en ;
+        sh:name           "Platform"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sosa:Platform .
+
+<https://astrea.linkeddata.es/shapes#855273ca04ca4b481812b8ce82d92167>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "dimension"@en , "An alternative to qb:componentProperty which makes explicit that the component is a dimension"@en ;
+        sh:class          qb:DimensionProperty ;
+        sh:description    "An alternative to qb:componentProperty which makes explicit that the component is a dimension"@en ;
+        sh:name           "dimension"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:dimension .
+
+<https://astrea.linkeddata.es/shapes#773ee1c13e884ec4f5e6535d912e7461>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "Well-known Text Literal"@en , "A Well-known Text serialization of a geometry object."@en ;
+        sh:description    "A Well-known Text serialization of a geometry object."@en ;
+        sh:name           "Well-known Text Literal"@en ;
+        sh:nodeKind       sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#3348f96caa15fb50d86f0a2231585642>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "hasGeometry"@en , "\n      A spatial representation for a given feature.\n    "@en ;
+        sh:class          geo:Geometry ;
+        sh:description    "\n      A spatial representation for a given feature.\n    "@en ;
+        sh:name           "hasGeometry"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:hasGeometry .
+
+<https://astrea.linkeddata.es/shapes#43b5d300ac4d2e35f86d50b8f9c69692>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.iso.org/standard/44595.html> ;
+        rdfs:label        "Observation" ;
+        sh:name           "Observation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    iso19156_OB:OM_Observation .
+
+<https://astrea.linkeddata.es/shapes#e85f7f569c1b43b31809a79038a33ed0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "Feature Of Interest"@en ;
+        sh:name           "Feature Of Interest"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sosa:FeatureOfInterest .
+
+<https://astrea.linkeddata.es/shapes#de2fa1af89dfd5df63d132ae742481df>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Geometry"@en ;
+        sh:description    "\nGeometry is the root class of the hierarchy.\nThe instantiable subclasses of Geometry are restricted to 0, 1 and 2-dimensional geometric objects that exist in 2, 3 or 4-dimensional coordinate space (R2, R3 or R4). Geometry values in R2 have points with coordinate values for x and y. Geometry values in R3 have points with coordinate values for x, y and z or for x, y and m. Geometry values in R4 have points with coordinate values for x, y, z and m.\nThe interpretation of the coordinates is subject to the coordinate reference systems associated to the point. All coordinates within a geometry object should be in the same coordinate reference systems. Each coordinate shall be unambiguously associated to a coordinate reference system either directly or through its containing geometry. The z coordinate of a point is typically, but not necessarily, represents altitude or elevation. The m coordinate represents a measurement.\nAll Geometry classes described in this specification are defined so that instances of Geometry are topologically closed, i.e. all represented geometries include their boundary as point sets. This does not affect their representation, and open version of the same classes may be used in other circumstances, such as topological representations.\n    "@en ;
+        sh:name           "Geometry"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Geometry .
+
+<https://astrea.linkeddata.es/shapes#6ca1b18163449d6df4a3c37840d223d8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      ngsi-ld:Relationship .
+
+<https://astrea.linkeddata.es/shapes#28859dcb6be4a9e21f596c8879fa717a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  ssn: ;
+        rdfs:label        "in deployment"@en , "Relation between a platform and the deployment(s) that takes place in the platform."@en ;
+        sh:description    "Relation between a platform and the deployment(s) that takes place in the platform."@en ;
+        sh:name           "in deployment"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:inDeployment .
+
+<https://astrea.linkeddata.es/shapes#063f206ce3739840972aeccecf104496>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Power .
+
+<https://astrea.linkeddata.es/shapes#ffa627c90b2f93431bad38fc95750b9e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  wgs84_pos: ;
+        rdfs:label        "location" , "The relation between something and the point, or other geometrical thing in space, where it is." ;
+        sh:description    "The relation between something and the point, or other geometrical thing in space, where it is." ;
+        sh:name           "location" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           wgs84_pos:location .
+
+<https://astrea.linkeddata.es/shapes#125eef08b12ba43d878ac29d6ea9c5bc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Distance .
+
+<https://astrea.linkeddata.es/shapes#5df41e27a6a109010ffe856646bac71a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:Temperature .
+
+<https://astrea.linkeddata.es/shapes#090a3f349757c6a335a6955dca2db4d1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      ssn:implements .
+
+<https://astrea.linkeddata.es/shapes#6fe7446209c7d0657bea56e0dd818d93>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "is hosted by"@en , "Relation between a system and its hosting platform."@en ;
+        sh:description    "Relation between a system and its hosting platform."@en ;
+        sh:name           "is hosted by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           sosa:isHostedBy .
+
+<https://astrea.linkeddata.es/shapes#e7929688d1eb164b8e14b2892279ac15>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  ssn: ;
+        rdfs:label        "Deployment"@en ;
+        sh:name           "Deployment"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Deployment .
+
+<https://astrea.linkeddata.es/shapes#b0e4858dd6a7fdf0deca7b1a3e325357>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sosa:ObservableProperty .
+
+<https://astrea.linkeddata.es/shapes#3a96954232692327de72313d73b73112>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Measure property"@en ;
+        sh:description    "The class of components which represent the measured value of the phenomenon being observed"@en ;
+        sh:name           "Measure property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#7c708841b8b6a556648a36e2070312bc> , <https://astrea.linkeddata.es/shapes#17e979387e8a0ecc05c47869136bd8fe> ;
+        sh:targetClass    qb:MeasureProperty .
+
+<https://astrea.linkeddata.es/shapes#5d87b6936fc7752d0592843b47d94005>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> ;
+        rdfs:label        "Quantity" ;
+        sh:name           "Quantity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qudt:Quantity .
+
+<https://astrea.linkeddata.es/shapes#f1d1badc9e7abaf351c487bb315d0de3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> ;
+        rdfs:label        "quantity value" ;
+        sh:class          qudt:QuantityValue ;
+        sh:name           "quantity value" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qudt:quantityValue .
+
+<https://astrea.linkeddata.es/shapes#811ef72b6ccea344721cf0bcfa6618ba>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/ssn> ;
+        rdfs:label        "A relation between a FeatureOfInterest and a Property of that feature." ;
+        sh:description    "A relation between a FeatureOfInterest and a Property of that feature." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasProperty .
+
+<https://astrea.linkeddata.es/shapes#625bd4edbe377be2d701fd9706a480d1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "component specification"@en , "indicates a component specification which is included in the structure of the dataset"@en ;
+        sh:class          qb:ComponentSpecification ;
+        sh:description    "indicates a component specification which is included in the structure of the dataset"@en ;
+        sh:name           "component specification"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:component .
+
+<https://astrea.linkeddata.es/shapes#83a0df004510a40b573b850aca7b2d8e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "made observation"@en , "Relation between a Sensor and an Observation made by the Sensor."@en ;
+        sh:description    "Relation between a Sensor and an Observation made by the Sensor."@en ;
+        sh:name           "made observation"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           sosa:madeObservation .
+
+<https://astrea.linkeddata.es/shapes#3f6891594ac2d163a004bec00f8db48a>
+        a            sh:PropertyShape ;
+        sh:class     geo:Geometry ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      geo:hasGeometry .
+
+<https://astrea.linkeddata.es/shapes#eb47bba04f59dfa4446ff67663f33e76>
+        a            sh:PropertyShape ;
+        sh:class     geo:SpatialObject ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      geo:sfWithin .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#bad73d2a7ad043accbe5124206f875a8> , <https://astrea.linkeddata.es/shapes#ce137a6ae8005973ea185df81f79ee37> , <https://astrea.linkeddata.es/shapes#e7b516b5764ab14aac9d4b2dcbe92e80> , <https://astrea.linkeddata.es/shapes#e85f7f569c1b43b31809a79038a33ed0> , <https://astrea.linkeddata.es/shapes#0e9df4f49cf1f0a3373861594f2772a3> , <https://astrea.linkeddata.es/shapes#063d7966d5bb5967dca9c2fed9e1416a> , <https://astrea.linkeddata.es/shapes#163744438032c52e32bf3c7c8bb195e8> , <https://astrea.linkeddata.es/shapes#2892a1d5ac68741abb1b8f96a9763d31> , <https://astrea.linkeddata.es/shapes#fb6802dcb5981650418c16b60628a52a> , <https://astrea.linkeddata.es/shapes#2b2c87e5aca5b65a28d66b3e9a96621a> , <https://astrea.linkeddata.es/shapes#f196d50238714ed345057b23b1b1272c> , <https://astrea.linkeddata.es/shapes#7bf5a93636f246b0b32724c78dace32f> , <https://astrea.linkeddata.es/shapes#2756c97972402dcea46d42e487344cda> , <https://astrea.linkeddata.es/shapes#48ea695aa98408a6ade8ae77c99c7bb4> , <https://astrea.linkeddata.es/shapes#95da19ec76b5a8a3977cc858fc374ee8> , <https://astrea.linkeddata.es/shapes#7317fff6f0fe9d43eb9307265f55dbf9> , <https://astrea.linkeddata.es/shapes#c28a9bfd3b99f5da1c865b551408b5fe> , <https://astrea.linkeddata.es/shapes#35dd5ad4c024b78e066ab979557ce53e> , <https://astrea.linkeddata.es/shapes#798f5efed7706e1ab95b8bff19b57ed8> , <https://astrea.linkeddata.es/shapes#cd9445c64e106b75337259da0347cea3> , <https://astrea.linkeddata.es/shapes#c1d157bf8bbdcb60f5d63d86bced7915> , <https://astrea.linkeddata.es/shapes#82ac0ee2607c4d742aa0dafe16a38558> , <https://astrea.linkeddata.es/shapes#1dcc4d9d13d84acd7cd750d36aa7363d> , <https://astrea.linkeddata.es/shapes#467f9b0187d4c9cb09e9552fd853c424> , <https://astrea.linkeddata.es/shapes#45ac58583e103c7299ab53cc169bf85e> , <https://astrea.linkeddata.es/shapes#465cd0a96b70553cb308e4fda77ef273> , <https://astrea.linkeddata.es/shapes#f2457c74a6bad939d7352214edada504> , <https://astrea.linkeddata.es/shapes#b28f1a50b3141c95955799dfa1cd4295> , <https://astrea.linkeddata.es/shapes#378884c9a8a498df70f2e193093df0af> , <https://astrea.linkeddata.es/shapes#811ef72b6ccea344721cf0bcfa6618ba> , <https://astrea.linkeddata.es/shapes#c38ddf7f7d575c414b91bceafbe9a23c> , <https://astrea.linkeddata.es/shapes#5df41e27a6a109010ffe856646bac71a> , <https://astrea.linkeddata.es/shapes#bf1be28f61b0bbde317423ecb2f7d2a7> , <https://astrea.linkeddata.es/shapes#6c4eb5c4906d5ba4c081f85367dd0edd> , <https://astrea.linkeddata.es/shapes#c8592f59b9f1f31ba0fc9d468fd8eb93> , <https://astrea.linkeddata.es/shapes#d08c8bff5e5972b2aab823fd3a6af5f1> , <https://astrea.linkeddata.es/shapes#090a3f349757c6a335a6955dca2db4d1> , <https://astrea.linkeddata.es/shapes#feb55fa4be1793183a97c77e8da8b390> , <https://astrea.linkeddata.es/shapes#8355820918b8f052e2489eb782a08ab2> , <https://astrea.linkeddata.es/shapes#1f9e8b971e9dc04d5f604cd9c0d23055> , <https://astrea.linkeddata.es/shapes#6fe7446209c7d0657bea56e0dd818d93> , <https://astrea.linkeddata.es/shapes#d5c7ac2382b8547f77f4b890d4d958e6> , <https://astrea.linkeddata.es/shapes#95a1939989677b5cd3aacdd30d3d72a0> , <https://astrea.linkeddata.es/shapes#fd268784d770a61cc9487f7932e3e9ec> , <https://astrea.linkeddata.es/shapes#6eb96a3d9f4aeed62414ab53a4d9e516> , <https://astrea.linkeddata.es/shapes#81921484f3bd8f24202abc510618144d> , <https://astrea.linkeddata.es/shapes#4b0de082e19a0eddd94cfeeef929fe10> , <https://astrea.linkeddata.es/shapes#67887954de7f456192f7a2bbf8e8241c> , <https://astrea.linkeddata.es/shapes#a0b008815cd8501c0f8a678830ff0399> , <https://astrea.linkeddata.es/shapes#125eef08b12ba43d878ac29d6ea9c5bc> , <https://astrea.linkeddata.es/shapes#b994e8e9c0db40dfd02f9652c2e400cf> , <https://astrea.linkeddata.es/shapes#1587eda7f8d0cb9f91d8d4d32a0e1ac3> , <https://astrea.linkeddata.es/shapes#96c5445ce9eb6c581ca247628a9b99fa> , <https://astrea.linkeddata.es/shapes#e94ea9bef8e93d35e2fe9f1f528dffd3> , <https://astrea.linkeddata.es/shapes#e7929688d1eb164b8e14b2892279ac15> , <https://astrea.linkeddata.es/shapes#f782702500d81dd4edaa6a038a4963c1> , <https://astrea.linkeddata.es/shapes#625bd4edbe377be2d701fd9706a480d1> , <https://astrea.linkeddata.es/shapes#f1d1badc9e7abaf351c487bb315d0de3> , <https://astrea.linkeddata.es/shapes#30c875aa3fb49c00876e67703be9061a> , <https://astrea.linkeddata.es/shapes#17e979387e8a0ecc05c47869136bd8fe> , <https://astrea.linkeddata.es/shapes#c3566a8caa4882c511a529910b132529> , <https://astrea.linkeddata.es/shapes#ea758cf93a4a6fcb568c859d464061d1> , <https://astrea.linkeddata.es/shapes#eb47bba04f59dfa4446ff67663f33e76> , <https://astrea.linkeddata.es/shapes#43b5d300ac4d2e35f86d50b8f9c69692> , <https://astrea.linkeddata.es/shapes#8c9f0a3ef50fe390869f7c693885d425> , <https://astrea.linkeddata.es/shapes#733c015d5afbfee34b891410275696c6> , <https://astrea.linkeddata.es/shapes#4bacfd9a756cf25bde1c319b1621e85e> , <https://astrea.linkeddata.es/shapes#c08dff0e53e0b76f625bc3a192fdc520> , <https://astrea.linkeddata.es/shapes#c058a40bb679abdf650145e1bdd5148e> , <https://astrea.linkeddata.es/shapes#17219543f81283d3a8bec6ca4e79d217> , <https://astrea.linkeddata.es/shapes#3b03bab9f8bf5207ae7c517190972ec0> , <https://astrea.linkeddata.es/shapes#f8d39a8571f65103be4266433a282cd5> , <https://astrea.linkeddata.es/shapes#3a96954232692327de72313d73b73112> , <https://astrea.linkeddata.es/shapes#063f206ce3739840972aeccecf104496> , <https://astrea.linkeddata.es/shapes#a6ea61114ce41b9bec42319b4236e2df> , <https://astrea.linkeddata.es/shapes#965775931c87522ab3a6e80205152035> , <https://astrea.linkeddata.es/shapes#3fb3d7e699b8cb63253d30f5333e189d> , <https://astrea.linkeddata.es/shapes#02d4c25304447141a9742f21145f29eb> , <https://astrea.linkeddata.es/shapes#e0599d95572fe81e4b21d3a2baee101e> , <https://astrea.linkeddata.es/shapes#ae83a7fbdc4c12ed8789e7b8d38428d5> , <https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8> , <https://astrea.linkeddata.es/shapes#9f3f156f683d37683f9c2798ebd9c3a6> , <https://astrea.linkeddata.es/shapes#9e81a8547fd8cabc79752e243c8d2b67> , <https://astrea.linkeddata.es/shapes#56557bc9303fc90a597d12a094b83eb3> , <https://astrea.linkeddata.es/shapes#25c3adb40ac09192c2b49de35c64abad> , <https://astrea.linkeddata.es/shapes#ffa627c90b2f93431bad38fc95750b9e> , <https://astrea.linkeddata.es/shapes#c9012e927a0e4a0781e8572502310c2c> , <https://astrea.linkeddata.es/shapes#21e87ae54ee2f9e68cf4b18b30541c13> , <https://astrea.linkeddata.es/shapes#6ca1b18163449d6df4a3c37840d223d8> , <https://astrea.linkeddata.es/shapes#c8ba0e30ea76a68976d6ab2f0d9ce576> , <https://astrea.linkeddata.es/shapes#fa78cfbce37dbcb34ab378481e7243c2> , <https://astrea.linkeddata.es/shapes#6139dbdac2e61aac420a8fa177e36402> , <https://astrea.linkeddata.es/shapes#773ee1c13e884ec4f5e6535d912e7461> , <https://astrea.linkeddata.es/shapes#3ff4ff08449fef9927d2a75d59e881a0> , <https://astrea.linkeddata.es/shapes#16b639b6c59786f5c650e18b0080386b> , <https://astrea.linkeddata.es/shapes#7c708841b8b6a556648a36e2070312bc> , <https://astrea.linkeddata.es/shapes#3f6891594ac2d163a004bec00f8db48a> , <https://astrea.linkeddata.es/shapes#4c2a7071ea33639d68e5a51243e69b08> , <https://astrea.linkeddata.es/shapes#3cadcceeb4d136522f36af7913b4481e> , <https://astrea.linkeddata.es/shapes#e61935f1cc0fbdc80be67c061e1cbf71> , <https://astrea.linkeddata.es/shapes#855273ca04ca4b481812b8ce82d92167> , <https://astrea.linkeddata.es/shapes#cf6a37cc1bfa54fcde15de1df08c3452> , <https://astrea.linkeddata.es/shapes#1bc257992e4584fa4ec247decbd920d5> , <https://astrea.linkeddata.es/shapes#aa5038b3045842c3467135022934c084> , <https://astrea.linkeddata.es/shapes#7aeedc1b9db4c317ebda21f1adc5cc2f> , <https://astrea.linkeddata.es/shapes#e99d601b76a7db1b1132902175fa4f7e> , <https://astrea.linkeddata.es/shapes#be1c6bcec411d57176afa44ebe0ffa44> , <https://astrea.linkeddata.es/shapes#7d31e878918619ad12be68dcc0363395> , <https://astrea.linkeddata.es/shapes#1747a03e68342090168eaf0538c06be3> , <https://astrea.linkeddata.es/shapes#5d87b6936fc7752d0592843b47d94005> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#6d8821900054948705b59d34be7f676c> , <https://astrea.linkeddata.es/shapes#83a0df004510a40b573b850aca7b2d8e> , <https://astrea.linkeddata.es/shapes#3612b2c16ebce72371e3646a901384d2> , <https://astrea.linkeddata.es/shapes#c186b1044a6b8571d5484d0488dd2d7b> , <https://astrea.linkeddata.es/shapes#b5058f72d9f76b4d536b009317669251> , <https://astrea.linkeddata.es/shapes#3348f96caa15fb50d86f0a2231585642> , <https://astrea.linkeddata.es/shapes#561d7681316bbbc7f832f6f814fa96dd> , <https://astrea.linkeddata.es/shapes#095f9984c5d4662d997b832984a4966e> , <https://astrea.linkeddata.es/shapes#de2fa1af89dfd5df63d132ae742481df> , <https://astrea.linkeddata.es/shapes#2d1397475113b7db235fc471ef1ae5d3> , <https://astrea.linkeddata.es/shapes#9e9cb48c1174c31afed273d1a674e5ba> , <https://astrea.linkeddata.es/shapes#c7e7becb820bed6f107f282d3536be27> , <https://astrea.linkeddata.es/shapes#498ecea4906de70915739bdbdf3d1bc0> , <https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63> , <https://astrea.linkeddata.es/shapes#a6fc85850e8eaf3606f2059efa9f8fb3> , <https://astrea.linkeddata.es/shapes#345d2f0764a7c6b4e60a85749fedc13d> , <https://astrea.linkeddata.es/shapes#d1b9c96629799d5323309fb5b564aa36> , <https://astrea.linkeddata.es/shapes#fbd4ab2d5fae631f5508a529d1eec812> , <https://astrea.linkeddata.es/shapes#f4b3df753bc2c96f73b6c78451bbe220> , <https://astrea.linkeddata.es/shapes#eab2ccb77e56d3ad473395331d814f3d> , <https://astrea.linkeddata.es/shapes#b0e4858dd6a7fdf0deca7b1a3e325357> , <https://astrea.linkeddata.es/shapes#28859dcb6be4a9e21f596c8879fa717a> , <https://astrea.linkeddata.es/shapes#0f6502053608fc059a721676b6e67115> , <https://astrea.linkeddata.es/shapes#e7d09ea75472fdab925bd7954ab0a2f4> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0522250327> .
+
+<https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "member" ;
+        sh:name           "member" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:member .
+
+<https://astrea.linkeddata.es/shapes#bad73d2a7ad043accbe5124206f875a8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> ;
+        rdfs:label        "has quantity kind" ;
+        sh:class          qudt:QuantityKind ;
+        sh:name           "has quantity kind" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qudt:hasQuantityKind .
+
+<https://astrea.linkeddata.es/shapes#7c708841b8b6a556648a36e2070312bc>
+        a         sh:PropertyShape ;
+        sh:class  qb:DimensionProperty .
+
+<https://astrea.linkeddata.es/shapes#c8ba0e30ea76a68976d6ab2f0d9ce576>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "has feature of interest"@en , "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en ;
+        sh:description    "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en ;
+        sh:name           "has feature of interest"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           sosa:hasFeatureOfInterest .
+
+<https://astrea.linkeddata.es/shapes#4bacfd9a756cf25bde1c319b1621e85e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "is feature of interest of"@en , "A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it."@en ;
+        sh:description    "A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it."@en ;
+        sh:name           "is feature of interest of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           sosa:isFeatureOfInterestOf .
+
+<https://astrea.linkeddata.es/shapes#f782702500d81dd4edaa6a038a4963c1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "slice key"@en , "indicates a slice key which is used for slices in this dataset"@en ;
+        sh:class          qb:SliceKey ;
+        sh:description    "indicates a slice key which is used for slices in this dataset"@en ;
+        sh:name           "slice key"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:sliceKey .
+
+<https://astrea.linkeddata.es/shapes#7317fff6f0fe9d43eb9307265f55dbf9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Line String"@en ;
+        sh:description    "\nA MultiLineString is a MultiCurve whose elements are LineStrings.\n    "@en ;
+        sh:name           "Multi Line String"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiLineString .
+
+<https://astrea.linkeddata.es/shapes#c7e7becb820bed6f107f282d3536be27>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Component property (abstract)"@en ;
+        sh:description    "Abstract super-property of all properties representing dimensions, attributes or measures"@en ;
+        sh:name           "Component property (abstract)"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d5c7ac2382b8547f77f4b890d4d958e6> ;
+        sh:targetClass    qb:ComponentProperty .
+
+<https://astrea.linkeddata.es/shapes#c28a9bfd3b99f5da1c865b551408b5fe>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      ssn:isPropertyOf .
+
+<https://astrea.linkeddata.es/shapes#965775931c87522ab3a6e80205152035>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "measure"@en , "An alternative to qb:componentProperty which makes explicit that the component is a measure"@en ;
+        sh:class          qb:MeasureProperty ;
+        sh:description    "An alternative to qb:componentProperty which makes explicit that the component is a measure"@en ;
+        sh:name           "measure"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:measure .
+
+<https://astrea.linkeddata.es/shapes#17219543f81283d3a8bec6ca4e79d217>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Slice key"@en ;
+        sh:description    "Denotes a subset of the component properties of a DataSet which are fixed in the corresponding slices"@en ;
+        sh:name           "Slice key"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qb:SliceKey .
+
+<https://astrea.linkeddata.es/shapes#fbd4ab2d5fae631f5508a529d1eec812>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "has simple result"@en , "The simple value of an Observation or Actuation."@en ;
+        sh:description    "The simple value of an Observation or Actuation."@en ;
+        sh:name           "has simple result"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           sosa:hasSimpleResult .
+
+<https://astrea.linkeddata.es/shapes#f8d39a8571f65103be4266433a282cd5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  ssn: ;
+        rdfs:label        "deployed on platform"@en , "Relation between a deployment and the platform(s) involved in the deployment."@en ;
+        sh:description    "Relation between a deployment and the platform(s) involved in the deployment."@en ;
+        sh:name           "deployed on platform"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:deployedOnPlatform .
+
+<https://astrea.linkeddata.es/shapes#a6ea61114ce41b9bec42319b4236e2df>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Line String"@en ;
+        sh:description    "\nA LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.\n    "@en ;
+        sh:name           "Line String"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:LineString .
+
+<https://astrea.linkeddata.es/shapes#56557bc9303fc90a597d12a094b83eb3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "Result"@en ;
+        sh:description    "The Result of an Observation, Actuation, or act of Sampling. To store an observation's simple result value one can use the hasSimpleResult property."@en ;
+        sh:name           "Result"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sosa:Result .
+
+<https://astrea.linkeddata.es/shapes#095f9984c5d4662d997b832984a4966e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:StressOrPressure .
+
+<https://astrea.linkeddata.es/shapes#3ff4ff08449fef9927d2a75d59e881a0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Slice"@en ;
+        sh:description    "Denotes a subset of a DataSet defined by fixing a subset of the dimensional values, component properties on the Slice"@en ;
+        sh:name           "Slice"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c9012e927a0e4a0781e8572502310c2c> ;
+        sh:targetClass    qb:Slice .
+
+<https://astrea.linkeddata.es/shapes#3cadcceeb4d136522f36af7913b4481e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:EnergyDensity .
+
+<https://astrea.linkeddata.es/shapes#465cd0a96b70553cb308e4fda77ef273>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Attachable (abstract)"@en ;
+        sh:description    "Abstract superclass for everything that can have attributes and dimensions"@en ;
+        sh:name           "Attachable (abstract)"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    qb:Attachable .
+
+<https://astrea.linkeddata.es/shapes#7d31e878918619ad12be68dcc0363395>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  schema:Organization ;
+        rdfs:label        "Organization"@en ;
+        sh:description    "An organization such as a school, NGO, corporation, club, etc."@en ;
+        sh:name           "Organization"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    schema:Organization .
+
+<https://astrea.linkeddata.es/shapes#8355820918b8f052e2489eb782a08ab2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/spec/geosparql/1.0> , <http://www.opengis.net/ont/geosparql> ;
+        rdfs:label        "contains"@en , "Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
+        sh:class          geo:SpatialObject ;
+        sh:description    "Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
+        sh:name           "contains"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           geo:sfContains .
+
+<https://astrea.linkeddata.es/shapes#6d8821900054948705b59d34be7f676c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://standards.iso.org/iso/19156/ed-1/en/> ;
+        rdfs:label        "GFI_DomainFeature" ;
+        sh:name           "GFI_DomainFeature" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    iso19156_GFI:GFI_DomainFeature .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Agent"@en ;
+        sh:name           "Agent"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#67887954de7f456192f7a2bbf8e8241c> ;
+        sh:targetClass    foaf:Agent .
+
+<https://astrea.linkeddata.es/shapes#7aeedc1b9db4c317ebda21f1adc5cc2f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Component set"@en ;
+        sh:description    "Abstract class of things which reference one or more ComponentProperties"@en ;
+        sh:name           "Component set"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#2b2c87e5aca5b65a28d66b3e9a96621a> ;
+        sh:targetClass    qb:ComponentSet .
+
+<https://astrea.linkeddata.es/shapes#f196d50238714ed345057b23b1b1272c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Point"@en ;
+        sh:description    "\nA MultiPoint is a 0-dimensional GeometryCollection. The elements of a MultiPoint are restricted to Points. ThePoints are not connected or ordered in any semantically important way.\nA MultiPoint is simple if no two Points in the MultiPoint are equal (have identical coordinate values in X and Y).\nEvery MultiPoint is spatially equal to a simple Multipoint.\nThe boundary of a MultiPoint is the empty set.\n    "@en ;
+        sh:name           "Multi Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiPoint .
+
+<https://astrea.linkeddata.es/shapes#6c4eb5c4906d5ba4c081f85367dd0edd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    dim:RadianceExposure .
+
+<https://astrea.linkeddata.es/shapes#a0b008815cd8501c0f8a678830ff0399>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Polyhedral Surface"@en ;
+        sh:description    "\nA PolyhedralSurface is a contiguous collection of polygons, which share common boundary segments. For each pair of polygons that touch, the common boundary shall be expressible as a finite collection of LineStrings. Each such LineString shall be part of the boundary of at most 2 Polygon patches. \nFor any two polygons that share a common boundary, the top of the polygon shall be consistent. This means that when two LinearRings from these two Polygons traverse the common boundary segment, they do so in opposite directions. Since the Polyhedral surface is contiguous, all polygons will be thus consistently oriented. This means that a non-oriented surface (such as Mbius band) shall not have single surface representations. They may be represented by a MultiSurface.\nIf each such LineString is the boundary of exactly 2 Polygon patches, then the PolyhedralSurface is a simple, closed polyhedron and is topologically isomorphic to the surface of a sphere. By the Jordan Surface Theorem (Jordans Theorem for 2-spheres), such polyhedrons enclose a solid topologically isomorphic to the interior of a sphere; the ball. In this case, the top of the surface will either point inward or outward of the enclosed finite solid. If outward, the surface is the exterior boundary of the enclosed surface. If inward, the surface is the interior of the infinite complement of the enclosed solid. A Ball with some number of voids (holes) inside can thus be presented as one exterior boundary shell, and some number in interior boundary shells.\n    "@en ;
+        sh:name           "Polyhedral Surface"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:PolyhedralSurface .
+
+<https://astrea.linkeddata.es/shapes#21e87ae54ee2f9e68cf4b18b30541c13>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "host"@en , "Relation between a platform and the systems it hosts."@en ;
+        sh:description    "Relation between a platform and the systems it hosts."@en ;
+        sh:name           "host"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           sosa:hosts .
+
+<https://astrea.linkeddata.es/shapes#9e9cb48c1174c31afed273d1a674e5ba>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  schema:Person ;
+        rdfs:label        "Person"@en ;
+        sh:description    "A person (alive, dead, undead, or fictional)."@en ;
+        sh:name           "Person"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    schema:Person .
+
+<https://astrea.linkeddata.es/shapes#d5c7ac2382b8547f77f4b890d4d958e6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "concept"@en , "gives the concept which is being measured or indicated by a ComponentProperty"@en ;
+        sh:class          skos:Concept ;
+        sh:description    "gives the concept which is being measured or indicated by a ComponentProperty"@en ;
+        sh:name           "concept"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           qb:concept .
+
+<https://astrea.linkeddata.es/shapes#c3566a8caa4882c511a529910b132529>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/linked-data/cube> ;
+        rdfs:label        "Observation"@en ;
+        sh:description    "A single observation in the cube, may have one or more associated measured values"@en ;
+        sh:name           "Observation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3fb3d7e699b8cb63253d30f5333e189d> ;
+        sh:targetClass    qb:Observation .
+
+<https://astrea.linkeddata.es/shapes#063d7966d5bb5967dca9c2fed9e1416a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "Sample"@en ;
+        sh:description    "Feature on which Observations may be made, which is intended to be representative of a FeatureOfInterest that is not fully accessible."@en ;
+        sh:name           "Sample"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sosa:Sample , iso19156_SF:SF_SamplingFeature .
+
+<https://astrea.linkeddata.es/shapes#48ea695aa98408a6ade8ae77c99c7bb4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  sosa: ;
+        rdfs:label        "has result"@en , "Relation linking an Observation or Actuation or act of Sampling and a Result."@en ;
+        sh:description    "Relation linking an Observation or Actuation or act of Sampling and a Result."@en ;
+        sh:name           "has result"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           sosa:hasResult .
+
+<https://astrea.linkeddata.es/shapes#17e979387e8a0ecc05c47869136bd8fe>
+        a         sh:PropertyShape ;
+        sh:class  qb:AttributeProperty .
+
+<https://astrea.linkeddata.es/shapes#7bf5a93636f246b0b32724c78dace32f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sosa:ActuatableProperty .
+
+<https://astrea.linkeddata.es/shapes#ea758cf93a4a6fcb568c859d464061d1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/geosparql> , <http://www.opengis.net/spec/geosparql/1.0> ;
+        rdfs:label        "The WKT serialization of a geometry"@en , "asWKT"@en ;
+        sh:datatype       geo:wktLiteral ;
+        sh:description    "The WKT serialization of a geometry"@en ;
+        sh:name           "asWKT"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           geo:asWKT .
+
+<https://astrea.linkeddata.es/shapes#eab2ccb77e56d3ad473395331d814f3d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Multi Polygon"@en ;
+        sh:description    "\nA MultiPolygon is a MultiSurface whose elements are Polygons.\nThe assertions for MultiPolygons are as follows.\na) The interiors of 2 Polygons that are elements of a MultiPolygon may not intersect.\nb) The boundaries of any 2 Polygons that are elements of a MultiPolygon may not cross and may touch at only a finite number of Points.\nc) A MultiPolygon is defined as topologically closed.\nd) A MultiPolygon may not have cut lines, spikes or punctures, a MultiPolygon is a regular closed Point set,\ne) The interior of a MultiPolygon with more than 1 Polygon is not connected; the number of connected components of the interior of a MultiPolygon is equal to the number of Polygons in the MultiPolygon. \nThe boundary of a MultiPolygon is a set of closed Curves (LineStrings) corresponding to the boundaries of its element Polygons. Each Curve in the boundary of the MultiPolygon is in the boundary of exactly 1 element Polygon, and every Curve in the boundary of an element Polygon is in the boundary of the MultiPolygon.\n    "@en ;
+        sh:name           "Multi Polygon"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:MultiPolygon .

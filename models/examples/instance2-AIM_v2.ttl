@@ -1,0 +1,147 @@
+@prefix ns0: <http://foodie-cloud.com/model/foodie#> .
+@prefix ns1: <https://w3id.org/saref#> .
+@prefix ns2: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns3: <http://www.opengis.net/ont/geosparql#> .
+@prefix ns4: <https://uri.fiware.org/ns/data-models#> .
+@prefix ns5: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+
+<urn:ngsi-ld:CropSpecies:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns0:cropArea <urn:ngsi-ld:CropSpecies:geo:72d9fb43-53f8-4ec8-a33c-fa931360259a> ;
+  ns0:cropSpecies <urn:ngsi-ld:CropType:df72dc57-1eb9-42a3-88a9-8647ecc954b4> ;
+  ns0:production [ ns0:productionAmount [
+      ns1:hasValue 30 ;
+      ns1:isMeasuredIn <http://www.ontology-of-units-of-measure.org/resource/om-2/tonne>
+    ] ] ;
+  ns2:validFrom "30/1/2019"^^xsd:dateTime ;
+  ns2:validTo "30/6/2019"^^xsd:dateTime ;
+  a ns0:CropSpecies .
+
+<urn:ngsi-ld:CropSpecies:72d9fb43-53f8-4ec8-a33c-fa931360259b>
+  ns0:cropArea <urn:ngsi-ld:CropSpecies:geo:72d9fb43-53f8-4ec8-a33c-fa931360259b> ;
+  ns0:cropSpecies <urn:ngsi-ld:CropType:df72dc57-1eb9-42a3-88a9-8647ecc954b4> ;
+  ns0:production [ ns0:productionAmount [
+      ns1:hasValue 40 ;
+      ns1:isMeasuredIn <http://www.ontology-of-units-of-measure.org/resource/om-2/tonne>
+    ] ] ;
+  ns2:validFrom "30/1/2020"^^xsd:dateTime ;
+  ns2:validTo "30/6/2020"^^xsd:dateTime ;
+  a ns0:CropSpecies .
+
+<urn:ngsi-ld:CropSpecies:72d9fb43-53f8-4ec8-a33c-xa931360259a>
+  ns0:cropArea <urn:ngsi-ld:CropSpecies:geo:72d9fb43-53f8-4ec8-a33c-xa931360259a> ;
+  ns0:cropSpecies <urn:ngsi-ld:CropType:72d9fb43-53f8-4ec8-a33c-xa931360259a> ;
+  ns0:production [ ns0:productionAmount [
+      ns1:hasValue 20 ;
+      ns1:isMeasuredIn <http://www.ontology-of-units-of-measure.org/resource/om-2/tonne>
+    ] ] ;
+  ns2:validFrom "30/1/2019"^^xsd:dateTime ;
+  ns2:validTo "30/6/2019"^^xsd:dateTime ;
+  a ns0:CropSpecies .
+
+<urn:ngsi-ld:CropSpecies:72d9fb43-53f8-4ec8-a33c-ya931360259b>
+  ns0:cropArea <urn:ngsi-ld:CropSpecies:geo:72d9fb43-53f8-4ec8-a33c-ya931360259b> ;
+  ns0:cropSpecies <urn:ngsi-ld:CropType:72d9fb43-53f8-4ec8-a33c-ya931360259a> ;
+  ns0:production [ ns0:productionAmount [
+      ns1:hasValue 10 ;
+      ns1:isMeasuredIn <http://www.ontology-of-units-of-measure.org/resource/om-2/tonne>
+    ] ] ;
+  ns2:validFrom "30/1/2020"^^xsd:dateTime ;
+  ns2:validTo "30/6/2020"^^xsd:dateTime ;
+  a ns0:CropSpecies .
+
+<urn:ngsi-ld:CropSpecies:geo:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns3:asWKT "POLYGON (100 0, 101 0, 101 1, 100 1, 100 0)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:ngsi-ld:CropSpecies:geo:72d9fb43-53f8-4ec8-a33c-fa931360259b>
+  ns3:asWKT "POLYGON (100 0, 101 0, 101 1, 100 1, 100 0)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:ngsi-ld:CropSpecies:geo:72d9fb43-53f8-4ec8-a33c-xa931360259a>
+  ns3:asWKT "POLYGON (100 0, 101 0, 101 1, 100 1, 100 0)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:ngsi-ld:CropSpecies:geo:72d9fb43-53f8-4ec8-a33c-ya931360259b>
+  ns3:asWKT "POLYGON (100 0, 101 0, 101 1, 100 1, 100 0)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:ngsi-ld:CropType:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns0:code "CropType2" ;
+  ns0:description "Rapeseed flowers are yellow and about 17 mm (0.67 in) across. They grow to 100 cm in height with hairless, fleshy, pinnatifid and glaucous lower leaves which are stalked whereas the upper leaves have no petioles." ;
+  ns0:family "Brassicaceae" ;
+  ns0:species "Brassica napus" ;
+  a ns0:CropType ;
+  ns4:agroVocConcept "http://aims.fao.org/aos/agrovoc/c_1066" ;
+  ns4:name "Rapeseed" .
+
+<urn:ngsi-ld:CropType:df72dc57-1eb9-42a3-88a9-8647ecc954b4>
+  ns0:code "CropType1" ;
+  ns0:description "Spring wheat" ;
+  a ns0:CropType ;
+  ns4:agroVocConcept "http://aims.fao.org/aos/agrovoc/c_7951" ;
+  ns4:alternateName "Triticum aestivum" ;
+  ns4:name "Wheat" .
+
+<urn:ngsi-ld:Holding:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns0:description "A farm producing wheat" ;
+  ns5:contains <urn:ngsi-ld:Site:72d9fb43-53f8-4ec8-a33c-fa931360259a> ;
+  ns3:hasGeometry <urn:ngsi-ld:Holding:geo:72d9fb43-53f8-4ec8-a33c-fa931360259x> ;
+  a ns5:Holding ;
+  geo:location <https://sws.geonames.org/3086032/> ;
+  ns4:name "Wheat Farm" .
+
+<urn:ngsi-ld:Holding:geo:72d9fb43-53f8-4ec8-a33c-fa931360259x>
+  ns3:asWKT "POINT(11.3 44.12)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Point> .
+
+<urn:ngsi-ld:Plot:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns0:code "Plot1a" ;
+  ns0:crop <urn:ngsi-ld:CropSpecies:72d9fb43-53f8-4ec8-a33c-fa931360259a>, <urn:ngsi-ld:CropSpecies:72d9fb43-53f8-4ec8-a33c-fa931360259b> ;
+  ns0:description "Spring wheat parcel" ;
+  ns2:validFrom "30/1/2010"^^xsd:dateTime ;
+  dc:identifier "1234" ;
+  ns3:hasGeometry <urn:ngsi-ld:Plot:geo:72d9fb43-53f8-4ec8-a33c-fa931360259a> ;
+  a ns0:Plot ;
+  ns4:area "35" ;
+  ns4:category "arable" ;
+  ns4:cropStatus "seeded" ;
+  ns4:lastPlantedAt "2020-08-23T10:18:16Z"^^xsd:dateTime .
+
+<urn:ngsi-ld:Plot:72d9fb43-53f8-4ec8-a33c-fa931360259b>
+  ns0:code "Plot1b" ;
+  ns0:crop <urn:ngsi-ld:CropSpecies:72d9fb43-53f8-4ec8-a33c-xa931360259a>, <urn:ngsi-ld:CropSpecies:72d9fb43-53f8-4ec8-a33c-ya931360259b> ;
+  ns0:description "Spring barley parcel" ;
+  ns2:validFrom "30/1/2015"^^xsd:dateTime ;
+  dc:identifier "1235" ;
+  ns3:hasGeometry <urn:ngsi-ld:Plot:geo:72d9fb43-53f8-4ec8-a33c-fa931360259b> ;
+  a ns0:Plot ;
+  ns4:area "35" ;
+  ns4:category "arable" ;
+  ns4:cropStatus "blooming" ;
+  ns4:lastPlantedAt "2020-08-23T10:18:16Z"^^xsd:dateTime .
+
+<urn:ngsi-ld:Plot:geo:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns3:asWKT "POLYGON (16.396622657775882 52.291722551113224,  16.395592689514164 52.289885097096466,  16.39889717102051 52.289202594763935,  16.39994859695435 52.29094820478369)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:ngsi-ld:Plot:geo:72d9fb43-53f8-4ec8-a33c-fa931360259b>
+  ns3:asWKT "POLYGON (16.396622657775882 52.291722551113224,  16.395592689514164 52.289885097096466,  16.39889717102051 52.289202594763935,  16.39994859695435 52.29094820478369)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:ngsi-ld:Site:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns0:code "Site1" ;
+  ns0:containsPlot <urn:ngsi-ld:Plot:72d9fb43-53f8-4ec8-a33c-fa931360259a>, <urn:ngsi-ld:Plot:72d9fb43-53f8-4ec8-a33c-fa931360259b> ;
+  ns0:description "Arable Land in the Farm" ;
+  ns5:activity <http://inspire.ec.europa.eu/codelist/ControlledActivityType/agricultureAndAquaculture> ;
+  ns2:validFrom "30/1/2000"^^xsd:dateTime ;
+  ns3:hasGeometry <urn:ngsi-ld:Site:geo:72d9fb43-53f8-4ec8-a33c-fa931360259y> ;
+  a ns5:Site ;
+  ns4:area 2012120 ;
+  ns4:category "arable" .
+
+<urn:ngsi-ld:Site:geo:72d9fb43-53f8-4ec8-a33c-fa931360259y>
+  ns3:asWKT "POLYGON (100 0, 101 0, 101 1, 100 1, 100 0)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .

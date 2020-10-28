@@ -1,5 +1,6 @@
 {
   "@context": [
+      "https://w3id.org/demeter/agri/crossDomain-context.jsonld",
     	"https://w3id.org/demeter/agri/agriFeature-context.jsonld",
 			"https://w3id.org/demeter/agri/agriCrop-context.jsonld",
 			"https://w3id.org/demeter/agri/agriCommon-context.jsonld",
@@ -10,9 +11,8 @@
 			"https://w3id.org/demeter/agri/agriSystem-context.jsonld",
 			"https://w3id.org/demeter/agri/agriPest-context.jsonld",
 			"https://w3id.org/demeter/agri/farmAnimal-context.jsonld",
-			{"qudt" : "http://qudt.org/schema/qudt/",
-       "qudt-unit": "http://qudt.org/vocab/unit/",
-       "sosa" : "http://www.w3.org/ns/sosa/"
+			{
+       "qudt-unit": "http://qudt.org/vocab/unit/"
       }
    ],
    "@graph": [
@@ -40,33 +40,33 @@
     },
   	{
   		"@id": "urn:demeter:observation-20180101",
-      	"@type": "sosa:Observation",
-      	"sosa:observedProperty": { "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#normalized_difference_vegetation_index"} ,
-      	"sosa:hasFeatureOfInterest": { "@id": "urn:demeter:parcel:72d9fb43-53f8-4ec8-a33c-fa931360259a" },
-      	"sosa:madeBySensor": { "@id": "sensor/35-207306-844818-0/BMP282" },
-      	"sosa:resultTime": "2018-01-01T12:36:12Z" ,
-      	"sosa:hasResult": [{ "@id": "urn:demeter:Observation/20180101/q10" }, { "@id": "urn:demeter:Observation/20180101/q50" } ,{ "@id": "urn:demeter:Observation/20180101/q90" } ]
+      	"@type": "Observation",
+      	"observedProperty": { "@id": "http://purl.oclc.org/NET/ssnx/cf/cf-property#normalized_difference_vegetation_index"} ,
+      	"hasFeatureOfInterest": { "@id": "urn:demeter:parcel:72d9fb43-53f8-4ec8-a33c-fa931360259a" },
+      	"madeBySensor": { "@id": "sensor/35-207306-844818-0/BMP282" },
+      	"resultTime": "2018-01-01T12:36:12Z" ,
+      	"hasResult": [{ "@id": "urn:demeter:Observation/20180101/q10" }, { "@id": "urn:demeter:Observation/20180101/q50" } ,{ "@id": "urn:demeter:Observation/20180101/q90" } ]
   	},
   	{
   		"@id": "urn:demeter:Observation/20180101/q10",
-      "@type": "qudt:QuantityValue",
+      "@type": "QuantityValue",
       "identifier": "q10",
-      "qudt:numericValue": "0.27121272683143616",
-      "qudt:unit": "qudt-unit:xyz"  	
+      "numericValue": "0.27121272683143616",
+      "unit": {"@id": "qudt-unit:xyz"}
   	},
   	{
   		"@id": "urn:demeter:Observation/20180101/q50",
-      "@type": "qudt:QuantityValue",
+      "@type": "QuantityValue",
       "identifier": "q50",
-      "qudt:numericValue": "0.3173256516456604",
-      "qudt:unit": "qudt-unit:xyz"  	
+      "numericValue": "0.3173256516456604",
+      "unit": {"@id": "qudt-unit:xyz"}
   	},
   	{
   		"@id": "urn:demeter:Observation/20180101/q90",
-      "@type": "qudt:QuantityValue",
+      "@type": "QuantityValue",
       "identifier": "q90",
-      "qudt:numericValue": "0.38018566370010376",
-      "qudt:unit": "qudt-unit:xyz"  	
+      "numericValue": "0.38018566370010376",
+      "unit": {"@id": "qudt-unit:xyz"}
   	}
   ]  
 }
