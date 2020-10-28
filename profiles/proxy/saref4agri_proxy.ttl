@@ -1,0 +1,57 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+saref4agri:Building rdfs:isDefinedBy saref4agri: .
+
+saref4agri:BuildingSpace rdfs:isDefinedBy saref4agri: .
+
+saref4agri:Farm rdfs:isDefinedBy saref4agri: ;
+    owl:equivalentClass <http://inspire.ec.europa.eu/schemas/af/3.0#Holding>,
+        <https://uri.fiware.org/ns/data-models#AgriFarm> .
+
+saref4agri:Parcel rdfs:isDefinedBy saref4agri: ;
+    owl:equivalentClass <http://foodie-cloud.com/model/foodie#Plot>,
+        <https://uri.fiware.org/ns/data-models#AgriParcel> .
+
+saref4agri:contains rdfs:isDefinedBy saref4agri: .
+
+saref4agri:hasName rdfs:isDefinedBy saref4agri: ;
+    owl:equivalentProperty <https://uri.fiware.org/ns/data-models#name> .
+
+saref4agri:isContainedIn rdfs:isDefinedBy saref4agri: ;
+    rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> .
+
+<https://w3id.org/demeter/agri/proxy/foodie> a owl:Ontology,
+        prov:Entity ;
+    owl:imports <https://w3id.org/def/saref4agri> ;
+    prof:isProfileOf <https://w3id.org/def/saref4agri> ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\profiles\\merge_temp.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = merge_temp.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            prov:endedAtTime "2020-10-01"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+
+[] a prov:Entity ;
+    rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl" .
+
+[] a prov:Entity ;
+    rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriCommon.ttl" .
+
+[] a prov:Activity ;
+    rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+    prov:endedAtTime "2020-09-30"^^xsd:date ;
+    prov:wasAssociatedWith [ a prov:Agent ;
+            rdfs:label "ProfileWiz 0.1.5" ] .
+
+[] a prov:Activity ;
+    rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+    prov:endedAtTime "2020-09-29"^^xsd:date ;
+    prov:wasAssociatedWith [ a prov:Agent ;
+            rdfs:label "ProfileWiz 0.1.5" ] .
+

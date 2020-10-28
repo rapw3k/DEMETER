@@ -273,7 +273,7 @@
 <section id="overview">
     <h2>Overview</h2>
     <div class="figure">
-            <div><img src="../images/model_matching.jpg"/></div>
+            <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
         <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
     </div>
 </section>
@@ -326,9 +326,9 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="https://schema.org/Organization">sdo:Organization</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty">iso19115-citation:ResponsibleParty</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://xmlns.com/foaf/0.1/Person">foaf:Person</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://schema.org/Organization">sdo:Organization</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -464,8 +464,8 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#managesFarm">saref4agri:managesFarm</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -492,8 +492,8 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="https://w3id.org/def/saref4agri#managesFarm">saref4agri:managesFarm</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="https://w3id.org/def/saref4agri#hasName">saref4agri:hasName</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">only</span> <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="https://w3id.org/def/saref4agri#managesFarm">saref4agri:managesFarm</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="https://w3id.org/def/saref4agri#Farm">saref4agri:Farm</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -553,7 +553,7 @@
         <li><a href="#modifiedAt">modifiedAt</a></li>
         <li><a href="#name1">name</a></li>
         <li><a href="#source">source</a></li>
-        <li><a href="#hasname">has name</a></li>
+        <li><a href="#Arelationtoexpressthenameofanentity(e.g.,animal).">A relation to express the name of an entity (e.g.,animal).</a></li>
         <li><a href="#Password">Password</a></li>
         <li><a href="#UserName">User Name</a></li>
         <li><a href="#hasdescription">has description</a></li>
@@ -595,7 +595,7 @@
             </tr>
             <tr>
                 <th>Equivalent properties</th>
-                <td>
+                <td class="highlight-alignment">
                     <a href="https://uri.fiware.org/ns/data-models#description">fiware:description</a><sup class="sup-dp" title="datatype property">dp</sup>
                 </td>
             </tr>
@@ -830,7 +830,7 @@
             <tr class="importeddef">
                 <th>Is Defined By</th>
                 <td>
-                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
+                    https://fiware.github.io/data-models/specs/Alert/doc/spec.html
                 </td>
             </tr>
             <tr>
@@ -841,7 +841,7 @@
             </tr>
             <tr>
                 <th>Equivalent properties</th>
-                <td>
+                <td class="highlight-alignment">
                     <a href="http://foodie-cloud.com/model/foodie#type">foodie:type</a><sup class="sup-dp" title="datatype property">dp</sup>
                 </td>
             </tr>
@@ -857,7 +857,7 @@
             <tr class="importeddef">
                 <th>Is Defined By</th>
                 <td>
-                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
                 </td>
             </tr>
             <tr>
@@ -968,7 +968,7 @@
             <tr class="importeddef">
                 <th>Is Defined By</th>
                 <td>
-                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Product-Type.md
+                    https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md
                 </td>
             </tr>
             <tr>
@@ -1006,8 +1006,8 @@
             </tr>
         </table>
     </div>
-    <div class="entity property" id="hasname">
-        <h3>has name<sup title="datatype property" class="sup-dp">dp</sup></h3>
+    <div class="entity property" id="Arelationtoexpressthenameofanentity(e.g.,animal).">
+        <h3>A relation to express the name of an entity (e.g.,animal).<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
                 <th>URI</th>
@@ -1021,7 +1021,7 @@
             </tr>
             <tr>
                 <th>Equivalent properties</th>
-                <td>
+                <td class="highlight-alignment">
                     <a href="https://uri.fiware.org/ns/data-models#name">fiware:name</a><sup class="sup-dp" title="datatype property">dp</sup>
                 </td>
             </tr>
@@ -1096,7 +1096,7 @@
             </tr>
             <tr>
                 <th>Equivalent properties</th>
-                <td>
+                <td class="highlight-alignment">
                     <a href="http://foodie-cloud.com/model/foodie#description">foodie:description</a><sup class="sup-dp" title="datatype property">dp</sup>
                     <a href="https://uri.fiware.org/ns/data-models#description">fiware:description</a><sup class="sup-dp" title="datatype property">dp</sup>
                 </td>

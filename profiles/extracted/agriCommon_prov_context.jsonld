@@ -1,0 +1,430 @@
+{
+    "@id": "https://w3id.org/demeter/agri/proxy/prov",
+    "@context": [
+        {
+            "@vocab": "https://w3id.org/demeter/agri/proxy/prov",
+            "Removal": {
+                "@id": "prov:Removal"
+            },
+            "Agent": {
+                "@id": "prov:Agent"
+            },
+            "Association": {
+                "@id": "prov:Association"
+            },
+            "Attribution": {
+                "@id": "prov:Attribution"
+            },
+            "Quotation": {
+                "@id": "prov:Quotation"
+            },
+            "Publisher": {
+                "@id": "prov:Publisher"
+            },
+            "Derivation": {
+                "@id": "prov:Derivation"
+            },
+            "PrimarySource": {
+                "@id": "prov:PrimarySource"
+            },
+            "Revision": {
+                "@id": "prov:Revision"
+            },
+            "Activity": {
+                "@id": "prov:Activity"
+            },
+            "RightsHolder": {
+                "@id": "prov:RightsHolder"
+            },
+            "AgentInfluence": {
+                "@id": "prov:AgentInfluence"
+            },
+            "EmptyCollection": {
+                "@id": "prov:EmptyCollection"
+            },
+            "ActivityInfluence": {
+                "@id": "prov:ActivityInfluence"
+            },
+            "Influence": {
+                "@id": "prov:Influence"
+            },
+            "Delegation": {
+                "@id": "prov:Delegation"
+            },
+            "EntityInfluence": {
+                "@id": "prov:EntityInfluence"
+            },
+            "Person": {
+                "@id": "prov:Person"
+            },
+            "RightsAssignment": {
+                "@id": "prov:RightsAssignment"
+            },
+            "Entity": {
+                "@id": "prov:Entity"
+            },
+            "Replace": {
+                "@id": "prov:Replace"
+            },
+            "ServiceDescription": {
+                "@id": "prov:ServiceDescription"
+            },
+            "Collection": {
+                "@id": "prov:Collection"
+            },
+            "Start": {
+                "@id": "prov:Start"
+            },
+            "DirectQueryService": {
+                "@id": "prov:DirectQueryService"
+            },
+            "Organization": {
+                "@id": "prov:Organization"
+            },
+            "InstantaneousEvent": {
+                "@id": "prov:InstantaneousEvent"
+            },
+            "EmptyDictionary": {
+                "@id": "prov:EmptyDictionary"
+            },
+            "Copyright": {
+                "@id": "prov:Copyright"
+            },
+            "Insertion": {
+                "@id": "prov:Insertion"
+            },
+            "Contribute": {
+                "@id": "prov:Contribute"
+            },
+            "Invalidation": {
+                "@id": "prov:Invalidation"
+            },
+            "Plan": {
+                "@id": "prov:Plan"
+            },
+            "Communication": {
+                "@id": "prov:Communication"
+            },
+            "Role": {
+                "@id": "prov:Role"
+            },
+            "Dictionary": {
+                "@id": "prov:Dictionary"
+            },
+            "Accept": {
+                "@id": "prov:Accept"
+            },
+            "Publish": {
+                "@id": "prov:Publish"
+            },
+            "Location": {
+                "@id": "prov:Location"
+            },
+            "End": {
+                "@id": "prov:End"
+            },
+            "Creator": {
+                "@id": "prov:Creator"
+            },
+            "SoftwareAgent": {
+                "@id": "prov:SoftwareAgent"
+            },
+            "Bundle": {
+                "@id": "prov:Bundle"
+            },
+            "Contributor": {
+                "@id": "prov:Contributor"
+            },
+            "Thing": {
+                "@id": "owl:Thing"
+            },
+            "Generation": {
+                "@id": "prov:Generation"
+            },
+            "Create": {
+                "@id": "prov:Create"
+            },
+            "KeyEntityPair": {
+                "@id": "prov:KeyEntityPair"
+            },
+            "Submit": {
+                "@id": "prov:Submit"
+            },
+            "Usage": {
+                "@id": "prov:Usage"
+            },
+            "Modify": {
+                "@id": "prov:Modify"
+            },
+            "hadPrimarySource": {
+                "@id": "prov:hadPrimarySource",
+                "@type": "@id"
+            },
+            "wasQuotedFrom": {
+                "@id": "prov:wasQuotedFrom",
+                "@type": "@id"
+            },
+            "qualifiedGeneration": {
+                "@id": "prov:qualifiedGeneration",
+                "@type": "@id"
+            },
+            "topObjectProperty": {
+                "@id": "owl:topObjectProperty",
+                "@type": "@id"
+            },
+            "wasGeneratedBy": {
+                "@id": "prov:wasGeneratedBy",
+                "@type": "@id"
+            },
+            "wasInfluencedBy": {
+                "@id": "prov:wasInfluencedBy",
+                "@type": "@id"
+            },
+            "qualifiedPrimarySource": {
+                "@id": "prov:qualifiedPrimarySource",
+                "@type": "@id"
+            },
+            "hadMember": {
+                "@id": "prov:hadMember",
+                "@type": "@id"
+            },
+            "qualifiedInsertion": {
+                "@id": "prov:qualifiedInsertion",
+                "@type": "@id"
+            },
+            "wasAssociatedWith": {
+                "@id": "prov:wasAssociatedWith",
+                "@type": "@id"
+            },
+            "wasEndedBy": {
+                "@id": "prov:wasEndedBy",
+                "@type": "@id"
+            },
+            "qualifiedQuotation": {
+                "@id": "prov:qualifiedQuotation",
+                "@type": "@id"
+            },
+            "qualifiedInfluence": {
+                "@id": "prov:qualifiedInfluence",
+                "@type": "@id"
+            },
+            "hadActivity": {
+                "@id": "prov:hadActivity",
+                "@type": "@id"
+            },
+            "influenced": {
+                "@id": "prov:influenced",
+                "@type": "@id"
+            },
+            "specializationOf": {
+                "@id": "prov:specializationOf",
+                "@type": "@id"
+            },
+            "qualifiedEnd": {
+                "@id": "prov:qualifiedEnd",
+                "@type": "@id"
+            },
+            "influencer": {
+                "@id": "prov:influencer",
+                "@type": "@id"
+            },
+            "wasRevisionOf": {
+                "@id": "prov:wasRevisionOf",
+                "@type": "@id"
+            },
+            "qualifiedStart": {
+                "@id": "prov:qualifiedStart",
+                "@type": "@id"
+            },
+            "hadDictionaryMember": {
+                "@id": "prov:hadDictionaryMember",
+                "@type": "@id"
+            },
+            "mentionOf": {
+                "@id": "prov:mentionOf",
+                "@type": "@id"
+            },
+            "used": {
+                "@id": "prov:used",
+                "@type": "@id"
+            },
+            "has_provenance": {
+                "@id": "prov:has_provenance",
+                "@type": "@id"
+            },
+            "activity": {
+                "@id": "prov:activity",
+                "@type": "@id"
+            },
+            "actedOnBehalfOf": {
+                "@id": "prov:actedOnBehalfOf",
+                "@type": "@id"
+            },
+            "wasAttributedTo": {
+                "@id": "prov:wasAttributedTo",
+                "@type": "@id"
+            },
+            "qualifiedCommunication": {
+                "@id": "prov:qualifiedCommunication",
+                "@type": "@id"
+            },
+            "qualifiedDelegation": {
+                "@id": "prov:qualifiedDelegation",
+                "@type": "@id"
+            },
+            "asInBundle": {
+                "@id": "prov:asInBundle",
+                "@type": "@id"
+            },
+            "atLocation": {
+                "@id": "prov:atLocation",
+                "@type": "@id"
+            },
+            "pingback": {
+                "@id": "prov:pingback",
+                "@type": "@id"
+            },
+            "wasStartedBy": {
+                "@id": "prov:wasStartedBy",
+                "@type": "@id"
+            },
+            "qualifiedUsage": {
+                "@id": "prov:qualifiedUsage",
+                "@type": "@id"
+            },
+            "derivedByRemovalFrom": {
+                "@id": "prov:derivedByRemovalFrom",
+                "@type": "@id"
+            },
+            "wasInformedBy": {
+                "@id": "prov:wasInformedBy",
+                "@type": "@id"
+            },
+            "invalidated": {
+                "@id": "prov:invalidated",
+                "@type": "@id"
+            },
+            "generated": {
+                "@id": "prov:generated",
+                "@type": "@id"
+            },
+            "has_query_service": {
+                "@id": "prov:has_query_service",
+                "@type": "@id"
+            },
+            "dictionary": {
+                "@id": "prov:dictionary",
+                "@type": "@id"
+            },
+            "pairEntity": {
+                "@id": "prov:pairEntity",
+                "@type": "@id"
+            },
+            "qualifiedRevision": {
+                "@id": "prov:qualifiedRevision",
+                "@type": "@id"
+            },
+            "entity": {
+                "@id": "prov:entity",
+                "@type": "@id"
+            },
+            "qualifiedRemoval": {
+                "@id": "prov:qualifiedRemoval",
+                "@type": "@id"
+            },
+            "hadGeneration": {
+                "@id": "prov:hadGeneration",
+                "@type": "@id"
+            },
+            "alternateOf": {
+                "@id": "prov:alternateOf",
+                "@type": "@id"
+            },
+            "derivedByInsertionFrom": {
+                "@id": "prov:derivedByInsertionFrom",
+                "@type": "@id"
+            },
+            "has_anchor": {
+                "@id": "prov:has_anchor",
+                "@type": "@id"
+            },
+            "qualifiedDerivation": {
+                "@id": "prov:qualifiedDerivation",
+                "@type": "@id"
+            },
+            "qualifiedInvalidation": {
+                "@id": "prov:qualifiedInvalidation",
+                "@type": "@id"
+            },
+            "wasInvalidatedBy": {
+                "@id": "prov:wasInvalidatedBy",
+                "@type": "@id"
+            },
+            "describesService": {
+                "@id": "prov:describesService",
+                "@type": "@id"
+            },
+            "hadUsage": {
+                "@id": "prov:hadUsage",
+                "@type": "@id"
+            },
+            "qualifiedAssociation": {
+                "@id": "prov:qualifiedAssociation",
+                "@type": "@id"
+            },
+            "qualifiedAttribution": {
+                "@id": "prov:qualifiedAttribution",
+                "@type": "@id"
+            },
+            "wasDerivedFrom": {
+                "@id": "prov:wasDerivedFrom",
+                "@type": "@id"
+            },
+            "hadPlan": {
+                "@id": "prov:hadPlan",
+                "@type": "@id"
+            },
+            "agent": {
+                "@id": "prov:agent",
+                "@type": "@id"
+            },
+            "insertedKeyEntityPair": {
+                "@id": "prov:insertedKeyEntityPair",
+                "@type": "@id"
+            },
+            "hadRole": {
+                "@id": "prov:hadRole",
+                "@type": "@id"
+            },
+            "invalidatedAtTime": {
+                "@id": "prov:invalidatedAtTime",
+                "@type": "xsd:dateTime"
+            },
+            "generatedAtTime": {
+                "@id": "prov:generatedAtTime",
+                "@type": "xsd:dateTime"
+            },
+            "endedAtTime": {
+                "@id": "prov:endedAtTime"
+            },
+            "pairKey": {
+                "@id": "prov:pairKey"
+            },
+            "provenanceUriTemplate": {
+                "@id": "prov:provenanceUriTemplate"
+            },
+            "value": {
+                "@id": "prov:value"
+            },
+            "atTime": {
+                "@id": "prov:atTime"
+            },
+            "startedAtTime": {
+                "@id": "prov:startedAtTime"
+            },
+            "removedKey": {
+                "@id": "prov:removedKey"
+            }
+        }
+    ]
+}

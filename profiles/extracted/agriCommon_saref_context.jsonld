@@ -1,0 +1,426 @@
+{
+    "@id": "https://w3id.org/demeter/agri/proxy/saref",
+    "@context": [
+        {
+            "@vocab": "https://w3id.org/demeter/agri/proxy/saref",
+            "SetRelativeLevelCommand": {
+                "@id": "SetRelativeLevelCommand"
+            },
+            "OnState": {
+                "@id": "OnState"
+            },
+            "Motion": {
+                "@id": "Motion"
+            },
+            "GetCommand": {
+                "@id": "GetCommand"
+            },
+            "Property": {
+                "@id": "Property"
+            },
+            "SwitchOnService": {
+                "@id": "SwitchOnService"
+            },
+            "State": {
+                "@id": "State"
+            },
+            "Profile": {
+                "@id": "Profile"
+            },
+            "TemperatureSensor": {
+                "@id": "TemperatureSensor"
+            },
+            "Storage": {
+                "@id": "Storage"
+            },
+            "StartStopFunction": {
+                "@id": "StartStopFunction"
+            },
+            "PauseCommand": {
+                "@id": "PauseCommand"
+            },
+            "StartState": {
+                "@id": "StartState"
+            },
+            "Device": {
+                "@id": "Device"
+            },
+            "StepUpCommand": {
+                "@id": "StepUpCommand"
+            },
+            "MultiLevelState": {
+                "@id": "MultiLevelState"
+            },
+            "Appliance": {
+                "@id": "Appliance"
+            },
+            "Meter": {
+                "@id": "Meter"
+            },
+            "Load": {
+                "@id": "Load"
+            },
+            "DoorSwitch": {
+                "@id": "DoorSwitch"
+            },
+            "OnOffFunction": {
+                "@id": "OnOffFunction"
+            },
+            "MeteringFunction": {
+                "@id": "MeteringFunction"
+            },
+            "ToggleCommand": {
+                "@id": "ToggleCommand"
+            },
+            "StartStopState": {
+                "@id": "StartStopState"
+            },
+            "EventFunction": {
+                "@id": "EventFunction"
+            },
+            "Temperature": {
+                "@id": "Temperature"
+            },
+            "HVAC": {
+                "@id": "HVAC"
+            },
+            "Gas": {
+                "@id": "Gas"
+            },
+            "NotifyCommand": {
+                "@id": "NotifyCommand"
+            },
+            "Currency": {
+                "@id": "Currency"
+            },
+            "Water": {
+                "@id": "Water"
+            },
+            "OpenCloseFunction": {
+                "@id": "OpenCloseFunction"
+            },
+            "Command": {
+                "@id": "Command"
+            },
+            "Coal": {
+                "@id": "Coal"
+            },
+            "Pressure": {
+                "@id": "Pressure"
+            },
+            "Energy": {
+                "@id": "Energy"
+            },
+            "SensingFunction": {
+                "@id": "SensingFunction"
+            },
+            "SmokeSensor": {
+                "@id": "SmokeSensor"
+            },
+            "StopState": {
+                "@id": "StopState"
+            },
+            "Price": {
+                "@id": "Price"
+            },
+            "OnOffState": {
+                "@id": "OnOffState"
+            },
+            "OffCommand": {
+                "@id": "OffCommand"
+            },
+            "Measurement": {
+                "@id": "Measurement"
+            },
+            "CloseCommand": {
+                "@id": "CloseCommand"
+            },
+            "GetMeterDataCommand": {
+                "@id": "GetMeterDataCommand"
+            },
+            "StopCommand": {
+                "@id": "StopCommand"
+            },
+            "LightingDevice": {
+                "@id": "LightingDevice"
+            },
+            "OpenCloseState": {
+                "@id": "OpenCloseState"
+            },
+            "EnergyMeter": {
+                "@id": "EnergyMeter"
+            },
+            "LevelControlFunction": {
+                "@id": "LevelControlFunction"
+            },
+            "Smoke": {
+                "@id": "Smoke"
+            },
+            "GetMeterHistoryCommand": {
+                "@id": "GetMeterHistoryCommand"
+            },
+            "Function": {
+                "@id": "Function"
+            },
+            "SetLevelCommand": {
+                "@id": "SetLevelCommand"
+            },
+            "OpenCommand": {
+                "@id": "OpenCommand"
+            },
+            "ActuatingFunction": {
+                "@id": "ActuatingFunction"
+            },
+            "StepDownCommand": {
+                "@id": "StepDownCommand"
+            },
+            "Light": {
+                "@id": "Light"
+            },
+            "Task": {
+                "@id": "Task"
+            },
+            "Electricity": {
+                "@id": "Electricity"
+            },
+            "Service": {
+                "@id": "Service"
+            },
+            "Multimedia": {
+                "@id": "Multimedia"
+            },
+            "GetSensingDataCommand": {
+                "@id": "GetSensingDataCommand"
+            },
+            "StartCommand": {
+                "@id": "StartCommand"
+            },
+            "Network": {
+                "@id": "Network"
+            },
+            "Actuator": {
+                "@id": "Actuator"
+            },
+            "PressureUnit": {
+                "@id": "PressureUnit"
+            },
+            "TemperatureUnit": {
+                "@id": "TemperatureUnit"
+            },
+            "Humidity": {
+                "@id": "Humidity"
+            },
+            "SetAbsoluteLevelCommand": {
+                "@id": "SetAbsoluteLevelCommand"
+            },
+            "Commodity": {
+                "@id": "Commodity"
+            },
+            "UnitOfMeasure": {
+                "@id": "UnitOfMeasure"
+            },
+            "OpenState": {
+                "@id": "OpenState"
+            },
+            "WashingMachine": {
+                "@id": "WashingMachine"
+            },
+            "MicroRenewable": {
+                "@id": "MicroRenewable"
+            },
+            "OffState": {
+                "@id": "OffState"
+            },
+            "IlluminanceUnit": {
+                "@id": "IlluminanceUnit"
+            },
+            "EnergyRelated": {
+                "@id": "EnergyRelated"
+            },
+            "BuildingRelated": {
+                "@id": "BuildingRelated"
+            },
+            "Time": {
+                "@id": "Time"
+            },
+            "Power": {
+                "@id": "Power"
+            },
+            "OnCommand": {
+                "@id": "OnCommand"
+            },
+            "FunctionRelated": {
+                "@id": "FunctionRelated"
+            },
+            "GetCurrentMeterValueCommand": {
+                "@id": "GetCurrentMeterValueCommand"
+            },
+            "LightSwitch": {
+                "@id": "LightSwitch"
+            },
+            "EnergyUnit": {
+                "@id": "EnergyUnit"
+            },
+            "PowerUnit": {
+                "@id": "PowerUnit"
+            },
+            "CloseState": {
+                "@id": "CloseState"
+            },
+            "Occupancy": {
+                "@id": "Occupancy"
+            },
+            "Switch": {
+                "@id": "Switch"
+            },
+            "Sensor": {
+                "@id": "Sensor"
+            },
+            "Generator": {
+                "@id": "Generator"
+            },
+            "TemporalUnit": {
+                "@id": "time:TemporalUnit"
+            },
+            "isAccomplishedBy": {
+                "@id": "isAccomplishedBy",
+                "@type": "@id"
+            },
+            "hasFunction": {
+                "@id": "hasFunction",
+                "@type": "@id"
+            },
+            "hasSensingRange": {
+                "@id": "hasSensingRange",
+                "@type": "@id"
+            },
+            "hasState": {
+                "@id": "hasState",
+                "@type": "@id"
+            },
+            "isAbout": {
+                "@id": "isAbout",
+                "@type": "@id"
+            },
+            "isCommandOf": {
+                "@id": "isCommandOf",
+                "@type": "@id"
+            },
+            "relatesToProperty": {
+                "@id": "relatesToProperty",
+                "@type": "@id"
+            },
+            "isControlledByDevice": {
+                "@id": "isControlledByDevice",
+                "@type": "@id"
+            },
+            "hasProfile": {
+                "@id": "hasProfile",
+                "@type": "@id"
+            },
+            "hasCommand": {
+                "@id": "hasCommand",
+                "@type": "@id"
+            },
+            "consistsOf": {
+                "@id": "consistsOf",
+                "@type": "@id"
+            },
+            "hasThresholdMeasurement": {
+                "@id": "hasThresholdMeasurement",
+                "@type": "@id"
+            },
+            "isUsedFor": {
+                "@id": "isUsedFor",
+                "@type": "@id"
+            },
+            "relatesToMeasurement": {
+                "@id": "relatesToMeasurement",
+                "@type": "@id"
+            },
+            "actsUpon": {
+                "@id": "actsUpon",
+                "@type": "@id"
+            },
+            "controlsProperty": {
+                "@id": "controlsProperty",
+                "@type": "@id"
+            },
+            "isMeasuredIn": {
+                "@id": "isMeasuredIn",
+                "@type": "@id"
+            },
+            "hasTime": {
+                "@id": "hasTime",
+                "@type": "@id"
+            },
+            "accomplishes": {
+                "@id": "accomplishes",
+                "@type": "@id"
+            },
+            "hasPrice": {
+                "@id": "hasPrice",
+                "@type": "@id"
+            },
+            "hasTypicalConsumption": {
+                "@id": "hasTypicalConsumption",
+                "@type": "@id"
+            },
+            "isMeasuredByDevice": {
+                "@id": "isMeasuredByDevice",
+                "@type": "@id"
+            },
+            "measuresProperty": {
+                "@id": "measuresProperty",
+                "@type": "@id"
+            },
+            "hasSensorType": {
+                "@id": "hasSensorType",
+                "@type": "@id"
+            },
+            "offers": {
+                "@id": "offers",
+                "@type": "@id"
+            },
+            "isOfferedBy": {
+                "@id": "isOfferedBy",
+                "@type": "@id"
+            },
+            "hasMeterReading": {
+                "@id": "hasMeterReading",
+                "@type": "@id"
+            },
+            "makesMeasurement": {
+                "@id": "makesMeasurement",
+                "@type": "@id"
+            },
+            "represents": {
+                "@id": "represents",
+                "@type": "@id"
+            },
+            "hasMeterReadingType": {
+                "@id": "hasMeterReadingType",
+                "@type": "@id"
+            },
+            "hasValue": {
+                "@id": "hasValue"
+            },
+            "hasName": {
+                "@id": "hasName"
+            },
+            "hasTimestamp": {
+                "@id": "hasTimestamp"
+            },
+            "hasDescription": {
+                "@id": "hasDescription",
+                "@type": "xsd:string"
+            },
+            "hasModel": {
+                "@id": "hasModel"
+            },
+            "hasManufacturer": {
+                "@id": "hasManufacturer"
+            }
+        }
+    ]
+}

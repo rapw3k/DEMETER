@@ -6,8 +6,8 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
-@prefix ns1: <http://www.w3.org/ns/dx/prof/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
 @prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
@@ -205,6 +205,12 @@ cf:thickness_of_large_scale_rainfall_amount a owl:NamedIndividual ;
 cf:thickness_of_rainfall_amount a owl:NamedIndividual ;
     rdfs:label "thickness of rainfall amount" ;
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+dim:SpecificEntropy rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:ThermalConductivity rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
 
 quantity:acceleration a dim:Acceleration,
         owl:NamedIndividual ;
@@ -565,27 +571,20 @@ saref4agri:SoilTemperature rdfs:isDefinedBy saref4agri: ;
         <https://w3id.org/saref> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriProperty.ttl> ;
     owl:versionInfo "1.0" ;
-    ns1:isProfileOf <https://w3id.org/demeter/agri/agriProperty_profile4agriProperty_dim>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4cf-feature>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4foodie.ttl>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4qu>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4saref>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4saref4agri.ttl>,
-        <https://w3id.org/demeter/agri/agriProperty_profile4sosa> ;
-    ns1:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
-        <http://purl.oclc.org/NET/ssnx/cf/cf-feature>,
+    prof:isProfileOf <http://purl.oclc.org/NET/ssnx/cf/cf-feature>,
         <http://purl.oclc.org/NET/ssnx/qu/dim>,
         <http://purl.oclc.org/NET/ssnx/qu/qu>,
         <http://www.w3.org/ns/sosa>,
-        <https://w3id.org/def/saref4agri>,
-        <https://w3id.org/saref> ;
+        <https://w3id.org/demeter/agri/proxy/foodie>,
+        <https://w3id.org/demeter/agri/proxy/saref>,
+        <https://w3id.org/demeter/agri/proxy/saref4agri> ;
     prov:wasDerivedFrom [ a prov:Entity ;
             rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriProperty.ttl" ] ;
     prov:wasGeneratedBy [ a prov:Activity ;
             rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriProperty.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
-            prov:endedAtTime "2020-08-18"^^xsd:date ;
+            prov:endedAtTime "2020-10-02"^^xsd:date ;
             prov:wasAssociatedWith [ a prov:Agent ;
-                    rdfs:label "ProfileWiz 0.1.3" ] ] ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
             foaf:name "DEMETER project" ] .
 
@@ -787,30 +786,75 @@ cf:water_evaporation_flux_from_soil a owl:NamedIndividual ;
     rdfs:label "water evaporation flux from soil" ;
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
 
+dim:Acceleration rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Dimensionless rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
 dim:ElectricityAndMagnetismScheme a owl:NamedIndividual,
         skos:Scheme ;
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:EnergyDensity a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:EnergyFlux rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:RadianceExposure rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
 
 dim:SolidStatePhysicsScheme a owl:NamedIndividual,
         skos:Scheme ;
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
-qu:QuantityKind rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+dim:VelocityOrSpeed rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
 
 cf:soil_temperature a owl:NamedIndividual ;
     rdfs:label "soil temperature" ;
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
 
+dim:Compressibility a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Concentration rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Density rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
 dim:LightAndRelatedElectromagneticRadiationsScheme a owl:NamedIndividual,
         skos:Scheme ;
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
+dim:MassPerTimePerArea rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Power rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:SurfaceDensity rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
 saref:FeatureOfInterest rdfs:isDefinedBy saref: ;
     owl:equivalentClass sosa:FeatureOfInterest .
+
+dim:Distance rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
 
 dim:HeatScheme a owl:NamedIndividual,
         skos:Scheme ;
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:StressOrPressure rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Temperature rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
 
 dim:PhysicalChemistryAndMolecularPhysicsScheme a owl:NamedIndividual,
         skos:Scheme ;
@@ -833,4 +877,6 @@ saref:Property owl:equivalentClass foodie:PropertyType,
 dim:MechanicsScheme a owl:NamedIndividual,
         skos:Scheme ;
     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+qu:QuantityKind rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 

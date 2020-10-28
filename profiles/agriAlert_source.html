@@ -201,7 +201,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>The DEMETER AgriAlert is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</p>"
+        "@value": "<p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>"
       }
     ],
     "https://schema.org/name": [
@@ -259,7 +259,7 @@
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>The DEMETER AgriAlert is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</p>
+        <p>The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</p>
     </div>
 </section>
 <section id="toc">
@@ -302,8 +302,8 @@
                 <th>Super-classes</th>
                 <td>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType">iso19150-2:FeatureType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">iso19109:AnyFeature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -316,18 +316,18 @@
                 <th>Restrictions</th>
                 <td>
                     <a href="http://foodie-cloud.com/model/foodie#type">foodie:type</a> <span class="cardinality">min</span> 1<br/>
-                    <a href="http://foodie-cloud.com/model/foodie#description">foodie:description</a> <span class="cardinality">max</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#alertDate">foodie:alertDate</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://foodie-cloud.com/model/foodie#code">foodie:code</a> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://foodie-cloud.com/model/foodie#alertGeometry">foodie:alertGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1<br/>
-                    <a href="http://foodie-cloud.com/model/foodie#alertDate">foodie:alertDate</a><sup class="sup-dp" title="datatype property">dp</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://foodie-cloud.com/model/foodie#description">foodie:description</a> <span class="cardinality">max</span> 1<br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
                     <a href="http://foodie-cloud.com/model/foodie#speciesAlert">foodie:speciesAlert</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="http://foodie-cloud.com/model/foodie#zoneAlert">foodie:zoneAlert</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://foodie-cloud.com/model/foodie#plotAlert">foodie:plotAlert</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="http://foodie-cloud.com/model/foodie#zoneAlert">foodie:zoneAlert</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>

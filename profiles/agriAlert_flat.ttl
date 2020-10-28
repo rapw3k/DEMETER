@@ -88,19 +88,15 @@ fiware:validTo a owl:DatatypeProperty ;
     dct:title "DEMETER AgriAlert"@en ;
     rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
     owl:imports <http://foodie-cloud.com/model/foodie>,
-        <https://uri.fiware.org/ns/data-models>,
         <https://w3id.org/demeter/agri/agriCommon> ;
     owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriAlert.ttl> ;
     owl:versionInfo "1.0" ;
-    ns1:isProfileOf <https://w3id.org/demeter/agri/agriAlert_profile4agriAlert_data-models>,
-        <https://w3id.org/demeter/agri/agriAlert_profile4foodie.ttl> ;
-    ns1:isTransitiveProfileOf <http://foodie-cloud.com/model/foodie>,
-        <https://uri.fiware.org/ns/data-models> ;
+    ns1:isProfileOf <http://foodie-cloud.com/model/foodie> ;
     prov:wasDerivedFrom [ a prov:Entity ;
             rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriAlert.ttl" ] ;
     prov:wasGeneratedBy [ a prov:Activity ;
             rdfs:label "ProfileWiz: Normalisation (source = ../models\\agriAlert.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
-            prov:endedAtTime "2020-08-18"^^xsd:date ;
+            prov:endedAtTime "2020-09-04"^^xsd:date ;
             prov:wasAssociatedWith [ a prov:Agent ;
                     rdfs:label "ProfileWiz 0.1.3" ] ] ;
     foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;

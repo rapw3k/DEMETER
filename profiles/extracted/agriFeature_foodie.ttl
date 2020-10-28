@@ -1,0 +1,127 @@
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+foodie:containsPlot a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:Plot ;
+    rdfs:subPropertyOf <https://w3id.org/def/saref4agri#contains> ;
+    ns1:prefLabel "containsPlot"@en .
+
+foodie:containsZone a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:ManagementZone ;
+    rdfs:subPropertyOf <https://w3id.org/def/saref4agri#contains> ;
+    ns1:prefLabel "containsZone"@en .
+
+foodie:holdingPlot a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range <http://inspire.ec.europa.eu/schemas/af/3.0#Site> ;
+    rdfs:subPropertyOf <https://w3id.org/def/saref4agri#isContainedIn> ;
+    ns1:prefLabel "holdingPlot"@en .
+
+foodie:holdingSite a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range <http://inspire.ec.europa.eu/schemas/af/3.0#Holding> ;
+    rdfs:subPropertyOf <https://w3id.org/def/saref4agri#isContainedIn> ;
+    ns1:prefLabel "holdingSite"@en .
+
+foodie:holdingZone a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:Plot ;
+    rdfs:subPropertyOf <https://w3id.org/def/saref4agri#isContainedIn> ;
+    ns1:prefLabel "holdingZone"@en .
+
+foodie:machine a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:MachineType ;
+    ns1:prefLabel "machine"@en .
+
+foodie:tractor a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:TractorType ;
+    ns1:prefLabel "tractor"@en .
+
+<https://w3id.org/demeter/agri/proxy/foodie> a owl:Ontology,
+        prov:Entity ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\agriFeature.ttl" ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            rdfs:label "ProfileWiz: subset of used terms from available ontology" ;
+            prov:endedAtTime "2020-09-29"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] .
+
+foodie:ManagementZone a owl:Class ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:int ;
+            owl:onProperty prov:invalidatedAtTime ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:int ;
+            owl:onProperty <http://portele.de/ont/inspire/baseInspire#validTo> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:int ;
+            owl:onProperty <http://portele.de/ont/inspire/baseInspire#validFrom> ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty foodie:notes ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:int ;
+            owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty prov:generatedAtTime ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty foodie:code ],
+        <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature>,
+        <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType>,
+        <http://www.opengis.net/ont/geosparql#Feature> ;
+    ns1:prefLabel "ManagementZone"@en .
+
+foodie:OriginTypeValue a owl:Class ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:subClassOf <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#Codelist>,
+        ns1:Concept ;
+    ns1:prefLabel "OriginTypeValue"@en .
+
+foodie:originType a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:range foodie:OriginTypeValue ;
+    ns1:prefLabel "originType"@en .
+
+foodie:Plot a owl:Class ;
+    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty foodie:originType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:int ;
+            owl:onProperty prov:invalidatedAtTime ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty prov:generatedAtTime ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty foodie:code ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:int ;
+            owl:onProperty <http://portele.de/ont/inspire/baseInspire#validFrom> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:int ;
+            owl:onProperty <http://portele.de/ont/inspire/baseInspire#validTo> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:int ;
+            owl:onProperty foodie:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:int ;
+            owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ],
+        <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature>,
+        <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#FeatureType>,
+        <http://www.opengis.net/ont/geosparql#Feature> ;
+    ns1:prefLabel "Plot"@en .
+
