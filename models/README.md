@@ -27,6 +27,8 @@ Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/e
 
 * instance-bad-AIM_v2.* and instance-bad2-AIM_v2.* are examples that provide errors in SHACL validation
 
+* timeSeries-example1_v2.* is a valid instance example to represent time series following sosa/ssn approach (cross-domain)
+
 > Note1: previous examples have been moved to v1.0 folder, and json-ld examples have been slightly modified to include the cross-domain context. 
 > Note2: to understand how to use DEMETER AIM context(s) see section "How to create your JSON-LD content using AIM" below.
 
