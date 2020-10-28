@@ -11,7 +11,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix qudt: <http://qudt.org/2.0/schema/qudt> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -369,7 +369,7 @@ qb:componentAttachment a rdf:Property;
     rdfs:comment """Indicates the level at which the component property should be attached, this might an qb:DataSet, qb:Slice or qb:Observation, or a qb:MeasureProperty."""@en;
     rdfs:domain qb:ComponentSpecification;
     rdfs:range  rdfs:Class;
-	rdfs:subPropertyOf ngsi-ld:Relationship;
+		rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:componentProperty a rdf:Property, owl:ObjectProperty;
@@ -377,7 +377,7 @@ qb:componentProperty a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates a ComponentProperty (i.e. attribute/dimension) expected on a DataSet, or a dimension fixed in a SliceKey"@en;
     rdfs:domain qb:ComponentSet;
     rdfs:range qb:ComponentProperty;
-	rdfs:subPropertyOf ngsi-ld:Relationship;
+		rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:concept a rdf:Property, owl:ObjectProperty;
@@ -385,14 +385,14 @@ qb:concept a rdf:Property, owl:ObjectProperty;
     rdfs:comment "gives the concept which is being measured or indicated by a ComponentProperty"@en;
     rdfs:domain qb:ComponentProperty;
     rdfs:range skos:Concept;
-	rdfs:subPropertyOf ngsi-ld:Relationship;
+		rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:observationGroup a rdf:Property, owl:ObjectProperty;
     rdfs:label "observation group"@en;
     rdfs:comment "Indicates a group of observations. The domain of this property is left open so that a group may be attached to different resources and need not be restricted to a single DataSet"@en;
     rdfs:range qb:ObservationGroup;
-	rdfs:subPropertyOf ngsi-ld:Relationship;
+		rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> . 
 	
 qb:slice a rdf:Property, owl:ObjectProperty;
@@ -408,7 +408,7 @@ qb:component a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates a component specification which is included in the structure of the dataset"@en;
     rdfs:domain qb:DataStructureDefinition;
     rdfs:range qb:ComponentSpecification;
-	rdfs:subPropertyOf ngsi-ld:Relationship;
+		rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:sliceKey a rdf:Property, owl:ObjectProperty;
@@ -416,7 +416,7 @@ qb:sliceKey a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates a slice key which is used for slices in this dataset"@en;
     rdfs:domain qb:DataStructureDefinition;
     rdfs:range  qb:SliceKey;
-	rdfs:subPropertyOf ngsi-ld:Relationship;
+		rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:measure a rdf:Property, owl:ObjectProperty;
@@ -431,7 +431,7 @@ qb:sliceStructure a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates the sub-key corresponding to this slice"@en;
     rdfs:domain qb:Slice;
     rdfs:range  qb:SliceKey;
-	rdfs:subPropertyOf ngsi-ld:Relationship;
+		rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:observation a rdf:Property, owl:ObjectProperty;
@@ -439,7 +439,7 @@ qb:observation a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates a observation contained within this slice of the data set"@en;
     rdfs:domain qb:ObservationGroup;
     rdfs:range qb:Observation;
-	rdfs:subPropertyOf ngsi-ld:Relationship;
+		rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:dataSet a rdf:Property, owl:ObjectProperty;
@@ -447,8 +447,30 @@ qb:dataSet a rdf:Property, owl:ObjectProperty;
     rdfs:comment "indicates the data set of which this observation is a part"@en;
     rdfs:domain qb:Observation;
     rdfs:range qb:DataSet;
-	rdfs:subPropertyOf ngsi-ld:Relationship;
+	  rdfs:subPropertyOf ngsi-ld:Relationship;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
+
+qudt:unit
+  	a owl:ObjectProperty ;  
+  	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  	rdfs:label "unit" ;
+  	rdfs:range qudt:Unit ;
+  	rdfs:subPropertyOf ngsi-ld:Relationship .
+  	
+qudt:quantityValue
+  	a owl:ObjectProperty ;
+  	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  	rdfs:label "quantity value" ;
+  	rdfs:range qudt:QuantityValue ;
+  	rdfs:subPropertyOf ngsi-ld:Relationship .
+
+qudt:hasQuantityKind
+  	a owl:ObjectProperty ;
+  	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  	rdfs:label "has quantity kind" ;
+  	rdfs:range qudt:QuantityKind ;
+  	rdfs:subPropertyOf ngsi-ld:Relationship .
+
 
 #################################################################
 #    Data properties
@@ -502,6 +524,12 @@ sosa:resultTime
   rdfs:range xsd:dateTime ;
   skos:definition "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en ;
   rdfs:isDefinedBy sosa: .
+
+qudt:numericValue
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  rdfs:label "numeric value" .
+
 
 #################################################################
 #    Classes
@@ -1010,19 +1038,19 @@ ngsi-ld:Entity rdf:type owl:Class .
 qb:Attachable a rdfs:Class, owl:Class;
     rdfs:label "Attachable (abstract)"@en;
     rdfs:comment "Abstract superclass for everything that can have attributes and dimensions"@en;
-	rdfs:subClassOf ngsi-ld:Entity;
+	  rdfs:subClassOf ngsi-ld:Entity;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:ComponentSet a rdfs:Class, owl:Class;
     rdfs:label "Component set"@en;
     rdfs:comment "Abstract class of things which reference one or more ComponentProperties"@en;
-	rdfs:subClassOf ngsi-ld:Entity;
+	  rdfs:subClassOf ngsi-ld:Entity;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:ComponentProperty a rdfs:Class, owl:Class;
     rdfs:label "Component property (abstract)"@en;
     rdfs:subClassOf rdf:Property;
-	rdfs:subClassOf ngsi-ld:Entity;
+	  rdfs:subClassOf ngsi-ld:Entity;
     rdfs:comment "Abstract super-property of all properties representing dimensions, attributes or measures"@en;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
@@ -1041,7 +1069,7 @@ qb:ComponentSpecification a rdfs:Class, owl:Class ;
 qb:ObservationGroup a rdfs:Class, owl:Class;
     rdfs:label "Observation Group"@en;
     rdfs:comment "A, possibly arbitrary, group of observations."@en;
-	rdfs:subClassOf ngsi-ld:Entity;
+	  rdfs:subClassOf ngsi-ld:Entity;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:AttributeProperty a rdfs:Class, owl:Class;
@@ -1054,7 +1082,7 @@ qb:AttributeProperty a rdfs:Class, owl:Class;
 qb:DataSet a rdfs:Class, owl:Class;
     rdfs:label "Data set"@en;
     rdfs:comment "Represents a collection of observations, possibly organized into various slices, conforming to some common dimensional structure."@en;
-	rdfs:subClassOf ngsi-ld:Entity;
+	  rdfs:subClassOf ngsi-ld:Entity;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
 qb:DataStructureDefinition a rdfs:Class, owl:Class;
@@ -1098,7 +1126,30 @@ qb:Observation a rdfs:Class, owl:Class;
     rdfs:subClassOf qb:Attachable;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
  
+qudt:Quantity
+		a owl:Class ;
+		rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+		rdfs:label "Quantity" ;
+		rdfs:subClassOf ngsi-ld:Entity .  
 
+qudt:QuantityKind
+  	a owl:Class ;
+  	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  	rdfs:label "Quantity Kind" ;
+		rdfs:subClassOf ngsi-ld:Entity .
+		
+qudt:QuantityValue
+  	a owl:Class ;
+  	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  	rdfs:label "Quantity value" ;			
+  	rdfs:subClassOf ngsi-ld:Entity .			
+
+qudt:Unit
+		a owl:Class ;  	
+  	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+  	rdfs:label "Unit" ;  	
+  	rdfs:subClassOf ngsi-ld:Entity .			
+  	
 #################################################################
 #    ISO FEATURES AND ALIGNMENTS
 #################################################################
