@@ -1,0 +1,341 @@
+{
+  "@context" : {
+    "UnitOfMeasure" : {
+      "@id" : "https://w3id.org/saref#UnitOfMeasure"
+    },
+    "affiliation" : {
+      "@id" : "https://schema.org/affiliation"
+    },
+    "isControlledByDevice" : {
+      "@id" : "https://w3id.org/saref#isControlledByDevice",
+      "@type" : "@id"
+    },
+    "hasDevice" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#hasDevice",
+      "@type" : "@id"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "productionAmount" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#productionAmount",
+      "@type" : "@id"
+    },
+    "Humidity" : {
+      "@id" : "https://w3id.org/saref#Humidity"
+    },
+    "WeatherObserved" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#WeatherObserved"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "analysisDate" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#analysisDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "FeatureOfInterest" : {
+      "@id" : "http://www.w3.org/ns/sosa/FeatureOfInterest"
+    },
+    "measuresProperty" : {
+      "@id" : "https://w3id.org/saref#measuresProperty",
+      "@type" : "@id"
+    },
+    "soilTemperature" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#soilTemperature"
+    },
+    "hasValue" : {
+      "@id" : "https://w3id.org/saref#hasValue"
+    },
+    "snowHeight" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#snowHeight"
+    },
+    "maker" : {
+      "@id" : "http://xmlns.com/foaf/0.1/maker"
+    },
+    "Medium" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium"
+    },
+    "ThermalConductivity" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity"
+    },
+    "streamGauge" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#streamGauge"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "quantitativeProperty" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#quantitativeProperty",
+      "@type" : "@id"
+    },
+    "Wind" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Wind"
+    },
+    "Concept" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "refPointOfInterest" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#refPointOfInterest",
+      "@type" : "@id"
+    },
+    "Measurement" : {
+      "@id" : "https://w3id.org/saref#Measurement"
+    },
+    "propertyName" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#propertyName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "windDirection" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#windDirection"
+    },
+    "MassPerTimePerArea" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"
+    },
+    "Temperature" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "WeatherForecast" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#WeatherForecast"
+    },
+    "soilMoistureEc" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#soilMoistureEc"
+    },
+    "saref.hasProperty" : {
+      "@id" : "https://w3id.org/saref#hasProperty",
+      "@type" : "@id"
+    },
+    "Measure" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure"
+    },
+    "Soil" : {
+      "@id" : "https://w3id.org/def/saref4agri#Soil"
+    },
+    "measurementMadeBy" : {
+      "@id" : "https://w3id.org/saref#measurementMadeBy",
+      "@type" : "@id"
+    },
+    "EnergyFlux" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"
+    },
+    "StressOrPressure" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"
+    },
+    "PropertyType" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#PropertyType"
+    },
+    "PropertyTypeValue" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#PropertyTypeValue"
+    },
+    "visibility" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#visibility"
+    },
+    "refDevice" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#refDevice",
+      "@type" : "@id"
+    },
+    "soilProperty" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#soilProperty",
+      "@type" : "@id"
+    },
+    "Precipitation" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Precipitation"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "name" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#name"
+    },
+    "airTemperature" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#airTemperature"
+    },
+    "Layer" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer"
+    },
+    "temperature" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#temperature"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights"
+    },
+    "QuantityKind" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+    },
+    "AgriParcelRecord" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#AgriParcelRecord"
+    },
+    "Distance" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Distance"
+    },
+    "dateObserved" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#dateObserved",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "relatesToMeasurement" : {
+      "@id" : "https://w3id.org/saref#relatesToMeasurement",
+      "@type" : "@id"
+    },
+    "atmosphericPressure" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#atmosphericPressure"
+    },
+    "isMeasuredByDevice" : {
+      "@id" : "https://w3id.org/saref#isMeasuredByDevice",
+      "@type" : "@id"
+    },
+    "propertyType" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#propertyType",
+      "@type" : "@id"
+    },
+    "SurfaceDensity" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "makesMeasurement" : {
+      "@id" : "https://w3id.org/saref#makesMeasurement",
+      "@type" : "@id"
+    },
+    "Property" : {
+      "@id" : "http://www.w3.org/ns/ssn/Property"
+    },
+    "pressureTendency" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#pressureTendency"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "Density" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Density"
+    },
+    "weatherType" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#weatherType"
+    },
+    "isMeasuredIn" : {
+      "@id" : "https://w3id.org/saref#isMeasuredIn",
+      "@type" : "@id"
+    },
+    "dewPoint" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#dewPoint"
+    },
+    "hasFeatureOfInterest" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+      "@type" : "@id"
+    },
+    "SpecificEntropy" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#SpecificEntropy"
+    },
+    "productionProperty" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#productionProperty",
+      "@type" : "@id"
+    },
+    "nonQuantitativeProperty" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#nonQuantitativeProperty",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "solarRadiation" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#solarRadiation"
+    },
+    "recordHasAgriParcel" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#recordHasAgriParcel",
+      "@type" : "@id"
+    },
+    "isPropertyOf" : {
+      "@id" : "http://www.w3.org/ns/ssn/isPropertyOf",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "relativeHumidity" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#relativeHumidity"
+    },
+    "relatesToProperty" : {
+      "@id" : "https://w3id.org/saref#relatesToProperty",
+      "@type" : "@id"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "controlsProperty" : {
+      "@id" : "https://w3id.org/saref#controlsProperty",
+      "@type" : "@id"
+    },
+    "contributor" : {
+      "@id" : "http://purl.org/dc/terms/contributor"
+    },
+    "soilMoistureVwc" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#soilMoistureVwc"
+    },
+    "VelocityOrSpeed" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"
+    },
+    "Device" : {
+      "@id" : "https://w3id.org/saref#Device"
+    },
+    "hasTimestamp" : {
+      "@id" : "https://w3id.org/saref#hasTimestamp",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Dimensionless" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"
+    },
+    "precipitation" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#precipitation"
+    },
+    "observedAt" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#observedAt",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "cf.Surface" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface"
+    },
+    "SurfaceLayer" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceLayer"
+    },
+    "inScheme" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#inScheme"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
+    "windSpeed" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#windSpeed"
+    },
+    "illuminance" : {
+      "@id" : "https://uri.fiware.org/ns/data-models#illuminance"
+    },
+    "saref.isFeatureOfInterestOf" : {
+      "@id" : "https://w3id.org/saref#isFeatureOfInterestOf",
+      "@type" : "@id"
+    },
+    "saref.Temperature" : {
+      "@id" : "https://w3id.org/saref#Temperature"
+    },
+    "saref.FeatureOfInterest" : {
+      "@id" : "https://w3id.org/saref#FeatureOfInterest"
+    },
+    "saref.Property" : {
+      "@id" : "https://w3id.org/saref#Property"
+    },
+    "saref.hasFeatureOfInterest" : {
+      "@id" : "https://w3id.org/saref#hasFeatureOfInterest",
+      "@type" : "@id"
+    },
+    "saref.isPropertyOf" : {
+      "@id" : "https://w3id.org/saref#isPropertyOf",
+      "@type" : "@id"
+    },
+    "isFeatureOfInterestOf" : {
+      "@id" : "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+      "@type" : "@id"
+    }
+  }
+}

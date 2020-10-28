@@ -1,3 +1,4 @@
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o crossDomain-context.jsonld https://w3id.org/demeter/crossDomain
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriCommon-context.jsonld https://w3id.org/demeter/agri/agriCommon/2.0
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriFeature-context.jsonld https://w3id.org/demeter/agri/agriFeature/2.0
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o agriAlert-context.jsonld https://w3id.org/demeter/agri/agriAlert/2.0
