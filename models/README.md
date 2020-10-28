@@ -8,25 +8,33 @@ The modules have been created by reusing well-known ontologies and models relate
 The modules include required extensions to cover DEMETER pilot's needs, as well as alignments between elements in these models.
 The modules have been structured based on topics similar to the FIWARE agrifood models, but more in line with the underlying models.
 
+> Version 2.0 of AIM has been released. It includes:
+* Cross-domain ontology finalized
+* Full alignment of cross-domain and domain layers
+* JSON-LD context for cross-domain layer 
+* Besides updated JSON-LD contexts for each domain module, one flat and normalized JSON-LD context including all terms of the cross-domain and domain layer 
+* Updated SHACL
+* Updated examples
+
 # Examples
 
 There are some examples of how to represent data that is compliant with the AIM. 
 Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/examples](https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld). In particular:
 
-* instance-AIM.* is a valid instance example (which is mainly based on fiware elements), in json-ld and turtle respectively
+* instance-AIM_v2.* is a valid instance example (which is mainly based on fiware elements), in json-ld and turtle respectively
 
-* instance2-AIM.* is a valid instance of an extended version example (mainly based on FOODIE),  in json-ld and turtle respectively, but with invalid datetime values (so SHACL validation reports it)
+* instance2-AIM_v2.* is a valid instance of an extended version example (mainly based on FOODIE),  in json-ld and turtle respectively, but with invalid datetime values (so SHACL validation reports it)
 
-* instance-bad-AIM.* and instance-bad2-AIM.* are examples that provide errors in SHACL validation
+* instance-bad-AIM_v2.* and instance-bad2-AIM_v2.* are examples that provide errors in SHACL validation
 
-Note1: in the context I added the 10 individuals domain contexts; however in theory it should be possible to add just one: https://w3id.org/demeter/agri-context.jsonld which points to the all others, but in the json-ld playground this double refence is not processed)
+> Note1: previous examples have been moved to v1.0 folder, and json-ld examples have been slightly modified to include the cross-domain context. 
+> Note2: to understand how to use DEMETER AIM context(s) see section "How to create your JSON-LD content using AIM" below.
 
 #### Discussion of key terms (when to use which)
 The three underlying models have concepts to represent a portion of land where crops or animals are grown, 
 and since this is a major concept used in practically all agri applications, we provide here short 
 definitions for them, and how they are aligned, so developers will be able to decide which one is 
 more suited for their needs.
-
 
 ```
 - Saref4Agri:Farm = inspire:Holding = fiware:AgriFarm (Level 1)
@@ -108,7 +116,7 @@ Developers have different options to find terms in AIM:
 JSON-LD is designed around the concept of a "context" to provide mappings from JSON to a shared/common model, allowing applications to use shortcut terms to communicate with one another more efficiently, but without losing accuracy.
 The context links terms in a JSON document to elements in an ontology or vocabulary, i.e., AIM in the case of DEMETER.
 So, in order to generate AIM-based JSON-LD content, you need to define the @context in your JSON document, and reference AIM context(s) from there.
-In general, you should be able to specify just the main AIM context as below.
+In general, the simplest method is to specify just the main AIM context as below, which includes all terms in AIM (from the cross-domain and domain layer)
 
 ```
 {
@@ -117,12 +125,12 @@ In general, you should be able to specify just the main AIM context as below.
 }
 ```
 
-Note, however, that since this context is just an entry point that redirects to the actual contexts, some tools may not be able to process it (e.g., JSON-LD playground).
-If that is the case, you should reference the specific AIM contexts in your document as below:
+Alternatively, you can use individual contexts, e.g., to use only few modules of AIM. Note that referencing the main context is the same as referencing all individual modules (including cross-domain and domain layer) as shown below:
  
 ```
 {
   "@context": [
+      "https://w3id.org/demeter/agri/crossDomain-context.jsonld",
     	"https://w3id.org/demeter/agri/agriFeature-context.jsonld",
 			"https://w3id.org/demeter/agri/agriCrop-context.jsonld",
 			"https://w3id.org/demeter/agri/agriCommon-context.jsonld",
@@ -137,7 +145,6 @@ If that is the case, you should reference the specific AIM contexts in your docu
    ...
 }
 ```
-We are currently analysing if it will be better, due to the technology support, to have the actual elements in the main context.
 
 # How to validate your data is compliant with AIM (particularly the domain layer)
 
@@ -152,7 +159,7 @@ For now, you can :
 	- use [Astrea Web Service](https://astrea.linkeddata.es/). This is a service under testing, but provides a good basis for reusing.
 
 ```
-./shacl v -s demeterAgriProfile-SHACL.ttl -d instance-AIM.ttl
+./shacl v -s demeterAgriProfile-SHACL.ttl -d instance-AIM_v2.ttl
 
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh:    <http://www.w3.org/ns/shacl#> .
@@ -165,7 +172,7 @@ For now, you can :
 ```
 
 ```
-./shacl v -s demeterAgriProfile-SHACL.ttl -d instance2-AIM.ttl
+./shacl v -s demeterAgriProfile-SHACL.ttl -d instance2-AIM_v2.ttl
 
 14:07:03 WARN  riot            :: [line: 18, col: 17] Lexical form '30/1/2019' not valid for datatype XSD dateTime
 14:07:03 WARN  riot            :: [line: 19, col: 15] Lexical form '30/6/2019' not valid for datatype XSD dateTime
@@ -189,7 +196,7 @@ For now, you can :
 ```
 
 ```
-./shacl v -s demeterAgriProfile-SHACL.ttl -d instance-bad-AIM.ttl
+./shacl v -s demeterAgriProfile-SHACL.ttl -d instance-bad-AIM_v2.ttl
 
 12:21:26 WARN  riot            :: [line: 42, col: 21] Lexical form 'test-bad-pattern' not valid for datatype XSD dateTime
 @prefix schema: <https://schema.org/> .
