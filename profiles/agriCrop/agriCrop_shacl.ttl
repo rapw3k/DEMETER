@@ -528,14 +528,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      s4agri:hasDeploymentPeriod .
 
-<https://astrea.linkeddata.es/shapes#e4831dbb0bf83e060dd243221283d064>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  saref: ;
-        rdfs:label        "measures property"@en ;
-        sh:name           "measures property"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           saref:measuresProperty .
-
 <https://astrea.linkeddata.es/shapes#18d87004046224321cfffe26b3f0834d>
         a               sh:NodeShape ;
         rdfs:label      "Pluviometer"@en ;
@@ -543,6 +535,14 @@
         sh:name         "Pluviometer"@en ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  s4agri:Pluviometer .
+
+<https://astrea.linkeddata.es/shapes#e4831dbb0bf83e060dd243221283d064>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "measures property"@en ;
+        sh:name           "measures property"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref:measuresProperty .
 
 <https://astrea.linkeddata.es/shapes#86fdc4c4f9bd3efc579b048ce51bfaec>
         a               sh:NodeShape ;
@@ -835,6 +835,12 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      s4agri:hasPlantDate .
 
+<https://astrea.linkeddata.es/shapes#27856ac1645ff04192890704b3d6e478>
+        a            sh:PropertyShape ;
+        sh:class     saref:State ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref:actsUpon .
+
 <https://astrea.linkeddata.es/shapes#eb47bba04f59dfa4446ff67663f33e76>
         a            sh:PropertyShape ;
         sh:class     geo:SpatialObject ;
@@ -867,12 +873,6 @@
         sh:name           "makes measurement"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           saref:makesMeasurement .
-
-<https://astrea.linkeddata.es/shapes#27856ac1645ff04192890704b3d6e478>
-        a            sh:PropertyShape ;
-        sh:class     saref:State ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref:actsUpon .
 
 <https://astrea.linkeddata.es/shapes#8661dcd9ee54db004f23ae5cc74f9889>
         a                 sh:PropertyShape ;

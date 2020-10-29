@@ -1,0 +1,426 @@
+{
+    "@id": "https://w3id.org/demeter/crossDomain",
+    "@context": [
+        {
+            "qb": "http://purl.org/linked-data/cube#",
+            "sf": "http://www.opengis.net/ont/sf#",
+            "iso19156_SF": "http://def.isotc211.org/iso19156/2011/SamplingFeature#",
+            "geo": "http://www.opengis.net/ont/geosparql#",
+            "ssn": "http://www.w3.org/ns/ssn/",
+            "sosa": "http://www.w3.org/ns/sosa/",
+            "dim": "http://purl.oclc.org/NET/ssnx/qu/dim#",
+            "iso19156_OB": "http://def.isotc211.org/iso19156/2011/Observation#",
+            "qu": "http://purl.oclc.org/NET/ssnx/qu/qu#",
+            "schema": "https://schema.org/",
+            "ngsi-ld": "https://uri.etsi.org/ngsi-ld/v1/ontology#",
+            "wgs84_pos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+            "skos": "http://www.w3.org/2004/02/skos/core#",
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "iso19156_GFI": "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#",
+            "Sample": {
+                "@id": "sosa:Sample"
+            },
+            "Role": {
+                "@id": "schema:Role"
+            },
+            "ComponentSet": {
+                "@id": "qb:ComponentSet"
+            },
+            "MultiPoint": {
+                "@id": "sf:MultiPoint"
+            },
+            "Slice": {
+                "@id": "qb:Slice"
+            },
+            "SF_SamplingFeature": {
+                "@id": "iso19156_SF:SF_SamplingFeature"
+            },
+            "GFI_DomainFeature": {
+                "@id": "iso19156_GFI:GFI_DomainFeature"
+            },
+            "GeometryCollection": {
+                "@id": "sf:GeometryCollection"
+            },
+            "Distance": {
+                "@id": "dim:Distance"
+            },
+            "schema.Person": {
+                "@id": "https://schema.org/Person"
+            },
+            "Triangle": {
+                "@id": "sf:Triangle"
+            },
+            "Feature": {
+                "@id": "geo:Feature"
+            },
+            "Platform": {
+                "@id": "sosa:Platform"
+            },
+            "LineString": {
+                "@id": "sf:LineString"
+            },
+            "Temperature": {
+                "@id": "dim:Temperature"
+            },
+            "Property": {
+                "@id": "ngsi-ld:Property",
+                "@type": "@id"
+            },
+            "ObservableProperty": {
+                "@id": "sosa:ObservableProperty"
+            },
+            "FeatureOfInterest": {
+                "@id": "sosa:FeatureOfInterest"
+            },
+            "MultiSurface": {
+                "@id": "sf:MultiSurface"
+            },
+            "Deployment": {
+                "@id": "ssn:Deployment"
+            },
+            "Observation": {
+                "@id": "sosa:Observation"
+            },
+            "Power": {
+                "@id": "dim:Power"
+            },
+            "ObservationGroup": {
+                "@id": "qb:ObservationGroup"
+            },
+            "OM_Observation": {
+                "@id": "iso19156_OB:OM_Observation"
+            },
+            "Dimensionless": {
+                "@id": "dim:Dimensionless"
+            },
+            "PolyhedralSurface": {
+                "@id": "sf:PolyhedralSurface"
+            },
+            "Geometry": {
+                "@id": "geo:Geometry"
+            },
+            "MultiLineString": {
+                "@id": "sf:MultiLineString"
+            },
+            "SurfaceDensity": {
+                "@id": "dim:SurfaceDensity"
+            },
+            "MeasureProperty": {
+                "@id": "qb:MeasureProperty"
+            },
+            "ThermalConductivity": {
+                "@id": "dim:ThermalConductivity"
+            },
+            "DataStructureDefinition": {
+                "@id": "qb:DataStructureDefinition"
+            },
+            "Result": {
+                "@id": "sosa:Result"
+            },
+            "EnergyDensity": {
+                "@id": "dim:EnergyDensity"
+            },
+            "SpatialObject": {
+                "@id": "geo:SpatialObject"
+            },
+            "SliceKey": {
+                "@id": "qb:SliceKey"
+            },
+            "MassPerTimePerArea": {
+                "@id": "dim:MassPerTimePerArea"
+            },
+            "Polygon": {
+                "@id": "sf:Polygon"
+            },
+            "MultiCurve": {
+                "@id": "sf:MultiCurve"
+            },
+            "Scheme": {
+                "@id": "skos:Scheme"
+            },
+            "ComponentProperty": {
+                "@id": "qb:ComponentProperty"
+            },
+            "Point": {
+                "@id": "sf:Point"
+            },
+            "Attachable": {
+                "@id": "qb:Attachable"
+            },
+            "wgs84.Point": {
+                "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+            },
+            "TIN": {
+                "@id": "sf:TIN"
+            },
+            "ActuatableProperty": {
+                "@id": "sosa:ActuatableProperty"
+            },
+            "AttributeProperty": {
+                "@id": "qb:AttributeProperty"
+            },
+            "EnergyFlux": {
+                "@id": "dim:EnergyFlux"
+            },
+            "RotationalSpeed": {
+                "@id": "dim:RotationalSpeed"
+            },
+            "Entity": {
+                "@id": "ngsi-ld:Entity"
+            },
+            "GFI_Feature": {
+                "@id": "iso19156_GFI:GFI_Feature"
+            },
+            "DataSet": {
+                "@id": "qb:DataSet"
+            },
+            "LinearRing": {
+                "@id": "sf:LinearRing"
+            },
+            "QuantityKind": {
+                "@id": "qu:QuantityKind"
+            },
+            "CodedProperty": {
+                "@id": "qb:CodedProperty"
+            },
+            "System": {
+                "@id": "ssn:System"
+            },
+            "sf.Geometry": {
+                "@id": "http://www.opengis.net/ont/sf#Geometry"
+            },
+            "Energy": {
+                "@id": "dim:Energy"
+            },
+            "PropertyKind": {
+                "@id": "qu:PropertyKind"
+            },
+            "MultiPolygon": {
+                "@id": "sf:MultiPolygon"
+            },
+            "Curve": {
+                "@id": "sf:Curve"
+            },
+            "RadianceExposure": {
+                "@id": "dim:RadianceExposure"
+            },
+            "Person": {
+                "@id": "foaf:Person"
+            },
+            "StressOrPressure": {
+                "@id": "dim:StressOrPressure"
+            },
+            "Concentration": {
+                "@id": "dim:Concentration"
+            },
+            "Line": {
+                "@id": "sf:Line"
+            },
+            "Density": {
+                "@id": "dim:Density"
+            },
+            "Compressibility": {
+                "@id": "dim:Compressibility"
+            },
+            "ComponentSpecification": {
+                "@id": "qb:ComponentSpecification"
+            },
+            "Surface": {
+                "@id": "sf:Surface"
+            },
+            "qb.Observation": {
+                "@id": "http://purl.org/linked-data/cube#Observation"
+            },
+            "DimensionProperty": {
+                "@id": "qb:DimensionProperty"
+            },
+            "VelocityOrSpeed": {
+                "@id": "dim:VelocityOrSpeed"
+            },
+            "Organization": {
+                "@id": "schema:Organization"
+            },
+            "SpecificEntropy": {
+                "@id": "dim:SpecificEntropy"
+            },
+            "Agent": {
+                "@id": "foaf:Agent"
+            },
+            "Acceleration": {
+                "@id": "dim:Acceleration"
+            },
+            "sfContains": {
+                "@id": "geo:sfContains",
+                "@type": "@id"
+            },
+            "observation": {
+                "@id": "qb:observation",
+                "@type": "http://purl.org/linked-data/cube#Observation"
+            },
+            "madeObservation": {
+                "@id": "sosa:madeObservation",
+                "@type": "@id"
+            },
+            "measure": {
+                "@id": "qb:measure",
+                "@type": "qb:MeasureProperty"
+            },
+            "hasDeployment": {
+                "@id": "ssn:hasDeployment",
+                "@type": "@id"
+            },
+            "madeBySensor": {
+                "@id": "sosa:madeBySensor",
+                "@type": "@id"
+            },
+            "dataSet": {
+                "@id": "qb:dataSet",
+                "@type": "qb:DataSet"
+            },
+            "slice": {
+                "@id": "qb:slice",
+                "@type": "qb:Slice"
+            },
+            "implements": {
+                "@id": "ssn:implements",
+                "@type": "@id"
+            },
+            "concept": {
+                "@id": "qb:concept",
+                "@type": "skos:Concept"
+            },
+            "component": {
+                "@id": "qb:component",
+                "@type": "qb:ComponentSpecification"
+            },
+            "sfWithin": {
+                "@id": "geo:sfWithin",
+                "@type": "@id"
+            },
+            "hosts": {
+                "@id": "sosa:hosts",
+                "@type": "@id"
+            },
+            "observationGroup": {
+                "@id": "qb:observationGroup",
+                "@type": "qb:ObservationGroup"
+            },
+            "componentProperty": {
+                "@id": "qb:componentProperty",
+                "@type": "qb:ComponentProperty"
+            },
+            "deployedOnPlatform": {
+                "@id": "ssn:deployedOnPlatform",
+                "@type": "@id"
+            },
+            "hasFeatureOfInterest": {
+                "@id": "sosa:hasFeatureOfInterest",
+                "@type": "@id"
+            },
+            "member": {
+                "@id": "foaf:member",
+                "@type": "foaf:Agent"
+            },
+            "dimension": {
+                "@id": "qb:dimension",
+                "@type": "qb:DimensionProperty"
+            },
+            "Relationship": {
+                "@id": "ngsi-ld:Relationship",
+                "@type": "@id"
+            },
+            "isHostedBy": {
+                "@id": "sosa:isHostedBy",
+                "@type": "@id"
+            },
+            "sliceKey": {
+                "@id": "qb:sliceKey",
+                "@type": "qb:SliceKey"
+            },
+            "deployedSystem": {
+                "@id": "ssn:deployedSystem",
+                "@type": "@id"
+            },
+            "hasGeometry": {
+                "@id": "geo:hasGeometry",
+                "@type": "@id"
+            },
+            "SF_SamplingFeature.sampledFeature": {
+                "@id": "iso19156_SF:SF_SamplingFeature.sampledFeature",
+                "@type": "@id"
+            },
+            "hasProperty": {
+                "@id": "ssn:hasProperty",
+                "@type": "@id"
+            },
+            "inDeployment": {
+                "@id": "ssn:inDeployment",
+                "@type": "@id"
+            },
+            "observedProperty": {
+                "@id": "sosa:observedProperty",
+                "@type": "@id"
+            },
+            "hasSubSystem": {
+                "@id": "ssn:hasSubSystem",
+                "@type": "@id"
+            },
+            "location": {
+                "@id": "wgs84_pos:location",
+                "@type": "wgs84_pos:SpatialThing"
+            },
+            "isPropertyOf": {
+                "@id": "ssn:isPropertyOf",
+                "@type": "@id"
+            },
+            "isFeatureOfInterestOf": {
+                "@id": "sosa:isFeatureOfInterestOf",
+                "@type": "@id"
+            },
+            "sliceStructure": {
+                "@id": "qb:sliceStructure",
+                "@type": "qb:SliceKey"
+            },
+            "componentAttachment": {
+                "@id": "qb:componentAttachment",
+                "@type": "@id"
+            },
+            "order": {
+                "@id": "qb:order",
+                "@type": "xsd:int"
+            },
+            "asWKT": {
+                "@id": "geo:asWKT",
+                "@type": "geo:wktLiteral"
+            },
+            "hasSerialization": {
+                "@id": "geo:hasSerialization",
+                "@type": "rdfs:Literal"
+            },
+            "resultTime": {
+                "@id": "sosa:resultTime",
+                "@type": "xsd:dateTime"
+            },
+            "telephone": {
+                "@id": "schema:telephone",
+                "@type": "xsd:string"
+            },
+            "domainIncludes": {
+                "@id": "schema:domainIncludes",
+                "@type": "schema:Class"
+            },
+            "schema.name": {
+                "@id": "https://schema.org/name",
+                "@type": "xsd:string"
+            },
+            "rangeIncludes": {
+                "@id": "schema:rangeIncludes",
+                "@type": "schema:Class"
+            },
+            "affiliation": {
+                "@id": "schema:affiliation",
+                "@type": "schema:Organization"
+            }
+        }
+    ]
+}

@@ -11,19 +11,19 @@
         "foodie:ProductionType": {
             "type": "object",
             "properties": {
-                "foodie:productionDate": {
+                "foodie:productionAmount": {
                     "type": "string"
                 },
                 "foodie:variety": {
                     "type": "string"
                 },
-                "foodie:productionAmount": {
+                "foodie:productionDate": {
                     "type": "string"
                 }
             },
             "required": [
-                "foodie:productionDate",
-                "foodie:variety"
+                "foodie:variety",
+                "foodie:productionDate"
             ]
         },
         "iso19109:AnyFeature": {
@@ -69,39 +69,42 @@
         "foodie:CropSpecies": {
             "type": "object",
             "properties": {
+                "foodie:cropSpecies": {
+                    "type": "string"
+                },
+                "prov:generatedAtTime": {
+                    "type": "string"
+                },
+                "common:validTo": {
+                    "type": "string"
+                },
+                "common:validFrom": {
+                    "type": "string"
+                },
                 "foodie:cropArea": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "prov:generatedAtTime": {
-                    "type": "string"
-                },
-                "foodie:cropSpecies": {
-                    "type": "string"
-                },
                 "prov:invalidatedAtTime": {
-                    "type": "string"
-                },
-                "common:validFrom": {
-                    "type": "string"
-                },
-                "common:validTo": {
                     "type": "string"
                 }
             },
             "required": [
-                "foodie:cropArea",
-                "prov:generatedAtTime",
                 "foodie:cropSpecies",
-                "common:validFrom"
+                "prov:generatedAtTime",
+                "common:validFrom",
+                "foodie:cropArea"
             ]
         },
         "foodie:CropType": {
             "type": "object",
             "properties": {
-                "foodie:notes": {
+                "foodie:description": {
+                    "type": "string"
+                },
+                "foodie:genus": {
                     "type": "string"
                 },
                 "foodie:family": {
@@ -113,16 +116,18 @@
                 "foodie:variety": {
                     "type": "string"
                 },
-                "foodie:description": {
-                    "type": "string"
-                },
-                "foodie:genus": {
+                "foodie:notes": {
                     "type": "string"
                 },
                 "foodie:species": {
                     "type": "string"
                 }
             },
+            "required": []
+        },
+        "fiware:AgriCrop": {
+            "type": "object",
+            "properties": {},
             "required": []
         },
         "saref:FeatureOfInterest": {
@@ -139,24 +144,19 @@
                         "type": "string"
                     }
                 },
-                "saref4agri:hasHarvestDate": {
+                "saref4agri:hasPlantDate": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "saref4agri:hasPlantDate": {
+                "saref4agri:hasHarvestDate": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 }
             },
-            "required": []
-        },
-        "fiware:AgriCrop": {
-            "type": "object",
-            "properties": {},
             "required": []
         }
     }

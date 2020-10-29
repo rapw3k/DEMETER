@@ -1,0 +1,159 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://w3id.org/demeter/agri/agriProduct?_profile=jsonschema",
+    "type": "object",
+    "properties": {
+        "iso19150-2:Datatype": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foodie:ActiveIngredients": {
+            "type": "object",
+            "properties": {
+                "foodie:ingredientAmount": {
+                    "type": "string"
+                },
+                "foodie:ingredientName": {
+                    "type": "string"
+                },
+                "foodie:code": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "foodie:ingredientName"
+            ]
+        },
+        "iso19109:AnyFeature": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "geo:Feature": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "iso19150-2:FeatureType": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foodie:ProductNutrients": {
+            "type": "object",
+            "properties": {
+                "foodie:nutrientMeasure": {
+                    "type": "string"
+                },
+                "foodie:nutrientProduct": {
+                    "type": "string"
+                },
+                "foodie:nutrientName": {
+                    "type": "string"
+                },
+                "foodie:nutrientAmount": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "foodie:nutrientProduct",
+                "foodie:nutrientName"
+            ]
+        },
+        "foodie:Product": {
+            "type": "object",
+            "properties": {
+                "foodie:manufacturer": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foodie:description": {
+                    "type": "string"
+                },
+                "foodie:price": {
+                    "type": "string"
+                },
+                "foodie:productKind": {
+                    "type": "string"
+                },
+                "foodie:safetyInstructions": {
+                    "type": "string"
+                },
+                "foodie:storageHandling": {
+                    "type": "string"
+                },
+                "foodie:productName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foodie:productType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "foodie:manufacturer",
+                "foodie:productKind",
+                "foodie:productName",
+                "foodie:productType"
+            ]
+        },
+        "foodie:ProductPreparation": {
+            "type": "object",
+            "properties": {
+                "foodie:productQuantity": {
+                    "type": "string"
+                },
+                "foodie:safetyPeriod": {
+                    "type": "string"
+                },
+                "foodie:solventQuantity": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "foodie:productQuantity",
+                "foodie:safetyPeriod"
+            ]
+        },
+        "skos:Concept": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "iso19150-2:Codelist": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foodie:ProductKindValue": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "fiware:hasAgriProductType": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "fiware:hasAgriProductTypeChildren": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "fiware:AgriProductType": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "fiware:hasAgriProductTypeParent": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    }
+}

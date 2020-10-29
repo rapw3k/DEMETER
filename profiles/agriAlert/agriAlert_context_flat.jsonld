@@ -4,42 +4,46 @@
         {
             "foodie": "http://foodie-cloud.com/model/foodie#",
             "fiware": "https://uri.fiware.org/ns/data-models#",
-            "Alert": {
-                "@id": "foodie:Alert"
-            },
             "AlertEntity": {
                 "@id": "https://uri.fiware.org/ns/data-models#Alert"
             },
-            "plotAlert": {
-                "@id": "foodie:plotAlert",
-                "@type": "@id"
+            "Alert": {
+                "@id": "foodie:Alert"
             },
-            "alertZone": {
-                "@id": "foodie:alertZone",
-                "@type": "@id"
-            },
-            "zoneAlert": {
-                "@id": "foodie:zoneAlert",
-                "@type": "@id"
-            },
-            "alertPlot": {
-                "@id": "foodie:alertPlot",
+            "alertSpecies": {
+                "@id": "foodie:alertSpecies",
                 "@type": "@id"
             },
             "speciesAlert": {
                 "@id": "foodie:speciesAlert",
                 "@type": "@id"
             },
-            "alertSpecies": {
-                "@id": "foodie:alertSpecies",
+            "alertZone": {
+                "@id": "foodie:alertZone",
+                "@type": "@id"
+            },
+            "plotAlert": {
+                "@id": "foodie:plotAlert",
                 "@type": "@id"
             },
             "alertGeometry": {
                 "@id": "foodie:alertGeometry",
                 "@type": "@id"
             },
+            "alertPlot": {
+                "@id": "foodie:alertPlot",
+                "@type": "@id"
+            },
+            "zoneAlert": {
+                "@id": "foodie:zoneAlert",
+                "@type": "@id"
+            },
             "dateIssued": {
                 "@id": "fiware:dateIssued",
+                "@type": "xsd:dateTime"
+            },
+            "alertDate": {
+                "@id": "foodie:alertDate",
                 "@type": "xsd:dateTime"
             },
             "alertValidTo": {
@@ -49,10 +53,6 @@
             "alertValidFrom": {
                 "@id": "https://uri.fiware.org/ns/data-models#validFrom",
                 "@type": "xsd:dateTime"
-            },
-            "alertDate": {
-                "@id": "foodie:alertDate",
-                "@type": "xsd:date"
             }
         }
     ]
