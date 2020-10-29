@@ -1,0 +1,29 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix profrole: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/demeter/core> a prof:Profile ;
+    rdfs:label "DEMETER core meta-model"@en ;
+    dcterms:description "The DEMETER core ontology includes the meta-model elements reused from NGSI-LD specification that provide a formal basis for representing 'property graphs' using RDF/RDFS/OWL."@en ;
+    dcterms:title "DEMETER core meta-model"@en ;
+    rdfs:comment "The DEMETER core ontology is a profile (subset) of the ontology presented in Annex D of the NGSI-LD standard: ETSI GS CIM 006 V1.1.1 (2019-07), covering only the core property-graph entities."@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
+            dcterms:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\demeterCore.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dcterms:conformsTo <http://www.w3.org/2002/07/owl#> ;
+            dcterms:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "demeterCore\\demeterCore.ttl" ;
+            prof:hasRole profrole:vocabulary ] ;
+    prov:wasDerivedFrom "../models\\demeterCore.ttl" .
+
