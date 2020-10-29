@@ -330,6 +330,10 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           saref:isMeasuredByDevice .
 
+<https://astrea.linkeddata.es/shapes#156af31e954042e340f8709a0253518d>
+        a         sh:PropertyShape ;
+        sh:class  saref:UnitOfMeasure .
+
 <https://astrea.linkeddata.es/shapes#83b7f8163e2d75c668715725094b5549>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
@@ -339,15 +343,6 @@
         sh:nodeKind       sh:Literal ;
         sh:path           fiware:airTemperature .
 
-<https://astrea.linkeddata.es/shapes#477a31758c58ec2a31f728133ae9e4e8>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
-        rdfs:label        "precipitation"@en , "Precipitation level observed." ;
-        sh:description    "Precipitation level observed." ;
-        sh:name           "precipitation"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:precipitation .
-
 <https://astrea.linkeddata.es/shapes#d5106b5a978d899fb1d6d2c91a36ddfa>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
@@ -356,9 +351,14 @@
         sh:path           foodie:nonQuantitativeProperty ;
         sh:pattern        ".*" .
 
-<https://astrea.linkeddata.es/shapes#156af31e954042e340f8709a0253518d>
-        a         sh:PropertyShape ;
-        sh:class  saref:UnitOfMeasure .
+<https://astrea.linkeddata.es/shapes#477a31758c58ec2a31f728133ae9e4e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://fiware.github.io/data-models/specs/Weather/WeatherObserved/doc/spec.html> ;
+        rdfs:label        "precipitation"@en , "Precipitation level observed." ;
+        sh:description    "Precipitation level observed." ;
+        sh:name           "precipitation"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:precipitation .
 
 <https://astrea.linkeddata.es/shapes#dcab4bdbfe6acda4587c461732a4f224>
         a                 sh:NodeShape ;
