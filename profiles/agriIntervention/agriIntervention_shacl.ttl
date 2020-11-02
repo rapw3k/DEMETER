@@ -1,0 +1,173 @@
+@prefix schema: <https://schema.org/> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prof:  <http://www.w3.org/ns/dx/prof/> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#71109d856433408edd5fbbe2c7c9862b> , <https://astrea.linkeddata.es/shapes#8477f498da73ed230d18f8e2e151dafe> , <https://astrea.linkeddata.es/shapes#2cb52b35171814f4adb794b594d1f243> , <https://astrea.linkeddata.es/shapes#0e392f6d04db1d8e1f5bc645b67eaf44> , <https://astrea.linkeddata.es/shapes#17eb86688ae773af72274df34a49fd0c> , <https://astrea.linkeddata.es/shapes#1284343ceb04f5321bf8f1c7f6b0948e> , <https://astrea.linkeddata.es/shapes#1156cecfbe89245f15ef380c236da90b> , <https://astrea.linkeddata.es/shapes#caa55776648aa319375fbfef9ab027ae> , <https://astrea.linkeddata.es/shapes#24af3f2b31afb96bdb50576bc94012b8> , <https://astrea.linkeddata.es/shapes#3484b89c3e68bd0514ee9fc1c907e070> , <https://astrea.linkeddata.es/shapes#6acce5441353b5b00ce499d9c8be5b2c> , <https://astrea.linkeddata.es/shapes#5e7b73293b58ba1d710937f5dbe29359> , <https://astrea.linkeddata.es/shapes#a42a84afb43054b3d92df87bc8e5ef4c> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/01163512728> , <https://astrea.linkeddata.es/report/1963213088> .
+
+<https://astrea.linkeddata.es/shapes#caa55776648aa319375fbfef9ab027ae>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "waterSource"@en , "If water was applied/ use this specifies the source. One of: borehole, rainfall, river, rainwater capture, water dam, commercial supply." ;
+        sh:description    "If water was applied/ use this specifies the source. One of: borehole, rainfall, river, rainwater capture, water dam, commercial supply." ;
+        sh:name           "waterSource"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:waterSource .
+
+<https://astrea.linkeddata.es/report/1963213088>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/demeter/agri/agriCommon" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#0e392f6d04db1d8e1f5bc645b67eaf44>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Operation.md> ;
+        rdfs:label        "AgriParcelOperation" ;
+        sh:description    "This entity contains a harmonised description of a generic operations performed on a parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+        sh:name           "AgriParcelOperation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware:AgriParcelOperation .
+
+<https://astrea.linkeddata.es/report/01163512728>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://foodie-cloud.com/model/foodie" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#2cb52b35171814f4adb794b594d1f243>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Operation.md> ;
+        rdfs:label        "operationHasAgriParcel"@en , "Reference to the AgriParcel to which this entity relates." ;
+        sh:description    "Reference to the AgriParcel to which this entity relates." ;
+        sh:name           "operationHasAgriParcel"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:operationHasAgriParcel .
+
+<https://astrea.linkeddata.es/shapes#24af3f2b31afb96bdb50576bc94012b8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "hasOperator"@en , "Reference to the operator conducting the operation" ;
+        sh:description    "Reference to the operator conducting the operation" ;
+        sh:name           "hasOperator"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:hasOperator .
+
+<https://astrea.linkeddata.es/shapes#71109d856433408edd5fbbe2c7c9862b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "quantity"@en , "The total quantity of water or product used/ applied. It is recommended this is measured in litres for liquids or kilogrammes for solids." ;
+        sh:description    "The total quantity of water or product used/ applied. It is recommended this is measured in litres for liquids or kilogrammes for solids." ;
+        sh:name           "quantity"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:quantity .
+
+<https://astrea.linkeddata.es/shapes#5e7b73293b58ba1d710937f5dbe29359>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "operationType"@en , "A choice from an enumerated list describing the operation performed on the parcel. One of: fertiliser, inspection, pesticide, water, other." ;
+        sh:description    "A choice from an enumerated list describing the operation performed on the parcel. One of: fertiliser, inspection, pesticide, water, other." ;
+        sh:name           "operationType"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:operationType .
+
+<https://astrea.linkeddata.es/shapes#1156cecfbe89245f15ef380c236da90b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "status"@en , "A choice from an enumerated list describing the status. One of: planned, ongoing, finished, scheduled, cancelled." ;
+        sh:description    "A choice from an enumerated list describing the status. One of: planned, ongoing, finished, scheduled, cancelled." ;
+        sh:name           "status"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:status .
+
+<https://astrea.linkeddata.es/shapes#a42a84afb43054b3d92df87bc8e5ef4c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "plannedStartAt"@en , "The planned start date/timestamp for the operation. Note that this is advisory and the actual time the operation starts may be before or after the planned start." ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The planned start date/timestamp for the operation. Note that this is advisory and the actual time the operation starts may be before or after the planned start." ;
+        sh:name           "plannedStartAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:plannedStartAt ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#17eb86688ae773af72274df34a49fd0c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "plannedEndAt"@en , "The planned end date/timestamp for the operation. Note that this is advisory and the actual time the operation finishes may be before or after the planned end." ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The planned end date/timestamp for the operation. Note that this is advisory and the actual time the operation finishes may be before or after the planned end." ;
+        sh:name           "plannedEndAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:plannedEndAt ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#3484b89c3e68bd0514ee9fc1c907e070>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "result"@en , "A description of the results of the operation. One of: ok, aborted, failed." ;
+        sh:description    "A description of the results of the operation. One of: ok, aborted, failed." ;
+        sh:name           "result"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:result .
+
+<https://astrea.linkeddata.es/shapes#8477f498da73ed230d18f8e2e151dafe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "Timestamp when the operation actually started to be performed." , "startedAt"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "Timestamp when the operation actually started to be performed." ;
+        sh:name           "startedAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:startedAt ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#6acce5441353b5b00ce499d9c8be5b2c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "endedAt"@en , "Timestamp when the operation actually finished." ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "Timestamp when the operation actually finished." ;
+        sh:name           "endedAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:endedAt ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#1284343ceb04f5321bf8f1c7f6b0948e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
+        rdfs:label        "reportedAt"@en , "Timestamp when the event/ fault was reported." ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "Timestamp when the event/ fault was reported." ;
+        sh:name           "reportedAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:reportedAt ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .

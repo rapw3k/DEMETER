@@ -1,0 +1,163 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://w3id.org/demeter/agri/agriCrop?_profile=jsonschema",
+    "type": "object",
+    "properties": {
+        "iso19150-2:Datatype": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foodie:ProductionType": {
+            "type": "object",
+            "properties": {
+                "foodie:productionAmount": {
+                    "type": "string"
+                },
+                "foodie:variety": {
+                    "type": "string"
+                },
+                "foodie:productionDate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "foodie:variety",
+                "foodie:productionDate"
+            ]
+        },
+        "iso19109:AnyFeature": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "iso19150-2:FeatureType": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "geo:Feature": {
+            "type": "object",
+            "properties": {
+                "geo:hasGeometry": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "geo:SpatialObject": {
+            "type": "object",
+            "properties": {
+                "geo:sfWithin": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfContains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "foodie:CropSpecies": {
+            "type": "object",
+            "properties": {
+                "foodie:cropSpecies": {
+                    "type": "string"
+                },
+                "prov:generatedAtTime": {
+                    "type": "string"
+                },
+                "common:validTo": {
+                    "type": "string"
+                },
+                "common:validFrom": {
+                    "type": "string"
+                },
+                "foodie:cropArea": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "prov:invalidatedAtTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "foodie:cropSpecies",
+                "prov:generatedAtTime",
+                "common:validFrom",
+                "foodie:cropArea"
+            ]
+        },
+        "foodie:CropType": {
+            "type": "object",
+            "properties": {
+                "foodie:description": {
+                    "type": "string"
+                },
+                "foodie:genus": {
+                    "type": "string"
+                },
+                "foodie:family": {
+                    "type": "string"
+                },
+                "foodie:code": {
+                    "type": "string"
+                },
+                "foodie:variety": {
+                    "type": "string"
+                },
+                "foodie:notes": {
+                    "type": "string"
+                },
+                "foodie:species": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "fiware:AgriCrop": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "saref:FeatureOfInterest": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "saref4agri:Crop": {
+            "type": "object",
+            "properties": {
+                "obo:TAXRANK_1000000": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasPlantDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:hasHarvestDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    }
+}

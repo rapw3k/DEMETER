@@ -1,0 +1,1776 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dim: <http://purl.oclc.org/NET/ssnx/qu/dim#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix iso19156_GFI: <http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#> .
+@prefix iso19156_OB: <http://def.isotc211.org/iso19156/2011/Observation#> .
+@prefix iso19156_SF: <http://def.isotc211.org/iso19156/2011/SamplingFeature#> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/v1/ontology#> .
+@prefix ns1: <http://purl.org/dc/elements/1.1/> .
+@prefix ns2: <http://schema.org/> .
+@prefix ns3: <http://www.w3.org/ns/dx/prof/> .
+@prefix ns4: <http://www.w3.org/ns/prov#> .
+@prefix ns5: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix qu: <http://purl.oclc.org/NET/ssnx/qu/qu#> .
+@prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+qb:Attachable a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Attachable (abstract)"@en ;
+    rdfs:comment "Abstract superclass for everything that can have attributes and dimensions"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf ngsi-ld:Entity .
+
+qb:AttributeProperty a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Attribute property"@en ;
+    rdfs:comment "The class of components which represent attributes of observations in the cube, e.g. unit of measurement"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf qb:ComponentProperty ;
+    owl:disjointWith qb:MeasureProperty .
+
+qb:CodedProperty a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Coded property"@en ;
+    rdfs:comment "Superclass of all coded ComponentProperties"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf qb:ComponentProperty .
+
+qb:ComponentProperty a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Component property (abstract)"@en ;
+    rdfs:comment "Abstract super-property of all properties representing dimensions, attributes or measures"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf rdf:Property,
+        ngsi-ld:Entity .
+
+qb:ComponentSet a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Component set"@en ;
+    rdfs:comment "Abstract class of things which reference one or more ComponentProperties"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf ngsi-ld:Entity .
+
+qb:ComponentSpecification a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Component specification"@en ;
+    rdfs:comment "Used to define properties of a component (attribute, dimension etc) which are specific to its usage in a DSD."@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf qb:ComponentSet .
+
+qb:DataSet a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Data set"@en ;
+    rdfs:comment "Represents a collection of observations, possibly organized into various slices, conforming to some common dimensional structure."@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf ngsi-ld:Entity .
+
+qb:DataStructureDefinition a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Data structure definition"@en ;
+    rdfs:comment "Defines the structure of a DataSet or slice"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf qb:ComponentSet .
+
+qb:DimensionProperty a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Dimension property"@en ;
+    rdfs:comment "The class of components which represent the dimensions of the cube"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf qb:CodedProperty,
+        qb:ComponentProperty ;
+    owl:disjointWith qb:MeasureProperty .
+
+qb:MeasureProperty a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Measure property"@en ;
+    rdfs:comment "The class of components which represent the measured value of the phenomenon being observed"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf qb:ComponentProperty ;
+    owl:disjointWith qb:AttributeProperty,
+        qb:DimensionProperty .
+
+qb:Observation a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Observation"@en ;
+    rdfs:comment "A single observation in the cube, may have one or more associated measured values"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf qb:Attachable .
+
+qb:ObservationGroup a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Observation Group"@en ;
+    rdfs:comment "A, possibly arbitrary, group of observations."@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf ngsi-ld:Entity .
+
+qb:Slice a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Slice"@en ;
+    rdfs:comment "Denotes a subset of a DataSet defined by fixing a subset of the dimensional values, component properties on the Slice"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf qb:Attachable,
+        qb:ObservationGroup .
+
+qb:SliceKey a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Slice key"@en ;
+    rdfs:comment "Denotes a subset of the component properties of a DataSet which are fixed in the corresponding slices"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:subClassOf qb:ComponentSet .
+
+sf:Curve a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Curve"@en ;
+    rdfs:comment """
+A Curve is a 1-dimensional geometric object usually stored as a sequence of Points, with the subtype of Curve specifying the form of the interpolation between Points. This specification defines only one subclass of Curve, LineString, which uses linear interpolation between Points.
+A Curve is a 1-dimensional geometric object that is the homeomorphic image of a real, closed, interval.
+A Curve is simple if it does not pass through the same Point twice with the possible exception of the two end
+points.
+A Curve is closed if its start Point is equal to its end Point.
+The boundary of a closed Curve is empty.
+A Curve that is simple and closed is a Ring.
+The boundary of a non-closed Curve consists of its two end Points.
+A Curve is defined as topologically closed, that is, it contains its endpoints f(a) and f(b).
+    """@en,
+        """\r
+A Curve is a 1-dimensional geometric object usually stored as a sequence of Points, with the subtype of Curve specifying the form of the interpolation between Points. This specification defines only one subclass of Curve, LineString, which uses linear interpolation between Points.\r
+A Curve is a 1-dimensional geometric object that is the homeomorphic image of a real, closed, interval.\r
+A Curve is simple if it does not pass through the same Point twice with the possible exception of the two end\r
+points.\r
+A Curve is closed if its start Point is equal to its end Point.\r
+The boundary of a closed Curve is empty.\r
+A Curve that is simple and closed is a Ring.\r
+The boundary of a non-closed Curve consists of its two end Points.\r
+A Curve is defined as topologically closed, that is, it contains its endpoints f(a) and f(b).\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Geometry .
+
+sf:Geometry a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Geometry"@en ;
+    rdfs:comment """
+Geometry is the root class of the hierarchy.
+The instantiable subclasses of Geometry are restricted to 0, 1 and 2-dimensional geometric objects that exist in 2, 3 or 4-dimensional coordinate space (R2, R3 or R4). Geometry values in R2 have points with coordinate values for x and y. Geometry values in R3 have points with coordinate values for x, y and z or for x, y and m. Geometry values in R4 have points with coordinate values for x, y, z and m.
+The interpretation of the coordinates is subject to the coordinate reference systems associated to the point. All coordinates within a geometry object should be in the same coordinate reference systems. Each coordinate shall be unambiguously associated to a coordinate reference system either directly or through its containing geometry. The z coordinate of a point is typically, but not necessarily, represents altitude or elevation. The m coordinate represents a measurement.
+All Geometry classes described in this specification are defined so that instances of Geometry are topologically closed, i.e. all represented geometries include their boundary as point sets. This does not affect their representation, and open version of the same classes may be used in other circumstances, such as topological representations.
+    """@en,
+        """\r
+Geometry is the root class of the hierarchy.\r
+The instantiable subclasses of Geometry are restricted to 0, 1 and 2-dimensional geometric objects that exist in 2, 3 or 4-dimensional coordinate space (R2, R3 or R4). Geometry values in R2 have points with coordinate values for x and y. Geometry values in R3 have points with coordinate values for x, y and z or for x, y and m. Geometry values in R4 have points with coordinate values for x, y, z and m.\r
+The interpretation of the coordinates is subject to the coordinate reference systems associated to the point. All coordinates within a geometry object should be in the same coordinate reference systems. Each coordinate shall be unambiguously associated to a coordinate reference system either directly or through its containing geometry. The z coordinate of a point is typically, but not necessarily, represents altitude or elevation. The m coordinate represents a measurement.\r
+All Geometry classes described in this specification are defined so that instances of Geometry are topologically closed, i.e. all represented geometries include their boundary as point sets. This does not affect their representation, and open version of the same classes may be used in other circumstances, such as topological representations.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf geo:Geometry .
+
+sf:GeometryCollection a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Geometry Collection"@en ;
+    rdfs:comment """
+A GeometryCollection is a geometric object that is a collection of some number of geometric objects.
+All the elements in a GeometryCollection shall be in the same Spatial Reference System. This is also the Spatial Reference System for the GeometryCollection.
+GeometryCollection places no other constraints on its elements. Subclasses of GeometryCollection may restrict membership based on dimension and may also place other constraints on the degree of spatial overlap between elements.
+    """@en,
+        """\r
+A GeometryCollection is a geometric object that is a collection of some number of geometric objects.\r
+All the elements in a GeometryCollection shall be in the same Spatial Reference System. This is also the Spatial Reference System for the GeometryCollection.\r
+GeometryCollection places no other constraints on its elements. Subclasses of GeometryCollection may restrict membership based on dimension and may also place other constraints on the degree of spatial overlap between elements.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Geometry .
+
+sf:Line a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Line"@en ;
+    rdfs:comment """
+A Line is a LineString with exactly 2 Points.
+    """@en,
+        """\r
+A Line is a LineString with exactly 2 Points.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:LineString .
+
+sf:LineString a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Line String"@en ;
+    rdfs:comment """
+A LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.
+    """@en,
+        """\r
+A LineString is a Curve with linear interpolation between Points. Each consecutive pair of Points defines a Line segment.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Curve .
+
+sf:LinearRing a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Linear Ring"@en ;
+    rdfs:comment """
+A LinearRing is a LineString that is both closed and simple.
+    """@en,
+        """\r
+A LinearRing is a LineString that is both closed and simple.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:LineString .
+
+sf:MultiCurve a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Multi Curve"@en ;
+    rdfs:comment """
+A MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.
+A MultiCurve defines a set of methods for its subclasses and is included for reasons of extensibility.
+A MultiCurve is simple if and only if all of its elements are simple and the only intersections between any two elements occur at Points that are on the boundaries of both elements.
+The boundary of a MultiCurve is obtained by applying the mod 2 union rule: A Point is in the boundary of a MultiCurve if it is in the boundaries of an odd number of elements of the MultiCurve.
+A MultiCurve is closed if all of its elements are closed. The boundary of a closed MultiCurve is always empty.
+A MultiCurve is defined as topologically closed.
+    """@en,
+        """\r
+A MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.\r
+A MultiCurve defines a set of methods for its subclasses and is included for reasons of extensibility.\r
+A MultiCurve is simple if and only if all of its elements are simple and the only intersections between any two elements occur at Points that are on the boundaries of both elements.\r
+The boundary of a MultiCurve is obtained by applying the mod 2 union rule: A Point is in the boundary of a MultiCurve if it is in the boundaries of an odd number of elements of the MultiCurve.\r
+A MultiCurve is closed if all of its elements are closed. The boundary of a closed MultiCurve is always empty.\r
+A MultiCurve is defined as topologically closed.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:GeometryCollection .
+
+sf:MultiLineString a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Multi Line String"@en ;
+    rdfs:comment """
+A MultiLineString is a MultiCurve whose elements are LineStrings.
+    """@en,
+        """\r
+A MultiLineString is a MultiCurve whose elements are LineStrings.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:MultiCurve .
+
+sf:MultiPoint a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Multi Point"@en ;
+    rdfs:comment """
+A MultiPoint is a 0-dimensional GeometryCollection. The elements of a MultiPoint are restricted to Points. ThePoints are not connected or ordered in any semantically important way.
+A MultiPoint is simple if no two Points in the MultiPoint are equal (have identical coordinate values in X and Y).
+Every MultiPoint is spatially equal to a simple Multipoint.
+The boundary of a MultiPoint is the empty set.
+    """@en,
+        """\r
+A MultiPoint is a 0-dimensional GeometryCollection. The elements of a MultiPoint are restricted to Points. ThePoints are not connected or ordered in any semantically important way.\r
+A MultiPoint is simple if no two Points in the MultiPoint are equal (have identical coordinate values in X and Y).\r
+Every MultiPoint is spatially equal to a simple Multipoint.\r
+The boundary of a MultiPoint is the empty set.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:GeometryCollection .
+
+sf:MultiPolygon a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Multi Polygon"@en ;
+    rdfs:comment """
+A MultiPolygon is a MultiSurface whose elements are Polygons.
+The assertions for MultiPolygons are as follows.
+a) The interiors of 2 Polygons that are elements of a MultiPolygon may not intersect.
+b) The boundaries of any 2 Polygons that are elements of a MultiPolygon may not cross and may touch at only a finite number of Points.
+c) A MultiPolygon is defined as topologically closed.
+d) A MultiPolygon may not have cut lines, spikes or punctures, a MultiPolygon is a regular closed Point set,
+e) The interior of a MultiPolygon with more than 1 Polygon is not connected; the number of connected components of the interior of a MultiPolygon is equal to the number of Polygons in the MultiPolygon. 
+The boundary of a MultiPolygon is a set of closed Curves (LineStrings) corresponding to the boundaries of its element Polygons. Each Curve in the boundary of the MultiPolygon is in the boundary of exactly 1 element Polygon, and every Curve in the boundary of an element Polygon is in the boundary of the MultiPolygon.
+    """@en,
+        """\r
+A MultiPolygon is a MultiSurface whose elements are Polygons.\r
+The assertions for MultiPolygons are as follows.\r
+a) The interiors of 2 Polygons that are elements of a MultiPolygon may not intersect.\r
+b) The boundaries of any 2 Polygons that are elements of a MultiPolygon may not cross and may touch at only a finite number of Points.\r
+c) A MultiPolygon is defined as topologically closed.\r
+d) A MultiPolygon may not have cut lines, spikes or punctures, a MultiPolygon is a regular closed Point set,\r
+e) The interior of a MultiPolygon with more than 1 Polygon is not connected; the number of connected components of the interior of a MultiPolygon is equal to the number of Polygons in the MultiPolygon. \r
+The boundary of a MultiPolygon is a set of closed Curves (LineStrings) corresponding to the boundaries of its element Polygons. Each Curve in the boundary of the MultiPolygon is in the boundary of exactly 1 element Polygon, and every Curve in the boundary of an element Polygon is in the boundary of the MultiPolygon.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:MultiSurface .
+
+sf:MultiSurface a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Multi Surface"@en ;
+    rdfs:comment """
+A MultiSurface is a 2-dimensional GeometryCollection whose elements are Surfaces, all using coordinates from the same coordinate reference system. The geometric interiors of any two Surfaces in a MultiSurface may not intersect in the full coordinate system. The boundaries of any two coplanar elements in a MultiSurface may intersect, at most, at a finite number of Points. If they were to meet along a curve, they could be merged into a single surface.
+A MultiSurface may be used to represent heterogeneous surfaces collections of polygons and polyhedral surfaces. It defines a set of methods for its subclasses. The subclass of MultiSurface is MultiPolygon corresponding to a collection of Polygons only. Other collections shall use MultiSurface.
+    """@en,
+        """\r
+A MultiSurface is a 2-dimensional GeometryCollection whose elements are Surfaces, all using coordinates from the same coordinate reference system. The geometric interiors of any two Surfaces in a MultiSurface may not intersect in the full coordinate system. The boundaries of any two coplanar elements in a MultiSurface may intersect, at most, at a finite number of Points. If they were to meet along a curve, they could be merged into a single surface.\r
+A MultiSurface may be used to represent heterogeneous surfaces collections of polygons and polyhedral surfaces. It defines a set of methods for its subclasses. The subclass of MultiSurface is MultiPolygon corresponding to a collection of Polygons only. Other collections shall use MultiSurface.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:GeometryCollection .
+
+sf:Point a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Point"@en ;
+    rdfs:comment """
+A Point is a 0-dimensional geometric object and represents a single location in coordinate space. 
+A Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.
+The boundary of a Point is the empty set.
+    """@en,
+        """\r
+A Point is a 0-dimensional geometric object and represents a single location in coordinate space. \r
+A Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.\r
+The boundary of a Point is the empty set.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Geometry .
+
+sf:Polygon a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Polygon"@en ;
+    rdfs:comment """
+A Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon.
+The exterior boundary LinearRing defines the top of the surface which is the side of the surface from which the exterior boundary appears to traverse the boundary in a counter clockwise direction. The interior LinearRings will have the opposite orientation, and appear as clockwise when viewed from the top,
+The assertions for Polygons (the rules that define valid Polygons) are as follows:
+a) Polygons are topologically closed;
+b) The boundary of a Polygon consists of a set of LinearRings that make up its exterior and interior boundaries;
+c) No two Rings in the boundary cross and the Rings in the boundary of a Polygon may intersect at a Point but only as a tangent.
+d) A Polygon may not have cut lines, spikes or punctures.
+e) The interior of every Polygon is a connected point set;
+f) The exterior of a Polygon with 1 or more holes is not connected. Each hole defines a connected component of the exterior.
+    """@en,
+        """\r
+A Polygon is a planar Surface defined by 1 exterior boundary and 0 or more interior boundaries. Each interior boundary defines a hole in the Polygon.\r
+The exterior boundary LinearRing defines the top of the surface which is the side of the surface from which the exterior boundary appears to traverse the boundary in a counter clockwise direction. The interior LinearRings will have the opposite orientation, and appear as clockwise when viewed from the top,\r
+The assertions for Polygons (the rules that define valid Polygons) are as follows:\r
+a) Polygons are topologically closed;\r
+b) The boundary of a Polygon consists of a set of LinearRings that make up its exterior and interior boundaries;\r
+c) No two Rings in the boundary cross and the Rings in the boundary of a Polygon may intersect at a Point but only as a tangent.\r
+d) A Polygon may not have cut lines, spikes or punctures.\r
+e) The interior of every Polygon is a connected point set;\r
+f) The exterior of a Polygon with 1 or more holes is not connected. Each hole defines a connected component of the exterior.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Surface .
+
+sf:PolyhedralSurface a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Polyhedral Surface"@en ;
+    rdfs:comment """
+A PolyhedralSurface is a contiguous collection of polygons, which share common boundary segments. For each pair of polygons that touch, the common boundary shall be expressible as a finite collection of LineStrings. Each such LineString shall be part of the boundary of at most 2 Polygon patches. 
+For any two polygons that share a common boundary, the top of the polygon shall be consistent. This means that when two LinearRings from these two Polygons traverse the common boundary segment, they do so in opposite directions. Since the Polyhedral surface is contiguous, all polygons will be thus consistently oriented. This means that a non-oriented surface (such as Mbius band) shall not have single surface representations. They may be represented by a MultiSurface.
+If each such LineString is the boundary of exactly 2 Polygon patches, then the PolyhedralSurface is a simple, closed polyhedron and is topologically isomorphic to the surface of a sphere. By the Jordan Surface Theorem (Jordans Theorem for 2-spheres), such polyhedrons enclose a solid topologically isomorphic to the interior of a sphere; the ball. In this case, the top of the surface will either point inward or outward of the enclosed finite solid. If outward, the surface is the exterior boundary of the enclosed surface. If inward, the surface is the interior of the infinite complement of the enclosed solid. A Ball with some number of voids (holes) inside can thus be presented as one exterior boundary shell, and some number in interior boundary shells.
+    """@en,
+        """\r
+A PolyhedralSurface is a contiguous collection of polygons, which share common boundary segments. For each pair of polygons that touch, the common boundary shall be expressible as a finite collection of LineStrings. Each such LineString shall be part of the boundary of at most 2 Polygon patches. \r
+For any two polygons that share a common boundary, the top of the polygon shall be consistent. This means that when two LinearRings from these two Polygons traverse the common boundary segment, they do so in opposite directions. Since the Polyhedral surface is contiguous, all polygons will be thus consistently oriented. This means that a non-oriented surface (such as Mbius band) shall not have single surface representations. They may be represented by a MultiSurface.\r
+If each such LineString is the boundary of exactly 2 Polygon patches, then the PolyhedralSurface is a simple, closed polyhedron and is topologically isomorphic to the surface of a sphere. By the Jordan Surface Theorem (Jordans Theorem for 2-spheres), such polyhedrons enclose a solid topologically isomorphic to the interior of a sphere; the ball. In this case, the top of the surface will either point inward or outward of the enclosed finite solid. If outward, the surface is the exterior boundary of the enclosed surface. If inward, the surface is the interior of the infinite complement of the enclosed solid. A Ball with some number of voids (holes) inside can thus be presented as one exterior boundary shell, and some number in interior boundary shells.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Surface .
+
+sf:Surface a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Surface"@en ;
+    rdfs:comment """
+A Surface is a 2-dimensional geometric object.
+A simple Surface may consists of a single patch that is associated with one exterior boundary and 0 or more interior boundaries. A single such Surface patch in 3-dimensional space is isometric to planar Surfaces, by a simple affine rotation matrix that rotates the patch onto the plane z = 0. If the patch is not vertical, the projection onto the same plane is an isomorphism, and can be represented as a linear transformation, i.e. an affine.
+Polyhedral Surfaces are formed by stitching together such simple Surfaces patches along their common boundaries. Such polyhedral Surfaces in a 3-dimensional space may not be planar as a whole, depending on the orientation of their planar normals. If all the patches are in alignment (their normals are parallel), then the whole stitched polyhedral surface is co-planar and can be represented as a single patch if it is connected.
+The boundary of a simple Surface is the set of closed Curves corresponding to its exterior and interior boundaries.
+A Polygon is a simple Surface that is planar. A PolyhedralSurface is a simple surface, consisting of some number of Polygon patches or facets. If a PolyhedralSurface is closed, then it bounds a solid. A MultiSurface containing a set of closed PolyhedralSurfaces can be used to represent a Solid object with holes.
+    """@en,
+        """\r
+A Surface is a 2-dimensional geometric object.\r
+A simple Surface may consists of a single patch that is associated with one exterior boundary and 0 or more interior boundaries. A single such Surface patch in 3-dimensional space is isometric to planar Surfaces, by a simple affine rotation matrix that rotates the patch onto the plane z = 0. If the patch is not vertical, the projection onto the same plane is an isomorphism, and can be represented as a linear transformation, i.e. an affine.\r
+Polyhedral Surfaces are formed by stitching together such simple Surfaces patches along their common boundaries. Such polyhedral Surfaces in a 3-dimensional space may not be planar as a whole, depending on the orientation of their planar normals. If all the patches are in alignment (their normals are parallel), then the whole stitched polyhedral surface is co-planar and can be represented as a single patch if it is connected.\r
+The boundary of a simple Surface is the set of closed Curves corresponding to its exterior and interior boundaries.\r
+A Polygon is a simple Surface that is planar. A PolyhedralSurface is a simple surface, consisting of some number of Polygon patches or facets. If a PolyhedralSurface is closed, then it bounds a solid. A MultiSurface containing a set of closed PolyhedralSurfaces can be used to represent a Solid object with holes.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Geometry .
+
+sf:TIN a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Triangulated Irregular Network"@en ;
+    rdfs:comment """
+A TIN (triangulated irregular network) is a PolyhedralSurface consisting only of Triangle patches.
+    """@en,
+        """\r
+A TIN (triangulated irregular network) is a PolyhedralSurface consisting only of Triangle patches.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:PolyhedralSurface .
+
+sf:Triangle a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Triangle"@en ;
+    rdfs:comment """
+ A Triangle is a polygon with 3 distinct, non-collinear vertices and no interior boundary.
+    """@en,
+        """\r
+ A Triangle is a polygon with 3 distinct, non-collinear vertices and no interior boundary.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/sf> ;
+    rdfs:subClassOf sf:Polygon .
+
+wgs84_pos:Point a rdfs:Class,
+        owl:Class ;
+    rdfs:label "point",
+        "Point"@en ;
+    rdfs:comment """ 
+Uniquely identified by lat/long/alt. i.e.
+
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
+
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
+  """,
+        """ \r
+Uniquely identified by lat/long/alt. i.e.\r
+\r
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),\r
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).\r
+\r
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).\r
+  """,
+        "A point, typically described using a coordinate system relative to Earth, such as WGS84.",
+        """A point, typically described using a coordinate system relative to Earth, such as WGS84.
+  """ ;
+    rdfs:isDefinedBy wgs84_pos: ;
+    rdfs:subClassOf geo:Geometry,
+        wgs84_pos:SpatialThing .
+
+foaf:Agent a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Agent",
+        "Agent"@en ;
+    rdfs:comment "An agent (eg. person, group, software or physical artifact)." ;
+    rdfs:isDefinedBy foaf: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty foaf:member ;
+            owl:someValuesFrom foaf:Agent ],
+        ngsi-ld:Entity ;
+    owl:equivalentClass dct:Agent ;
+    ns5:term_status "stable" .
+
+foaf:Person a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Person",
+        "Person"@en ;
+    rdfs:comment "A person." ;
+    rdfs:isDefinedBy foaf: ;
+    rdfs:subClassOf wgs84_pos:SpatialThing,
+        foaf:Agent ;
+    owl:disjointWith foaf:Organization,
+        foaf:Project ;
+    owl:equivalentClass ns2:Person,
+        <http://www.w3.org/2000/10/swap/pim/contact#Person>,
+        schema:Person ;
+    ns5:term_status "stable" .
+
+schema:Organization a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment ""@en,
+        "An organization such as a school, NGO, corporation, club, etc."@en ;
+    rdfs:isDefinedBy ns2:Organization,
+        schema:Organization ;
+    rdfs:subClassOf foaf:Agent,
+        schema:Thing .
+
+schema:Person a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:comment ""@en,
+        "A person (alive, dead, undead, or fictional)."@en ;
+    rdfs:isDefinedBy ns2:Person,
+        schema:Person ;
+    rdfs:subClassOf schema:Thing,
+        ngsi-ld:Entity .
+
+dim:Dimensionless a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:SpecificEntropy a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:ThermalConductivity a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+quantity:acceleration a dim:Acceleration,
+        owl:NamedIndividual ;
+    rdfs:label "acceleration"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:SpaceAndTimeScheme .
+
+quantity:carbonContent a dim:Concentration,
+        owl:NamedIndividual ;
+    rdfs:label "carbon content"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme .
+
+quantity:compressibility a dim:Compressibility,
+        owl:NamedIndividual ;
+    rdfs:label "compressibility"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:HeatScheme,
+        dim:MechanicsScheme .
+
+quantity:concentration a dim:Concentration,
+        owl:NamedIndividual ;
+    rdfs:label "concentration"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme .
+
+quantity:criticalBuildUpSpeed a dim:RotationalSpeed,
+        owl:NamedIndividual ;
+    rdfs:label "critical build-up speed"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme,
+        dim:PeriodicAndRelatedPhenomenaScheme .
+
+quantity:criticalTorsionalSpeed a dim:RotationalSpeed,
+        owl:NamedIndividual ;
+    rdfs:label "critical torsional speed"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme,
+        dim:PeriodicAndRelatedPhenomenaScheme .
+
+quantity:criticalWhirlingSpeed a dim:RotationalSpeed,
+        owl:NamedIndividual ;
+    rdfs:label "critical whirling speed"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme,
+        dim:PeriodicAndRelatedPhenomenaScheme .
+
+quantity:density a dim:Density,
+        owl:NamedIndividual ;
+    rdfs:label "density"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme,
+        dim:MechanicsScheme,
+        dim:PhysicalChemistryAndMolecularPhysicsScheme .
+
+quantity:distance a dim:Distance,
+        owl:NamedIndividual ;
+    rdfs:label "distance"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:SpaceAndTimeScheme .
+
+quantity:energyFlowRate a qu:PropertyKind,
+        owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+quantity:fraction a qu:PropertyKind,
+        owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+quantity:length a dim:Distance,
+        owl:NamedIndividual ;
+    rdfs:label "length"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:SpaceAndTimeScheme .
+
+quantity:massPerTimePerArea a dim:MassPerTimePerArea,
+        owl:NamedIndividual ;
+    rdfs:label "mass per time per area"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:MechanicsScheme .
+
+quantity:power a dim:Power,
+        owl:NamedIndividual ;
+    rdfs:label "power"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:ElectricityAndMagnetismScheme,
+        dim:MechanicsScheme .
+
+quantity:pressure a dim:StressOrPressure,
+        owl:NamedIndividual ;
+    rdfs:label "pressure"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:MechanicsScheme .
+
+quantity:property a qu:PropertyKind,
+        owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+quantity:pseudovectorProperty a qu:PropertyKind,
+        owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+quantity:radianceExposure a dim:RadianceExposure,
+        owl:NamedIndividual ;
+    rdfs:label "radiance exposure"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme .
+
+quantity:rotationalSpeed a dim:RotationalSpeed,
+        owl:NamedIndividual ;
+    rdfs:label "rotational speed"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme,
+        dim:PeriodicAndRelatedPhenomenaScheme,
+        dim:SpaceAndTimeScheme .
+
+quantity:scalarProperty a qu:PropertyKind,
+        owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+quantity:soundEnergyDensity a dim:EnergyDensity,
+        owl:NamedIndividual ;
+    rdfs:label "sound energy density"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme .
+
+quantity:soundIntensity a dim:EnergyFlux,
+        owl:NamedIndividual ;
+    rdfs:label "sound intensity"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme .
+
+quantity:soundPower a dim:Power,
+        owl:NamedIndividual ;
+    rdfs:label "sound power"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme .
+
+quantity:soundPressure a dim:StressOrPressure,
+        owl:NamedIndividual ;
+    rdfs:label "sound pressure"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme,
+        dim:MechanicsScheme .
+
+quantity:surfaceDensity a dim:SurfaceDensity,
+        owl:NamedIndividual ;
+    rdfs:label "surface density"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:MechanicsScheme .
+
+quantity:synchronousPullOutTorque a dim:Energy,
+        owl:NamedIndividual ;
+    rdfs:label "synchronous pull-out torque"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:MechanicsScheme .
+
+quantity:synchronousSpeed a dim:RotationalSpeed,
+        owl:NamedIndividual ;
+    rdfs:label "synchronous speed"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:AcousticsScheme,
+        dim:PeriodicAndRelatedPhenomenaScheme .
+
+quantity:temperature a dim:Temperature,
+        owl:NamedIndividual ;
+    rdfs:label "temperature"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:HeatScheme,
+        dim:SolidStatePhysicsScheme .
+
+quantity:torque a dim:Energy,
+        owl:NamedIndividual ;
+    rdfs:label "torque"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:MechanicsScheme .
+
+quantity:vapourCompressibility a dim:Compressibility,
+        owl:NamedIndividual ;
+    rdfs:label "vapour compressibility"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:HeatScheme,
+        dim:PhysicalChemistryAndMolecularPhysicsScheme .
+
+quantity:vapourPressure a dim:StressOrPressure,
+        owl:NamedIndividual ;
+    rdfs:label "vapour pressure"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:MechanicsScheme .
+
+quantity:vectorProperty a qu:PropertyKind,
+        owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+quantity:velocity a dim:VelocityOrSpeed,
+        owl:NamedIndividual ;
+    rdfs:label "velocity"^^xsd:string ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme,
+        dim:SpaceAndTimeScheme .
+
+dct:contributor a owl:AnnotationProperty .
+
+dct:date a owl:AnnotationProperty .
+
+dct:identifier a owl:AnnotationProperty .
+
+qb:component a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "component specification"@en ;
+    rdfs:comment "indicates a component specification which is included in the structure of the dataset"@en ;
+    rdfs:domain qb:DataStructureDefinition ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range qb:ComponentSpecification ;
+    rdfs:subPropertyOf ngsi-ld:Relationship .
+
+qb:componentAttachment a rdf:Property ;
+    rdfs:label "component attachment"@en ;
+    rdfs:comment "Indicates the level at which the component property should be attached, this might an qb:DataSet, qb:Slice or qb:Observation, or a qb:MeasureProperty."@en ;
+    rdfs:domain qb:ComponentSpecification ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range rdfs:Class ;
+    rdfs:subPropertyOf ngsi-ld:Relationship .
+
+qb:concept a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "concept"@en ;
+    rdfs:comment "gives the concept which is being measured or indicated by a ComponentProperty"@en ;
+    rdfs:domain qb:ComponentProperty ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf ngsi-ld:Relationship .
+
+qb:dataSet a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "data set"@en ;
+    rdfs:comment "indicates the data set of which this observation is a part"@en ;
+    rdfs:domain qb:Observation ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range qb:DataSet ;
+    rdfs:subPropertyOf ngsi-ld:Relationship .
+
+qb:dimension a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "dimension"@en ;
+    rdfs:comment "An alternative to qb:componentProperty which makes explicit that the component is a dimension"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range qb:DimensionProperty ;
+    rdfs:subPropertyOf qb:componentProperty .
+
+qb:measure a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "measure"@en ;
+    rdfs:comment "An alternative to qb:componentProperty which makes explicit that the component is a measure"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range qb:MeasureProperty ;
+    rdfs:subPropertyOf qb:componentProperty .
+
+qb:observation a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "observation"@en ;
+    rdfs:comment "indicates a observation contained within this slice of the data set"@en ;
+    rdfs:domain qb:ObservationGroup ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range qb:Observation ;
+    rdfs:subPropertyOf ngsi-ld:Relationship .
+
+qb:order a owl:DatatypeProperty ;
+    rdfs:label "order"@en ;
+    rdfs:comment "indicates a priority order for the components of sets with this structure, used to guide presentations - lower order numbers come before higher numbers, un-numbered components come last"@en ;
+    rdfs:domain qb:ComponentSpecification ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range xsd:int .
+
+qb:slice a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "slice"@en ;
+    rdfs:comment "Indicates a subset of a DataSet defined by fixing a subset of the dimensional values"@en ;
+    rdfs:domain qb:DataSet ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range qb:Slice ;
+    rdfs:subPropertyOf qb:observationGroup .
+
+qb:sliceKey a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "slice key"@en ;
+    rdfs:comment "indicates a slice key which is used for slices in this dataset"@en ;
+    rdfs:domain qb:DataStructureDefinition ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range qb:SliceKey ;
+    rdfs:subPropertyOf ngsi-ld:Relationship .
+
+qb:sliceStructure a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "slice structure"@en ;
+    rdfs:comment "indicates the sub-key corresponding to this slice"@en ;
+    rdfs:domain qb:Slice ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range qb:SliceKey ;
+    rdfs:subPropertyOf ngsi-ld:Relationship .
+
+geo:asWKT a owl:DatatypeProperty ;
+    rdfs:label "asWKT"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      The WKT serialization of a geometry
+    """@en ;
+    rdfs:comment """
+      The WKT serialization of a geometry
+    """@en,
+        "The WKT serialization of a geometry"@en ;
+    rdfs:domain geo:Geometry ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:range geo:wktLiteral ;
+    rdfs:subPropertyOf geo:hasSerialization ;
+    skos:definition """
+      The WKT serialization of a geometry
+    """@en ;
+    skos:prefLabel "asWKT"@en .
+
+skos:inScheme a owl:AnnotationProperty .
+
+sosa:ActuatableProperty a owl:Class ;
+    rdfs:label "Actuatable Property"@en ;
+    rdfs:comment "An actuatable quality (property, characteristic) of a FeatureOfInterest."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Actuation ;
+            owl:onProperty sosa:isActedOnBy ],
+        ssn:Property,
+        ngsi-ld:Entity ;
+    skos:definition "An actuatable quality (property, characteristic) of a FeatureOfInterest."@en ;
+    skos:example "A window actuator acts by changing the state between a frame and a window. The ability of the window to be opened and closed is its ActuatableProperty."@en .
+
+sosa:hasSimpleResult rdfs:comment "The simple value of an Observation or Actuation."@en ;
+    skos:definition "The simple value of an Observation or Actuation."@en ;
+    schema:domainIncludes sosa:Actuation,
+        sosa:Observation .
+
+foaf:depiction a owl:AnnotationProperty .
+
+foaf:homepage a owl:AnnotationProperty .
+
+foaf:maker a owl:AnnotationProperty .
+
+schema:Role a owl:Class ;
+    rdfs:label "Role"@en ;
+    rdfs:comment "Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.<br/><br/> " ;
+    rdfs:subClassOf ngsi-ld:Entity .
+
+schema:affiliation a rdf:Property ;
+    rdfs:label "Affiliation"@en ;
+    rdfs:comment "An organization that this person is affiliated with. For example, a school/university, a club, or a team."@en ;
+    rdfs:domain schema:Person ;
+    rdfs:isDefinedBy ns2:Person ;
+    rdfs:range schema:Organization .
+
+schema:domainIncludes a rdf:Property ;
+    rdfs:label "Domain Includes"@en ;
+    rdfs:comment "Relates a property to a class that is (one of) the type(s) the property is expected to be used on."@en ;
+    rdfs:domain schema:Property ;
+    rdfs:isDefinedBy ns2:Property ;
+    rdfs:range schema:Class .
+
+schema:name a rdf:Property ;
+    rdfs:label "Name"@en,
+        "name"@en ;
+    rdfs:comment "The name of the item.",
+        "The name of the item."@en ;
+    rdfs:domain schema:Thing ;
+    rdfs:isDefinedBy ns2:Thing ;
+    rdfs:range xsd:string .
+
+schema:rangeIncludes a rdf:Property ;
+    rdfs:label "Range Includes"@en ;
+    rdfs:comment "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property."@en ;
+    rdfs:domain schema:Property ;
+    rdfs:isDefinedBy ns2:Property ;
+    rdfs:range schema:Class .
+
+schema:telephone a rdf:Property ;
+    rdfs:label "Telephone"@en,
+        "telephone"@en ;
+    rdfs:comment "The telephone number.",
+        "The telephone number."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( schema:Person schema:ContactPoint schema:Place schema:Organization ) ] ;
+    rdfs:isDefinedBy ns2:ContactPoint,
+        ns2:Organization,
+        ns2:Person,
+        ns2:Place ;
+    rdfs:range xsd:string .
+
+<https://w3id.org/demeter/crossDomain> a owl:Ontology,
+        ns4:Entity ;
+    dct:contributor [ rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+            foaf:name "Raul Palma" ;
+            schema:affiliation [ foaf:name "PSNC" ] ],
+        [ foaf:name "Ioanna Roussaki" ;
+            schema:affiliation [ foaf:name "ICCS" ] ],
+        [ foaf:name "Rob Atkinson" ;
+            schema:affiliation [ foaf:name "OGC" ] ] ;
+    dct:creator [ foaf:name "Till Döhmen" ;
+            schema:affiliation [ foaf:name "Fraunhofer FIT" ] ] ;
+    dct:description "The DEMETER AgriCrop is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+    dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+    dct:title "DEMETER Cross-Domain"@en ;
+    rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    owl:imports <http://purl.oclc.org/NET/ssnx/qu/qu>,
+        <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/ont/sf>,
+        <http://www.w3.org/ns/sosa>,
+        <http://www.w3.org/ns/ssn>,
+        <http://xmlns.com/foaf/0.1>,
+        <https://schema.org> ;
+    owl:versionIRI <https://w3id.org/demeter/crossDomain/1.0> ;
+    owl:versionInfo "1.0" ;
+    ns3:isProfileOf <http://purl.oclc.org/NET/ssnx/qu/qu>,
+        <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/ont/sf>,
+        <http://www.w3.org/ns/sosa>,
+        <http://www.w3.org/ns/ssn>,
+        <https://schema.org>,
+        <https://w3id.org/demeter/agri/proxy/foaf> ;
+    ns4:wasDerivedFrom [ a ns4:Entity ;
+            rdfs:label "C:\\repos\\rob-metalinkage\\DEMETER\\models\\cross-domain.ttl" ] ;
+    ns4:wasGeneratedBy [ a ns4:Activity ;
+            rdfs:label "ProfileWiz: Normalisation (source = ../models\\cross-domain.ttl, force_local=False, profile libs : lib/profile_cat.ttl) " ;
+            ns4:endedAtTime "2020-10-29"^^xsd:date ;
+            ns4:wasAssociatedWith [ a ns4:Agent ;
+                    rdfs:label "ProfileWiz 0.1.5" ] ] ;
+    foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
+            foaf:name "DEMETER project" ] .
+
+iso19156_OB:OM_Observation a owl:Class ;
+    rdfs:label "Observation" ;
+    rdfs:isDefinedBy <https://www.iso.org/standard/44595.html> ;
+    skos:definition "Observation process is a subtype of OM_Process. It is a process used to generate the result of the observation." .
+
+iso19156_SF:SF_SamplingFeature.sampledFeature a owl:ObjectProperty ;
+    rdfs:label "sampledFeature" ;
+    rdfs:domain iso19156_SF:SF_SamplingFeature ;
+    rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> ;
+    rdfs:range iso19156_GFI:GFI_DomainFeature,
+        iso19156_GFI:GFI_Feature .
+
+dim:Acceleration a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Density a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:ElectricityAndMagnetismScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:EnergyDensity a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:EnergyFlux a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:MassPerTimePerArea a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:RadianceExposure a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:SolidStatePhysicsScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:SurfaceDensity a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Temperature a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:VelocityOrSpeed a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+qb:observationGroup a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "observation group"@en ;
+    rdfs:comment "Indicates a group of observations. The domain of this property is left open so that a group may be attached to different resources and need not be restricted to a single DataSet"@en ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range qb:ObservationGroup ;
+    rdfs:subPropertyOf ngsi-ld:Relationship .
+
+geo:hasSerialization a owl:DatatypeProperty ;
+    rdfs:label "has serialization"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      Connects a geometry object with its text-based serialization.
+    """@en ;
+    rdfs:comment """
+      Connects a geometry object with its text-based serialization.
+    """@en,
+        "Connects a geometry object with its text-based serialization"@en ;
+    rdfs:domain geo:Geometry ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition """
+      Connects a geometry object with its text-based serialization.
+    """@en ;
+    skos:prefLabel "has serialization"@en .
+
+geo:sfContains a owl:ObjectProperty ;
+    rdfs:label "contains"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      Exists if the subject SpatialObject spatially contains the 
+      object SpatialObject. DE-9IM: T*****FF*
+    """@en ;
+    rdfs:comment """
+      Exists if the subject SpatialObject spatially contains the 
+      object SpatialObject. DE-9IM: T*****FF*
+    """@en,
+        "Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"@en ;
+    rdfs:domain geo:SpatialObject ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:range geo:SpatialObject ;
+    rdfs:subPropertyOf ngsi-ld:Property ;
+    skos:definition """
+      Exists if the subject SpatialObject spatially contains the 
+      object SpatialObject. DE-9IM: T*****FF*
+    """@en ;
+    skos:prefLabel "contains"@en .
+
+geo:sfWithin a owl:ObjectProperty ;
+    rdfs:label "within"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      Exists if the subject SpatialObject is spatially within the 
+      object SpatialObject. DE-9IM: T*F**F***
+    """@en ;
+    rdfs:comment """
+      Exists if the subject SpatialObject is spatially within the 
+      object SpatialObject. DE-9IM: T*F**F***
+    """@en,
+        "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"@en ;
+    rdfs:domain geo:SpatialObject ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:range geo:SpatialObject ;
+    rdfs:subPropertyOf ngsi-ld:Property ;
+    skos:definition """
+      Exists if the subject SpatialObject is spatially within the 
+      object SpatialObject. DE-9IM: T*F**F***
+    """@en ;
+    skos:prefLabel "within"@en .
+
+geo:wktLiteral rdfs:comment "A Well-known Text serialization of a geometry object."@en .
+
+wgs84_pos:location a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "location" ;
+    rdfs:comment """The relation between something and the point, 
+ or other geometrical thing in space, where it is.  For example, the realtionship between
+ a radio tower and a Point with a given lat and long.
+ Or a relationship between a park and its outline as a closed arc of points, or a road and
+ its location as a arc (a sequence of points).
+ Clearly in practice there will be limit to the accuracy of any such statement, but one would expect
+ an accuracy appropriate for the size of the object and uses such as mapping .
+ """,
+        "The relation between something and the point, or other geometrical thing in space, where it is." ;
+    rdfs:isDefinedBy wgs84_pos: ;
+    rdfs:range wgs84_pos:SpatialThing ;
+    rdfs:subPropertyOf foaf:based_near,
+        ngsi-ld:Relationship .
+
+sosa:hosts a owl:ObjectProperty ;
+    rdfs:label "host"@en,
+        "hosts"@en ;
+    ns2:domainIncludes sosa:Platform ;
+    ns2:rangeIncludes sosa:Actuator,
+        sosa:Platform,
+        sosa:Sampler,
+        sosa:Sensor ;
+    rdfs:comment "Relation between a Platform and a Sensor, Actuator, Sampler, or Platform, hosted or mounted on it."@en,
+        "Relation between a platform and the systems it hosts."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    owl:inverseOf sosa:isHostedBy ;
+    owl:propertyChainAxiom ( ssn:inDeployment ssn:deployedSystem ) ;
+    skos:definition "Relation between a Platform and a Sensor, Actuator, Sampler, or Platform, hosted or mounted on it."@en .
+
+sosa:isFeatureOfInterestOf a owl:ObjectProperty ;
+    rdfs:label "is feature of interest of"@en ;
+    ns2:domainIncludes sosa:FeatureOfInterest,
+        sosa:Sample ;
+    ns2:rangeIncludes sosa:Actuation,
+        sosa:Observation,
+        sosa:Sampling ;
+    rdfs:comment "A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    skos:definition "A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it."@en ;
+    schema:domainIncludes sosa:FeatureOfInterest,
+        sosa:Sample ;
+    schema:rangeIncludes sosa:Actuation,
+        sosa:Observation,
+        sosa:Sampling .
+
+sosa:madeObservation a owl:ObjectProperty ;
+    rdfs:label "made observation"@en ;
+    ns2:domainIncludes sosa:Sensor ;
+    ns2:rangeIncludes sosa:Observation ;
+    rdfs:comment "Relation between a Sensor and an Observation made by the Sensor."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    skos:definition "Relation between a Sensor and an Observation made by the Sensor."@en ;
+    schema:rangeIncludes sosa:Observation .
+
+sosa:resultTime a owl:DatatypeProperty ;
+    rdfs:label "result time"@en ;
+    ns2:domainIncludes sosa:Actuation,
+        sosa:Observation,
+        sosa:Sampling ;
+    rdfs:comment "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en ;
+    schema:domainIncludes sosa:Actuation,
+        sosa:Observation,
+        sosa:Sampling .
+
+ssn:deployedOnPlatform a owl:ObjectProperty ;
+    rdfs:label "deployed on platform"@en ;
+    rdfs:comment "Relation between a Deployment and the Platform on which the Systems are deployed."@en,
+        "Relation between a deployment and the platform(s) involved in the deployment."@en ;
+    rdfs:isDefinedBy ssn: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    owl:inverseOf ssn:inDeployment ;
+    skos:definition "Relation between a Deployment and the Platform on which the Systems are deployed."@en .
+
+ssn:implements a owl:ObjectProperty ;
+    rdfs:label "implements"@en ;
+    rdfs:comment "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)."@en ;
+    rdfs:isDefinedBy ssn: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    skos:definition "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)."@en ;
+    skos:example "For example, the relationship between a sensor and the scientific measuring Procedure via which it senses."@en .
+
+foaf:member a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "member" ;
+    rdfs:comment "Indicates a member of a Group" ;
+    rdfs:domain foaf:Group ;
+    rdfs:isDefinedBy foaf: ;
+    rdfs:range foaf:Agent ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    ns5:term_status "stable" .
+
+iso19156_GFI:GFI_DomainFeature a owl:Class ;
+    rdfs:label "GFI_DomainFeature" ;
+    rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> ;
+    rdfs:subClassOf iso19156_GFI:GFI_Feature ;
+    skos:definition "The class GFI_DomainFeature represents 'real-world' features which are the ultimate subject of an observation campaign, i.e. the features from an application domain that are .lt.i.gt.not .lt..sl.i.gt.artefacts of the observation process (sampling features). " .
+
+iso19156_SF:SF_SamplingFeature a owl:Class ;
+    rdfs:label "SF_SamplingFeature" ;
+    rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> ;
+    rdfs:subClassOf iso19156_GFI:GFI_Feature ;
+    skos:definition ".lt.ul.gt.	.lt.li.gt..lt.b.gt.Role of sampling features.lt..sl.b.gt..lt..sl.li.gt..lt..sl.ul.gt.Sampling features are artefacts of an observational strategy, and have no significant function outside of their role in the observation process. The physical characteristics of the features themselves are of little interest, except perhaps to the manager of a sampling campaign.EXAMPLE	A .ldq.station.rdq. is essentially an identifiable locality where a sensor system or procedure may be deployed and an observation made. In the context of the observation model, it connotes the .ldq.world in the vicinity of the station.rdq., so the observed properties relate to the physical medium at the station, and not to any physical artefact such as a mooring, buoy, benchmark, monument, well, etc. NOTE	A transient sampling feature, such as a ships-track or flight-line, may be identified and described, but is unlikely to be revisited exactly. A sampling feature is intended to sample some feature of interest in an application domain. However, in some cases the identity, and even the exact type, of the sampled feature may not be known when observations are made using the sampling features. .lt.ul.gt.	.lt.li.gt..lt.b.gt.Classification of sampling features.lt..sl.b.gt..lt..sl.li.gt..lt..sl.ul.gt.A small number of sampling patterns are common across disciplines in observational science. These provide a basis for processing and portrayal tools which are similar across domains, and depend primarily on the geometry of the sample design. Common names for sampling features include specimen, station, profile, transect, path, swath, and scene. These are classified primarily by their topological dimension. Point-located samples are defined in this Clause, extensive samples of various dimensions in Clause 9 and specimens in Clause 10." .
+
+dim:Compressibility a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Concentration a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Distance a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:Energy a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:LightAndRelatedElectromagneticRadiationsScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:Power a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+qb:componentProperty a rdf:Property,
+        owl:ObjectProperty ;
+    rdfs:label "component"@en ;
+    rdfs:comment "indicates a ComponentProperty (i.e. attribute/dimension) expected on a DataSet, or a dimension fixed in a SliceKey"@en ;
+    rdfs:domain qb:ComponentSet ;
+    rdfs:isDefinedBy <http://purl.org/linked-data/cube> ;
+    rdfs:range qb:ComponentProperty ;
+    rdfs:subPropertyOf ngsi-ld:Relationship .
+
+geo:Feature a owl:Class ;
+    rdfs:label "Feature"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      This class represents the top-level feature type. This class is 
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is 
+      superclass of all feature types.
+    """@en ;
+    dct:contributor "Matthew Perry" ;
+    dct:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    dct:date "2011-06-16"^^xsd:date ;
+    dct:description """\r
+      This class represents the top-level feature type. This class is \r
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is \r
+      superclass of all feature types.\r
+    """@en ;
+    rdfs:comment """
+      This class represents the top-level feature type. This class is 
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is 
+      superclass of all feature types.
+    """@en,
+        """\r
+      This class represents the top-level feature type. This class is \r
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is \r
+      superclass of all feature types.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geo:Geometry ;
+            owl:onProperty geo:hasGeometry ],
+        geo:SpatialObject ;
+    owl:disjointWith geo:Geometry ;
+    owl:equivalentClass iso19156_GFI:GFI_Feature ;
+    skos:definition """
+      This class represents the top-level feature type. This class is 
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is 
+      superclass of all feature types.
+    """@en,
+        """\r
+      This class represents the top-level feature type. This class is \r
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is \r
+      superclass of all feature types.\r
+    """@en ;
+    skos:prefLabel "Feature"@en .
+
+geo:hasGeometry a owl:ObjectProperty ;
+    rdfs:label "hasGeometry"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      A spatial representation for a given feature.
+    """@en ;
+    dct:contributor "Matthew Perry" ;
+    dct:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    dct:date "2011-06-16"^^xsd:date ;
+    dct:description """\r
+      A spatial representation for a given feature.\r
+    """@en ;
+    rdfs:comment """
+      A spatial representation for a given feature.
+    """@en,
+        """\r
+      A spatial representation for a given feature.\r
+    """@en ;
+    rdfs:domain geo:Feature ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:range geo:Geometry ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    skos:definition """
+      A spatial representation for a given feature.
+    """@en,
+        """\r
+      A spatial representation for a given feature.\r
+    """@en ;
+    skos:prefLabel "hasGeometry"@en .
+
+sosa:ObservableProperty a owl:Class ;
+    rdfs:label "Observable Property"@en ;
+    rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Observation ;
+            owl:onProperty [ owl:inverseOf sosa:observedProperty ] ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Sensor ;
+            owl:onProperty sosa:isObservedBy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ssn:Stimulus ;
+            owl:onProperty [ owl:inverseOf ssn:isProxyFor ] ],
+        ssn:Property,
+        ngsi-ld:Entity ;
+    skos:definition "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+    skos:example "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
+
+sosa:hasFeatureOfInterest a owl:ObjectProperty ;
+    rdfs:label "has feature of interest"@en ;
+    ns2:domainIncludes sosa:Actuation,
+        sosa:Observation,
+        sosa:Sampling ;
+    ns2:rangeIncludes sosa:FeatureOfInterest,
+        sosa:Sample ;
+    rdfs:comment "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    owl:inverseOf sosa:isFeatureOfInterestOf ;
+    skos:definition "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en ;
+    skos:example "For example, in an Observation of the weight of a person, the FeatureOfInterest is the person and the property is its weight."@en ;
+    schema:domainIncludes sosa:Actuation,
+        sosa:Observation,
+        sosa:Sampling ;
+    schema:rangeIncludes sosa:FeatureOfInterest,
+        sosa:Sample .
+
+sosa:hasResult rdfs:comment "Relation linking an Observation or Actuation or act of Sampling and a Result."@en ;
+    skos:definition "Relation linking an Observation or Actuation or act of Sampling and a Result."@en ;
+    schema:domainIncludes sosa:Actuation,
+        sosa:Observation,
+        sosa:Sampling ;
+    schema:rangeIncludes sosa:Result,
+        sosa:Sample .
+
+sosa:isHostedBy a owl:ObjectProperty ;
+    rdfs:label "is hosted by"@en ;
+    ns2:domainIncludes sosa:Actuator,
+        sosa:Platform,
+        sosa:Sampler,
+        sosa:Sensor ;
+    ns2:rangeIncludes sosa:Platform ;
+    rdfs:comment "Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by."@en,
+        "Relation between a system and its hosting platform."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    skos:definition "Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by."@en .
+
+sosa:isSampleOf owl:equivalentProperty iso19156_SF:SF_SamplingFeature.sampledFeature .
+
+sosa:madeBySensor a owl:ObjectProperty ;
+    rdfs:label "made by sensor"@en ;
+    ns2:domainIncludes sosa:Observation ;
+    ns2:rangeIncludes sosa:Sensor ;
+    rdfs:comment "Relation between an Observation and the Sensor which made the Observation."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    owl:inverseOf sosa:madeObservation ;
+    skos:definition "Relation between an Observation and the Sensor which made the Observation."@en .
+
+ssn:Deployment a owl:Class ;
+    rdfs:label "Deployment"@en ;
+    rdfs:comment "Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform."@en ;
+    rdfs:isDefinedBy ssn: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ssn:System ;
+            owl:onProperty ssn:deployedSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ssn:Property ;
+            owl:onProperty ssn:forProperty ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Platform ;
+            owl:onProperty ssn:deployedOnPlatform ],
+        ngsi-ld:Entity ;
+    skos:definition "Describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform."@en ;
+    skos:example "For example, a temperature Sensor deployed on a wall, or a whole network of Sensors deployed for an Observation campaign."@en .
+
+ssn:deployedSystem a owl:ObjectProperty ;
+    rdfs:label "deployed system"@en ;
+    rdfs:comment "Relation between a Deployment and a deployed System."@en,
+        "Relation between a deployment and the system deployed."@en ;
+    rdfs:isDefinedBy ssn: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    owl:inverseOf ssn:hasDeployment ;
+    skos:definition "Relation between a Deployment and a deployed System."@en .
+
+ssn:hasDeployment a owl:ObjectProperty ;
+    rdfs:label "has deployment"@en ;
+    rdfs:comment "Relation between a System and a Deployment, recording that the System is deployed in that Deployment."@en ;
+    rdfs:isDefinedBy ssn: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    skos:definition "Relation between a System and a Deployment, recording that the System is deployed in that Deployment."@en .
+
+ssn:hasProperty a owl:ObjectProperty ;
+    rdfs:label "has property"@en ;
+    rdfs:comment "A relation between a FeatureOfInterest and a Property of that feature.",
+        "Relation between an entity and a Property of that entity."@en ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/ssn>,
+        ssn: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    owl:inverseOf ssn:isPropertyOf ;
+    skos:definition "Relation between an entity and a Property of that entity."@en .
+
+ssn:hasSubSystem a owl:ObjectProperty ;
+    rdfs:label "has subsystem"@en ;
+    rdfs:comment "Relation between a System and its component parts."@en ;
+    rdfs:isDefinedBy ssn: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    skos:definition "Relation between a System and its component parts."@en .
+
+ssn:isPropertyOf a owl:ObjectProperty ;
+    rdfs:label "is property of"@en ;
+    rdfs:comment "Relation between a Property and the entity it belongs to."@en ;
+    rdfs:isDefinedBy ssn: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    skos:definition "Relation between a Property and the entity it belongs to."@en .
+
+ngsi-ld:Property a owl:ObjectProperty .
+
+dim:HeatScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:StressOrPressure a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+sosa:Result a owl:Class ;
+    rdfs:label "Result"@en ;
+    rdfs:comment "The Result of an Observation, Actuation, or act of Sampling. To store an observation's simple result value one can use the hasSimpleResult property."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty sosa:isResultOf ] ;
+    skos:definition "The Result of an Observation, Actuation, or act of Sampling. To store an observation's simple result value one can use the hasSimpleResult property."@en ;
+    skos:example "The value 20 as the height of a certain tree together with the unit, e.g., Meter."@en .
+
+sosa:observedProperty a owl:ObjectProperty ;
+    rdfs:label "observed property"@en ;
+    dct:description "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation." ;
+    ns2:domainIncludes sosa:Observation ;
+    ns2:rangeIncludes sosa:ObservableProperty ;
+    rdfs:comment "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    skos:definition "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en .
+
+ssn:inDeployment a owl:ObjectProperty ;
+    rdfs:label "in deployment"@en ;
+    rdfs:comment "Relation between a Platform and a Deployment, meaning that the deployedSystems of the Deployment are hosted on the Platform."@en,
+        "Relation between a platform and the deployment(s) that takes place in the platform."@en ;
+    rdfs:isDefinedBy ssn: ;
+    rdfs:subPropertyOf ngsi-ld:Relationship ;
+    skos:definition "Relation between a Platform and a Deployment, meaning that the deployedSystems of the Deployment are hosted on the Platform."@en ;
+    skos:example "For example, a relation between a buoy and a deployment of several Sensors."@en .
+
+iso19156_GFI:GFI_Feature a owl:Class ;
+    rdfs:label "GFI_Feature" ;
+    rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> ;
+    skos:definition "The class GFI_Feature (Figure 2) is an instance of the .og.metaclass.cg. GF_FeatureType (ISO 19109). It represents the set of all classes which are feature types. NOTE	GFI_Feature is implemented in GML (ISO 19136:2007) by the element gml:AbstractFeature and type gml:AbstractFeatureType. In an implementation this abstract class shall be substituted by a concrete class representing a feature type from an application schema associated with a domain of discourse (ISO 19109, ISO 19101). Sampling Features (Clause 8) are a class of feature-types whose role is primarily associated with observations. " .
+
+dim:PhysicalChemistryAndMolecularPhysicsScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+ssn:Property a owl:Class ;
+    rdfs:label "Property"@en ;
+    rdfs:comment "A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity."@en ;
+    rdfs:isDefinedBy ssn: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom sosa:FeatureOfInterest ;
+            owl:onProperty ssn:isPropertyOf ],
+        ngsi-ld:Entity ;
+    skos:definition "A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity."@en .
+
+ssn:System a owl:Class ;
+    rdfs:label "System"@en ;
+    rdfs:comment "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other Systems. (Definition taken from http://www.w3.org/ns/ssn/System)"@en,
+        "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems."@en ;
+    rdfs:isDefinedBy ssn: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Procedure ;
+            owl:onProperty ssn:implements ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ssn:System ;
+            owl:onProperty ssn:hasSubSystem ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ssn:Deployment ;
+            owl:onProperty ssn:hasDeployment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Platform ;
+            owl:onProperty sosa:isHostedBy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ssn:System ;
+            owl:onProperty [ owl:inverseOf ssn:hasSubSystem ] ],
+        ngsi-ld:Entity ;
+    skos:definition "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems."@en .
+
+dim:PeriodicAndRelatedPhenomenaScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:RotationalSpeed a owl:Class ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+    rdfs:subClassOf qu:QuantityKind .
+
+dim:SpaceAndTimeScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+qu:PropertyKind a owl:Class ;
+    rdfs:label "PropertyKind",
+        "PropertyKind " ;
+    rdfs:comment "A PropertyKind  is a meta-property which helps to characterise categories of properties e.g. scalar, vector" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20>,
+        "http://purl.oclc.org/NET/ssnx/qu" ;
+    rdfs:seeAlso "http://www.omgsysml.org/qudv#Quantity" ;
+    rdfs:subClassOf ngsi-ld:Entity .
+
+sosa:Platform a owl:Class ;
+    rdfs:label "Platform"@en ;
+    rdfs:comment "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms (definition taken from http://www.w3.org/ns/sosa/Platform)"@en,
+        "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ssn:Deployment ;
+            owl:onProperty ssn:inDeployment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ssn:System ;
+            owl:onProperty sosa:hosts ],
+        ngsi-ld:Entity ;
+    skos:definition "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms."@en ;
+    skos:example "A post, buoy, vehicle, ship, aircraft, satellite, cell-phone, human or animal may act as platforms for (technical or biological) sensors or actuators."@en .
+
+sosa:Sample a owl:Class ;
+    rdfs:label "Sample"@en ;
+    rdfs:comment "A Sample is the result from an act of Sampling."@en,
+        "Feature on which Observations may be made, which is intended to be representative of a FeatureOfInterest that is not fully accessible."@en,
+        "Feature which is intended to be representative of a FeatureOfInterest on which Observations may be made."@en,
+        "Physical samples are sometimes known as 'specimens'."@en,
+        """Samples are artifacts of an observational strategy, and have no significant function outside of their role in the observation process. The characteristics of the samples themselves are of little interest, except perhaps to the manager of a sampling campaign.
+
+A Sample is intended to sample some FatureOfInterest, so there is an expectation of at least one isSampleOf property. However, in some cases the identity, and even the exact type, of the sampled feature may not be known when observations are made using the sampling features."""@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty sosa:isResultOf ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Sampling ;
+            owl:onProperty sosa:isResultOf ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom sosa:FeatureOfInterest ;
+            owl:onProperty sosa:isSampleOf ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty sosa:isSampleOf ],
+        sosa:FeatureOfInterest,
+        sosa:Result ;
+    owl:equivalentClass iso19156_SF:SF_SamplingFeature ;
+    skos:definition "Feature which is intended to be representative of a FeatureOfInterest on which Observations may be made."@en ;
+    skos:example "A 'station' is essentially an identifiable locality where a sensor system or Procedure may be deployed and an observation made. In the context of the observation model, it connotes the 'world in the vicinity of the station', so the observed properties relate to the physical medium at the station, and not to any physical artifact such as a mooring, buoy, benchmark, monument, well, etc."@en,
+        "A 'station' is essentially an identifiable locality where a sensor system or Process may be deployed and an observation made. In the context of the observation model, it connotes the 'world in the vicinity of the station', so the observed properties relate to the physical medium at the station, and not to any physical artifact such as a mooring, buoy, benchmark, monument, well, etc."@en,
+        "A statistical sample is often designed to be characteristic of an entire population, so that observations can be made regarding the sample that provide a good estimate of the properties of the population."@en ;
+    skos:note "A transient sample, such as a ships-track or flight-line, might be identified and described, but is unlikely to be revisited exactly."@en .
+
+geo:Geometry a owl:Class ;
+    rdfs:label "Geometry"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      The class represents the top-level geometry type. This class is 
+      equivalent to the UML class GM_Object defined in ISO 19107, and 
+      it is superclass of all geometry types.
+    """@en ;
+    dct:contributor "Matthew Perry" ;
+    dct:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    dct:date "2011-06-16"^^xsd:date ;
+    dct:description """\r
+      The class represents the top-level geometry type. This class is \r
+      equivalent to the UML class GM_Object defined in ISO 19107, and \r
+      it is superclass of all geometry types.\r
+    """@en ;
+    rdfs:comment """
+      The class represents the top-level geometry type. This class is 
+      equivalent to the UML class GM_Object defined in ISO 19107, and 
+      it is superclass of all geometry types.
+    """@en,
+        """\r
+      The class represents the top-level geometry type. This class is \r
+      equivalent to the UML class GM_Object defined in ISO 19107, and \r
+      it is superclass of all geometry types.\r
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:subClassOf geo:SpatialObject ;
+    owl:disjointWith geo:Feature ;
+    skos:definition """
+      The class represents the top-level geometry type. This class is 
+      equivalent to the UML class GM_Object defined in ISO 19107, and 
+      it is superclass of all geometry types.
+    """@en,
+        """\r
+      The class represents the top-level geometry type. This class is \r
+      equivalent to the UML class GM_Object defined in ISO 19107, and \r
+      it is superclass of all geometry types.\r
+    """@en ;
+    skos:prefLabel "Geometry"@en .
+
+geo:SpatialObject a owl:Class ;
+    rdfs:label "SpatialObject"@en ;
+    ns1:contributor "Matthew Perry" ;
+    ns1:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    ns1:date "2011-06-16"^^xsd:date ;
+    ns1:description """
+      The class spatial-object represents everything that can have 
+      a spatial representation. It is superclass of feature and geometry.
+    """@en ;
+    rdfs:comment """
+      The class spatial-object represents everything that can have 
+      a spatial representation. It is superclass of feature and geometry.
+    """@en,
+        "The class spatial-object represents everything that can have a spatial representation. It is superclass of feature and geometry."@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geo:SpatialObject ;
+            owl:onProperty geo:sfWithin ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geo:Geometry ;
+            owl:onProperty geo:hasGeometry ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom geo:SpatialObject ;
+            owl:onProperty geo:sfContains ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom wgs84_pos:Point ;
+            owl:onProperty wgs84_pos:location ],
+        ngsi-ld:Entity ;
+    skos:definition """
+      The class spatial-object represents everything that can have 
+      a spatial representation. It is superclass of feature and geometry.
+    """@en ;
+    skos:prefLabel "SpatialObject"@en .
+
+sosa:FeatureOfInterest a owl:Class ;
+    rdfs:label "Feature Of Interest"@en ;
+    rdfs:comment "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ssn:hasProperty ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ssn:Property ;
+            owl:onProperty ssn:hasProperty ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Sample ;
+            owl:onProperty sosa:hasSample ],
+        iso19156_GFI:GFI_DomainFeature,
+        ngsi-ld:Entity ;
+    skos:definition "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en ;
+    skos:example "When measuring the height of a tree, the height is the observed ObservableProperty, 20m may be the Result of the Observation, and the tree is the FeatureOfInterest. A window is a FeatureOfInterest for an automatic window control Actuator."@en .
+
+dim:AcousticsScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+dim:MechanicsScheme a owl:NamedIndividual,
+        skos:Scheme ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+
+skos:Scheme a owl:Class ;
+    rdfs:subClassOf ngsi-ld:Entity .
+
+sosa:Observation a owl:Class ;
+    rdfs:label "Observation"@en ;
+    rdfs:comment "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
+    rdfs:isDefinedBy sosa: ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Result ;
+            owl:onProperty sosa:hasResult ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ssn:Stimulus ;
+            owl:onProperty ssn:wasOriginatedBy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Procedure ;
+            owl:onProperty sosa:usedProcedure ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty sosa:observedProperty ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty sosa:madeBySensor ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom sosa:Sensor ;
+            owl:onProperty sosa:madeBySensor ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom sosa:FeatureOfInterest ;
+            owl:onProperty sosa:hasFeatureOfInterest ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom sosa:ObservableProperty ;
+            owl:onProperty sosa:observedProperty ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty ssn:wasOriginatedBy ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty sosa:resultTime ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty sosa:phenomenonTime ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty sosa:hasResult ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty sosa:hasFeatureOfInterest ],
+        ngsi-ld:Entity ;
+    owl:equivalentClass iso19156_OB:OM_Observation ;
+    skos:definition "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
+    skos:example "The activity of estimating the intensity of an Earthquake using the Mercalli intensity scale is an Observation as is measuring the moment magnitude, i.e., the energy released by said earthquake."@en .
+
+qu:QuantityKind a owl:Class ;
+    rdfs:label "QuantityKind" ;
+    ns1:source "skos:exactMatch 'QuantityKind' [SysML 1.2-QUDV] http://www.omgwiki.org/OMGSysML/doku.php?id=sysml-qudv:quantities_units_dimensions_values_qudv" ;
+    rdfs:comment """A QuantityKind is an abstract classifier that represents the [VIM] concept of "kind of quantity" that is defined as "aspect
+common to mutually comparable quantities." A QuantityKind represents the essence of a quantity without any numerical
+value or unit. Quantities of the same kind within a given system of quantities have the same quantity dimension. However,
+quantities of the same dimension are not necessarily of the same kind.""" ;
+    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20>,
+        "http://purl.oclc.org/NET/ssnx/qu" ;
+    rdfs:seeAlso "http://www.omgsysml.org/qudv#Quantity" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass qu:Scale ;
+                        owl:onProperty qu:scale ] [ a owl:Restriction ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:name ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:symbol ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:definitionURI ] [ a owl:Restriction ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:string ;
+                        owl:onProperty qu:description ] ) ],
+        skos:Scheme .
+
+ngsi-ld:Entity a owl:Class .
+
+ngsi-ld:Relationship a owl:ObjectProperty .
+
