@@ -1,0 +1,95 @@
+@prefix schema: <https://schema.org/> .
+@prefix :      <https://w3id.org/demeter/> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/v1/ontology#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<https://astrea.linkeddata.es/shapes#3b9939ceb46b5921e39565390a00cb17>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      ngsi-ld:hasValue .
+
+<https://astrea.linkeddata.es/shapes#c77654dc7d225e9b11cb0e2206c52715>
+        a         sh:PropertyShape ;
+        sh:class  ngsi-ld:Value .
+
+<https://astrea.linkeddata.es/shapes#be1c6bcec411d57176afa44ebe0ffa44>
+        a               sh:NodeShape , sh:PropertyShape ;
+        sh:nodeKind     sh:IRI , sh:BlankNodeOrIRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#1cf598ed932b84574c5c2aec418ea0b3> ;
+        sh:or           [ rdf:first  ngsi-ld:Property ;
+                          rdf:first  [ sh:class  ngsi-ld:Property ;
+                                       sh:path   ngsi-ld:Property
+                                     ] ;
+                          rdf:rest   [ rdf:first  ngsi-ld:Value ;
+                                       rdf:first  [ sh:class  ngsi-ld:Value ;
+                                                    sh:path   ngsi-ld:Property
+                                                  ] ;
+                                       rdf:rest   ()
+                                     ]
+                        ] ;
+        sh:targetClass  ngsi-ld:Property .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#3b9939ceb46b5921e39565390a00cb17> , <https://astrea.linkeddata.es/shapes#6ca1b18163449d6df4a3c37840d223d8> , <https://astrea.linkeddata.es/shapes#1f52b11bede458c15470977b3b7836c4> , <https://astrea.linkeddata.es/shapes#81921484f3bd8f24202abc510618144d> , <https://astrea.linkeddata.es/shapes#1cf598ed932b84574c5c2aec418ea0b3> , <https://astrea.linkeddata.es/shapes#65175a0c0079f730770cbce551b8e0e2> , <https://astrea.linkeddata.es/shapes#bb8b3fdb68ba02fec06855049d87e9a3> , <https://astrea.linkeddata.es/shapes#be1c6bcec411d57176afa44ebe0ffa44> , <https://astrea.linkeddata.es/shapes#c77654dc7d225e9b11cb0e2206c52715> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#6ca1b18163449d6df4a3c37840d223d8>
+        a               sh:NodeShape , sh:PropertyShape ;
+        sh:nodeKind     sh:IRI , sh:BlankNodeOrIRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#c77654dc7d225e9b11cb0e2206c52715> ;
+        sh:or           [ rdf:first  ngsi-ld:Entity ;
+                          rdf:first  [ sh:class  ngsi-ld:Entity ;
+                                       sh:path   ngsi-ld:Relationship
+                                     ] ;
+                          rdf:rest   [ rdf:first  ngsi-ld:Relationship ;
+                                       rdf:first  [ sh:class  ngsi-ld:Relationship ;
+                                                    sh:path   ngsi-ld:Relationship
+                                                  ] ;
+                                       rdf:rest   ()
+                                     ]
+                        ] ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bb8b3fdb68ba02fec06855049d87e9a3> ;
+        sh:targetClass  ngsi-ld:Relationship .
+
+<https://astrea.linkeddata.es/shapes#81921484f3bd8f24202abc510618144d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#c77654dc7d225e9b11cb0e2206c52715> , <https://astrea.linkeddata.es/shapes#1cf598ed932b84574c5c2aec418ea0b3> , <https://astrea.linkeddata.es/shapes#65175a0c0079f730770cbce551b8e0e2> ;
+        sh:targetClass  ngsi-ld:Entity .
+
+<https://astrea.linkeddata.es/shapes#65175a0c0079f730770cbce551b8e0e2>
+        a         sh:PropertyShape ;
+        sh:class  ngsi-ld:Property .
+
+<https://astrea.linkeddata.es/shapes#1f52b11bede458c15470977b3b7836c4>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ngsi-ld:Value .
+
+<https://astrea.linkeddata.es/shapes#bb8b3fdb68ba02fec06855049d87e9a3>
+        a            sh:PropertyShape ;
+        sh:class     ngsi-ld:Entity ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      ngsi-ld:hasObject .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#1cf598ed932b84574c5c2aec418ea0b3>
+        a         sh:PropertyShape ;
+        sh:class  ngsi-ld:Relationship .

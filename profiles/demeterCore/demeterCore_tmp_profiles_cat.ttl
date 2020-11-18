@@ -1,0 +1,1471 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix jsoncontext: <http://www.opengis.net/def/metamodel/profiles/json_ld_context> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix profrole: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix proxy: <https://w3id.org/demeter/agri/proxy/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://def.isotc211.org/iso19156/2011/Observation> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://def.isotc211.org/iso19156/2011/SamplingFeature> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://purl.oclc.org/NET/ssnx/qu/dim> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://purl.org/linked-data/cube> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/wgs84_pos.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://www.w3.org/2004/02/skos/core> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/skos.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<https://uri.etsi.org/ngsi-ld/v1/ontology> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<https://w3id.org/demeter/agri> a prof:Profile ;
+    rdfs:label "DEMETER Agriculture Information Model (AIM) domain ontology"@en ;
+    rdfs:comment "The DEMETER Agri Profile is a master profile importing focused specific profiles/modules of DEMETER AIM."@en,
+        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "demeterAgriProfile\\demeterAgriProfile_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "demeterAgriProfile\\demeterAgriProfile_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "demeterAgriProfile\\demeterAgriProfile_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "demeterAgriProfile\\demeterAgriProfile.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "demeterAgriProfile\\demeterAgriProfile_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\demeterAgriProfile.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "demeterAgriProfile\\demeterAgriProfile.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "demeterAgriProfile\\demeterAgriProfile_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "demeterAgriProfile\\demeterAgriProfile.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "demeterAgriProfile\\demeterAgriProfile_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "demeterAgriProfile\\demeterAgriProfile_source.html" ;
+            prof:hasRole profrole:profile ] ;
+    prov:wasDerivedFrom "../models\\demeterAgriProfile.ttl" .
+
+<https://w3id.org/demeter/agri/agriAlert> a prof:Profile ;
+    rdfs:label "DEMETER AgriAlert"@en ;
+    rdfs:comment "The DEMETER AgriAlert is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
+        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "agriAlert\\agriAlert_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriAlert\\agriAlert.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriAlert?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriAlert\\agriAlert.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "agriAlert\\agriAlert_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "agriAlert\\agriAlert_source.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "agriAlert\\agriAlert_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriAlert\\agriAlert_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriAlert\\agriAlert_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "agriAlert\\agriAlert_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "agriAlert\\agriAlert.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriAlert.ttl" ;
+            prof:hasRole profrole:source ] ;
+    prof:isProfileOf <https://uri.fiware.org/ns/data-models>,
+        proxy:foodie ;
+    prov:wasDerivedFrom "../models\\agriAlert.ttl" .
+
+<https://w3id.org/demeter/agri/agriCommon> a prof:Profile ;
+    rdfs:label "DEMETER AgriCommon"@en ;
+    rdfs:comment "The DEMETER AgriCommon is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
+        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "agriCommon\\agriCommon_source.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "agriCommon\\agriCommon_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriCommon\\agriCommon.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "agriCommon\\agriCommon_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriCommon\\agriCommon_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriCommon.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "agriCommon\\agriCommon_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriCommon\\agriCommon.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriCommon?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "agriCommon\\agriCommon_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriCommon\\agriCommon_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "agriCommon\\agriCommon.html" ;
+            prof:hasRole profrole:profile ] ;
+    prof:isProfileOf proxy:baseInspire,
+        proxy:foodie,
+        proxy:obo,
+        proxy:prov,
+        proxy:saref,
+        proxy:saref4agri ;
+    prov:wasDerivedFrom "../models\\agriCommon.ttl" .
+
+<https://w3id.org/demeter/agri/agriCrop> a prof:Profile ;
+    rdfs:label "DEMETER AgriCrop"@en ;
+    rdfs:comment "The DEMETER AgriCrop is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
+        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "agriCrop\\agriCrop_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriCrop\\agriCrop_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriCrop?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "agriCrop\\agriCrop_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "agriCrop\\agriCrop.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "agriCrop\\agriCrop_source.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriCrop\\agriCrop_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriCrop.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriCrop\\agriCrop.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "agriCrop\\agriCrop_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "agriCrop\\agriCrop_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriCrop\\agriCrop.ttl" ;
+            prof:hasRole profrole:vocabulary ] ;
+    prof:isProfileOf proxy:foodie,
+        proxy:saref4agri ;
+    prov:wasDerivedFrom "../models\\agriCrop.ttl" .
+
+<https://w3id.org/demeter/agri/agriFeature> a prof:Profile ;
+    rdfs:label "DEMETER AgriFeature"@en ;
+    rdfs:comment "The DEMETER AgriFeature is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
+        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "agriFeature\\agriFeature_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriFeature.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "agriFeature\\agriFeature_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriFeature\\agriFeature.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriFeature\\agriFeature_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriFeature?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "agriFeature\\agriFeature_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "agriFeature\\agriFeature_source.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "agriFeature\\agriFeature.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "agriFeature\\agriFeature_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriFeature\\agriFeature.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriFeature\\agriFeature_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ] ;
+    prof:isProfileOf <http://inspire.ec.europa.eu/schemas/act-core/3.0>,
+        <http://inspire.ec.europa.eu/schemas/af/3.0>,
+        proxy:foodie,
+        proxy:saref4agri ;
+    prov:wasDerivedFrom "../models\\agriFeature.ttl" .
+
+<https://w3id.org/demeter/agri/agriIntervention> a prof:Profile ;
+    rdfs:label "DEMETER AgriIntervention"@en ;
+    rdfs:comment "The DEMETER AgriIntervention is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
+        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "agriIntervention\\agriIntervention_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriIntervention.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriIntervention\\agriIntervention.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriIntervention\\agriIntervention_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "agriIntervention\\agriIntervention_source.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriIntervention\\agriIntervention_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "agriIntervention\\agriIntervention_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "agriIntervention\\agriIntervention_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriIntervention\\agriIntervention.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriIntervention?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "agriIntervention\\agriIntervention_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "agriIntervention\\agriIntervention.html" ;
+            prof:hasRole profrole:profile ] ;
+    prof:isProfileOf proxy:foodie ;
+    prov:wasDerivedFrom "../models\\agriIntervention.ttl" .
+
+<https://w3id.org/demeter/agri/agriPest> a prof:Profile ;
+    rdfs:label "DEMETER AgriPest"@en ;
+    rdfs:comment "The DEMETER AgriPest is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
+        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriPest\\agriPest_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "agriPest\\agriPest_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "agriPest\\agriPest_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "agriPest\\agriPest_source.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriPest?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "agriPest\\agriPest_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriPest.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "agriPest\\agriPest.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriPest\\agriPest.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "agriPest\\agriPest_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriPest\\agriPest_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriPest\\agriPest.json" ;
+            prof:hasRole profrole:schema ] ;
+    prov:wasDerivedFrom "../models\\agriPest.ttl" .
+
+<https://w3id.org/demeter/agri/agriProduct> a prof:Profile ;
+    rdfs:label "DEMETER AgriProduct"@en ;
+    rdfs:comment "The DEMETER AgriProduct is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
+        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriProduct.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "agriProduct\\agriProduct.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriProduct?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriProduct\\agriProduct_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "agriProduct\\agriProduct_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "agriProduct\\agriProduct_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "agriProduct\\agriProduct_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriProduct\\agriProduct.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "agriProduct\\agriProduct_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "agriProduct\\agriProduct_source.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriProduct\\agriProduct.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriProduct\\agriProduct_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ] ;
+    prof:isProfileOf proxy:foodie ;
+    prov:wasDerivedFrom "../models\\agriProduct.ttl" .
+
+<https://w3id.org/demeter/agri/agriProperty> a prof:Profile ;
+    rdfs:label "DEMETER AgriProperty"@en ;
+    rdfs:comment "The DEMETER AgriProperty is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
+        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriProperty.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "agriProperty\\agriProperty_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "agriProperty\\agriProperty_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriProperty?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriProperty\\agriProperty_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriProperty\\agriProperty_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "agriProperty\\agriProperty.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriProperty\\agriProperty.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriProperty\\agriProperty.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "agriProperty\\agriProperty_source.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "agriProperty\\agriProperty_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "agriProperty\\agriProperty_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ] ;
+    prof:isProfileOf <http://purl.oclc.org/NET/ssnx/cf/cf-feature>,
+        proxy:foodie,
+        proxy:saref,
+        proxy:saref4agri ;
+    prov:wasDerivedFrom "../models\\agriProperty.ttl" .
+
+<https://w3id.org/demeter/agri/agriSystem> a prof:Profile ;
+    rdfs:label "DEMETER AgriSystem"@en ;
+    rdfs:comment "The DEMETER AgriSystem is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
+        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriSystem\\agriSystem_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "agriSystem\\agriSystem_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "agriSystem\\agriSystem.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\agriSystem.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "agriSystem\\agriSystem_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "agriSystem\\agriSystem_source.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "agriSystem\\agriSystem_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "agriSystem\\agriSystem_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "agriSystem\\agriSystem.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "agriSystem\\agriSystem.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/agri/agriSystem?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "agriSystem\\agriSystem_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ] ;
+    prof:isProfileOf proxy:foodie,
+        proxy:saref,
+        proxy:saref4agri ;
+    prov:wasDerivedFrom "../models\\agriSystem.ttl" .
+
+proxy:citation a prof:Profile ;
+    rdfs:label "DEMETER profile of ISO19115 citation model"@en ;
+    rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+    prof:hasResource [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This URI correctly handles content negotiation but does not offer a json-ld context representation" ;
+            prof:hasArtifact <https://w3id.org/demeter/agri/proxy/foaf?_profile=jsoncontext> ;
+            prof:hasRole profrole:context ] ;
+    prof:isProfileOf <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation> .
+
+<https://w3id.org/demeter/core> a prof:Profile ;
+    rdfs:label "DEMETER core meta-model"@en ;
+    rdfs:comment "The DEMETER core ontology includes the meta-model elements reused from NGSI-LD specification that provide a formal basis for representing 'property graphs' using RDF/RDFS/OWL."@en,
+        "The DEMETER core ontology is a profile (subset) of the ontology presented in Annex D of the NGSI-LD standard: ETSI GS CIM 006 V1.1.1 (2019-07), covering only the core property-graph entities."@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "demeterCore\\demeterCore.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "demeterCore\\demeterCore_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "demeterCore\\demeterCore_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "demeterCore\\demeterCore_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "demeterCore\\demeterCore.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "demeterCore\\demeterCore_source.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "demeterCore\\demeterCore_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/core?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "demeterCore\\demeterCore_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "demeterCore\\demeterCore_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\demeterCore.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "demeterCore\\demeterCore.ttl" ;
+            prof:hasRole profrole:vocabulary ] ;
+    prov:wasDerivedFrom "../models\\demeterCore.ttl" .
+
+<https://w3id.org/demeter/crossDomain> a prof:Profile ;
+    rdfs:label "DEMETER Cross-Domain"@en ;
+    rdfs:comment "The DEMETER AgriCrop is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en,
+        "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+    skos:historyNote "Ontology profile normalised using ProfileWiz" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Flattened JSON-LD context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "cross-domain\\cross-domain_context_flat.jsonld" ;
+            prof:hasRole profrole:contextflat ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Original Source OWL model" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "Source OWL model used to derive normalised profile views." ;
+            prof:hasArtifact "../models\\cross-domain.ttl" ;
+            prof:hasRole profrole:source ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL for minimal profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for profile specific declarations" ;
+            prof:hasArtifact "cross-domain\\cross-domain_shacl.ttl" ;
+            prof:hasRole profrole:validation ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL documentation as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Based on the OWL flat view of the profile, a HTML rendering of key elements of the model." ;
+            prof:hasArtifact "cross-domain\\cross-domain.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON Schema" ;
+            dct:conformsTo <http://www.opengis.net/def/metamodel/profiles/json_schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact "cross-domain\\cross-domain.json" ;
+            prof:hasRole profrole:schema ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Original source OWL file as HTML - for comparison and review purposes" ;
+            prof:hasArtifact "cross-domain\\cross-domain_source.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "https://w3id.org/demeter/crossDomain?_profile=jsoncontext" ;
+            prof:hasRole profrole:context ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "OWL with definition details from imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is a OWL file containing all the properties of objects used by the profile in a single (flat) denormalised file. This may be augmented in future with RDF* or reified statements with the provenance of each statement if required." ;
+            prof:hasArtifact "cross-domain\\cross-domain_flat.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Profile description as HTML" ;
+            dct:conformsTo prof: ;
+            dct:format "text/html" ;
+            rdfs:comment "Overview of profile and available descriptive and implementation support resources" ;
+            prof:hasArtifact "cross-domain\\cross-domain_prof.html" ;
+            prof:hasRole profrole:profile ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "Normalised OWL with imports" ;
+            dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            rdfs:comment "This is an OWL file with imports for ontologies containing all object definitions, but with only statements not present in imports" ;
+            prof:hasArtifact "cross-domain\\cross-domain.ttl" ;
+            prof:hasRole profrole:vocabulary ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "JSON-LD Context - local file link" ;
+            dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact "cross-domain\\cross-domain_context.jsonld" ;
+            prof:hasRole profrole:contextlocal ],
+        [ a prof:ResourceDescriptor ;
+            rdfs:label "SHACL constraints for profile" ;
+            dct:conformsTo <http://www.w3.org/ns/shacl#> ;
+            dct:format "text/turtle" ;
+            rdfs:comment "SHACL validation constraints for all declarations relevant to profile including imports" ;
+            prof:hasArtifact "cross-domain\\cross-domain_flat_shacl.ttl" ;
+            prof:hasRole profrole:validation ] ;
+    prof:isProfileOf <http://purl.oclc.org/NET/ssnx/qu/qu>,
+        <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/ont/sf>,
+        <http://www.w3.org/ns/sosa>,
+        <http://www.w3.org/ns/ssn>,
+        <https://schema.org>,
+        proxy:foaf ;
+    prov:wasDerivedFrom "../models\\cross-domain.ttl" .
+
+<http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation> a prof:Profile ;
+    rdfs:label "ISO 19115 citation"@en ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/citation.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/citation.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <http://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/def.seegrid.csiro.au/isotc211--iso19115--2003--citation/2020.06.10-182041/isotc211--iso19115--2003--citation_type=parsed.ttl> ;
+            prof:hasRole profrole:source ] .
+
+<http://foodie-cloud.com/model/foodie> a prof:Profile ;
+    rdfs:label "Foodie Ontology" ;
+    rdfs:comment "content negotation using base URI results in a security error for https - so need to use a proxy object in the short term" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/foodie.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/foodie.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://inspire.ec.europa.eu/schemas/act-core/3.0> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://inspire.ec.europa.eu/schemas/af/3.0> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "None" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://portele.de/ont/inspire/baseInspire> a prof:Profile ;
+    rdfs:label "INSPIRE Base Feature model" ;
+    rdfs:comment "Not acessible" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "proxy/baseInspire_proxy.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "proxy/baseInspire_proxy.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://purl.obolibrary.org/obo> a prof:Profile ;
+    rdfs:label "OBO"@en ;
+    rdfs:comment "Is this actually the ontology to be referenced here" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "proxy/obo_proxy.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "proxy/obo_proxy.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/cf-feature.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://purl.oclc.org/NET/ssnx/qu/qu> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/qu.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://www.opengis.net/ont/geosparql> a prof:Profile ;
+    rdfs:label "GeoSPARQL"@en ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/geosparql.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo rdfs:,
+                owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/geosparql.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo rdfs:,
+                owl: ;
+            dct:format "application/rdf+xml" ;
+            prof:hasArtifact <http://schemas.opengis.net/geosparql/1.0/geosparql_vocab_all.rdf> ;
+            prof:hasRole profrole:source ] .
+
+<http://www.opengis.net/ont/sf> a prof:Profile ;
+    rdfs:label "OGC Simple Features"@en ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/ogc_sf.rdf" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo rdfs:,
+                owl: ;
+            dct:format "application/rdf+xml" ;
+            prof:hasArtifact "lib/ogc_sf.rdf" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo rdfs:,
+                owl: ;
+            dct:format "application/rdf+xml" ;
+            prof:hasArtifact <http://schemas.opengis.net/sf/1.0/simple_features_geometries.rdf> ;
+            prof:hasRole profrole:source ] .
+
+<http://www.w3.org/ns/prov> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/prov.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://www.w3.org/ns/sosa> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/sosa.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://www.w3.org/ns/ssn> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/ssn.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://xmlns.com/foaf/0.1> a prof:Profile ;
+    rdfs:label "FOAF" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/foaf.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<https://schema.org> a prof:Profile ;
+    rdfs:comment "Experimental approach for equivalence of http and https for this" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/schemaorg_https.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/schemaorg_https.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This URI correctly handles content negotiation to offer a json-ld context representation" ;
+            prof:hasArtifact <http://schema.org> ;
+            prof:hasRole profrole:context ] ;
+    prof:isProfileOf <http://schema.org> .
+
+<https://uri.fiware.org/ns/data-models> a prof:Profile ;
+    rdfs:label "FIWARE data models" ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/fiware.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "fiware jsonld is rather cumbersome aggregation of many things - it would be better it the references to this namespace were finer grained and handled by explicit owl:imports or prof:isProfileOf links." ;
+            prof:hasArtifact <https://fiware.github.io/data-models/full-context.jsonld> ;
+            prof:hasRole profrole:context ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/fiware.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/fiware.ttl" ;
+            prof:hasRole profrole:specification ] .
+
+<https://w3id.org/def/saref4agri> a prof:Profile ;
+    rdfs:label "SAREF extension for Agriculture"@en ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/saref4agri.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/saref4agri.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://mariapoveda.github.io/saref-ext/OnToology/SAREF4AGRI/ontology/saref4agri.ttl/documentation/ontology.ttl> ;
+            prof:hasRole profrole:source ] .
+
+proxy:baseInspire a prof:Profile ;
+    rdfs:label "DEMETER profile of OBO"@en ;
+    rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+    prof:hasResource [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "Provise local profile and json-ld context representation" ;
+            prof:hasArtifact <https://w3id.org/demeter/agri/proxy/baseInspire?_profile=jsoncontext> ;
+            prof:hasRole profrole:context ] ;
+    prof:isProfileOf <http://portele.de/ont/inspire/baseInspire> .
+
+proxy:foaf a prof:Profile ;
+    rdfs:label "DEMETER profile of FOAF"@en ;
+    rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+    prof:hasResource [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This URI correctly handles content negotiation but does not offer a json-ld context representation" ;
+            prof:hasArtifact <https://w3id.org/demeter/agri/proxy/foaf?_profile=jsoncontext> ;
+            prof:hasRole profrole:context ] ;
+    prof:isProfileOf <http://xmlns.com/foaf/0.1> .
+
+proxy:obo a prof:Profile ;
+    rdfs:label "DEMETER profile of OBO"@en ;
+    rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+    prof:hasResource [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "Provise local profile and json-ld context representation" ;
+            prof:hasArtifact <https://w3id.org/demeter/agri/proxy/sobo?_profile=jsoncontext> ;
+            prof:hasRole profrole:context ] ;
+    prof:isProfileOf <http://purl.obolibrary.org/obo> .
+
+proxy:prov a prof:Profile ;
+    rdfs:label "DEMETER profile of PROV"@en ;
+    rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+    prof:hasResource [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This URI correctly handles content negotiation but does not offer a json-ld context representation" ;
+            prof:hasArtifact <https://w3id.org/demeter/agri/proxy/prov?_profile=jsoncontext> ;
+            prof:hasRole profrole:context ] ;
+    prof:isProfileOf <http://www.w3.org/ns/prov> .
+
+<https://w3id.org/saref> a prof:Profile ;
+    prof:hasResource [ a prof:ResourceDescriptor ;
+            rdfs:label "Cached OWL copy" ;
+            dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "cache/saref.ttl" ;
+            prof:hasRole profrole:cachedCopy ] .
+
+<http://schema.org> a prof:Profile ;
+    rdfs:label "Schema.org schema"@en ;
+    prof:hasResource [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact "lib/schemaorg.ttl" ;
+            prof:hasRole profrole:cachedCopy ],
+        [ dct:conformsTo owl: ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://raw.githubusercontent.com/antlr/grammars-v4/master/turtle/examples/schema.org.ttl> ;
+            prof:hasRole profrole:source ],
+        [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This URI correctly handles content negotiation to offer a json-ld context representation" ;
+            prof:hasArtifact <http://schema.org> ;
+            prof:hasRole profrole:context ] .
+
+proxy:saref a prof:Profile ;
+    rdfs:label "DEMETER profile of SAREF"@en ;
+    rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+    prof:hasResource [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This URI correctly handles content negotiation but does not offer a json-ld context representation" ;
+            prof:hasArtifact <https://w3id.org/demeter/agri/proxy/saref?_profile=jsoncontext> ;
+            prof:hasRole profrole:context ] ;
+    prof:isProfileOf <https://w3id.org/saref> .
+
+proxy:saref4agri a prof:Profile ;
+    rdfs:label "DEMETER profile of SAREF extension for Agriculture"@en ;
+    rdfs:comment "This profile also provides for content negotatiation behaviour to access a valid JSON-LD context" ;
+    prof:hasResource [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "This URI correctly handles content negotiation but does not offer a json-ld context representation" ;
+            prof:hasArtifact <https://w3id.org/demeter/agri/proxy/saref4agri?_profile=jsoncontext> ;
+            prof:hasRole profrole:context ] ;
+    prof:isProfileOf <https://w3id.org/def/saref4agri> .
+
+proxy:foodie a prof:Profile ;
+    rdfs:label "Foodie Ontology" ;
+    prof:hasResource [ dct:conformsTo jsoncontext: ;
+            dct:format "application/ld+json" ;
+            rdfs:comment "self_referential as URI supports content negotation" ;
+            prof:hasArtifact <https://w3id.org/demeter/agri/proxy/foodie?_profile=jsoncontext> ;
+            prof:hasRole profrole:context ] ;
+    prof:isProfileOf <http://foodie-cloud.com/model/foodie> .
+

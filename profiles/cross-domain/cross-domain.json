@@ -1,0 +1,1392 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://w3id.org/demeter/crossDomain?_profile=jsonschema",
+    "type": "object",
+    "properties": {
+        "rdf:Property": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "ngsi-ld:Entity": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "qb:ComponentProperty": {
+            "type": "object",
+            "properties": {
+                "qb:concept": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "qb:ComponentSet": {
+            "type": "object",
+            "properties": {
+                "qb:componentProperty": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "qb:DataStructureDefinition": {
+            "type": "object",
+            "properties": {
+                "qb:component": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "qb:sliceKey": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "qb:Attachable": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "qb:ObservationGroup": {
+            "type": "object",
+            "properties": {
+                "qb:observation": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "qb:Slice": {
+            "type": "object",
+            "properties": {
+                "qb:sliceStructure": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "qb:MeasureProperty": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "qb:DataSet": {
+            "type": "object",
+            "properties": {
+                "qb:slice": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "qb:Observation": {
+            "type": "object",
+            "properties": {
+                "qb:dataSet": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "qb:ComponentSpecification": {
+            "type": "object",
+            "properties": {
+                "qb:componentAttachment": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "qb:order": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "qb:AttributeProperty": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "qb:CodedProperty": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "qb:SliceKey": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "qb:DimensionProperty": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Surface": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Geometry": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "geo:Geometry": {
+            "type": "object",
+            "properties": {
+                "geo:coordinateDimension": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:dimension": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:asWKT": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:hasSerialization": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:spatialDimension": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:isSimple": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:asGML": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:isEmpty": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "geo:SpatialObject": {
+            "type": "object",
+            "properties": {
+                "geo:ehCovers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehEquals": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehDisjoint": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehOverlap": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8ec": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8dc": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8tpp": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfEquals": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfIntersects": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8ntpp": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8ntppi": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8po": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8eq": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfContains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehContains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfTouches": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:rcc8tppi": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehInside": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfDisjoint": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehMeet": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfOverlaps": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfWithin": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:sfCrosses": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:ehCoveredBy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "wgs84_pos:location": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:hasGeometry": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "sf:Polygon": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:LineString": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Curve": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Line": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:GeometryCollection": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiSurface": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Triangle": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiPoint": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:PolyhedralSurface": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:TIN": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiCurve": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiLineString": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:Point": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:MultiPolygon": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sf:LinearRing": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "iso19156_GFI:GFI_Feature": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "iso19156_SF:SF_SamplingFeature": {
+            "type": "object",
+            "properties": {
+                "iso19156_SF:SF_SamplingFeature.sampledFeature": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "geo:Feature": {
+            "type": "object",
+            "properties": {
+                "geo:hasGeometry": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "geo:defaultGeometry": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ssn:System": {
+            "type": "object",
+            "properties": {
+                "ssn:implements": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ssn:hasDeployment": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sosa:isHostedBy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "dummy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ssn:hasSubSystem": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ssn:Property": {
+            "type": "object",
+            "properties": {
+                "ssn:isPropertyOf": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ssn:Deployment": {
+            "type": "object",
+            "properties": {
+                "ssn:deployedSystem": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ssn:deployedOnPlatform": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ssn:forProperty": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "sosa:Observation": {
+            "type": "object",
+            "properties": {
+                "sosa:usedProcedure": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sosa:madeBySensor": {
+                    "type": "string"
+                },
+                "sosa:phenomenonTime": {
+                    "type": "string"
+                },
+                "ssn:wasOriginatedBy": {
+                    "type": "string"
+                },
+                "sosa:hasResult": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sosa:hasFeatureOfInterest": {
+                    "type": "string"
+                },
+                "sosa:observedProperty": {
+                    "type": "string"
+                },
+                "sosa:resultTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "sosa:madeBySensor",
+                "sosa:phenomenonTime",
+                "ssn:wasOriginatedBy",
+                "sosa:hasResult",
+                "sosa:hasFeatureOfInterest",
+                "sosa:observedProperty",
+                "sosa:resultTime"
+            ]
+        },
+        "sosa:Result": {
+            "type": "object",
+            "properties": {
+                "sosa:isResultOf": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "sosa:isResultOf"
+            ]
+        },
+        "sosa:FeatureOfInterest": {
+            "type": "object",
+            "properties": {
+                "ssn:hasProperty": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sosa:hasSample": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ssn:hasProperty"
+            ]
+        },
+        "iso19156_GFI:GFI_DomainFeature": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "sosa:Sample": {
+            "type": "object",
+            "properties": {
+                "sosa:isSampleOf": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sosa:isResultOf": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "sosa:isSampleOf",
+                "sosa:isResultOf"
+            ]
+        },
+        "sosa:Platform": {
+            "type": "object",
+            "properties": {
+                "ssn:inDeployment": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sosa:hosts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "sosa:ActuatableProperty": {
+            "type": "object",
+            "properties": {
+                "sosa:isActedOnBy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "sosa:ObservableProperty": {
+            "type": "object",
+            "properties": {
+                "dummy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "sosa:isObservedBy": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "qu:QuantityKind": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "skos:Scheme": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:VelocityOrSpeed": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Distance": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:RadianceExposure": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Compressibility": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Temperature": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:EnergyFlux": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Acceleration": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:ThermalConductivity": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Density": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Energy": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:RotationalSpeed": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:SpecificEntropy": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:MassPerTimePerArea": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Dimensionless": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Power": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:StressOrPressure": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:Concentration": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:SurfaceDensity": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "dim:EnergyDensity": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "iso19156_OB:OM_Observation": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "qu:PropertyKind": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "schema:Thing": {
+            "type": "object",
+            "properties": {
+                "schema:url": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:name": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:image": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:description": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:alternateName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:sameAs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:additionalType": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "schema:Person": {
+            "type": "object",
+            "properties": {
+                "schema:birthDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:parent": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:workLocation": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:follows": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:additionalName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:nationality": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:affiliation": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:spouse": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:relatedTo": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:colleague": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:honorificPrefix": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:worksFor": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:performerIn": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:deathDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:siblings": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:parents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:jobTitle": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:honorificSuffix": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:alumniOf": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:knows": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:homeLocation": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:memberOf": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:children": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:sibling": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:givenName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:familyName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:gender": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:colleagues": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "foaf:Agent": {
+            "type": "object",
+            "properties": {
+                "foaf:icqChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:weblog": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:age": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:openid": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:jabberID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:topic_interest": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:msnChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:tipjar": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:aimChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:gender": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:interest": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:holdsAccount": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:account": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:mbox_sha1sum": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:yahooChatID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:birthday": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:mbox": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:made": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:status": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:skypeID": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:member": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "schema:Organization": {
+            "type": "object",
+            "properties": {
+                "schema:department": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:legalName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:member": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:founders": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:members": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:employees": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:employee": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:founder": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:foundingDate": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "schema:subOrganization": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "schema:Role": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "wgs84_pos:SpatialThing": {
+            "type": "object",
+            "properties": {
+                "wgs84_pos:alt": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "wgs84_pos:long": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "wgs84_pos:lat": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:based_near": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "wgs84_pos:Point": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foaf:Person": {
+            "type": "object",
+            "properties": {
+                "foaf:publications": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:familyName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:firstName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:workplaceHomepage": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:surname": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:myersBriggs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:knows": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:currentProject": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:lastName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:family_name": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:schoolHomepage": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:workInfoHomepage": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:geekcode": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:plan": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:pastProject": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "foaf:img": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://w3id.org/demeter/agri/agriCommon?_profile=jsonschema",
+    "type": "object",
+    "properties": {
+        "obo:TAXRANK_0000000": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foaf:Person": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "foaf:Agent": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "saref4agri:Farmer": {
+            "type": "object",
+            "properties": {
+                "saref4agri:hasName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:managesFarm": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "schema:Organization": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        },
+        "saref4agri:FarmHolding": {
+            "type": "object",
+            "properties": {
+                "saref4agri:hasName": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "saref4agri:managesFarm": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "iso19115-citation:ResponsibleParty": {
+            "type": "object",
+            "properties": {
+                "iso19115-citation:contactInfo": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "iso19115-citation:role": {
+                    "type": "string"
+                },
+                "iso19115-citation:organisationName": {
+                    "type": "string"
+                },
+                "iso19115-citation:individualName": {
+                    "type": "string"
+                },
+                "iso19115-citation:positionName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "iso19115-citation:role"
+            ]
+        }
+    }
+}
