@@ -18,11 +18,9 @@
 		   "productName": "Latte Sano",
 		   "productType": "Processed"
 		},
-
-		
 		{
 		  "@id": "urn:demeter:72d9fb43-53f8-4ec8-a33c-fa931360259a",
-		  "@type": "MilkQuality",
+		  "@type": "MilkQualityPrediction",
 		  "description": "Milk Quality collection of observations1",		  
 		  "hasMember": [{ "@id": "urn:demeter:ObservationI/1a"}, { "@id": "urn:demeter:ObservationI/2a" } ,{ "@id": "urn:demeter:ObservationI/3a" }, { "@id": "urn:demeter:ObservationI/4a"}, { "@id": "urn:demeter:ObservationI/5a" } ,{ "@id": "urn:demeter:ObservationI/6a" }, { "@id": "urn:demeter:ObservationI/7a"}, { "@id": "urn:demeter:ObservationI/8a" } ,{ "@id": "urn:demeter:ObservationI/9a" }, { "@id": "urn:demeter:ObservationI/10a"}, { "@id": "urn:demeter:ObservationI/11a" } ],
 		  "resultTime": "2018-02-01T12:36:12Z",
@@ -86,19 +84,17 @@
 			"@id": "urn:demeter:ObservationI/10a",
 		  "@type": "Observation",
 		  "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#actualQuality"} ,
-		  "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#High"}
+		  "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#qualityValue-High"}
 		},
 		{
 			"@id": "urn:demeter:ObservationI/11a",
 		  "@type": "Observation",
 		  "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#predictedQuality"} ,
-		  "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#High"}
+		  "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#qualityValue-High"}
 		},
-
-
 		{
 		  "@id": "urn:demeter:82d9fb43-53f8-4ec8-a33c-fa931360259b",
-		  "@type": "MilkQuality",
+		  "@type": "MilkQualityPrediction",
 		  "description": "Milk Quality collection of observations2",		  
 		  "hasMember": [{ "@id": "urn:demeter:ObservationI/1b"}, { "@id": "urn:demeter:ObservationI/2b" } ,{ "@id": "urn:demeter:ObservationI/3b" }, { "@id": "urn:demeter:ObservationI/4b"}, { "@id": "urn:demeter:ObservationI/5b" } ,{ "@id": "urn:demeter:ObservationI/6b" }, { "@id": "urn:demeter:ObservationI/7b"}, { "@id": "urn:demeter:ObservationI/8b" } ,{ "@id": "urn:demeter:ObservationI/9b" }, { "@id": "urn:demeter:ObservationI/10b"}, { "@id": "urn:demeter:ObservationI/11b" } ],
 		  "resultTime": "2018-02-01T12:36:12Z",
@@ -119,7 +115,7 @@
 		{
 			"@id": "urn:demeter:ObservationI/3b",
 		  "@type": "Observation",	
-		  "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#density"} ,
+		  "observedProperty": { "@id": "http://qudt.org/vocab/quantitykind/density"} ,
 		  "hasResult": [{ "@type": "QuantityValue", "numericValue": "1010", "unit": {"@id": "qudt-unit:xyz"} }]
 		},
 		{
@@ -162,13 +158,13 @@
 			"@id": "urn:demeter:ObservationI/10b",
 		  "@type": "Observation",
 		  "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#actualQuality"} ,
-		  "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#Low"}
+		  "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#qualityValue-Low"}
 		},
 		{
 			"@id": "urn:demeter:ObservationI/11b",
 		  "@type": "Observation",
 		  "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#predictedQuality"} ,
-		  "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#Medium"}
+		  "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#qualityValue-Medium"}
 		}
 	]  
 }
