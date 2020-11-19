@@ -1,0 +1,298 @@
+@base <https://w3id.org/demeter/> .
+@prefix : <https://w3id.org/cybele/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix stat: <http://data.europa.eu/m8g/> .
+@prefix schema: <http://schema.org/> .
+@prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/v1/ontology#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix livestock-ft: <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+<https://w3id.org/demeter/agri/ext/livestockFeature> rdf:type owl:Ontology ;
+                            owl:versionIRI <https://w3id.org/demeter/agri/ext/livestockFeature/1.0> ;
+                            owl:imports <https://w3id.org/demeter/agri/farmAnimal> ;
+                            dct:description     "LivestockFeature contains : \n
+                            1) HealthPrediction : data on milk production, fats, proteins, electrical conductivity, \n
+                            detected in the milk produced, the activity and rest of the cows, determined by the pedometer, the health status \n
+                            of the cows for the pathologies of lameness, mastitis and ketosis ;\n
+                            2) MilkQualityPrediction : data relating to the analysis of milk samples and the degrees of milk quality. "@en ;
+                            dct:title "DEMETER LivestockFeature"@en ;
+                            rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+                            owl:versionInfo "1.0" ;
+                            foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
+                                         foaf:name "DEMETER project"
+                                       ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+#################################################################
+#    Datatypes
+#################################################################
+
+#################################################################
+#    Object Properties
+#################################################################		
+	
+#################################################################
+#    Data properties
+#################################################################
+
+#################################################################
+#    Classes
+#################################################################
+	  
+###  https://w3id.org/demeter/agri/ext/livestockFeature#HealthPrediction
+livestock-ft:HealthPrediction rdf:type owl:Class , sosa:ObservationCollection;
+      rdfs:comment "Data on milk production, fats, proteins, electrical conductivity, detected in the milk produced,"@en ;
+      rdfs:comment "the activity and rest of the cows, determined by the pedometer, the health status of the cows,"@en ;
+	  rdfs:comment "detected and predicted by the relative algorithm, for the pathologies of lameness, mastitis and ketosis."@en ;
+      rdfs:label "HealthPrediction" ;
+      rdfs:subClassOf [ a owl:Restriction ; owl:onProperty sosa:hasFeatureOfInterest ; owl:allValuesFrom fiware:Animal ] ;
+      rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+	  
+###  https://w3id.org/demeter/agri/ext/livestockFeature#MilkQualityPrediction
+livestock-ft:MilkQualityPrediction rdf:type owl:Class , sosa:ObservationCollection;
+      rdfs:comment "Data relating to the analysis of milk samples, and the degrees of milk quality,"@en;
+	  rdfs:comment "detected and predicted by the relative algorithm."@en;
+      rdfs:label "MilkQualityPrediction" ;
+      rdfs:subClassOf [ a owl:Restriction ; owl:onProperty sosa:hasFeatureOfInterest ; owl:allValuesFrom livestock-ft:MilkProduct ] ;
+      rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+###  https://w3id.org/demeter/agri/ext/livestockFeature#MilkProduct
+livestock-ft:MilkProduct rdf:type owl:Class ;
+      rdfs:comment "Brand and type of milk."@en;
+      rdfs:label "MilkProduct" ;
+      rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .	  
+
+### code list for healthStatus
+livestock-ft:HealthStatus a owl:Class;
+        rdfs:subClassOf skos:Concept ;
+        rdfs:label "HealthStatus"@en;
+        rdfs:comment "State of health for different pathologies"@en;
+        rdfs:seeAlso livestock-ft:healthStatus  ;
+        owl:oneOf (livestock-ft:healthStatus-Healthy 
+                   livestock-ft:healthStatus-Sick) .
+
+livestock-ft:healthStatus-Healthy a skos:Concept, livestock-ft:HealthStatus;
+        skos:topConceptOf livestock-ft:healthStatus;
+        skos:prefLabel "Healthy"@en ;
+        skos:notation "Healthy" ;
+        skos:inScheme livestock-ft:healthStatus .
+
+livestock-ft:healthStatus-Sick a skos:Concept, livestock-ft:HealthStatus;
+        skos:topConceptOf livestock-ft:healthStatus;
+        skos:prefLabel "Sick"@en ;
+        skos:notation "Sick" ;
+        skos:inScheme livestock-ft:healthStatus . 
+
+livestock-ft:healthStatus a skos:ConceptScheme ;
+        skos:prefLabel "healthStatus"@en;
+        rdfs:label "healthStatus"@en;
+        rdfs:seeAlso livestock-ft:HealthStatus .
+
+### code list for qualityValue
+livestock-ft:QualityValue a owl:Class;
+        rdfs:subClassOf skos:Concept ;
+        rdfs:label "QualityValue"@en;
+        rdfs:comment "Degree of milk quality."@en;
+        rdfs:seeAlso livestock-ft:qualityValue ;
+        owl:oneOf (livestock-ft:qualityValue-Hight
+		   livestock-ft:qualityValue-Medium
+                   livestock-ft:qualityValue-Low) .
+
+livestock-ft:qualityValue-High a skos:Concept, livestock-ft:QualityValue;
+        skos:topConceptOf livestock-ft:qualityValue;
+        skos:prefLabel "High"@en ;
+        skos:notation "High" ;
+        skos:inScheme livestock-ft:qualityValue .
+		
+livestock-ft:qualityValue-Medium a skos:Concept, livestock-ft:QualityValue;
+        skos:topConceptOf livestock-ft:qualityValue;
+        skos:prefLabel "Medium"@en ;
+        skos:notation "Medium" ;
+        skos:inScheme livestock-ft:qualityValue .
+
+livestock-ft:qualityValue-Low a skos:Concept, livestock-ft:QualityValue;
+        skos:topConceptOf livestock-ft:qualityValue;
+        skos:prefLabel "Low"@en ;
+        skos:notation "Low" ;
+        skos:inScheme livestock-ft:qualityValue . 
+
+livestock-ft:qualityValue a skos:ConceptScheme ;
+        skos:prefLabel "qualityValue"@en;
+        rdfs:label "qualityValue"@en;
+        rdfs:seeAlso livestock-ft:QualityValue .				
+	  
+#################################################################
+#    Alignments
+#################################################################
+
+#################################################################
+#    Individuals
+#################################################################
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#pedometer
+livestock-ft:pedometerID	        rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		        "pedometer"^^xsd:string ;
+        rdfs:comment		        "Pedometer device ID" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+		
+### https://w3id.org/demeter/agri/ext/livestockFeature#mid
+livestock-ft:mid	                rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		        "mid"^^xsd:string ;
+        rdfs:comment		        "Milking In Days" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#lactations
+livestock-ft:lactations	            rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		        "lactations"^^xsd:string ;
+        rdfs:comment		        "Lactations number" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#dailyProduction
+livestock-ft:dailyProduction	    rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		        "dailyProduction"^^xsd:string ;
+        rdfs:comment		        "Daily milk production" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#averageDailyProduction
+livestock-ft:averageDailyProduction	rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		        "averageDailyProduction"^^xsd:string ;
+        rdfs:comment		        "Average daily milk production" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#fat
+livestock-ft:fat	               rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		       "fat"^^xsd:string ;
+        rdfs:comment		       "Fats present in milk" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .	
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#protein
+livestock-ft:protein     	       rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		       "protein"^^xsd:string ;
+        rdfs:comment		       "Proteins present in milk" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .	
+		
+### https://w3id.org/demeter/agri/ext/livestockFeature#animalActivity
+livestock-ft:animalActivity        rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		       "animalActivity"^^xsd:string ;
+        rdfs:comment		       "Measurement of activity (steps taken by the cow)" ;
+        rdfs:isDefinedBy  <https://w3id.org/demeter/agri/ext/livestockFeature#> .		
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#totalDailyLying
+livestock-ft:totalDailyLying	   rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		       "totalDailyLying"^^xsd:string ;
+        rdfs:comment		       "Daily minutes of cow rest" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .		
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#aciditySH
+livestock-ft:aciditySH	       rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "aciditySH"^^xsd:string ;
+        rdfs:comment		   "Titratable acidity in Soxhlet degrees (° SH)" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#casein
+livestock-ft:casein	           rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "casein"^^xsd:string ;
+        rdfs:comment		   "Casein" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#freezingPointMC
+livestock-ft:freezingPointMC   rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "freezingPointMC"^^xsd:string ;
+        rdfs:comment		   "Freezing Point mC" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .	
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#lactose
+livestock-ft:lactose	       rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		   "lactose"^^xsd:string ;
+        rdfs:comment		   "Lactose" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .		
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#SNF
+livestock-ft:SNF	           rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		   "SNF"^^xsd:string ;
+        rdfs:comment		   "Solid Not Fat" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#urea
+livestock-ft:urea	           rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "urea"^^xsd:string ;
+        rdfs:comment		   "Urea" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .					
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#actualLameness
+livestock-ft:actualLameness	rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "actualLameness"^^xsd:string ;
+        rdfs:comment		   "actualLameness" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .							
+        
+### https://w3id.org/demeter/agri/ext/livestockFeature#predictedLameness
+livestock-ft:predictedLameness	rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "predictedLameness"^^xsd:string ;
+        rdfs:comment		   "predictedLameness" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .					
+        
+### https://w3id.org/demeter/agri/ext/livestockFeature#actualKetosis
+livestock-ft:actualKetosis	rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "actualKetosis"^^xsd:string ;
+        rdfs:comment		   "actualKetosis" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .					
+        
+### https://w3id.org/demeter/agri/ext/livestockFeature#predictedKetosis
+livestock-ft:predictedKetosis	rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "predictedKetosis"^^xsd:string ;
+        rdfs:comment		   "predictedKetosis" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .					
+        
+### https://w3id.org/demeter/agri/ext/livestockFeature#actualMastitis
+livestock-ft:actualMastitis	rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "actualMastitis"^^xsd:string ;
+        rdfs:comment		   "actualMastitis" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .					
+        
+### https://w3id.org/demeter/agri/ext/livestockFeature#predictedMastitis
+livestock-ft:predictedMastitis	rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "predictedMastitis"^^xsd:string ;
+        rdfs:comment		   "predictedMastitis" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .					
+        
+### https://w3id.org/demeter/agri/ext/livestockFeature#actualQuality
+livestock-ft:actualQuality	rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "actualQuality"^^xsd:string ;
+        rdfs:comment		   "actualQuality" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .					
+        
+### https://w3id.org/demeter/agri/ext/livestockFeature#predictedQuality
+livestock-ft:predictedQuality	rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "predictedQuality"^^xsd:string ;
+        rdfs:comment		   "predictedQuality" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .					                        

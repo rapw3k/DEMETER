@@ -1,6 +1,7 @@
 {
   "@context": [
     "https://w3id.org/demeter/agri-context.jsonld",
+    "https://w3id.org/demeter/agri/ext/livestockFeature-context.jsonld",
 	  {    
       "qudt-unit": "http://qudt.org/vocab/unit/"
     }
@@ -45,91 +46,91 @@
       "@type": "ObservationCollection",
       "description": "Activity properties collection1",
       "hasMember": [{ "@id": "urn:demeter:ObservationA/1a"}, { "@id": "urn:demeter:ObservationA/2a" }, { "@id": "urn:demeter:ObservationA/3a" } ],
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#animalActivity"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#animalActivity"}
     },            
   	{
   		"@id": "urn:demeter:ObservationI/1a",
       "@type": "Observation",	
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#pedometer"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#pedometer"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "514", "unit": {"@id": "qudt-unit:xyz"} }]
   	},
   	{
   		"@id": "urn:demeter:ObservationI/2a",
       "@type": "Observation",	
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#MID"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#MID"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "319", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/3a",
       "@type": "Observation",	
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#lactations"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#lactations"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "4", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/4a",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#dailyProduction"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#dailyProduction"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "39.25", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/5a",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#averageDailyProduction"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#averageDailyProduction"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "33.54", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/6a",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#fat"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#fat"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "3.57", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/7a",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#protein"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#protein"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "3.09", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/8a",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#totalDailyLying"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#totalDailyLying"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "649", "unit": {"@id": "qudt-unit:xyz"} }]
     },
   	{
   		"@id": "urn:demeter:ObservationI/9a",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#actualLameness"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Healthy"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#actualLameness"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy"}
     },
     {
   		"@id": "urn:demeter:ObservationI/10a",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#predictedLameness"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Healthy"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#predictedLameness"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy"}
     },
     {
   		"@id": "urn:demeter:ObservationI/11a",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#actualKetosis"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Healthy"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#actualKetosis"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy"}
     },
     {
   		"@id": "urn:demeter:ObservationI/12a",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#predictedKetosis"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Healthy"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#predictedKetosis"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy"}
     },
     {
   		"@id": "urn:demeter:ObservationI/13a",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#actualMastitis"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Sick"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#actualMastitis"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick"}
     },
     {
   		"@id": "urn:demeter:ObservationI/14a",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#predictedMastitis"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Sick"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#predictedMastitis"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick"}
   	},
   	{
   		"@id": "urn:demeter:ObservationC/1a",
@@ -194,91 +195,91 @@
       "@type": "ObservationCollection",
       "description": "Activity properties collection2",
       "hasMember": [{ "@id": "urn:demeter:ObservationA/1b"}, { "@id": "urn:demeter:ObservationA/2b" }, { "@id": "urn:demeter:ObservationA/3b" } ],
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#animalActivity"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#animalActivity"}
     },            
   	{
   		"@id": "urn:demeter:ObservationI/1b",
       "@type": "Observation",	
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#pedometer"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#pedometer"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "39", "unit": {"@id": "qudt-unit:xyz"} }]
   	},
   	{
   		"@id": "urn:demeter:ObservationI/2b",
       "@type": "Observation",	
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#MID"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#MID"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "474", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/3b",
       "@type": "Observation",	
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#lactations"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#lactations"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "3", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/4b",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#dailyProduction"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#dailyProduction"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "31.08", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/5b",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#averageDailyProduction"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#averageDailyProduction"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "43.66", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/6b",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#fat"},
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#fat"},
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "4.5", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/7b",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#protein"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#protein"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "3.59", "unit": {"@id": "qudt-unit:xyz"} }]
     },
     {
   		"@id": "urn:demeter:ObservationI/8b",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#totalDailyLying"} ,
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#totalDailyLying"} ,
       "hasResult": [{ "@type": "QuantityValue", "numericValue": "783", "unit": {"@id": "qudt-unit:xyz"} }]
     },
   	{
   		"@id": "urn:demeter:ObservationI/9b",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#actualLameness"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Sick"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#actualLameness"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick"}
     },
     {
   		"@id": "urn:demeter:ObservationI/10b",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#predictedLameness"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Sick"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#predictedLameness"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick"}
     },
     {
   		"@id": "urn:demeter:ObservationI/11b",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#actualKetosis"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Healthy"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#actualKetosis"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy"}
     },
     {
   		"@id": "urn:demeter:ObservationI/12b",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#predictedKetosis"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Healthy"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#predictedKetosis"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy"}
     },
     {
   		"@id": "urn:demeter:ObservationI/13b",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#actualMastitis"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Sick"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#actualMastitis"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick"}
     },
     {
   		"@id": "urn:demeter:ObservationI/14b",
       "@type": "Observation",
-      "observedProperty": { "@id": "http://w3id.org/demeter/agri/livestockFeature#predictedMastitis"} ,
-      "hasResult": { "@id": "http://w3id.org/demeter/agri/livestockFeature#healthStatus-Sick"}
+      "observedProperty": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#predictedMastitis"} ,
+      "hasResult": { "@id": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick"}
   	},
   	{
   		"@id": "urn:demeter:ObservationC/1b",
