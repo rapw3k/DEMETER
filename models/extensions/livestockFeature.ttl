@@ -99,7 +99,8 @@ livestock-ft:HealthStatus a owl:Class;
         rdfs:comment "State of health for different pathologies"@en;
         rdfs:seeAlso livestock-ft:healthStatus  ;
         owl:oneOf (livestock-ft:healthStatus-Healthy 
-                   livestock-ft:healthStatus-Sick) .
+                   livestock-ft:healthStatus-Sick) ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
 
 livestock-ft:healthStatus-Healthy a skos:Concept, livestock-ft:HealthStatus;
         skos:topConceptOf livestock-ft:healthStatus;
@@ -126,7 +127,8 @@ livestock-ft:QualityValue a owl:Class;
         rdfs:seeAlso livestock-ft:qualityValue ;
         owl:oneOf (livestock-ft:qualityValue-Hight
 		   livestock-ft:qualityValue-Medium
-                   livestock-ft:qualityValue-Low) .
+                   livestock-ft:qualityValue-Low) ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
 
 livestock-ft:qualityValue-High a skos:Concept, livestock-ft:QualityValue;
         skos:topConceptOf livestock-ft:qualityValue;
