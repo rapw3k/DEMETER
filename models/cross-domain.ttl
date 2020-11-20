@@ -759,7 +759,7 @@ qu:PropertyKind rdf:type owl:Class ;
 
 ###  http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind
 qu:QuantityKind rdf:type owl:Class ;
-                rdfs:subClassOf skos:Scheme ;
+                rdfs:subClassOf ngsi-ld:Entity ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                 rdfs:label "QuantityKind" .
 
@@ -1369,7 +1369,7 @@ sosa:FeatureOfInterest rdfs:subClassOf iso19156_GFI:GFI_DomainFeature .
 sosa:Sample owl:equivalentClass iso19156_SF:SF_SamplingFeature .
 sosa:isSampleOf owl:equivalentProperty iso19156_SF:SF_SamplingFeature.sampledFeature .
 sosa:Observation owl:equivalentClass iso19156_OB:OM_Observation .
-
+qudt:QuantityKind owl:equivalentClass qu:QuantityKind .
 
 #################################################################
 #    Individuals
