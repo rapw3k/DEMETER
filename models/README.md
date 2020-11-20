@@ -19,7 +19,7 @@ The modules have been structured based on topics similar to the FIWARE agrifood 
 # Examples
 
 There are some examples of how to represent data that is compliant with the AIM. 
-Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/examples](https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld). In particular:
+Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/examples](https://github.com/rapw3k/DEMETER/tree/master/models/examples). In particular:
 
 * instance-AIM_v2.* is a valid instance example (which is mainly based on fiware elements), in json-ld and turtle respectively
 
@@ -103,7 +103,7 @@ typically using the property asWKT to provide the WKT serialization e.g., POLYGO
 
 Developers have different options to find terms in AIM:
 * Load whole ontology in ontology editor like Protege [https://w3id.org/demeter/agri](https://w3id.org/demeter/agri), and then search for terms. This may be useful only for those having some basic experience with ontologies.
-* All modules of AIM domain layer (e.g., [https://w3id.org/demeter/agri](https://w3id.org/demeter/agri), [https://w3id.org/demeter/agriCrop](https://w3id.org/demeter/agriCrop)) take you to OGC definiton server (using any content negotiation except from TURTLE and RDF/XML). From there you can search terms. However, currently the search is restricted to each module.
+* All modules of AIM domain layer (e.g., [https://w3id.org/demeter/agri](https://w3id.org/demeter/agri), [https://w3id.org/demeter/agri/agriCrop](https://w3id.org/demeter/agri/agriCrop)) take you to OGC definiton server (using any content negotiation except from TURTLE and RDF/XML). Also using OGC server you can search for terms in all AIM domain modules (cross-domain is not yet there) via [http://defs-dev.opengis.net/demeter/search](http://defs-dev.opengis.net/demeter/search). Also from OGC server many related resources are accessible via content-negotiation-by-profile, using the profile "alt" (linked from HTML views) - e.g. [https://w3id.org/demeter/agri/agriCrop?_profile=alt](https://w3id.org/demeter/agri/agriCrop?_profile=alt). These include JSON-LD schema, HTML documentation views, SHACL constraints and other resources. Use the issue tracker to highlight any issues with these. 
 * AIM domain layer is available via agroPortal: [http://agroportal.lirmm.fr/ontologies/DEMETER-AIM](http://agroportal.lirmm.fr/ontologies/DEMETER-AIM). From there you can browse classes, properties or mappgins if any (e.g., [http://agroportal.lirmm.fr/ontologies/DEMETER-AIM?p=classes](http://agroportal.lirmm.fr/ontologies/DEMETER-AIM?p=classes). Additionally, you can use recommendations and annotator functionalities of the portal. These feature are also available via API:
 	- *search for terms in AIM (e.g., Plot)*
 [http://data.agroportal.lirmm.fr/search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=plot](http://data.agroportal.lirmm.fr/search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=plot)
@@ -127,7 +127,8 @@ In general, the simplest method is to specify just the main AIM context as below
 }
 ```
 
-Alternatively, you can use individual contexts, e.g., to use only few modules of AIM. Note that referencing the main context is the same as referencing all individual modules (including cross-domain and domain layer) as shown below:
+Alternatively, you can use individual contexts, e.g., to use only few modules of AIM. Note that referencing the main context is the same as referencing all individual modules (including cross-domain and domain layer) as shown below. 
+Note: there are two ways to reference JSON-LD contexts: i) using the ontology URI+"-context.jsonld" e.g., https://w3id.org/demeter/agri/agriFeature-context.jsonld ; ii) using the ontology URI+profile parameter (thanks to OGC definition server), e.g., https://w3id.org/demeter/agri/agriFeature?_profile=jsoncontext. Nevertheless, second approach still requires some updates to handle issues with entities with duplicated names. So, in the meantime, please use first approach.
  
 ```
 {
@@ -151,6 +152,9 @@ Alternatively, you can use individual contexts, e.g., to use only few modules of
 # How to validate your data is compliant with AIM (particularly the domain layer)
 
 * In order to make sure all elements are valid AIM elements you can use the json-ld playground: [https://json-ld.org/playground/](https://json-ld.org/playground/). 
+
+For instance, you can load one of the examples mentioned above in the JSON-LD Playground [here](https://tinyurl.com/y68qvhhv).
+
 This is not validating the semantics though, just that elements are resolvable.
 
 * In order to validate the semantics, there are different tools we are evaluating still.
