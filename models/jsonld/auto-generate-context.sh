@@ -11,3 +11,4 @@ java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o farmAnimal-context.jsonld https://w3id.org/demeter/agri/farmAnimal/2.0
 
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o livestockFeature-context.jsonld https://w3id.org/demeter/agri/ext/livestockFeature
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o kpiIndicator-context.jsonld https://w3id.org/demeter/agri/ext/kpiIndicator
