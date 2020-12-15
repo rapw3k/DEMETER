@@ -95,15 +95,15 @@ kpi-ind:KpiIndicatorValue rdf:type owl:Class , sosa:Observation ;
 
 ### code list for sector	  
 ###  https://w3id.org/demeter/agri/ext/kpiIndicator#Sector
-kpi-ind:Sector rdf:type rdf:type owl:Class ;
-              rdfs:subClassOf skos:Concept
-              rdfs:comment "generic type of the indicator (Economic, Production, Environmental)" ;
-              rdfs:label "Sector" ;
-              rdfs:seeAlso kpi-ind:sectorScheme ;
-              owl:oneOf (kpi-ind:sectorScheme-Production 
+kpi-ind:Sector  rdf:type owl:Class ;
+                rdfs:subClassOf skos:Concept ;
+                rdfs:comment "generic type of the indicator (Economic, Production, Environmental)" ;
+                rdfs:label "Sector" ;
+                rdfs:seeAlso kpi-ind:sectorScheme ;
+                owl:oneOf (kpi-ind:sectorScheme-Production 
                    kpi-ind:sectorScheme-Economic
                    kpi-ind:sectorScheme-Environmental ) ;
-              rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/kpiIndicator#> .
+                rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/kpiIndicator#> .
 
 kpi-ind:sectorScheme a skos:ConceptScheme ;
         skos:prefLabel "sectorScheme"@en;
