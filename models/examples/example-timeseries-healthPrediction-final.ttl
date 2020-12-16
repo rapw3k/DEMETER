@@ -1,7 +1,8 @@
 @prefix ns0: <http://foodie-cloud.com/model/foodie#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix ns1: <http://qudt.org/schema/qudt/> .
+@prefix ns1: <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+@prefix ns2: <http://qudt.org/schema/qudt/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <urn:demeter:72d9fb43-53f8-4ec8-a33c-fa931360259a>
@@ -9,120 +10,121 @@
   dc:identifier "2" ;
   a <https://w3id.org/demeter/agri/ext/livestockFeature#HealthPrediction> ;
   sosa:hasFeatureOfInterest <urn:demeter:animal1> ;
-  sosa:hasMember <urn:demeter:ObservationCollection/1a>, <urn:demeter:ObservationCollection/2a>, <urn:demeter:ObservationCollection/3a> .
+  sosa:hasMember <urn:demeter:ObservationCollection/1a>, <urn:demeter:ObservationCollection/2a>, <urn:demeter:ObservationCollection/3a> ;
+  ns1:predictionMetric <urn:demeter:predictionMetric1> .
 
 <urn:demeter:72d9fb43-53f8-4ec8-a33c-fa931360259b>
   ns0:description "Health Prediction collection of observations2" ;
   dc:identifier "6" ;
-  a <https://w3id.org/demeter/agri/ext/livestockFeature#HealthPrediction> ;
+  a ns1:HealthPrediction ;
   sosa:hasFeatureOfInterest <urn:demeter:animal2> ;
   sosa:hasMember <urn:demeter:ObservationCollection/1b>, <urn:demeter:ObservationCollection/2b>, <urn:demeter:ObservationCollection/3b> .
 
 <urn:demeter:ObservationA/1a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "242" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "242" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T10:36:12Z"^^xsd:dateTime .
 
 <urn:demeter:ObservationA/1b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "191" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "191" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T10:36:12Z"^^xsd:dateTime .
 
 <urn:demeter:ObservationA/2a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "216" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "216" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T11:36:12Z"^^xsd:dateTime .
 
 <urn:demeter:ObservationA/2b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "63" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "63" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T11:36:12Z"^^xsd:dateTime .
 
 <urn:demeter:ObservationA/3a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "98" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "98" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T18:36:12Z"^^xsd:dateTime .
 
 <urn:demeter:ObservationA/3b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "276" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "276" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T18:36:12Z"^^xsd:dateTime .
 
 <urn:demeter:ObservationC/1a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "11.3" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "11.3" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T10:36:12Z"^^xsd:dateTime .
 
 <urn:demeter:ObservationC/1b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "11.3" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "11.3" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T10:36:12Z"^^xsd:dateTime .
 
 <urn:demeter:ObservationC/2a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "10.7" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "10.7" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T11:36:12Z"^^xsd:dateTime .
 
 <urn:demeter:ObservationC/2b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "9.7" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "9.7" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T11:36:12Z"^^xsd:dateTime .
 
 <urn:demeter:ObservationC/3a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "10.6" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "10.6" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T18:36:12Z"^^xsd:dateTime .
 
 <urn:demeter:ObservationC/3b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "10.5" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "10.5" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
   sosa:resultTime "2018-02-01T18:36:12Z"^^xsd:dateTime .
 
@@ -154,235 +156,235 @@
   ns0:description "Activity properties collection1" ;
   a sosa:ObservationCollection ;
   sosa:hasMember <urn:demeter:ObservationA/1a>, <urn:demeter:ObservationA/2a>, <urn:demeter:ObservationA/3a> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#animalActivity> .
+  sosa:observedProperty ns1:animalActivity .
 
 <urn:demeter:ObservationCollection/3b>
   ns0:description "Activity properties collection2" ;
   a sosa:ObservationCollection ;
   sosa:hasMember <urn:demeter:ObservationA/1b>, <urn:demeter:ObservationA/2b>, <urn:demeter:ObservationA/3b> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#animalActivity> .
+  sosa:observedProperty ns1:animalActivity .
 
 <urn:demeter:ObservationI/10a>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#actualLameness> .
+  sosa:hasResult ns1:healthStatus-Healthy ;
+  sosa:observedProperty ns1:actualLameness .
 
 <urn:demeter:ObservationI/10b>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#actualLameness> .
+  sosa:hasResult ns1:healthStatus-Sick ;
+  sosa:observedProperty ns1:actualLameness .
 
 <urn:demeter:ObservationI/11a>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#predictedLameness> .
+  sosa:hasResult ns1:healthStatus-Healthy ;
+  sosa:observedProperty ns1:predictedLameness .
 
 <urn:demeter:ObservationI/11b>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#predictedLameness> .
+  sosa:hasResult ns1:healthStatus-Sick ;
+  sosa:observedProperty ns1:predictedLameness .
 
 <urn:demeter:ObservationI/12a>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#actualKetosis> .
+  sosa:hasResult ns1:healthStatus-Healthy ;
+  sosa:observedProperty ns1:actualKetosis .
 
 <urn:demeter:ObservationI/12b>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#actualKetosis> .
+  sosa:hasResult ns1:healthStatus-Healthy ;
+  sosa:observedProperty ns1:actualKetosis .
 
 <urn:demeter:ObservationI/13a>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#predictedKetosis> .
+  sosa:hasResult ns1:healthStatus-Healthy ;
+  sosa:observedProperty ns1:predictedKetosis .
 
 <urn:demeter:ObservationI/13b>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#predictedKetosis> .
+  sosa:hasResult ns1:healthStatus-Healthy ;
+  sosa:observedProperty ns1:predictedKetosis .
 
 <urn:demeter:ObservationI/14a>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#actualMastitis> .
+  sosa:hasResult ns1:healthStatus-Sick ;
+  sosa:observedProperty ns1:actualMastitis .
 
 <urn:demeter:ObservationI/14b>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#actualMastitis> .
+  sosa:hasResult ns1:healthStatus-Sick ;
+  sosa:observedProperty ns1:actualMastitis .
 
 <urn:demeter:ObservationI/15a>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#predictedMastitis> .
+  sosa:hasResult ns1:healthStatus-Sick ;
+  sosa:observedProperty ns1:predictedMastitis .
 
 <urn:demeter:ObservationI/15b>
   a sosa:Observation ;
-  sosa:hasResult <https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick> ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#predictedMastitis> .
+  sosa:hasResult ns1:healthStatus-Sick ;
+  sosa:observedProperty ns1:predictedMastitis .
 
 <urn:demeter:ObservationI/1a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "514" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "514" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#pedometer> .
+  sosa:observedProperty ns1:pedometer .
 
 <urn:demeter:ObservationI/1b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "39" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "39" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#pedometer> .
+  sosa:observedProperty ns1:pedometer .
 
 <urn:demeter:ObservationI/2a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "319" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "319" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#MID> .
+  sosa:observedProperty ns1:MID .
 
 <urn:demeter:ObservationI/2b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "474" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "474" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#MID> .
+  sosa:observedProperty ns1:MID .
 
 <urn:demeter:ObservationI/3a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "4" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "4" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#lactations> .
+  sosa:observedProperty ns1:lactations .
 
 <urn:demeter:ObservationI/3b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "3" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "3" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#lactations> .
+  sosa:observedProperty ns1:lactations .
 
 <urn:demeter:ObservationI/4a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "39.25" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "39.25" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#dailyProduction> .
+  sosa:observedProperty ns1:dailyProduction .
 
 <urn:demeter:ObservationI/4b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "31.08" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "31.08" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#dailyProduction> .
+  sosa:observedProperty ns1:dailyProduction .
 
 <urn:demeter:ObservationI/5a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "33.54" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "33.54" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#averageDailyProduction> .
+  sosa:observedProperty ns1:averageDailyProduction .
 
 <urn:demeter:ObservationI/5b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "43.66" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "43.66" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#averageDailyProduction> .
+  sosa:observedProperty ns1:averageDailyProduction .
 
 <urn:demeter:ObservationI/6a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "3.57" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "3.57" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#fat> .
+  sosa:observedProperty ns1:fat .
 
 <urn:demeter:ObservationI/6b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "4.5" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "4.5" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#fat> .
+  sosa:observedProperty ns1:fat .
 
 <urn:demeter:ObservationI/7a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "3.09" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "3.09" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#protein> .
+  sosa:observedProperty ns1:protein .
 
 <urn:demeter:ObservationI/7b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "3.59" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "3.59" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#protein> .
+  sosa:observedProperty ns1:protein .
 
 <urn:demeter:ObservationI/8a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "1.16" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "1.16" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#fatProteinRatio> .
+  sosa:observedProperty ns1:fatProteinRatio .
 
 <urn:demeter:ObservationI/8b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "1.25" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "1.25" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#fatProteinRatio> .
+  sosa:observedProperty ns1:fatProteinRatio .
 
 <urn:demeter:ObservationI/9a>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "649" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "649" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#totalDailyLying> .
+  sosa:observedProperty ns1:totalDailyLying .
 
 <urn:demeter:ObservationI/9b>
   a sosa:Observation ;
   sosa:hasResult [
-    ns1:numericValue "783" ;
-    ns1:unit <http://qudt.org/vocab/unit/xyz> ;
-    a ns1:QuantityValue
+    ns2:numericValue "783" ;
+    ns2:unit <http://qudt.org/vocab/unit/xyz> ;
+    a ns2:QuantityValue
   ] ;
-  sosa:observedProperty <https://w3id.org/demeter/agri/ext/livestockFeature#totalDailyLying> .
+  sosa:observedProperty ns1:totalDailyLying .
 
 <urn:demeter:animal1>
   ns0:description "Animal" ;
@@ -393,3 +395,18 @@
   ns0:description "Animal2" ;
   ns0:livestockNumber 555.0 ;
   a <https://uri.fiware.org/ns/data-models#Animal> .
+
+<urn:demeter:predictionMetric1>
+  a ns1:PredictionMetric ;
+  ns1:ketosisAccuracy 99.0 ;
+  ns1:ketosisFalsePositiveRate 5.88 ;
+  ns1:ketosisPrecision 99.0 ;
+  ns1:ketosisTruePositiveRate 100.0 ;
+  ns1:lamenessAccuracy 92.0 ;
+  ns1:lamenessFalsePositiveRate 16.67 ;
+  ns1:lamenessPrecision 90.2 ;
+  ns1:lamenessTruePositiveRate 95.21 ;
+  ns1:mastitisAccuracy 82.0 ;
+  ns1:mastitisFalsePositiveRate 21.43 ;
+  ns1:mastitisPrecision 82.0 ;
+  ns1:mastitisTruePositiveRate 84.48 .
