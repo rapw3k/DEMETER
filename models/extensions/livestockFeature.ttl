@@ -265,18 +265,20 @@ livestock-ft:processedAccuracy rdf:type owl:DatatypeProperty ;
 #################################################################
 
 ###  https://w3id.org/demeter/agri/ext/livestockFeature#HealthPrediction
-livestock-ft:HealthPrediction rdf:type owl:Class , sosa:ObservationCollection;
-      rdfs:comment "Data on milk production, fats, proteins, electrical conductivity, detected in the milk produced,"@en ;
-      rdfs:comment "the activity and rest of the cows, determined by the pedometer, the health status of the cows,"@en ;
-	  rdfs:comment "detected and predicted by the relative algorithm, for the pathologies of lameness, mastitis and ketosis."@en ;
+livestock-ft:HealthPrediction rdf:type owl:Class ; 
+			rdfs:subClassOf sosa:Observation ;
+      rdfs:comment "Data on milk production, fats, proteins, electrical conductivity, detected in the milk produced,
+      							the activity and rest of the cows, determined by the pedometer, the health status of the cows,
+      							detected and predicted by the relative algorithm, for the pathologies of lameness, mastitis and ketosis."@en ;
       rdfs:label "HealthPrediction" ;
       rdfs:subClassOf [ a owl:Restriction ; owl:onProperty sosa:hasFeatureOfInterest ; owl:allValuesFrom fiware:Animal ] ;
       rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
 	  
 ###  https://w3id.org/demeter/agri/ext/livestockFeature#MilkQualityPrediction
-livestock-ft:MilkQualityPrediction rdf:type owl:Class , sosa:ObservationCollection;
-      rdfs:comment "Data relating to the analysis of milk samples, and the degrees of milk quality,"@en;
-	  rdfs:comment "detected and predicted by the relative algorithm."@en;
+livestock-ft:MilkQualityPrediction rdf:type owl:Class ;
+			rdfs:subClassOf sosa:ObservationCollection ;
+      rdfs:comment "Data relating to the analysis of milk samples, and the degrees of milk quality,"@en ;
+	  	rdfs:comment "detected and predicted by the relative algorithm."@en ;
       rdfs:label "MilkQualityPrediction" ;
       rdfs:subClassOf [ a owl:Restriction ; owl:onProperty sosa:hasFeatureOfInterest ; owl:allValuesFrom livestock-ft:MilkProduct ] ;
       rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .

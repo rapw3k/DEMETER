@@ -81,14 +81,16 @@ kpi-ind:referenceValue rdf:type owl:DatatypeProperty ;
 #################################################################
 	  
 ###  https://w3id.org/demeter/agri/ext/kpiIndicator#KpiIndicator
-kpi-ind:KpiIndicator rdf:type owl:Class , sosa:ObservableProperty, qudt:QuantityKind ;
+kpi-ind:KpiIndicator rdf:type owl:Class ;
+			rdfs:subClassOf sosa:ObservableProperty, qudt:QuantityKind ;
       rdfs:comment "concept representing an indicator for benchmarking tools (e.g. olive_yield, water_efficency,  farm cost incidence etc...)"@en ;
       rdfs:label "KpiIndicator" ;
       rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/kpiIndicator#> .
 
 
 ###  https://w3id.org/demeter/agri/ext/kpiIndicator#KpiIndicatorValue
-kpi-ind:KpiIndicatorValue rdf:type owl:Class , sosa:Observation ;
+kpi-ind:KpiIndicatorValue rdf:type owl:Class ; 
+			rdfs:subClassOf sosa:Observation ;
       rdfs:comment "concept representing a kpi measurement/observation for benchmarking tools "@en ;
       rdfs:label "KpiIndicatorValue" ;
       rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/kpiIndicator#> .				
