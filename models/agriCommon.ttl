@@ -28,6 +28,7 @@
 @prefix saref: <https://w3id.org/saref#> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix demeterAgriCommon: <https://w3id.org/demeter/agri/agriCommon#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @base <https://w3id.org/demeter/> .
 
 <https://w3id.org/demeter/agri/agriCommon> rdf:type owl:Ontology ;
@@ -287,6 +288,7 @@ prov:generatedAtTime rdfs:subPropertyOf saref:hasTimestamp .
 fiware:createdAt rdfs:subPropertyOf saref:hasTimestamp .
 iso19115-citation:ResponsibleParty rdfs:subClassOf foaf:Agent .
 fiware:category owl:equivalentProperty foodie:type .
+iso19103:Measure owl:equivalentClass qudt:QuantityValue .
 
 #################################################################
 #    Individuals
