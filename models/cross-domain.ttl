@@ -834,10 +834,6 @@ geo:SpatialObject rdf:type owl:Class ;
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty geo:sfWithin ;
                                     owl:allValuesFrom geo:SpatialObject
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty wgs84_pos:location ;
-                                    owl:allValuesFrom wgs84_pos:Point
                                   ] ;
                   rdfs:comment "The class spatial-object represents everything that can have a spatial representation. It is superclass of feature and geometry."@en ;
                   rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
