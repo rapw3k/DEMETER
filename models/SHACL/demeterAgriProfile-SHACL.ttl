@@ -649,7 +649,7 @@
         sh:path           fiware:landLocation .
 
 <https://astrea.linkeddata.es/shapes#156af31e954042e340f8709a0253518d>
-        a         sh:PropertyShape ;
+#        a         sh:PropertyShape ;
         sh:class  saref:UnitOfMeasure .
 
 <https://astrea.linkeddata.es/shapes#06d343a59be56b45caf7bbca1e50e807>
@@ -752,7 +752,8 @@
                             [ sh:class  sosa:ObservationCollection ;
                               sh:path   sosa:hasMember
                             ]
-                          ) .
+                          ) ;
+        sh:path           sosa:hasMember .
 
 <https://astrea.linkeddata.es/report/1514534692>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
@@ -985,7 +986,7 @@
         sh:path           qudt:quantityValue .
 
 <https://astrea.linkeddata.es/shapes#16b639b6c59786f5c650e18b0080386b>
-        a         sh:PropertyShape ;
+#        a         sh:PropertyShape ;
         sh:class  geo:Geometry .
 
 <https://astrea.linkeddata.es/shapes#e6df4e017e0bb9438dcf15f6a4c5dfa9>
@@ -1469,7 +1470,8 @@
         rdfs:label        "Well-known Text Literal"@en , "A Well-known Text serialization of a geometry object."@en ;
         sh:description    "A Well-known Text serialization of a geometry object."@en ;
         sh:name           "Well-known Text Literal"@en ;
-        sh:nodeKind       sh:Literal .
+        sh:nodeKind       sh:Literal ;
+        sh:path		  geo:wktLiteral .
 
 <https://astrea.linkeddata.es/shapes#3fb3d7e699b8cb63253d30f5333e189d>
         a                 sh:PropertyShape ;
@@ -1700,7 +1702,7 @@
         sh:targetClass    saref4agri:WateringSystem .
 
 <https://astrea.linkeddata.es/shapes#2756c97972402dcea46d42e487344cda>
-        a         sh:PropertyShape ;
+#        a         sh:PropertyShape ;
         sh:class  qb:MeasureProperty .
 
 <https://astrea.linkeddata.es/shapes#40543ae31d15d62fa39b0fcb7a505b2f>
@@ -2617,7 +2619,7 @@
         sh:path      saref:hasValue .
 
 <https://astrea.linkeddata.es/shapes#17e979387e8a0ecc05c47869136bd8fe>
-        a         sh:PropertyShape ;
+#        a         sh:PropertyShape ;
         sh:class  qb:AttributeProperty .
 
 <https://astrea.linkeddata.es/shapes#7079166d64f203e3c5ada3ecea14c911>
@@ -2658,7 +2660,7 @@
         sh:path           foodie:operator .
 
 <https://astrea.linkeddata.es/shapes#7c708841b8b6a556648a36e2070312bc>
-        a         sh:PropertyShape ;
+#        a         sh:PropertyShape ;
         sh:class  qb:DimensionProperty .
 
 <https://astrea.linkeddata.es/shapes#7d5ef7a3f3f78d7a3741dc5fa59b1dde>
@@ -4185,7 +4187,7 @@
         sh:targetClass    foaf:Person , schema:Person .
 
 <https://astrea.linkeddata.es/shapes#d7ebf345df8fe1eee1b1baae1be67bf2>
-        a         sh:PropertyShape ;
+#        a         sh:PropertyShape ;
         sh:class  saref:Property .
 
 <https://astrea.linkeddata.es/shapes#6d60e47e6ae5f9718930954a3486bb48>
