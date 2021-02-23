@@ -164,6 +164,35 @@ For now, you can :
 	- use Apache Jena SHACL [https://jena.apache.org/documentation/shacl/](https://jena.apache.org/documentation/shacl/) - see examples below
 	- use [Astrea Web Service](https://astrea.linkeddata.es/). This is a service under testing, but provides a good basis for reusing.
 
+> Note: We have tested a more complete SHACL validator which we recommend for your testing
+> The tool is called pySHACL [https://github.com/RDFLib/pySHACL](https://github.com/RDFLib/pySHACL)
+> The way to call it would be (see some examples below):
+> pyshacl --imports -s https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/SHACL/demeterAgriProfile-SHACL.ttl -e https://w3id.org/demeter/agri -i rdfs -a -j -df json-ld -f human mydata.jsonld
+
+
+NEW EXAMPLES (PySHACL)
+```
+./pyshacl --imports -s https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/SHACL/demeterAgriProfile-SHACL.ttl -e https://w3id.org/demeter/agri -i rdfs -a -j -df json-ld -f human pilot5.2-afc-observation-point-simplified.jsonld
+Validation Report
+Conforms: True
+```
+without incuding all the semantics of AIM (without using our AIM ontology)
+```
+./pyshacl --imports -s https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/SHACL/demeterAgriProfile-SHACL.ttl -i rdfs -a -j -df json-ld -f human pilot5.2-afc-observation-point-simplified.jsonld
+Validation Report
+Conforms: False
+Results (1):
+Constraint Violation in ClassConstraintComponent (http://www.w3.org/ns/shacl#ClassConstraintComponent):
+	Severity: sh:Violation
+	Source Shape: <https://astrea.linkeddata.es/shapes#3f6891594ac2d163a004bec00f8db48a>
+	Focus Node: <http://www.w3id.org/afarcloud/poi?lat=45.75&amp;long=4.85>
+	Value Node: <http://www.w3id.org/afarcloud/pCoord?lat=45.75&amp;long=4.85>
+	Result Path: geo:hasGeometry
+	Message: Value does not have class geo:Geometry
+```
+
+
+OLD EXAMPLES (Jena SHACL)
 ```
 ./shacl v -s demeterAgriProfile-SHACL.ttl -d instance-AIM_v2.ttl
 
