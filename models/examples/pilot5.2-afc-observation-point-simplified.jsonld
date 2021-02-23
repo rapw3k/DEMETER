@@ -1,0 +1,33 @@
+{
+    "@graph" : [ {
+      "@id" : "http://www.w3id.org/afarcloud/pCoord?lat=45.75&amp;long=4.85",
+      "@type" : "Point",
+      "asWKT" : "POINT(45.75 4.85)"
+    }, 
+    {
+      "@id" : "http://www.w3id.org/afarcloud/poi?lat=45.75&amp;long=4.85",
+      "@type" : "Feature",
+      "hasGeometry" : "http://www.w3id.org/afarcloud/pCoord?lat=45.75&amp;long=4.85"
+    }, {
+      "@id" : "urn:afc:AS09:cropsManagement:TEC:soil:sen0022",
+      "@type" : [ "SoilSensor", "AfarcloudSensors" ]
+    }, {
+      "@id" : "urn:afc:AS09:sen0022:obs-1514810172",
+      "@type" : "Observation",
+      "hasFeatureOfInterest" : "http://www.w3id.org/afarcloud/poi?lat=45.75&amp;long=4.85",
+      "hasResult" : "urn:afc:AS09:sen0022:obs-1514810172/q1",
+      "madeBySensor" : "urn:afc:AS09:cropsManagement:TEC:soil:sen0022",
+      "observedProperty" : "http://www.w3id.org/afarcloud/soil_temperature",
+      "resultTime" : "2018-01-01T12:36:12Z"
+    }, {
+      "@id" : "urn:afc:AS09:sen0022:obs-1514810172/q1",
+      "@type" : "QuantityValue",
+      "identifier" : "q1",
+      "numericValue" : "0.27121272683143616",
+      "unit" : "http://qudt.org/vocab/unit/DEG_C"
+    } ],
+    "@context" : [ "https://w3id.org/demeter/agri-context.jsonld", "https://w3id.org/afarcloud/afarcloud-context.jsonld", {
+      "qudt-unit" : "http://qudt.org/vocab/unit/"
+    } ]
+  }
+  
