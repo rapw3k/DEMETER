@@ -39,9 +39,9 @@
                             owl:versionIRI <https://w3id.org/demeter/agri/ext/poultryFeeding/1.0> ;
                             owl:imports <https://w3id.org/demeter/agri/farmAnimal/2.0> ;
                             dct:description     "poultryFeeding extension contains : \n
-                            1) Silos : information about silos, \n
-                            2) Flocks: information about flocks \n
-                            2) Animal Feeding : observation of the quality of the animal feeding at some point in time. "@en ;
+                            1) information about silos, \n
+                            2) information about flocks (animal groups) \n
+                            2) information about animal feeding : observation of the quality of the animal feeding at some point in time. "@en ;
                             dct:title "DEMETER PoultryFeeding"@en ;
                             rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
                             owl:versionInfo "1.0" ;
@@ -64,22 +64,6 @@
 #################################################################
 #    Data properties
 #################################################################                                                                                            
-
-###  https://w3id.org/demeter/agri/ext/poultryFeeding#silosID
-poultry-fd:silosID rdf:type owl:DatatypeProperty ;
-	rdfs:range xsd:string ;	
-	rdfs:domain poultry-fd:Silos ;
-	rdfs:comment "Silo's unique identifier" ;
-	rdfs:label "silosID" ;
-	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/poultryFeeding#> . 
-
-###  https://w3id.org/demeter/agri/ext/poultryFeeding#flockID
-poultry-fd:flockID rdf:type owl:DatatypeProperty ;
-	rdfs:range xsd:string ;
-	rdfs:domain poultry-fd:Flock ;
-	rdfs:comment "Flock's unique identifier" ;
-	rdfs:label "flockID" ;
-	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/poultryFeeding#> . 
 
 ###  https://w3id.org/demeter/agri/ext/poultryFeeding#silosFoodDensity
 poultry-fd:silosFoodDensity rdf:type owl:DatatypeProperty ;
@@ -105,21 +89,21 @@ poultry-fd:silosEmptyDistance rdf:type owl:DatatypeProperty ;
 	rdfs:label "silosEmptyDistance" ;
 	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/poultryFeeding#> . 
 
-###  https://w3id.org/demeter/agri/ext/poultryFeeding#flockAverageAge
-poultry-fd:flockAverageAge rdf:type owl:DatatypeProperty ;
-	rdfs:range xsd:integer ;
-	rdfs:domain poultry-fd:Flock ;
-	rdfs:comment "average age in flock" ;
-	rdfs:label "flockAverageAge" ;
-	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/poultryFeeding#> .  
-
-###  https://w3id.org/demeter/agri/ext/poultryFeeding#silosFoodType
+###  https://w3id.org/demeter/agri/ext/poultryFeeding#silosFoodTypeName
 poultry-fd:silosFoodType rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:string ;
 	rdfs:domain poultry-fd:Silos ;
-	rdfs:comment "Type of food" ;
-	rdfs:label "silosFoodType" ;
+	rdfs:comment "Name of food type" ;
+	rdfs:label "silosFoodTypeName" ;
 	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/poultryFeeding#> .              
+
+###  https://w3id.org/demeter/agri/ext/poultryFeeding#flockAverageAge
+poultry-fd:flockAverageAge rdf:type owl:DatatypeProperty ;
+	rdfs:range xsd:integer ;
+	rdfs:domain saref4agri:AnimalGroup ;
+	rdfs:comment "average age in the animal group (flock)" ;
+	rdfs:label "flockAverageAge" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/poultryFeeding#> .  
 
 ###  https://w3id.org/demeter/agri/ext/poultryFeeding#animalFeedingQuality
 poultry-fd:animalFeedingQuality rdf:type owl:DatatypeProperty ;
@@ -136,9 +120,6 @@ poultry-fd:animalFeedingQuality rdf:type owl:DatatypeProperty ;
 
 ###  https://w3id.org/demeter/agri/ext/poultryFeeding#AnimalFeeding
 poultry-fd:AnimalFeeding rdf:type owl:Class ;
-		  rdfs:subClassOf  [ a owl:Restriction ; owl:minCardinality  "1"^^xsd:int ; owl:onProperty	fiware:species ] ;
-		  rdfs:subClassOf  [ a owl:Restriction ; owl:minCardinality  "1"^^xsd:int ; owl:onProperty	poultry-fd:animalFeedingQuality ] ;
-		  rdfs:subClassOf  [ a owl:Restriction ; owl:minCardinality  "1"^^xsd:int ; owl:onProperty	fiware:observedAt ] ;
       rdfs:comment "Evaluation on the quality of animal feeding"@en ;
       rdfs:seeAlso agrovoc:c_429 ;
       rdfs:label "AnimalFeeding" ;
@@ -146,21 +127,10 @@ poultry-fd:AnimalFeeding rdf:type owl:Class ;
 	  
 ###  https://w3id.org/demeter/agri/ext/poultryFeeding#Silos
 poultry-fd:Silos rdf:type owl:Class ;
-			rdfs:subClassOf  [ a owl:Restriction ; owl:minCardinality  "1"^^xsd:int ; owl:onProperty	poultry-fd:silosID ] ;
       rdfs:comment "A building used for food storage in agriculture"@en;
       rdfs:label "Silos" ;
       rdfs:seeAlso agrovoc:c_7065 ; 
-      rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/poultryFeeding#> .
-
-###  https://w3id.org/demeter/agri/ext/poultryFeeding#Flock
-poultry-fd:Flock rdf:type owl:Class ;
-			rdfs:subClassOf  [ a owl:Restriction ; owl:minCardinality  "1"^^xsd:int ; owl:onProperty	poultry-fd:flockID ] ;
-			rdfs:subClassOf  [ a owl:Restriction ; owl:minCardinality  "1"^^xsd:int ; owl:onProperty	fiware:species ] ;
-      rdfs:comment "A building used for food storage in agriculture"@en;
-      rdfs:label "Flock" ;
-      rdfs:seeAlso agrovoc:c_10913 ;
-      rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/poultryFeeding#> .
-	
+      rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/poultryFeeding#> .	
 	  
 #################################################################
 #    Alignments
