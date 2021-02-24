@@ -27,6 +27,7 @@
 @prefix iso19156_SF:  <http://def.isotc211.org/iso19156/2011/SamplingFeature#> .
 @prefix iso19156_GFI: 	<http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#> .
 @prefix iso19156_OB: <http://def.isotc211.org/iso19156/2011/Observation#> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
 @base <https://w3id.org/demeter/crossDomain> .
 
 <https://w3id.org/demeter/crossDomain> rdf:type owl:Ontology ;
@@ -1058,6 +1059,7 @@ skos:Scheme rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/sosa/Result
 sosa:Result	rdf:type owl:Class ;
+            rdfs:subClassOf ngsi-ld:Entity ;
   					rdfs:comment "The Result of an Observation, Actuation, or act of Sampling. To store an observation's simple result value one can use the hasSimpleResult property."@en ;
   					rdfs:label "Result"@en ;
   					skos:example "The value 20 as the height of a certain tree together with the unit, e.g., Meter."@en ;
@@ -1065,6 +1067,7 @@ sosa:Result	rdf:type owl:Class ;
 
 ###  http://www.w3.org/ns/sosa/Sample
 sosa:Sample	rdf:type owl:Class ;
+            rdfs:subClassOf ngsi-ld:Entity ;
   					rdfs:comment "Feature on which Observations may be made, which is intended to be representative of a FeatureOfInterest that is not fully accessible."@en ;
   					rdfs:label "Sample"@en ;
   					skos:example "A 'station' is essentially an identifiable locality where a sensor system or Process may be deployed and an observation made. In the context of the observation model, it connotes the 'world in the vicinity of the station', so the observed properties relate to the physical medium at the station, and not to any physical artifact such as a mooring, buoy, benchmark, monument, well, etc."@en ;
@@ -1325,6 +1328,7 @@ qudt:Unit
 
 iso19156_GFI:GFI_Feature
   a owl:Class ;
+  rdfs:subClassOf ngsi-ld:Entity ;
   rdfs:label "GFI_Feature" ;
   skos:definition "The class GFI_Feature (Figure 2) is an instance of the .og.metaclass.cg. GF_FeatureType (ISO 19109). It represents the set of all classes which are feature types. NOTE	GFI_Feature is implemented in GML (ISO 19136:2007) by the element gml:AbstractFeature and type gml:AbstractFeatureType. In an implementation this abstract class shall be substituted by a concrete class representing a feature type from an application schema associated with a domain of discourse (ISO 19109, ISO 19101). Sampling Features (Clause 8) are a class of feature-types whose role is primarily associated with observations. " ;
   rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> .
@@ -1345,6 +1349,7 @@ iso19156_SF:SF_SamplingFeature
 
 iso19156_OB:OM_Observation
   a owl:Class ;
+  rdfs:subClassOf ngsi-ld:Entity ;
   rdfs:label "Observation" ;
   skos:definition "Observation process is a subtype of OM_Process. It is a process used to generate the result of the observation."  ;
   rdfs:isDefinedBy <https://www.iso.org/standard/44595.html> .
@@ -1356,6 +1361,10 @@ iso19156_SF:SF_SamplingFeature.sampledFeature
   rdfs:domain iso19156_SF:SF_SamplingFeature ;
   rdfs:range iso19156_GFI:GFI_DomainFeature, iso19156_GFI:GFI_Feature .  
 
+iso19103:Measure a owl:Class ;
+rdfs:subClassOf ngsi-ld:Entity ;
+owl:deprecated "true"^^xsd:boolean .
+
 #################################################################
 #    ALIGNMENTS (FROM DOCUMENTATION)
 #################################################################
@@ -1366,6 +1375,7 @@ sosa:Sample owl:equivalentClass iso19156_SF:SF_SamplingFeature .
 sosa:isSampleOf owl:equivalentProperty iso19156_SF:SF_SamplingFeature.sampledFeature .
 sosa:Observation owl:equivalentClass iso19156_OB:OM_Observation .
 qudt:QuantityKind owl:equivalentClass qu:QuantityKind .
+iso19103:Measure owl:equivalentClass qudt:QuantityValue .
 
 #################################################################
 #    Individuals
