@@ -39,8 +39,10 @@ definitions for them, and how they are aligned, so developers will be able to de
 more suited for their needs.
 
 ```
-- Saref4Agri:Farm = inspire:Holding = fiware:AgriFarm (Level 1)
+- Level 1
+>Reference JSON-LD concept: Farm 
 
+**Saref4Agri:Farm = inspire:Holding = fiware:AgriFarm 
 (saref4agri) A plot of land used for the scope of farming which can contain buildings and parcels. (JSON-LD concept: Farm)
 (inspire) The whole area and all infrastructures included on it, covering the same or different sites, 
 under the control of an operator to perform agricultural or aquaculture activities. (JSON-LD concept: Holding)
@@ -54,16 +56,20 @@ Where a holding straddles (i.e. on the border of) two parishes, the parish where
 as the parish of location. A farm may comprise land in crops or it may be animals only. Where there are animals only, and no land dedicated to 
 their rearing these are referred to as landless farms.
 
-- inspire/foodie:Site (Level 2 - LPIS) (JSON-LD concept: Site)
+- Level 2 (e.g., LPIS)
+Reference JSON-LD concept: Site 
 
+**inspire/foodie:Site
 (inspire/foodie) All land at the same or distinct geographic location under the management control of a holding covering activities, 
 products and services. This includes all infrastructure, equipment and materials.
 Land area used for a type of activity, e.g., arable land, grassland and vineyards. In particular NACE code, 
 e.g., A1.1.1 - Growing of cereals (except rice), leguminous crops and oil seeds. 
 LPIS data may be imported on the level of <Site> feature which is equal to LPIS farmer's block level.
 
-- Saref4Agri:Parcel = foodie:Plot = fiware:AgriParcel (Level 3)
+- Level 3
+Reference JSON-LD concept: Plot
 
+**Saref4Agri:Parcel = foodie:Plot = fiware:AgriParcel
 (saref4Agri) An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical 
 area of land which contains homogeneous items (JSON-LD concept: Parcel)
 (foodie) A continuous area of agricultural land with one type of crop species, cultivated by one user in one farming mode 
@@ -71,14 +77,38 @@ area of land which contains homogeneous items (JSON-LD concept: Parcel)
 (fiware) Harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical 
 and related IoT applications." (JSON-LD concept: AgriParcel)
 
-- foodie:ManagementZone (Level 4) (JSON-LD concept: ManagementZone)
+- Level 4
+Reference JSON-LD concept: ManagementZone
 
+**foodie:ManagementZone
 (foodie) A spatial subset of a <Plot> that has specific properties like electric conductivity, organic matter, pH, soil texture, soil type or soil nutrients 
+
+```
+To represent the crops
+
+```
+-- foodie:CropSpecies = saref4Agri:Crop = fiware:AgriCrop
+Reference JSON-LD concept: Crop 
+Reference JSON-LD property: crop (Plot to Crop)
+
+To associate a crop type:
+Reference JSON-LD concept: CropType 
+Reference JSON-LD property: cropSpecies (Crop to CropType)
+
+To associate reference agrovoc/eppo concept:
+Reference JSON-LD property for agrovoc concept: agroVocConcept
+Reference JSON-LD property for eppo concept: eppoConcept
+e.g.,
+"agroVocConcept": "http://aims.fao.org/aos/agrovoc/c_7951",
+"eppoConcept": "https://gd.eppo.int/taxon/TRZAX",
+
 ```
 
 Additionally, to represent the geographical area associated to the land, the following properties are used
 
 ```
+
+
 - wgs84_pos:location (generally used to associate countries/regions/municipalities where the land is located) (JSON-LD property: location)
 
 The relation between something and the point, or other geometrical thing in space, where it is.
@@ -86,7 +116,7 @@ The range is SpatialThing - anything with spatial extent, i.e. size, shape, or p
 people, places, bowling balls, as well as abstract areas like cubes.
 For instance, geonames features (countries/regions) like Poznan (https://sws.geonames.org/3088171/) are subclasses of SpatialThing (gn:Feature subclassOf SpatialThing)
 
-- geosparql:hasGeometry (generally used to associate a geometry, e.g., polygon to the land) (JSON-LD property: hasGeometry)
+- geosparql:hasGeometry (generally used to associate a geometry, e.g., central point or polygon of the land) (JSON-LD property: hasGeometry)
 
 A spatial representation for a given feature.
 The range is a Geometry (e.g., Point, Polygon, MultiPolygon, etc.), which has associated the serialization of the geometry, 
