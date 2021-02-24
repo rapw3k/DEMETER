@@ -38,6 +38,8 @@ and since this is a major concept used in practically all agri applications, we 
 definitions for them, and how they are aligned, so developers will be able to decide which one is 
 more suited for their needs.
 
+
+To represent farm area levels 
 ```
 - Level 1
 >Reference JSON-LD concept: Farm 
@@ -104,10 +106,11 @@ e.g.,
 
 ```
 
-Additionally, to represent the geographical area associated to the land, the following properties are used
+To represent the geographical area associated to the land, the following properties are used
 
 ```
-
+Reference JSON-LD property: location (to associate countries/regions/municipalities where the land is located or a Point (with lat/long)
+Reference JSON-LD property: hasGeometry (to associate the geospatial information (e.g., polygon/multipolygon)
 
 - wgs84_pos:location (generally used to associate countries/regions/municipalities where the land is located) (JSON-LD property: location)
 
