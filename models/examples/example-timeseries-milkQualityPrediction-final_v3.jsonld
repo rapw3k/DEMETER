@@ -1,0 +1,184 @@
+{
+  "@context": [
+    "https://w3id.org/demeter/agri-context.jsonld",
+    "https://w3id.org/demeter/agri/ext/livestockFeature-context.jsonld",
+	  {    
+      "qudt-unit": "http://qudt.org/vocab/unit/"
+    }
+   ],
+   "@graph": [
+		{
+		  "@id": "urn:demeter:milkproduct1",
+		  "@type": "MilkProduct",
+		  "productName": "Latte Maccarese",
+		  "productType": "Raw"
+		},
+		{
+		   "@id": "urn:demeter:milkproduct2",
+		   "@type": "MilkProduct",
+		   "productName": "Latte Sano",
+		   "productType": "Processed"
+		},
+		{
+		  "@id": "urn:demeter:predictionMetric2",
+	      "@type": "PredictionMetric",
+		  "rawTruePositiveRate":"87.2",
+		  "rawFalsePositiveRate":"5.74",
+		  "rawPrecision":"89.57",
+		  "rawAccuracy":"94.45",
+		  "processedTruePositiveRate":"85.73",
+		  "processedFalsePositiveRate":"5.77",
+		  "processedPrecision":"93.52",
+		  "processedAccuracy":"95.51"
+		},
+		{
+		  "@id": "urn:demeter:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+		  "@type": "MilkQualityPrediction",
+		  "description": "Milk Quality collection of observations1",		  
+		  "hasMember": ["urn:demeter:ObservationI/1a", "urn:demeter:ObservationI/2a","urn:demeter:ObservationI/3a","urn:demeter:ObservationI/4a","urn:demeter:ObservationI/5a","urn:demeter:ObservationI/6a","urn:demeter:ObservationI/7a","urn:demeter:ObservationI/8a","urn:demeter:ObservationI/9a","urn:demeter:ObservationI/10a","urn:demeter:ObservationI/11a"],
+		  "resultTime": "2018-02-01T12:36:12Z",
+		  "hasFeatureOfInterest": "urn:demeter:milkproduct1",
+		  "predictionMetric": "urn:demeter:predictionMetric2"
+		},
+		{
+		  "@id": "urn:demeter:ObservationI/1a",
+		  "@type": "Observation",	
+		  "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#aciditySH",
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/1ar", "@type": "QuantityValue", "numericValue": "6.61", "unit": "qudt-unit:xyz"}]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/2a",
+		  "@type": "Observation",	
+		  "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#casein",
+		  "hasResult": [{  "@id": "urn:demeter:ObservationI/2ar", "@type": "QuantityValue", "numericValue": "2.52", "unit": "qudt-unit:xyz"}]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/3a",
+		  "@type": "Observation",	
+		  "observedProperty": "http://qudt.org/vocab/quantitykind/density" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/3ar", "@type": "QuantityValue", "numericValue": "1030", "unit": "qudt-unit:xyz"} ]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/4a",
+		  "@type": "Observation",
+		  "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#fat" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/4ar", "@type": "QuantityValue", "numericValue": "4.93", "unit": "qudt-unit:xyz"} ]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/5a",
+		  "@type": "Observation",
+		  "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#protein" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/5ar", "@type": "QuantityValue", "numericValue": "3.31", "unit": "qudt-unit:xyz"}]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/6a",
+		  "@type": "Observation",
+		  "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#freezingPointMC" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/6ar", "@type": "QuantityValue", "numericValue": "-553.17", "unit": "qudt-unit:xyz"} ]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/7a",
+		  "@type": "Observation",
+		  "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#lactose",
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/7ar", "@type": "QuantityValue", "numericValue": "4.79", "unit": "qudt-unit:xyz"} ]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/8a",
+		  "@type": "Observation",
+		  "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#SNF" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/8ar", "@type": "QuantityValue", "numericValue": "8.87", "unit": "qudt-unit:xyz"}]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/9a",
+		  "@type": "Observation",
+		  "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#urea" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/9ar", "@type": "QuantityValue", "numericValue": "403.84", "unit": "qudt-unit:xyz"}]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/10a",
+		  "@type": "Observation",
+		  "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#actualQuality" ,
+		  "hasResult": "https://w3id.org/demeter/agri/ext/livestockFeature#qualityValue-High"
+		},
+		{
+			"@id": "urn:demeter:ObservationI/11a",
+		  "@type": "Observation",
+		  "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#predictedQuality" ,
+		  "hasResult": "https://w3id.org/demeter/agri/ext/livestockFeature#qualityValue-High"
+		},
+		{
+		  "@id": "urn:demeter:82d9fb43-53f8-4ec8-a33c-fa931360259b",
+		  "@type": "MilkQualityPrediction",
+		  "description": "Milk Quality collection of observations2",		  
+		  "hasMember": ["urn:demeter:ObservationI/1b", "urn:demeter:ObservationI/2b","urn:demeter:ObservationI/3b","urn:demeter:ObservationI/4b", "urn:demeter:ObservationI/5b","urn:demeter:ObservationI/6b","urn:demeter:ObservationI/7b", "urn:demeter:ObservationI/8b","urn:demeter:ObservationI/9b","urn:demeter:ObservationI/10b","urn:demeter:ObservationI/11b" ],
+		  "resultTime": "2018-02-01T12:36:12Z",
+		  "hasFeatureOfInterest": "urn:demeter:milkproduct2"
+		},        
+		{
+		  "@id": "urn:demeter:ObservationI/1b",
+		  "@type": "Observation",	
+		  "observedProperty":  "https://w3id.org/demeter/agri/ext/livestockFeature#aciditySH" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/1br", "@type": "QuantityValue", "numericValue": "6.41", "unit": "qudt-unit:xyz" }]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/2b",
+		  "@type": "Observation",	
+		  "observedProperty":  "https://w3id.org/demeter/agri/ext/livestockFeature#casein" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/2br", "@type": "QuantityValue", "numericValue": "2.22", "unit": "qudt-unit:xyz" }]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/3b",
+		  "@type": "Observation",	
+		  "observedProperty":  "http://qudt.org/vocab/quantitykind/density" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/3br", "@type": "QuantityValue", "numericValue": "1010", "unit": "qudt-unit:xyz" }]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/4b",
+		  "@type": "Observation",
+		  "observedProperty":  "https://w3id.org/demeter/agri/ext/livestockFeature#fat" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/4br", "@type": "QuantityValue", "numericValue": "4.13", "unit": "qudt-unit:xyz" }]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/5b",
+		  "@type": "Observation",
+		  "observedProperty":  "https://w3id.org/demeter/agri/ext/livestockFeature#protein" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/5br", "@type": "QuantityValue", "numericValue": "3.81", "unit": "qudt-unit:xyz" }]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/6b",
+		  "@type": "Observation",
+		  "observedProperty":  "https://w3id.org/demeter/agri/ext/livestockFeature#freezingPointMC" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/6br", "@type": "QuantityValue", "numericValue": "-533.17", "unit": "qudt-unit:xyz" }]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/7b",
+		  "@type": "Observation",
+		  "observedProperty":  "https://w3id.org/demeter/agri/ext/livestockFeature#lactose" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/7br", "@type": "QuantityValue", "numericValue": "4.19", "unit": "qudt-unit:xyz" }]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/8b",
+		  "@type": "Observation",
+		  "observedProperty":  "https://w3id.org/demeter/agri/ext/livestockFeature#SNF" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/8br", "@type": "QuantityValue", "numericValue": "8.17", "unit": "qudt-unit:xyz" }]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/9b",
+		  "@type": "Observation",
+		  "observedProperty":  "https://w3id.org/demeter/agri/ext/livestockFeature#urea" ,
+		  "hasResult": [{ "@id": "urn:demeter:ObservationI/9br", "@type": "QuantityValue", "numericValue": "400.84", "unit": "qudt-unit:xyz" }]
+		},
+		{
+			"@id": "urn:demeter:ObservationI/10b",
+		  "@type": "Observation",
+		  "observedProperty":  "https://w3id.org/demeter/agri/ext/livestockFeature#actualQuality" ,
+		  "hasResult": "https://w3id.org/demeter/agri/ext/livestockFeature#qualityValue-Low"
+		},
+		{
+			"@id": "urn:demeter:ObservationI/11b",
+		  "@type": "Observation",
+		  "observedProperty":  "https://w3id.org/demeter/agri/ext/livestockFeature#predictedQuality" ,
+		  "hasResult": "https://w3id.org/demeter/agri/ext/livestockFeature#qualityValue-Medium"
+		}
+	]  
+}

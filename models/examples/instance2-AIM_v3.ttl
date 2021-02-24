@@ -1,0 +1,159 @@
+@prefix ns0: <http://foodie-cloud.com/model/foodie#> .
+@prefix ns1: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns2: <https://uri.fiware.org/ns/data-models#> .
+@prefix ns3: <http://www.opengis.net/ont/geosparql#> .
+@prefix ns4: <https://w3id.org/demeter/agri/agriCommon#> .
+@prefix ns5: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix ns6: <http://qudt.org/schema/qudt/> .
+
+<urn:demeter:crop:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns0:cropArea <urn:demeter:crop:geo:72d9fb43-53f8-4ec8-a33c-fa931360259a> ;
+  ns0:cropSpecies <urn:demeter:croptype:df72dc57-1eb9-42a3-88a9-8647ecc954b4> ;
+  ns0:productionAmount <urn:demeter:productionAmount:72d9fb43-53f8-4ec8-a33c-fa931360259a> ;
+  ns1:validFrom "30/1/2019"^^xsd:dateTime ;
+  ns1:validTo "30/6/2019"^^xsd:dateTime ;
+  a <https://w3id.org/def/saref4agri#Crop> ;
+  ns2:cropStatus "seeded" ;
+  ns2:lastPlantedAt "2020-08-23T10:18:16Z"^^xsd:dateTime .
+
+<urn:demeter:crop:72d9fb43-53f8-4ec8-a33c-fa931360259b>
+  ns0:cropArea <urn:demeter:crop:geo:72d9fb43-53f8-4ec8-a33c-fa931360259b> ;
+  ns0:cropSpecies <urn:demeter:croptype:df72dc57-1eb9-42a3-88a9-8647ecc954b4> ;
+  ns0:productionAmount <urn:demeter:productionAmount:72d9fb43-53f8-4ec8-a33c-fa931360259b> ;
+  ns1:validFrom "30/1/2020"^^xsd:dateTime ;
+  ns1:validTo "30/6/2020"^^xsd:dateTime ;
+  a <https://w3id.org/def/saref4agri#Crop> .
+
+<urn:demeter:crop:72d9fb43-53f8-4ec8-a33c-xa931360259a>
+  ns0:cropArea <urn:demeter:crop:geo:72d9fb43-53f8-4ec8-a33c-xa931360259a> ;
+  ns0:cropSpecies <urn:demeter:croptype:72d9fb43-53f8-4ec8-a33c-xa931360259a> ;
+  ns0:productionAmount <urn:demeter:productionAmount:72d9fb43-53f8-4ec8-a33c-fa931360259c> ;
+  ns1:validFrom "30/1/2019"^^xsd:dateTime ;
+  ns1:validTo "30/6/2019"^^xsd:dateTime ;
+  a <https://w3id.org/def/saref4agri#Crop> ;
+  ns2:cropStatus "blooming" ;
+  ns2:lastPlantedAt "2020-08-23T10:18:16Z"^^xsd:dateTime .
+
+<urn:demeter:crop:72d9fb43-53f8-4ec8-a33c-ya931360259b>
+  ns0:cropArea <urn:demeter:crop:geo:72d9fb43-53f8-4ec8-a33c-ya931360259b> ;
+  ns0:cropSpecies <urn:demeter:croptype:72d9fb43-53f8-4ec8-a33c-ya931360259a> ;
+  ns0:productionAmount <urn:demeter:productionAmount:72d9fb43-53f8-4ec8-a33c-fa931360259d> ;
+  ns1:validFrom "30/1/2020"^^xsd:dateTime ;
+  ns1:validTo "30/6/2020"^^xsd:dateTime ;
+  a <https://w3id.org/def/saref4agri#Crop> .
+
+<urn:demeter:crop:geo:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns3:asWKT "POLYGON (100 0, 101 0, 101 1, 100 1, 100 0)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:demeter:crop:geo:72d9fb43-53f8-4ec8-a33c-fa931360259b>
+  ns3:asWKT "POLYGON (100 0, 101 0, 101 1, 100 1, 100 0)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:demeter:crop:geo:72d9fb43-53f8-4ec8-a33c-xa931360259a>
+  ns3:asWKT "POLYGON (100 0, 101 0, 101 1, 100 1, 100 0)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:demeter:crop:geo:72d9fb43-53f8-4ec8-a33c-ya931360259b>
+  ns3:asWKT "POLYGON (100 0, 101 0, 101 1, 100 1, 100 0)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:demeter:croptype:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns0:code "CropType2" ;
+  ns0:description "Rapeseed flowers are yellow and about 17 mm (0.67 in) across. They grow to 100 cm in height with hairless, fleshy, pinnatifid and glaucous lower leaves which are stalked whereas the upper leaves have no petioles." ;
+  ns0:family "Brassicaceae" ;
+  ns0:species "Brassica napus" ;
+  a ns0:CropType ;
+  ns2:agroVocConcept <http://aims.fao.org/aos/agrovoc/c_1066> ;
+  ns2:name "Rapeseed" ;
+  ns4:eppoConcept <https://gd.eppo.int/taxon/TRZAX> .
+
+<urn:demeter:croptype:df72dc57-1eb9-42a3-88a9-8647ecc954b4>
+  ns0:code "CropType1" ;
+  ns0:description "Spring wheat" ;
+  a ns0:CropType ;
+  ns2:agroVocConcept <http://aims.fao.org/aos/agrovoc/c_7951> ;
+  ns2:alternateName "Triticum aestivum" ;
+  ns2:name "Wheat" ;
+  ns4:eppoConcept <https://gd.eppo.int/taxon/TRZAX> .
+
+<urn:demeter:farm:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns0:description "A farm producing wheat" ;
+  ns5:contains <urn:demeter:site:72d9fb43-53f8-4ec8-a33c-fa931360259a> ;
+  a <https://w3id.org/def/saref4agri#Farm> ;
+  geo:location <https://sws.geonames.org/3086032/> ;
+  ns2:name "Wheat Farm" .
+
+<urn:demeter:plot:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns0:code "Plot1a" ;
+  ns0:crop <urn:demeter:crop:72d9fb43-53f8-4ec8-a33c-fa931360259a>, <urn:demeter:crop:72d9fb43-53f8-4ec8-a33c-fa931360259b> ;
+  ns0:description "Spring wheat plot" ;
+  ns1:validFrom "30/1/2010"^^xsd:dateTime ;
+  dc:identifier "1234" ;
+  ns3:hasGeometry <urn:demeter:plot:geo:72d9fb43-53f8-4ec8-a33c-fa931360259a> ;
+  a ns0:Plot ;
+  ns2:area "35" ;
+  ns2:category "arable" .
+
+<urn:demeter:plot:72d9fb43-53f8-4ec8-a33c-fa931360259b>
+  ns0:code "Plot1b" ;
+  ns0:crop <urn:demeter:crop:72d9fb43-53f8-4ec8-a33c-xa931360259a>, <urn:demeter:crop:72d9fb43-53f8-4ec8-a33c-ya931360259b> ;
+  ns0:description "Spring barley parcel" ;
+  ns1:validFrom "30/1/2015"^^xsd:dateTime ;
+  dc:identifier "1235" ;
+  ns3:hasGeometry <urn:demeter:plot:geo:72d9fb43-53f8-4ec8-a33c-fa931360259b> ;
+  a ns0:Plot ;
+  ns2:area "35" ;
+  ns2:category "arable" .
+
+<urn:demeter:plot:geo:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns3:asWKT "POLYGON (16.396622657775882 52.291722551113224,  16.395592689514164 52.289885097096466,  16.39889717102051 52.289202594763935,  16.39994859695435 52.29094820478369)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:demeter:plot:geo:72d9fb43-53f8-4ec8-a33c-fa931360259b>
+  ns3:asWKT "POLYGON (16.396622657775882 52.291722551113224,  16.395592689514164 52.289885097096466,  16.39889717102051 52.289202594763935,  16.39994859695435 52.29094820478369)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:demeter:productionAmount:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns6:numericValue 30 ;
+  ns6:unit <http://www.ontology-of-units-of-measure.org/resource/om-2/tonne> ;
+  a ns6:QuantityValue .
+
+<urn:demeter:productionAmount:72d9fb43-53f8-4ec8-a33c-fa931360259b>
+  ns6:numericValue 40 ;
+  ns6:unit <http://www.ontology-of-units-of-measure.org/resource/om-2/tonne> ;
+  a ns6:QuantityValue .
+
+<urn:demeter:productionAmount:72d9fb43-53f8-4ec8-a33c-fa931360259c>
+  ns6:numericValue 20 ;
+  ns6:unit <http://www.ontology-of-units-of-measure.org/resource/om-2/tonne> ;
+  a ns6:QuantityValue .
+
+<urn:demeter:productionAmount:72d9fb43-53f8-4ec8-a33c-fa931360259d>
+  ns6:numericValue 10 ;
+  ns6:unit <http://www.ontology-of-units-of-measure.org/resource/om-2/tonne> ;
+  a ns6:QuantityValue .
+
+<urn:demeter:site:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns0:code "Site1" ;
+  ns0:containsPlot <urn:demeter:plot:72d9fb43-53f8-4ec8-a33c-fa931360259a>, <urn:demeter:plot:72d9fb43-53f8-4ec8-a33c-fa931360259b> ;
+  ns0:description "Arable Land in the Farm" ;
+  ns5:activity <http://inspire.ec.europa.eu/codelist/ControlledActivityType/agricultureAndAquaculture> ;
+  ns1:validFrom "30/1/2000"^^xsd:dateTime ;
+  ns3:hasGeometry <urn:demeter:site:geo:72d9fb43-53f8-4ec8-a33c-fa931360259a> ;
+  a ns5:Site ;
+  geo:location <urn:demeter:site:geo:72d9fb43-53f8-4ec8-a33c-fa931360259y> ;
+  ns2:area 2012120 ;
+  ns2:category "arable" .
+
+<urn:demeter:site:geo:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns3:asWKT "POLYGON (16.396622657775882 52.291722551113224,  16.395592689514164 52.289885097096466,  16.39889717102051 52.289202594763935,  16.39994859695435 52.29094820478369)"^^ns3:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
+
+<urn:demeter:site:geo:72d9fb43-53f8-4ec8-a33c-fa931360259y>
+  a <http://www.opengis.net/ont/sf#Point> ;
+  geo:lat 1.130000e+1 ;
+  geo:long 4.412000e+1 .
