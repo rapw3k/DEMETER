@@ -21,9 +21,9 @@ The modules have been structured based on topics similar to the FIWARE agrifood 
 There are some examples of how to represent data that is compliant with the AIM. 
 Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/examples](https://github.com/rapw3k/DEMETER/tree/master/models/examples). In particular:
 
-* instance-AIM_v2.* is a valid instance example (which is mainly based on fiware elements), in json-ld and turtle respectively
+* simple-farm-instance-AIM_v3.* is a valid instance of a simple farm, in json-ld and turtle respectively
 
-* instance2-AIM_v2.* is a valid instance of an extended version example (mainly based on FOODIE),  in json-ld and turtle respectively, but with invalid datetime values (so SHACL validation reports it)
+* complex-farm-instance-AIM_v3.* is a valid instance of an complex farm,  in json-ld and turtle respectively, but with invalid datetime values (so SHACL validation reports it)
 
 * instance-bad-AIM_v2.* and instance-bad2-AIM_v2.* are examples that provide errors in SHACL validation
 
@@ -39,7 +39,15 @@ definitions for them, and how they are aligned, so developers will be able to de
 more suited for their needs.
 
 
-To represent farm area levels 
+To represent farm area levels (small farm can have only level 1 and level 3)
+
+| Level   | AIM term   | Saref4Agri |   Fiware   |   foodie   |   Adapt   |
+| --------|:----------:|:----------:|:----------:|:----------:|----------:|                   
+| Level1  | Farm | Farm | AgriFarm | Holding | Farm |
+| Level2  | Site | ---  | ---- | Site | --- |
+| Level3 	| Plot | Parel | AgriParcel | Plot | Field |
+| Level4  | ManagementZone | ---- | ManagementZone | --- |
+
 ```
 - Level 1
 >Reference JSON-LD concept: Farm 
@@ -87,6 +95,14 @@ Reference JSON-LD concept: ManagementZone
 
 ```
 To represent the crops
+
+| AIM term   | Saref4Agri |   Fiware   |   foodie   |   Adapt   |
+|:----------:|:----------:|:----------:|:----------:|----------:|                   
+| Crop | Crop | AgriCrop | CropSpecies | CropZone |
+| CropType | taxrank concept | ---- | CropType | Crop |
+| cropSpecies (property) | ---- | ---- | cropSpecies | ---- |
+| agroVocConcept (property) | ---- | agroVocConcept | ---- | ---- |
+| eppoConcept (property) | ---- | ---- | ---- |
 
 ```
 -- foodie:CropSpecies = saref4Agri:Crop = fiware:AgriCrop
