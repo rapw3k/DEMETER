@@ -1,0 +1,162 @@
+@base <https://w3id.org/demeter/> .
+@prefix : <https://w3id.org/cybele/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix stat: <http://data.europa.eu/m8g/> .
+@prefix schema: <http://schema.org/> .
+@prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/v1/ontology#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix agrovoc: <http://aims.fao.org/aos/agrovoc/> .
+@prefix field-op: <https://w3id.org/demeter/agri/ext/fieldOperation#> .
+
+<https://w3id.org/demeter/agri/ext/fieldOperation> rdf:type owl:Ontology ;
+                            owl:versionIRI <https://w3id.org/demeter/agri/ext/fieldOperation/1.0> ;
+                            owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
+                            dct:description     "field Operation extension contains : \n
+                            Information about Vehicles, VehicleOperator, DriverBehaviour and VehicleTrajectory\n
+                            This model is based on FIWARE vehicle data model"@en ;
+                            dct:title "DEMETER Vehicle Model"@en ;
+                            rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+                            owl:versionInfo "1.0" ;
+                            foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
+                                         foaf:name "DEMETER project"
+                                       ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+#################################################################
+#    Datatypes
+#################################################################
+
+#################################################################
+#    Object Properties
+#################################################################		
+
+#################################################################
+#    Data properties
+#################################################################                                                                                            
+ 
+
+###  https://w3id.org/demeter/agri/ext/fieldOperation#breaking
+field-op:breaking rdf:type owl:DatatypeProperty ;
+	rdfs:range xsd:decimal ;	
+	rdfs:domain fiware:Vehicle ;
+	rdfs:comment "The breaking value" ;
+	rdfs:label "breaking" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/fieldOperation#> . 
+
+###  https://w3id.org/demeter/agri/ext/fieldOperation#fuelConsumption
+field-op:fuelConsumption rdf:type owl:DatatypeProperty ;
+	rdfs:range xsd:decimal ;	
+	rdfs:domain fiware:Vehicle ;
+	rdfs:comment "The fuel consumption value" ;
+	rdfs:label "fuelConsumption" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/fieldOperation#> .     
+
+###  https://w3id.org/demeter/agri/ext/fieldOperation#driverBehaviourValue
+field-op:driverBehaviourValue rdf:type owl:DatatypeProperty ;
+	rdfs:range xsd:decimal ;	
+	rdfs:domain fiware:DriverBehaviour ;
+	rdfs:comment "The driver behaviour value" ;
+	rdfs:label "driverBehaviourValue" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/fieldOperation#> .     
+
+###  https://w3id.org/demeter/agri/ext/fieldOperation#trajectoryDuration
+field-op:trajectoryDuration rdf:type owl:DatatypeProperty ;
+	rdfs:range xsd:decimal ;	
+	rdfs:domain fiware:VehicleTrajectory ;
+	rdfs:comment "The trajectory duration" ;
+	rdfs:label "trajectoryDuration" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/fieldOperation#> .  
+
+###  https://w3id.org/demeter/agri/ext/fieldOperation#trajectoryDistance
+field-op:trajectoryDistance rdf:type owl:DatatypeProperty ;
+	rdfs:range xsd:decimal ;	
+	rdfs:domain fiware:VehicleTrajectory ;
+	rdfs:comment "The trajectory distance" ;
+	rdfs:label "trajectoryDistance" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/fieldOperation#> .  	
+
+###  https://w3id.org/demeter/agri/ext/fieldOperation#trajectoryAverageSpeed
+field-op:trajectoryAverageSpeed rdf:type owl:DatatypeProperty ;
+	rdfs:range xsd:decimal ;	
+	rdfs:domain fiware:VehicleTrajectory ;
+	rdfs:comment "The trajectory average speed" ;
+	rdfs:label "trajectoryAverageSpeed" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/fieldOperation#> .  		
+
+### https://uri.fiware.org/ns/data-models#speed
+fiware:speed	a      owl:DatatypeProperty ;
+        rdfs:range 			 xsd:decimal ;     
+        rdfs:label   		"speed"@en ;
+        rdfs:comment		"Denotes the magnitude of the horizontal component of the vehicle's current velocity and is specified in Kilometers per Hour. If provided, the value of the speed attribute must be a non-negative real number. -1 MAY be used if speed is transiently unknown for some reason" ;
+        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> . 
+
+#################################################################
+#    Classes
+#################################################################
+
+### https://uri.fiware.org/ns/data-models#Vehicle
+fiware:Vehicle	rdf:type owl:Class ;
+			rdfs:subClassOf sosa:Platform ;
+			rdfs:label "Vehicle" ;   
+			rdfs:comment "Particular vehicle" ;
+			rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Transportation/blob/master/Vehicle/doc/spec.md> .
+
+
+### https://uri.fiware.org/ns/data-models#VehicleOperator
+field-op:VehicleOperator	rdf:type owl:Class ;
+			rdfs:subClassOf foaf:Person ;
+			rdfs:label "VehicleOperator" ;   
+			rdfs:comment "Vehicle Operator" ;
+			rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/fieldOperation#> .	
+
+
+###  https://w3id.org/demeter/agri/ext/fieldOperation#DriverBehaviour
+field-op:DriverBehaviour rdf:type owl:Class ;
+      rdfs:comment "The driver behaviour concept"@en;
+      rdfs:label "DriverBehaviour" ;
+      rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/fieldOperation#> .
+
+
+###  https://w3id.org/demeter/agri/ext/fieldOperation#VehicleTrajectory
+field-op:VehicleTrajectory rdf:type owl:Class ;
+      rdfs:comment "The vehicle trajectory concept"@en;
+      rdfs:label "VehicleTrajectory" ;
+      rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/fieldOperation#> .	  	
+	  
+#################################################################
+#    Alignments
+#################################################################
+
+#################################################################
+#    Individuals
+#################################################################
