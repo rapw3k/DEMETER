@@ -11,4 +11,18 @@ java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o farmAnimal-context.jsonld https://w3id.org/demeter/agri/farmAnimal/2.0
 
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o livestockFeature-context.jsonld https://w3id.org/demeter/agri/ext/livestockFeature
-java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o poultryFeeding-context.jsonld https://w3id.org/demeter/agri/ext/poultryFeeding
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o poultryFeeding-context-xxx.jsonld https://w3id.org/demeter/agri/ext/poultryFeeding
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o fieldOperation-context.jsonld https://w3id.org/demeter/agri/ext/fieldOperation
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o stressRecognition-context.jsonld https://w3id.org/demeter/agri/ext/stressRecognition
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o transportCondition-context.jsonld https://w3id.org/demeter/agri/ext/transportCondition
+
+
+remove
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    
+    ,
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    }
