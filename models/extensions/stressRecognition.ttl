@@ -1,0 +1,149 @@
+@base <https://w3id.org/demeter/> .
+@prefix : <https://w3id.org/cybele/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix stat: <http://data.europa.eu/m8g/> .
+@prefix schema: <http://schema.org/> .
+@prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/v1/ontology#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix agrovoc: <http://aims.fao.org/aos/agrovoc/> .
+@prefix stress-rec: <https://w3id.org/demeter/agri/ext/stressRecognition#> .
+
+<https://w3id.org/demeter/agri/ext/stressRecognition> rdf:type owl:Ontology ;
+                            owl:versionIRI <https://w3id.org/demeter/agri/ext/stressRecognition/1.0> ;
+                            owl:imports <https://w3id.org/demeter/agri/agriSystem/2.0> ;
+							owl:imports <https://w3id.org/demeter/agri/agriProduct/2.0> ;
+							owl:imports <https://w3id.org/demeter/agri/agriProperty/2.0> ;
+							owl:imports <https://w3id.org/demeter/agri/ext/poultryFeeding> ;
+                            dct:description     "stressRecognition extension contains : \n
+                            Stress recognition : values of the stress level of the animal group at some point in time and instructions to be followed depending on the observation. "@en ;
+                            dct:title "DEMETER StressRecognition"@en ;
+                            rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+                            owl:versionInfo "1.0" ;
+                            foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
+                                         foaf:name "DEMETER project"
+                                       ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+#################################################################
+#    Datatypes
+#################################################################
+
+#################################################################
+#    Object Properties
+#################################################################		
+
+#################################################################
+#    Data properties
+#################################################################                                                                                            
+
+###  https://w3id.org/demeter/agri/ext/stressRecognition#animalRawSound
+stress-rec:animalRawSound rdf:type owl:DatatypeProperty ;
+	rdfs:range xsd:string ;
+	rdfs:domain saref:Device ;
+	rdfs:comment "Sound recorded from animal" ;
+	rdfs:label "animalRawSound" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> . 
+
+###  https://w3id.org/demeter/agri/ext/stressRecognition#extractedFeaturesFromSound
+stress-rec:extractedFeaturesFromSound rdf:type owl:DatatypeProperty ;
+	rdfs:range xsd:string ;
+	rdfs:domain saref:Device ;
+	rdfs:comment "Features extracted by recording" ;
+	rdfs:label "extractedFeaturesFromSound	" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> . 
+
+###  https://w3id.org/demeter/agri/ext/stressRecognition#airHumidity
+stress-rec:airHumidity rdf:type owl:DatatypeProperty ;
+	rdfs:subPropertyOf saref:hasValue ;
+	rdfs:range xsd:decimal ;
+	rdfs:domain saref:Device ;
+	rdfs:comment "Air humidity value" ;
+	rdfs:label "airHumidity" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> . 
+
+###  https://w3id.org/demeter/agri/ext/stressRecognition#airFlow
+stress-rec:airFlow rdf:type owl:DatatypeProperty ;
+	rdfs:subPropertyOf saref:hasValue ;
+	rdfs:range xsd:decimal ;
+	rdfs:domain saref:Device ;
+	rdfs:comment "Air amount value" ;
+	rdfs:label "airFlow" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> . 
+
+###  https://w3id.org/demeter/agri/ext/stressRecognition#lightIntensity
+stress-rec:lightIntensity rdf:type owl:DatatypeProperty ;
+	rdfs:subPropertyOf saref:hasValue ;
+	rdfs:range xsd:decimal ;
+	rdfs:domain saref:Device ;
+	rdfs:comment "Light intensity value" ;
+	rdfs:label "lightIntensity" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> .  
+
+###  https://w3id.org/demeter/agri/ext/stressRecognition#airCO2
+stress-rec:airCO2 rdf:type owl:DatatypeProperty ;
+	rdfs:subPropertyOf saref:hasValue ;
+	rdfs:range xsd:decimal ;
+	rdfs:domain saref:Device ;
+	rdfs:comment "Air CO2 value" ;
+	rdfs:label "airCO2" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> .              
+
+###  https://w3id.org/demeter/agri/ext/stressRecognition#powerLose
+stress-rec:powerLose rdf:type owl:DatatypeProperty ;
+	rdfs:subPropertyOf saref:hasValue ;
+	rdfs:range xsd:decimal ;
+	rdfs:domain saref:Device ;
+	rdfs:comment "power lose value" ;
+	rdfs:label "powerLose" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> .              
+
+###  https://w3id.org/demeter/agri/ext/stressRecognition#stressLevel
+stress-rec:stressLevel rdf:type owl:DatatypeProperty ;
+	rdfs:subPropertyOf saref:hasValue ;
+	rdfs:range xsd:string ;	
+	rdfs:domain stress-rec:StressOrPressure ;
+	rdfs:comment "The stress level of observed animal" ;
+	rdfs:label "stressLevel" ;
+	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> . 
+
+#################################################################
+#    Classes
+#################################################################
+	  
+#################################################################
+#    Alignments
+#################################################################
+
+#################################################################
+#    Individuals
+#################################################################
