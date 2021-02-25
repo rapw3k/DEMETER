@@ -25,7 +25,7 @@ Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/e
 
 * complex-farm-instance-AIM_v3.* is a valid instance of an complex farm,  in json-ld and turtle respectively, but with invalid datetime values (so SHACL validation reports it)
 
-* instance-bad-AIM_v3.* and instance-bad2-AIM_v2.* are examples that provide errors in SHACL validation
+* instance-bad*-AIM_v3.* are examples that provide errors in SHACL validation
 
 * timeSeries-example1_v3.* is a valid instance to represent time series following sosa/ssn approach (cross-domain)
 
