@@ -69,7 +69,6 @@
 ###  https://w3id.org/demeter/agri/ext/stressRecognition#animalRawSound
 stress-rec:animalRawSound rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:string ;
-	rdfs:domain saref:Device ;
 	rdfs:comment "Sound recorded from animal" ;
 	rdfs:label "animalRawSound" ;
 	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> . 
@@ -77,7 +76,6 @@ stress-rec:animalRawSound rdf:type owl:DatatypeProperty ;
 ###  https://w3id.org/demeter/agri/ext/stressRecognition#extractedFeaturesFromSound
 stress-rec:extractedFeaturesFromSound rdf:type owl:DatatypeProperty ;
 	rdfs:range xsd:string ;
-	rdfs:domain saref:Device ;
 	rdfs:comment "Features extracted by recording" ;
 	rdfs:label "extractedFeaturesFromSound	" ;
 	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> . 
@@ -86,7 +84,6 @@ stress-rec:extractedFeaturesFromSound rdf:type owl:DatatypeProperty ;
 stress-rec:airHumidity rdf:type owl:DatatypeProperty ;
 	rdfs:subPropertyOf saref:hasValue ;
 	rdfs:range xsd:decimal ;
-	rdfs:domain saref:Device ;
 	rdfs:comment "Air humidity value" ;
 	rdfs:label "airHumidity" ;
 	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> . 
@@ -95,7 +92,6 @@ stress-rec:airHumidity rdf:type owl:DatatypeProperty ;
 stress-rec:airFlow rdf:type owl:DatatypeProperty ;
 	rdfs:subPropertyOf saref:hasValue ;
 	rdfs:range xsd:decimal ;
-	rdfs:domain saref:Device ;
 	rdfs:comment "Air amount value" ;
 	rdfs:label "airFlow" ;
 	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> . 
@@ -104,7 +100,6 @@ stress-rec:airFlow rdf:type owl:DatatypeProperty ;
 stress-rec:lightIntensity rdf:type owl:DatatypeProperty ;
 	rdfs:subPropertyOf saref:hasValue ;
 	rdfs:range xsd:decimal ;
-	rdfs:domain saref:Device ;
 	rdfs:comment "Light intensity value" ;
 	rdfs:label "lightIntensity" ;
 	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> .  
@@ -113,7 +108,6 @@ stress-rec:lightIntensity rdf:type owl:DatatypeProperty ;
 stress-rec:airCO2 rdf:type owl:DatatypeProperty ;
 	rdfs:subPropertyOf saref:hasValue ;
 	rdfs:range xsd:decimal ;
-	rdfs:domain saref:Device ;
 	rdfs:comment "Air CO2 value" ;
 	rdfs:label "airCO2" ;
 	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> .              
@@ -122,7 +116,6 @@ stress-rec:airCO2 rdf:type owl:DatatypeProperty ;
 stress-rec:powerLose rdf:type owl:DatatypeProperty ;
 	rdfs:subPropertyOf saref:hasValue ;
 	rdfs:range xsd:decimal ;
-	rdfs:domain saref:Device ;
 	rdfs:comment "power lose value" ;
 	rdfs:label "powerLose" ;
 	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> .              
@@ -131,7 +124,6 @@ stress-rec:powerLose rdf:type owl:DatatypeProperty ;
 stress-rec:stressLevel rdf:type owl:DatatypeProperty ;
 	rdfs:subPropertyOf saref:hasValue ;
 	rdfs:range xsd:string ;	
-	rdfs:domain stress-rec:StressOrPressure ;
 	rdfs:comment "The stress level of observed animal" ;
 	rdfs:label "stressLevel" ;
 	rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/stressRecognition#> . 
