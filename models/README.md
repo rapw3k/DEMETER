@@ -100,9 +100,9 @@ To represent the crops
 |:----------:|:----------:|:----------:|:----------:|----------:|                   
 | Crop | Crop | AgriCrop | CropSpecies | CropZone |
 | CropType | taxrank concept | ---- | CropType | Crop |
-| cropSpecies (property) | ---- | ---- | cropSpecies | ---- |
-| agroVocConcept (property) | ---- | agroVocConcept | ---- | ---- |
-| eppoConcept (property) | ---- | ---- | ---- |
+| cropSpecies (property Crop->CropType) | ---- | ---- | cropSpecies | ---- |
+| agroVocConcept (property to agrovoc concept) | ---- | agroVocConcept | ---- | ---- |
+| eppoConcept (property to eppo concept) | ---- | ---- | ---- |
 
 ```
 -- foodie:CropSpecies = saref4Agri:Crop = fiware:AgriCrop
