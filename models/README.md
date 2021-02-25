@@ -99,8 +99,8 @@ To represent the crops
 | AIM term   | Saref4Agri |   Fiware   |   foodie   |   Adapt   |
 |:----------:|:----------:|:----------:|:----------:|----------:|                   
 | Crop | Crop | AgriCrop | CropSpecies | CropZone |
-| CropType | taxrank concept | ---- | CropType | Crop |
-| cropSpecies (property Crop->CropType) | ---- | ---- | cropSpecies | ---- |
+| CropType | taxonomic_rank (taxrank vocabulary) | ---- | CropType | Crop |
+| cropSpecies (property Crop->CropType) | has_rank (taxrank vocabulary) | ---- | cropSpecies | ---- |
 | agroVocConcept (property to agrovoc concept) | ---- | agroVocConcept | ---- | ---- |
 | eppoConcept (property to eppo concept) | ---- | ---- | ---- |
 
