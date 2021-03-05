@@ -15,9 +15,12 @@ java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o fieldOperation-context.jsonld https://w3id.org/demeter/agri/ext/fieldOperation
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o stressRecognition-context.jsonld https://w3id.org/demeter/agri/ext/stressRecognition
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o transportCondition-context.jsonld https://w3id.org/demeter/agri/ext/transportCondition
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o nutrientMonitor-context.jsonld https://w3id.org/demeter/agri/ext/nutrientMonitor
 
-
-remove
+generating extensions
+* save ttl, commit and push
+* generate jsonld
+* remove
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
