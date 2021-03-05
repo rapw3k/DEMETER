@@ -17,10 +17,10 @@ java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o transportCondition-context.jsonld https://w3id.org/demeter/agri/ext/transportCondition
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o nutrientMonitor-context.jsonld https://w3id.org/demeter/agri/ext/nutrientMonitor
 
-generating extensions
+---generating extensions
 * save ttl, commit and push
 * generate jsonld
-* remove
+* Remove the following terms, and double check by comparing with demeterAgriProfile-context.jsonld that shared terms are the same, 
     "name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
     },
@@ -29,3 +29,4 @@ generating extensions
     "description" : {
       "@id" : "http://purl.org/dc/terms/description"
     }
+* save jsonld, commit and push    
