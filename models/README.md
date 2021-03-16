@@ -32,13 +32,13 @@ Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/e
 > Note1: previous examples have been moved to v1.0 folder, and json-ld examples have been slightly modified to include the cross-domain context. 
 > Note2: to understand how to use DEMETER AIM context(s) see section "How to create your JSON-LD content using AIM" below.
 
-#### Discussion of key terms (when to use which)
+### Discussion of key terms (when to use which)
 The three underlying models have concepts to represent a portion of land where crops or animals are grown, 
 and since this is a major concept used in practically all agri applications, we provide here short 
 definitions for them, and how they are aligned, so developers will be able to decide which one is 
 more suited for their needs.
 
-
+#### Farm objects
 To represent farm area levels (small farm can have only level 1 and level 3)
 
 | Level   | AIM term   | Saref4Agri |   Fiware   |   foodie   |   Adapt   |
@@ -94,6 +94,7 @@ Reference JSON-LD concept: ManagementZone
 (foodie) A spatial subset of a <Plot> that has specific properties like electric conductivity, organic matter, pH, soil texture, soil type or soil nutrients 
 
 ```
+#### Crop objects
 To represent the crops
 
 | AIM term   | Saref4Agri |   Fiware   |   foodie   |   Adapt   |
@@ -121,6 +122,7 @@ e.g.,
 "eppoConcept": "https://gd.eppo.int/taxon/TRZAX",
 
 ```
+#### Geospatial properties
 
 To represent the geographical area associated to the land, the following properties are used
 
@@ -147,6 +149,22 @@ typically using the property asWKT to provide the WKT serialization e.g., POLYGO
 (landLocation). Geometry defining the boundaries of the farm land. Range is equivalent to GeoProperty
 
 ```
+
+#### Time series
+
+To represent time series (e.g., multiple observations/measurements over a period of time), we follow the SOSA/SSN model and approach (see [SOSA/SSN spec](https://www.w3.org/TR/vocab-ssn/))
+This means that we model each of those observations as a SOSA:Observation, that has associated:
+* feature of interest (e.g., Crop, Field, Tractor) (via sosa:hasFeatureOfInterest)
+* the observed property (e.g., temperature, density, position) (via sosa:observedProperty)
+* the result of the observation (which has a numerical value and a unit) (via sosa:hasResult)
+* the time of the observation (via sosa:resultTime) and 
+* potentially the sensor used to make the observation (via sosa:madeBySensor).
+
+Please see examples in the examples directory.
+
+#### Statistical data
+To represent statistica data (e.g., agri indicators), we follow the RDF data cube model and approach (see [RDF data cube spec](https://www.w3.org/TR/vocab-data-cube/).
+Please see as example the FADN data that has been represented in AIM form (RDF data cube [here](https://www.foodie-cloud.org/describe/?url=https%3A%2F%2Fec.europa.eu%2Fagriculture%2Frica%2Fdatabase%2Freports%2Farchives%2Ffadn20200621.zip&sid=6943)
 
 # Finding terms and retrieving annotations 
 
