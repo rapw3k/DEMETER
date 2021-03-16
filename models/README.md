@@ -38,7 +38,7 @@ and since this is a major concept used in practically all agri applications, we 
 definitions for them, and how they are aligned, so developers will be able to decide which one is 
 more suited for their needs.
 
-#### Farm objects
+#### Farm related objects
 To represent farm area levels (small farm can have only level 1 and level 3)
 
 | Level   | AIM term   | Saref4Agri |   Fiware   |   foodie   |   Adapt   |
@@ -94,7 +94,7 @@ Reference JSON-LD concept: ManagementZone
 (foodie) A spatial subset of a <Plot> that has specific properties like electric conductivity, organic matter, pH, soil texture, soil type or soil nutrients 
 
 ```
-#### Crop objects
+#### Crops
 To represent the crops
 
 | AIM term   | Saref4Agri |   Fiware   |   foodie   |   Adapt   |
@@ -152,19 +152,19 @@ typically using the property asWKT to provide the WKT serialization e.g., POLYGO
 
 #### Time series
 
-To represent time series (e.g., multiple observations/measurements over a period of time), we follow the SOSA/SSN model and approach (see [SOSA/SSN spec](https://www.w3.org/TR/vocab-ssn/))
-This means that we model each of those observations as a SOSA:Observation, that has associated:
+To represent time series (e.g., multiple observations/measurements over a period of time), we follow the [SOSA/SSN](https://www.w3.org/TR/vocab-ssn/) model and approach. This means that we model each of those observations as a SOSA:Observation, that has associated:
 * feature of interest (e.g., Crop, Field, Tractor) (via sosa:hasFeatureOfInterest)
 * the observed property (e.g., temperature, density, position) (via sosa:observedProperty)
 * the result of the observation (which has a numerical value and a unit) (via sosa:hasResult)
 * the time of the observation (via sosa:resultTime) and 
 * potentially the sensor used to make the observation (via sosa:madeBySensor).
 
-Please see examples in the examples directory.
+Please refer to the examples directory for concrete examples.
 
 #### Statistical data
-To represent statistica data (e.g., agri indicators), we follow the RDF data cube model and approach (see [RDF data cube spec](https://www.w3.org/TR/vocab-data-cube/).
-Please see as example the FADN data that has been represented in AIM form (RDF data cube [here](https://www.foodie-cloud.org/describe/?url=https%3A%2F%2Fec.europa.eu%2Fagriculture%2Frica%2Fdatabase%2Freports%2Farchives%2Ffadn20200621.zip&sid=6943)
+To represent statistica data (e.g., agri indicators), we follow the [RDF data cube](https://www.w3.org/TR/vocab-data-cube/) model and approach.
+
+Please use as example the FADN dataset that has been published as linked data in compliance with AIM using the RDF data cube as underlying model [here](https://www.foodie-cloud.org/describe/?url=https%3A%2F%2Fec.europa.eu%2Fagriculture%2Frica%2Fdatabase%2Freports%2Farchives%2Ffadn20200621.zip&sid=6943).
 
 # Finding terms and retrieving annotations 
 
