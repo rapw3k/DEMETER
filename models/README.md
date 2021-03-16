@@ -32,7 +32,7 @@ Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/e
 > Note1: previous examples have been moved to v1.0 folder, and json-ld examples have been slightly modified to include the cross-domain context. 
 > Note2: to understand how to use DEMETER AIM context(s) see section "How to create your JSON-LD content using AIM" below.
 
-### Discussion of key terms (when to use which)
+### Discussion of key terms
 The three underlying models have concepts to represent a portion of land where crops or animals are grown, 
 and since this is a major concept used in practically all agri applications, we provide here short 
 definitions for them, and how they are aligned, so developers will be able to decide which one is 
