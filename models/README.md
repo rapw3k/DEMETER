@@ -176,8 +176,8 @@ Developers have different options to find terms in AIM:
 [http://data.agroportal.lirmm.fr/search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=plot](http://data.agroportal.lirmm.fr/search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=plot)
 	- *search for properties in AIM (e.g., hasAgriParcel)*
 [http://data.agroportal.lirmm.fr/property_search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=hasAgriParcel](http://data.agroportal.lirmm.fr/property_search?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&q=hasAgriParcel)
-	- *get annotations (potential terms from AIM) given an input text (e.g., this parcel crop maize)*
-[http://data.agroportal.lirmm.fr/annotator?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&text=this+parcel+crop+maize](http://data.agroportal.lirmm.fr/annotator?ontologies=http://data.agroportal.lirmm.fr/ontologies/DEMETER-AIM&text=this+parcel+crop+maize)
+	- *get annotations (potential terms from AIM) given an input text (e.g., I have a farm that has a parcel with a maize crop and a second parcel with a wheat crop)*
+Try it via [http://agroportal.lirmm.fr/annotator](http://agroportal.lirmm.fr/annotator) (select AIM and optionally Agrovoc) or check results [here](http://services.agroportal.lirmm.fr/annotator/?text=I%20have%20a%20farm%20that%20has%20a%20parcel%20with%20a%20maize%20crop%20and%20a%20second%20parcel%20with%20a%20wheat%20crop&ontologies=AGROVOC,DEMETER-AIM&longest_only=false&exclude_numbers=false&whole_word_only=true&exclude_synonyms=false&expand_mappings=false&fast_context=false&certainty=false&temporality=false&experiencer=false&negation=false&score_threshold=0&confidence_threshold=0&display_links=false&display_context=false&apikey=1de0a270-29c5-4dda-b043-7c3580628cd5)
 
 
 # How to create your JSON-LD content using AIM
