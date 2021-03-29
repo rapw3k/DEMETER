@@ -38,6 +38,15 @@ and since this is a major concept used in practically all agri applications, we 
 definitions for them, and how they are aligned, so developers will be able to decide which one is 
 more suited for their needs.
 
+
+#### General terms
+
+* Your json-ld content will have @graph where you can define multiple objects
+* All json-ld objects should have
+** @id  Used to uniquely identify node objects that are being described in the document with IRIs (urn:demeter:ag:88acd214-f633-4db7-9560-0ca69abc1a4a, or https://myorganization.org/objects/88acd214-f633)
+** @type Used to set the type of a node or the datatype of a typed value (from the context)
+* Use attribute identifier to associate the identifier of the object in the application (instead of defining your own, e.g, tractorId, animalId, .)
+
 #### Farm related objects
 To represent farm area levels (small farm can have only level 1 and level 3)
 
