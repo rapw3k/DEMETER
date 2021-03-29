@@ -39,7 +39,7 @@ definitions for them, and how they are aligned, so developers will be able to de
 more suited for their needs.
 
 
-#### General terms
+#### General keywords and terms
 
 * Your json-ld content will have *@graph* where you can define multiple objects
 * All json-ld objects should have
