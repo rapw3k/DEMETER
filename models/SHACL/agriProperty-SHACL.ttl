@@ -1,5 +1,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix :      <https://w3id.org/cybele/> .
+@prefix qudt:  <http://qudt.org/schema/qudt/> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix saref: <https://w3id.org/saref#> .
@@ -118,6 +119,7 @@
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  saref: ;
         rdfs:label        "relates to property"@en ;
+        sh:equals         sosa:observedProperty ;
         sh:name           "relates to property"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           saref:relatesToProperty .
@@ -174,7 +176,7 @@
         sh:nodeKind       sh:IRI ;
         sh:not            <https://astrea.linkeddata.es/shapes#d7ebf345df8fe1eee1b1baae1be67bf2> , <https://astrea.linkeddata.es/shapes#156af31e954042e340f8709a0253518d> ;
         sh:property       <https://astrea.linkeddata.es/shapes#58f226d8030285c0185e857469910d61> , <https://astrea.linkeddata.es/shapes#7b722600669ba01f596047cf2001951f> , <https://astrea.linkeddata.es/shapes#f5964a49119d177c39d3573f1ede7cad> , <https://astrea.linkeddata.es/shapes#38a7f272cc51d62974ed68d2627832e4> , <https://astrea.linkeddata.es/shapes#ac9b01412b3f8f24a9c3c7a9428ef6f2> ;
-        sh:targetClass    iso19103:Measure , saref:Measurement .
+        sh:targetClass    sosa:Observation , saref:Measurement .
 
 <https://astrea.linkeddata.es/shapes#7d6a541b22bd5c0ae3ab84fdea174957>
         a                 sh:PropertyShape ;
@@ -199,6 +201,7 @@
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  saref: ;
         rdfs:label        "makes measurement"@en ;
+        sh:equals         sosa:madeObservation ;
         sh:name           "makes measurement"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           saref:makesMeasurement .
@@ -261,7 +264,7 @@
         sh:nodeKind       sh:IRI ;
         sh:not            <https://astrea.linkeddata.es/shapes#156af31e954042e340f8709a0253518d> ;
         sh:property       <https://astrea.linkeddata.es/shapes#df4ae458b4e554c080717d9bdb48e778> , <https://astrea.linkeddata.es/shapes#40cac3f9a1397b5ef47c697cccc0d6b8> , <https://astrea.linkeddata.es/shapes#a0152b516031df77da267c5973fceb3d> , <https://astrea.linkeddata.es/shapes#65c715d5d2f2d31d44acef9806b5664e> ;
-        sh:targetClass    saref:Property , foodie:PropertyType , qu:QuantityKind .
+        sh:targetClass    foodie:PropertyTypeValue , saref:Property , qu:QuantityKind .
 
 <https://astrea.linkeddata.es/shapes#e32f5c6affc3f1a530406d8609cd9c37>
         a                 sh:NodeShape ;
@@ -387,6 +390,7 @@
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  saref: ;
         rdfs:label        "has value"@en ;
+        sh:equals         sosa:hasSimpleResult ;
         sh:name           "has value"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           saref:hasValue .
@@ -451,6 +455,7 @@
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
         sh:class          iso19103:Measure ;
+        sh:equals         sosa:hasResult ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:quantitativeProperty .
 
@@ -517,12 +522,12 @@
 
 <https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  saref: , <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> ;
+        rdfs:isDefinedBy  <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> , saref: ;
         rdfs:label        "Unit of measure"@en ;
         sh:description    "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)." , "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of the Smart Appliances ontology, but this list can be extended."@en ;
         sh:name           "Unit of measure"@en ;
         sh:nodeKind       sh:IRI ;
-        sh:targetClass    saref:UnitOfMeasure .
+        sh:targetClass    saref:UnitOfMeasure , qudt:Unit .
 
 <https://astrea.linkeddata.es/shapes#df4ae458b4e554c080717d9bdb48e778>
         a            sh:PropertyShape ;
@@ -550,6 +555,7 @@
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  saref: ;
         rdfs:label        "is measured in"@en ;
+        sh:equals         qudt:unit ;
         sh:name           "is measured in"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           saref:isMeasuredIn .
@@ -575,6 +581,7 @@
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
         sh:class          foodie:PropertyTypeValue ;
+        sh:equals         saref:relatesToProperty ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:propertyType .
 
@@ -617,6 +624,7 @@
         rdfs:isDefinedBy  saref: ;
         rdfs:label        "measurement made by"@en , "Relation between a measurement and the device that made it."@en ;
         sh:description    "Relation between a measurement and the device that made it."@en ;
+        sh:equals         sosa:madeBySensor ;
         sh:name           "measurement made by"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           saref:measurementMadeBy .
