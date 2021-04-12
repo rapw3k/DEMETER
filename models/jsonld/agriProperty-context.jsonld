@@ -6,6 +6,9 @@
     "affiliation" : {
       "@id" : "https://schema.org/affiliation"
     },
+    "Unit" : {
+      "@id" : "http://qudt.org/schema/qudt/Unit"
+    },
     "isControlledByDevice" : {
       "@id" : "https://w3id.org/saref#isControlledByDevice",
       "@type" : "@id"
@@ -58,6 +61,10 @@
     },
     "ThermalConductivity" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity"
+    },
+    "madeBySensor" : {
+      "@id" : "http://www.w3.org/ns/sosa/madeBySensor",
+      "@type" : "@id"
     },
     "streamGauge" : {
       "@id" : "https://uri.fiware.org/ns/data-models#streamGauge"
@@ -123,6 +130,10 @@
     },
     "StressOrPressure" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"
+    },
+    "resultTime" : {
+      "@id" : "http://www.w3.org/ns/sosa/resultTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "PropertyType" : {
       "@id" : "http://foodie-cloud.com/model/foodie#PropertyType"
@@ -200,6 +211,10 @@
       "@id" : "https://w3id.org/saref#makesMeasurement",
       "@type" : "@id"
     },
+    "hasResult" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasResult",
+      "@type" : "@id"
+    },
     "Property" : {
       "@id" : "http://www.w3.org/ns/ssn/Property"
     },
@@ -233,12 +248,24 @@
       "@id" : "http://foodie-cloud.com/model/foodie#productionProperty",
       "@type" : "@id"
     },
+    "observedProperty" : {
+      "@id" : "http://www.w3.org/ns/sosa/observedProperty",
+      "@type" : "@id"
+    },
     "nonQuantitativeProperty" : {
       "@id" : "http://foodie-cloud.com/model/foodie#nonQuantitativeProperty",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "madeObservation" : {
+      "@id" : "http://www.w3.org/ns/sosa/madeObservation",
+      "@type" : "@id"
+    },
     "solarRadiation" : {
       "@id" : "https://uri.fiware.org/ns/data-models#solarRadiation"
+    },
+    "unit" : {
+      "@id" : "http://qudt.org/schema/qudt/unit",
+      "@type" : "@id"
     },
     "recordHasAgriParcel" : {
       "@id" : "https://uri.fiware.org/ns/data-models#recordHasAgriParcel",
@@ -309,8 +336,14 @@
     "windSpeed" : {
       "@id" : "https://uri.fiware.org/ns/data-models#windSpeed"
     },
+    "Observation" : {
+      "@id" : "http://www.w3.org/ns/sosa/Observation"
+    },
     "illuminance" : {
       "@id" : "https://uri.fiware.org/ns/data-models#illuminance"
+    },
+    "hasSimpleResult" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasSimpleResult"
     },
     "saref.isFeatureOfInterestOf" : {
       "@id" : "https://w3id.org/saref#isFeatureOfInterestOf",
