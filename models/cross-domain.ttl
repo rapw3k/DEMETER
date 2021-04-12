@@ -1086,7 +1086,7 @@ sosa:FeatureOfInterest rdf:type owl:Class ;
 ###  http://www.w3.org/ns/sosa/ObservableProperty
 sosa:ObservableProperty rdf:type owl:Class ;
                         rdfs:isDefinedBy sosa: ;
-                        rdfs:subClassOf ngsi-ld:Entity .
+                        rdfs:subClassOf ssn:Property .
 
 ###  http://www.w3.org/ns/sosa/Observation
 sosa:Observation rdf:type owl:Class ;
@@ -1319,8 +1319,143 @@ qudt:Unit
 		a owl:Class ;  	
   	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   	rdfs:label "Unit" ;  	
-  	rdfs:subClassOf ngsi-ld:Entity .			
+  	rdfs:subClassOf ngsi-ld:Entity .	
+
+### TIME ONTOLOGY
+
+time:TemporalEntity
+  rdf:type owl:Class ;
+  rdfs:comment "A temporal interval or instant."@en ;
+  rdfs:label "Temporal entity"@en ;
+  rdfs:subClassOf ngsi-ld:Entity ;
+  owl:unionOf (
+      time:Instant
+      time:Interval
+    ) ;
+  skos:definition "A temporal interval or instant."@en .    		
   	
+time:TemporalDuration
+  rdf:type owl:Class ;
+  rdfs:subClassOf ngsi-ld:Entity ;
+  rdfs:comment "Time extent; duration of a time interval separate from its particular start position"@en ;
+  rdfs:label "Temporal duration"@en ;
+  skos:definition "Time extent; duration of a time interval separate from its particular start position"@en .
+
+time:TemporalUnit
+  rdf:type owl:Class ;
+  rdfs:comment "A standard duration, which provides a scale factor for a time extent, or the granularity or precision for a time position."@en ;
+  rdfs:label "Temporal unit"@en ;
+  rdfs:subClassOf time:TemporalDuration ;
+  skos:definition "A standard duration, which provides a scale factor for a time extent, or the granularity or precision for a time position."@en ;
+  skos:note "Membership of the class TemporalUnit is open, to allow for other temporal units used in some technical applications (e.g. millions of years, Baha'i month)."@en .
+
+time:Interval
+  rdf:type owl:Class ;
+  rdfs:comment "A temporal entity with an extent or duration"@en ;
+  rdfs:label "Time interval"@en ;
+  rdfs:subClassOf time:TemporalEntity ;
+  skos:definition "A temporal entity with an extent or duration"@en .
+
+time:Instant
+  rdf:type owl:Class ;
+  rdfs:comment "A temporal entity with zero extent or duration"@en ;
+  rdfs:label "Time instant"@en ;
+  rdfs:subClassOf time:TemporalEntity ;
+  skos:definition "A temporal entity with zero extent or duration"@en .
+
+time:Duration
+  rdf:type owl:Class ;
+  rdfs:comment "Duration of a temporal extent expressed as a number scaled by a temporal unit"@en ;
+  rdfs:label "Time duration"@en ;
+  rdfs:subClassOf time:TemporalDuration ;
+  skos:definition "Duration of a temporal extent expressed as a number scaled by a temporal unit"@en ;
+  skos:note "Alternative to time:DurationDescription to support description of a temporal duration other than using a calendar/clock system."@en ;
+
+time:hasBeginning
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Beginning of a temporal entity"@en ;
+  rdfs:domain time:TemporalEntity ;
+  rdfs:label "has beginning"@en ;
+  rdfs:range time:Instant ;
+  rdfs:subPropertyOf time:hasTime ;
+  skos:definition "Beginning of a temporal entity."@en .
+
+time:hasEnd
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "End of a temporal entity."@en ;
+  rdfs:domain time:TemporalEntity ;
+  rdfs:label "has end"@en ;
+  rdfs:range time:Instant ;
+  rdfs:subPropertyOf time:hasTime ;
+  skos:definition "End of a temporal entity."@en .
+
+time:hasTime
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
+  rdfs:label "has time"@en ;
+  rdfs:range time:TemporalEntity ;
+  skos:definition "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
+  skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en .
+
+time:inXSDDate
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Position of an instant, expressed using xsd:date"@en ;
+  rdfs:domain time:Instant ;
+  rdfs:label "in XSD date"@en ;
+  rdfs:range xsd:date ;
+  skos:definition "Position of an instant, expressed using xsd:date"@en .
+
+time:inXSDDateTimeStamp
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Position of an instant, expressed using xsd:dateTimeStamp"@en ;
+  rdfs:domain time:Instant ;
+  rdfs:label "in XSD Date-Time-Stamp"@en ;
+  rdfs:range xsd:dateTimeStamp ;
+  skos:definition "Position of an instant, expressed using xsd:dateTimeStamp"@en .
+
+time:numericDuration
+  rdf:type owl:DatatypeProperty ;
+  rdfs:comment "Value of a temporal extent expressed as a decimal number scaled by a temporal unit"@en ;
+  rdfs:domain time:Duration ;
+  rdfs:label "Numeric value of temporal duration"@en ;
+  rdfs:range xsd:decimal ;
+  skos:definition "Value of a temporal extent expressed as a decimal number scaled by a temporal unit"@en .
+
+time:unitType
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "The temporal unit which provides the precision of a date-time value or scale of a temporal extent"@en ;
+  rdfs:label "temporal unit type"@en ;
+  rdfs:range time:TemporalUnit .
+
+time:unitDay
+  rdf:type time:TemporalUnit ;
+  rdfs:label "Day (unit of temporal duration)"@en .
+
+time:unitHour
+  rdf:type time:TemporalUnit ;
+  rdfs:label "Hour (unit of temporal duration)"@en .
+
+time:unitMinute
+  rdf:type time:TemporalUnit ;
+  rdfs:label "Minute (unit of temporal duration)"@en .
+  
+time:unitMonth
+  rdf:type time:TemporalUnit ;
+  rdfs:label "Month (unit of temporal duration)"@en .
+  
+time:unitSecond
+  rdf:type time:TemporalUnit ;
+  rdfs:label "Second (unit of temporal duration)"@en .
+
+time:unitWeek
+  rdf:type time:TemporalUnit ;
+  rdfs:label "Week (unit of temporal duration)"@en .
+  
+time:unitYear
+  rdf:type time:TemporalUnit ;
+  rdfs:label "Year (unit of temporal duration)"@en .
+  
+
 #################################################################
 #    ISO FEATURES AND ALIGNMENTS
 #################################################################

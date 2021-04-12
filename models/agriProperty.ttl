@@ -7,6 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -569,18 +570,31 @@ cf-feature:Wind rdf:type owl:Class ;
 ssn:hasProperty owl:equivalentProperty saref:hasProperty .
 ssn:isPropertyOf owl:equivalentProperty saref:isPropertyOf .
 ssn:Property owl:equivalentClass saref:Property .
+#sosa:ObservableProperty owl:equivalentClass saref:Property . (sosa:ObservableProperty subclassOf ssn:Property)
 saref:hasFeatureOfInterest owl:equivalentProperty sosa:hasFeatureOfInterest .
 saref:isFeatureOfInterestOf owl:equivalentProperty sosa:isFeatureOfInterestOf .
 saref:FeatureOfInterest owl:equivalentClass sosa:FeatureOfInterest .
-saref:Property owl:equivalentClass foodie:PropertyType .
+saref:measurementMadeBy owl:equivalentProperty sosa:madeBySensor .
+saref:makesMeasurement owl:equivalentProperty sosa:madeObservation .
+#saref:Property owl:equivalentClass foodie:PropertyType .
+saref:Property owl:equivalentClass foodie:PropertyTypeValue .
 saref:Property owl:equivalentClass qu:QuantityKind .
 saref:Temperature owl:equivalentClass dim:Temperature .
-saref:Measurement owl:equivalentClass iso19103:Measure .
-foodie:productionProperty rdfs:subPropertyOf saref:hasProperty .
-foodie:soilProperty rdfs:subPropertyOf saref:hasProperty .
-foodie:quantitativeProperty rdfs:subPropertyOf saref:relatesToMeasurement .
+#saref:Measurement owl:equivalentClass iso19103:Measure .
+saref:Measurement owl:equivalentClass sosa:Observation .
+saref:relatesToProperty owl:equivalentProperty sosa:observedProperty .
+saref:hasTimestamp owl:equivalentProperty sosa:resultTime .
+saref:hasValue owl:equivalentProperty sosa:hasSimpleResult .
+saref:isMeasuredIn owl:equivalentProperty qudt:unit .
+saref:UnitOfMeasure owl:equivalentClass qudt:Unit .
+foodie:propertyType owl:equivalentProperty saref:relatesToProperty .
+#foodie:productionProperty rdfs:subPropertyOf saref:hasProperty .
+#foodie:soilProperty rdfs:subPropertyOf saref:hasProperty .
+#foodie:quantitativeProperty rdfs:subPropertyOf saref:relatesToMeasurement .
+foodie:quantitativeProperty owl:equivalentProperty sosa:hasResult .
 foodie:nonQuantitativeProperty rdfs:subPropertyOf saref:hasValue .
-foodie:productionAmount rdfs:subPropertyOf saref:relatesToMeasurement .
+#foodie:productionAmount rdfs:subPropertyOf saref:relatesToMeasurement .
+foodie:productionAmount rdfs:subPropertyOf sosa:hasResult .
 foodie:analysisDate rdfs:subPropertyOf saref:hasTimestamp .
 fiware:observedAt rdfs:subPropertyOf saref:hasTimestamp .
 fiware:dateObserved rdfs:subPropertyOf saref:hasTimestamp .
@@ -1215,5 +1229,26 @@ cf:volume_fraction_of_silt_in_soil rdf:type owl:NamedIndividual ,
 cf:water_evaporation_flux_from_soil rdf:type owl:NamedIndividual ,
                                              dim:MassPerTimePerArea ;
                                     rdfs:label "water evaporation flux from soil" ;
+                                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#wind_speed
+cf:wind_speed rdf:type owl:NamedIndividual ,
+                                             dim:VelocityOrSpeed ;
+                                    rdfs:label "wind speed" ;
+                                    rdfs:comment "Speed is the magnitude of velocity. Wind is defined as a two-dimensional (horizontal) air velocity vector, with no vertical component. (Vertical motion in the atmosphere has the standard name upward_air_velocity.) The wind speed is the magnitude of the wind velocity." ;
+                                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#air_temperature
+cf:air_temperature rdf:type owl:NamedIndividual ,
+                                             dim:Temperature ;
+                                    rdfs:label "air temperature" ;
+                                    rdfs:comment "Air temperature is the bulk temperature of the air, not the surface (skin) temperature." ;
+                                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#precipitation_amount
+cf:precipitation_amount rdf:type owl:NamedIndividual ,
+                                             dim:SurfaceDensity ;
+                                    rdfs:label "precipitation amount" ;
+                                    rdfs:comment "Amount means mass per unit area" ;
                                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> .
 
