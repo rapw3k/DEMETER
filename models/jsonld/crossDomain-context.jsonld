@@ -1,5 +1,19 @@
 {
   "@context" : {
+  	"meta.value": "https://uri.etsi.org/ngsi-ld/hasValue",
+    "meta.object": {
+          "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+          "@type":"@id"
+    },
+    "meta.Relationship" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/Relationship"
+    },
+    "meta.Property" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/Property"
+    },
+    "meta.Entity" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/v1/ontology#Entity"
+    },
     "implements" : {
       "@id" : "http://www.w3.org/ns/ssn/implements",
       "@type" : "@id"
@@ -42,10 +56,6 @@
     },
     "Platform" : {
       "@id" : "http://www.w3.org/ns/sosa/Platform"
-    },
-    "Relationship" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship",
-      "@type" : "@id"
     },
     "concept" : {
       "@id" : "http://purl.org/linked-data/cube#concept",
@@ -287,10 +297,6 @@
       "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry",
       "@type" : "@id"
     },
-    "ngsi.Property" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/v1/ontology#Property",
-      "@type" : "@id"
-    },
     "sfContains" : {
       "@id" : "http://www.opengis.net/ont/geosparql#sfContains",
       "@type" : "@id"
@@ -356,9 +362,6 @@
     },
     "seeAlso" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
-    },
-    "Entity" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/v1/ontology#Entity"
     },
     "ObservationGroup" : {
       "@id" : "http://purl.org/linked-data/cube#ObservationGroup"

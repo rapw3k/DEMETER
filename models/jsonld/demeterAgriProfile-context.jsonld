@@ -1,5 +1,20 @@
 {
   "@context" : {
+  	"@vocab": "https://w3id.org/demeter/default-context/",
+  	"meta.value": "https://uri.etsi.org/ngsi-ld/hasValue",
+    "meta.object": {
+          "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+          "@type":"@id"
+    },
+    "meta.Relationship" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/Relationship"
+    },
+    "meta.Property" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/Property"
+    },
+    "meta.Entity" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/v1/ontology#Entity"
+    },
     "productionDate" : {
       "@id" : "http://foodie-cloud.com/model/foodie#productionDate",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
@@ -136,11 +151,7 @@
     },
     "Platform" : {
       "@id" : "http://www.w3.org/ns/sosa/Platform"
-    },
-    "Relationship" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship",
-      "@type" : "@id"
-    },
+    },    
     "concept" : {
       "@id" : "http://purl.org/linked-data/cube#concept",
       "@type" : "@id"
@@ -945,10 +956,6 @@
       "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry",
       "@type" : "@id"
     },
-    "ngsi.Property" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/v1/ontology#Property",
-      "@type" : "@id"
-    },
     "ingredientName" : {
       "@id" : "http://foodie-cloud.com/model/foodie#ingredientName",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
@@ -1144,9 +1151,6 @@
     },
     "WeatherStation" : {
       "@id" : "https://w3id.org/def/saref4agri#WeatherStation"
-    },
-    "Entity" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/v1/ontology#Entity"
     },
     "plan" : {
       "@id" : "http://foodie-cloud.com/model/foodie#plan",
