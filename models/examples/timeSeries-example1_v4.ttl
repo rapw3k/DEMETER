@@ -1,0 +1,67 @@
+@prefix ns0: <http://foodie-cloud.com/model/foodie#> .
+@prefix ns1: <https://uri.fiware.org/ns/data-models#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns2: <https://w3id.org/demeter/agri/agriCommon#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix ns3: <http://qudt.org/schema/qudt/> .
+@prefix ns4: <http://www.opengis.net/ont/geosparql#> .
+
+<urn:demeter:crop:df72dc57-1eb9-42a3-88a9-8647ecc954b4>
+  ns0:cropSpecies <urn:demeter:croptype:df72dc57-1eb9-42a3-88a9-8647ecc954b4> ;
+  a <https://w3id.org/def/saref4agri#Crop> ;
+  ns1:cropStatus "seeded" ;
+  ns1:lastPlantedAt "2016-08-23T10:18:16Z"^^xsd:dateTime .
+
+<urn:demeter:croptype:df72dc57-1eb9-42a3-88a9-8647ecc954b4>
+  ns0:description "Spring wheat" ;
+  a ns0:CropType ;
+  ns1:agroVocConcept <http://aims.fao.org/aos/agrovoc/c_7951> ;
+  ns1:alternateName "Triticum aestivum" ;
+  ns1:name "Wheat" ;
+  ns2:eppoConcept <https://gd.eppo.int/taxon/TRZAX> .
+
+<urn:demeter:observation-20180101>
+  a sosa:ObservationCollection ;
+  sosa:hasFeatureOfInterest <urn:demeter:plot:72d9fb43-53f8-4ec8-a33c-fa931360259a> ;
+  sosa:hasMember <urn:demeter:observation/20180101/q10>, <urn:demeter:observation/20180101/q50>, <urn:demeter:observation/20180101/q90> ;
+  sosa:madeBySensor <https://json-ld.org/playground/sensor/35-207306-844818-0/BMP282> ;
+  sosa:observedProperty <http://purl.oclc.org/NET/ssnx/cf/cf-property#normalized_difference_vegetation_index> ;
+  sosa:resultTime "2018-01-01T12:36:12Z"^^xsd:dateTime .
+
+<urn:demeter:observation/20180101/q10>
+  dc:identifier "q10" ;
+  a sosa:Observation ;
+  sosa:hasSimpleResult "0.27121272683143616" .
+
+<urn:demeter:observation/20180101/q50/result>
+  ns3:numericValue "0.3173256516456604" ;
+  ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ;
+  a ns3:QuantityValue .
+
+<urn:demeter:observation/20180101/q50>
+  dc:identifier "q50" ;
+  a sosa:Observation ;
+  sosa:hasResult <urn:demeter:observation/20180101/q50/result> .
+
+<urn:demeter:observation/20180101/q90/result>
+  ns3:numericValue "0.38018566370010376" ;
+  ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ;
+  a ns3:QuantityValue .
+
+<urn:demeter:observation/20180101/q90>
+  dc:identifier "q90" ;
+  a sosa:Observation ;
+  sosa:hasResult <urn:demeter:observation/20180101/q90/result> .
+
+<urn:demeter:plot:72d9fb43-53f8-4ec8-a33c-fa931360259a>
+  ns0:crop <urn:demeter:crop:df72dc57-1eb9-42a3-88a9-8647ecc954b4> ;
+  ns0:description "Spring wheat plot" ;
+  ns4:hasGeometry <urn:demeter:plot:geo:72d9fb43-53f8-4ec8-a33c-fa931360259y> ;
+  a ns0:Plot ;
+  ns1:area 2012120 ;
+  ns1:category "arable" .
+
+<urn:demeter:plot:geo:72d9fb43-53f8-4ec8-a33c-fa931360259y>
+  ns4:asWKT "POLYGON (100 0, 101 0, 101 1, 100 1, 100 0)"^^ns4:wktLiteral ;
+  a <http://www.opengis.net/ont/sf#Polygon> .
