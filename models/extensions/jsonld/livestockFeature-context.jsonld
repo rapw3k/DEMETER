@@ -1,10 +1,34 @@
 {
   "@context" : {
+    "predictionTime" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#predictionTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "ketosisPrecision" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#ketosisPrecision",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
     "versionInfo" : {
       "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
     },
+    "numberOfLactation" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#numberOfLactation",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "rawFalsePositiveRate" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#rawFalsePositiveRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "lamenessFalsePositiveRate" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#lamenessFalsePositiveRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
     "HealthPrediction" : {
       "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#HealthPrediction"
+    },
+    "ketosisFalsePositiveRate" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#ketosisFalsePositiveRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
     },
     "ObservationCollection" : {
       "@id" : "http://www.w3.org/ns/sosa/ObservationCollection"
@@ -18,32 +42,111 @@
     "label" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
     },
+    "processedAccuracy" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#processedAccuracy",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
     "Concept" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
     },
     "HealthStatus" : {
       "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#HealthStatus"
     },
-    "AnimalEntity" : {
+    "LactationObservationsCollection" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#LactationObservationsCollection"
+    },
+    "FarmAnimal" : {
       "@id" : "https://uri.fiware.org/ns/data-models#Animal"
     },
     "Animal" : {
       "@id" : "https://w3id.org/def/saref4agri#Animal"
     },
+    "PredictionMetric" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#PredictionMetric"
+    },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "mastitisAccuracy" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#mastitisAccuracy",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "lamenessTruePositiveRate" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#lamenessTruePositiveRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "ketosisTruePositiveRate" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#ketosisTruePositiveRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "resultTime" : {
+      "@id" : "http://www.w3.org/ns/sosa/resultTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "notation" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#notation"
     },
+    "LifetimeLactations" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#LifetimeLactations"
+    },
+    "upperConfidenceValue" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#upperConfidenceValue",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "predictionMetricProperty" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#predictionMetricProperty",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
     "foaf.name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "hasMember" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasMember",
+      "@type" : "@id"
+    },
+    "DailyYieldPrediction" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#DailyYieldPrediction"
+    },
+    "mastitisPrecision" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#mastitisPrecision",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "mastitisFalsePositiveRate" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#mastitisFalsePositiveRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "processedTruePositiveRate" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#processedTruePositiveRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "rawPrecision" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#rawPrecision",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "predictedProperty" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#predictedProperty",
+      "@type" : "@id"
+    },
+    "MilkYieldPredictionsCollection" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#MilkYieldPredictionsCollection"
     },
     "qudt.QuantityKind" : {
       "@id" : "http://qudt.org/schema/qudt/QuantityKind"
     },
+    "lamenessPrecision" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#lamenessPrecision",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
     "isDefinedBy" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "lifetimeLactations" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#lifetimeLactations",
+      "@type" : "@id"
+    },
+    "ketosisAccuracy" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#ketosisAccuracy",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
     },
     "ConceptScheme" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
@@ -51,9 +154,21 @@
     "title" : {
       "@id" : "http://purl.org/dc/terms/title"
     },
+    "processedFalsePositiveRate" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#processedFalsePositiveRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
     "hasFeatureOfInterest" : {
       "@id" : "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
       "@type" : "@id"
+    },
+    "observedProperty" : {
+      "@id" : "http://www.w3.org/ns/sosa/observedProperty",
+      "@type" : "@id"
+    },
+    "rawTruePositiveRate" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#rawTruePositiveRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
     },
     "topConceptOf" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#topConceptOf"
@@ -61,11 +176,27 @@
     "seeAlso" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
     },
+    "rawAccuracy" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#rawAccuracy",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "lamenessAccuracy" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#lamenessAccuracy",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
     "comment" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },
     "ObservableProperty" : {
       "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
+    },
+    "milkYieldPrediction" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#milkYieldPrediction",
+      "@type" : "@id"
+    },
+    "mastitisTruePositiveRate" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#mastitisTruePositiveRate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
     },
     "QualityValue" : {
       "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#QualityValue"
@@ -79,98 +210,26 @@
     "dct.description" : {
       "@id" : "http://purl.org/dc/terms/description"
     },
+    "processedPrecision" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#processedPrecision",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
     "MilkProduct" : {
       "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#MilkProduct"
     },
-    "PredictionMetric" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#PredictionMetric"
+    "milkingEvent" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#milkingEvent",
+      "@type" : "@id"
     },
     "predictionMetric" : {
       "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#predictionMetric",
       "@type" : "@id"
     },
-    "predictionMetricProperty" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#predictionMetricProperty",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    "Observation" : {
+      "@id" : "http://www.w3.org/ns/sosa/Observation"
     },
-    "lamenessTruePositiveRate" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#lamenessTruePositiveRate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "lamenessFalsePositiveRate" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#lamenessFalsePositiveRate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "lamenessPrecision" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#lamenessPrecision",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "lamenessAccuracy" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#lamenessAccuracy",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "mastitisTruePositiveRate" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#mastitisTruePositiveRate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "mastitisFalsePositiveRate" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#mastitisFalsePositiveRate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "mastitisPrecision" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#mastitisPrecision",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "mastitisAccuracy" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#mastitisAccuracy",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "ketosisTruePositiveRate" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#ketosisTruePositiveRate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "ketosisFalsePositiveRate" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#ketosisFalsePositiveRate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "ketosisPrecision" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#ketosisPrecision",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "ketosisAccuracy" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#ketosisAccuracy",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "rawTruePositiveRate" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#rawTruePositiveRate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "rawFalsePositiveRate" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#rawFalsePositiveRate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "rawPrecision" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#rawPrecision",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "rawAccuracy" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#rawAccuracy",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "processedTruePositiveRate" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#processedTruePositiveRate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "processedFalsePositiveRate" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#processedFalsePositiveRate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "processedPrecision" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#processedPrecision",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "processedAccuracy" : {
-      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#processedAccuracy",
+    "lowerConfidenceValue" : {
+      "@id" : "https://w3id.org/demeter/agri/ext/livestockFeature#lowerConfidenceValue",
       "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
     }
   }
