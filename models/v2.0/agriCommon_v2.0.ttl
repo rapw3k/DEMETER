@@ -241,6 +241,46 @@ fiware:category	a      owl:DatatypeProperty ;
         rdfs:comment		"The category of the entity, e.g., parcel of land (arable, grassland, vineyard, orchard, mixed crop, lowland, upland, set-aside, forestry, wetland), alert (Traffic jam, accidents, weather conditions, high level of pollutants)." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> , <https://fiware.github.io/data-models/specs/Alert/doc/spec.html> .                        
 
+###  https://w3id.org/demeter/agri/agriCommon#imageURL
+demeterAgriCommon:imageURL rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf <https://schema.org/contentUrl> ;
+        rdfs:range  xsd:anyURI ;
+        rdfs:domain  demeterAgriCommon:Image ;
+        rdfs:label "imageURL" ;
+        rdfs:comment "Actual bytes of the image object, i.e., image file" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .
+
+###  https://w3id.org/demeter/agri/agriCommon#imageHeight
+demeterAgriCommon:imageHeight rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf <https://schema.org/height> , saref:hasValue ;
+        rdfs:domain  demeterAgriCommon:Image ;
+        rdfs:label "imageHeight" ;
+        rdfs:comment "The height of the image, e.g., 3 or 3 cm^^cdt:ucum" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .
+
+###  https://w3id.org/demeter/agri/agriCommon#imageWidth
+demeterAgriCommon:imageWidth rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf <https://schema.org/width> , saref:hasValue ;   
+        rdfs:domain  demeterAgriCommon:Image ;     
+        rdfs:label "imageWidth" ;
+        rdfs:comment "The width of the image, e.g., 3 or 3 cm^^cdt:ucum" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .
+
+###  https://w3id.org/demeter/agri/agriCommon#imageDataType
+demeterAgriCommon:imageDataType rdf:type owl:DatatypeProperty ;
+        rdfs:domain  demeterAgriCommon:Image ;
+        rdfs:label "imageDataType" ;
+        rdfs:comment "The data type of the image, e.g., NDVI" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .        
+
+###  https://w3id.org/demeter/agri/agriCommon#imageFormat
+demeterAgriCommon:imageFormat rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf <https://schema.org/encodingFormat> ;   
+        rdfs:domain  demeterAgriCommon:Image ;     
+        rdfs:label "imageFormat" ;
+        rdfs:comment "The format of the image, e.g., tiff, jpg" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .
+
 #################################################################
 #    Classes
 #################################################################
@@ -279,7 +319,16 @@ saref4agri:Farmer rdf:type owl:Class ;
 <http://purl.obolibrary.org/obo/TAXRANK_0000000> rdf:type owl:Class ;
                                                  rdfs:label "taxonomic_rank"@en ;
                                                  rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .
-              
+
+###  https://w3id.org/demeter/agri/agriCommon#Image
+demeterAgriCommon:Image rdf:type owl:Class ;
+        rdfs:subClassOf <https://schema.org/ImageObject> ;
+        rdfs:label "Image" ;
+        rdfs:comment "An image object" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .
+
+
+
 #################################################################
 #    Alignments
 #################################################################
