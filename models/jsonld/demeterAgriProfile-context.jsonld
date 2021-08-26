@@ -1,34 +1,18 @@
 {
   "@context" : {
   	"@vocab": "https://w3id.org/demeter/default-context/",
-  	"meta.value": "https://uri.etsi.org/ngsi-ld/hasValue",
-    "meta.object": {
-          "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
-          "@type":"@id"
-    },
-    "meta.Relationship" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/Relationship"
-    },
-    "meta.Property" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/Property"
-    },
-    "meta.Entity" : {
+  	"type": "@type",
+  	"value": "https://uri.etsi.org/ngsi-ld/hasValue",
+    "object": {
+    	"@id": "https://uri.etsi.org/ngsi-ld/hasObject",
+			"@type":"@id"
+		},
+		"Property": "https://uri.etsi.org/ngsi-ld/Property",
+		"Relationship": "https://uri.etsi.org/ngsi-ld/Relationship",
+    "Entity" : {
       "@id" : "https://uri.etsi.org/ngsi-ld/v1/ontology#Entity"
     },
-    "meta_value": "https://uri.etsi.org/ngsi-ld/hasValue",
-    "meta_object": {
-          "@id": "https://uri.etsi.org/ngsi-ld/hasObject",
-          "@type":"@id"
-    },
-    "meta_Relationship" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/Relationship"
-    },
-    "meta_Property" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/Property"
-    },
-    "meta_Entity" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/v1/ontology#Entity"
-    },
+    
     "productionDate" : {
       "@id" : "http://foodie-cloud.com/model/foodie#productionDate",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
@@ -1017,7 +1001,7 @@
     "MeasureProperty" : {
       "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
     },
-    "type" : {
+    "typeName" : {
       "@id" : "http://foodie-cloud.com/model/foodie#type",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
@@ -1520,7 +1504,7 @@
     "Point" : {
       "@id" : "http://www.opengis.net/ont/sf#Point"
     },
-    "Property" : {
+    "ssn.Property" : {
       "@id" : "http://www.w3.org/ns/ssn/Property"
     },
     "saref.Property" : {
