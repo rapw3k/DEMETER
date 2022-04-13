@@ -1,5 +1,5 @@
-#+ summary: "Search for Agrovoc terms"
-#+ description: "Retrieves the agrovoc terms with a label that contains the input query text. NOTE: make sure response content type is application/json"
+#+ summary: "Search for Agrovoc terms used as crops"
+#+ description: "Retrieves the agrovoc terms with a label that contains the input query text, and that are used as crops. NOTE: make sure response content type is application/json"
 #+ endpoint: "https://www.foodie-cloud.org/sparql"
 #+ tags: [ "agrovoc" ]
 #+ method: "GET"
@@ -29,4 +29,6 @@ WHERE
     ?s skos:altLabel ?altLabel .
     FILTER (bif:contains(?prefLabel, concat("'",?_search,"*'")) || bif:contains(?altLabel, concat("'",?_search,"*'")))    
     FILTER ( LANGMATCHES(lang(?prefLabel1),"en") || LANG(?prefLabel1) = "pl" || LANG(?prefLabel1) = "la")
+    ?s <http://aims.fao.org/aos/agrontology#isUsedAs> ?o . 
+    ?o skos:broader* <http://aims.fao.org/aos/agrovoc/c_1972> .
   }
