@@ -27,6 +27,6 @@ WHERE
     ?s skos:prefLabel ?prefLabel .
     ?s skos:prefLabel ?prefLabel1 .
     ?s skos:altLabel ?altLabel .
-    FILTER (bif:contains(?prefLabel, ?_search) || bif:contains(?altLabel, ?_search))    
+    FILTER (bif:contains(?prefLabel, concat("'",?_search,"*'")) || bif:contains(?altLabel, concat("'",?_search,"*'")))    
     FILTER ( LANGMATCHES(lang(?prefLabel1),"en") || LANG(?prefLabel1) = "pl" || LANG(?prefLabel1) = "la")
   }
