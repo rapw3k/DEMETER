@@ -1,16 +1,13 @@
-#+ summary: "Retrieves all the information about CYBELE datasets including the provided keyword, e.g., greece."
-#+ description: "Retrieves all the information about CYBELE datasets including the provided keyword, e.g., greece, in the dataset title or connected resources' labels. NOTE: make sure response content type is application/json"
+#+ summary: "Search for Agrovoc terms"
+#+ description: "Retrieves the agrovoc terms with a label that contains the input query text. NOTE: make sure response content type is application/json"
 #+ endpoint: "https://www.foodie-cloud.org/sparql"
-#+ tags: [ "testbed" ]
+#+ tags: [ "agrovoc" ]
 #+ method: "GET"
 #+ pagination: 100
 #+ transform: {
 #+   "id": "?s",
-#+   "metadata": {
-#+     "property": "?p",
-#+     "value": "?o"
-#+   },
-#+   "$anchor": "id"
+#+   "$anchor": "id",
+#+   "label": "?prefLabel1"
 #+ }
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -22,25 +19,14 @@ PREFIX cybeleBase: <https://w3id.org/cybele/>
 PREFIX bif: <bif:>
 
 
-SELECT DISTINCT ?s ?p ?o
-WHERE {
-   ?s a dcat:Dataset.
-   ?s ?p ?o.
-   ?s ?p1 ?o1.
-   ?o1 skos:prefLabel ?label1.    
-   ?s ?p2 ?o2 .
-   ?o2 rdfs:label ?label2 .
-   ?s dct:title ?label3 .    
-   FILTER ((bif:contains(?label1, ?_keyword) || bif:contains(?label2, ?_keyword) || bif:contains(?label3, ?_keyword)))
-   { SELECT ?s 
-     WHERE {
-        GRAPH ?g {
-          ?s a dcat:Dataset.
-        }
-        FILTER(STRSTARTS(STR(?g),str(?_testbed)) )
-     }
-   }
-}
-ORDER BY ?s
-LIMIT 100
-OFFSET 0
+SELECT DISTINCT ?s ?prefLabel1
+FROM <http://aims.fao.org/aos/agrovoc/>
+WHERE
+  {
+    ?s a skos:Concept . 
+    ?s skos:prefLabel ?prefLabel .
+    ?s skos:prefLabel ?prefLabel1 .
+    ?s skos:altLabel ?altLabel .
+    FILTER (bif:contains(?prefLabel, ?_search) || bif:contains(?altLabel, ?_search))    
+    FILTER ( LANGMATCHES(lang(?prefLabel1),"en") || LANG(?prefLabel1) = "pl" || LANG(?prefLabel1) = "la")
+  }
