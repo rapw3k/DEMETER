@@ -8,6 +8,7 @@
 #+   "id": "?s",
 #+   "$anchor": "id",
 #+   "label": "?prefLabel1"
+#+   "usedAsCrop": "?param"
 #+ }
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -29,4 +30,5 @@ WHERE
     ?s skos:altLabel ?altLabel .
     FILTER (bif:contains(?prefLabel, concat("'",?_search,"*'")) || bif:contains(?altLabel, concat("'",?_search,"*'")))    
     FILTER ( LANGMATCHES(lang(?prefLabel1),"en") || LANG(?prefLabel1) = "pl" || LANG(?prefLabel1) = "la")
+    BIND (IF(?_usedAsCrop, "yes", "no") AS ?param)
   }
