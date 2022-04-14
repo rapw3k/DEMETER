@@ -1,0 +1,161 @@
+#+ summary: "Retrieves all the information about CYBELE datasets, with full structure and including information of referenced resources"
+#+ description: "NOTE: make sure response content type is application/json"
+#+ tags: [ "testbed" ]
+#+ method: GET
+#+ pagination: 100
+#+ transform: {
+#+    "id": "?s",
+#+    "$anchor": "id",
+#+    "modified": "?v1",
+#+    "issued": "?v2",
+#+    "publisher": {
+#+      "id": "?v3r",
+#+      "label": "?v31"
+#+    },
+#+    "title": "?v4",
+#+    "description": "?v5",
+#+    "accessRights": {
+#+      "id": "?v6r",
+#+      "label": "?v61"
+#+    },
+#+    "language": {
+#+      "id": "?v7r",
+#+      "label": "?v71"
+#+    },
+#+    "temporal": {
+#+      "id": "?v8r",
+#+      "endDate": "?v81",
+#+      "startDate": "?v82"
+#+    },
+#+    "temporalResolution": "?v9",
+#+    "conformsTo": {
+#+      "id": "?v10r",
+#+      "label": "?v101"
+#+    },
+#+    "landingPage": "?v11",
+#+    "accrualPeriodicity": {
+#+      "id": "?v12r",
+#+      "label": "?v121"
+#+    },
+#+    "spatial": {
+#+      "id": "?v13r",
+#+      "geometryAsWKT": "?v131",
+#+      "label": "?v132"
+#+    },
+#+    "spatialResolutionInMeters": "?v14",
+#+    "structure": {
+#+      "id": "?v15r",
+#+    },
+#+    "dimension": {
+#+        "id": "?v151r",
+#+        "label": "?v1511",
+#+        "range": "?v1512",
+#+        "crs": "?v1513",
+#+        "description": "?v1514"
+#+    },
+#+    "measure": {
+#+        "id": "?v152r",
+#+        "label": "?v1521",
+#+        "range": "?v1522",
+#+        "UoM": "?v1523",
+#+        "description": "?v1524"
+#+    },
+#+    "distribution": {
+#+      "id": "?v16r",
+#+      "license": {
+#+        "id": "?v161r",
+#+        "label": "?v1611"
+#+      },
+#+      "mediaType": {
+#+        "id": "?v162r",
+#+        "label": "?v1621"
+#+      },      
+#+      "byteSize": "?v163",
+#+      "accessDatabase": {
+#+        "id": "?v164r",
+#+        "label": "?v1641",
+#+        "connectionString": "?v1642",
+#+        "accessTable": {
+#+          "id": "?v1643r",
+#+          "label": "?v16431",
+#+          "subject": "?subject"
+#+        }
+#+      }
+#+    }
+#+    }
+
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>
+PREFIX cybele: <http://w3id.org/cybele/model#>
+PREFIX cybele_sec: <https://w3id.org/cybele/model#>
+PREFIX locn: <http://www.w3.org/ns/locn#>
+PREFIX cybeleBase: <https://w3id.org/cybele/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX qb4st: <http://www.w3.org/ns/qb4st/>
+  SELECT DISTINCT ?s ?v1 ?v2 ?v3r ?v31 ?v4 ?v5 ?v6r ?v61 ?v7r ?v71 ?v8r ?v81 ?v82 ?v9 ?v10r ?v101 ?v11 ?v12r ?v121 ?v13r ?v131 ?v132 ?v14 ?v15r ?v151r ?v1511 ?v1512 ?v1513 ?v1514 ?v152r ?v1521 ?v1522 ?v1523 ?v1524 ?v16r ?v161r ?v1611 ?v162r ?v1621 ?v163 ?v164r ?v1641 ?v1642 ?v1643r ?v16431 ?subject
+  WHERE {
+    GRAPH ?_testbed_iri { ?s a dcat:Dataset .
+    OPTIONAL { ?s dct:modified ?v1  }.
+    OPTIONAL { ?s dct:issued ?v2  }.
+    OPTIONAL { ?s dct:publisher ?v3r .
+    OPTIONAL { ?v3r rdfs:label|skos:prefLabel ?v31  }}.
+    OPTIONAL { ?s dct:title ?v4  }.
+    OPTIONAL { ?s dct:description ?v5  }.
+    OPTIONAL { ?s dct:accessRights ?v6r .
+    
+    OPTIONAL { ?v6r rdfs:label|skos:prefLabel ?v61 .
+    FILTER(lang(?v61) = 'en') }}.
+    OPTIONAL { ?s dct:language ?v7r .
+    OPTIONAL { ?v7r rdfs:label|skos:prefLabel ?v71 .
+    FILTER(lang(?v71) = 'en') }}.
+    OPTIONAL { ?s dct:temporal ?v8r .
+    OPTIONAL { ?v8r dcat:endDate ?v81  }.
+    OPTIONAL { ?v8r dcat:startDate ?v82  }}.
+    OPTIONAL { ?s dcat:temporalResolution ?v9  }.
+    OPTIONAL { ?s dct:conformsTo ?v10r .
+    OPTIONAL { ?v10r rdfs:label|skos:prefLabel ?v101  }}.
+    OPTIONAL { ?s dcat:landingPage ?v11  }.
+    OPTIONAL { ?s dct:accrualPeriodicity ?v12r .
+    OPTIONAL { ?v12r rdfs:label|skos:prefLabel ?v121  }}.
+    OPTIONAL { ?s dct:spatial ?v13r .
+    OPTIONAL { ?v13r locn:geometry ?v131  }.
+    OPTIONAL { ?v13r rdfs:label|skos:prefLabel ?v132 .
+    FILTER(lang(?v132) = 'en') }}.
+    OPTIONAL { ?s dcat:spatialResolutionInMeters ?v14  }.
+    OPTIONAL { ?s qb:structure ?v15r .
+OPTIONAL { ?v15r qb:component/qb:dimension ?v151r .
+    OPTIONAL { ?v151r rdfs:label ?v1511  }.
+    OPTIONAL { ?v151r rdfs:range ?v1512  }.
+    OPTIONAL { ?v151r qb4st:crs ?v1513  }.
+    OPTIONAL { ?v151r rdfs:comment ?v1514  }}.
+OPTIONAL { ?v15r qb:component/qb:measure ?v152r .
+    OPTIONAL { ?v152r rdfs:label ?v1521  }.
+    OPTIONAL { ?v152r rdfs:range ?v1522  }.
+    OPTIONAL { ?v152r sdmx-attribute:unitMeasure ?v1523  }.
+    OPTIONAL { ?v152r rdfs:comment ?v1524  }}}.
+    OPTIONAL { ?s dcat:distribution ?v16r .
+OPTIONAL { ?v16r dct:license ?v161r .
+    OPTIONAL { ?v161r rdfs:label|skos:prefLabel ?v1611 .
+    FILTER(lang(?v1611) = 'en') }}.
+OPTIONAL { ?v16r dcat:mediaType ?v162r .
+    OPTIONAL { ?v162r rdfs:label|skos:prefLabel ?v1621 .
+    FILTER(lang(?v1621) = 'en') }}.
+    OPTIONAL { ?v16r dcat:byteSize ?v163  }.
+OPTIONAL { ?v16r cybele:accessDatabase|cybele_sec:accessDatabase ?v164r .
+    OPTIONAL { ?v164r rdfs:label ?v1641  }.
+    OPTIONAL { ?v164r cybele:connectionString|cybele_sec:connectionString ?v1642  }.
+OPTIONAL { ?v164r cybele:accessTable|cybele_sec:accessTable ?v1643r .
+    OPTIONAL { ?v1643r cybele:tableName|cybele_sec:tableName ?v16431  }.
+    OPTIONAL { ?v1643r dct:subject ?subject  }}}}
+    FILTER(str(?s)=str(?subject))
+  }}
+ORDER BY ?s
+LIMIT 100
+OFFSET 0

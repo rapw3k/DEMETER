@@ -1,0 +1,109 @@
+{
+  "proto": {
+    "id": "?s$anchor",
+    "modified":"$dct:modified" ,
+    "issued":"$dct:issued" ,
+    "publisher": {
+    	"id":"$dct:publisher" ,
+    	"label":"$rdfs:label|skos:prefLabel"
+    },
+    "title":"$dct:title" ,
+	"description":"$dct:description" ,
+	"accessRights": {
+    	"id":"$dct:accessRights" ,
+    	"label":"$rdfs:label|skos:prefLabel$lang:en"
+    },
+    "language": {
+    	"id":"$dct:language" ,
+    	"label":"$rdfs:label|skos:prefLabel$lang:en"
+    },
+    "temporal": {
+    	"id":"$dct:temporal" ,
+    	"endDate":"$dcat:endDate" ,
+    	"startDate":"$dcat:startDate"
+    },
+    "temporalResolution":"$dcat:temporalResolution" ,
+    "conformsTo":{
+    	"id":"$dct:conformsTo" ,
+    	"label":"$rdfs:label|skos:prefLabel"
+    },    
+    "landingPage":"$dcat:landingPage" ,
+    "accrualPeriodicity": {
+    	"id":"$dct:accrualPeriodicity" ,
+    	"label":"$rdfs:label|skos:prefLabel"
+    },    
+    "spatial": {
+    	"id":"$dct:spatial",
+    	"geometryAsWKT":"$locn:geometry",
+		"label":"$rdfs:label|skos:prefLabel$lang:en"
+    },
+    "spatialResolutionInMeters":"$dcat:spatialResolutionInMeters" ,
+    "structure":{
+    	"id":"$qb:structure" ,
+    	"dimension": {
+    		"id":"$qb:component/qb:dimension$list" ,
+    		"label":"$rdfs:label" ,
+    		"range":"$rdfs:range" ,
+    		"crs":"$qb4st:crs",
+    		"description":"$rdfs:comment"
+    	},
+    	"measure": {
+    		"id":"$qb:component/qb:measure$list" ,
+    		"label":"$rdfs:label" ,
+    		"range":"$rdfs:range" ,
+    		"UoM":"$sdmx-attribute:unitMeasure",
+    		"description":"$rdfs:comment"
+    	}  
+    },
+    "distribution": {
+    	"id":"$dcat:distribution" ,
+    	"license": {
+    		"id":"$dct:license" ,
+    		"label":"$rdfs:label|skos:prefLabel$lang:en"
+    	},
+    	"mediaType": {
+    		"id":"$dcat:mediaType" ,
+    		"label":"$rdfs:label|skos:prefLabel$lang:en"
+    	},
+    	"byteSize":"$dcat:byteSize" ,
+    	"accessDatabase": {
+    		"id":"$cybele:accessDatabase|cybele_sec:accessDatabase" ,
+    		"label":"$rdfs:label" ,
+    		"connectionString":"$cybele:connectionString|cybele_sec:connectionString" ,
+    		"accessTable":{
+    			"id":"$cybele:accessTable|cybele_sec:accessTable",
+    			"label":"$cybele:tableName|cybele_sec:tableName",
+				"subject":"$dct:subject$var:?subject"
+    		}
+    	}
+    }
+  },
+  "$where": [
+	"GRAPH ?_testbed { ?s a dcat:Dataset }"
+  ],
+  "$filter": "str(?s)=str(?subject)",  
+  "$prefixes": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "dbo": "http://dbpedia.org/ontology/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "qb": "http://purl.org/linked-data/cube#",
+		"sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+		"cybele":	"http://w3id.org/cybele/model#",
+		"cybele_sec":	"https://w3id.org/cybele/model#",
+		"locn":	"http://www.w3.org/ns/locn#",
+		"cybeleBase": "https://w3id.org/cybele/",
+		"skos": "http://www.w3.org/2004/02/skos/core#",
+		"qb4st": "http://www.w3.org/ns/qb4st/"
+  },
+  "$orderby": "?id",
+  "$lang": "en",
+  "grlc": {
+    "summary": "Retrieves all the information about CYBELE datasets, with full structure and including information of referenced resources",
+    "endpoint": "https://www.foodie-cloud.org/sparql",
+    "tags": [ "pre" ],
+    "method": "GET",
+    "pagination": 100
+  }
+}
