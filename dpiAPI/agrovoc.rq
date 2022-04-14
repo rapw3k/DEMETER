@@ -1,0 +1,32 @@
+#+ summary: "Search for Agrovoc terms"
+#+ description: "Retrieves the agrovoc terms with a label that contains the input query text. NOTE: make sure response content type is application/json"
+#+ endpoint: "https://www.foodie-cloud.org/sparql"
+#+ tags: [ "agrovoc" ]
+#+ method: "GET"
+#+ pagination: 100
+#+ transform: {
+#+   "id": "?s",
+#+   "$anchor": "id",
+#+   "label": "?prefLabel1"
+#+ }
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX cybeleBase: <https://w3id.org/cybele/>
+PREFIX bif: <bif:>
+
+
+SELECT DISTINCT ?s ?prefLabel1
+FROM <http://aims.fao.org/aos/agrovoc/>
+WHERE
+  {
+    ?s a skos:Concept . 
+    ?s skos:prefLabel ?prefLabel .
+    ?s skos:prefLabel ?prefLabel1 .
+    ?s skos:altLabel ?altLabel .
+    FILTER (bif:contains(?prefLabel, concat("'",?_search,"*'")) || bif:contains(?altLabel, concat("'",?_search,"*'")))    
+    FILTER ( LANGMATCHES(lang(?prefLabel1),"en") || LANG(?prefLabel1) = "pl" || LANG(?prefLabel1) = "la")
+  }
