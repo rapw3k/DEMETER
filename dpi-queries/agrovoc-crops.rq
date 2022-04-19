@@ -19,7 +19,8 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX cybeleBase: <https://w3id.org/cybele/>
 PREFIX bif: <bif:>
 
-SELECT DISTINCT ?s ?prefLabel1 ?altLabel1
+
+SELECT DISTINCT ?s ?prefLabel1
 FROM <http://aims.fao.org/aos/agrovoc/>
 WHERE
   {
@@ -27,11 +28,10 @@ WHERE
     ?s skos:prefLabel ?prefLabel .
     ?s skos:prefLabel ?prefLabel1 .
     ?s skos:altLabel ?altLabel .
-    ?s skos:altLabel ?altLabel1 .
-    FILTER (bif:contains(?prefLabel, concat("'","ziemniak","*'")) || bif:contains(?altLabel, concat("'","ziemniak","*'")))    
+    ?s skos:altLabel ?altLabel1 .    
+    FILTER (bif:contains(?prefLabel, concat("'",?_search,"*'")) || bif:contains(?altLabel, concat("'",?_search,"*'")))    
     FILTER ( LANGMATCHES(lang(?prefLabel1),"en") || LANG(?prefLabel1) = "pl" || LANG(?prefLabel1) = "la")
     FILTER ( LANGMATCHES(lang(?altLabel1),"en") || LANG(?altLabel1) = "pl" || LANG(?altLabel1) = "la")
     ?s <http://aims.fao.org/aos/agrontology#isUsedAs> ?o . 
     ?o skos:broader* <http://aims.fao.org/aos/agrovoc/c_1972> .
   }
-
