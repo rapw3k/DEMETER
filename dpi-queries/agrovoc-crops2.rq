@@ -28,7 +28,7 @@ WHERE
     ?s skos:prefLabel ?prefLabel .
     ?s skos:prefLabel ?label .
     ?s skos:altLabel ?altLabel .
-    FILTER (bif:contains(?prefLabel, concat("'","?_search","*'")) || bif:contains(?altLabel, concat("'","?_search","*'")))    
+    FILTER (bif:contains(?prefLabel, concat("'",?_search,"*'")) || bif:contains(?altLabel, concat("'",?_search,"*'")))    
     FILTER ( LANGMATCHES(lang(?label),"en") || LANG(?label) = "pl" || LANG(?label) = "la")
     ?s <http://aims.fao.org/aos/agrontology#isUsedAs> ?o . 
     ?o skos:broader* <http://aims.fao.org/aos/agrovoc/c_1972> .
@@ -44,7 +44,7 @@ WHERE
     ?s skos:prefLabel ?prefLabel .
     ?s skos:altLabel ?altLabel .
     ?s skos:altLabel ?label .
-    FILTER (bif:contains(?prefLabel, concat("'","?_search","*'")) || bif:contains(?altLabel, concat("'","?_search","*'")))    
+    FILTER (bif:contains(?prefLabel, concat("'",?_search,"*'")) || bif:contains(?altLabel, concat("'",?_search,"*'")))    
     FILTER ( LANGMATCHES(lang(?label),"en") || LANG(?label) = "pl" || LANG(?label) = "la")
     ?s <http://aims.fao.org/aos/agrontology#isUsedAs> ?o . 
     ?o skos:broader* <http://aims.fao.org/aos/agrovoc/c_1972> .
