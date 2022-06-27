@@ -33,14 +33,18 @@
       "ketosisTruePositiveRate":"100.0",
       "ketosisFalsePositiveRate":"5.88",
       "ketosisPrecision":"99.0",
-      "ketosisAccuracy":"99.0"
+      "ketosisAccuracy":"99.0",
+      "heatStressTruePositiveRate":"85.48",
+      "heatStressFalsePositiveRate":"22.43",
+      "heatStressPrecision":"83.0",
+      "heatStressAccuracy":"83.0"
     },
     {
       "@id": "urn:demeter:72d9fb43-53f8-4ec8-a33c-fa931360259a",
       "@type": "HealthPrediction",
       "identifier": "2",
       "description": "Health Prediction collection of observations1",
-      "hasMember": ["urn:demeter:ObservationCollection/1a", "urn:demeter:ObservationCollection/2a" ,"urn:demeter:ObservationCollection/3a" ],
+      "hasMember": ["urn:demeter:ObservationCollection/1a", "urn:demeter:ObservationCollection/2a", "urn:demeter:ObservationCollection/3a", "urn:demeter:ObservationCollection/4a", "urn:demeter:ObservationCollection/5a"],
       "hasFeatureOfInterest": "urn:demeter:animal1" ,
       "predictionMetric":"urn:demeter:predictionMetric1"      
     },
@@ -48,7 +52,7 @@
       "@id": "urn:demeter:ObservationCollection/1a",
       "@type": "ObservationCollection",
       "description": "Individual properties collection1",
-      "hasMember": ["urn:demeter:ObservationI/1a","urn:demeter:ObservationI/2a","urn:demeter:ObservationI/3a", "urn:demeter:ObservationI/4a","urn:demeter:ObservationI/5a","urn:demeter:ObservationI/6a","urn:demeter:ObservationI/7a","urn:demeter:ObservationI/8a","urn:demeter:ObservationI/9a","urn:demeter:ObservationI/10a","urn:demeter:ObservationI/11a", "urn:demeter:ObservationI/12a","urn:demeter:ObservationI/13a","urn:demeter:ObservationI/14a","urn:demeter:ObservationI/15a" ],
+      "hasMember": ["urn:demeter:ObservationI/1a","urn:demeter:ObservationI/2a","urn:demeter:ObservationI/3a", "urn:demeter:ObservationI/4a","urn:demeter:ObservationI/5a","urn:demeter:ObservationI/6a","urn:demeter:ObservationI/7a","urn:demeter:ObservationI/8a","urn:demeter:ObservationI/9a","urn:demeter:ObservationI/10a","urn:demeter:ObservationI/11a", "urn:demeter:ObservationI/12a","urn:demeter:ObservationI/13a","urn:demeter:ObservationI/14a","urn:demeter:ObservationI/15a","urn:demeter:ObservationI/16a","urn:demeter:ObservationI/17a" ],
       "resultTime": "2018-02-01T12:36:12Z"
     },
     {
@@ -64,6 +68,20 @@
       "description": "Activity properties collection1",
       "hasMember": ["urn:demeter:ObservationA/1a","urn:demeter:ObservationA/2a","urn:demeter:ObservationA/3a"],
       "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#animalActivity"
+    },
+    {
+      "@id": "urn:demeter:ObservationCollection/4a",
+      "@type": "ObservationCollection",
+      "description": "Rumination properties collection1",
+      "hasMember": ["urn:demeter:ObservationR/1a","urn:demeter:ObservationR/2a","urn:demeter:ObservationR/3a"],
+      "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#averageRuminationTime"
+    }, 
+    {
+      "@id": "urn:demeter:ObservationCollection/5a",
+      "@type": "ObservationCollection",
+      "description": "Ingestion properties collection1",
+      "hasMember": ["urn:demeter:ObservationIN/1a","urn:demeter:ObservationIN/2a","urn:demeter:ObservationIN/3a"],
+      "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#averageIngestionTime"
     },            
   	{
   		"@id": "urn:demeter:ObservationI/1a",
@@ -155,6 +173,18 @@
       "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#predictedMastitis" ,
       "hasResult": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick"
   	},
+    {
+  		"@id": "urn:demeter:ObservationI/16a",
+      "@type": "Observation",
+      "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#actualHeatStress" ,
+      "hasResult": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Stressed"
+    },
+    {
+  		"@id": "urn:demeter:ObservationI/17a",
+      "@type": "Observation",
+      "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#predictedHeatStress" ,
+      "hasResult": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy"
+  	},
   	{
   		"@id": "urn:demeter:ObservationC/1a",
       "@type": "Observation",
@@ -192,18 +222,54 @@
       "resultTime": "2018-02-01T18:36:12Z"
     },
     {
+  		"@id": "urn:demeter:ObservationR/1a",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationR/1ar", "@type": "QuantityValue", "numericValue": "163", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T10:36:12Z"
+  	},
+  	{
+  		"@id": "urn:demeter:ObservationR/2a",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationR/2ar", "@type": "QuantityValue", "numericValue": "167", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T11:36:12Z"
+  	},
+  	{
+  		"@id": "urn:demeter:ObservationR/3a",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationR/3ar", "@type": "QuantityValue", "numericValue": "207", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T18:36:12Z"
+    },
+	  {
+  		"@id": "urn:demeter:ObservationIN/1a",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationIN/1ar", "@type": "QuantityValue", "numericValue": "138", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T10:36:12Z"
+  	},
+  	{
+  		"@id": "urn:demeter:ObservationIN/2a",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationIN/2ar", "@type": "QuantityValue", "numericValue": "143", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T11:36:12Z"
+  	},
+  	{
+  		"@id": "urn:demeter:ObservationIN/3a",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationIN/3ar", "@type": "QuantityValue", "numericValue": "109", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T18:36:12Z"
+    },
+    {
       "@id": "urn:demeter:72d9fb43-53f8-4ec8-a33c-fa931360259b",
       "@type": "HealthPrediction",
       "identifier": "6",
       "description": "Health Prediction collection of observations2",
-      "hasMember": ["urn:demeter:ObservationCollection/1b","urn:demeter:ObservationCollection/2b","urn:demeter:ObservationCollection/3b"],
+      "hasMember": ["urn:demeter:ObservationCollection/1b","urn:demeter:ObservationCollection/2b","urn:demeter:ObservationCollection/3b","urn:demeter:ObservationCollection/4b","urn:demeter:ObservationCollection/5b"],
       "hasFeatureOfInterest": "urn:demeter:animal2"
     },
     {
       "@id": "urn:demeter:ObservationCollection/1b",
       "@type": "ObservationCollection",
       "description": "Individual properties collection2",
-      "hasMember": ["urn:demeter:ObservationI/1b", "urn:demeter:ObservationI/2b","urn:demeter:ObservationI/3b", "urn:demeter:ObservationI/4b", "urn:demeter:ObservationI/5b" ,"urn:demeter:ObservationI/6b", "urn:demeter:ObservationI/7b","urn:demeter:ObservationI/8b","urn:demeter:ObservationI/9b","urn:demeter:ObservationI/10b","urn:demeter:ObservationI/11b","urn:demeter:ObservationI/12b","urn:demeter:ObservationI/13b","urn:demeter:ObservationI/14b","urn:demeter:ObservationI/15b" ],      
+      "hasMember": ["urn:demeter:ObservationI/1b", "urn:demeter:ObservationI/2b","urn:demeter:ObservationI/3b", "urn:demeter:ObservationI/4b", "urn:demeter:ObservationI/5b" ,"urn:demeter:ObservationI/6b", "urn:demeter:ObservationI/7b","urn:demeter:ObservationI/8b","urn:demeter:ObservationI/9b","urn:demeter:ObservationI/10b","urn:demeter:ObservationI/11b","urn:demeter:ObservationI/12b","urn:demeter:ObservationI/13b","urn:demeter:ObservationI/14b","urn:demeter:ObservationI/15b","urn:demeter:ObservationI/16b","urn:demeter:ObservationI/17b" ],      
       "resultTime": "2018-06-01T12:36:12Z"
     },
     {
@@ -219,6 +285,20 @@
       "description": "Activity properties collection2",
       "hasMember": [ "urn:demeter:ObservationA/1b", "urn:demeter:ObservationA/2b","urn:demeter:ObservationA/3b"],
       "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#animalActivity"
+    },
+    {
+      "@id": "urn:demeter:ObservationCollection/4b",
+      "@type": "ObservationCollection",
+      "description": "Rumination properties collection2",
+      "hasMember": [ "urn:demeter:ObservationR/1b", "urn:demeter:ObservationR/2b","urn:demeter:ObservationR/3b"],
+      "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#averageRuminationTime"
+    },   
+    {
+      "@id": "urn:demeter:ObservationCollection/5b",
+      "@type": "ObservationCollection",
+      "description": "Ingestion properties collection2",
+      "hasMember": [ "urn:demeter:ObservationIN/1b", "urn:demeter:ObservationIN/2b","urn:demeter:ObservationIN/3b"],
+      "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#averageIngestionTime"
     },            
   	{
   		"@id": "urn:demeter:ObservationI/1b",
@@ -310,6 +390,18 @@
       "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#predictedMastitis" ,
       "hasResult": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Sick"
   	},
+    {
+  		"@id": "urn:demeter:ObservationI/16b",
+      "@type": "Observation",
+      "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#actualHeatStress" ,
+      "hasResult": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Healthy"
+    },
+    {
+  		"@id": "urn:demeter:ObservationI/17b",
+      "@type": "Observation",
+      "observedProperty": "https://w3id.org/demeter/agri/ext/livestockFeature#predictedHeatStress" ,
+      "hasResult": "https://w3id.org/demeter/agri/ext/livestockFeature#healthStatus-Stressed"
+  	},
   	{
   		"@id": "urn:demeter:ObservationC/1b",
       "@type": "Observation",
@@ -345,7 +437,42 @@
       "@type": "Observation",
       "hasResult": [{ "@id":"urn:demeter:ObservationA/3br", "@type": "QuantityValue", "numericValue": "276", "unit": "qudt-unit:xyz" }],
       "resultTime": "2018-02-01T18:36:12Z"
-  	}
-  	
+  	},
+    {
+  		"@id": "urn:demeter:ObservationR/1b",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationR/1br", "@type": "QuantityValue", "numericValue": "118", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T10:36:12Z"
+  	},
+  	{
+  		"@id": "urn:demeter:ObservationR/2b",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationR/2br", "@type": "QuantityValue", "numericValue": "100", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T11:36:12Z"
+  	},
+  	{
+  		"@id": "urn:demeter:ObservationR/3b",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationR/3br", "@type": "QuantityValue", "numericValue": "142", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T18:36:12Z"
+    },
+	{
+  		"@id": "urn:demeter:ObservationIN/1b",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationIN/1br", "@type": "QuantityValue", "numericValue": "48", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T10:36:12Z"
+  	},
+  	{
+  		"@id": "urn:demeter:ObservationIN/2b",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationIN/2br", "@type": "QuantityValue", "numericValue": "57", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T11:36:12Z"
+  	},
+  	{
+  		"@id": "urn:demeter:ObservationIN/3b",
+      "@type": "Observation",
+      "hasResult": [{ "@id":"urn:demeter:ObservationIN/3br", "@type": "QuantityValue", "numericValue": "58", "unit": "qudt-unit:xyz" }],
+      "resultTime": "2018-02-01T18:36:12Z"
+    }  
 ]  
 }

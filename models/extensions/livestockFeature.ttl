@@ -39,8 +39,8 @@
                             owl:imports <https://w3id.org/demeter/agri/farmAnimal/2.0> ;
                             dct:description     "LivestockFeature contains : \n
                             1) HealthPrediction : data on milk production, fats, proteins, electrical conductivity, \n
-                            detected in the milk produced, the activity and rest of the cows, determined by the pedometer, the health status \n
-                            of the cows for the pathologies of lameness, mastitis and ketosis ;\n
+                            detected in the milk produced, the activity and rest of the cows, their time of rumination and ingestion, determined by the pedometer and the Afi Collar, the health status \n
+                            of the cows for the pathologies of lameness, mastitis and ketosis and for the heat stress;\n
                             2) MilkQualityPrediction : data relating to the analysis of milk samples and the degrees of milk quality. "@en ;
                             dct:title "DEMETER LivestockFeature"@en ;
                             rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
@@ -292,6 +292,42 @@ livestock-ft:processedAccuracy rdf:type owl:DatatypeProperty ;
               rdfs:label "processedAccuracy" ;
               rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .              
 
+###  https://w3id.org/demeter/agri/ext/livestockFeature#heatStressTruePositiveRate
+livestock-ft:heatStressTruePositiveRate rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf livestock-ft:predictionMetricProperty ;
+              rdfs:range xsd:decimal ;
+              rdfs:domain livestock-ft:PredictionMetric ;
+              rdfs:comment "heatStressTruePositiveRate" ;
+              rdfs:label "heatStressTruePositiveRate" ;
+              rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+###  https://w3id.org/demeter/agri/ext/livestockFeature#heatStressFalsePositiveRate
+livestock-ft:heatStressFalsePositiveRate rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf livestock-ft:predictionMetricProperty ;
+              rdfs:range xsd:decimal ;
+              rdfs:domain livestock-ft:PredictionMetric ;
+              rdfs:comment "heatStressFalsePositiveRate" ;
+              rdfs:label "heatStressFalsePositiveRate" ;
+              rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+###  https://w3id.org/demeter/agri/ext/livestockFeature#heatStressPrecision
+livestock-ft:heatStressPrecision rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf livestock-ft:predictionMetricProperty ;
+              rdfs:range xsd:decimal ;
+              rdfs:domain livestock-ft:PredictionMetric ;
+              rdfs:comment "heatStressPrecision" ;
+              rdfs:label "heatStressPrecision" ;
+              rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+###  https://w3id.org/demeter/agri/ext/livestockFeature#heatStressAccuracy
+livestock-ft:heatStressAccuracy rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf livestock-ft:predictionMetricProperty ;
+              rdfs:range xsd:decimal ;
+              rdfs:domain livestock-ft:PredictionMetric ;
+              rdfs:comment "heatStressAccuracy" ;
+              rdfs:label "heatStressAccuracy" ;
+              rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
 #### JG extensions
 ###  https://w3id.org/demeter/agri/ext/livestockFeature#numberOfLactation
 livestock-ft:numberOfLactation rdf:type owl:DatatypeProperty ;
@@ -330,8 +366,8 @@ livestock-ft:predictionTime rdf:type owl:DatatypeProperty ;
 livestock-ft:HealthPrediction rdf:type owl:Class ; 
 			rdfs:subClassOf sosa:ObservationCollection ;
       rdfs:comment "Data on milk production, fats, proteins, electrical conductivity, detected in the milk produced,
-      							the activity and rest of the cows, determined by the pedometer, the health status of the cows,
-      							detected and predicted by the relative algorithm, for the pathologies of lameness, mastitis and ketosis."@en ;
+      							the activity and rest of the cows, their time of rumination and ingestion, determined by the pedometer and the Afi Collar,
+      							the health status of the cows, detected and predicted by the relative algorithm, for the pathologies of lameness, mastitis and ketosis and for the heat stress."@en ;
       rdfs:label "HealthPrediction" ;
       rdfs:subClassOf [ a owl:Restriction ; owl:onProperty sosa:hasFeatureOfInterest ; owl:allValuesFrom fiware:Animal ] ;
       rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
@@ -361,10 +397,11 @@ livestock-ft:PredictionMetric rdf:type owl:Class ;
 livestock-ft:HealthStatus a owl:Class;
         rdfs:subClassOf skos:Concept ;
         rdfs:label "HealthStatus"@en;
-        rdfs:comment "State of health for different pathologies"@en;
+        rdfs:comment "State of health for different pathologies and heat stress"@en;
         rdfs:seeAlso livestock-ft:healthStatus  ;
         owl:oneOf (livestock-ft:healthStatus-Healthy 
-                   livestock-ft:healthStatus-Sick) ;
+                   livestock-ft:healthStatus-Sick 
+                   livestock-ft:healthStatus-Stressed) ;
         rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
 
 livestock-ft:healthStatus-Healthy a skos:Concept, livestock-ft:HealthStatus;
@@ -377,6 +414,12 @@ livestock-ft:healthStatus-Sick a skos:Concept, livestock-ft:HealthStatus;
         skos:topConceptOf livestock-ft:healthStatus;
         skos:prefLabel "Sick"@en ;
         skos:notation "Sick" ;
+        skos:inScheme livestock-ft:healthStatus . 
+
+livestock-ft:healthStatus-Stressed a skos:Concept, livestock-ft:HealthStatus;
+        skos:topConceptOf livestock-ft:healthStatus;
+        skos:prefLabel "Stressed"@en ;
+        skos:notation "Stressed" ;
         skos:inScheme livestock-ft:healthStatus . 
 
 livestock-ft:healthStatus a skos:ConceptScheme ;
@@ -600,6 +643,30 @@ livestock-ft:predictedQuality	rdf:type owl:NamedIndividual, sosa:ObservablePrope
         rdfs:label   		   "predictedQuality"^^xsd:string ;
         rdfs:comment		   "predictedQuality" ;
         rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#averageRuminationTime
+livestock-ft:averageRuminationTime rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		       "averageRuminationTime"^^xsd:string ;
+        rdfs:comment		       "Mean time of rumination" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#averageIngestionTime
+livestock-ft:averageIngestionTime rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;     
+        rdfs:label   		       "averageIngestionTime"^^xsd:string ;
+        rdfs:comment		       "Mean time of ingestion" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .
+
+### https://w3id.org/demeter/agri/ext/livestockFeature#actualHeatStress
+livestock-ft:actualHeatStressed	rdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "actualHeatStressed"^^xsd:string ;
+        rdfs:comment		   "Cow stress by the heat - Visual diagnosis" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .					
+        
+### https://w3id.org/demeter/agri/ext/livestockFeature#predictedHeatStress
+livestock-ft:predictedHeatStressedrdf:type owl:NamedIndividual, sosa:ObservableProperty, qudt:QuantityKind ;      
+        rdfs:label   		   "predictedHeatStressed"^^xsd:string ;
+        rdfs:comment		   "Cow stress by the heat - Prediction made by the algorithm" ;
+        rdfs:isDefinedBy <https://w3id.org/demeter/agri/ext/livestockFeature#> .					
 
 #### JG extensions
 ### https://w3id.org/demeter/agri/ext/livestockFeature#feed
