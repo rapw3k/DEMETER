@@ -78,6 +78,8 @@
 
 ###  https://w3id.org/def/saref4agri#managesFarm
 saref4agri:managesFarm rdf:type owl:ObjectProperty ;
+             rdfs:comment "This object property relates the entity class who manages a farm" ;
+             rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/v1.1.2/> ;
              rdfs:label "manages farm"@en .
 
 ### https://uri.fiware.org/ns/data-models#agroVocConcept
@@ -100,19 +102,21 @@ demeterAgriCommon:eppoConcept	a      owl:ObjectProperty ;
 demeterAgriCommon:userName rdf:type owl:DatatypeProperty ;
          rdfs:range xsd:string ;
          rdfs:label "User Name" ;
+         rdfs:comment "A relation to the user name of an entity and of range string" ;
          rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .
 
 ###  https://w3id.org/demeter/agri/agriCommon#password
 demeterAgriCommon:password rdf:type owl:DatatypeProperty ;
          rdfs:range xsd:string ;
          rdfs:label "Password" ;
+         rdfs:comment "Password associated with an user name" ;
          rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .
 
 ###  https://w3id.org/def/saref4agri#hasName
 saref4agri:hasName rdf:type owl:DatatypeProperty ;
          rdfs:range xsd:string ;
-         rdfs:label "A relation to express the name of an entity (e.g.,animal)." ,
-                    "has name" ;
+         rdfs:label "has name" ;
+        rdfs:comment "A relation to express the name of an entity (e.g.,animal)."  ;
          rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
 
 ###  https://w3id.org/saref#hasDescription
@@ -126,6 +130,7 @@ saref4agri:hasName rdf:type owl:DatatypeProperty ;
 <https://w3id.org/saref#hasTimestamp> rdf:type owl:DatatypeProperty ;
                                       rdfs:range      xsd:dateTime ;  
                                       rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                      rdfs:comment "A relationship stating the timestamp of an entity (e.g. a measurement)." ;
                                       rdfs:label "has timestamp"@en .                                                           
 
 ###  http://www.w3.org/ns/prov#generatedAtTime
@@ -148,42 +153,56 @@ prov:invalidatedAtTime
 foodie:code  a          owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "code"@en ;
+        rdfs:label "code" ;
+        rdfs:comment "Unique identification of an ActiveIngredient" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#description        
 foodie:description  a   owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "description"@en ;
+        rdfs:label "description" ;
+        rdfs:comment "Any further information related to an entity that may help for a better understanding" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#notes        
 foodie:notes  a         owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "notes"@en ;
+        rdfs:label "notes" ;
+        rdfs:comment "Relation depicting additional information for a recource or entity." ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
 
 ###  http://foodie-cloud.com/model/foodie#price                
 foodie:price  a         owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "price"@en ;
+        rdfs:label "price" ;
+        rdfs:comment "Relation depicting price of a any resource e.g. Product, Treatment etc" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
         
 ###  http://foodie-cloud.com/model/foodie#type        
 foodie:type  a          owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "type"@en ;
+        rdfs:label "type" ;
+        rdfs:comment "Relation specifying the type of an Intervetion" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
         				
 ###  <http://portele.de/ont/inspire/baseInspire#validFrom> 
 common:validFrom	a      owl:DatatypeProperty ;
         rdfs:range       xsd:dateTime ;
         skos:prefLabel   "begin of real-world phenomenon"@en ;
+        rdfs:label "valid from" ;
+        rdfs:comment "begin of real-world phenomenon" ;
         rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
 
 ###  <http://portele.de/ont/inspire/baseInspire#validTo> 
 common:validTo	a        owl:DatatypeProperty ;
         rdfs:range       xsd:dateTime ;        
         skos:prefLabel   "end of real-world phenomenon"@en ;
+        rdfs:label "valid to" ;
+        rdfs:comment "end of real-world phenomenon" ;
         rdfs:isDefinedBy <http://portele.de/ont/inspire/baseInspire#> .
         
 ### https://uri.fiware.org/ns/data-models#createdAt
@@ -299,6 +318,7 @@ saref4agri:FarmHolding rdf:type owl:Class ;
                                owl:allValuesFrom xsd:string
                              ] ;
              rdfs:comment "A class to decsribe a saref4agri farm holding as subcass of an org:Organization" ;
+             rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/v1.1.2/> ;
              rdfs:label "Farm holding"@en .
 
 
@@ -314,11 +334,13 @@ saref4agri:Farmer rdf:type owl:Class ;
                           owl:allValuesFrom xsd:string
                         ] ;
         rdfs:comment "A class to decsribe a saref4agri farmer as subcass of a foaf:Person" ;
+        rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/v1.1.2/> ;
         rdfs:label "Farmer"@en .
 
 ###  http://purl.obolibrary.org/obo/TAXRANK_0000000
 <http://purl.obolibrary.org/obo/TAXRANK_0000000> rdf:type owl:Class ;
                                                  rdfs:label "taxonomic_rank"@en ;
+                                                 rdfs:comment "Taxonomic rank of an entity" ;
                                                  rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .
 
 ###  https://w3id.org/demeter/agri/agriCommon#Image
