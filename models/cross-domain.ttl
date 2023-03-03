@@ -17,6 +17,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix aim-core: <https://w3id.org/demeter/core> .
 @prefix schema: <https://schema.org/> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
@@ -51,10 +52,9 @@
                                          dct:description "The DEMETER cross domain ontology i) defines concepts and terms that are generic and applicable to various domains; ii) avoids conflicting or redundant definitions of the same concept in different domain specific models; iii) provides the basis for interoperability. The ontology is specified by reusing concepts and terms from a number of standard ontologies and vocabularies including OGC/W3C SOSA/SSN, OGC GeoSparql, W3C RDF data cube, QUDT, FOAF, schema.org and others. It includes alignment to ISO standards and with DEMETER core meta-model (NGSI-LD)."@en ;
                                          dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                                          dct:title "DEMETER Cross-Domain"@en ;
-                                         rdfs:label "Cross Domain"@en ;
+                                         rdfs:label "DEMETER Cross Domain"@en ;
                                          rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
                                          owl:versionInfo "1.0" ;
-                                         rdfs:isDefinedBy <https://w3id.org/demeter/crossDomain> ;
                                          foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
                                                       foaf:name "DEMETER project"
                                                     ] .
@@ -65,74 +65,103 @@
 
 ###  http://purl.org/dc/terms/contributor
 dct:contributor a owl:AnnotationProperty ;
-                rdfs:label "contributor" ;
-                rdfs:comment "The guidelines for using names of persons or organizations as creators apply to contributors." ;
-                rdfs:isDefinedBy <http://purl.org/dc/terms/contributor> .
-
+                rdfs:label "Contributor" ;
+                rdfs:comment "An entity responsible for making contributions to the content of the resource" ;
+                rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 ###  http://purl.org/dc/terms/creator
 dct:creator a owl:AnnotationProperty ;
-            rdfs:label "creator" ;
-            rdfs:comment "Recommended practice is to identify the creator with a URI. If this is not possible or feasible, a literal value that identifies the creator may be provided." ;
-            rdfs:isDefinedBy <http://purl.org/dc/terms/creator> .
-
-
+            rdfs:label "Creator" ;
+            rdfs:comment "An entity primarily responsible for making the content of the resource" ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 ###  http://purl.org/dc/terms/date
 dct:date a owl:AnnotationProperty ;
-        rdfs:label "date" ;
-        rdfs:comment "Date may be used to express temporal information at any level of granularity. Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [ISO 8601-1] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [W3CDTF] or the Extended Date/Time Format Specification [EDTF]. If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a '/' (slash) character. Either the start or end date may be missing." ;
-        rdfs:isDefinedBy <http://purl.org/dc/terms/date> .
+        rdfs:label "Date" ;
+        rdfs:comment "A date associated with an event in the life cycle of the resource" ;
+        rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 ###  http://purl.org/dc/terms/description
 dct:description a owl:AnnotationProperty ;
-            rdfs:label "description" ;
-            rdfs:comment "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource." ;
-            rdfs:isDefinedBy <http://purl.org/dc/terms/description> .
+            rdfs:label "Description" ;
+            rdfs:comment "An account of the content of the resource" ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 
 ###  http://purl.org/dc/terms/identifier
-dct:identifier a owl:AnnotationProperty .
+dct:identifier a owl:AnnotationProperty ;
+              rdfs:label "Resource Identifier" ;
+              rdfs:comment "An unambiguous reference to the resource within a given context" ;
+              rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 
 ###  http://purl.org/dc/terms/rights
-dct:rights a owl:AnnotationProperty .
+dct:rights a owl:AnnotationProperty ;
+          rdfs:label "Rights Management" ;
+          rdfs:comment "Information about rights held in and over the resource" ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 
 ###  http://purl.org/dc/terms/title
-dct:title a owl:AnnotationProperty .
-
+dct:title a owl:AnnotationProperty ;
+          rdfs:label "Title" ;
+          rdfs:comment "A name given to the resource" ;
+          rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 ###  http://www.w3.org/2004/02/skos/core#definition
-skos:definition a owl:AnnotationProperty .
+skos:definition a owl:AnnotationProperty ;
+                rdfs:label "definition" ;
+                rdfs:comment "A statement or formal explanation of the meaning of a concept" ;
+                rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 
 ###  http://www.w3.org/2004/02/skos/core#example
-skos:example a owl:AnnotationProperty .
+skos:example a owl:AnnotationProperty ;
+            rdfs:label "example" ;
+            rdfs:comment "An example of the use of a concept" ;
+            rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 
 ###  http://www.w3.org/2004/02/skos/core#inScheme
-skos:inScheme a owl:AnnotationProperty .
+skos:inScheme a owl:AnnotationProperty ;
+              rdfs:label "is in scheme" ;
+              rdfs:comment "Relates a resource (for example a concept) to a concept scheme in which it is included" ;
+              rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 
 ###  http://www.w3.org/2004/02/skos/core#prefLabel
-skos:prefLabel a owl:AnnotationProperty .
+skos:prefLabel a owl:AnnotationProperty ;
+              rdfs:label "preferred label" ;
+              rdfs:comment "The preferred lexical label for a resource, in a given language" ;
+              rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
 
 
 ###  http://xmlns.com/foaf/0.1/depiction
-foaf:depiction a owl:AnnotationProperty .
+foaf:depiction a owl:AnnotationProperty ;
+              rdfs:label "depiction" ;
+              rdfs:comment "A depiction of some thing" ;
+              rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
 
 ###  http://xmlns.com/foaf/0.1/homepage
-foaf:homepage a owl:AnnotationProperty .
+foaf:homepage a owl:AnnotationProperty ;
+              rdfs:label "homepage" ;
+              rdfs:comment "A homepage for some thing" ;
+              rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
 
 ###  http://xmlns.com/foaf/0.1/maker
-foaf:maker a owl:AnnotationProperty .
+foaf:maker a owl:AnnotationProperty ;
+          rdfs:label "maker" ;
+          rdfs:comment "An agent that made this thing" ;
+          rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
 
 ###  http://xmlns.com/foaf/0.1/name
-foaf:name a owl:AnnotationProperty .
+foaf:name a owl:AnnotationProperty ;
+          rdfs:label "name" ;
+          rdfs:comment "A name for some thing" ;
+          rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
 #################################################################
 #    RDF properties
@@ -462,6 +491,7 @@ foaf:member a owl:ObjectProperty ;
             rdfs:label "member" .
 
 ##### DATACUBE
+###  http://purl.org/linked-data/cube#dimension
 qb:dimension 
 		a rdf:Property, owl:ObjectProperty;
     rdfs:label "dimension"@en;
@@ -469,7 +499,8 @@ qb:dimension
     rdfs:subPropertyOf qb:componentProperty;
     rdfs:range qb:DimensionProperty;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
-	
+
+###  http://purl.org/linked-data/cube#componentAttachment	
 qb:componentAttachment 
 		a rdf:Property;
     rdfs:label "component attachment"@en;
@@ -478,6 +509,7 @@ qb:componentAttachment
     rdfs:range  rdfs:Class;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
+###  http://purl.org/linked-data/cube#componentProperty	
 qb:componentProperty 
 		a rdf:Property, owl:ObjectProperty;
     rdfs:label "component"@en;
@@ -486,6 +518,7 @@ qb:componentProperty
     rdfs:range qb:ComponentProperty;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
+###  http://purl.org/linked-data/cube#concept
 qb:concept 
 		a rdf:Property, owl:ObjectProperty;
     rdfs:label "concept"@en;
@@ -493,7 +526,8 @@ qb:concept
     rdfs:domain qb:ComponentProperty;
     rdfs:range skos:Concept;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
-	
+
+###  http://purl.org/linked-data/cube#observationGroup	
 qb:observationGroup 
 		a rdf:Property, owl:ObjectProperty;
     rdfs:label "observation group"@en;
@@ -501,6 +535,7 @@ qb:observationGroup
     rdfs:range qb:ObservationGroup;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> . 
 	
+###  http://purl.org/linked-data/cube#slice
 qb:slice 
 		a rdf:Property, owl:ObjectProperty;
     rdfs:subPropertyOf qb:observationGroup;
@@ -509,7 +544,8 @@ qb:slice
     rdfs:domain qb:DataSet;
     rdfs:range qb:Slice;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
-	
+
+###  http://purl.org/linked-data/cube#component	
 qb:component 
 		a rdf:Property, owl:ObjectProperty;
     rdfs:label "component specification"@en;
@@ -517,7 +553,8 @@ qb:component
     rdfs:domain qb:DataStructureDefinition;
     rdfs:range qb:ComponentSpecification;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
-	
+
+###  http://purl.org/linked-data/cube#sliceKey	
 qb:sliceKey 
 		a rdf:Property, owl:ObjectProperty;
     rdfs:label "slice key"@en;
@@ -525,7 +562,8 @@ qb:sliceKey
     rdfs:domain qb:DataStructureDefinition;
     rdfs:range  qb:SliceKey;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
-	
+
+###  http://purl.org/linked-data/cube#measure	
 qb:measure 
 		a rdf:Property, owl:ObjectProperty;
     rdfs:label "measure"@en;
@@ -534,6 +572,7 @@ qb:measure
     rdfs:range qb:MeasureProperty;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
+###  http://purl.org/linked-data/cube#sliceStructure
 qb:sliceStructure 
 		a rdf:Property, owl:ObjectProperty;
     rdfs:label "slice structure"@en;
@@ -542,6 +581,7 @@ qb:sliceStructure
     rdfs:range  qb:SliceKey;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
+###  http://purl.org/linked-data/cube#observation
 qb:observation 
 		a rdf:Property, owl:ObjectProperty;
     rdfs:label "observation"@en;
@@ -550,6 +590,7 @@ qb:observation
     rdfs:range qb:Observation;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
+###  http://purl.org/linked-data/cube#dataSet
 qb:dataSet 
 		a rdf:Property, owl:ObjectProperty;
     rdfs:label "data set"@en;
@@ -559,13 +600,15 @@ qb:dataSet
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 
 ##### QUDT
+###  http://qudt.org/schema/qudt/unit
 qudt:unit
   	a owl:ObjectProperty ;  
   	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   	rdfs:label "unit" ;
     rdfs:comment "A reference to the unit of measure of a quantity (variable or constant) of interest." ;
   	rdfs:range qudt:Unit .
-  	
+
+###  http://qudt.org/schema/qudt/quantityValue  	
 qudt:quantityValue
   	a owl:ObjectProperty ;
   	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
@@ -573,6 +616,7 @@ qudt:quantityValue
     rdfs:comment "A reference to the value of a quantity" ;
   	rdfs:range qudt:QuantityValue .
 
+###  http://qudt.org/schema/qudt/hasQuantityKind 
 qudt:hasQuantityKind
   	a owl:ObjectProperty ;
   	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
@@ -581,6 +625,7 @@ qudt:hasQuantityKind
   	rdfs:range qudt:QuantityKind .
 
 ##### TIME
+###  http://www.w3.org/2006/time#hasBeginning
 time:hasBeginning
   a owl:ObjectProperty ;
   rdfs:comment "Beginning of a temporal entity"@en ;
@@ -590,6 +635,7 @@ time:hasBeginning
   rdfs:subPropertyOf time:hasTime ;
   skos:definition "Beginning of a temporal entity."@en .
 
+###  http://www.w3.org/2006/time#hasEnd
 time:hasEnd
   a owl:ObjectProperty ;
   rdfs:comment "End of a temporal entity."@en ;
@@ -599,6 +645,7 @@ time:hasEnd
   rdfs:subPropertyOf time:hasTime ;
   skos:definition "End of a temporal entity."@en .
 
+###  http://www.w3.org/2006/time#hasTime
 time:hasTime
   a owl:ObjectProperty ;
   rdfs:comment "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
@@ -607,6 +654,7 @@ time:hasTime
   skos:definition "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
   skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en .
 
+###  http://www.w3.org/2006/time#unitType
 time:unitType
   a owl:ObjectProperty ;
   rdfs:comment "The temporal unit which provides the precision of a date-time value or scale of a temporal extent"@en ;
@@ -614,6 +662,7 @@ time:unitType
   rdfs:range time:TemporalUnit .
 
 ##### ISO
+###  http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature
 iso19156_SF:SF_SamplingFeature.sampledFeature 
   a owl:ObjectProperty ;
   rdfs:label "sampledFeature" ;
@@ -690,6 +739,7 @@ sosa:resultTime
   rdfs:isDefinedBy sosa: .
 
 ##### DATACUBE
+###  http://purl.org/linked-data/cube#order
 qb:order a owl:DatatypeProperty;
     rdfs:label "order"@en;
     rdfs:comment """indicates a priority order for the components of sets with this structure, used to guide presentations - lower order numbers come before higher numbers, un-numbered components come last"""@en;
@@ -698,12 +748,14 @@ qb:order a owl:DatatypeProperty;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> . 
 
 ##### QUDT
+###  http://qudt.org/schema/qudt/numericValue
 qudt:numericValue
   a owl:DatatypeProperty ;
   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   rdfs:label "numeric value" .
 
 ##### TIME
+###  http://www.w3.org/2006/time#inXSDDate
 time:inXSDDate
   a owl:DatatypeProperty ;
   rdfs:comment "Position of an instant, expressed using xsd:date"@en ;
@@ -713,6 +765,7 @@ time:inXSDDate
   rdfs:isDefinedBy time: ;
   skos:definition "Position of an instant, expressed using xsd:date"@en .
 
+###  http://www.w3.org/2006/time#inXSDDateTimeStamp
 time:inXSDDateTimeStamp
   a owl:DatatypeProperty ;
   rdfs:comment "Position of an instant, expressed using xsd:dateTimeStamp"@en ;
@@ -722,6 +775,7 @@ time:inXSDDateTimeStamp
   rdfs:isDefinedBy time: ;
   skos:definition "Position of an instant, expressed using xsd:dateTimeStamp"@en .
 
+###  http://www.w3.org/2006/time#numericDuration
 time:numericDuration
   a owl:DatatypeProperty ;
   rdfs:comment "Value of a temporal extent expressed as a decimal number scaled by a temporal unit"@en ;
@@ -730,7 +784,23 @@ time:numericDuration
   rdfs:range xsd:decimal ;
   rdfs:isDefinedBy time: ;
   skos:definition "Value of a temporal extent expressed as a decimal number scaled by a temporal unit"@en .
-  
+
+##### PROV  
+###  http://www.w3.org/ns/prov#generatedAtTime
+prov:generatedAtTime
+				a								owl:DatatypeProperty ;
+				rdfs:label 			"generatedAtTime" ;
+				rdfs:comment		"The time at which an entity was completely created and is available for use."@en ;
+				rdfs:range 			xsd:dateTime ;
+				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
+
+###  http://www.w3.org/ns/prov#invalidatedAtTime				
+prov:invalidatedAtTime
+				a								owl:DatatypeProperty ;
+				rdfs:label			"invalidatedAtTime" ;
+				rdfs:comment		"The time at which an entity was invalidated (i.e., no longer usable)."@en ;
+				rdfs:range			xsd:dateTime ;
+				rdfs:isDefinedBy	<http://www.w3.org/ns/prov-o#> .
 
 #################################################################
 #    Classes
@@ -1319,39 +1389,46 @@ schema:Role a owl:Class ;
             rdfs:label "Role"@en .
 
 #### DATACUBE
+###  http://purl.org/linked-data/cube#Attachable
 qb:Attachable a rdfs:Class, owl:Class;
     rdfs:label "Attachable (abstract)"@en;
     rdfs:comment "Abstract superclass for everything that can have attributes and dimensions"@en;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
-	
+
+###  http://purl.org/linked-data/cube#ComponentSet	
 qb:ComponentSet a rdfs:Class, owl:Class;
     rdfs:label "Component set"@en;
     rdfs:comment "Abstract class of things which reference one or more ComponentProperties"@en;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
-	
+
+###  http://purl.org/linked-data/cube#ComponentProperty		
 qb:ComponentProperty a rdfs:Class, owl:Class;
     rdfs:label "Component property (abstract)"@en;
     rdfs:subClassOf rdf:Property;
     rdfs:comment "Abstract super-property of all properties representing dimensions, attributes or measures"@en;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
+###  http://purl.org/linked-data/cube#CodedProperty		
 qb:CodedProperty a rdfs:Class, owl:Class;
     rdfs:label "Coded property"@en;
     rdfs:subClassOf qb:ComponentProperty;
     rdfs:comment "Superclass of all coded ComponentProperties"@en;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 
+###  http://purl.org/linked-data/cube#ComponentSpecification
 qb:ComponentSpecification a rdfs:Class, owl:Class ;
     rdfs:label "Component specification"@en;
     rdfs:comment """Used to define properties of a component (attribute, dimension etc) which are specific to its usage in a DSD."""@en;
     rdfs:subClassOf qb:ComponentSet ;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 
+###  http://purl.org/linked-data/cube#ObservationGroup
 qb:ObservationGroup a rdfs:Class, owl:Class;
     rdfs:label "Observation Group"@en;
     rdfs:comment "A, possibly arbitrary, group of observations."@en;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
+###  http://purl.org/linked-data/cube#AttributeProperty
 qb:AttributeProperty a rdfs:Class, owl:Class;
     rdfs:label "Attribute property"@en;
     rdfs:comment "The class of components which represent attributes of observations in the cube, e.g. unit of measurement"@en;
@@ -1359,17 +1436,20 @@ qb:AttributeProperty a rdfs:Class, owl:Class;
     owl:disjointWith qb:MeasureProperty;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
+###  http://purl.org/linked-data/cube#DataSet
 qb:DataSet a rdfs:Class, owl:Class;
     rdfs:label "Data set"@en;
     rdfs:comment "Represents a collection of observations, possibly organized into various slices, conforming to some common dimensional structure."@en;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
+###  http://purl.org/linked-data/cube#DataStructureDefinition
 qb:DataStructureDefinition a rdfs:Class, owl:Class;
     rdfs:label "Data structure definition"@en;
     rdfs:comment "Defines the structure of a DataSet or slice"@en;
     rdfs:subClassOf qb:ComponentSet;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 
+###  http://purl.org/linked-data/cube#Slice
 qb:Slice a rdfs:Class, owl:Class;
     rdfs:subClassOf qb:ObservationGroup;
     rdfs:label "Slice"@en;
@@ -1377,12 +1457,14 @@ qb:Slice a rdfs:Class, owl:Class;
     rdfs:subClassOf qb:Attachable;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 	
+###  http://purl.org/linked-data/cube#SliceKey
 qb:SliceKey a rdfs:Class, owl:Class;
     rdfs:label "Slice key"@en;
     rdfs:comment "Denotes a subset of the component properties of a DataSet which are fixed in the corresponding slices"@en;
     rdfs:subClassOf qb:ComponentSet;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 
+###  http://purl.org/linked-data/cube#DimensionProperty
 qb:DimensionProperty a rdfs:Class, owl:Class;
     rdfs:label "Dimension property"@en;
     rdfs:comment "The class of components which represent the dimensions of the cube"@en;
@@ -1391,6 +1473,7 @@ qb:DimensionProperty a rdfs:Class, owl:Class;
     owl:disjointWith qb:MeasureProperty;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 
+###  http://purl.org/linked-data/cube#MeasureProperty
 qb:MeasureProperty a rdfs:Class, owl:Class;
     rdfs:label "Measure property"@en;
     rdfs:comment "The class of components which represent the measured value of the phenomenon being observed"@en;
@@ -1398,7 +1481,8 @@ qb:MeasureProperty a rdfs:Class, owl:Class;
     owl:disjointWith qb:AttributeProperty;
     owl:disjointWith qb:DimensionProperty;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
-	
+
+###  http://purl.org/linked-data/cube#Observation	
 qb:Observation a rdfs:Class, owl:Class;
     rdfs:label "Observation"@en;
     rdfs:comment "A single observation in the cube, may have one or more associated measured values"@en;
@@ -1406,6 +1490,7 @@ qb:Observation a rdfs:Class, owl:Class;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 
 #### QUDT 
+###  http://qudt.org/schema/qudt/Quantity
 qudt:Quantity
 		a owl:Class ;
     rdfs:comment """
@@ -1439,6 +1524,7 @@ qudt:Unit
   	rdfs:label "Unit" .	
 
 ### TIME
+###  http://www.w3.org/2006/time#TemporalEntity
 time:TemporalEntity
   a owl:Class ;
   rdfs:comment "A temporal interval or instant."@en ;
@@ -1450,6 +1536,7 @@ time:TemporalEntity
   rdfs:isDefinedBy time: ;  
   skos:definition "A temporal interval or instant."@en .    		
   	
+###  http://www.w3.org/2006/time#TemporalDuration
 time:TemporalDuration
   a owl:Class ;
   rdfs:comment "Time extent; duration of a time interval separate from its particular start position"@en ;
@@ -1457,6 +1544,7 @@ time:TemporalDuration
   rdfs:isDefinedBy time: ;
   skos:definition "Time extent; duration of a time interval separate from its particular start position"@en .
 
+###  http://www.w3.org/2006/time#TemporalUnit
 time:TemporalUnit
   a owl:Class ;
   rdfs:comment "A standard duration, which provides a scale factor for a time extent, or the granularity or precision for a time position."@en ;
@@ -1466,6 +1554,7 @@ time:TemporalUnit
   skos:definition "A standard duration, which provides a scale factor for a time extent, or the granularity or precision for a time position."@en ;
   skos:note "Membership of the class TemporalUnit is open, to allow for other temporal units used in some technical applications (e.g. millions of years, Baha'i month)."@en .
 
+###  http://www.w3.org/2006/time#Interval
 time:Interval
   a owl:Class ;
   rdfs:comment "A temporal entity with an extent or duration"@en ;
@@ -1474,6 +1563,7 @@ time:Interval
   rdfs:subClassOf time:TemporalEntity ;
   skos:definition "A temporal entity with an extent or duration"@en .
 
+###  http://www.w3.org/2006/time#Instant
 time:Instant
   a owl:Class ;
   rdfs:comment "A temporal entity with zero extent or duration"@en ;
@@ -1482,6 +1572,7 @@ time:Instant
   rdfs:subClassOf time:TemporalEntity ;
   skos:definition "A temporal entity with zero extent or duration"@en .
 
+###  http://www.w3.org/2006/time#Duration
 time:Duration
   a owl:Class ;
   rdfs:comment "Duration of a temporal extent expressed as a number scaled by a temporal unit"@en ;
@@ -1498,9 +1589,8 @@ skos:Scheme a owl:Class ;
             rdfs:comment "The Scheme class of SKOS Vocabulary" ;
             rdfs:isDefinedBy skos: .
 
-
-
 #### ISO FEATURES AND ALIGNMENTS
+###  http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature
 iso19156_GFI:GFI_Feature
   a owl:Class ;
   rdfs:label "GFI_Feature" ;
@@ -1508,6 +1598,7 @@ iso19156_GFI:GFI_Feature
   skos:definition "The class GFI_Feature (Figure 2) is an instance of the .og.metaclass.cg. GF_FeatureType (ISO 19109). It represents the set of all classes which are feature types. NOTE	GFI_Feature is implemented in GML (ISO 19136:2007) by the element gml:AbstractFeature and type gml:AbstractFeatureType. In an implementation this abstract class shall be substituted by a concrete class representing a feature type from an application schema associated with a domain of discourse (ISO 19109, ISO 19101). Sampling Features (Clause 8) are a class of feature-types whose role is primarily associated with observations. " ;
   rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> .
   
+###  http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_DomainFeature
 iso19156_GFI:GFI_DomainFeature
   a owl:Class ;
   rdfs:label "GFI_DomainFeature" ;
@@ -1516,6 +1607,7 @@ iso19156_GFI:GFI_DomainFeature
   rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> ;
   rdfs:subClassOf iso19156_GFI:GFI_Feature .
 
+###  http://def.isotc211.org/iso19156/2011/SamplingFeature#GFI_DomainFeature
 iso19156_SF:SF_SamplingFeature
   a owl:Class ;
   rdfs:label "SF_SamplingFeature" ;
@@ -1524,6 +1616,7 @@ iso19156_SF:SF_SamplingFeature
   rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> ;
   rdfs:subClassOf iso19156_GFI:GFI_Feature .
 
+###  http://def.isotc211.org/iso19156/2011/Observation#OM_Observation
 iso19156_OB:OM_Observation
   a owl:Class ;
   rdfs:label "Observation" ;
@@ -1531,6 +1624,7 @@ iso19156_OB:OM_Observation
   skos:definition "Observation process is a subtype of OM_Process. It is a process used to generate the result of the observation."  ;
   rdfs:isDefinedBy <https://www.iso.org/standard/44595.html> .  
 
+###  http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure
 iso19103:Measure a owl:Class ;
 	owl:deprecated "true"^^xsd:boolean .
 
@@ -1913,49 +2007,51 @@ quantity:torque a owl:NamedIndividual ,
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
 
 #### TIME
+###  http://www.w3.org/2006/time#unitDay
 time:unitDay
   a time:TemporalUnit ;
   rdfs:comment "Day (unit of temporal duration)" ;
   rdfs:isDefinedBy time: ;
   rdfs:label "Day (unit of temporal duration)"@en .
 
+###  http://www.w3.org/2006/time#unitHour
 time:unitHour
   a time:TemporalUnit ;
   rdfs:comment "Hour (unit of temporal duration)" ;
   rdfs:isDefinedBy time: ;
   rdfs:label "Hour (unit of temporal duration)"@en .
 
+###  http://www.w3.org/2006/time#unitMinute
 time:unitMinute
   a time:TemporalUnit ;
   rdfs:comment "Minute (unit of temporal duration)" ;
   rdfs:isDefinedBy time: ;
   rdfs:label "Minute (unit of temporal duration)"@en .
-  
+
+###  http://www.w3.org/2006/time#unitMonth  
 time:unitMonth
   a time:TemporalUnit ;
   rdfs:comment "Month (unit of temporal duration)" ;
   rdfs:isDefinedBy time: ;
   rdfs:label "Month (unit of temporal duration)"@en .
   
+###  http://www.w3.org/2006/time#unitSecond  
 time:unitSecond
   a time:TemporalUnit ;
   rdfs:comment "Second (unit of temporal duration)" ;
   rdfs:isDefinedBy time: ;
   rdfs:label "Second (unit of temporal duration)"@en .
 
+###  http://www.w3.org/2006/time#unitWeek  
 time:unitWeek
   a time:TemporalUnit ;
   rdfs:comment "Week (unit of temporal duration)" ;
   rdfs:isDefinedBy time: ;
   rdfs:label "Week (unit of temporal duration)"@en .
-  
+
+###  http://www.w3.org/2006/time#unitYear  
 time:unitYear
   a time:TemporalUnit ;
   rdfs:comment "Year (unit of temporal duration)" ;
   rdfs:isDefinedBy time: ;
   rdfs:label "Year (unit of temporal duration)"@en .
-
-#################################################################
-#    Annotations
-#################################################################
-

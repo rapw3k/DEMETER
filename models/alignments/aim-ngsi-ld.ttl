@@ -17,8 +17,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix aim-core: <https://w3id.org/demeter/core> .
-@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/v1/ontology#> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/> .
 @prefix schema: <https://schema.org/> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
 @prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
@@ -31,7 +32,7 @@
 @base <https://w3id.org/demeter/agri/> .
 
 
-###  https://uri.etsi.org/ngsi-ld/v1/ontology#Property
+###  https://uri.etsi.org/ngsi-ld/Property
 ngsi-ld:Property a owl:ObjectProperty, owl:Class ;
   rdfs:range [
     a owl:Class ;
@@ -42,7 +43,7 @@ ngsi-ld:Property a owl:ObjectProperty, owl:Class ;
   ] ;
   owl:disjointWith ngsi-ld:Relationship .
 
-###  https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship
+###  https://uri.etsi.org/ngsi-ld/Relationship
 ngsi-ld:Relationship a owl:ObjectProperty, owl:Class ;
   rdfs:domain ngsi-ld:Entity ;
   rdfs:range [
@@ -54,10 +55,10 @@ ngsi-ld:Relationship a owl:ObjectProperty, owl:Class ;
   ] ;
   owl:disjointWith ngsi-ld:Value .
 
-###  https://uri.etsi.org/ngsi-ld/v1/ontology#Entity
+###  https://uri.etsi.org/ngsi-ld/Entity
 ngsi-ld:Entity rdf:type owl:Class .
 
-###  https://uri.etsi.org/ngsi-ld/v1/ontology#Value
+###  https://uri.etsi.org/ngsi-ld/Value
 ngsi-ld:Value a owl:Class .
 
 ###  Did not include ngsi-ld:Geometry class on purpose, but left the explanation why
@@ -71,27 +72,27 @@ ngsi-ld:Value a owl:Class .
 #  a owl:Class ;
 #  rdfs:subClassOf ngsi-ld:Value .
 
-###  https://uri.etsi.org/ngsi-ld/v1/ontology#GeoProperty
+###  https://uri.etsi.org/ngsi-ld/GeoProperty
 ngsi-ld:GeoProperty
   a owl:ObjectProperty ;
   rdfs:subPropertyOf ngsi-ld:CoordinateBasedLocation . #rdfs:range ngsi-ld:Geometry  
  
-###  https://uri.etsi.org/ngsi-ld/v1/ontology#CoordinateBasedLocation  
+###  https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation  
 ngsi-ld:CoordinateBasedLocation
   a owl:ObjectProperty ;
   rdfs:subPropertyOf ngsi-ld:LocationProperty .  
 
-###  https://uri.etsi.org/ngsi-ld/v1/ontology#LocationProperty  
+###  https://uri.etsi.org/ngsi-ld/LocationProperty  
 ngsi-ld:LocationProperty
   a owl:ObjectProperty ;
   rdfs:subPropertyOf ngsi-ld:Property . 
 
-###  https://uri.etsi.org/ngsi-ld/v1/ontology#hasValue
+###  https://uri.etsi.org/ngsi-ld/hasValue
 ngsi-ld:hasValue
   a owl:DatatypeProperty ;
   rdfs:domain ngsi-ld:Property .
 
-###  https://uri.etsi.org/ngsi-ld/v1/ontology#TemporalProperty  
+###  https://uri.etsi.org/ngsi-ld/TemporalProperty  
 ngsi-ld:TemporalProperty a owl:DatatypeProperty .
   
 #################################################################
@@ -158,6 +159,8 @@ qudt:numericValue rdfs:subPropertyOf ngsi-ld:hasValue .
 time:inXSDDate rdfs:subPropertyOf ngsi-ld:TemporalProperty .
 time:inXSDDateTimeStamp rdfs:subPropertyOf ngsi-ld:TemporalProperty .
 time:numericDuration rdfs:subPropertyOf ngsi-ld:TemporalProperty .
+prov:generatedAtTime rdfs:subPropertyOf ngsi-ld:TemporalProperty .
+prov:invalidatedAtTime rdfs:subPropertyOf ngsi-ld:TemporalProperty .
 #################################################################
 #    Classes
 #################################################################

@@ -27,6 +27,7 @@
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix saref: <https://w3id.org/saref#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
 @base <https://w3id.org/demeter/> .
 
 <https://w3id.org/demeter/agri/agriProduct> rdf:type owl:Ontology ;
@@ -143,6 +144,30 @@ fiware:hasAgriProductType	a      owl:ObjectProperty ;
         rdfs:label   		"hasAgriProductType"@en ;
         rdfs:comment		"Reference to the AgriProductType used/ applied." ;
         rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .                          
+
+###  http://purl.obolibrary.org/obo/HANCESTRO_0308
+obo:HANCESTRO_0308 a      owl:ObjectProperty ;
+        rdfs:label "hasCountryOfOrigin" ;
+        rdfs:comment "has country of origin" ;
+        rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .
+
+###  http://purl.obolibrary.org/obo/RO_0002473
+obo:RO_0002473 a      owl:ObjectProperty ;
+        rdfs:label "composedPrimarilyOf" ;
+        rdfs:comment "composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y" ;
+        rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .
+
+###  http://purl.obolibrary.org/obo/RO_0002180
+obo:RO_0002180 a      owl:ObjectProperty ;
+        rdfs:label "hasComponent" ;
+        rdfs:comment "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." ;
+        rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .
+
+###  http://purl.obolibrary.org/obo/FOODON_00001301
+obo:FOODON_00001301 a      owl:ObjectProperty ;
+        rdfs:label "hasFoodSubstanceAnalog" ;
+        rdfs:comment "has food substance analog" ;
+        rdfs:isDefinedBy <http://purl.obolibrary.org/obo/> .
 
 #################################################################
 #    Data properties
