@@ -51,8 +51,10 @@
                                          dct:description "The DEMETER cross domain ontology i) defines concepts and terms that are generic and applicable to various domains; ii) avoids conflicting or redundant definitions of the same concept in different domain specific models; iii) provides the basis for interoperability. The ontology is specified by reusing concepts and terms from a number of standard ontologies and vocabularies including OGC/W3C SOSA/SSN, OGC GeoSparql, W3C RDF data cube, QUDT, FOAF, schema.org and others. It includes alignment to ISO standards and with DEMETER core meta-model (NGSI-LD)."@en ;
                                          dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                                          dct:title "DEMETER Cross-Domain"@en ;
+                                         rdfs:label "Cross Domain"@en ;
                                          rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
                                          owl:versionInfo "1.0" ;
+                                         rdfs:isDefinedBy <https://w3id.org/demeter/crossDomain> ;
                                          foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
                                                       foaf:name "DEMETER project"
                                                     ] .
@@ -62,19 +64,31 @@
 #################################################################
 
 ###  http://purl.org/dc/terms/contributor
-dct:contributor a owl:AnnotationProperty .
+dct:contributor a owl:AnnotationProperty ;
+                rdfs:label "contributor" ;
+                rdfs:comment "The guidelines for using names of persons or organizations as creators apply to contributors." ;
+                rdfs:isDefinedBy <http://purl.org/dc/terms/contributor> .
 
 
 ###  http://purl.org/dc/terms/creator
-dct:creator a owl:AnnotationProperty .
+dct:creator a owl:AnnotationProperty ;
+            rdfs:label "creator" ;
+            rdfs:comment "Recommended practice is to identify the creator with a URI. If this is not possible or feasible, a literal value that identifies the creator may be provided." ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/creator> .
+
 
 
 ###  http://purl.org/dc/terms/date
-dct:date a owl:AnnotationProperty .
-
+dct:date a owl:AnnotationProperty ;
+        rdfs:label "date" ;
+        rdfs:comment "Date may be used to express temporal information at any level of granularity. Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [ISO 8601-1] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [W3CDTF] or the Extended Date/Time Format Specification [EDTF]. If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a '/' (slash) character. Either the start or end date may be missing." ;
+        rdfs:isDefinedBy <http://purl.org/dc/terms/date> .
 
 ###  http://purl.org/dc/terms/description
-dct:description a owl:AnnotationProperty .
+dct:description a owl:AnnotationProperty ;
+            rdfs:label "description" ;
+            rdfs:comment "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource." ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/description> .
 
 
 ###  http://purl.org/dc/terms/identifier
@@ -229,7 +243,9 @@ sosa:observedProperty a owl:ObjectProperty ;
                                             sosa:ObservationCollection ;
                       schema:rangeIncludes sosa:ObservableProperty ;
                       rdfs:isDefinedBy sosa: ;
-                      dct:description "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation." .
+                      rdfs:label "Observed Property"@en ;
+                      rdfs:comment "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en ;
+                      dct:description "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en .
 
 ###  http://www.w3.org/ns/sosa/hasResult
 sosa:hasResult	a owl:ObjectProperty ;
@@ -290,6 +306,8 @@ sosa:madeBySensor a owl:ObjectProperty ;
                                         sosa:ObservationCollection ;
                   schema:rangeIncludes sosa:Sensor ;                                        
                   rdfs:isDefinedBy sosa: ;
+                  rdfs:label "made by sensor"@en ;
+                  rdfs:comment "Relation between an Observation and the Sensor which made the Observations."@en ;
                   owl:inverseOf sosa:madeObservation .
 
 ###  http://www.w3.org/ns/sosa/madeObservation
@@ -298,6 +316,7 @@ sosa:madeObservation a owl:ObjectProperty ;
                      rdfs:isDefinedBy sosa: ;
                      rdfs:label "made observation"@en ;
                      skos:definition "Relation between a Sensor and an Observation made by the Sensor."@en ;
+                     rdfs:comment "Relation between a Sensor and an Observation made by the Sensor."@en ;
                      schema:rangeIncludes sosa:Observation .
 
 ###  http://www.w3.org/ns/sosa/observes                      
@@ -331,7 +350,8 @@ sosa:usedProcedure a owl:ObjectProperty ;
 
 ###  http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest
 sosa:hasUltimateFeatureOfInterest a owl:ObjectProperty ;
-  								rdfs:label "has ultimate feature of interest" ;
+  								rdfs:label "has ultimate feature of interest"@en ;
+                  rdfs:comment "A relation to link Actuation, Observation, Sampling or FeatureOfInterest"@en ;
                   schema:domainIncludes sosa:Actuation ;
                   schema:domainIncludes sosa:Observation ;
                   schema:domainIncludes sosa:Sampling ;
@@ -352,9 +372,9 @@ sosa:hasMember a owl:ObjectProperty ;
                schema:domainIncludes sosa:ObservationCollection ;
                schema:rangeIncludes sosa:Observation ;
                schema:rangeIncludes sosa:ObservationCollection ;
-               rdfs:comment "Link to a member within a collection of (observations) or (collections of observations) that share the same value for one or more of the characteristic properties" ;
+               rdfs:comment "Link to a member within a collection of (observations) or (collections of observations) that share the same value for one or more of the characteristic properties"@en ;
                rdfs:domain sosa:ObservationCollection ;
-               rdfs:label "member observation" ;
+               rdfs:label "member observation"@en ;
                rdfs:range [
                   a owl:Class ;
                   owl:unionOf (
@@ -401,20 +421,26 @@ ssn:deployedSystem a owl:ObjectProperty ;
 ###  http://www.w3.org/ns/ssn/hasDeployment
 ssn:hasDeployment a owl:ObjectProperty ;
 									rdfs:isDefinedBy ssn: ;
+                  rdfs:comment "Relation between a System and a Deployment, recording that the System is deployed in that Deployment."@en ;
                   rdfs:label "has deployment"@en .
 
 ###  http://www.w3.org/ns/ssn/hasProperty
 ssn:hasProperty a owl:ObjectProperty ;
                 rdfs:comment "A relation between a FeatureOfInterest and a Property of that feature." ;
+                rdfs:label "has property"@en ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/ssn> .
 
 ###  http://www.w3.org/ns/ssn/hasSubSystem
 ssn:hasSubSystem a owl:ObjectProperty ;
 								 rdfs:isDefinedBy ssn: ;
+                 rdfs:comment "Relation between a system and its component parts "@en ;
                  rdfs:label "has subsystem"@en .
 
 ###  http://www.w3.org/ns/ssn/implements
-ssn:implements a owl:ObjectProperty .
+ssn:implements a owl:ObjectProperty ;
+              rdfs:isDefinedBy ssn: ;
+              rdfs:comment "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)."@en ;
+              rdfs:label "implements"@en .
 
 ###  http://www.w3.org/ns/ssn/inDeployment
 ssn:inDeployment a owl:ObjectProperty ;
@@ -423,12 +449,16 @@ ssn:inDeployment a owl:ObjectProperty ;
                  rdfs:label "in deployment"@en .
 
 ###  http://www.w3.org/ns/ssn/isPropertyOf
-ssn:isPropertyOf a owl:ObjectProperty .
+ssn:isPropertyOf a owl:ObjectProperty ;
+                 rdfs:comment "Relation between a Property and the entity it belongs to."@en ;
+                 rdfs:isDefinedBy ssn: ;
+                 rdfs:label "is property of"@en .
 
 ##### FOAF
 ###  http://xmlns.com/foaf/0.1/member
 foaf:member a owl:ObjectProperty ;
             rdfs:isDefinedBy foaf: ;
+            rdfs:comment "The foaf:member property relates a foaf:Group to a foaf:Agent that is a member of that group." ;
             rdfs:label "member" .
 
 ##### DATACUBE
@@ -533,18 +563,21 @@ qudt:unit
   	a owl:ObjectProperty ;  
   	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   	rdfs:label "unit" ;
+    rdfs:comment "A reference to the unit of measure of a quantity (variable or constant) of interest." ;
   	rdfs:range qudt:Unit .
   	
 qudt:quantityValue
   	a owl:ObjectProperty ;
   	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   	rdfs:label "quantity value" ;
+    rdfs:comment "A reference to the value of a quantity" ;
   	rdfs:range qudt:QuantityValue .
 
 qudt:hasQuantityKind
   	a owl:ObjectProperty ;
   	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   	rdfs:label "has quantity kind" ;
+    rdfs:comment "A reference to the kind of a quantity" ;
   	rdfs:range qudt:QuantityKind .
 
 ##### TIME
@@ -677,6 +710,7 @@ time:inXSDDate
   rdfs:domain time:Instant ;
   rdfs:label "in XSD date"@en ;
   rdfs:range xsd:date ;
+  rdfs:isDefinedBy time: ;
   skos:definition "Position of an instant, expressed using xsd:date"@en .
 
 time:inXSDDateTimeStamp
@@ -685,6 +719,7 @@ time:inXSDDateTimeStamp
   rdfs:domain time:Instant ;
   rdfs:label "in XSD Date-Time-Stamp"@en ;
   rdfs:range xsd:dateTimeStamp ;
+  rdfs:isDefinedBy time: ;
   skos:definition "Position of an instant, expressed using xsd:dateTimeStamp"@en .
 
 time:numericDuration
@@ -693,6 +728,7 @@ time:numericDuration
   rdfs:domain time:Duration ;
   rdfs:label "Numeric value of temporal duration"@en ;
   rdfs:range xsd:decimal ;
+  rdfs:isDefinedBy time: ;
   skos:definition "Value of a temporal extent expressed as a decimal number scaled by a temporal unit"@en .
   
 
@@ -704,26 +740,36 @@ time:numericDuration
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration
 dim:Acceleration a owl:Class ;
                  rdfs:subClassOf qu:QuantityKind ;
+                 rdfs:label "Acceleration" ;
+                 rdfs:comment "A Acceleration is something that is a QuantityKind and has a unitKind property who must be a AccelerationUnit" ;
                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility
 dim:Compressibility a owl:Class ;
                     rdfs:subClassOf qu:QuantityKind ;
+                    rdfs:label "Compressibility" ;
+                    rdfs:comment "A Compressibility is something that is a QuantityKind and has a unitKind property who must be a CompressibilityUnit" ;
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Concentration
 dim:Concentration a owl:Class ;
                   rdfs:subClassOf qu:QuantityKind ;
+                  rdfs:label "Concentration" ;
+                  rdfs:comment "A Concentration is something that is a QuantityKind and has a unitKind property who must be a ConcentrationUnit" ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Density
 dim:Density a owl:Class ;
             rdfs:subClassOf qu:QuantityKind ;
+            rdfs:label "Density" ;
+            rdfs:comment "A Density is something that is a QuantityKind and has a unitKind property who must be a DensityUnit" ;
             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless
 dim:Dimensionless a owl:Class ;
                   rdfs:subClassOf qu:QuantityKind ;
+                  rdfs:label "Dimensionless" ;
+                  rdfs:comment "A Dimensionless is something that is a QuantityKind and has a qu:unitKind property who must be a DimensionlessUnit" ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Distance
@@ -734,77 +780,105 @@ dim:Distance a owl:Class ;
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Energy
 dim:Energy a owl:Class ;
            rdfs:subClassOf qu:QuantityKind ;
+           rdfs:label "Energy" ;
+           rdfs:comment "A Energy is something that is a QuantityKind and has a unitKind property who must be a EnergyUnit" ;
            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#EnergyDensity
 dim:EnergyDensity a owl:Class ;
                   rdfs:subClassOf qu:QuantityKind ;
+                  rdfs:label "Energy Density" ;
+                  rdfs:comment "A EnergyDensity is something that is a QuantityKind and has a unitKind property who must be a EnergyDensityUnit" ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux
 dim:EnergyFlux a owl:Class ;
                rdfs:subClassOf qu:QuantityKind ;
+               rdfs:label "Energy Flux" ;
+               rdfs:comment "A EnergyFlux is something that is a QuantityKind and has a unitKind property who must be a EnergyFluxUnit" ;
                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea
 dim:MassPerTimePerArea a owl:Class ;
                        rdfs:subClassOf qu:QuantityKind ;
+                       rdfs:label "Mass Per Time Per Area" ;
+                       rdfs:comment "A MassPerTimePerArea is something that is a QuantityKind and has a unitKind property who must be a MassPerTimePerAreaUnit";
                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Power
 dim:Power a owl:Class ;
           rdfs:subClassOf qu:QuantityKind ;
+          rdfs:label "Power" ;
+          rdfs:comment "A Power is something that is of class QuantityKind and has a unitKind property who must be a PowerUnit" ;
           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#RadianceExposure
 dim:RadianceExposure a owl:Class ;
                      rdfs:subClassOf qu:QuantityKind ;
+                     rdfs:label "Radiance Exposure" ;
+                     rdfs:comment "A RadianceExposure is something that is a QuantityKind and has a unitKind property who must be a RadianceExposureUnit" ;
                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed
 dim:RotationalSpeed a owl:Class ;
                     rdfs:subClassOf qu:QuantityKind ;
+                    rdfs:label "Rotational Speed" ;
+                    rdfs:comment "A RotationalSpeed is something that is a QuantityKind and has a unitKind property who must be a RotationalSpeedUnit" ;
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#SpecificEntropy
 dim:SpecificEntropy a owl:Class ;
                     rdfs:subClassOf qu:QuantityKind ;
+                    rdfs:label "Specific Entropy" ;
+                    rdfs:comment "A SpecificEntropy is something that is a QuantityKind and has a unitKind property who must be a SpecificEntropyUnit" ;
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure
 dim:StressOrPressure a owl:Class ;
                      rdfs:subClassOf qu:QuantityKind ;
+                     rdfs:label "Stress Or Pressure" ;
+                     rdfs:comment "A StressOrPressure is something that is a QuantityKind and has a unitKind property who must be a StressOrPressureUnit" ;
                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity
 dim:SurfaceDensity a owl:Class ;
                    rdfs:subClassOf qu:QuantityKind ;
+                   rdfs:label "Surface Density" ;
+                   rdfs:comment "A SurfaceDensity is something that is a QuantityKind and has a qu:unitKind property who must be a SurfaceDensityUnit" ;
                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Temperature
 dim:Temperature a owl:Class ;
                 rdfs:subClassOf qu:QuantityKind ;
+                rdfs:label "Temperature" ;
+                rdfs:comment "A Temperature is something that is a QuantityKind and has a unitKind property who must be a TemperatureUnit" ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity
 dim:ThermalConductivity a owl:Class ;
                         rdfs:subClassOf qu:QuantityKind ;
+                        rdfs:label "Thermal Conductivity" ;
+                        rdfs:comment "A ThermalConductivity is something that is a QuantityKind and has a unitKind property who must be a ThermalConductivityUnit" ;
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed
 dim:VelocityOrSpeed a owl:Class ;
                     rdfs:subClassOf qu:QuantityKind ;
+                    rdfs:label "Velocity Or Speed" ;
+                    rdfs:comment "A VelocityOrSpeed is something that is a QuantityKind and has a unitKind property who must be a VelocityOrSpeedUnit" ;
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 #### QU
 ###  http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind
 qu:PropertyKind a owl:Class ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+                rdfs:comment "A PropertyKind is a meta-property which helps to characterise categories of properties e.g. scalar, vector" ;
                 rdfs:label "PropertyKind" .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind
 qu:QuantityKind a owl:Class ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
+                rdfs:comment "A QuantityKind is an abstract classifier that represents the [VIM] concept of kind of quantity that is defined as aspect common to mutually comparable quantities. A QuantityKind represents the essence of a quantity without any numerical value or unit. Quantities of the same kind within a given system of quantities have the same quantity dimension. However, quantities of the same dimension are not necessarily of the same kind." ;
                 rdfs:label "QuantityKind" .
 
 #### GEOSPARQL
@@ -1114,16 +1188,23 @@ sosa:Sample	a owl:Class ;
   					rdfs:isDefinedBy sosa: .
   					
 ###  http://www.w3.org/ns/sosa/ActuatableProperty
-sosa:ActuatableProperty a owl:Class .
+sosa:ActuatableProperty a owl:Class ;
+            rdfs:comment "Actuatable Property is an actuatable quality (property, characteristic) of any FeatureOfInterest."@en ;
+  					rdfs:label "Actuatable Property"@en ;
+  					skos:example "A window actuator acts by changing the state between a frame and a window. The ability of the window to be opened and closed is its ActuatableProperty."@en ;
+  					rdfs:isDefinedBy sosa: .
 
 ###  http://www.w3.org/ns/sosa/ObservableProperty
 sosa:ObservableProperty a owl:Class ;
                         rdfs:isDefinedBy sosa: ;
+                        rdfs:label "Observable Property" ;
+                        rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest." ;
                         rdfs:subClassOf ssn:Property .
 
 ###  http://www.w3.org/ns/sosa/FeatureOfInterest
 sosa:FeatureOfInterest a owl:Class ;
                        rdfs:isDefinedBy sosa: ;
+                       rdfs:comment "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result, or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling." ;
                        rdfs:label "Feature Of Interest"@en .
 
 ###  http://www.w3.org/ns/sosa/Observation
@@ -1183,10 +1264,14 @@ sosa:Procedure a rdfs:Class , owl:Class ;
 ###  http://www.w3.org/ns/ssn/Deployment
 ssn:Deployment a owl:Class ;
                rdfs:isDefinedBy ssn: ;
+               rdfs:comment "Deployment describes the Deployment of one or more Systems for a particular purpose. Deployment may be done on a Platform." ;
                rdfs:label "Deployment"@en .
 
 ###  http://www.w3.org/ns/ssn/Property
-ssn:Property a owl:Class .
+ssn:Property a owl:Class ;
+            rdfs:label "Property" ;
+            rdfs:comment "Property is a quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity." ;
+            rdfs:isDefinedBy ssn: .
 
 ###  http://www.w3.org/ns/ssn/System
 ssn:System a owl:Class ;
@@ -1202,6 +1287,7 @@ foaf:Agent a owl:Class ;
                              owl:someValuesFrom foaf:Agent
                            ] ;
            rdfs:isDefinedBy foaf: ;
+           rdfs:comment "The Agent class is the class of agents i.e. things that do stuff. A well known sub-class is foaf:Person, representing people. Other kinds of agents include foaf:Organization and foaf:Group." ;
            rdfs:label "Agent"@en .
 
 ###  http://xmlns.com/foaf/0.1/Person
@@ -1209,6 +1295,7 @@ foaf:Person a owl:Class ;
             owl:equivalentClass schema:Person ;
             rdfs:subClassOf foaf:Agent ;
             rdfs:isDefinedBy foaf: ;
+            rdfs:comment "The foaf:Person class represents people. Something is a foaf:Person if it is a person. We don't nitpic about whether they're alive, dead, real, or imaginary. The foaf:Person class is a sub-class of the foaf:Agent class, since all people are considered 'agents' in FOAF." ;
             rdfs:label "Person"@en .
 
 #### SCHEMA
@@ -1228,6 +1315,7 @@ schema:Person a owl:Class ;
 ###  https://schema.org/Role
 schema:Role a owl:Class ;
             rdfs:comment "Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. Or that a Person's 'actor' role in a Movie was for some particular characterName. Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.<br/><br/> " ;
+            rdfs:isDefinedBy schema:Role ;
             rdfs:label "Role"@en .
 
 #### DATACUBE
@@ -1320,22 +1408,34 @@ qb:Observation a rdfs:Class, owl:Class;
 #### QUDT 
 qudt:Quantity
 		a owl:Class ;
+    rdfs:comment """
+A quantity is the measurement of an observable property of a particular object, event, or physical system. A quantity is always associated with the context of measurement (i.e. the thing measured, the measured value, the accuracy of measurement, etc.) whereas the underlying quantity kind is independent of any particular measurement. Thus, length is a quantity kind while the height of a rocket is a specific quantity of length; its magnitude that may be expressed in meters, feet, inches, etc. Examples of physical quantities include physical constants, such as the speed of light in a vacuum, Planck's constant, the electric permittivity of free space, and the fine structure constant.
+
+In other words, quantities are quantifiable aspects of the world, such as the duration of a movie, the distance between two points, velocity of a car, the pressure of the atmosphere, and a person's weight; and units are used to describe their numerical measure.
+
+Many quantity kinds are related to each other by various physical laws, and as a result, the associated units of some quantity kinds can be expressed as products (or ratios) of powers of other quantity kinds (e.g., momentum is mass times velocity and velocity is defined as distance divided by time). In this way, some quantities can be calculated from other measured quantities using their associations to the quantity kinds in these expressions. These quantity kind relationships are also discussed in dimensional analysis. Those that cannot be so expressed can be regarded as "fundamental" in this sense.
+
+A quantity is distinguished from a "quantity kind" in that the former carries a value and the latter is a type specifier.
+    """@en ;
 		rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
 		rdfs:label "Quantity" .  
 
 qudt:QuantityKind
   	a owl:Class ;
+    rdfs:comment "A Quantity Kind is any observable property that can be measured and quantified numerically. Familiar examples include physical properties such as length, mass, time, force, energy, power, electric charge, etc. Less familiar examples include currency, interest rate, price to earning ratio, and information capacity." ;
   	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
   	rdfs:label "Quantity Kind" .
 		
 qudt:QuantityValue
   	a owl:Class ;
   	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+    rdfs:comment "A Quantity Value expresses the magnitude and kind of a quantity and is given by the product of a numerical value n and a unit of measure U. The number multiplying the unit is referred to as the numerical value of the quantity expressed in that unit. Refer to NIST SP 811 section 7 for more on quantity values." ;
   	rdfs:label "Quantity value" .			
 
 qudt:Unit
 		a owl:Class ;  	
   	rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+    rdfs:comment "A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension). For example, the meter is a quantity of length that has been rigorously defined and standardized by the BIPM (International Board of Weights and Measures). Any measurement of the length can be expressed as a number multiplied by the unit meter. More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n)" ;
   	rdfs:label "Unit" .	
 
 ### TIME
@@ -1347,12 +1447,14 @@ time:TemporalEntity
       time:Instant
       time:Interval
     ) ;
+  rdfs:isDefinedBy time: ;  
   skos:definition "A temporal interval or instant."@en .    		
   	
 time:TemporalDuration
   a owl:Class ;
   rdfs:comment "Time extent; duration of a time interval separate from its particular start position"@en ;
   rdfs:label "Temporal duration"@en ;
+  rdfs:isDefinedBy time: ;
   skos:definition "Time extent; duration of a time interval separate from its particular start position"@en .
 
 time:TemporalUnit
@@ -1360,6 +1462,7 @@ time:TemporalUnit
   rdfs:comment "A standard duration, which provides a scale factor for a time extent, or the granularity or precision for a time position."@en ;
   rdfs:label "Temporal unit"@en ;
   rdfs:subClassOf time:TemporalDuration ;
+  rdfs:isDefinedBy time: ;
   skos:definition "A standard duration, which provides a scale factor for a time extent, or the granularity or precision for a time position."@en ;
   skos:note "Membership of the class TemporalUnit is open, to allow for other temporal units used in some technical applications (e.g. millions of years, Baha'i month)."@en .
 
@@ -1367,6 +1470,7 @@ time:Interval
   a owl:Class ;
   rdfs:comment "A temporal entity with an extent or duration"@en ;
   rdfs:label "Time interval"@en ;
+  rdfs:isDefinedBy time: ;
   rdfs:subClassOf time:TemporalEntity ;
   skos:definition "A temporal entity with an extent or duration"@en .
 
@@ -1374,6 +1478,7 @@ time:Instant
   a owl:Class ;
   rdfs:comment "A temporal entity with zero extent or duration"@en ;
   rdfs:label "Time instant"@en ;
+  rdfs:isDefinedBy time: ;
   rdfs:subClassOf time:TemporalEntity ;
   skos:definition "A temporal entity with zero extent or duration"@en .
 
@@ -1382,12 +1487,16 @@ time:Duration
   rdfs:comment "Duration of a temporal extent expressed as a number scaled by a temporal unit"@en ;
   rdfs:label "Time duration"@en ;
   rdfs:subClassOf time:TemporalDuration ;
+  rdfs:isDefinedBy time: ;
   skos:definition "Duration of a temporal extent expressed as a number scaled by a temporal unit"@en ;
   skos:note "Alternative to time:DurationDescription to support description of a temporal duration other than using a calendar/clock system."@en .
 
 #### SKOS
 ###  http://www.w3.org/2004/02/skos/core#Scheme
-skos:Scheme a owl:Class .
+skos:Scheme a owl:Class ;
+            rdfs:label "Scheme" ;
+            rdfs:comment "The Scheme class of SKOS Vocabulary" ;
+            rdfs:isDefinedBy skos: .
 
 
 
@@ -1395,12 +1504,14 @@ skos:Scheme a owl:Class .
 iso19156_GFI:GFI_Feature
   a owl:Class ;
   rdfs:label "GFI_Feature" ;
+  rdfs:comment "The class GFI_Feature (Figure 2) is an instance of the .og.metaclass.cg. GF_FeatureType (ISO 19109). It represents the set of all classes which are feature types. NOTE	GFI_Feature is implemented in GML (ISO 19136:2007) by the element gml:AbstractFeature and type gml:AbstractFeatureType. In an implementation this abstract class shall be substituted by a concrete class representing a feature type from an application schema associated with a domain of discourse (ISO 19109, ISO 19101). Sampling Features (Clause 8) are a class of feature-types whose role is primarily associated with observations." ;
   skos:definition "The class GFI_Feature (Figure 2) is an instance of the .og.metaclass.cg. GF_FeatureType (ISO 19109). It represents the set of all classes which are feature types. NOTE	GFI_Feature is implemented in GML (ISO 19136:2007) by the element gml:AbstractFeature and type gml:AbstractFeatureType. In an implementation this abstract class shall be substituted by a concrete class representing a feature type from an application schema associated with a domain of discourse (ISO 19109, ISO 19101). Sampling Features (Clause 8) are a class of feature-types whose role is primarily associated with observations. " ;
   rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> .
   
 iso19156_GFI:GFI_DomainFeature
   a owl:Class ;
   rdfs:label "GFI_DomainFeature" ;
+  rdfs:comment "The class GFI_DomainFeature represents 'real-world' features which are the ultimate subject of an observation campaign, i.e. the features from an application domain that are .lt.i.gt.not .lt..sl.i.gt.artefacts of the observation process (sampling features). " ;
   skos:definition "The class GFI_DomainFeature represents 'real-world' features which are the ultimate subject of an observation campaign, i.e. the features from an application domain that are .lt.i.gt.not .lt..sl.i.gt.artefacts of the observation process (sampling features). " ;
   rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> ;
   rdfs:subClassOf iso19156_GFI:GFI_Feature .
@@ -1408,6 +1519,7 @@ iso19156_GFI:GFI_DomainFeature
 iso19156_SF:SF_SamplingFeature
   a owl:Class ;
   rdfs:label "SF_SamplingFeature" ;
+  rdfs:comment ".lt.ul.gt.	.lt.li.gt..lt.b.gt.Role of sampling features.lt..sl.b.gt..lt..sl.li.gt..lt..sl.ul.gt.Sampling features are artefacts of an observational strategy, and have no significant function outside of their role in the observation process. The physical characteristics of the features themselves are of little interest, except perhaps to the manager of a sampling campaign.EXAMPLE	A .ldq.station.rdq. is essentially an identifiable locality where a sensor system or procedure may be deployed and an observation made. In the context of the observation model, it connotes the .ldq.world in the vicinity of the station.rdq., so the observed properties relate to the physical medium at the station, and not to any physical artefact such as a mooring, buoy, benchmark, monument, well, etc. NOTE	A transient sampling feature, such as a ships-track or flight-line, may be identified and described, but is unlikely to be revisited exactly. A sampling feature is intended to sample some feature of interest in an application domain. However, in some cases the identity, and even the exact type, of the sampled feature may not be known when observations are made using the sampling features. .lt.ul.gt.	.lt.li.gt..lt.b.gt.Classification of sampling features.lt..sl.b.gt..lt..sl.li.gt..lt..sl.ul.gt.A small number of sampling patterns are common across disciplines in observational science. These provide a basis for processing and portrayal tools which are similar across domains, and depend primarily on the geometry of the sample design. Common names for sampling features include specimen, station, profile, transect, path, swath, and scene. These are classified primarily by their topological dimension. Point-located samples are defined in this Clause, extensive samples of various dimensions in Clause 9 and specimens in Clause 10." ;
   skos:definition ".lt.ul.gt.	.lt.li.gt..lt.b.gt.Role of sampling features.lt..sl.b.gt..lt..sl.li.gt..lt..sl.ul.gt.Sampling features are artefacts of an observational strategy, and have no significant function outside of their role in the observation process. The physical characteristics of the features themselves are of little interest, except perhaps to the manager of a sampling campaign.EXAMPLE	A .ldq.station.rdq. is essentially an identifiable locality where a sensor system or procedure may be deployed and an observation made. In the context of the observation model, it connotes the .ldq.world in the vicinity of the station.rdq., so the observed properties relate to the physical medium at the station, and not to any physical artefact such as a mooring, buoy, benchmark, monument, well, etc. NOTE	A transient sampling feature, such as a ships-track or flight-line, may be identified and described, but is unlikely to be revisited exactly. A sampling feature is intended to sample some feature of interest in an application domain. However, in some cases the identity, and even the exact type, of the sampled feature may not be known when observations are made using the sampling features. .lt.ul.gt.	.lt.li.gt..lt.b.gt.Classification of sampling features.lt..sl.b.gt..lt..sl.li.gt..lt..sl.ul.gt.A small number of sampling patterns are common across disciplines in observational science. These provide a basis for processing and portrayal tools which are similar across domains, and depend primarily on the geometry of the sample design. Common names for sampling features include specimen, station, profile, transect, path, swath, and scene. These are classified primarily by their topological dimension. Point-located samples are defined in this Clause, extensive samples of various dimensions in Clause 9 and specimens in Clause 10." ;
   rdfs:isDefinedBy <http://standards.iso.org/iso/19156/ed-1/en/> ;
   rdfs:subClassOf iso19156_GFI:GFI_Feature .
@@ -1415,6 +1527,7 @@ iso19156_SF:SF_SamplingFeature
 iso19156_OB:OM_Observation
   a owl:Class ;
   rdfs:label "Observation" ;
+  rdfs:comment "Observation process is a subtype of OM_Process. It is a process used to generate the result of the observation." ;
   skos:definition "Observation process is a subtype of OM_Process. It is a process used to generate the result of the observation."  ;
   rdfs:isDefinedBy <https://www.iso.org/standard/44595.html> .  
 
@@ -1440,56 +1553,75 @@ iso19103:Measure owl:equivalentClass qudt:QuantityValue .
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme
 dim:AcousticsScheme a owl:NamedIndividual ,
                              skos:Scheme ;
+                    rdfs:label "Acoustics Scheme" ;
+                    rdfs:comment "Named individual of AcousticsScheme" ;         
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme
 dim:MechanicsScheme a owl:NamedIndividual ,
                              skos:Scheme ;
+                    rdfs:label "Mechanics Scheme" ;
+                    rdfs:comment "Named individual of MechanicsScheme" ;          
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme
 dim:PeriodicAndRelatedPhenomenaScheme a owl:NamedIndividual ,
                                                skos:Scheme ;
-                                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                    rdfs:label "Periodic And Related Phenomena Scheme" ;
+                    rdfs:comment "Named individual of Periodic And Related Phenomena Scheme" ;         
+                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme
 dim:SpaceAndTimeScheme a owl:NamedIndividual ,
                                 skos:Scheme ;
-                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                      rdfs:label "Space And Time Scheme" ;
+                      rdfs:comment "Named individual of SpaceAndTimeScheme" ;          
+                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme
 dim:HeatScheme a owl:NamedIndividual ,
                         skos:Scheme ;
+                        rdfs:label "Heat Scheme" ;
+                        rdfs:comment "Named individual of HeatScheme" ;
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#ElectricityAndMagnetismScheme
 dim:ElectricityAndMagnetismScheme a owl:NamedIndividual ,
                                            skos:Scheme ;
-                                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                        rdfs:label "Electricity And Magnetism Scheme" ;
+                        rdfs:comment "Named individual of ElectricityAndMagnetismScheme" ;         
+                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
                              
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme
 dim:PhysicalChemistryAndMolecularPhysicsScheme a owl:NamedIndividual ,
                                                         skos:Scheme ;
+                                                        rdfs:label "Physical Chemistry And Molecular Physics Scheme" ;
+                                                        rdfs:comment "Named individual of PhysicalChemistryAndMolecularPhysicsScheme" ;
                                                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
                                                         
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#SolidStatePhysicsScheme
 dim:SolidStatePhysicsScheme a owl:NamedIndividual ,
                                      skos:Scheme ;
+                            rdfs:label "Solid State Physics Scheme" ;
+                            rdfs:comment "Named individual of SolidStatePhysicsScheme" ;         
                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme
 dim:LightAndRelatedElectromagneticRadiationsScheme a owl:NamedIndividual ,
                                                             skos:Scheme ;
-                                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+                                                  rdfs:label "Light And Related Electromagnetic Radiations Scheme" ;
+                                                  rdfs:comment "Named individual of LightAndRelatedElectromagneticRadiationsScheme" ;         
+                                                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#acceleration
 quantity:acceleration a owl:NamedIndividual ,
                                dim:Acceleration ;
                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                       rdfs:label "acceleration"^^xsd:string ;
+                      rdfs:comment "Named individual of acceleration" ;
                       skos:inScheme dim:SpaceAndTimeScheme .
 
 
@@ -1498,6 +1630,7 @@ quantity:carbonContent a owl:NamedIndividual ,
                                 dim:Concentration ;
                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                        rdfs:label "carbon content"^^xsd:string ;
+                       rdfs:comment "Named individual of carbonContent" ;
                        skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme .
 
 
@@ -1506,6 +1639,7 @@ quantity:compressibility a owl:NamedIndividual ,
                                   dim:Compressibility ;
                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                          rdfs:label "compressibility"^^xsd:string ;
+                         rdfs:comment "Named individual of compressibility" ;
                          skos:inScheme dim:HeatScheme ,
                                        dim:MechanicsScheme .
 
@@ -1515,6 +1649,7 @@ quantity:concentration a owl:NamedIndividual ,
                                 dim:Concentration ;
                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                        rdfs:label "concentration"^^xsd:string ;
+                       rdfs:comment "Named individual of concentration" ;
                        skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme .
 
 
@@ -1523,6 +1658,7 @@ quantity:density a owl:NamedIndividual ,
                           dim:Density ;
                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                  rdfs:label "density"^^xsd:string ;
+                 rdfs:comment "Named individual of density" ;
                  skos:inScheme dim:AcousticsScheme ,
                                dim:MechanicsScheme ,
                                dim:PhysicalChemistryAndMolecularPhysicsScheme .
@@ -1533,18 +1669,23 @@ quantity:distance a owl:NamedIndividual ,
                            dim:Distance ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                   rdfs:label "distance"^^xsd:string ;
+                  rdfs:comment "Named individual of distance" ;
                   skos:inScheme dim:SpaceAndTimeScheme .
 
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#energyFlowRate
 quantity:energyFlowRate a owl:NamedIndividual ,
                                  qu:PropertyKind ;
+                        rdfs:label "energy flow rate"^^xsd:string ;
+                        rdfs:comment "Named individual of energyFlowRate" ;         
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#fraction
 quantity:fraction a owl:NamedIndividual ,
                            qu:PropertyKind ;
+                  rdfs:label "fraction"^^xsd:string ;
+                  rdfs:comment "Named individual of fraction" ;              
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 
@@ -1553,6 +1694,7 @@ quantity:length a owl:NamedIndividual ,
                          dim:Distance ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                 rdfs:label "length"^^xsd:string ;
+                rdfs:comment "Named individual of length" ;   
                 skos:inScheme dim:SpaceAndTimeScheme .
 
 
@@ -1561,6 +1703,7 @@ quantity:massPerTimePerArea a owl:NamedIndividual ,
                                      dim:MassPerTimePerArea ;
                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                             rdfs:label "mass per time per area"^^xsd:string ;
+                            rdfs:comment "Named individual of massPerTimePerArea" ;
                             skos:inScheme dim:MechanicsScheme .
 
 
@@ -1569,6 +1712,7 @@ quantity:power a owl:NamedIndividual ,
                         dim:Power ;
                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                rdfs:label "power"^^xsd:string ;
+               rdfs:comment "Named individual of power" ;
                skos:inScheme dim:ElectricityAndMagnetismScheme ,
                              dim:MechanicsScheme .
 
@@ -1578,12 +1722,15 @@ quantity:pressure a owl:NamedIndividual ,
                            dim:StressOrPressure ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                   rdfs:label "pressure"^^xsd:string ;
+                  rdfs:comment "Named individual of pressure" ;
                   skos:inScheme dim:MechanicsScheme .
 
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#property
 quantity:property a owl:NamedIndividual ,
                            qu:PropertyKind ;
+                  rdfs:label "property"^^xsd:string ;
+                  rdfs:comment "Named individual of property" ;         
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 
@@ -1592,12 +1739,15 @@ quantity:radianceExposure a owl:NamedIndividual ,
                                    dim:RadianceExposure ;
                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                           rdfs:label "radiance exposure"^^xsd:string ;
+                          rdfs:comment "Named individual of radianceExposure" ; 
                           skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme .
 
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#scalarProperty
 quantity:scalarProperty a owl:NamedIndividual ,
                                  qu:PropertyKind ;
+                        rdfs:label "scalar Property"^^xsd:string ;
+                        rdfs:comment "Named individual of scalarProperty" ;          
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 
@@ -1606,6 +1756,7 @@ quantity:soundEnergyDensity a owl:NamedIndividual ,
                                      dim:EnergyDensity ;
                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                             rdfs:label "sound energy density"^^xsd:string ;
+                            rdfs:comment "Named individual of soundEnergyDensity" ; 
                             skos:inScheme dim:AcousticsScheme .
 
 
@@ -1614,6 +1765,7 @@ quantity:soundIntensity a owl:NamedIndividual ,
                                  dim:EnergyFlux ;
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                         rdfs:label "sound intensity"^^xsd:string ;
+                        rdfs:comment "Named individual of soundIntensity" ;
                         skos:inScheme dim:AcousticsScheme .
 
 
@@ -1622,6 +1774,7 @@ quantity:soundPower a owl:NamedIndividual ,
                              dim:Power ;
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                     rdfs:label "sound power"^^xsd:string ;
+                    rdfs:comment "Named individual of soundPower" ;
                     skos:inScheme dim:AcousticsScheme .
 
 
@@ -1630,6 +1783,7 @@ quantity:soundPressure a owl:NamedIndividual ,
                                 dim:StressOrPressure ;
                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                        rdfs:label "sound pressure"^^xsd:string ;
+                       rdfs:comment "Named individual of soundPressure" ;
                        skos:inScheme dim:AcousticsScheme ,
                                      dim:MechanicsScheme .
 
@@ -1639,6 +1793,7 @@ quantity:surfaceDensity a owl:NamedIndividual ,
                                  dim:SurfaceDensity ;
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                         rdfs:label "surface density"^^xsd:string ;
+                        rdfs:comment "Named individual of surfaceDensity" ;
                         skos:inScheme dim:MechanicsScheme .
 
 
@@ -1647,6 +1802,7 @@ quantity:temperature a owl:NamedIndividual ,
                               dim:Temperature ;
                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                      rdfs:label "temperature"^^xsd:string ;
+                     rdfs:comment "Named individual of temperature" ;
                      skos:inScheme dim:HeatScheme ,
                                    dim:SolidStatePhysicsScheme .
 
@@ -1656,6 +1812,7 @@ quantity:vapourCompressibility a owl:NamedIndividual ,
                                         dim:Compressibility ;
                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                                rdfs:label "vapour compressibility"^^xsd:string ;
+                               rdfs:comment "Named individual of vapourCompressibility" ;
                                skos:inScheme dim:HeatScheme ,
                                              dim:PhysicalChemistryAndMolecularPhysicsScheme .
 
@@ -1665,12 +1822,15 @@ quantity:vapourPressure a owl:NamedIndividual ,
                                  dim:StressOrPressure ;
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                         rdfs:label "vapour pressure"^^xsd:string ;
+                        rdfs:comment "Named individual of vapourPressure" ;
                         skos:inScheme dim:MechanicsScheme .
 
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#vectorProperty
 quantity:vectorProperty a owl:NamedIndividual ,
                                  qu:PropertyKind ;
+                        rdfs:label "vector property"^^xsd:string ;
+                        rdfs:comment "Named individual of vectorProperty" ;         
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 
@@ -1679,6 +1839,7 @@ quantity:velocity a owl:NamedIndividual ,
                            dim:VelocityOrSpeed ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                   rdfs:label "velocity"^^xsd:string ;
+                  rdfs:comment "Named individual of velocity" ;
                   skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme ,
                                 dim:SpaceAndTimeScheme .
                                 
@@ -1688,6 +1849,7 @@ quantity:criticalBuildUpSpeed a owl:NamedIndividual ,
                               skos:inScheme dim:AcousticsScheme ,
                                             dim:PeriodicAndRelatedPhenomenaScheme ;
                               rdfs:label "critical build-up speed"^^xsd:string ;
+                              rdfs:comment "Named individual of criticalBuildUpSpeed" ;
                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
                               
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#criticalTorsionalSpeed
@@ -1696,6 +1858,7 @@ quantity:criticalTorsionalSpeed a owl:NamedIndividual ,
                                 skos:inScheme dim:AcousticsScheme ,
                                               dim:PeriodicAndRelatedPhenomenaScheme ;
                                 rdfs:label "critical torsional speed"^^xsd:string ;
+                                rdfs:comment "Named individual of criticalTorsionalSpeed" ;
                                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#criticalWhirlingSpeed
@@ -1704,11 +1867,14 @@ quantity:criticalWhirlingSpeed a owl:NamedIndividual ,
                                skos:inScheme dim:AcousticsScheme ,
                                              dim:PeriodicAndRelatedPhenomenaScheme ;
                                rdfs:label "critical whirling speed"^^xsd:string ;
+                               rdfs:comment "Named individual of criticalWhirlingSpeed" ;
                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .   
                                
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#pseudovectorProperty
 quantity:pseudovectorProperty a owl:NamedIndividual ,
                                        qu:PropertyKind ;
+                              rdfs:label "pseudo vector property"^^xsd:string ;
+                              rdfs:comment "Named individual of pseudovectorProperty" ;         
                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
                                                                 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#rotationalSpeed
@@ -1718,6 +1884,7 @@ quantity:rotationalSpeed a owl:NamedIndividual ,
                                        dim:PeriodicAndRelatedPhenomenaScheme ,
                                        dim:SpaceAndTimeScheme ;
                          rdfs:label "rotational speed"^^xsd:string ;
+                         rdfs:comment "Named individual of rotationalSpeed" ;
                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .                           
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousPullOutTorque
@@ -1725,6 +1892,7 @@ quantity:synchronousPullOutTorque a owl:NamedIndividual ,
                                            dim:Energy ;
                                   skos:inScheme dim:MechanicsScheme ;
                                   rdfs:label "synchronous pull-out torque"^^xsd:string ;
+                                  rdfs:comment "Named individual of synchronousPullOutTorque" ;
                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousSpeed
@@ -1733,6 +1901,7 @@ quantity:synchronousSpeed a owl:NamedIndividual ,
                           skos:inScheme dim:AcousticsScheme ,
                                         dim:PeriodicAndRelatedPhenomenaScheme ;
                           rdfs:label "synchronous speed"^^xsd:string ;
+                          rdfs:comment "Named individual of synchronousSpeed" ;
                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#torque
@@ -1740,35 +1909,50 @@ quantity:torque a owl:NamedIndividual ,
                          dim:Energy ;
                 skos:inScheme dim:MechanicsScheme ;
                 rdfs:label "torque"^^xsd:string ;
+                rdfs:comment "Named individual of torque" ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
 
 #### TIME
 time:unitDay
   a time:TemporalUnit ;
+  rdfs:comment "Day (unit of temporal duration)" ;
+  rdfs:isDefinedBy time: ;
   rdfs:label "Day (unit of temporal duration)"@en .
 
 time:unitHour
   a time:TemporalUnit ;
+  rdfs:comment "Hour (unit of temporal duration)" ;
+  rdfs:isDefinedBy time: ;
   rdfs:label "Hour (unit of temporal duration)"@en .
 
 time:unitMinute
   a time:TemporalUnit ;
+  rdfs:comment "Minute (unit of temporal duration)" ;
+  rdfs:isDefinedBy time: ;
   rdfs:label "Minute (unit of temporal duration)"@en .
   
 time:unitMonth
   a time:TemporalUnit ;
+  rdfs:comment "Month (unit of temporal duration)" ;
+  rdfs:isDefinedBy time: ;
   rdfs:label "Month (unit of temporal duration)"@en .
   
 time:unitSecond
   a time:TemporalUnit ;
+  rdfs:comment "Second (unit of temporal duration)" ;
+  rdfs:isDefinedBy time: ;
   rdfs:label "Second (unit of temporal duration)"@en .
 
 time:unitWeek
   a time:TemporalUnit ;
+  rdfs:comment "Week (unit of temporal duration)" ;
+  rdfs:isDefinedBy time: ;
   rdfs:label "Week (unit of temporal duration)"@en .
   
 time:unitYear
   a time:TemporalUnit ;
+  rdfs:comment "Year (unit of temporal duration)" ;
+  rdfs:isDefinedBy time: ;
   rdfs:label "Year (unit of temporal duration)"@en .
 
 #################################################################
