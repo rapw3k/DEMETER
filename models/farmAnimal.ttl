@@ -78,6 +78,7 @@ saref4agri:isLocatedIn rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/def/saref4agri#isLocationOf
 saref4agri:isLocationOf rdf:type owl:ObjectProperty ;
               rdfs:label "is location of" ;
+              rdfs:comment "Location of a entity e.g. a farm"
               rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
 
 ###  https://w3id.org/def/saref4agri#isMemberOf
@@ -160,12 +161,16 @@ saref4agri:hasDeathDate rdf:type owl:DatatypeProperty ;
 foodie:livestockType  a  owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "livestockType"@en ;
+        rdfs:label "livestock type" ;
+        rdfs:comment "A relation to express the type of an animal in a farm" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
         
 ###  http://foodie-cloud.com/model/foodie#livestockNumber                
 foodie:livestockNumber  a  owl:DatatypeProperty ;
         rdfs:range      xsd:decimal ;
         skos:prefLabel  "livestockNumber"@en ;
+        rdfs:label "livestock number" ;
+        rdfs:comment "A relation to express the unique identification number of an animal in a farm" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
 
 ### https://smartdatamodels.org/dataModel.Agrifood/species
@@ -301,6 +306,7 @@ saref4agri:AnimalGroup rdf:type owl:Class ;
 ###  https://w3id.org/def/saref4agri#ID
 saref4agri:ID rdf:type owl:Class ;
     rdfs:label "ID" ;
+    rdfs:comment "A collection of animal IDs" ;
     rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .  
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies
@@ -314,6 +320,8 @@ af-inspire:FarmAnimalSpecies  a           owl:Class ;
                            owl:onProperty      foodie:livestockNumber
                          ] ;
         skos:prefLabel   "FarmAnimalSpecies"@en ;
+        rdfs:label "Farm Animal Species" ;
+        rdfs:comment "A collection of species of animal in a specific farm" ;
         rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
 
 
