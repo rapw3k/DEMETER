@@ -64,19 +64,31 @@
 #################################################################
 
 ###  http://purl.org/dc/terms/contributor
-dct:contributor a owl:AnnotationProperty .
+dct:contributor a owl:AnnotationProperty ;
+                rdfs:label "contributor" ;
+                rdfs:comment "The guidelines for using names of persons or organizations as creators apply to contributors." ;
+                rdfs:isDefinedBy <http://purl.org/dc/terms/contributor> .
 
 
 ###  http://purl.org/dc/terms/creator
-dct:creator a owl:AnnotationProperty .
+dct:creator a owl:AnnotationProperty ;
+            rdfs:label "creator" ;
+            rdfs:comment "Recommended practice is to identify the creator with a URI. If this is not possible or feasible, a literal value that identifies the creator may be provided." ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/creator> .
+
 
 
 ###  http://purl.org/dc/terms/date
-dct:date a owl:AnnotationProperty .
-
+dct:date a owl:AnnotationProperty ;
+        rdfs:label "date" ;
+        rdfs:comment "Date may be used to express temporal information at any level of granularity. Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [ISO 8601-1] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [W3CDTF] or the Extended Date/Time Format Specification [EDTF]. If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a '/' (slash) character. Either the start or end date may be missing." ;
+        rdfs:isDefinedBy <http://purl.org/dc/terms/date> .
 
 ###  http://purl.org/dc/terms/description
-dct:description a owl:AnnotationProperty .
+dct:description a owl:AnnotationProperty ;
+            rdfs:label "description" ;
+            rdfs:comment "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource." ;
+            rdfs:isDefinedBy <http://purl.org/dc/terms/description> .
 
 
 ###  http://purl.org/dc/terms/identifier
