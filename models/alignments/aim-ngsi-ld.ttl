@@ -31,69 +31,6 @@
 @prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
 @base <https://w3id.org/demeter/agri/> .
 
-
-###  https://uri.etsi.org/ngsi-ld/Property
-ngsi-ld:Property a owl:ObjectProperty, owl:Class ;
-  rdfs:range [
-    a owl:Class ;
-    owl:unionOf (
-     ngsi-ld:Property
-     ngsi-ld:Value
-   )
-  ] ;
-  owl:disjointWith ngsi-ld:Relationship .
-
-###  https://uri.etsi.org/ngsi-ld/Relationship
-ngsi-ld:Relationship a owl:ObjectProperty, owl:Class ;
-  rdfs:domain ngsi-ld:Entity ;
-  rdfs:range [
-    a owl:Class ;
-    owl:unionOf (
-     ngsi-ld:Entity
-     ngsi-ld:Relationship
-   )
-  ] ;
-  owl:disjointWith ngsi-ld:Value .
-
-###  https://uri.etsi.org/ngsi-ld/Entity
-ngsi-ld:Entity rdf:type owl:Class .
-
-###  https://uri.etsi.org/ngsi-ld/Value
-ngsi-ld:Value a owl:Class .
-
-###  Did not include ngsi-ld:Geometry class on purpose, but left the explanation why
-###  ngsi-ld:Geometry is subclassof ngsi-ld:Value, which is disjoint with ngsi-ld:Entity. 
-###  However geo:Geometry has to be an ngsi-ld:Entity, as it is "may exist as a self-contained entity"
-###  and is subclass of geo:SpatialObject (an ngsi-ld:Entity), defined as "Anything spatial (being or having a shape, position or an extent)" 
-###  geo:SpatialObject is also parent of geo:Feature (disjoint of geo:Geometry)
-###  so geo:Geometry cannot be subclass of ngsi-ld:Geometry because it will say that ngsi-ld:Value is subclass of the disjoint ngsi-ld:Entity
-###  https://uri.etsi.org/ngsi-ld/v1/ontology#Geometry
-#ngsi-ld:Geometry
-#  a owl:Class ;
-#  rdfs:subClassOf ngsi-ld:Value .
-
-###  https://uri.etsi.org/ngsi-ld/GeoProperty
-ngsi-ld:GeoProperty
-  a owl:ObjectProperty ;
-  rdfs:subPropertyOf ngsi-ld:CoordinateBasedLocation . #rdfs:range ngsi-ld:Geometry  
- 
-###  https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation  
-ngsi-ld:CoordinateBasedLocation
-  a owl:ObjectProperty ;
-  rdfs:subPropertyOf ngsi-ld:LocationProperty .  
-
-###  https://uri.etsi.org/ngsi-ld/LocationProperty  
-ngsi-ld:LocationProperty
-  a owl:ObjectProperty ;
-  rdfs:subPropertyOf ngsi-ld:Property . 
-
-###  https://uri.etsi.org/ngsi-ld/hasValue
-ngsi-ld:hasValue
-  a owl:DatatypeProperty ;
-  rdfs:domain ngsi-ld:Property .
-
-###  https://uri.etsi.org/ngsi-ld/TemporalProperty  
-ngsi-ld:TemporalProperty a owl:DatatypeProperty .
   
 #################################################################
 #    Alignments
