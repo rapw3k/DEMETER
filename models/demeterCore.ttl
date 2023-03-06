@@ -2,7 +2,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/v1/ontology#> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix schema: <https://schema.org/> .
@@ -47,61 +47,85 @@
 #    Object Properties
 #################################################################
 
-### https://uri.etsi.org/ngsi-ld/v1/ontology#Property
+### https://uri.etsi.org/ngsi-ld/Property
 ngsi-ld:Property rdf:type owl:ObjectProperty ;
+                  rdfs:label "Property" ;
+                  rdfs:comment "A relation defining a property and a value associated with an entity" ;
+                  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
 								 rdfs:range [ rdf:type owl:Class ;
-								 							owl:unionOf ( 
+								 							owl:unionOf (
 								 								ngsi-ld:Property
 								 								ngsi-ld:Value
 								 							)
-								 						] .  
+								 						] .
 
-### https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship
+### https://uri.etsi.org/ngsi-ld/Relationship
 ngsi-ld:Relationship rdf:type owl:ObjectProperty ;
+                  rdfs:label "Relationship" ;
+                  rdfs:comment "Relationship betweeen two entities" ;
+                  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
 										 rdfs:domain ngsi-ld:Entity ;
 										 rdfs:range [ rdf:type owl:Class ;
-										 							owl:unionOf ( 
+										 							owl:unionOf (
 										 								ngsi-ld:Entity
 										 								ngsi-ld:Relationship
 										 							)
-										 						] . 
+										 						] .
 
-### https://uri.etsi.org/ngsi-ld/v1/ontology#hasObject
+### https://uri.etsi.org/ngsi-ld/hasObject
 ngsi-ld:hasObject rdf:type owl:ObjectProperty ;
+                  rdfs:label "has object" ;
+                  rdfs:comment "A realtion betwen a Relationship and an Entity" ;
+                  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
 									rdfs:domain ngsi-ld:Relationship ;
-									rdfs:range ngsi-ld:Entity . 
-									
+									rdfs:range ngsi-ld:Entity .
+
 #################################################################
 #    Data properties
 #################################################################
 
-### https://uri.etsi.org/ngsi-ld/v1/ontology#hasValue
+### https://uri.etsi.org/ngsi-ld/hasValue
 ngsi-ld:hasValue rdf:type owl:DatatypeProperty ;
-								 rdfs:domain ngsi-ld:Property .                 
+                rdfs:label "has value" ;
+                rdfs:comment "A realtion confirming the obeserved value of an entity" ;
+                rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
+								rdfs:domain ngsi-ld:Property .
 
-                                                                        
+
 #################################################################
 #    Classes
 #################################################################
 
-### https://uri.etsi.org/ngsi-ld/v1/ontology#Entity
+### https://uri.etsi.org/ngsi-ld/Entity
 ngsi-ld:Entity rdf:type owl:Class ;
-							owl:disjointWith 
+              rdfs:label "Entity" ;
+              rdfs:comment "An Entity" ;
+              rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
+							owl:disjointWith
 								ngsi-ld:Property ,
 								ngsi-ld:Relationship ,
-								ngsi-ld:Value .     
-								
-### https://uri.etsi.org/ngsi-ld/v1/ontology#Property
-ngsi-ld:Property rdf:type owl:Class ;
-								 owl:disjointWith ngsi-ld:Relationship .
-								 
-### https://uri.etsi.org/ngsi-ld/v1/ontology#Relationship
-ngsi-ld:Relationship rdf:type owl:Class ;
-										 owl:disjointWith ngsi-ld:Value .								 
+								ngsi-ld:Value .
 
-### https://uri.etsi.org/ngsi-ld/v1/ontology#Value
-ngsi-ld:Value rdf:type owl:Class . 
-			   
+### https://uri.etsi.org/ngsi-ld/Property
+ngsi-ld:Property rdf:type owl:Class ;
+              rdfs:label "Property" ;
+              rdfs:comment "A Property" ;
+              rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
+							owl:disjointWith ngsi-ld:Relationship .
+
+### https://uri.etsi.org/ngsi-ld/Relationship
+ngsi-ld:Relationship rdf:type owl:Class ;
+              rdfs:label "Relationship" ;
+              rdfs:comment "A Relationship class" ;
+              rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
+							owl:disjointWith ngsi-ld:Value .
+
+### https://uri.etsi.org/ngsi-ld/Value
+ngsi-ld:Value rdf:type owl:Class ;
+              rdfs:label "Value" ;
+              rdfs:comment "A Value class" ;
+              rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> .
+
 #################################################################
 #    Alignments
 #################################################################
@@ -109,4 +133,3 @@ ngsi-ld:Value rdf:type owl:Class .
 #################################################################
 #    Individuals
 #################################################################
-
