@@ -70,23 +70,31 @@ ngsi-ld:Relationship a owl:ObjectProperty ;
 
 ### https://uri.etsi.org/ngsi-ld/hasObject
 ngsi-ld:hasObject a owl:ObjectProperty ;
+  rdfs:comment "property to define object of Relationship" ;
 	rdfs:domain ngsi-ld:Relationship ;
-	rdfs:range ngsi-ld:Entity . 
+	rdfs:range ngsi-ld:Entity ;
+  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/> .
 
 ###  https://uri.etsi.org/ngsi-ld/GeoProperty
 ngsi-ld:GeoProperty
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf ngsi-ld:CoordinateBasedLocation . #rdfs:range ngsi-ld:Geometry  
+  rdfs:comment "special case of CoordinateBasedLocation object property" ;
+  rdfs:subPropertyOf ngsi-ld:CoordinateBasedLocation ; #rdfs:range ngsi-ld:Geometry  
+  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/> .
  
 ###  https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation  
 ngsi-ld:CoordinateBasedLocation
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf ngsi-ld:LocationProperty .  
+  rdfs:comment "Coordinate based location object property" ;
+  rdfs:subPropertyOf ngsi-ld:LocationProperty ;
+  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/> .
 
 ###  https://uri.etsi.org/ngsi-ld/LocationProperty  
 ngsi-ld:LocationProperty
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf ngsi-ld:Property . 
+  rdfs:comment "location object property" ;
+  rdfs:subPropertyOf ngsi-ld:Property ;
+  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/> . 
 
 #################################################################
 #    Data properties
@@ -95,10 +103,14 @@ ngsi-ld:LocationProperty
 ### https://uri.etsi.org/ngsi-ld/hasValue
 ngsi-ld:hasValue
   a owl:DatatypeProperty ;
-  rdfs:domain ngsi-ld:Property . 
+  rdfs:comment "property to define target value of Property" ;
+  rdfs:domain ngsi-ld:Property ;
+  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/> . 
 
 ###  https://uri.etsi.org/ngsi-ld/TemporalProperty  
-ngsi-ld:TemporalProperty a owl:DatatypeProperty .        
+ngsi-ld:TemporalProperty a owl:DatatypeProperty ;
+  rdfs:comment "Temporal data type property" ;
+  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/> .        
 
 #################################################################
 #    Classes
@@ -106,20 +118,28 @@ ngsi-ld:TemporalProperty a owl:DatatypeProperty .
 
 ### https://uri.etsi.org/ngsi-ld/Entity
 ngsi-ld:Entity a owl:Class ;
-	owl:disjointWith  ngsi-ld:Property ,
+	rdfs:comment "Informational representative of something that is supposed to exist in the real world, physically or conceptually. Any instance of such an entity shall be uniquely identified by a URI" ;
+  owl:disjointWith  ngsi-ld:Property ,
 	                  ngsi-ld:Relationship ,
-	                  ngsi-ld:Value .     
+	                  ngsi-ld:Value ;
+  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/> .     
 								
 ### https://uri.etsi.org/ngsi-ld/Property
 ngsi-ld:Property a owl:Class ;
-	owl:disjointWith ngsi-ld:Relationship .
+  rdfs:comment "description instance which associates a main characteristic, which is an NGSI-LD Value, to either an NGSI-LD Entity, an NGSI-LD Relationship or another NGSI-LD Property" ;
+	owl:disjointWith ngsi-ld:Relationship ;
+  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/> .
 								 
 ### https://uri.etsi.org/ngsi-ld/Relationship
 ngsi-ld:Relationship a owl:Class ;
-	owl:disjointWith ngsi-ld:Value .								 
+  rdfs:comment "description of a directed link between a subject which is either an NGSI-LD Entity, an NGSILD Property, or another NGSI-LD Relationship on one hand, and an object, which is an NGSI-LD Entity, on the other hand" ;
+	owl:disjointWith ngsi-ld:Value ;
+  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/> .							 
 
 ### https://uri.etsi.org/ngsi-ld/Value
-ngsi-ld:Value a owl:Class . 
+ngsi-ld:Value a owl:Class ;
+  rdfs:comment "JSON value (i.e. a string, a number, true or false, an object, an array), or a JSON-LD typed value (i.e. a string as the lexical form of the value together with a type, defined by an XSD base type or more generally an IRI), or a JSON-LD structured value (i.e. a set, a list, a language-tagged string)" ;
+  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/> .
 			   
 
 ###  Did not include ngsi-ld:Geometry class on purpose, but left the explanation why
