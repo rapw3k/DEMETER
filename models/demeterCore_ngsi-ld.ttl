@@ -48,7 +48,6 @@
 #################################################################
 
 ### https://uri.etsi.org/ngsi-ld/Property
-<<<<<<< HEAD:models/demeterCore_ngsi-ld.ttl
 ngsi-ld:Property a owl:ObjectProperty ;
   rdfs:range [
     a owl:Class ;
@@ -89,67 +88,23 @@ ngsi-ld:LocationProperty
   a owl:ObjectProperty ;
   rdfs:subPropertyOf ngsi-ld:Property . 
 
-=======
-ngsi-ld:Property rdf:type owl:ObjectProperty ;
-                  rdfs:label "Property" ;
-                  rdfs:comment "A relation defining a property and a value associated with an entity" ;
-                  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
-								 rdfs:range [ rdf:type owl:Class ;
-								 							owl:unionOf (
-								 								ngsi-ld:Property
-								 								ngsi-ld:Value
-								 							)
-								 						] .
-
-### https://uri.etsi.org/ngsi-ld/Relationship
-ngsi-ld:Relationship rdf:type owl:ObjectProperty ;
-                  rdfs:label "Relationship" ;
-                  rdfs:comment "Relationship betweeen two entities" ;
-                  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
-										 rdfs:domain ngsi-ld:Entity ;
-										 rdfs:range [ rdf:type owl:Class ;
-										 							owl:unionOf (
-										 								ngsi-ld:Entity
-										 								ngsi-ld:Relationship
-										 							)
-										 						] .
-
-### https://uri.etsi.org/ngsi-ld/hasObject
-ngsi-ld:hasObject rdf:type owl:ObjectProperty ;
-                  rdfs:label "has object" ;
-                  rdfs:comment "A realtion betwen a Relationship and an Entity" ;
-                  rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
-									rdfs:domain ngsi-ld:Relationship ;
-									rdfs:range ngsi-ld:Entity .
-
->>>>>>> 0010f4e69dc97874929ac58c0640f2c4246d6f72:models/demeterCore.ttl
 #################################################################
 #    Data properties
 #################################################################
 
 ### https://uri.etsi.org/ngsi-ld/hasValue
-<<<<<<< HEAD:models/demeterCore_ngsi-ld.ttl
 ngsi-ld:hasValue
   a owl:DatatypeProperty ;
   rdfs:domain ngsi-ld:Property . 
 
 ###  https://uri.etsi.org/ngsi-ld/TemporalProperty  
 ngsi-ld:TemporalProperty a owl:DatatypeProperty .        
-=======
-ngsi-ld:hasValue rdf:type owl:DatatypeProperty ;
-                rdfs:label "has value" ;
-                rdfs:comment "A realtion confirming the obeserved value of an entity" ;
-                rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
-								rdfs:domain ngsi-ld:Property .
-
->>>>>>> 0010f4e69dc97874929ac58c0640f2c4246d6f72:models/demeterCore.ttl
 
 #################################################################
 #    Classes
 #################################################################
 
 ### https://uri.etsi.org/ngsi-ld/Entity
-<<<<<<< HEAD:models/demeterCore_ngsi-ld.ttl
 ngsi-ld:Entity a owl:Class ;
 	owl:disjointWith  ngsi-ld:Property ,
 	                  ngsi-ld:Relationship ,
@@ -178,37 +133,6 @@ ngsi-ld:Value a owl:Class .
 #  a owl:Class ;
 #  rdfs:subClassOf ngsi-ld:Value .
 
-=======
-ngsi-ld:Entity rdf:type owl:Class ;
-              rdfs:label "Entity" ;
-              rdfs:comment "An Entity" ;
-              rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
-							owl:disjointWith
-								ngsi-ld:Property ,
-								ngsi-ld:Relationship ,
-								ngsi-ld:Value .
-
-### https://uri.etsi.org/ngsi-ld/Property
-ngsi-ld:Property rdf:type owl:Class ;
-              rdfs:label "Property" ;
-              rdfs:comment "A Property" ;
-              rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
-							owl:disjointWith ngsi-ld:Relationship .
-
-### https://uri.etsi.org/ngsi-ld/Relationship
-ngsi-ld:Relationship rdf:type owl:Class ;
-              rdfs:label "Relationship" ;
-              rdfs:comment "A Relationship class" ;
-              rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
-							owl:disjointWith ngsi-ld:Value .
-
-### https://uri.etsi.org/ngsi-ld/Value
-ngsi-ld:Value rdf:type owl:Class ;
-              rdfs:label "Value" ;
-              rdfs:comment "A Value class" ;
-              rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> .
-
->>>>>>> 0010f4e69dc97874929ac58c0640f2c4246d6f72:models/demeterCore.ttl
 #################################################################
 #    Alignments
 #################################################################
