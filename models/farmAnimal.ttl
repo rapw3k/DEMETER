@@ -17,7 +17,8 @@
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
-@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix fiware: <https://smartdatamodels.org/> .
+@prefix fiware-agrifood: <https://smartdatamodels.org/dataModel.Agrifood/> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
@@ -77,6 +78,7 @@ saref4agri:isLocatedIn rdf:type owl:ObjectProperty ;
 ###  https://w3id.org/def/saref4agri#isLocationOf
 saref4agri:isLocationOf rdf:type owl:ObjectProperty ;
               rdfs:label "is location of" ;
+              rdfs:comment "Location of a entity e.g. a farm"
               rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
 
 ###  https://w3id.org/def/saref4agri#isMemberOf
@@ -99,35 +101,35 @@ saref4agri:hasMember rdf:type owl:ObjectProperty ;
            rdfs:label "has member" ;
            rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .       
 
-### https://uri.fiware.org/ns/data-models#calvedBy
-fiware:calvedBy	a      owl:ObjectProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/calvedBy
+fiware-agrifood:calvedBy	a      owl:ObjectProperty ;     
         rdfs:label   		"calvedBy"@en ;
         rdfs:comment		"Mother of the animal" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> . 
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> . 
         
-### https://uri.fiware.org/ns/data-models#siredBy
-fiware:siredBy	a      owl:ObjectProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/siredBy
+fiware-agrifood:siredBy	a      owl:ObjectProperty ;     
         rdfs:label   		"siredBy"@en ;
         rdfs:comment		"Father of the animal" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .         
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
         
-### https://uri.fiware.org/ns/data-models#ownedBy
-fiware:ownedBy	a      owl:ObjectProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/ownedBy
+fiware-agrifood:ownedBy	a      owl:ObjectProperty ;     
         rdfs:label   		"ownedBy"@en ;
         rdfs:comment		"The owner of the animal" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .                
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
           
-### https://uri.fiware.org/ns/data-models#locatedAt
-fiware:locatedAt	a      owl:ObjectProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/locatedAt
+fiware-agrifood:locatedAt	a      owl:ObjectProperty ;     
         rdfs:label   		"locatedAt"@en ;
         rdfs:comment		"AgriParcel relationship" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> . 
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
         
-### https://uri.fiware.org/ns/data-models#fedWith
-fiware:fedWith	a      owl:ObjectProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/fedWith
+fiware-agrifood:fedWith	a      owl:ObjectProperty ;     
         rdfs:label   		"fedWith"@en ;
         rdfs:comment		"Food used for the animal" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .                  
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .                 
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal          
 af-inspire:includesAnimal
@@ -159,80 +161,84 @@ saref4agri:hasDeathDate rdf:type owl:DatatypeProperty ;
 foodie:livestockType  a  owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "livestockType"@en ;
+        rdfs:label "livestock type" ;
+        rdfs:comment "A relation to express the type of an animal in a farm" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
         
 ###  http://foodie-cloud.com/model/foodie#livestockNumber                
 foodie:livestockNumber  a  owl:DatatypeProperty ;
         rdfs:range      xsd:decimal ;
         skos:prefLabel  "livestockNumber"@en ;
+        rdfs:label "livestock number" ;
+        rdfs:comment "A relation to express the unique identification number of an animal in a farm" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .        
 
-### https://uri.fiware.org/ns/data-models#species
-fiware:species	a      owl:DatatypeProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/species
+fiware-agrifood:species	a      owl:DatatypeProperty ;     
         rdfs:label   		"species"@en ;
         rdfs:comment		"Species to which the animal belongs (dairy cattle, beef cattle, sheep, goat, horse, pig)" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> . 
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> . 
 
-### https://uri.fiware.org/ns/data-models#relatedSource
-fiware:relatedSource	a      owl:DatatypeProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/relatedSource
+fiware-agrifood:relatedSource	a      owl:DatatypeProperty ;     
         rdfs:label   		"relatedSource"@en ;
         rdfs:comment		"ID of the animal in external applications" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> . 
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> . 
 
-### https://uri.fiware.org/ns/data-models#legalID
-fiware:legalID	a      owl:DatatypeProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/legalID
+fiware-agrifood:legalID	a      owl:DatatypeProperty ;     
         rdfs:label   		"legalID"@en ;
         rdfs:comment		"Legal ID of the animal" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .         
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .         
 
-### https://uri.fiware.org/ns/data-models#birthdate
-fiware:birthdate	a      owl:DatatypeProperty ;
+### https://smartdatamodels.org/dataModel.Agrifood/birthdate
+fiware-agrifood:birthdate	a      owl:DatatypeProperty ;
         rdfs:range 			 xsd:dateTime ;     
         rdfs:label   		"birthdate"@en ;
-        rdfs:comment		"Animal’s birthdate" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> . 
+        rdfs:comment		"Animal's birthdate" ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> . 
         
-### https://uri.fiware.org/ns/data-models#sex
-fiware:sex	a      owl:DatatypeProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/sex
+fiware-agrifood:sex	a      owl:DatatypeProperty ;     
         rdfs:label   		"sex"@en ;
         rdfs:comment		"Sex of the animal" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .                 
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .                
         
-### https://uri.fiware.org/ns/data-models#breed
-fiware:breed	a      owl:DatatypeProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/breed
+fiware-agrifood:breed	a      owl:DatatypeProperty ;     
         rdfs:label   		"breed"@en ;
         rdfs:comment		"Breed of the animal" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .        
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .        
 
-### https://uri.fiware.org/ns/data-models#weight
-fiware:weight	a      owl:DatatypeProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/weight
+fiware-agrifood:weight	a      owl:DatatypeProperty ;     
         rdfs:label   		"weight"@en ;
         rdfs:comment		"The weight of the animal as a number" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .        
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .        
         
-### https://uri.fiware.org/ns/data-models#phenologicalCondition
-fiware:phenologicalCondition	a      owl:DatatypeProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition
+fiware-agrifood:phenologicalCondition	a      owl:DatatypeProperty ;     
         rdfs:label   		"phenologicalCondition"@en ;
         rdfs:comment		"Phenological Condition of the animal" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> . 
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
         
-### https://uri.fiware.org/ns/data-models#reproductiveCondition
-fiware:reproductiveCondition	a      owl:DatatypeProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition
+fiware-agrifood:reproductiveCondition	a      owl:DatatypeProperty ;     
         rdfs:label   		"reproductiveCondition"@en ;
         rdfs:comment		"Reproductive Condition of the animal" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
         
-### https://uri.fiware.org/ns/data-models#healthCondition
-fiware:healthCondition	a      owl:DatatypeProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/healthCondition
+fiware-agrifood:healthCondition	a      owl:DatatypeProperty ;     
         rdfs:label   		"healthCondition"@en ;
         rdfs:comment		"Health Condition of the animal" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> . 
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> . 
         
-### https://uri.fiware.org/ns/data-models#welfareCondition
-fiware:welfareCondition	a      owl:DatatypeProperty ;     
+### https://smartdatamodels.org/dataModel.Agrifood/welfareCondition
+fiware-agrifood:welfareCondition	a      owl:DatatypeProperty ;     
         rdfs:label   		"welfareCondition"@en ;
         rdfs:comment		"Indicator of the animal welfare" ;
-        rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .                         
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .                         
 
 #################################################################
 #    Classes
@@ -300,6 +306,7 @@ saref4agri:AnimalGroup rdf:type owl:Class ;
 ###  https://w3id.org/def/saref4agri#ID
 saref4agri:ID rdf:type owl:Class ;
     rdfs:label "ID" ;
+    rdfs:comment "A collection of animal IDs" ;
     rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .  
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies
@@ -313,26 +320,28 @@ af-inspire:FarmAnimalSpecies  a           owl:Class ;
                            owl:onProperty      foodie:livestockNumber
                          ] ;
         skos:prefLabel   "FarmAnimalSpecies"@en ;
+        rdfs:label "Farm Animal Species" ;
+        rdfs:comment "A collection of species of animal in a specific farm" ;
         rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
 
 
 
-### https://uri.fiware.org/ns/data-models#Animal
-fiware:Animal	rdf:type owl:Class ;
+### https://smartdatamodels.org/dataModel.Agrifood/Animal
+fiware-agrifood:Animal	rdf:type owl:Class ;
 			rdfs:label "Animal" ;   
 			rdfs:comment "The proposed animal data model has been made from a more general point of view, trying to adjust it to the information coming from the devices and sensors used in the UC." ;
-			rdfs:isDefinedBy <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> .
+			rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
 
 #################################################################
 #    Alignments
 #################################################################
 
-saref4agri:Animal owl:equivalentClass fiware:Animal .
+saref4agri:Animal owl:equivalentClass fiware-agrifood:Animal .
 af-inspire:FarmAnimalSpecies owl:equivalentClass saref4agri:Animal .
-saref4agri:hasBirthDate owl:equivalentProperty fiware:birthdate .
-foodie:livestockType owl:equivalentProperty fiware:species .
-foodie:livestockNumber owl:equivalentProperty fiware:legalID .
-fiware:locatedAt rdfs:subPropertyOf saref4agri:isLocatedIn .
+saref4agri:hasBirthDate owl:equivalentProperty fiware-agrifood:birthdate .
+foodie:livestockType owl:equivalentProperty fiware-agrifood:species .
+foodie:livestockNumber owl:equivalentProperty fiware-agrifood:legalID .
+fiware-agrifood:locatedAt rdfs:subPropertyOf saref4agri:isLocatedIn .
 
 #################################################################
 #    Individuals
