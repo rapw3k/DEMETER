@@ -9,7 +9,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @base <https://w3id.org/demeter/> .
 
-<https://w3id.org/demeter/core> rdf:type owl:Ontology ;
+<https://w3id.org/demeter/core> a owl:Ontology ;
                             owl:versionIRI <https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/demeterCore.ttl> ;
                             dct:contributor [ schema:affiliation [ foaf:name "OGC"
                                                                  ] ;
@@ -48,6 +48,48 @@
 #################################################################
 
 ### https://uri.etsi.org/ngsi-ld/Property
+<<<<<<< HEAD:models/demeterCore_ngsi-ld.ttl
+ngsi-ld:Property a owl:ObjectProperty ;
+  rdfs:range [
+    a owl:Class ;
+    owl:unionOf (
+     ngsi-ld:Property
+     ngsi-ld:Value
+   )
+  ] .
+
+### https://uri.etsi.org/ngsi-ld/Relationship
+ngsi-ld:Relationship a owl:ObjectProperty ;
+  rdfs:domain ngsi-ld:Entity ;
+  rdfs:range [
+    a owl:Class ;
+    owl:unionOf (
+     ngsi-ld:Entity
+     ngsi-ld:Relationship
+   )
+  ] .
+
+### https://uri.etsi.org/ngsi-ld/hasObject
+ngsi-ld:hasObject a owl:ObjectProperty ;
+	rdfs:domain ngsi-ld:Relationship ;
+	rdfs:range ngsi-ld:Entity . 
+
+###  https://uri.etsi.org/ngsi-ld/GeoProperty
+ngsi-ld:GeoProperty
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf ngsi-ld:CoordinateBasedLocation . #rdfs:range ngsi-ld:Geometry  
+ 
+###  https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation  
+ngsi-ld:CoordinateBasedLocation
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf ngsi-ld:LocationProperty .  
+
+###  https://uri.etsi.org/ngsi-ld/LocationProperty  
+ngsi-ld:LocationProperty
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf ngsi-ld:Property . 
+
+=======
 ngsi-ld:Property rdf:type owl:ObjectProperty ;
                   rdfs:label "Property" ;
                   rdfs:comment "A relation defining a property and a value associated with an entity" ;
@@ -80,23 +122,63 @@ ngsi-ld:hasObject rdf:type owl:ObjectProperty ;
 									rdfs:domain ngsi-ld:Relationship ;
 									rdfs:range ngsi-ld:Entity .
 
+>>>>>>> 0010f4e69dc97874929ac58c0640f2c4246d6f72:models/demeterCore.ttl
 #################################################################
 #    Data properties
 #################################################################
 
 ### https://uri.etsi.org/ngsi-ld/hasValue
+<<<<<<< HEAD:models/demeterCore_ngsi-ld.ttl
+ngsi-ld:hasValue
+  a owl:DatatypeProperty ;
+  rdfs:domain ngsi-ld:Property . 
+
+###  https://uri.etsi.org/ngsi-ld/TemporalProperty  
+ngsi-ld:TemporalProperty a owl:DatatypeProperty .        
+=======
 ngsi-ld:hasValue rdf:type owl:DatatypeProperty ;
                 rdfs:label "has value" ;
                 rdfs:comment "A realtion confirming the obeserved value of an entity" ;
                 rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
 								rdfs:domain ngsi-ld:Property .
 
+>>>>>>> 0010f4e69dc97874929ac58c0640f2c4246d6f72:models/demeterCore.ttl
 
 #################################################################
 #    Classes
 #################################################################
 
 ### https://uri.etsi.org/ngsi-ld/Entity
+<<<<<<< HEAD:models/demeterCore_ngsi-ld.ttl
+ngsi-ld:Entity a owl:Class ;
+	owl:disjointWith  ngsi-ld:Property ,
+	                  ngsi-ld:Relationship ,
+	                  ngsi-ld:Value .     
+								
+### https://uri.etsi.org/ngsi-ld/Property
+ngsi-ld:Property a owl:Class ;
+	owl:disjointWith ngsi-ld:Relationship .
+								 
+### https://uri.etsi.org/ngsi-ld/Relationship
+ngsi-ld:Relationship a owl:Class ;
+	owl:disjointWith ngsi-ld:Value .								 
+
+### https://uri.etsi.org/ngsi-ld/Value
+ngsi-ld:Value a owl:Class . 
+			   
+
+###  Did not include ngsi-ld:Geometry class on purpose, but left the explanation why
+###  ngsi-ld:Geometry is subclassof ngsi-ld:Value, which is disjoint with ngsi-ld:Entity. 
+###  However geo:Geometry has to be an ngsi-ld:Entity, as it is "may exist as a self-contained entity"
+###  and is subclass of geo:SpatialObject (an ngsi-ld:Entity), defined as "Anything spatial (being or having a shape, position or an extent)" 
+###  geo:SpatialObject is also parent of geo:Feature (disjoint of geo:Geometry)
+###  so geo:Geometry cannot be subclass of ngsi-ld:Geometry because it will say that ngsi-ld:Value is subclass of the disjoint ngsi-ld:Entity
+###  https://uri.etsi.org/ngsi-ld/v1/ontology#Geometry
+#ngsi-ld:Geometry
+#  a owl:Class ;
+#  rdfs:subClassOf ngsi-ld:Value .
+
+=======
 ngsi-ld:Entity rdf:type owl:Class ;
               rdfs:label "Entity" ;
               rdfs:comment "An Entity" ;
@@ -126,6 +208,7 @@ ngsi-ld:Value rdf:type owl:Class ;
               rdfs:comment "A Value class" ;
               rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> .
 
+>>>>>>> 0010f4e69dc97874929ac58c0640f2c4246d6f72:models/demeterCore.ttl
 #################################################################
 #    Alignments
 #################################################################
