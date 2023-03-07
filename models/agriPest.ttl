@@ -17,7 +17,8 @@
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
-@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix fiware: <https://smartdatamodels.org/> .
+@prefix fiware-agrifood: <https://smartdatamodels.org/dataModel.Agrifood/> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
@@ -27,7 +28,7 @@
 @prefix saref: <https://w3id.org/saref#> .
 @base <https://w3id.org/demeter/> .
 
-<https://w3id.org/demeter/agri/agriPest> rdf:type owl:Ontology ;
+<https://w3id.org/demeter/agri/agriPest> a owl:Ontology ;
                             owl:versionIRI <https://w3id.org/demeter/agri/agriPest/2.0> ;
                             dct:contributor [ schema:affiliation [ foaf:name "OGC"
                                                                  ] ;
@@ -46,6 +47,7 @@
                             dct:description "The DEMETER AgriPest is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "DEMETER AgriPest"@en ;
+                            rdfs:label "DEMETER AgriPest"@en ;
                             rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
                             owl:versionInfo "2.0" ;
                             foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
@@ -76,11 +78,11 @@
 #    Classes
 #################################################################
 
-### https://uri.fiware.org/ns/data-models#AgriPest
-fiware:AgriPest	rdf:type owl:Class ;
+### https://smartdatamodels.org/dataModel.Agrifood/AgriPest
+fiware-agrifood:AgriPest a owl:Class ;
 			rdfs:label "AgriPest" ;   
 			rdfs:comment "This entity contains a harmonised description of an agricultural pest. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
-			rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> .     
+			rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriPest/schema.json> .     
 			   
 #################################################################
 #    Alignments
