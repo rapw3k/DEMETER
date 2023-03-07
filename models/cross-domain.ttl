@@ -599,6 +599,15 @@ qb:dataSet
     rdfs:range qb:DataSet;
     rdfs:isDefinedBy <http://purl.org/linked-data/cube> .
 
+##### QU
+###  http://purl.oclc.org/NET/ssnx/qu/qu#unitKind
+qu:unitKind
+  	a owl:ObjectProperty ;  
+  	rdfs:isDefinedBy <https://www.w3.org/2005/Incubator/ssn/ssnx/qu/qu> ;
+  	rdfs:label "unitKind" ;
+    rdfs:comment "Being the qu:unitKind of something, implies being something that is a qu:Unit" ;
+  	rdfs:range qu:Unit .
+
 ##### QUDT
 ###  http://qudt.org/schema/qudt/unit
 qudt:unit
@@ -839,13 +848,15 @@ dim:Density a owl:Class ;
 dim:Dimensionless a owl:Class ;
                   rdfs:subClassOf qu:QuantityKind ;
                   rdfs:label "Dimensionless" ;
-                  rdfs:comment "A Dimensionless is something that is a QuantityKind and has a qu:unitKind property who must be a DimensionlessUnit" ;
+                  rdfs:comment "A Dimensionless is something that is a QuantityKind and has a unitKind property who must be a DimensionlessUnit" ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Distance
 dim:Distance a owl:Class ;
-             rdfs:subClassOf qu:QuantityKind ;
-             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
+              rdfs:subClassOf qu:QuantityKind ;
+              rdfs:label "Distance" ;
+              rdfs:comment "A dim:Distance is something that is a qu:QuantityKind and has a unitKind property who must be a dim:DistanceUnit" ;
+              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Energy
 dim:Energy a owl:Class ;
@@ -914,7 +925,7 @@ dim:StressOrPressure a owl:Class ;
 dim:SurfaceDensity a owl:Class ;
                    rdfs:subClassOf qu:QuantityKind ;
                    rdfs:label "Surface Density" ;
-                   rdfs:comment "A SurfaceDensity is something that is a QuantityKind and has a qu:unitKind property who must be a SurfaceDensityUnit" ;
+                   rdfs:comment "A SurfaceDensity is something that is a QuantityKind and has a unitKind property who must be a SurfaceDensityUnit" ;
                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
 ###  http://purl.oclc.org/NET/ssnx/qu/dim#Temperature
@@ -1639,6 +1650,8 @@ sosa:isSampleOf owl:equivalentProperty iso19156_SF:SF_SamplingFeature.sampledFea
 sosa:Observation owl:equivalentClass iso19156_OB:OM_Observation .
 qudt:QuantityKind owl:equivalentClass qu:QuantityKind .
 iso19103:Measure owl:equivalentClass qudt:QuantityValue .
+qu:unitKind owl:equivalentProperty qudt:unit .
+qu:Unit owl:equivalentClass qudt:Unit .
 
 #################################################################
 #    Individuals
@@ -1710,12 +1723,13 @@ dim:LightAndRelatedElectromagneticRadiationsScheme a owl:NamedIndividual ,
                                                   rdfs:comment "Named individual of LightAndRelatedElectromagneticRadiationsScheme" ;         
                                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
 
+########## observed properties
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#acceleration
 quantity:acceleration a owl:NamedIndividual ,
                                dim:Acceleration ;
                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                       rdfs:label "acceleration"^^xsd:string ;
-                      rdfs:comment "Named individual of acceleration" ;
+                      rdfs:comment "acceleration is a vector property that is an increase of speed of matter at a point per time in a direction. In other words: the derivative of the speed over time. Typically expressed as a = dv/dt." ;
                       skos:inScheme dim:SpaceAndTimeScheme .
 
 
@@ -1724,7 +1738,7 @@ quantity:carbonContent a owl:NamedIndividual ,
                                 dim:Concentration ;
                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                        rdfs:label "carbon content"^^xsd:string ;
-                       rdfs:comment "Named individual of carbonContent" ;
+                       rdfs:comment "carbon content is a concentration of carbon, both free and bounded" ;
                        skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme .
 
 
@@ -1733,7 +1747,7 @@ quantity:compressibility a owl:NamedIndividual ,
                                   dim:Compressibility ;
                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                          rdfs:label "compressibility"^^xsd:string ;
-                         rdfs:comment "Named individual of compressibility" ;
+                         rdfs:comment "compressibility is a property that can be calculated from volume change due to pressure change as -(1/V).dV/dP" ;
                          skos:inScheme dim:HeatScheme ,
                                        dim:MechanicsScheme .
 
@@ -1743,7 +1757,7 @@ quantity:concentration a owl:NamedIndividual ,
                                 dim:Concentration ;
                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                        rdfs:label "concentration"^^xsd:string ;
-                       rdfs:comment "Named individual of concentration" ;
+                       rdfs:comment "concentration is a fraction that is the relative quantity of a substance in a mixture" ;
                        skos:inScheme dim:PhysicalChemistryAndMolecularPhysicsScheme .
 
 
@@ -1752,7 +1766,7 @@ quantity:density a owl:NamedIndividual ,
                           dim:Density ;
                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                  rdfs:label "density"^^xsd:string ;
-                 rdfs:comment "Named individual of density" ;
+                 rdfs:comment "density is a property that is a concentration of matter, measured as a mass per unit volume." ;
                  skos:inScheme dim:AcousticsScheme ,
                                dim:MechanicsScheme ,
                                dim:PhysicalChemistryAndMolecularPhysicsScheme .
@@ -1763,7 +1777,7 @@ quantity:distance a owl:NamedIndividual ,
                            dim:Distance ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                   rdfs:label "distance"^^xsd:string ;
-                  rdfs:comment "Named individual of distance" ;
+                  rdfs:comment "distance is a vector property that is a measure of remoteness between two points, or minimum remoteness between lines or surfaces" ;
                   skos:inScheme dim:SpaceAndTimeScheme .
 
 
@@ -1788,7 +1802,7 @@ quantity:length a owl:NamedIndividual ,
                          dim:Distance ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                 rdfs:label "length"^^xsd:string ;
-                rdfs:comment "Named individual of length" ;   
+                rdfs:comment "length is a distance measured in the direction of the longest side of an item or in the direction of its main axis" ;   
                 skos:inScheme dim:SpaceAndTimeScheme .
 
 
@@ -1806,7 +1820,7 @@ quantity:power a owl:NamedIndividual ,
                         dim:Power ;
                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                rdfs:label "power"^^xsd:string ;
-               rdfs:comment "Named individual of power" ;
+               rdfs:comment "power is an energy flow rate that is a rate of energy transfer" ;
                skos:inScheme dim:ElectricityAndMagnetismScheme ,
                              dim:MechanicsScheme .
 
@@ -1816,7 +1830,7 @@ quantity:pressure a owl:NamedIndividual ,
                            dim:StressOrPressure ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                   rdfs:label "pressure"^^xsd:string ;
-                  rdfs:comment "Named individual of pressure" ;
+                  rdfs:comment "pressure is a property that is a force applied to, or distributed, over a surface. It is a force perpendicular to the area divided by area (p = dF/dA where dF is the perpendicular component of the force acting on the area element dA)." ;
                   skos:inScheme dim:MechanicsScheme .
 
 
@@ -1833,7 +1847,7 @@ quantity:radianceExposure a owl:NamedIndividual ,
                                    dim:RadianceExposure ;
                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                           rdfs:label "radiance exposure"^^xsd:string ;
-                          rdfs:comment "Named individual of radianceExposure" ; 
+                          rdfs:comment "radiance exposure is a property" ; 
                           skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme .
 
 
@@ -1850,7 +1864,7 @@ quantity:soundEnergyDensity a owl:NamedIndividual ,
                                      dim:EnergyDensity ;
                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                             rdfs:label "sound energy density"^^xsd:string ;
-                            rdfs:comment "Named individual of soundEnergyDensity" ; 
+                            rdfs:comment "sound energy density is a property that is an energy level due to sound per unit of volume" ; 
                             skos:inScheme dim:AcousticsScheme .
 
 
@@ -1859,7 +1873,7 @@ quantity:soundIntensity a owl:NamedIndividual ,
                                  dim:EnergyFlux ;
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                         rdfs:label "sound intensity"^^xsd:string ;
-                        rdfs:comment "Named individual of soundIntensity" ;
+                        rdfs:comment "sound intensity is a property that is a sound power per unit of area" ;
                         skos:inScheme dim:AcousticsScheme .
 
 
@@ -1868,7 +1882,7 @@ quantity:soundPower a owl:NamedIndividual ,
                              dim:Power ;
                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                     rdfs:label "sound power"^^xsd:string ;
-                    rdfs:comment "Named individual of soundPower" ;
+                    rdfs:comment "sound power is a power of sound" ;
                     skos:inScheme dim:AcousticsScheme .
 
 
@@ -1877,7 +1891,7 @@ quantity:soundPressure a owl:NamedIndividual ,
                                 dim:StressOrPressure ;
                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                        rdfs:label "sound pressure"^^xsd:string ;
-                       rdfs:comment "Named individual of soundPressure" ;
+                       rdfs:comment "sound pressure is a pressure that is the difference between the instantaneous total pressure and the static pressure" ;
                        skos:inScheme dim:AcousticsScheme ,
                                      dim:MechanicsScheme .
 
@@ -1887,7 +1901,7 @@ quantity:surfaceDensity a owl:NamedIndividual ,
                                  dim:SurfaceDensity ;
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                         rdfs:label "surface density"^^xsd:string ;
-                        rdfs:comment "Named individual of surfaceDensity" ;
+                        rdfs:comment "surface density is a property that is a mass per unit of area" ;
                         skos:inScheme dim:MechanicsScheme .
 
 
@@ -1906,7 +1920,7 @@ quantity:vapourCompressibility a owl:NamedIndividual ,
                                         dim:Compressibility ;
                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                                rdfs:label "vapour compressibility"^^xsd:string ;
-                               rdfs:comment "Named individual of vapourCompressibility" ;
+                               rdfs:comment "vapour compressibility is a compressibility of a vapour" ;
                                skos:inScheme dim:HeatScheme ,
                                              dim:PhysicalChemistryAndMolecularPhysicsScheme .
 
@@ -1916,7 +1930,7 @@ quantity:vapourPressure a owl:NamedIndividual ,
                                  dim:StressOrPressure ;
                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                         rdfs:label "vapour pressure"^^xsd:string ;
-                        rdfs:comment "Named individual of vapourPressure" ;
+                        rdfs:comment "vapour pressure is a pressure of the vapour phase of a substance over the liquid phase when the phases are in equilibrium" ;
                         skos:inScheme dim:MechanicsScheme .
 
 
@@ -1933,7 +1947,7 @@ quantity:velocity a owl:NamedIndividual ,
                            dim:VelocityOrSpeed ;
                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> ;
                   rdfs:label "velocity"^^xsd:string ;
-                  rdfs:comment "Named individual of velocity" ;
+                  rdfs:comment "velocity is a vector property that is time rate of motion of matter at a point in a fixed direction. Typically also used for the relative velocity with reference to a point on the earth (v = ds/dt  where s is the displacement and t is the time)" ;
                   skos:inScheme dim:LightAndRelatedElectromagneticRadiationsScheme ,
                                 dim:SpaceAndTimeScheme .
                                 
@@ -1943,7 +1957,7 @@ quantity:criticalBuildUpSpeed a owl:NamedIndividual ,
                               skos:inScheme dim:AcousticsScheme ,
                                             dim:PeriodicAndRelatedPhenomenaScheme ;
                               rdfs:label "critical build-up speed"^^xsd:string ;
-                              rdfs:comment "Named individual of criticalBuildUpSpeed" ;
+                              rdfs:comment "critical build-up speed is a rotational speed that is the lowest speed at which the machine voltage builds up under specified conditions" ;
                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .
                               
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#criticalTorsionalSpeed
@@ -1952,7 +1966,7 @@ quantity:criticalTorsionalSpeed a owl:NamedIndividual ,
                                 skos:inScheme dim:AcousticsScheme ,
                                               dim:PeriodicAndRelatedPhenomenaScheme ;
                                 rdfs:label "critical torsional speed"^^xsd:string ;
-                                rdfs:comment "Named individual of criticalTorsionalSpeed" ;
+                                rdfs:comment "critical torsional speed is a rotational speed at which the amplitudes of the vibrations of a machine rotor due to shaft torsional vibration reach their maximum values" ;
                                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#criticalWhirlingSpeed
@@ -1961,7 +1975,7 @@ quantity:criticalWhirlingSpeed a owl:NamedIndividual ,
                                skos:inScheme dim:AcousticsScheme ,
                                              dim:PeriodicAndRelatedPhenomenaScheme ;
                                rdfs:label "critical whirling speed"^^xsd:string ;
-                               rdfs:comment "Named individual of criticalWhirlingSpeed" ;
+                               rdfs:comment "critical whirling speed is a rotational speed at which the amplitudes of the vibrations of a machine rotor due to shaft whirling vibration reach their maximum values" ;
                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .   
                                
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#pseudovectorProperty
@@ -1978,7 +1992,7 @@ quantity:rotationalSpeed a owl:NamedIndividual ,
                                        dim:PeriodicAndRelatedPhenomenaScheme ,
                                        dim:SpaceAndTimeScheme ;
                          rdfs:label "rotational speed"^^xsd:string ;
-                         rdfs:comment "Named individual of rotationalSpeed" ;
+                         rdfs:comment "rotational speed is a property that is the rate of rotation of a material around an axis" ;
                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .                           
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousPullOutTorque
@@ -1986,7 +2000,7 @@ quantity:synchronousPullOutTorque a owl:NamedIndividual ,
                                            dim:Energy ;
                                   skos:inScheme dim:MechanicsScheme ;
                                   rdfs:label "synchronous pull-out torque"^^xsd:string ;
-                                  rdfs:comment "Named individual of synchronousPullOutTorque" ;
+                                  rdfs:comment "synchronous pull-out torque is a torque that is the maximum torque that a synchronous machine can develop without loss of synchronism while operating at rated voltage, frequency and excitation" ;
                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#synchronousSpeed
@@ -1995,7 +2009,7 @@ quantity:synchronousSpeed a owl:NamedIndividual ,
                           skos:inScheme dim:AcousticsScheme ,
                                         dim:PeriodicAndRelatedPhenomenaScheme ;
                           rdfs:label "synchronous speed"^^xsd:string ;
-                          rdfs:comment "Named individual of synchronousSpeed" ;
+                          rdfs:comment "synchronous speed is a rotational speed that results from the frequency of the system to which the machine is connected and either the number of poles or the number of projections in the machine" ;
                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
 
 ###  http://purl.oclc.org/NET/ssnx/qu/quantity#torque
@@ -2003,7 +2017,7 @@ quantity:torque a owl:NamedIndividual ,
                          dim:Energy ;
                 skos:inScheme dim:MechanicsScheme ;
                 rdfs:label "torque"^^xsd:string ;
-                rdfs:comment "Named individual of torque" ;
+                rdfs:comment "torque is a property that is a twisting force being a product of a force and a distance. The force is applied to something that has a role as a lever and the distance is the distance between the point on the lever where the force applies and the fulcrum of the lever" ;
                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/qu/qu-rec20> .    
 
 #### TIME
