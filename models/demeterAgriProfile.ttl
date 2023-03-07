@@ -17,7 +17,7 @@
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix saref4agri: <https://w3id.org/def/saref4agri#> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
-@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix fiware: <https://smartdatamodels.org/> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
@@ -27,7 +27,7 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @base <https://w3id.org/demeter/> .
 
-<https://w3id.org/demeter/agri> rdf:type owl:Ontology ;
+<https://w3id.org/demeter/agri> a owl:Ontology ;
                             owl:versionIRI <https://w3id.org/demeter/agri/2.0> ;
                             dct:contributor [ schema:affiliation [ foaf:name "OGC"
                                                                  ] ;
@@ -56,6 +56,7 @@
                             dct:description "The DEMETER Agri Profile is a master profile importing focused specific profiles/modules of DEMETER AIM."@en ;
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "DEMETER Agriculture Information Model (AIM) domain ontology"@en ;
+                            rdfs:label "DEMETER Agriculture Information Model (AIM) domain ontology"@en ;
                             rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
                             owl:versionInfo "2.0" ;
                             foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
