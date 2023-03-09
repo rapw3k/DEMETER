@@ -80,7 +80,7 @@ foodie:alertGeometry  a  owl:ObjectProperty ;
 
 ###  http://foodie-cloud.com/model/foodie#plotAlert
 foodie:plotAlert
-				a owl:ObjectProperty ;
+	a owl:ObjectProperty ;
         rdfs:range      foodie:Alert ;
         skos:prefLabel  "plotAlert"@en ;
         rdfs:label "plotAlert" ;
@@ -128,7 +128,13 @@ foodie:zoneAlert  a     owl:ObjectProperty ;
         skos:prefLabel  "zoneAlert"@en ;
         rdfs:label "zoneAlert" ;
         rdfs:comment "A relation between management zone and alert, inverse of alertZone" ;
-        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .   
+
+### https://uri.etsi.org/ngsi-ld/data
+ngsi-ld:data	a      owl:ObjectProperty ;
+        rdfs:label   		"data"@en ;
+        rdfs:comment		"Payload containing the data retrieved" ;
+        rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> .
 
 #################################################################
 #    Data properties
@@ -145,47 +151,35 @@ foodie:alertDate  a     owl:DatatypeProperty ;
 ### https://smartdatamodels.org/dataModel.Weather/subCategory
 fiware-weather:subCategory	a      owl:DatatypeProperty ;
         rdfs:label   		"subCategory"@en ;
-        rdfs:comment		"Describe the sub category of alert" ;
+        rdfs:comment		"Describe the sub category of alert, i.e., Weather categories, e.g., avalanches,coastalEvent, coldWave, flood, fog, forestFire, heatWave, highTemperature, hurricane, ice, lowTemperature, rainfall, rain_flood, snow, snow_ice, thunderstorms, tornado, tropicalCyclone, tsunami, wind" ;
         rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
-
-### https://smartdatamodels.org/address
-fiware:address	a      owl:DatatypeProperty ;
-        rdfs:label   		"address"@en ;
-        rdfs:comment		"Civic address of Alert" ;
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriApp/schemaDTDL.json> .
 
 ### https://smartdatamodels.org/dataModel.Weather/dateIssued
 fiware-weather:dateIssued	a      owl:DatatypeProperty ;
         rdfs:range      xsd:dateTime ;
         rdfs:label   		"dateIssued"@en ;
-        rdfs:comment		"The date and time the forecast was issued by the meteorological bureau in ISO8601 UTC format" ;
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherForecast/schemaDTDL.json> .
+        rdfs:comment		"The date and time the item was issued in ISO8601 UTC format" ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
 
 ### https://smartdatamodels.org/dataModel.Weather/validFrom
 fiware-weather:validFrom	a      owl:DatatypeProperty ;
         rdfs:range      xsd:dateTime ;
         rdfs:label   		"validFrom"@en ;
-        rdfs:comment		"The start date of validity of the alert in ISO8601 UTC format." ;
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherForecast/schemaDTDL.json> .
+        rdfs:comment		"The start of the validity period for this weather alert as a ISO8601 format" ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/doc/spec.md> .
 
 ### https://smartdatamodels.org/dataModel.Weather/validTo
 fiware-weather:validTo	a      owl:DatatypeProperty ;
         rdfs:range      xsd:dateTime ;
         rdfs:label   		"validTo"@en ;
-        rdfs:comment		"The end date of validity of the alert in ISO8601 UTC format." ;
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherForecast/schemaDTDL.json> .
+        rdfs:comment		"The end of the validity period for this weather alert as a ISO8601 format " ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/doc/spec.md> .
 
 ### https://smartdatamodels.org/dataModel.Weather/alertSource
 fiware-weather:alertSource	a      owl:DatatypeProperty ;
         rdfs:label   		"alertSource"@en ;
         rdfs:comment		"reference to the source of the alert. For example, it could be a user of an application, a device, or a service" ;
         rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
-
-### https://uri.etsi.org/ngsi-ld/data
-ngsi-ld:data	a      owl:DatatypeProperty ;
-        rdfs:label   		"data"@en ;
-        rdfs:comment		"used to carry additional data for the alert." ;
-        rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> .
 
 ### https://smartdatamodels.org/dataModel.Weather/severity
 fiware-weather:severity	a      owl:DatatypeProperty ;
@@ -221,12 +215,14 @@ foodie:Alert  a          owl:Class ;
                            owl:onProperty      foodie:description
                          ] ;
         skos:prefLabel   "Alert"@en ;
+        rdfs:label "Alert" ;
+	rdfs:comment "Alerts automatically generated" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### https://smartdatamodels.org/dataModel.Weather/WeatherAlert
 fiware-weather:Alert	a owl:Class ;
 			rdfs:label "Alert" ;
-			rdfs:comment "This entity models an alert and could be used to send alerts related to traffic jam, accidents, weather conditions, high level of pollutants and so on. The purpose of the model is to support the generation of notifications for a user or trigger other actions, based on such alerts. An alert is generated by a specific situation. The main features of an alert is that it is not predictable and it is not a recurrent data. That means that an alert could be an accident or a high level of pollutants measure, additionally it could be the fall down of a patient or a car driving in the opposite direction." ;
+			rdfs:comment "A weather alert generated by a user or device in a given location" ;
 			rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
 
 #################################################################

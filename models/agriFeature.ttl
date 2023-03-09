@@ -77,7 +77,7 @@ saref4agri:contains a owl:ObjectProperty ;
 ###  https://w3id.org/def/saref4agri#isContainedIn
 saref4agri:isContainedIn a owl:ObjectProperty ;
                rdfs:label "is contained in"@en ;
-               rdfs:comment "A realtion inverse of s4agri:contains" ;
+               rdfs:comment "A relation inverse of s4agri:contains" ;
                rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#activity
@@ -86,7 +86,7 @@ af-inspire:activity
         rdfs:range      act-inspire:EconomicActivityNACEValue ;
         skos:prefLabel  "activity"@en ;
         rdfs:label "activity"@en ;
-        rdfs:comment "A relation to represent the activity feature" ;
+        rdfs:comment "A relation to the classification of the economic activity of the site" ;
         rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#contains
@@ -95,7 +95,7 @@ af-inspire:contains
         rdfs:range      af-inspire:Site ;
         skos:prefLabel  "contains"@en ;
         rdfs:label "contains"@en ;
-        rdfs:comment "A realtion to represent and entity in Site " ;
+        rdfs:comment "A relation from Holding to Site " ;
         rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
 
 ###  http://foodie-cloud.com/model/foodie#containsPlot
@@ -104,7 +104,7 @@ foodie:containsPlot
         rdfs:range      foodie:Plot ;
         skos:prefLabel  "containsPlot"@en ;
         rdfs:label "containsPlot"@en ;
-        rdfs:comment "A realtion between Site and Plot " ;
+        rdfs:comment "A relation from Site to Plot " ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#containsZone
@@ -112,7 +112,7 @@ foodie:containsZone  a  owl:ObjectProperty ;
         rdfs:range      foodie:ManagementZone ;
         skos:prefLabel  "containsZone"@en ;
         rdfs:label "containsZone"@en ;
-        rdfs:comment "A realtion between Plot and Management zone" ;
+        rdfs:comment "A relation from Plot to Management zone" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#originType
@@ -120,30 +120,30 @@ foodie:originType  a    owl:ObjectProperty ;
         rdfs:range      foodie:OriginTypeValue ;
         skos:prefLabel  "originType"@en ;
         rdfs:label "containsZone"@en ;
-        rdfs:comment "A realtion between Plot and Management zone" ;
+        rdfs:comment "A relation to the origin of a Plot when taking into consideration only two options: manual (created by human/user) and system (produced by the platform" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#crop
-foodie:crop  				a   owl:ObjectProperty ;
+foodie:crop  	a   owl:ObjectProperty ;
         skos:prefLabel  "crop"@en ;
         rdfs:label "crop"@en ;
-        rdfs:comment "A realtion between Plot and CropSpecies" ;
+        rdfs:comment "A relation from Plot to CropSpecies" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#machine
-foodie:machine	a				owl:ObjectProperty ;
+foodie:machine	a       owl:ObjectProperty ;
         rdfs:range      foodie:MachineType ;
         skos:prefLabel  "machine"@en ;
         rdfs:label "machine"@en ;
-        rdfs:comment "A realtion between MachineType and Intervention" ;
+        rdfs:comment "A relation from Intervention to MachineType" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#tractor
-foodie:tractor	a				owl:ObjectProperty ;
+foodie:tractor	a	owl:ObjectProperty ;
         rdfs:range      foodie:TractorType ;
         skos:prefLabel  "tractor"@en ;
         rdfs:label "tractor"@en ;
-        rdfs:comment "A realtion between TractorType and Intervention" ;
+        rdfs:comment "A relation from Intervention to TractorType" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#holdingSite
@@ -151,7 +151,7 @@ foodie:holdingSite  a  owl:ObjectProperty ;
         rdfs:range      af-inspire:Holding ;
         skos:prefLabel  "holdingSite"@en ;
         rdfs:label "holdingSite"@en ;
-        rdfs:comment "A realtion between Holding and Site" ;
+        rdfs:comment "A relation from Site to Holding" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#holdingPlot
@@ -159,7 +159,7 @@ foodie:holdingPlot  a  owl:ObjectProperty ;
         rdfs:range      af-inspire:Site ;
         skos:prefLabel  "holdingPlot"@en ;
         rdfs:label "holdingPlot"@en ;
-        rdfs:comment "A realtion between Holding and Plot" ;
+        rdfs:comment "A relation from Plot to Site" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#holdingZone
@@ -167,7 +167,7 @@ foodie:holdingZone  a  owl:ObjectProperty ;
         rdfs:range      foodie:Plot ;
         skos:prefLabel  "holdingZone"@en ;
         rdfs:label "holdingPlot"@en ;
-        rdfs:comment "A realtion between Holding and Management Zone" ;
+        rdfs:comment "A relation from Management Zone to Plot" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop
@@ -179,19 +179,19 @@ fiware-agrifood:hasAgriCrop	a   owl:ObjectProperty ;
 ### https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent
 fiware-agrifood:hasAgriParcelParent	a      owl:ObjectProperty ;
         rdfs:label   		"hasAgriParcelParent"@en ;
-        rdfs:comment		"An optional reference to a higher level (parent) AgriParcel entity to which this entity relates." ;
+        rdfs:comment		"Reference to the parent AgriParcel" ;
         rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren
 fiware-agrifood:hasAgriParcelChildren	a      owl:ObjectProperty ;
         rdfs:label   		"hasAgriParcelChildren"@en ;
-        rdfs:comment		"An optional reference to lower level (child) AgriParcel records to which this entity relates." ;
+        rdfs:comment		"Related sub AgriParcel records to which this entity relates" ;
         rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil
 fiware-agrifood:hasAgriSoil	a      owl:ObjectProperty ;
         rdfs:label   		"hasAgriSoil"@en ;
-        rdfs:comment		"Reference to the soil associated with this parcel of land." ;
+        rdfs:comment		"Reference to the soil associated with this parcel of land" ;
         rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/landLocation
@@ -209,7 +209,7 @@ fiware-agrifood:hasAgriParcel	a      owl:ObjectProperty ;
 ### https://uri.etsi.org/ngsi-ld/location
 ngsi-ld:location	a      owl:ObjectProperty ;
         rdfs:label   		"location"@en ;
-        rdfs:comment		"The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty" ;
+        rdfs:comment		"The geo:json encoded polygon / multi-polygon describing this item.  It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon" ;
         rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> .
 
 
@@ -313,7 +313,7 @@ af-inspire:Holding  a           owl:Class ;
                          ] ;
 				skos:prefLabel   "Holding"@en ;
         rdfs:label "Holding"@en ;
-        rdfs:comment "A area of land holding the agricultural machines" ;                        
+        rdfs:comment "The whole area and all infrastructures included on it, covering the same or different sites, under the control of an operator to perform agricultural or aquaculture activities" ;
         rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#Site
@@ -353,7 +353,7 @@ af-inspire:Site  a           owl:Class ;
                          ] ;
         skos:prefLabel   "Site"@en ;
         rdfs:label "Site"@en ;
-        rdfs:comment "A agricultural or aquacultural facility" ; 
+        rdfs:comment "A agricultural or aquacultural facility. All land at a same or distinct geographic location under the management control of a holding covering activities, products and services. This includes all infrastructure, equipment and materials." ; 
         rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> .
 
 ###  http://foodie-cloud.com/model/foodie#Plot
@@ -389,7 +389,7 @@ foodie:Plot  a           owl:Class ;
                          ] ;
         skos:prefLabel   "Plot"@en ;
         rdfs:label "Plot"@en ;
-        rdfs:comment "An agricultural feature" ; 
+        rdfs:comment "A continuous area of agricultural land with one type of crop species, cultivated by one user in one farming mode, e.g., conventional, transitional, organic farming" ; 
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#ManagementZone
@@ -426,11 +426,11 @@ foodie:ManagementZone
                          ] ;
         skos:prefLabel   "ManagementZone"@en ;
         rdfs:label "ManagementZone"@en ;
-        rdfs:comment "An subset entity of Plot" ; 
+        rdfs:comment "A spatial subset of a Plot that has specific properties like electric conductivity, organic matter, pH, soil texture, soil type or soil nutrients" ; 
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#OriginTypeValue
-foodie:OriginTypeValue	a			owl:Class ;
+foodie:OriginTypeValue	a	owl:Class ;
 				rdfs:subClassOf  skos:Concept ;
         skos:prefLabel   "OriginTypeValue"@en ;
         rdfs:label "OriginTypeValue"@en ;
@@ -439,9 +439,10 @@ foodie:OriginTypeValue	a			owl:Class ;
 
 ###  http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue
 act-inspire:EconomicActivityNACEValue a owl:Class ;
+                                        rdfs:subClassOf  skos:Concept ;
       rdfs:label "EconomicActivityNACEValue" ;
       rdfs:label "EconomicActivityNACEValue"@en ;
-      rdfs:comment "An entity relating to Economic activity" ; 
+      rdfs:comment "The classification of the economic activity according to the NACE" ; 
       rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/AgriParcel

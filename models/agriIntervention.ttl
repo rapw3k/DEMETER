@@ -49,6 +49,7 @@
                             dct:description "The DEMETER AgriIntervention is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
                             dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
                             dct:title "DEMETER AgriIntervention"@en ;
+                            rdfs:label "DEMETER AgriIntervention"@en ;
                             rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
                             owl:versionInfo "2.0" ;
                             foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
@@ -75,7 +76,7 @@ foodie:interventionPlot
         rdfs:range      foodie:Plot ;
         skos:prefLabel  "interventionPlot"@en ;
         rdfs:label "interventionPlot" ;
-        rdfs:comment "A Relation between Intervention and Plot. A plot can have few intervetions." ;
+        rdfs:comment "A Relation from Intervention to Plot. A plot can have few intervetions." ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#interventionZone
@@ -84,7 +85,7 @@ foodie:interventionZone
         rdfs:range      foodie:ManagementZone ;
         skos:prefLabel  "interventionZone"@en ;
         rdfs:label "interventionZone" ;
-        rdfs:comment "A Relation between Intervention and ManagementZone." ;
+        rdfs:comment "A Relation from Intervention to ManagementZone." ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#supervisor
@@ -92,7 +93,7 @@ foodie:supervisor  a    owl:ObjectProperty ;
         rdfs:range      iso19115-citation:ResponsibleParty ;
         skos:prefLabel  "supervisor"@en ;
         rdfs:label "supervisor" ;
-        rdfs:comment "A Relation between Intervention and ResponsibleParty. ResponsibleParty contains the entity who carries out the intervention." ;
+        rdfs:comment "A Relation from Intervention to ResponsibleParty. ResponsibleParty contains the entity who carries out the intervention (a person or a body who has the power and authority to give instructions and guarantee the conducted Intervention)" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#interventionGeometry
@@ -101,7 +102,7 @@ foodie:interventionGeometry
         rdfs:range      geo:Geometry ;
         skos:prefLabel  "interventionGeometry"@en ;
         rdfs:label "interventionGeometry" ;
-        rdfs:comment "A Relation between Intervention and geomerty class having the geometry entity" ;
+        rdfs:comment "A Relation to the geometry defining the spatial extent of the Intervention" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#evidenceParty
@@ -109,7 +110,7 @@ foodie:evidenceParty  a  owl:ObjectProperty ;
         rdfs:range      iso19115-citation:ResponsibleParty ;
         skos:prefLabel  "evidenceParty"@en ;
         rdfs:label "evidenceParty" ;
-        rdfs:comment "A Relation between Intervention and ResponsibleParty entity." ;
+        rdfs:comment "A Relation to a person or a body who inserted the Intervention into the database" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#operator
@@ -117,7 +118,7 @@ foodie:operator  a      owl:ObjectProperty ;
         rdfs:range      iso19115-citation:ResponsibleParty ;
         skos:prefLabel  "operator"@en ;
         rdfs:label "operator" ;
-        rdfs:comment "A Relation between Intervention and ResponsibleParty entity." ;
+        rdfs:comment "A Relation to the person(s) who has conducted an Intervention" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#formOfTreatment
@@ -126,7 +127,16 @@ foodie:formOfTreatment
         rdfs:range      foodie:FormOfTreatmentValue ;
         skos:prefLabel  "formOfTreatment"@en ;
         rdfs:label "formOfTreatment" ;
-        rdfs:comment "A Relation between Treatment and FormOfTreatmentValue codelist." ;
+        rdfs:comment "A Relation from Treatment to FormOfTreatmentValue codelist, e.g., manual (i.e. conducted manually by a person), applicationMachine (i.e. automatic or semi-automatic application by a machine), aerial (i.e. aerial application from an airplane);" ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#treatmentPurpose
+foodie:treatmentPurpose
+        a               owl:ObjectProperty ;
+        rdfs:range      foodie:TreatmentPurposeValue ;
+        skos:prefLabel  "treatmentPurpose"@en ;
+        rdfs:label "treatmentPurpose" ;
+        rdfs:comment "A Relation from Treatment to TreatmentPurposeValue codelist, e.g., disease, fertilization, pest, weed" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#areaDose
@@ -134,7 +144,7 @@ foodie:areaDose  a      owl:ObjectProperty ;
         rdfs:range      foodie:DoseUnit ;
         skos:prefLabel  "areaDose"@en ;
         rdfs:label "areaDose" ;
-        rdfs:comment "A Relation between Treatment and DoseUnit entity." ;
+        rdfs:comment "A Relation from Treatment to DoseUnit entity, indicating the minimum and maximum application rate of the Treatment together with their unit" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#plan
@@ -142,7 +152,7 @@ foodie:plan  a          owl:ObjectProperty ;
         rdfs:range      foodie:TreatmentPlan ;
         skos:prefLabel  "plan"@en ;
         rdfs:label "plan" ;
-        rdfs:comment "A Relation between Treatment and TreatmentPlan entity." ;
+        rdfs:comment "A Relation from Treatment to TreatmentPlan entity." ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#motionSpeed
@@ -150,7 +160,7 @@ foodie:motionSpeed  a   owl:ObjectProperty ;
         rdfs:range      iso19103:Measure ;
         skos:prefLabel  "motionSpeed"@en ;
         rdfs:label "motionSpeed" ;
-        rdfs:comment "A Relation between Treatment and Measure entity." ;
+        rdfs:comment "A Relation from Treatment to Measure entity, indicating recommended speed for the application of the treatment that should be expressed together with its unit" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#treatmentProduct
@@ -159,7 +169,7 @@ foodie:treatmentProduct
         rdfs:range      foodie:Product ;
         skos:prefLabel  "treatmentProduct"@en ;
         rdfs:label "treatmentProduct" ;
-        rdfs:comment "A Relation between Treatment and Product entity." ;
+        rdfs:comment "A Relation from Treatment to Product entity." ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#quantity
@@ -167,7 +177,7 @@ foodie:quantity  a      owl:ObjectProperty ;
         rdfs:range      iso19103:Measure ;
         skos:prefLabel  "quantity"@en ;
         rdfs:label "quantity" ;
-        rdfs:comment "A Relation between Treatment and Measure entity." ;
+        rdfs:comment "A Relation from Treatment to Measure entity, indicating the value of a physical quantity of applied Treatment, together with its unit." ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#flowAdjustment
@@ -176,7 +186,7 @@ foodie:flowAdjustment
         rdfs:range      iso19103:Measure ;
         skos:prefLabel  "flowAdjustment"@en ;
         rdfs:label "flowAdjustment" ;
-        rdfs:comment "A Relation between Treatment and Measure entity." ;
+        rdfs:comment "A Relation from Treatment to Measure entity, indicating whether a flow adjustment was needed for the application of the Treatment, be expressed together with its unit " ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#applicationWidth
@@ -185,7 +195,7 @@ foodie:applicationWidth
         rdfs:range      iso19103:Measure ;
         skos:prefLabel  "applicationWidth"@en ;
         rdfs:label "flowAdjustment" ;
-        rdfs:comment "A Relation between Treatment and Measure entity." ;
+        rdfs:comment "A Relation from Treatment to Measure entity, indicating a width in which a machine is capable to apply the Treatment, expressed together with its unit" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#pressure
@@ -193,7 +203,7 @@ foodie:pressure  a      owl:ObjectProperty ;
         rdfs:range      iso19103:Measure ;
         skos:prefLabel  "pressure"@en ;
         rdfs:label "pressure" ;
-        rdfs:comment "A Relation between Treatment and Measure entity." ;
+        rdfs:comment "A Relation from Treatment to Measure entity, indicating the recommended pressure for the application of the Treatment that should be expressed together with its unit" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#planProduct
@@ -201,7 +211,7 @@ foodie:planProduct  a   owl:ObjectProperty ;
         rdfs:range      foodie:Product ;
         skos:prefLabel  "planProduct"@en ;
         rdfs:label "planProduct" ;
-        rdfs:comment "A Relation between TreatmentPlan and Product entity." ;
+        rdfs:comment "A Relation from TreatmentPlan to Product entity." ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#campaign
@@ -209,7 +219,7 @@ foodie:campaign  a      owl:ObjectProperty ;
         rdfs:range      foodie:CampaignType ;
         skos:prefLabel  "campaign"@en ;
         rdfs:label "planProduct" ;
-        rdfs:comment "A Relation between TreatmentPlan and CampaignType entity." ;
+        rdfs:comment "A Relation from TreatmentPlan to CampaignType entity including the period to which the TreatmentPlan was designed" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#period
@@ -217,25 +227,25 @@ foodie:period  a      owl:ObjectProperty ;
         rdfs:range      iso19108:Period ;
         skos:prefLabel  "period"@en ;
         rdfs:label "period" ;
-        rdfs:comment "A Relation between CampaignType and Period entity." ;
+        rdfs:comment "A Relation from CampaignType to Period entity indicating the period to which the TreatmentPlan was designed. Typically a campaign may be an agronomical year or a season e.g. between 2015-03-01 and 2015-09-30" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#minimumDose
 foodie:minimumDose
-				a               owl:ObjectProperty ;
+			a   owl:ObjectProperty ;
         rdfs:range      iso19103:Measure ;
         skos:prefLabel  "minimumDose"@en ;
         rdfs:label "minimumDose" ;
-        rdfs:comment "A Relation between DoseUnit and Measure entity." ;
+        rdfs:comment "A Relation from DoseUnit to Measure entity, indicating the minimuDose" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#maximumDose
 foodie:maximumDose
-				a               owl:ObjectProperty ;
+			a   owl:ObjectProperty ;
         rdfs:range      iso19103:Measure ;
         skos:prefLabel  "maximumDose"@en ;
         rdfs:label "maximumDose" ;
-        rdfs:comment "A Relation between DoseUnit and Measure entity." ;
+        rdfs:comment "A Relation from DoseUnit to Measure entity, indicating the maximumDose" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel
@@ -260,7 +270,7 @@ foodie:status  a        owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "status"@en ;
         rdfs:label "status" ;
-        rdfs:comment "Status of Intervention." ;
+        rdfs:comment "Status of the intervention, e.g. approved, pending, completed as a free text" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#creationDateTime
@@ -296,7 +306,7 @@ foodie:treatmentPlanCreation
         rdfs:range      xsd:dateTime ;
         skos:prefLabel  "treatmentPlanCreation"@en ;
         rdfs:label "treatmentPlanCreation" ;
-        rdfs:comment "Date and time of the creation of the any specific operation/intervention." ;
+        rdfs:comment "Date and time of the creation of the operation/intervention plan" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/plannedStartAt
@@ -325,11 +335,11 @@ fiware-agrifood:result	a      owl:DatatypeProperty ;
         rdfs:comment		"A description of the results of the operation. One of: ok, aborted, failed." ;
         rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> .
 
-### https://smartdatamodels.org/dataModel.Agrifood/status
-fiware:status	a      owl:DatatypeProperty ;
+### https://uri.etsi.org/ngsi-ld/status
+ngsi-ld:status	a      owl:DatatypeProperty ;
         rdfs:label   		"status"@en ;
         rdfs:comment		"A choice from an enumerated list describing the status. One of: planned, ongoing, finished, scheduled, cancelled." ;
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> .
+        rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/startedAt
 fiware-agrifood:startedAt	a     owl:DatatypeProperty ;
@@ -361,7 +371,7 @@ fiware-agrifood:quantity	a      owl:DatatypeProperty ;
 ### https://smartdatamodels.org/dataModel.Agrifood/waterSource
 fiware-agrifood:waterSource	a   owl:DatatypeProperty ;
         rdfs:label   		"waterSource"@en ;
-        rdfs:comment		"If water was applied/ use this specifies the source. One of: borehole, rainfall, river, rainwater capture, water dam, commercial supply." ;
+        rdfs:comment		"Type of water sources. One of: borehole, rainfall, river, rainwater capture, water dam, commercial supply." ;
         rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> .
 
 #################################################################
@@ -473,7 +483,7 @@ foodie:Treatment  a      owl:Class ;
                          ] ;
         skos:prefLabel   "Treatment"@en ;
         rdfs:label "Treatment" ;
-        rdfs:comment "An entity defining the attributes of Treatments." ;
+        rdfs:comment "An entity defining the attributes of Treatments" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### http://foodie-cloud.com/model/foodie#TreatmentPlan
@@ -509,7 +519,7 @@ foodie:TreatmentPlan  a  owl:Class ;
                          ] ;
         skos:prefLabel   "TreatmentPlan"@en ;
         rdfs:label "TreatmentPlan" ;
-        rdfs:comment "An entity defining the Treatment plans." ;
+        rdfs:comment "An entity defining the Treatment plans" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### http://foodie-cloud.com/model/foodie#DoseUnit
@@ -524,7 +534,7 @@ foodie:DoseUnit  a       owl:Class ;
                          ] ;
         skos:prefLabel   "DoseUnit"@en ;
         rdfs:label "DoseUnit" ;
-        rdfs:comment "An entity defining the units of Doses for operation." ;
+        rdfs:comment "An entity defining the Doses for operation/intervention" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 
@@ -536,7 +546,7 @@ foodie:CampaignType  a           owl:Class ;
                          ] ;
         skos:prefLabel   "CampaignType"@en ;
         rdfs:label "CampaignType" ;
-        rdfs:comment "An entity defining the types of Opeartion/Campaigns" ;
+        rdfs:comment "An entity defining the types of campaigns" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### http://foodie-cloud.com/model/foodie#TreatmentPurposeValue
@@ -545,7 +555,7 @@ foodie:TreatmentPurposeValue
         rdfs:subClassOf  skos:Concept ;
         skos:prefLabel   "TreatmentPurposeValue"@en ;
         rdfs:label "TreatmentPurposeValue" ;
-        rdfs:comment "An entity defining the purpose of an Opeartion/Campaign." ;
+        rdfs:comment "An entity defining the purpose of an Intervention/Treatment as codelist, e.g., disease (i.e. a pathological condition that affects part or all of production in the Plot), fertilization (i.e. a need to apply a fertilizer to soil), pest (i.e. a plant or animal detrimental to a human), weed (i.e. to reduce plants considered undesirable in a particular situation)" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### http://foodie-cloud.com/model/foodie#FormOfTreatmentValue
@@ -554,7 +564,7 @@ foodie:FormOfTreatmentValue
         rdfs:subClassOf  skos:Concept ;
         skos:prefLabel   "FormOfTreatmentValue"@en ;
         rdfs:label "FormOfTreatmentValue" ;
-        rdfs:comment "An entity defining the form of operation." ;
+        rdfs:comment "An entity defining the form of Intervention/Treatment as codelist, e.g., manual (i.e. conducted manually by a person), applicationMachine (i.e. automatic or semi-automatic application by a machine), aerial (i.e. aerial application from an airplane)" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/AgriParcelOperation
@@ -571,7 +581,7 @@ foodie:Treatment owl:equivalentClass fiware-agrifood:AgriParcelOperation .
 foodie:interventionPlot owl:equivalentProperty fiware-agrifood:hasAgriParcel .
 fiware-agrifood:operationType rdfs:subPropertyOf foodie:type .
 fiware-agrifood:result rdfs:subPropertyOf foodie:notes .
-foodie:status owl:equivalentProperty fiware-agrifood:status .
+foodie:status owl:equivalentProperty ngsi-ld:status .
 foodie:operator owl:equivalentProperty fiware-agrifood:hasOperator .
 fiware-agrifood:startedAt rdfs:subPropertyOf common:validFrom .
 fiware-agrifood:endedAt rdfs:subPropertyOf common:validTo .

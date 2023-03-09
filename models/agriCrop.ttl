@@ -91,7 +91,7 @@ saref4agri:receives a owl:ObjectProperty ;
 foodie:cropArea  a      owl:ObjectProperty ;
         rdfs:range      geo:Geometry ;
         skos:prefLabel  "cropArea"@en ;
-        rdfs:comment "A relation to represent the geometric area measuremnt for certain Crop." ;
+        rdfs:comment "The geometry defining the spatial extent of the CropSpecies on the Plot" ;
         rdfs:label "cropArea" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
@@ -99,7 +99,7 @@ foodie:cropArea  a      owl:ObjectProperty ;
 foodie:cropSpecies  a   owl:ObjectProperty ;
         rdfs:range      foodie:CropType ;
         skos:prefLabel  "cropSpecies"@en ;
-        rdfs:comment "A relation to represent the species of certain Crop type." ;
+        rdfs:comment "Relation to the designation under which the CropSpecies is commonly known; such designation is expressed as a CropType" ;
         rdfs:label "cropSpecies" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
@@ -107,7 +107,7 @@ foodie:cropSpecies  a   owl:ObjectProperty ;
 foodie:production  a    owl:ObjectProperty ;
         rdfs:range      foodie:ProductionType ;
         skos:prefLabel  "production"@en ;
-        rdfs:comment "A relation to represent the production of certain Crop species." ;
+        rdfs:comment "Relation to entity containing relevant production-related data, that is defined as a ProductionType" ;
         rdfs:label "production" 
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
@@ -115,7 +115,7 @@ foodie:production  a    owl:ObjectProperty ;
 foodie:productionAmount	a	owl:ObjectProperty ;
         rdfs:range      iso19103:Measure ;
         skos:prefLabel  "productionAmount"@en ;
-        rdfs:comment "A relation to represent the Measure of the type of production." ;
+        rdfs:comment "The value of a physical quantity of produced variety, together with its unit" ;
         rdfs:label "productionAmount" 
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
@@ -123,19 +123,19 @@ foodie:productionAmount	a	owl:ObjectProperty ;
 fiware-agrifood:hasAgriSoil	a	owl:ObjectProperty ;
         rdfs:label   		"cropHasAgriSoil"@en ;
         rdfs:comment		"Reference to the recommended types of soil suitable for growing this crop" ;
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schemaDTDL.json> .
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser
 fiware-agrifood:hasAgriFertiliser	a	owl:ObjectProperty ;
         rdfs:label   		"hasAgriFertiliser"@en ;
         rdfs:comment		"Reference to the recommended types of fertiliser suitable for growing this crop" ;
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schemaDTDL.json> .
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest
 fiware-agrifood:hasAgriPest	a		owl:ObjectProperty ;
         rdfs:label   		"hasAgriPest"@en ;
         rdfs:comment		"Reference to the pests known to attack this crop." ;
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schemaDTDL.json> .
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .
 
 
 #################################################################
@@ -183,7 +183,7 @@ saref4agri:hasPlantDate a owl:DatatypeProperty ;
 foodie:variety  a       owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "variety"@en ;
-        rdfs:comment "A relation to define the variety of the crop type." ;
+        rdfs:comment "a taxonomic category that ranks below subspecies (where present) or species, its mem-bers differing from others of the same subspecies or species in minor but permanent or heritable characteristics" ;
         rdfs:label "variety" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
@@ -191,7 +191,7 @@ foodie:variety  a       owl:DatatypeProperty ;
 foodie:family  a        owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "family"@en ;
-        rdfs:comment "A relation to define the name of the family of the crop type." ;
+        rdfs:comment "a principal taxonomic category that ranks above genus and below order" ;
         rdfs:label "family" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
@@ -199,7 +199,7 @@ foodie:family  a        owl:DatatypeProperty ;
 foodie:species  a       owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "species"@en ;
-        rdfs:comment "A relation to define the name of the species of the crop type." ;
+        rdfs:comment "a group of living organisms consisting of similar individuals capable of exchanging genes or interbreeding" ;
         rdfs:label "species" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
@@ -207,7 +207,7 @@ foodie:species  a       owl:DatatypeProperty ;
 foodie:genus  a         owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "genus"@en ;
-         rdfs:comment "A relation to define the genus of the crop type." ;
+         rdfs:comment "a principal taxonomic category that ranks above species and below family" ;
         rdfs:label "genus" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
@@ -215,39 +215,29 @@ foodie:genus  a         owl:DatatypeProperty ;
 foodie:productionDate	a	owl:DatatypeProperty ;
         rdfs:range 			xsd:dateTime ;
         skos:prefLabel  "productionDate"@en ;
-         rdfs:comment "A relation to define the production date of the specified type of production." ;
+         rdfs:comment "date and time of production, e.g., when it was inserted or changed in the database" ;
         rdfs:label "productionDate" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/plantingFrom
 fiware-agrifood:plantingFrom	a		owl:DatatypeProperty ;
         rdfs:label   		"plantingFrom"@en ;
-
         rdfs:comment		"""A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:
 interval, description
 Where interval is in the form of start date/end date
 --MM-DD/--MM-DD
 Meaning repeat each year from this start date to this end date.""" ;
-
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schemaDTDL.json> .
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval
 fiware-agrifood:harvestingInterval	a	owl:DatatypeProperty ;
         rdfs:label   		"harvestingInterval"@en ;
-
         rdfs:comment		"""A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:
 interval, description
 Where interval is in the form of start date/end date
 --MM-DD/--MM-DD
 Meaning repeat each year from this start date to this end date.""" ;
-
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schemaDTDL.json> .
-
-### https://smartdatamodels.org/dataModel.Agrifood/irrigationRecord
-fiware-agrifood:irrigationRecord	a	owl:DatatypeProperty ;
-        rdfs:label   		"wateringFrequency"@en ;
-        rdfs:comment		"A description of the recommended watering schedule. A choice from an enumerated list. One of: daily, weekly, biweekly, monthly, onDemand, other" ;
-        rdfs:isDefinedBy <ttps://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schemaDTDL.json> .
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .
 
 #################################################################
 #    Classes
@@ -301,7 +291,7 @@ foodie:CropSpecies  a    owl:Class ;
                            owl:onProperty      common:validTo
                          ] ;
         skos:prefLabel   "CropSpecies"@en ;
-        rdfs:comment "An entity for the species of the Crops grown in a plot"@en ;
+        rdfs:comment "An entity for the species of the Crops grown in a plot. The planted crop species"@en ;
         rdfs:label "CropSpecies" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
@@ -336,7 +326,7 @@ foodie:CropType  a       owl:Class ;
                            owl:onProperty      foodie:genus
                          ] ;
         skos:prefLabel   "CropType"@en ;
-        rdfs:comment "An entity for the types of the Crops grown in a plot"@en ;
+        rdfs:comment "Designation under which the CropSpecies is commonly known"@en ;
         rdfs:label "CropType" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
@@ -356,7 +346,7 @@ foodie:ProductionType
                            owl:onProperty      foodie:productionAmount
                          ] ;
         skos:prefLabel   "ProductionType"@en ;
-        rdfs:comment "An entity for the types of agricultural production in a plot"@en ;
+        rdfs:comment "An entity containing relevant production-related data"@en ;
         rdfs:label "ProductionType" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 

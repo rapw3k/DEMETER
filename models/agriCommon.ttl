@@ -91,6 +91,12 @@ fiware-agrifood:agroVocConcept	a      owl:ObjectProperty ;
         rdfs:comment		"The link with the defined concept into the AgroVoc vocabulary" ;
         rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .  
 
+### https://smartdatamodels.org/address
+fiware:address	a      owl:ObjectProperty ;
+        rdfs:label   		"address"@en ;
+        rdfs:comment		"The mailing address" ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriApp/schemaDTDL.json> .     
+
 ###  https://w3id.org/demeter/agri/agriCommon#eppoConcept
 demeterAgriCommon:eppoConcept	a      owl:ObjectProperty ;
         rdfs:label   		"eppoConcept"@en ;
@@ -294,6 +300,31 @@ demeterAgriCommon:imageFormat a owl:DatatypeProperty ;
         rdfs:label "imageFormat" ;
         rdfs:comment "The format of the image, e.g., tiff, jpg" ;
         rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .
+
+###  https://schema.org/addressCountry
+schema:addressCountry a owl:DatatypeProperty ;
+        rdfs:label "addressCountry" ;
+        rdfs:comment "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code" ;
+        rdfs:isDefinedBy <https://schema.org/addressCountry> .   
+
+###  https://schema.org/addressLocality
+schema:addressLocality a owl:DatatypeProperty ;
+        rdfs:label "addressLocality" ;
+        rdfs:comment "The locality in which the street address is, and which is in the region. For example, Mountain View" ;
+        rdfs:isDefinedBy <https://schema.org/addressLocality> .        
+
+###  https://schema.org/addressRegion
+schema:addressRegion a owl:DatatypeProperty ;
+        rdfs:label "addressRegion" ;
+        rdfs:comment "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level Administrative division" ;
+        rdfs:isDefinedBy <https://schema.org/addressRegion> .  
+
+###  https://schema.org/streetAddress
+schema:streetAddress a owl:DatatypeProperty ;
+        rdfs:label "streetAddress" ;
+        rdfs:comment "he street address. For example, 1600 Amphitheatre Pkwy." ;
+        rdfs:isDefinedBy <https://schema.org/streetAddress> .                
+
 
 #################################################################
 #    Classes
