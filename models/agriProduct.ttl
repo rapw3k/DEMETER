@@ -163,7 +163,7 @@ fiware-agrifood:hasAgriProductTypeChildren	a	owl:ObjectProperty ;
 fiware-agrifood:hasAgriProductType	a      owl:ObjectProperty ;
         rdfs:label   		"hasAgriProductType"@en ;
         rdfs:comment		"Reference to the AgriProductType used/ applied." ;
-        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriPest/schema.json> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> .
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> .
 
 ###  http://purl.obolibrary.org/obo/HANCESTRO_0308
 obo:HANCESTRO_0308 a      owl:ObjectProperty ;
@@ -198,7 +198,7 @@ foodie:productType  a   owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "productType"@en ;
         rdfs:label "productType" ;
-        rdfs:comment "Reference to define the product type" ;
+        rdfs:comment "Type of the Product, e.g. pesticide, as a free text. The types of Product vary from country to country as well as from farmer to farmer" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#productSubType
@@ -207,7 +207,7 @@ foodie:productSubType
         rdfs:range      xsd:string ;
         skos:prefLabel  "productSubType"@en ;
         rdfs:label "productSubType" ;
-        rdfs:comment "Reference to define the product substance type" ;
+        rdfs:comment "More detailed classification of a type of the Product, e.g. biochemical insecticide, as a free text. The sub-types of Product vary from country to country as well as from farmer to farmer" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#storageHandling
@@ -216,7 +216,7 @@ foodie:storageHandling
         rdfs:range      xsd:string ;
         skos:prefLabel  "storageHandling"@en ;
         rdfs:label "storageHandling" ;
-        rdfs:comment "The property defines the storage information of a product" ;
+        rdfs:comment "The property defines the information on the safe storage of the Product" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#productName
@@ -224,7 +224,7 @@ foodie:productName  a   owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "productName"@en ;
         rdfs:label "productName" ;
-        rdfs:comment "The property defines the name of a product" ;
+        rdfs:comment "The property defines the designation under which the Product is commonly known" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#safetyInstructions
@@ -233,7 +233,7 @@ foodie:safetyInstructions
         rdfs:range      xsd:string ;
         skos:prefLabel  "safetyInstructions"@en ;
         rdfs:label "safetyInstructions" ;
-        rdfs:comment "The property defines the safety instructions of a product" ;
+        rdfs:comment "The property defines the information on safe manipulation of the Product" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#productCode
@@ -241,7 +241,7 @@ foodie:productCode  a   owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "productCode"@en ;
         rdfs:label "productCode" ;
-        rdfs:comment "Indentifing code of a product" ;
+        rdfs:comment "Indentifing code of a product. Unique identification of the Product." ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#registrationCode
@@ -250,7 +250,7 @@ foodie:registrationCode
         rdfs:range      xsd:string ;
         skos:prefLabel  "registrationCode"@en ;
         rdfs:label "registrationCode" ;
-        rdfs:comment "Indentifing the registration code of a product" ;
+        rdfs:comment "Indentifing the registration code of a product. Unique identification of a Product according to the national or any other relevant registration scheme." ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#registerUrl
@@ -258,7 +258,7 @@ foodie:registerUrl  a   owl:DatatypeProperty ;
         rdfs:range      xsd:anyURI ;
         skos:prefLabel  "registerUrl"@en ;
         rdfs:label "registerUrl" ;
-        rdfs:comment "Url of the registration code of a product" ;
+        rdfs:comment "Link to the national or any other relevant register where the Product was registered" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#ingredientName
@@ -267,7 +267,7 @@ foodie:ingredientName
         rdfs:range      xsd:string ;
         skos:prefLabel  "ingredientName"@en ;
         rdfs:label "ingredientName" ;
-        rdfs:comment "Name of the ingredient in a product" ;
+        rdfs:comment "Designation under which the Ingredient is commonly known" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#nutrientName
@@ -275,7 +275,7 @@ foodie:nutrientName  a  owl:DatatypeProperty ;
         rdfs:range      xsd:string ;
         skos:prefLabel  "nutrientName"@en ;
         rdfs:label "ingredientName" ;
-        rdfs:comment "Name of the active ingredients in a product" ;
+        rdfs:comment "Designation under which the nutrient is commonly known" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ###  http://foodie-cloud.com/model/foodie#nutrientMeasure
@@ -284,7 +284,7 @@ foodie:nutrientMeasure
         rdfs:range      xsd:string ;
         skos:prefLabel  "nutrientMeasure"@en ;
         rdfs:label "nutrientMeasure" ;
-        rdfs:comment "Quantitative measure of the nutrients in a product" ;
+        rdfs:comment "Textual description of a method for an estimation of the nutrient amount in the Product" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### https://smartdatamodels.org/dataModel.Agrifood/root
@@ -376,7 +376,7 @@ foodie:ActiveIngredients
                          ] ;
         skos:prefLabel   "ActiveIngredients"@en ;
         rdfs:label "ActiveIngredients" ;
-        rdfs:comment "This entity hold the information of the active ingredients (e.g. name, ingredient code, measured amount) for a product" ;
+        rdfs:comment "This entity holds the information of the active ingredients (e.g. incredient name, ingredient code, ingredient amount) for a product" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### http://foodie-cloud.com/model/foodie#ProductNutrients
@@ -401,7 +401,7 @@ foodie:ProductNutrients
                          ] ;
         skos:prefLabel   "ProductNutrients"@en ;
         rdfs:label "ProductNutrients" ;
-        rdfs:comment "This entity hold the information of the nutreints (e.g. name, ingredient code, measured amount) used for a product" ;
+        rdfs:comment "This entity holds the information of the nutrients (e.g. nutrient name, nutrient measure, nutrient amount) used for a product" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### http://foodie-cloud.com/model/foodie#ProductKindValue
@@ -410,7 +410,7 @@ foodie:ProductKindValue
         rdfs:subClassOf  skos:Concept ;
         skos:prefLabel   "ProductKindValue"@en ;
         rdfs:label "ProductNutrients" ;
-        rdfs:comment "This entity holds the information of the kind/type of product (e.g. oragnic, mineral)" ;
+        rdfs:comment "This entity holds the information of the kind/type of product (e.g. oragnic, mineral) as codelist" ;
         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
 
 ### https://uri.fiware.org/ns/data-models#AgriProductType

@@ -88,25 +88,25 @@
 #################################################################
 
 ###  https://w3id.org/saref#Device
-<https://w3id.org/saref#Device> a owl:Class ;
-                                rdfs:subClassOf <http://www.w3.org/ns/ssn/System> ;
-                                rdfs:comment "A tangible object designed to accomplish a particular task in households, common public buildings or offices. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function. Devices can be structured in categories (subclasses) that reflect the different domain in which a device is used, e.g., smart appliances domain (subclass FunctionRelated) vs. building domain (subclass BuildingRelated) vs. smart grid domain (subclass EnergyRelated). New categories can be defined,if needed, to reflect other differences, for example different points of view, such as the point of view of the device's user vs. the point of view of the device's manufacturer. We propose a list of devices that are relevant for the purpose of SAREF, but this list can be extended" ;
-                                rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                rdfs:label "Device"@en .
+saref:Device a owl:Class ;
+              rdfs:subClassOf <http://www.w3.org/ns/ssn/System> ;
+              rdfs:comment "A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function" ;
+              rdfs:isDefinedBy <https://w3id.org/saref#> ;
+              rdfs:label "Device"@en .
 
 ###  https://w3id.org/saref#Sensor
-<https://w3id.org/saref#Sensor> a owl:Class ;
-                                rdfs:subClassOf <https://w3id.org/saref#Device> ;
-                                rdfs:comment "A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes. Further, a device of category saref:Sensor that performs a saref:SensingFunction." ;
-                                rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                rdfs:label "Sensor"@en .
+saref:Sensor a owl:Class ;
+              rdfs:subClassOf <https://w3id.org/saref#Device> ;
+              rdfs:comment "A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes. Further, a device of category saref:Sensor that performs a saref:SensingFunction" ;
+              rdfs:isDefinedBy <https://w3id.org/saref#> ;
+              rdfs:label "Sensor"@en .
 
 ###  https://w3id.org/saref#Actuator
-<https://w3id.org/saref#Actuator> a owl:Class ;
-                                  rdfs:subClassOf <https://w3id.org/saref#Device> ;
-                                  rdfs:comment "A device responsible for moving or controlling a mechanism or system by performing an actuating function" ;
-                                  rdfs:isDefinedBy <https://w3id.org/saref#> ;
-                                  rdfs:label "Actuator"@en .
+saref:Actuator a owl:Class ;
+              rdfs:subClassOf <https://w3id.org/saref#Device> ;
+              rdfs:comment "A device responsible for moving or controlling a mechanism or system by performing an actuating functio" ;
+              rdfs:isDefinedBy <https://w3id.org/saref#> ;
+              rdfs:label "Actuator"@en .
 
 ###  https://w3id.org/def/saref4agri#SoilTensiometer
 saref4agri:SoilTensiometer a owl:Class ;
