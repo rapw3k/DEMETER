@@ -15,7 +15,7 @@
 @prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
 @prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
-@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix saref4agri: <https://saref.etsi.org/saref4agri/> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
 @prefix fiware: <https://smartdatamodels.org/> .
 @prefix fiware-agrifood: <https://smartdatamodels.org/dataModel.Agrifood/> .
@@ -25,7 +25,7 @@
 @prefix geo:   <http://www.opengis.net/ont/geosparql#> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix saref: <https://w3id.org/saref#> .
+@prefix saref: <https://saref.etsi.org/core/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @base <https://w3id.org/demeter/> .
 
@@ -69,38 +69,38 @@
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/def/saref4agri#isLocatedIn
+###  https://saref.etsi.org/saref4agri/isLocatedIn
 saref4agri:isLocatedIn a owl:ObjectProperty ;
              owl:inverseOf saref4agri:isLocationOf ;
              rdfs:comment "A relation to express the physical location of a saref4agri entity (e.g., an animal)" ;
              rdfs:label "is located in" ;
-             rdfs:isDefinedBy <https://w3id.org/def/saref4agri> .
+             rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#isLocationOf
+###  https://saref.etsi.org/saref4agri/isLocationOf
 saref4agri:isLocationOf a owl:ObjectProperty ;
               rdfs:label "is location of" ;
-              rdfs:comment "Location of a entity e.g. a farm"
-              rdfs:isDefinedBy <https://w3id.org/def/saref4agri> .
+              rdfs:comment "Location of a entity e.g. a farm" ;
+              rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#isMemberOf
+###  https://saref.etsi.org/saref4agri/isMemberOf
 saref4agri:isMemberOf a owl:ObjectProperty ;
             rdfs:comment "A relation to express that an animal can be part of groups." ;
             rdfs:label "is member of" ;
-            rdfs:isDefinedBy <https://w3id.org/def/saref4agri> .
+            rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
             
-###  https://w3id.org/def/saref4agri#hasID
+###  https://saref.etsi.org/saref4agri/hasID
 saref4agri:hasID a owl:ObjectProperty ;
        rdfs:range saref4agri:ID ;
        rdfs:comment "A relation to express the unique identifier of an animal." ;
        rdfs:label "has id"@en ;
-       rdfs:isDefinedBy <https://w3id.org/def/saref4agri> .   
+       rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .   
        
-###  https://w3id.org/def/saref4agri#hasMember
+###  https://saref.etsi.org/saref4agri/hasMember
 saref4agri:hasMember a owl:ObjectProperty ;
            owl:inverseOf saref4agri:isMemberOf ;
            rdfs:comment "A relation to represent the members of an AnimalGroup." ;
            rdfs:label "has member" ;
-           rdfs:isDefinedBy <https://w3id.org/def/saref4agri> .       
+           rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .       
 
 ### https://smartdatamodels.org/dataModel.Agrifood/calvedBy
 fiware-agrifood:calvedBy	a      owl:ObjectProperty ;     
@@ -145,20 +145,20 @@ af-inspire:includesAnimal
 #    Data properties
 #################################################################
         
-###  https://w3id.org/def/saref4agri#hasBirthDate
+###  https://saref.etsi.org/saref4agri/hasBirthDate
 saref4agri:hasBirthDate a owl:DatatypeProperty ;
               rdfs:range xsd:dateTime ;
               rdfs:comment "A relation to express the birth date of an animal." ;
               rdfs:label "has birth date" ;
-              rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .           
+              rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .           
 
 
-###  https://w3id.org/def/saref4agri#hasDeathDate
+###  https://saref.etsi.org/saref4agri/hasDeathDate
 saref4agri:hasDeathDate a owl:DatatypeProperty ;
               rdfs:range xsd:dateTime ;
               rdfs:comment "A relation to express the death date of an animal." ;
               rdfs:label "has death date" ;
-              rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .           
+              rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .           
          
 ###  http://foodie-cloud.com/model/foodie#livestockType        
 foodie:livestockType  a  owl:DatatypeProperty ;
@@ -247,9 +247,9 @@ fiware-agrifood:welfareCondition	a      owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  https://w3id.org/def/saref4agri#Animal
+###  https://saref.etsi.org/saref4agri/Animal
 saref4agri:Animal a owl:Class ;
-        rdfs:subClassOf <https://w3id.org/saref#FeatureOfInterest> ,
+        rdfs:subClassOf saref:FeatureOfInterest ,
                         [ a owl:Restriction ;
                           owl:onProperty <http://purl.obolibrary.org/obo/TAXRANK_1000000> ;
                           owl:someValuesFrom <http://purl.obolibrary.org/obo/TAXRANK_0000000>
@@ -284,11 +284,11 @@ saref4agri:Animal a owl:Class ;
                         ] ;
         rdfs:comment "An individual and identifiable living organism that feeds on organic matter, typically having specialized sense organs and nervous system and able to respond rapidly to stimuli."@en ;
         rdfs:label "Animal" ;
-        rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+        rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#AnimalGroup
+###  https://saref.etsi.org/saref4agri/AnimalGroup
 saref4agri:AnimalGroup a owl:Class ;
-             rdfs:subClassOf <https://w3id.org/saref#FeatureOfInterest> ,
+             rdfs:subClassOf saref:FeatureOfInterest ,
                              [ a owl:Restriction ;
                                owl:onProperty saref4agri:hasMember ;
                                owl:someValuesFrom saref4agri:Animal
@@ -304,13 +304,13 @@ saref4agri:AnimalGroup a owl:Class ;
                              ] ;
              rdfs:comment "A collection of one or multiple animals."@en ;
              rdfs:label "Animal Group" ;
-             rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+             rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
              
-###  https://w3id.org/def/saref4agri#ID
+###  https://saref.etsi.org/saref4agri/ID
 saref4agri:ID a owl:Class ;
     rdfs:label "ID" ;
     rdfs:comment "A class of animal IDs" ;
-    rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .  
+    rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .  
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies
 af-inspire:FarmAnimalSpecies  a           owl:Class ;

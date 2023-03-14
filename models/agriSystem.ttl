@@ -15,7 +15,7 @@
 @prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
 @prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
-@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix saref4agri: <https://saref.etsi.org/saref4agri/> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
 @prefix fiware: <https://smartdatamodels.org/> .
 @prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
@@ -23,7 +23,7 @@
 @prefix geo:   <http://www.opengis.net/ont/geosparql#> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix saref: <https://w3id.org/saref#> .
+@prefix saref: <https://saref.etsi.org/core/> .
 @prefix cf-feature: <http://purl.oclc.org/NET/ssnx/cf/cf-feature#> .
 @prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
 @prefix cf: <http://purl.oclc.org/NET/ssnx/cf/cf-property#> .
@@ -87,109 +87,109 @@
 #    Classes
 #################################################################
 
-###  https://w3id.org/saref#Device
+###  https://saref.etsi.org/core/Device
 saref:Device a owl:Class ;
               rdfs:subClassOf <http://www.w3.org/ns/ssn/System> ;
               rdfs:comment "A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function" ;
-              rdfs:isDefinedBy <https://w3id.org/saref#> ;
+              rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
               rdfs:label "Device"@en .
 
-###  https://w3id.org/saref#Sensor
+###  https://saref.etsi.org/core/Sensor
 saref:Sensor a owl:Class ;
-              rdfs:subClassOf <https://w3id.org/saref#Device> ;
+              rdfs:subClassOf saref:Device ;
               rdfs:comment "A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes. Further, a device of category saref:Sensor that performs a saref:SensingFunction" ;
-              rdfs:isDefinedBy <https://w3id.org/saref#> ;
+              rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
               rdfs:label "Sensor"@en .
 
-###  https://w3id.org/saref#Actuator
+###  https://saref.etsi.org/core/Actuator
 saref:Actuator a owl:Class ;
-              rdfs:subClassOf <https://w3id.org/saref#Device> ;
+              rdfs:subClassOf saref:Device ;
               rdfs:comment "A device responsible for moving or controlling a mechanism or system by performing an actuating functio" ;
-              rdfs:isDefinedBy <https://w3id.org/saref#> ;
+              rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
               rdfs:label "Actuator"@en .
 
-###  https://w3id.org/def/saref4agri#SoilTensiometer
+###  https://saref.etsi.org/saref4agri/SoilTensiometer
 saref4agri:SoilTensiometer a owl:Class ;
-                 rdfs:subClassOf <https://w3id.org/saref#Sensor> ;
+                 rdfs:subClassOf saref:Sensor ;
                  rdfs:comment "A sensor that measures the soil moisture."@en ;
                  rdfs:label "Soil tensiometer"@en ;
-                 rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+                 rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 
-###  https://w3id.org/def/saref4agri#Thermometer
+###  https://saref.etsi.org/saref4agri/Thermometer
 saref4agri:Thermometer a owl:Class ;
-             rdfs:subClassOf <https://w3id.org/saref#Sensor> ;
+             rdfs:subClassOf saref:Sensor ;
              rdfs:label "Thermometer"@en ;
              rdfs:comment "A device that measures the temperature (e.g. soil temperature)." ;
-             rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+             rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 
-###  https://w3id.org/def/saref4agri#WateringGun
+###  https://saref.etsi.org/saref4agri/WateringGun
 saref4agri:WateringGun a owl:Class ;
-             rdfs:subClassOf <https://w3id.org/saref#Actuator> ;
+             rdfs:subClassOf saref:Actuator ;
              rdfs:comment "An actuator to irrigate an space."@en ;
              rdfs:label "Watering gun"@en ;
-             rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+             rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 
-###  https://w3id.org/def/saref4agri#WateringSystem
+###  https://saref.etsi.org/saref4agri/WateringSystem
 saref4agri:WateringSystem a owl:Class ;
                 rdfs:subClassOf <http://www.w3.org/ns/ssn/System> ;
                 rdfs:label "Watering system"@en ;
                 rdfs:comment "Watering system" ;
-                rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+                rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 
-###  https://w3id.org/def/saref4agri#WateringValve
+###  https://saref.etsi.org/saref4agri/WateringValve
 saref4agri:WateringValve a owl:Class ;
-               rdfs:subClassOf <https://w3id.org/saref#Actuator> ;
+               rdfs:subClassOf saref:Actuator ;
                rdfs:label "Watering valve"@en ;
                rdfs:comment "Watering valve" ;
-               rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+               rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 
-###  https://w3id.org/def/saref4agri#WeatherStation
+###  https://saref.etsi.org/saref4agri/WeatherStation
 saref4agri:WeatherStation a owl:Class ;
                 rdfs:subClassOf <http://www.w3.org/ns/ssn/System> ,
-                                <https://w3id.org/saref#Sensor> ;
+                                saref:Sensor ;
                 rdfs:comment "A sensor or system that measure weather conditions."@en ;
                 rdfs:label "Weather station"@en ;
-                rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+                rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#WeightSensor
+###  https://saref.etsi.org/saref4agri/WeightSensor
 saref4agri:WeightSensor a owl:Class ;
-              rdfs:subClassOf <https://w3id.org/saref#Sensor> ;
+              rdfs:subClassOf saref:Sensor ;
               rdfs:label "Weight sensor"@en ;
               rdfs:comment "Weight sensor" ;
-              rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+              rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#Pluviometer
+###  https://saref.etsi.org/saref4agri/Pluviometer
 saref4agri:Pluviometer a owl:Class ;
-             rdfs:subClassOf <https://w3id.org/saref#Sensor> ;
+             rdfs:subClassOf saref:Sensor ;
              rdfs:comment "A sensor that measures the rain fall."@en ;
              rdfs:label "Pluviometer"@en ;
-             rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+             rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#EatingActivitySensor
+###  https://saref.etsi.org/saref4agri/EatingActivitySensor
 saref4agri:EatingActivitySensor a owl:Class ;
-                      rdfs:subClassOf <https://w3id.org/saref#Sensor> ;
+                      rdfs:subClassOf saref:Sensor ;
                       rdfs:label "Eating activity sensor"@en ;
                       rdfs:comment "Eating activity sensor" ;
-                      rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+                      rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#MilkingSensor
+###  https://saref.etsi.org/saref4agri/MilkingSensor
 saref4agri:MilkingSensor a owl:Class ;
-               rdfs:subClassOf <https://w3id.org/saref#Sensor> ;
+               rdfs:subClassOf saref:Sensor ;
                rdfs:label "Milking sensor"@en ;
                rdfs:comment "Milking sensor" ;
-               rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+               rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#MovementActivitySensor
+###  https://saref.etsi.org/saref4agri/MovementActivitySensor
 saref4agri:MovementActivitySensor a owl:Class ;
-                        rdfs:subClassOf <https://w3id.org/saref#Sensor> ;
+                        rdfs:subClassOf saref:Sensor ;
                         rdfs:label "Movement activity sensor"@en ;
                         rdfs:comment "Movement activity sensor" ;
-                        rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+                        rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 ### http://foodie-cloud.com/model/foodie#MachineType
 foodie:MachineType  a       owl:Class ;

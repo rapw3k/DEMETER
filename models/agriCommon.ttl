@@ -15,7 +15,7 @@
 @prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
 @prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
-@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix saref4agri: <https://saref.etsi.org/saref4agri/> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
 @prefix fiware-agrifood: <https://smartdatamodels.org/dataModel.Agrifood/> .
 @prefix fiware: <https://smartdatamodels.org/> .
@@ -26,7 +26,7 @@
 @prefix geo:   <http://www.opengis.net/ont/geosparql#> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix saref: <https://w3id.org/saref#> .
+@prefix saref: <https://saref.etsi.org/core/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix demeterAgriCommon: <https://w3id.org/demeter/agri/agriCommon#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
@@ -79,11 +79,11 @@
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/def/saref4agri#managesFarm
+###  https://saref.etsi.org/saref4agri/managesFarm
 saref4agri:managesFarm a owl:ObjectProperty ;
              rdfs:label "manages farm"@en ;
              rdfs:comment "manages farm"@en ;
-             rdfs:isDefinedBy <https://w3id.org/def/saref4agri> .  
+             rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .  
 
 ### https://smartdatamodels.org/dataModel.Agrifood/agroVocConcept
 fiware-agrifood:agroVocConcept	a      owl:ObjectProperty ;
@@ -134,25 +134,25 @@ demeterAgriCommon:password a owl:DatatypeProperty ;
          rdfs:comment "Password" ;
          rdfs:isDefinedBy <https://w3id.org/demeter/agri/agriCommon#> .
 
-###  https://w3id.org/def/saref4agri#hasName
+###  https://saref.etsi.org/saref4agri/hasName
 saref4agri:hasName a owl:DatatypeProperty ;
          rdfs:range xsd:string ;
          rdfs:comment "A relation to express the name of an entity (e.g.,animal)." ;
          rdfs:label "has name" ;
-         rdfs:isDefinedBy <https://w3id.org/def/saref4agri> .  
+         rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .  
 
-###  https://w3id.org/saref#hasDescription
-<https://w3id.org/saref#hasDescription> a owl:DatatypeProperty ;
+###  https://saref.etsi.org/core/hasDescription
+saref:hasDescription a owl:DatatypeProperty ;
                                         rdfs:range xsd:string ;
                                         rdfs:comment "A relationship providing a description of an entity (e.g., device)" ;
-                                        rdfs:isDefinedBy <https://w3id.org/saref> ;
+                                        rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                         rdfs:label "has description"@en .
 
-###  https://w3id.org/saref#hasTimestamp
-<https://w3id.org/saref#hasTimestamp> a owl:DatatypeProperty ;
+###  https://saref.etsi.org/core/hasTimestamp
+saref:hasTimestamp a owl:DatatypeProperty ;
                                       rdfs:range      xsd:dateTime ;  
                                       rdfs:comment "A relationship stating the timestamp of an entity (e.g. a measurement)" ;
-                                      rdfs:isDefinedBy <https://w3id.org/saref> ;
+                                      rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                       rdfs:label "has timestamp"@en .                                                           
 				
 ###  http://foodie-cloud.com/model/foodie#code
@@ -331,7 +331,7 @@ schema:streetAddress a owl:DatatypeProperty ;
 #################################################################
                                   
                                   
-###  https://w3id.org/def/saref4agri#FarmHolding
+###  https://saref.etsi.org/saref4agri/FarmHolding
 saref4agri:FarmHolding a owl:Class ;
              rdfs:subClassOf <https://schema.org/Organization> ,
                              [ a owl:Restriction ;
@@ -344,10 +344,10 @@ saref4agri:FarmHolding a owl:Class ;
                              ] ;
              rdfs:comment "A class to decsribe a saref4agri farm holding as subcass of an org:Organization" ;
              rdfs:label "Farm holding"@en ;
-             rdfs:isDefinedBy <https://w3id.org/def/saref4agri> .
+             rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 
-###  https://w3id.org/def/saref4agri#Farmer
+###  https://saref.etsi.org/saref4agri/Farmer
 saref4agri:Farmer a owl:Class ;
         rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ,
                         [ a owl:Restriction ;
@@ -360,7 +360,7 @@ saref4agri:Farmer a owl:Class ;
                         ] ;
         rdfs:comment "A class to decsribe a saref4agri farmer as subcass of a foaf:Person" ;
         rdfs:label "Farmer"@en ;
-        rdfs:isDefinedBy <https://w3id.org/def/saref4agri> .
+        rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 ###  http://purl.obolibrary.org/obo/TAXRANK_0000000
 <http://purl.obolibrary.org/obo/TAXRANK_0000000> a owl:Class ;

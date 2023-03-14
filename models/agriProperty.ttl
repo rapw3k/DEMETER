@@ -16,7 +16,7 @@
 @prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
 @prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
-@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix saref4agri: <https://saref.etsi.org/saref4agri/> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
 @prefix fiware: <https://smartdatamodels.org/> .
 @prefix fiware-agrifood: <https://smartdatamodels.org/dataModel.Agrifood/> .
@@ -27,7 +27,7 @@
 @prefix geo:   <http://www.opengis.net/ont/geosparql#> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix saref: <https://w3id.org/saref#> .
+@prefix saref: <https://saref.etsi.org/core/> .
 @prefix cf-feature: <http://purl.oclc.org/NET/ssnx/cf/cf-feature#> .
 @prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
 @prefix cf: <http://purl.oclc.org/NET/ssnx/cf/cf-property#> .
@@ -79,85 +79,85 @@
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/saref#isControlledByDevice
-<https://w3id.org/saref#isControlledByDevice> a owl:ObjectProperty ;
-                                              rdfs:isDefinedBy <https://w3id.org/saref#> ;
+###  https://saref.etsi.org/core/isControlledByDevice
+saref:isControlledByDevice a owl:ObjectProperty ;
+                                              rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                               rdfs:comment "A relationship specifying the devices that can control a certain property" ;
                                               rdfs:label "is controlled by device"@en .
 
-###  https://w3id.org/saref#isMeasuredByDevice
-<https://w3id.org/saref#isMeasuredByDevice> a owl:ObjectProperty ;
-                                            rdfs:isDefinedBy <https://w3id.org/saref#> ;
+###  https://saref.etsi.org/core/isMeasuredByDevice
+saref:isMeasuredByDevice a owl:ObjectProperty ;
+                                            rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                             rdfs:comment "A relationship specifying the devices that can measure a certain property" ;
                                             rdfs:label "is measured by device"@en .
 
-###  https://w3id.org/saref#relatesToMeasurement
-<https://w3id.org/saref#relatesToMeasurement> a owl:ObjectProperty ;
-                                              rdfs:isDefinedBy <https://w3id.org/saref#> ;
+###  https://saref.etsi.org/core/relatesToMeasurement
+saref:relatesToMeasurement a owl:ObjectProperty ;
+                                              rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                               rdfs:comment "A relationship between a property and the measurements it relates to" ;
                                               rdfs:label "relates to measurement"@en .
 
-###  https://w3id.org/saref#isMeasuredIn
-<https://w3id.org/saref#isMeasuredIn> a owl:ObjectProperty ;
-                                      rdfs:isDefinedBy <https://w3id.org/saref#> ;
+###  https://saref.etsi.org/core/isMeasuredIn
+saref:isMeasuredIn a owl:ObjectProperty ;
+                                      rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                       rdfs:comment "A relationship identifying the unit of measure used for a certain entity." ;
                                       rdfs:label "is measured in"@en .
 
-###  https://w3id.org/saref#relatesToProperty
-<https://w3id.org/saref#relatesToProperty> a owl:ObjectProperty ;
-                                           rdfs:isDefinedBy <https://w3id.org/saref#> ;
+###  https://saref.etsi.org/core/relatesToProperty
+saref:relatesToProperty a owl:ObjectProperty ;
+                                           rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                            rdfs:comment "A relationship between a measurement and the property it relates to" ;
                                            rdfs:label "relates to property"@en .
 
-###  https://w3id.org/saref#makesMeasurement
-<https://w3id.org/saref#makesMeasurement> a owl:ObjectProperty ;
-                                          owl:inverseOf <https://w3id.org/saref#measurementMadeBy> ;
-                                          rdfs:isDefinedBy <https://w3id.org/saref#> ;
+###  https://saref.etsi.org/core/makesMeasurement
+saref:makesMeasurement a owl:ObjectProperty ;
+                                          owl:inverseOf saref:measurementMadeBy ;
+                                          rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                           rdfs:comment "A relation between a device and the measurements it makes. Such measurement will link together the value of the measurement, its unit of measure and the property to which it relates." ;
                                           rdfs:label "makes measurement"@en .
 
-###  https://w3id.org/saref#measurementMadeBy
-<https://w3id.org/saref#measurementMadeBy> a owl:ObjectProperty ;
+###  https://saref.etsi.org/core/measurementMadeBy
+saref:measurementMadeBy a owl:ObjectProperty ;
                                            rdfs:comment "Relation between a measurement and the device that made it."@en ;
-                                           rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                           rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                            rdfs:label "measurement made by"@en .
 
-###  https://w3id.org/saref#controlsProperty
-<https://w3id.org/saref#controlsProperty> a owl:ObjectProperty ;
-                                          rdfs:isDefinedBy <https://w3id.org/saref#> ;
+###  https://saref.etsi.org/core/controlsProperty
+saref:controlsProperty a owl:ObjectProperty ;
+                                          rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                           rdfs:comment "A relationship specifying the Property that can be controlled by a certain Device";
                                           rdfs:label "controls property"@en .
 
-###  https://w3id.org/saref#measuresProperty
-<https://w3id.org/saref#measuresProperty> a owl:ObjectProperty ;
-                                          rdfs:isDefinedBy <https://w3id.org/saref#> ;
+###  https://saref.etsi.org/core/measuresProperty
+saref:measuresProperty a owl:ObjectProperty ;
+                                          rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                           rdfs:comment "A relationship specifying the Property that can be measured by a certain Device" ;
                                           rdfs:label "measures property"@en .
 
-###  https://w3id.org/saref#hasFeatureOfInterest
-<https://w3id.org/saref#hasFeatureOfInterest> a owl:ObjectProperty ;
-                                              owl:inverseOf <https://w3id.org/saref#isFeatureOfInterestOf> ;
+###  https://saref.etsi.org/core/hasFeatureOfInterest
+saref:hasFeatureOfInterest a owl:ObjectProperty ;
+                                              owl:inverseOf saref:isFeatureOfInterestOf ;
                                               rdfs:comment "Relation between a measurement and the feature of interest being measured."@en ;
-                                              rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                              rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                               rdfs:label "has feature of interest"@en .
 
-###  https://w3id.org/saref#isFeatureOfInterestOf
-<https://w3id.org/saref#isFeatureOfInterestOf> a owl:ObjectProperty ;
+###  https://saref.etsi.org/core/isFeatureOfInterestOf
+saref:isFeatureOfInterestOf a owl:ObjectProperty ;
                                                rdfs:comment "Relation betwwen a feature of interest and the measurments that are about it."@en ;
-                                               rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                               rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                                rdfs:label "is feature of interest of"@en .
 
-###  https://w3id.org/saref#hasProperty
-<https://w3id.org/saref#hasProperty> a owl:ObjectProperty ;
-                                     owl:inverseOf <https://w3id.org/saref#isPropertyOf> ;
+###  https://saref.etsi.org/core/hasProperty
+saref:hasProperty a owl:ObjectProperty ;
+                                     owl:inverseOf saref:isPropertyOf ;
                                      rdfs:comment "Relation between a feature of interest and its properties."@en ;
-                                     rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                     rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                      rdfs:label "has property"@en .
 
-###  https://w3id.org/saref#isPropertyOf
-<https://w3id.org/saref#isPropertyOf> a owl:ObjectProperty ;
+###  https://saref.etsi.org/core/isPropertyOf
+saref:isPropertyOf a owl:ObjectProperty ;
                                       rdfs:comment "Relation between a property and a feature of interest in which such property appears."@en ;
-                                      rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                      rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                       rdfs:label "is property of"@en .
 
 ### http://foodie-cloud.com/model/foodie#quantitativeProperty
@@ -221,9 +221,9 @@ fiware-agrifood:hasDevice	a      owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  https://w3id.org/saref#hasValue
-<https://w3id.org/saref#hasValue> a owl:DatatypeProperty ;
-                                  rdfs:isDefinedBy <https://w3id.org/saref#> ;
+###  https://saref.etsi.org/core/hasValue
+saref:hasValue a owl:DatatypeProperty ;
+                                  rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                   rdfs:comment "A relationship defining the value of a certain property, e.g., energy or power" ;
                                   rdfs:label "has value"@en .
 
@@ -390,116 +390,116 @@ fiware-weather:snowHeight	a      owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  https://w3id.org/saref#Property
-<https://w3id.org/saref#Property> a owl:Class ;
+###  https://saref.etsi.org/core/Property
+saref:Property a owl:Class ;
                                   rdfs:subClassOf [ a owl:Restriction ;
-                                                    owl:onProperty <https://w3id.org/saref#isControlledByDevice> ;
-                                                    owl:allValuesFrom <https://w3id.org/saref#Device>
+                                                    owl:onProperty saref:isControlledByDevice ;
+                                                    owl:allValuesFrom saref:Device
                                                   ] ,
                                                   [ a owl:Restriction ;
-                                                    owl:onProperty <https://w3id.org/saref#isMeasuredByDevice> ;
-                                                    owl:allValuesFrom <https://w3id.org/saref#Device>
+                                                    owl:onProperty saref:isMeasuredByDevice ;
+                                                    owl:allValuesFrom saref:Device
                                                   ] ,
                                                   [ a owl:Restriction ;
-                                                    owl:onProperty <https://w3id.org/saref#isPropertyOf> ;
-                                                    owl:allValuesFrom <https://w3id.org/saref#FeatureOfInterest>
+                                                    owl:onProperty saref:isPropertyOf ;
+                                                    owl:allValuesFrom saref:FeatureOfInterest
                                                   ] ,
                                                   [ a owl:Restriction ;
-                                                    owl:onProperty <https://w3id.org/saref#relatesToMeasurement> ;
-                                                    owl:allValuesFrom <https://w3id.org/saref#Measurement>
+                                                    owl:onProperty saref:relatesToMeasurement ;
+                                                    owl:allValuesFrom saref:Measurement
                                                   ] ;
-                                  owl:disjointWith <https://w3id.org/saref#UnitOfMeasure> ;
+                                  owl:disjointWith saref:UnitOfMeasure ;
                                   rdfs:comment "An aspect of an entity that can be observable by a sensor."@en ,
                                                "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended." ;
-                                  rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                  rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                   rdfs:label "Property"@en ,
                                              "Property" .
 
-###  https://w3id.org/saref#Measurement
-<https://w3id.org/saref#Measurement> a owl:Class ;
+###  https://saref.etsi.org/core/Measurement
+saref:Measurement a owl:Class ;
                                      rdfs:subClassOf [ a owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#hasFeatureOfInterest> ;
-                                                       owl:allValuesFrom <https://w3id.org/saref#FeatureOfInterest>
+                                                       owl:onProperty saref:hasFeatureOfInterest ;
+                                                       owl:allValuesFrom saref:FeatureOfInterest
                                                      ] ,
                                                      [ a owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#isMeasuredIn> ;
-                                                       owl:allValuesFrom <https://w3id.org/saref#UnitOfMeasure>
+                                                       owl:onProperty saref:isMeasuredIn ;
+                                                       owl:allValuesFrom saref:UnitOfMeasure
                                                      ] ,
                                                      [ a owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#relatesToProperty> ;
-                                                       owl:allValuesFrom <https://w3id.org/saref#Property>
+                                                       owl:onProperty saref:relatesToProperty ;
+                                                       owl:allValuesFrom saref:Property
                                                      ] ,
                                                      [ a owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#isMeasuredIn> ;
+                                                       owl:onProperty saref:isMeasuredIn ;
                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                       owl:onClass <https://w3id.org/saref#UnitOfMeasure>
+                                                       owl:onClass saref:UnitOfMeasure
                                                      ] ,
                                                      [ a owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#relatesToProperty> ;
+                                                       owl:onProperty saref:relatesToProperty ;
                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                       owl:onClass <https://w3id.org/saref#Property>
+                                                       owl:onClass saref:Property
                                                      ] ,
                                                      [ a owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#hasTimestamp> ;
+                                                       owl:onProperty saref:hasTimestamp ;
                                                        owl:allValuesFrom xsd:dateTime
                                                      ] ,
                                                      [ a owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#hasValue> ;
+                                                       owl:onProperty saref:hasValue ;
                                                        owl:cardinality "1"^^xsd:nonNegativeInteger
                                                      ] ,
                                                      [ a owl:Restriction ;
-                                                       owl:onProperty <https://w3id.org/saref#hasValue> ;
+                                                       owl:onProperty saref:hasValue ;
                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                        owl:onDataRange xsd:float
                                                      ] ;
-                                     owl:disjointWith <https://w3id.org/saref#Property> ,
-                                                      <https://w3id.org/saref#UnitOfMeasure> ;
+                                     owl:disjointWith saref:Property ,
+                                                      saref:UnitOfMeasure ;
                                      rdfs:comment "Represents the measured value made over a property. It is also linked to the unit of measure in which the value is expressed and the timestamp of the measurement."@en ;
-                                     rdfs:isDefinedBy <https://w3id.org/saref#> ;
+                                     rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
                                      rdfs:label "Measurement"@en .
 
-###  https://w3id.org/saref#UnitOfMeasure
-<https://w3id.org/saref#UnitOfMeasure> a owl:Class ;
+###  https://saref.etsi.org/core/UnitOfMeasure
+saref:UnitOfMeasure a owl:Class ;
                                        rdfs:comment "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of the Smart Appliances ontology, but this list can be extended."@en ,
                                                     "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)." ;
                                        rdfs:isDefinedBy <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> ,
-                                                        <https://w3id.org/saref#> ;
+                                                        <https://saref.etsi.org/core/> ;
                                        rdfs:label "Unit of measure"@en .
 
-###  https://w3id.org/saref#FeatureOfInterest
-<https://w3id.org/saref#FeatureOfInterest> a owl:Class ;
+###  https://saref.etsi.org/core/FeatureOfInterest
+saref:FeatureOfInterest a owl:Class ;
                                            rdfs:subClassOf [ a owl:Restriction ;
-                                                             owl:onProperty <https://w3id.org/saref#hasProperty> ;
-                                                             owl:allValuesFrom <https://w3id.org/saref#Property>
+                                                             owl:onProperty saref:hasProperty ;
+                                                             owl:allValuesFrom saref:Property
                                                            ] ,
                                                            [ a owl:Restriction ;
-                                                             owl:onProperty <https://w3id.org/saref#isFeatureOfInterestOf> ;
-                                                             owl:allValuesFrom <https://w3id.org/saref#Measurement>
+                                                             owl:onProperty saref:isFeatureOfInterestOf ;
+                                                             owl:allValuesFrom saref:Measurement
                                                            ] ;
                                            rdfs:comment "A feature of interest represents any real world entity from which a property is measured" ;
                                            rdfs:label "Feature of interest"@en ;
-                                           rdfs:isDefinedBy <https://w3id.org/saref#> .
+                                           rdfs:isDefinedBy <https://saref.etsi.org/core/> .
 
-###  https://w3id.org/saref#Humidity
-<https://w3id.org/saref#Humidity> a owl:Class ;
-                                  rdfs:subClassOf <https://w3id.org/saref#Property> ;
+###  https://saref.etsi.org/core/Humidity
+saref:Humidity a owl:Class ;
+                                  rdfs:subClassOf saref:Property ;
                                   rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit" ;
                                   rdfs:label "Humidity"@en ;
-                                  rdfs:isDefinedBy <https://w3id.org/saref#> .
+                                  rdfs:isDefinedBy <https://saref.etsi.org/core/> .
 
-###  https://w3id.org/saref#Temperature
-<https://w3id.org/saref#Temperature> a owl:Class ;
-                                     rdfs:subClassOf <https://w3id.org/saref#Property> ;
+###  https://saref.etsi.org/core/Temperature
+saref:Temperature a owl:Class ;
+                                     rdfs:subClassOf saref:Property ;
                                      rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)" ;
                                      rdfs:label "Temperature"@en ;
-                                     rdfs:isDefinedBy <https://w3id.org/saref#> .
+                                     rdfs:isDefinedBy <https://saref.etsi.org/core/> .
 
-###  https://w3id.org/def/saref4agri#Soil
-<https://w3id.org/def/saref4agri#Soil> a owl:Class ;
-      					rdfs:subClassOf <https://w3id.org/saref#FeatureOfInterest> ;
+###  https://saref.etsi.org/saref4agri/Soil
+saref4agri:Soil a owl:Class ;
+      					rdfs:subClassOf saref:FeatureOfInterest ;
       					rdfs:comment "Upper layer of the earth in which plants grow." ;
                                         rdfs:label "Soil" ;
-                                        rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+                                        rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 ### http://foodie-cloud.com/model/foodie#PropertyType
 foodie:PropertyType  a   owl:Class ;
@@ -657,11 +657,11 @@ fiware-weather:streamGauge rdfs:subPropertyOf saref:hasValue .
 fiware-weather:snowHeight rdfs:subPropertyOf saref:hasValue .
 fiware-weather:refDevice owl:equivalentProperty saref:measurementMadeBy .
 fiware-weather:WeatherForecast rdfs:subClassOf saref:FeatureOfInterest .
-<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/organicMatter> a <https://w3id.org/saref#Property> .
-<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/electricConductivity> a <https://w3id.org/saref#Property> .
-<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilType> a <https://w3id.org/saref#Property> .
-<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilTexture> a <https://w3id.org/saref#Property> .
-<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/pH> a <https://w3id.org/saref#Property> .
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/organicMatter> a saref:Property .
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/electricConductivity> a saref:Property .
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilType> a saref:Property .
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilTexture> a saref:Property .
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/pH> a saref:Property .
 saref4agri:SoilTemperature owl:sameAs cf:soil_temperature .
 
 #################################################################
@@ -670,87 +670,87 @@ saref4agri:SoilTemperature owl:sameAs cf:soil_temperature .
 
 ###  http://dbpedia.org/resource/DBM
 <http://dbpedia.org/resource/DBM> a owl:NamedIndividual ,
-                                           <https://w3id.org/saref#UnitOfMeasure> ;
+                                           saref:UnitOfMeasure ;
                                 rdfs:isDefinedBy <https://en.wikipedia.org/wiki/DBm> ;
                                 rdfs:comment "a unit for power measurement" ;
                                 rdfs:label "decibel-milliwatts"@en .
 
 ###  http://www.ontology-of-units-of-measure.org/resource/om-2/degreeCelsius
 <http://www.ontology-of-units-of-measure.org/resource/om-2/degreeCelsius> a owl:NamedIndividual ,
-                                                                         <https://w3id.org/saref#UnitOfMeasure> ;
+                                                                         saref:UnitOfMeasure ;
                                                                           rdfs:isDefinedBy <http://www.ontology-of-units-of-measure.org/resource/om-2/degreeCelsius> ;
                                                                           rdfs:comment "The degree Celsius is a unit of temperature defined as 1 kelvin." ;         
                                                                           rdfs:label "degree Celsius"@en .
 
 ###  http://www.ontology-of-units-of-measure.org/resource/om-2/millibar
 <http://www.ontology-of-units-of-measure.org/resource/om-2/millibar> a owl:NamedIndividual ,
-                                                                        <https://w3id.org/saref#UnitOfMeasure> ;
+                                                                        saref:UnitOfMeasure ;
                                                                      rdfs:isDefinedBy <http://www.ontology-of-units-of-measure.org/resource/om-2/millibar> ;
                                                                       rdfs:comment "The millibar is a unit of pressure defined as 1.0e-3 bar." ;          
                                                                      rdfs:label "millibar"@en .
 
 ###  http://www.ontology-of-units-of-measure.org/resource/om-2/millimetre
 <http://www.ontology-of-units-of-measure.org/resource/om-2/millimetre> a owl:NamedIndividual ,
-                                                                        <https://w3id.org/saref#UnitOfMeasure> ;
+                                                                        saref:UnitOfMeasure ;
                                                                       rdfs:isDefinedBy <http://www.ontology-of-units-of-measure.org/resource/om-2/millimetre> ;
                                                                       rdfs:comment "The millimetre is a unit of length defined as 1.0e-3 metre." ;
                                                                        rdfs:label "millimetre"@en .
 
 ###  http://www.ontology-of-units-of-measure.org/resource/om-2/millivolt
 <http://www.ontology-of-units-of-measure.org/resource/om-2/millivolt> a owl:NamedIndividual ,
-                                                                        <https://w3id.org/saref#UnitOfMeasure> ;
+                                                                        saref:UnitOfMeasure ;
                                                                       rdfs:isDefinedBy <http://www.ontology-of-units-of-measure.org/resource/om-2/millivolt> ;
                                                                       rdfs:comment "The millivolt is a unit of Voltage" ;
                                                                       rdfs:label "millivolt"@en .
 
-###  https://w3id.org/def/saref4agri#AirTemperature
+###  https://saref.etsi.org/saref4agri/AirTemperature
 saref4agri:AirTemperature a owl:NamedIndividual ,
-                         <https://w3id.org/saref#Temperature> ;
+                         saref:Temperature ;
                 rdfs:comment "The degree or intensity of heat present in the air." ;
                 rdfs:label "Air temperature"@en ;
-                rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+                rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#AmbientHumidity
+###  https://saref.etsi.org/saref4agri/AmbientHumidity
 saref4agri:AmbientHumidity a owl:NamedIndividual ,
-                          <https://w3id.org/saref#Humidity> ;
+                          saref:Humidity ;
                  rdfs:comment "The amount of water vapour in the air." ;
                  rdfs:label "Ambient huidity"@en ;
-                 rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+                 rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#IrrigationWater
+###  https://saref.etsi.org/saref4agri/IrrigationWater
 saref4agri:IrrigationWater a owl:NamedIndividual ,
-                          <https://w3id.org/saref#Property> ;
+                          saref:Property ;
                  rdfs:comment "The amount of water falling in the soil by irrigation methods." ;
                  rdfs:label "Irrigation water"@en ;
-                 rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+                 rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#PlantGrowthStage
+###  https://saref.etsi.org/saref4agri/PlantGrowthStage
 saref4agri:PlantGrowthStage a owl:NamedIndividual ,
-                           <https://w3id.org/saref#Property> ;
+                           saref:Property ;
                   rdfs:comment "The level or stage of growth of the plant." ;
                   rdfs:label "Plant growth stage"@en ;
-                  rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+                  rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#Precipitation
+###  https://saref.etsi.org/saref4agri/Precipitation
 saref4agri:Precipitation a owl:NamedIndividual ,
-                        <https://w3id.org/saref#Property> ;
+                        saref:Property ;
                rdfs:comment "The amount of water falling in the soil by natural process (e.g. rain)." ;
                rdfs:label "Precipitation"@en ;
-               rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+               rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#SoilMoisture
+###  https://saref.etsi.org/saref4agri/SoilMoisture
 saref4agri:SoilMoisture a owl:NamedIndividual ,
-                       <https://w3id.org/saref#Property> ;
+                       saref:Property ;
               rdfs:comment "The amount of water or humidity contained in the soil." ;
               rdfs:label "Soil moisture"@en ;
-              rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+              rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#SoilTemperature
+###  https://saref.etsi.org/saref4agri/SoilTemperature
 saref4agri:SoilTemperature a owl:NamedIndividual ,
-                          <https://w3id.org/saref#Temperature> ;
+                          saref:Temperature ;
                  rdfs:comment "The degree or intensity of heat present in the soil." ;
                  rdfs:label "Soil temperature"@en ;
-                 rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+                 rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/organicMatter>
         a               skos:Concept ;

@@ -15,7 +15,7 @@
 @prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
 @prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
-@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix saref4agri: <https://saref.etsi.org/saref4agri/> .
 @prefix common: <http://portele.de/ont/inspire/baseInspire#> .
 @prefix fiware: <https://smartdatamodels.org/> .
 @prefix fiware-agrifood: <https://smartdatamodels.org/dataModel.Agrifood/> .
@@ -67,18 +67,18 @@
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/def/saref4agri#contains
+###  https://saref.etsi.org/saref4agri/contains
 saref4agri:contains a owl:ObjectProperty ;
           owl:inverseOf saref4agri:isContainedIn ;
           rdfs:label "contains" ;
           rdfs:comment "A realtion to represent the contained land parcel" ;
-          rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+          rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#isContainedIn
+###  https://saref.etsi.org/saref4agri/isContainedIn
 saref4agri:isContainedIn a owl:ObjectProperty ;
                rdfs:label "is contained in"@en ;
                rdfs:comment "A relation inverse of s4agri:contains" ;
-               rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+               rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#activity
 af-inspire:activity
@@ -241,7 +241,7 @@ fiware-agrifood:lastPlantedAt	a owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  https://w3id.org/def/saref4agri#Farm
+###  https://saref.etsi.org/saref4agri/Farm
 saref4agri:Farm a owl:Class ;
       rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
                       [ a owl:Restriction ;
@@ -258,9 +258,9 @@ saref4agri:Farm a owl:Class ;
                       ] ;
       rdfs:comment "A plot of land used for the scope of farming which can contain buildings and parcels."@en ;
       rdfs:label "Farm" ;
-      rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+      rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
-###  https://w3id.org/def/saref4agri#Building
+###  https://saref.etsi.org/saref4agri/Building
 saref4agri:Building a owl:Class ;
           rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
                           [ a owl:Restriction ;
@@ -273,18 +273,18 @@ saref4agri:Building a owl:Class ;
                           ] ;
           rdfs:comment "A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space)."@en ;
           rdfs:label "Building" ;
-          rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+          rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 
-###  https://w3id.org/def/saref4agri#BuildingSpace
+###  https://saref.etsi.org/saref4agri/BuildingSpace
 saref4agri:BuildingSpace a owl:Class ;
                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ;
                rdfs:comment "An entity used to define the physical spaces of the building. A building space contains devices or building objects."@en ;
                rdfs:label "Building space"@en ;
-               rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+               rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 
-###  https://w3id.org/def/saref4agri#Parcel
+###  https://saref.etsi.org/saref4agri/Parcel
 saref4agri:Parcel a owl:Class ;
         rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
                         [ a owl:Restriction ;
@@ -298,7 +298,7 @@ saref4agri:Parcel a owl:Class ;
                         ] ;
         rdfs:comment "An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items."@en ;
         rdfs:label "Parcel" ;
-        rdfs:isDefinedBy <https://w3id.org/def/saref4agri#> .
+        rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> .
 
 ###  http://inspire.ec.europa.eu/schemas/af/3.0#Holding
 af-inspire:Holding  a           owl:Class ;
