@@ -1,5 +1,6 @@
 # NOTE: generate RDF (run toRDF.sh first
-java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -o crossDomain-context.jsonld https://w3id.org/demeter/crossDomain
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -v -o demeter-core-context.jsonld https://w3id.org/demeter/core
+java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -v -o crossDomain-context.jsonld https://w3id.org/demeter/crossDomain
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -v -o agriCommon-context.jsonld https://w3id.org/demeter/agri/agriCommon #https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCommon.ttl
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -v -o agriFeature-context.jsonld https://w3id.org/demeter/agri/agriFeature 
 java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld-0.2.2-SNAPSHOT-standalone.jar -v -o agriAlert-context.jsonld https://w3id.org/demeter/agri/agriAlert
@@ -93,7 +94,7 @@ java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld
       "@id" : "https://saref.etsi.org/core/hasValue" (prev: "https://w3id.org/saref#hasValue")
     },
 ## ADD THE FOLLOWING TERMS        
-   "name" : {
+   	"name" : {
       "@id" : "https://smartdatamodels.org/name"
     }
 '    
@@ -106,7 +107,7 @@ java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld
     }
     
 ## ADD THE FOLLOWING TERMS            
-   "locationGeoJson" : {
+   	"locationGeoJson" : {
       "@id" : "https://uri.etsi.org/ngsi-ld/location",
       "@type" : "@id"
     }
@@ -172,7 +173,7 @@ java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld
     }
     
 ## ADD THE FOLLOWING TERMS            
-   "operationStatus" : {
+   	"operationStatus" : {
       "@id" : "https://uri.etsi.org/ngsi-ld/status"
     }
     "quantity" : {
@@ -235,6 +236,9 @@ java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld
     "dct.description" : {
       "@id" : "http://purl.org/dc/terms/description"
     }
+    "saref.Property" : {
+      "@id" : "https://saref.etsi.org/core/Property"
+    }
 ## ADD THE FOLLOWING TERMS   
     "saref.Temperature" : {
       "@id" : "https://saref.etsi.org/core/Temperature"
@@ -272,7 +276,7 @@ java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld
     }
     
 ## ADD THE FOLLOWING TERMS            
-   "saref.Sensor" : {
+   	"saref.Sensor" : {
       "@id" : "https://saref.etsi.org/core/Sensor"
     }
 '  
@@ -298,7 +302,182 @@ java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld
       "@id" : "http://purl.org/dc/terms/description"
     }
 ## ADD THE FOLLOWING TERMS            
-   "FarmAnimal" : {
+   	"FarmAnimal" : {
       "@id" : "https://smartdatamodels.org/dataModel.Agrifood/Animal"
     }
+'  
+
+######## full context
+## CHANGE in generated context
+: '
+		"alertValidFrom" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/validFrom",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    }
+    "animalSpecies" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/species"
+    } 
+    "saref.FeatureOfInterest" : {
+      "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
+    }
+    "composedPrimarilyOf" : {
+      "@id" : "http://purl.obolibrary.org/obo/RO_0002473",
+      "@type" : "@id"
+    }
+    "hasCountryOfOrigin" : {
+      "@id" : "http://purl.obolibrary.org/obo/HANCESTRO_0308",
+      "@type" : "@id"
+    }
+    "isMemberOfAnimalGroup" : {
+      "@id" : "https://saref.etsi.org/saref4agri/isMemberOf",
+      "@type" : "@id"
+    }
+    "schema.Person" : {
+      "@id" : "https://schema.org/Person"
+    }
+    "foaf.name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    }
+    "totalQuantity" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/quantity"
+    }
+    "hasFoodSubstanceAnalog" : {
+      "@id" : "http://purl.obolibrary.org/obo/FOODON_00001301",
+      "@type" : "@id"
+    }
+    "wgs84.Point" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+    }
+    "hasComponent" : {
+      "@id" : "http://purl.obolibrary.org/obo/RO_0002180",
+      "@type" : "@id"
+    }
+    "alertValidTo" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/validTo",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    }
+    "typeName" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#type",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    }
+    "dct.description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    }
+    "value" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+## ADD THE FOLLOWING TERMS     
+		"sf.Geometry" : {
+      "@id" : "http://www.opengis.net/ont/sf#Geometry"
+    }
+		"cf.Surface" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface"
+    } 
+    "saref.Temperature" : {
+      "@id" : "https://saref.etsi.org/core/Temperature"
+    }
+    "FeatureOfInterest" : {
+      "@id" : "http://www.w3.org/ns/sosa/FeatureOfInterest"
+    }      
+    "FarmAnimal" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/Animal"
+    }
+    "Point" : {
+      "@id" : "http://www.opengis.net/ont/sf#Point"
+    }
+    "ssn.Property" : {
+      "@id" : "http://www.w3.org/ns/ssn/Property"
+    }
+    "saref.Property" : {
+      "@id" : "https://saref.etsi.org/core/Property"
+    }
+    "description" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    }
+   	"propertyHasValue" : {
+      "@id" : "https://saref.etsi.org/core/hasValue"
+    }
+    "validFrom" : {
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validFrom",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    }
+    "validTo" : {
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validTo",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    }
+    "species" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#species",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    }
+    "operationStatus" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/status"
+    }
+    "quantity" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#quantity",
+      "@type" : "@id"
+    }
+    "name" : {
+      "@id" : "https://smartdatamodels.org/name"
+    }
+    "schema.name" : {
+      "@id" : "https://schema.org/name"
+    }
+    "containsSite" : {
+      "@id" : "http://inspire.ec.europa.eu/schemas/af/3.0#contains",
+      "@type" : "@id"
+    }
+    "locationGeoJson" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/location",
+      "@type" : "@id"
+    }
+    "saref.hasProperty" : {
+      "@id" : "https://saref.etsi.org/core/hasProperty",
+      "@type" : "@id"
+    }
+    "saref.hasFeatureOfInterest" : {
+      "@id" : "https://saref.etsi.org/core/hasFeatureOfInterest",
+      "@type" : "@id"
+    }
+    "saref.isFeatureOfInterestOf" : {
+      "@id" : "https://saref.etsi.org/core/isFeatureOfInterestOf",
+      "@type" : "@id"
+    }
+    "saref.isPropertyOf" : {
+      "@id" : "https://saref.etsi.org/core/isPropertyOf",
+      "@type" : "@id"
+    }
+    "qu.QuantityKind" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+    }
+    "hasMember" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasMember",
+      "@type" : "@id"
+    }
+    "qb.Observation" : {
+      "@id" : "http://purl.org/linked-data/cube#Observation"
+    }
+    "saref.Sensor" : {
+      "@id" : "https://saref.etsi.org/core/Sensor"
+    }
+    "object" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/hasObject",
+      "@type" : "@id"
+    }        
+'  
+    
+    
+######## core-ngsi-ld
+## CHANGE in generated context
+: '
+		"value" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/hasValue"
+    }
+    "object" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/hasObject",
+      "@type" : "@id"
+    }
+    
+## ADD THE FOLLOWING TERMS            
+   
 '  
