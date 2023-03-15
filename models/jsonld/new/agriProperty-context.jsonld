@@ -1,0 +1,376 @@
+{
+  "@context" : {
+    "UnitOfMeasure" : {
+      "@id" : "https://saref.etsi.org/core/UnitOfMeasure"
+    },
+    "affiliation" : {
+      "@id" : "https://schema.org/affiliation"
+    },
+    "Unit" : {
+      "@id" : "http://qudt.org/schema/qudt/Unit"
+    },
+    "isControlledByDevice" : {
+      "@id" : "https://saref.etsi.org/core/isControlledByDevice",
+      "@type" : "@id"
+    },
+    "hasDevice" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasDevice",
+      "@type" : "@id"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "productionAmount" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#productionAmount"
+    },
+    "Humidity" : {
+      "@id" : "https://saref.etsi.org/core/Humidity"
+    },
+    "WeatherObserved" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/WeatherObserved"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "analysisDate" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#analysisDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "FeatureOfInterest" : {
+      "@id" : "http://www.w3.org/ns/sosa/FeatureOfInterest"
+    },
+    "measuresProperty" : {
+      "@id" : "https://saref.etsi.org/core/measuresProperty",
+      "@type" : "@id"
+    },
+    "soilTemperature" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/soilTemperature"
+    },
+    "propertyHasValue" : {
+      "@id" : "https://saref.etsi.org/core/hasValue"
+    },
+    "snowHeight" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/snowHeight"
+    },
+    "maker" : {
+      "@id" : "http://xmlns.com/foaf/0.1/maker"
+    },
+    "Medium" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium"
+    },
+    "ThermalConductivity" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity"
+    },
+    "madeBySensor" : {
+      "@id" : "http://www.w3.org/ns/sosa/madeBySensor",
+      "@type" : "@id"
+    },
+    "streamGauge" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/streamGauge"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "quantitativeProperty" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#quantitativeProperty",
+      "@type" : "@id"
+    },
+    "Wind" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Wind"
+    },
+    "Concept" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "refPointOfInterest" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/refPointOfInterest",
+      "@type" : "@id"
+    },
+    "Measurement" : {
+      "@id" : "https://saref.etsi.org/core/Measurement"
+    },
+    "propertyName" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#propertyName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "windDirection" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/windDirection"
+    },
+    "MassPerTimePerArea" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"
+    },
+    "Temperature" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"
+    },
+    "homepage" : {
+      "@id" : "http://xmlns.com/foaf/0.1/homepage"
+    },
+    "WeatherForecast" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/WeatherForecast"
+    },
+    "soilMoistureEc" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEc"
+    },
+    "hasProperty" : {
+      "@id" : "http://www.w3.org/ns/ssn/hasProperty",
+      "@type" : "@id"
+    },
+    "Measure" : {
+      "@id" : "http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure"
+    },
+    "Soil" : {
+      "@id" : "https://saref.etsi.org/saref4agri/Soil"
+    },
+    "measurementMadeBy" : {
+      "@id" : "https://saref.etsi.org/core/measurementMadeBy",
+      "@type" : "@id"
+    },
+    "EnergyFlux" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"
+    },
+    "StressOrPressure" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"
+    },
+    "resultTime" : {
+      "@id" : "http://www.w3.org/ns/sosa/resultTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "PropertyType" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#PropertyType"
+    },
+    "PropertyTypeValue" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#PropertyTypeValue"
+    },
+    "visibility" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/visibility"
+    },
+    "refDevice" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/refDevice",
+      "@type" : "@id"
+    },
+    "soilProperty" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#soilProperty",
+      "@type" : "@id"
+    },
+    "Precipitation" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Precipitation"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "name" : {
+      "@id" : "https://smartdatamodels.org/name"
+    },
+    "Layer" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer"
+    },
+    "temperature" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/temperature"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights"
+    },
+    "hasAgriParcel" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel",
+      "@type" : "@id"
+    },
+    "QuantityKind" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+    },
+    "AgriParcelRecord" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/AgriParcelRecord"
+    },
+    "Distance" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Distance"
+    },
+    "dateObserved" : {
+      "@id" : "https://smartdatamodels.org/dateObserved"
+    },
+    "relatesToMeasurement" : {
+      "@id" : "https://saref.etsi.org/core/relatesToMeasurement",
+      "@type" : "@id"
+    },
+    "atmosphericPressure" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/atmosphericPressure"
+    },
+    "isMeasuredByDevice" : {
+      "@id" : "https://saref.etsi.org/core/isMeasuredByDevice",
+      "@type" : "@id"
+    },
+    "propertyType" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#propertyType",
+      "@type" : "@id"
+    },
+    "SurfaceDensity" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "makesMeasurement" : {
+      "@id" : "https://saref.etsi.org/core/makesMeasurement",
+      "@type" : "@id"
+    },
+    "hasResult" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasResult",
+      "@type" : "@id"
+    },
+    "saref.Property" : {
+      "@id" : "https://saref.etsi.org/core/Property"
+    },
+    "pressureTendency" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/pressureTendency"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "Density" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Density"
+    },
+    "weatherType" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/weatherType"
+    },
+    "isMeasuredIn" : {
+      "@id" : "https://saref.etsi.org/core/isMeasuredIn",
+      "@type" : "@id"
+    },
+    "dewPoint" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/dewPoint"
+    },
+    "saref.hasFeatureOfInterest" : {
+      "@id" : "https://saref.etsi.org/core/hasFeatureOfInterest",
+      "@type" : "@id"
+    },
+    "SpecificEntropy" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#SpecificEntropy"
+    },
+    "productionProperty" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#productionProperty",
+      "@type" : "@id"
+    },
+    "observedProperty" : {
+      "@id" : "http://www.w3.org/ns/sosa/observedProperty",
+      "@type" : "@id"
+    },
+    "nonQuantitativeProperty" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#nonQuantitativeProperty",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "madeObservation" : {
+      "@id" : "http://www.w3.org/ns/sosa/madeObservation",
+      "@type" : "@id"
+    },
+    "solarRadiation" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/solarRadiation"
+    },
+    "unit" : {
+      "@id" : "http://qudt.org/schema/qudt/unit",
+      "@type" : "@id"
+    },
+    "isPropertyOf" : {
+      "@id" : "http://www.w3.org/ns/ssn/isPropertyOf",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "relativeHumidity" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/relativeHumidity"
+    },
+    "relatesToProperty" : {
+      "@id" : "https://saref.etsi.org/core/relatesToProperty",
+      "@type" : "@id"
+    },
+    "airTemperatureForecast" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/airTemperatureForecast"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "controlsProperty" : {
+      "@id" : "https://saref.etsi.org/core/controlsProperty",
+      "@type" : "@id"
+    },
+    "ObservableProperty" : {
+      "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
+    },
+    "contributor" : {
+      "@id" : "http://purl.org/dc/terms/contributor"
+    },
+    "soilMoistureVwc" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/soilMoistureVwc"
+    },
+    "VelocityOrSpeed" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"
+    },
+    "Device" : {
+      "@id" : "https://saref.etsi.org/core/Device"
+    },
+    "hasTimestamp" : {
+      "@id" : "https://saref.etsi.org/core/hasTimestamp",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Dimensionless" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"
+    },
+    "precipitation" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/precipitation"
+    },
+    "observedAt" : {
+      "@id" : "https://smartdatamodels.org/observedAt",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "cf.Surface" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface"
+    },
+    "SurfaceLayer" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceLayer"
+    },
+    "inScheme" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#inScheme"
+    },
+    "dct.description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
+    "windSpeed" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/windSpeed"
+    },
+    "Observation" : {
+      "@id" : "http://www.w3.org/ns/sosa/Observation"
+    },
+    "illuminance" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/illuminance"
+    },
+    "hasSimpleResult" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasSimpleResult"
+    },
+    "isFeatureOfInterestOf" : {
+      "@id" : "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
+      "@type" : "@id"
+    },
+    "saref.Temperature" : {
+      "@id" : "https://saref.etsi.org/core/Temperature"
+    },
+    "saref.FeatureOfInterest" : {
+      "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
+    },
+    "saref.hasProperty" : {
+      "@id" : "https://saref.etsi.org/core/hasProperty",
+      "@type" : "@id"
+    },
+    "saref.isPropertyOf" : {
+      "@id" : "https://saref.etsi.org/core/isPropertyOf",
+      "@type" : "@id"
+    },
+    "hasFeatureOfInterest" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+      "@type" : "@id"
+    },
+    "saref.isFeatureOfInterestOf" : {
+      "@id" : "https://saref.etsi.org/core/isFeatureOfInterestOf",
+      "@type" : "@id"
+    }
+  }
+}
