@@ -481,3 +481,22 @@ java -jar /users/rap/GitRepositories/GitHub/owl2jsonld/target/uberjar/owl2jsonld
 ## ADD THE FOLLOWING TERMS            
    
 '  
+
+
+######## FIX object properties
+## CHANGE in generated context
+: '
+		foaf
+		geo
+		wgs_84
+		iso
+		qu
+		qudt
+		qb
+		sosa
+		ssn
+		foodie:productionAmount
+    
+## ADD THE FOLLOWING TERMS            
+   
+'  
