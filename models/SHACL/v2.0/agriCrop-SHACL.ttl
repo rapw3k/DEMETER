@@ -1,0 +1,394 @@
+@prefix schema: <https://schema.org/> .
+@prefix :      <https://w3id.org/cybele/> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix act-inspire: <http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+@prefix ssn:   <http://www.w3.org/ns/ssn/> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix qb:    <http://purl.org/linked-data/cube#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix stat:  <http://data.europa.eu/m8g/> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix af-inspire: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix demeterAgriCrop: <https://w3id.org/demeter/agri/agriCrop#> .
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+
+<https://astrea.linkeddata.es/shapes#2e882900e5f69eabc9a8cc0836b49954>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "hasAgriFertiliser"@en , "Reference to the recommended types of fertiliser suitable for growing this crop" ;
+        sh:description    "Reference to the recommended types of fertiliser suitable for growing this crop" ;
+        sh:name           "hasAgriFertiliser"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:hasAgriFertiliser .
+
+<https://astrea.linkeddata.es/shapes#41b5bb376d95ae13c5e1feffeee3a7d0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:family ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#dc011acee58ff3836114952ae3e050a3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Crop" ;
+        sh:description    "A collection of cultivated plants that is grown on a large scale commercially, especially a cereal, fruit, or vegetable."@en ;
+        sh:name           "Crop" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#536dc3aa61b372bf2f2754c0c93e90cd> , <https://astrea.linkeddata.es/shapes#36cbea6e92ac4e1e754724db3d4cb574> , <https://astrea.linkeddata.es/shapes#69925a22875d8e76f21162cdea079f4f> ;
+        sh:targetClass    saref4agri:Crop , fiware:AgriCrop , foodie:CropSpecies .
+
+<https://astrea.linkeddata.es/shapes#0799c039eedfbe1358b3ecdb305f4f0f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "cropHasAgriSoil"@en , "Reference to the recommended types of soil suitable for growing this crop" ;
+        sh:description    "Reference to the recommended types of soil suitable for growing this crop" ;
+        sh:name           "cropHasAgriSoil"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:cropHasAgriSoil .
+
+<https://astrea.linkeddata.es/shapes#e8ce284036033c966b9722d835b4029e>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      common:validTo .
+
+<https://astrea.linkeddata.es/shapes#36cbea6e92ac4e1e754724db3d4cb574>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      obo:TAXRANK_1000000 .
+
+<https://astrea.linkeddata.es/shapes#47165499a8631177d20464939561e0f6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  demeterAgriCrop: ;
+        rdfs:label        "Number Of Hives Needed" ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "Number Of Hives Needed" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           demeterAgriCrop:numberOfHivesNeeded ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c1d94919533707da4d2e988f54400b77>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:cropArea .
+
+<https://astrea.linkeddata.es/shapes#490b032c49a38f742c8739b3df447a8e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:genus ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#73a8044dd52a60737c3bf520efe33c33>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "receives" , "A relation to represent the intake/consumption of certain substances in a Crop." ;
+        sh:description    "A relation to represent the intake/consumption of certain substances in a Crop." ;
+        sh:name           "receives" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref4agri:receives .
+
+<https://astrea.linkeddata.es/shapes#2706167f0ebae7dce7551be561fd997d>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      prov:invalidatedAtTime .
+
+<https://astrea.linkeddata.es/shapes#b8f175b6e568edf4370bf8eab7d42a31>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:variety .
+
+<https://astrea.linkeddata.es/shapes#b9e9e73c6123c8053c9666090d3e157b>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:productionDate .
+
+<https://astrea.linkeddata.es/report/0767747899>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriCrop.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#cf7e863fd9342e2ab72c18692e43a4eb>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:description .
+
+<https://astrea.linkeddata.es/shapes#00ddfb7acd6e0e403b1d92211277f4fb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  demeterAgriCrop: ;
+        rdfs:label        "Expected Blooming End" ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "Expected Blooming End" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           demeterAgriCrop:expectedBloomingEnd ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#414c107a93104e5ad3d18d9fa7af096a>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:productionAmount .
+
+<https://astrea.linkeddata.es/shapes#caf836e94ba4e4071027db962df60b3f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b9e9e73c6123c8053c9666090d3e157b> , <https://astrea.linkeddata.es/shapes#456f7c6743f2b12f83abbd722d752719> , <https://astrea.linkeddata.es/shapes#414c107a93104e5ad3d18d9fa7af096a> ;
+        sh:targetClass    foodie:ProductionType .
+
+<https://astrea.linkeddata.es/shapes#536dc3aa61b372bf2f2754c0c93e90cd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:hasPlantDate .
+
+<https://astrea.linkeddata.es/shapes#77e23c52096db830b65258a7a60f8cb1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "plantingFrom"@en , "A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\ninterval, description\nWhere interval is in the form of start date/end date\n--MM-DD/--MM-DD\nMeaning repeat each year from this start date to this end date." ;
+        sh:description    "A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\ninterval, description\nWhere interval is in the form of start date/end date\n--MM-DD/--MM-DD\nMeaning repeat each year from this start date to this end date." ;
+        sh:name           "plantingFrom"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:plantingFrom .
+
+<https://astrea.linkeddata.es/shapes#0d55f7607aaecf6bc7ca8f35c186544b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          geo:Geometry ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:cropArea .
+
+<https://astrea.linkeddata.es/shapes#29e69eab58f79e77dc47ba0d0b204f9c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "Agri Crop" ;
+        sh:description    "This entity contains a harmonised description of a generic crop. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+        sh:name           "Agri Crop" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware:AgriCrop .
+
+<https://astrea.linkeddata.es/shapes#79a04f1d699cb1e0e48e5173b01db57f>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:notes .
+
+<https://astrea.linkeddata.es/shapes#21917d7dc03734a1127f44a0c209b34a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  demeterAgriCrop: ;
+        rdfs:label        "Expected Blooming Start" ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "Expected Blooming Start" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           demeterAgriCrop:expectedBloomingStart ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#5f7afcb23c0de93ffd61c03ebea84fb7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:variety ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#6ee324d10fab92b43dda92b5d0a730fb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "harvestingInterval"@en , "A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\ninterval, description\nWhere interval is in the form of start date/end date\n--MM-DD/--MM-DD\nMeaning repeat each year from this start date to this end date." ;
+        sh:description    "A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\ninterval, description\nWhere interval is in the form of start date/end date\n--MM-DD/--MM-DD\nMeaning repeat each year from this start date to this end date." ;
+        sh:name           "harvestingInterval"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:harvestingInterval .
+
+<https://astrea.linkeddata.es/shapes#462450f3abc9cf4b91404bbb742bed03>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      prov:generatedAtTime .
+
+<https://astrea.linkeddata.es/shapes#9aee027a0f666f2b642a3582438cf672>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "hasAgriPest"@en , "Reference to the pests known to attack this crop." ;
+        sh:description    "Reference to the pests known to attack this crop." ;
+        sh:name           "hasAgriPest"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware:hasAgriPest .
+
+<https://astrea.linkeddata.es/shapes#4f091202afbb5b2e8a21aa53fa07a10a>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:species .
+
+<https://astrea.linkeddata.es/shapes#4ca0a3bf9404370610cee7850d518b09>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:dateTime ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:productionDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#456f7c6743f2b12f83abbd722d752719>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:variety .
+
+<https://astrea.linkeddata.es/shapes#c57af3386faae1a04077383703294912>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f444727b0a1b6a2ceb7f3f5dd96f2e16> , <https://astrea.linkeddata.es/shapes#4f091202afbb5b2e8a21aa53fa07a10a> , <https://astrea.linkeddata.es/shapes#cf7e863fd9342e2ab72c18692e43a4eb> , <https://astrea.linkeddata.es/shapes#da70ad3187c2035f4ab0d283e0408deb> , <https://astrea.linkeddata.es/shapes#b8f175b6e568edf4370bf8eab7d42a31> , <https://astrea.linkeddata.es/shapes#795c744f2b69f0f3a4226675a18c617e> , <https://astrea.linkeddata.es/shapes#79a04f1d699cb1e0e48e5173b01db57f> ;
+        sh:targetClass    foodie:CropType .
+
+<https://astrea.linkeddata.es/shapes#b4f88c60dec16114d393e29cf0110fb6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "has plant date" , "A relation to express the day the crop is planted." ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "A relation to express the day the crop is planted." ;
+        sh:name           "has plant date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           saref4agri:hasPlantDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#ac1f1df7f42714c31f2630f3e028cb0b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "has harvest date" , "A relation to express the day the crop is harvested." ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "A relation to express the day the crop is harvested." ;
+        sh:equals         foodie:productionDate ;
+        sh:name           "has harvest date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           saref4agri:hasHarvestDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#b360303278847d5ec14bd1af6b765bb6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e8ce284036033c966b9722d835b4029e> , <https://astrea.linkeddata.es/shapes#462450f3abc9cf4b91404bbb742bed03> , <https://astrea.linkeddata.es/shapes#c1d94919533707da4d2e988f54400b77> , <https://astrea.linkeddata.es/shapes#cdad82710db50439354480e1ec4d6365> , <https://astrea.linkeddata.es/shapes#3905f69417199738ee7b95f8a221b361> , <https://astrea.linkeddata.es/shapes#2706167f0ebae7dce7551be561fd997d> ;
+        sh:targetClass    foodie:CropSpecies .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#f444727b0a1b6a2ceb7f3f5dd96f2e16> , <https://astrea.linkeddata.es/shapes#c16c83e6f4dbbaee2429b1be7f802cb2> , <https://astrea.linkeddata.es/shapes#536dc3aa61b372bf2f2754c0c93e90cd> , <https://astrea.linkeddata.es/shapes#462450f3abc9cf4b91404bbb742bed03> , <https://astrea.linkeddata.es/shapes#fb797affae63524e98629e4ab362199b> , <https://astrea.linkeddata.es/shapes#c1d94919533707da4d2e988f54400b77> , <https://astrea.linkeddata.es/shapes#73a8044dd52a60737c3bf520efe33c33> , <https://astrea.linkeddata.es/shapes#77e23c52096db830b65258a7a60f8cb1> , <https://astrea.linkeddata.es/shapes#47165499a8631177d20464939561e0f6> , <https://astrea.linkeddata.es/shapes#4f091202afbb5b2e8a21aa53fa07a10a> , <https://astrea.linkeddata.es/shapes#490b032c49a38f742c8739b3df447a8e> , <https://astrea.linkeddata.es/shapes#69925a22875d8e76f21162cdea079f4f> , <https://astrea.linkeddata.es/shapes#36cbea6e92ac4e1e754724db3d4cb574> , <https://astrea.linkeddata.es/shapes#79a04f1d699cb1e0e48e5173b01db57f> , <https://astrea.linkeddata.es/shapes#29e69eab58f79e77dc47ba0d0b204f9c> , <https://astrea.linkeddata.es/shapes#caf836e94ba4e4071027db962df60b3f> , <https://astrea.linkeddata.es/shapes#cdad82710db50439354480e1ec4d6365> , <https://astrea.linkeddata.es/shapes#2706167f0ebae7dce7551be561fd997d> , <https://astrea.linkeddata.es/shapes#e8ce284036033c966b9722d835b4029e> , <https://astrea.linkeddata.es/shapes#2c1c1855ca25f23f352bcf7023af09a2> , <https://astrea.linkeddata.es/shapes#b360303278847d5ec14bd1af6b765bb6> , <https://astrea.linkeddata.es/shapes#b4f88c60dec16114d393e29cf0110fb6> , <https://astrea.linkeddata.es/shapes#9aee027a0f666f2b642a3582438cf672> , <https://astrea.linkeddata.es/shapes#b9e9e73c6123c8053c9666090d3e157b> , <https://astrea.linkeddata.es/shapes#dc011acee58ff3836114952ae3e050a3> , <https://astrea.linkeddata.es/shapes#b8f175b6e568edf4370bf8eab7d42a31> , <https://astrea.linkeddata.es/shapes#0799c039eedfbe1358b3ecdb305f4f0f> , <https://astrea.linkeddata.es/shapes#6ee324d10fab92b43dda92b5d0a730fb> , <https://astrea.linkeddata.es/shapes#50453204a775bc64c92ccf0e8a0315c0> , <https://astrea.linkeddata.es/shapes#da70ad3187c2035f4ab0d283e0408deb> , <https://astrea.linkeddata.es/shapes#5f7afcb23c0de93ffd61c03ebea84fb7> , <https://astrea.linkeddata.es/shapes#4020fc6aee69ce618a3cc140a8115ae1> , <https://astrea.linkeddata.es/shapes#ac1f1df7f42714c31f2630f3e028cb0b> , <https://astrea.linkeddata.es/shapes#3905f69417199738ee7b95f8a221b361> , <https://astrea.linkeddata.es/shapes#00ddfb7acd6e0e403b1d92211277f4fb> , <https://astrea.linkeddata.es/shapes#456f7c6743f2b12f83abbd722d752719> , <https://astrea.linkeddata.es/shapes#c57af3386faae1a04077383703294912> , <https://astrea.linkeddata.es/shapes#41b5bb376d95ae13c5e1feffeee3a7d0> , <https://astrea.linkeddata.es/shapes#21917d7dc03734a1127f44a0c209b34a> , <https://astrea.linkeddata.es/shapes#2e882900e5f69eabc9a8cc0836b49954> , <https://astrea.linkeddata.es/shapes#0d55f7607aaecf6bc7ca8f35c186544b> , <https://astrea.linkeddata.es/shapes#4ca0a3bf9404370610cee7850d518b09> , <https://astrea.linkeddata.es/shapes#414c107a93104e5ad3d18d9fa7af096a> , <https://astrea.linkeddata.es/shapes#b9ab2de3f52949a57c0ef816f69d3d1a> , <https://astrea.linkeddata.es/shapes#795c744f2b69f0f3a4226675a18c617e> , <https://astrea.linkeddata.es/shapes#cf7e863fd9342e2ab72c18692e43a4eb> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0767747899> .
+
+<https://astrea.linkeddata.es/shapes#fb797affae63524e98629e4ab362199b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Crop.md> ;
+        rdfs:label        "wateringFrequency"@en , "A description of the recommended watering schedule. A choice from an enumerated list. One of: daily, weekly, biweekly, monthly, onDemand, other" ;
+        sh:description    "A description of the recommended watering schedule. A choice from an enumerated list. One of: daily, weekly, biweekly, monthly, onDemand, other" ;
+        sh:name           "wateringFrequency"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware:wateringFrequency .
+
+<https://astrea.linkeddata.es/shapes#795c744f2b69f0f3a4226675a18c617e>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:code .
+
+<https://astrea.linkeddata.es/shapes#da70ad3187c2035f4ab0d283e0408deb>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:genus .
+
+<https://astrea.linkeddata.es/shapes#cdad82710db50439354480e1ec4d6365>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      common:validFrom .
+
+<https://astrea.linkeddata.es/shapes#c16c83e6f4dbbaee2429b1be7f802cb2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          iso19103:Measure ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:productionAmount .
+
+<https://astrea.linkeddata.es/shapes#3905f69417199738ee7b95f8a221b361>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:cropSpecies .
+
+<https://astrea.linkeddata.es/shapes#50453204a775bc64c92ccf0e8a0315c0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:ProductionType ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:production .
+
+<https://astrea.linkeddata.es/shapes#69925a22875d8e76f21162cdea079f4f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:hasHarvestDate .
+
+<https://astrea.linkeddata.es/shapes#2c1c1855ca25f23f352bcf7023af09a2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "generates"@en , "A relation to represent the yield generated by a Crop." ;
+        sh:description    "A relation to represent the yield generated by a Crop." ;
+        sh:name           "generates"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref4agri:generates .
+
+<https://astrea.linkeddata.es/shapes#f444727b0a1b6a2ceb7f3f5dd96f2e16>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:family .
+
+<https://astrea.linkeddata.es/shapes#b9ab2de3f52949a57c0ef816f69d3d1a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:class          foodie:CropType ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foodie:cropSpecies .
+
+<https://astrea.linkeddata.es/shapes#4020fc6aee69ce618a3cc140a8115ae1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foodie:species ;
+        sh:pattern        ".*" .
