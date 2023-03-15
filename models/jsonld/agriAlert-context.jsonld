@@ -11,7 +11,7 @@
       "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
     },
     "alertValidFrom" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#validFrom",
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/validFrom",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "alertGeometry" : {
@@ -48,7 +48,7 @@
       "@id" : "http://purl.org/dc/terms/creator"
     },
     "alertSource" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#alertSource"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/alertSource"
     },
     "foaf.name" : {
       "@id" : "http://xmlns.com/foaf/0.1/name"
@@ -56,11 +56,11 @@
     "Alert" : {
       "@id" : "http://foodie-cloud.com/model/foodie#Alert"
     },
-    "address" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#address"
-    },
     "rights" : {
       "@id" : "http://purl.org/dc/terms/rights"
+    },
+    "WeatherAlert" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/WeatherAlert"
     },
     "plotAlert" : {
       "@id" : "http://foodie-cloud.com/model/foodie#plotAlert",
@@ -76,8 +76,8 @@
     "title" : {
       "@id" : "http://purl.org/dc/terms/title"
     },
-    "validTo" : {
-      "@id" : "http://portele.de/ont/inspire/baseInspire#validTo",
+    "alertValidTo" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/validTo",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "typeName" : {
@@ -102,7 +102,7 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },
     "dateIssued" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#dateIssued",
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/dateIssued",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "CropSpecies" : {
@@ -116,13 +116,14 @@
       "@id" : "http://purl.org/dc/terms/contributor"
     },
     "severity" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#severity"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/severity"
     },
     "data" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#data"
+      "@id" : "https://uri.etsi.org/ngsi-ld/data",
+      "@type" : "@id"
     },
     "subCategory" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#subCategory"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/subCategory"
     },
     "code" : {
       "@id" : "http://foodie-cloud.com/model/foodie#code",
@@ -138,11 +139,8 @@
     "ManagementZone" : {
       "@id" : "http://foodie-cloud.com/model/foodie#ManagementZone"
     },
-    "AlertEntity" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#Alert"
-    },
-    "alertValidTo" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#validTo",
+    "validTo" : {
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validTo",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "validFrom" : {
