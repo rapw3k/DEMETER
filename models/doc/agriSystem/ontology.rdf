@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/demeter/agri/agriSystem#"
+     xml:base="https://w3id.org/demeter/agri/agriSystem"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:core="https://saref.etsi.org/core/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
+     xmlns:agriCommon="https://w3id.org/demeter/agri/agriCommon#"
+     xmlns:smartdatamodels="https://smartdatamodels.org/">
+    <owl:Ontology rdf:about="https://w3id.org/demeter/agri/agriSystem">
+        <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/agriSystem/2.0"/>
+        <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
+        <terms:contributor rdf:resource="_:genid-nodeid-node1grit9ionx3"/>
+        <terms:contributor rdf:resource="_:genid-nodeid-node1grit9ionx5"/>
+        <terms:contributor rdf:nodeID="genid1"/>
+        <terms:contributor rdf:nodeID="genid3"/>
+        <terms:contributor rdf:nodeID="genid5"/>
+        <terms:creator rdf:nodeID="genid7"/>
+        <terms:description xml:lang="en">The DEMETER AgriSystem is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</terms:description>
+        <terms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</terms:rights>
+        <terms:title xml:lang="en">DEMETER AgriSystem</terms:title>
+        <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
+        <rdfs:label xml:lang="en">DEMETER AgriSystem</rdfs:label>
+        <owl:versionInfo>2.0</owl:versionInfo>
+        <foaf:maker rdf:nodeID="genid9"/>
+    </owl:Ontology>
+    <rdf:Description rdf:nodeID="genid1">
+        <foaf:name>Rob Atkinson</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>OGC</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid3">
+        <foaf:name>Ioanna Roussaki</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>ICCS</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid5">
+        <foaf:name>George Routis</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>ICCS</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid7">
+        <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+        <foaf:name>Raul Palma</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>PSNC</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid9">
+        <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
+        <foaf:name>DEMETER project</foaf:name>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#MachineType -->
+
+
+    <owl:Class rdf:about="http://foodie-cloud.com/model/foodie#MachineType">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Identification of a machine applying the agricultural treatment</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>Machine type</rdfs:label>
+        <skos:prefLabel xml:lang="en">MachineType</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#TractorType -->
+
+
+    <owl:Class rdf:about="http://foodie-cloud.com/model/foodie#TractorType">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>identification of a tractive vehicle for the machine applying the agricultural treatment</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>Tractor type</rdfs:label>
+        <skos:prefLabel xml:lang="en">TractorType</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sensor">
+        <owl:equivalentClass rdf:resource="https://saref.etsi.org/core/Sensor"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://saref.etsi.org/core/Actuator -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/core/Actuator">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Device"/>
+        <rdfs:comment>A device responsible for moving or controlling a mechanism or system by performing an actuating functio</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/core/"/>
+        <rdfs:label xml:lang="en">Actuator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/core/Device -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/core/Device">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+        <rdfs:comment>A tangible object designed to accomplish a particular task. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs a start and stop function</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/core/"/>
+        <rdfs:label xml:lang="en">Device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/core/Sensor -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/core/Sensor">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Device"/>
+        <rdfs:comment>A device that detects and responds to events or changes in the physical environment such as light, motion, or temperature changes. Further, a device of category saref:Sensor that performs a saref:SensingFunction</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/core/"/>
+        <rdfs:label xml:lang="en">Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/EatingActivitySensor -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/EatingActivitySensor">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Sensor"/>
+        <rdfs:comment>Eating activity sensor</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">Eating activity sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/MilkingSensor -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/MilkingSensor">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Sensor"/>
+        <rdfs:comment>Milking sensor</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">Milking sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/MovementActivitySensor -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/MovementActivitySensor">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Sensor"/>
+        <rdfs:comment>Movement activity sensor</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">Movement activity sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/Pluviometer -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/Pluviometer">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Sensor"/>
+        <rdfs:comment xml:lang="en">A sensor that measures the rain fall.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">Pluviometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/SoilTensiometer -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/SoilTensiometer">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Sensor"/>
+        <rdfs:comment xml:lang="en">A sensor that measures the soil moisture.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">Soil tensiometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/Thermometer -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/Thermometer">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Sensor"/>
+        <rdfs:comment>A device that measures the temperature (e.g. soil temperature).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">Thermometer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/WateringGun -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/WateringGun">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Actuator"/>
+        <rdfs:comment xml:lang="en">An actuator to irrigate an space.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">Watering gun</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/WateringSystem -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/WateringSystem">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+        <rdfs:comment>Watering system</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">Watering system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/WateringValve -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/WateringValve">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Actuator"/>
+        <rdfs:comment>Watering valve</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">Watering valve</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/WeatherStation -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/WeatherStation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Sensor"/>
+        <rdfs:comment xml:lang="en">A sensor or system that measure weather conditions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">Weather station</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/WeightSensor -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/WeightSensor">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/Sensor"/>
+        <rdfs:comment>Weight sensor</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">Weight sensor</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

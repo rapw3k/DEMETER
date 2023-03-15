@@ -1,0 +1,1507 @@
+@prefix : <https://w3id.org/demeter/agri/agriProperty#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/demeter/agri/agriProperty#> .
+
+<https://w3id.org/demeter/agri/agriProperty> rdf:type owl:Ontology ;
+                                              owl:versionIRI <https://w3id.org/demeter/agri/agriProperty/2.0> ;
+                                              owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
+                                              <http://purl.org/dc/terms/contributor> _:genid-nodeid-node1grit1nc2x3 ,
+                                                                                     _:genid-nodeid-node1grit1nc2x5 ,
+                                                                                     _:genid1 ,
+                                                                                     _:genid3 ,
+                                                                                     _:genid5 ;
+                                              <http://purl.org/dc/terms/creator> _:genid7 ;
+                                              <http://purl.org/dc/terms/description> "The DEMETER AgriProperty is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+                                              <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+                                              <http://purl.org/dc/terms/title> "DEMETER AgriProperty"@en ;
+                                              rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+                                              rdfs:label "DEMETER AgriProperty" ;
+                                              owl:versionInfo "2.0" ;
+                                              <http://xmlns.com/foaf/0.1/maker> _:genid9 .
+
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "OGC"
+                                           ] .
+
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "ICCS"
+                                           ] .
+
+_:genid5 <http://xmlns.com/foaf/0.1/name> "George Routis" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "ICCS"
+                                           ] .
+
+_:genid7 rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+          <http://xmlns.com/foaf/0.1/name> "Raul Palma" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "PSNC"
+                                           ] .
+
+_:genid9 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> ;
+          <http://xmlns.com/foaf/0.1/name> "DEMETER project" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://foodie-cloud.com/model/foodie#productionAmount
+<http://foodie-cloud.com/model/foodie#productionAmount> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf <http://www.w3.org/ns/sosa/hasResult> .
+
+
+###  http://foodie-cloud.com/model/foodie#productionProperty
+<http://foodie-cloud.com/model/foodie#productionProperty> rdf:type owl:ObjectProperty ;
+                                                          rdfs:range <http://foodie-cloud.com/model/foodie#PropertyType> ;
+                                                          rdfs:comment "Relation between a ProductionType and PropertyType" ;
+                                                          rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                          rdfs:label "productionProperty" ;
+                                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "productionProperty"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#propertyType
+<http://foodie-cloud.com/model/foodie#propertyType> rdf:type owl:ObjectProperty ;
+                                                    owl:equivalentProperty <https://saref.etsi.org/core/relatesToProperty> ;
+                                                    rdfs:range <http://foodie-cloud.com/model/foodie#PropertyTypeValue> ;
+                                                    rdfs:comment "Relation between a PropertyType and PropertyTypeValue" ;
+                                                    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                    rdfs:label "propertyType" ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "propertyType"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#quantitativeProperty
+<http://foodie-cloud.com/model/foodie#quantitativeProperty> rdf:type owl:ObjectProperty ;
+                                                            owl:equivalentProperty <http://www.w3.org/ns/sosa/hasResult> ;
+                                                            rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> ;
+                                                            rdfs:comment "Relation between a PropertyType and Measure" ;
+                                                            rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                            rdfs:label "quantitativeProperty" ;
+                                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "quantitativeProperty"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#soilProperty
+<http://foodie-cloud.com/model/foodie#soilProperty> rdf:type owl:ObjectProperty ;
+                                                    rdfs:range <http://foodie-cloud.com/model/foodie#PropertyType> ;
+                                                    rdfs:comment "Relation between a ManagementZone and PropertyType" ;
+                                                    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                    rdfs:label "soilProperty" ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "soilProperty"@en .
+
+
+###  http://qudt.org/schema/qudt/unit
+<http://qudt.org/schema/qudt/unit> owl:equivalentProperty <https://saref.etsi.org/core/isMeasuredIn> .
+
+
+###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> owl:equivalentProperty <https://saref.etsi.org/core/hasFeatureOfInterest> .
+
+
+###  http://www.w3.org/ns/sosa/isFeatureOfInterestOf
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> owl:equivalentProperty <https://saref.etsi.org/core/isFeatureOfInterestOf> .
+
+
+###  http://www.w3.org/ns/sosa/madeBySensor
+<http://www.w3.org/ns/sosa/madeBySensor> owl:equivalentProperty <https://saref.etsi.org/core/measurementMadeBy> .
+
+
+###  http://www.w3.org/ns/sosa/madeObservation
+<http://www.w3.org/ns/sosa/madeObservation> owl:equivalentProperty <https://saref.etsi.org/core/makesMeasurement> .
+
+
+###  http://www.w3.org/ns/sosa/observedProperty
+<http://www.w3.org/ns/sosa/observedProperty> owl:equivalentProperty <https://saref.etsi.org/core/relatesToProperty> .
+
+
+###  http://www.w3.org/ns/ssn/hasProperty
+<http://www.w3.org/ns/ssn/hasProperty> owl:equivalentProperty <https://saref.etsi.org/core/hasProperty> .
+
+
+###  http://www.w3.org/ns/ssn/isPropertyOf
+<http://www.w3.org/ns/ssn/isPropertyOf> owl:equivalentProperty <https://saref.etsi.org/core/isPropertyOf> .
+
+
+###  https://saref.etsi.org/core/controlsProperty
+<https://saref.etsi.org/core/controlsProperty> rdf:type owl:ObjectProperty ;
+                                               rdfs:comment "A relationship specifying the Property that can be controlled by a certain Device" ;
+                                               rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                               rdfs:label "controls property"@en .
+
+
+###  https://saref.etsi.org/core/hasFeatureOfInterest
+<https://saref.etsi.org/core/hasFeatureOfInterest> rdf:type owl:ObjectProperty ;
+                                                   owl:inverseOf <https://saref.etsi.org/core/isFeatureOfInterestOf> ;
+                                                   rdfs:comment "Relation between a measurement and the feature of interest being measured."@en ;
+                                                   rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                                   rdfs:label "has feature of interest"@en .
+
+
+###  https://saref.etsi.org/core/hasProperty
+<https://saref.etsi.org/core/hasProperty> rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf <https://saref.etsi.org/core/isPropertyOf> ;
+                                          rdfs:comment "Relation between a feature of interest and its properties."@en ;
+                                          rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                          rdfs:label "has property"@en .
+
+
+###  https://saref.etsi.org/core/isControlledByDevice
+<https://saref.etsi.org/core/isControlledByDevice> rdf:type owl:ObjectProperty ;
+                                                   rdfs:comment "A relationship specifying the devices that can control a certain property" ;
+                                                   rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                                   rdfs:label "is controlled by device"@en .
+
+
+###  https://saref.etsi.org/core/isFeatureOfInterestOf
+<https://saref.etsi.org/core/isFeatureOfInterestOf> rdf:type owl:ObjectProperty ;
+                                                    rdfs:comment "Relation betwwen a feature of interest and the measurments that are about it."@en ;
+                                                    rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                                    rdfs:label "is feature of interest of"@en .
+
+
+###  https://saref.etsi.org/core/isMeasuredByDevice
+<https://saref.etsi.org/core/isMeasuredByDevice> rdf:type owl:ObjectProperty ;
+                                                 rdfs:comment "A relationship specifying the devices that can measure a certain property" ;
+                                                 rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                                 rdfs:label "is measured by device"@en .
+
+
+###  https://saref.etsi.org/core/isMeasuredIn
+<https://saref.etsi.org/core/isMeasuredIn> rdf:type owl:ObjectProperty ;
+                                           rdfs:comment "A relationship identifying the unit of measure used for a certain entity." ;
+                                           rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                           rdfs:label "is measured in"@en .
+
+
+###  https://saref.etsi.org/core/isPropertyOf
+<https://saref.etsi.org/core/isPropertyOf> rdf:type owl:ObjectProperty ;
+                                           rdfs:comment "Relation between a property and a feature of interest in which such property appears."@en ;
+                                           rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                           rdfs:label "is property of"@en .
+
+
+###  https://saref.etsi.org/core/makesMeasurement
+<https://saref.etsi.org/core/makesMeasurement> rdf:type owl:ObjectProperty ;
+                                               owl:inverseOf <https://saref.etsi.org/core/measurementMadeBy> ;
+                                               rdfs:comment "A relation between a device and the measurements it makes. Such measurement will link together the value of the measurement, its unit of measure and the property to which it relates." ;
+                                               rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                               rdfs:label "makes measurement"@en .
+
+
+###  https://saref.etsi.org/core/measurementMadeBy
+<https://saref.etsi.org/core/measurementMadeBy> rdf:type owl:ObjectProperty ;
+                                                owl:equivalentProperty <https://smartdatamodels.org/dataModel.Weather/refDevice> ;
+                                                rdfs:comment "Relation between a measurement and the device that made it."@en ;
+                                                rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                                rdfs:label "measurement made by"@en .
+
+
+###  https://saref.etsi.org/core/measuresProperty
+<https://saref.etsi.org/core/measuresProperty> rdf:type owl:ObjectProperty ;
+                                               rdfs:comment "A relationship specifying the Property that can be measured by a certain Device" ;
+                                               rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                               rdfs:label "measures property"@en .
+
+
+###  https://saref.etsi.org/core/relatesToMeasurement
+<https://saref.etsi.org/core/relatesToMeasurement> rdf:type owl:ObjectProperty ;
+                                                   rdfs:comment "A relationship between a property and the measurements it relates to" ;
+                                                   rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                                   rdfs:label "relates to measurement"@en .
+
+
+###  https://saref.etsi.org/core/relatesToProperty
+<https://saref.etsi.org/core/relatesToProperty> rdf:type owl:ObjectProperty ;
+                                                rdfs:comment "A relationship between a measurement and the property it relates to" ;
+                                                rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                                rdfs:label "relates to property"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel> rdf:type owl:ObjectProperty ;
+                                                               rdfs:comment "A reference to the AgriParcel" ;
+                                                               rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelRecord/schema.json> ;
+                                                               rdfs:label "hasAgriParcel"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/hasDevice
+<https://smartdatamodels.org/dataModel.Agrifood/hasDevice> rdf:type owl:ObjectProperty ;
+                                                           rdfs:comment "Reference to the IoT devices associated with this [entity] i.e. sensors, controls." ;
+                                                           rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ,
+                                                                            <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelRecord/schema.json> ;
+                                                           rdfs:label "hasDevice"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/refDevice
+<https://smartdatamodels.org/dataModel.Weather/refDevice> rdf:type owl:ObjectProperty ;
+                                                          rdfs:comment "A reference to the device(s) which captured this observation." ;
+                                                          rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherObserved/schema.json> ;
+                                                          rdfs:label "refDevice"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/refPointOfInterest
+<https://smartdatamodels.org/dataModel.Weather/refPointOfInterest> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:comment "Point of interest related to the item" ;
+                                                                   rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/weather-schema.json> ;
+                                                                   rdfs:label "refPointOfInterest"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://foodie-cloud.com/model/foodie#analysisDate
+<http://foodie-cloud.com/model/foodie#analysisDate> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:subPropertyOf <https://saref.etsi.org/core/hasTimestamp> ;
+                                                    rdfs:range xsd:dateTime ;
+                                                    rdfs:comment "The date/time of a recorded analysis" ;
+                                                    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                    rdfs:label "analysisDate" ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "analysisDate"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#nonQuantitativeProperty
+<http://foodie-cloud.com/model/foodie#nonQuantitativeProperty> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                               rdfs:range xsd:string ;
+                                                               rdfs:comment "The name of a non quantitative property " ;
+                                                               rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                               rdfs:label "nonQuantitativeProperty" ;
+                                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "nonQuantitativeProperty"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#propertyName
+<http://foodie-cloud.com/model/foodie#propertyName> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:subPropertyOf <https://smartdatamodels.org/name> ;
+                                                    rdfs:range xsd:string ;
+                                                    rdfs:comment "The name of an agricultural property" ;
+                                                    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                    rdfs:label "propertyName" ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "propertyName"@en .
+
+
+###  http://www.w3.org/ns/sosa/hasSimpleResult
+<http://www.w3.org/ns/sosa/hasSimpleResult> owl:equivalentProperty <https://saref.etsi.org/core/hasValue> .
+
+
+###  http://www.w3.org/ns/sosa/resultTime
+<http://www.w3.org/ns/sosa/resultTime> owl:equivalentProperty <https://saref.etsi.org/core/hasTimestamp> .
+
+
+###  https://saref.etsi.org/core/hasValue
+<https://saref.etsi.org/core/hasValue> rdf:type owl:DatatypeProperty ;
+                                       rdfs:comment "A relationship defining the value of a certain property, e.g., energy or power" ;
+                                       rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                       rdfs:label "has value"@en .
+
+
+###  https://smartdatamodels.org/dateObserved
+<https://smartdatamodels.org/dateObserved> rdf:type owl:DatatypeProperty ;
+                                           rdfs:subPropertyOf <https://saref.etsi.org/core/hasTimestamp> .
+
+
+###  https://smartdatamodels.org/observedAt
+<https://smartdatamodels.org/observedAt> rdf:type owl:DatatypeProperty ;
+                                         rdfs:range xsd:dateTime ;
+                                         rdfs:comment "Date of the observed entity defined by the user" ;
+                                         rdfs:isDefinedBy <https://smart-data-models.github.io/data-models/common-schema.json#/definitions/dateObserved> ;
+                                         rdfs:label "date observed"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/relativeHumidity
+<https://smartdatamodels.org/dataModel.Agrifood/relativeHumidity> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                                  rdfs:comment "Relative Humidity a number between 0 and 1 representing the range of 0% to 100%. 0 ≤ relativeHumidity ≤ 1" ;
+                                                                  rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelRecord/schema.json> ;
+                                                                  rdfs:label "relativeHumidity"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEC
+<https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEC> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEc
+<https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEc> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:comment "Measured as Electrical Conductivity, EC nominally in units of Siemens per meter. Units:'siemens / m'" ;
+                                                                rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelRecord/schema.json> ;
+                                                                rdfs:label "soilMoistureEC"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/soilMoistureVwc
+<https://smartdatamodels.org/dataModel.Agrifood/soilMoistureVwc> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                                 rdfs:comment "Measured as Volumetric Water Content, VWC as a percentage. 0 ≤soilMoistureVwc ≤ 1" ;
+                                                                 rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelRecord/schema.json> ;
+                                                                 rdfs:label "soilMoistureVwc"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/soilTemperature
+<https://smartdatamodels.org/dataModel.Agrifood/soilTemperature> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                                 rdfs:comment "TThe observed soil temperature nominally in degrees centigrade. Units:'degrees centigrade'" ;
+                                                                 rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelRecord/schema.json> ;
+                                                                 rdfs:label "soilTemperature"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/solarRadiation
+<https://smartdatamodels.org/dataModel.Agrifood/solarRadiation> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                                rdfs:comment "Instantaneous solar radiation measured in kW/m2. Units:'kW/m2'" ;
+                                                                rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelRecord/schema.json> ;
+                                                                rdfs:label "solarRadiation"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/airTemperatureForecast
+<https://smartdatamodels.org/dataModel.Weather/airTemperatureForecast> rdf:type owl:DatatypeProperty ;
+                                                                       rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                                       rdfs:comment "Forecasted value of air temperature over a certain duration in future" ;
+                                                                       rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherObserved/schema.json> ;
+                                                                       rdfs:label "airTemperatureForecast"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/atmosphericPressure
+<https://smartdatamodels.org/dataModel.Weather/atmosphericPressure> rdf:type owl:DatatypeProperty ;
+                                                                    rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                                    rdfs:comment "The atmospheric pressure observed measured in Hecto Pascals. Units:'Hecto pascals'" ;
+                                                                    rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/weather-schema.json> ;
+                                                                    rdfs:label "atmosphericPressure"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/dewPoint
+<https://smartdatamodels.org/dataModel.Weather/dewPoint> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                         rdfs:comment "The dew point encoded as a number. Observed temperature to which air must be cooled to become saturated with water vapor" ;
+                                                         rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherObserved/schema.json> ;
+                                                         rdfs:label "dewPoint"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/illuminance
+<https://smartdatamodels.org/dataModel.Weather/illuminance> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                            rdfs:comment "The illumninance observed measured in lux (lx) or lumens per square metre (cd·sr·m−2)" ;
+                                                            rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/weather-schema.json> ;
+                                                            rdfs:label "illuminance"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/precipitation
+<https://smartdatamodels.org/dataModel.Weather/precipitation> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                              rdfs:comment "Amount of water rain registered. Units:'Liters per square meter'" ;
+                                                              rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherObserved/schema.json> ;
+                                                              rdfs:label "precipitation"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/pressureTendency
+<https://smartdatamodels.org/dataModel.Weather/pressureTendency> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                                 rdfs:comment "Is the pressure rising or falling? It can be expressed in quantitative terms or qualitative terms (raising, falling, steady)" ;
+                                                                 rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherObserved/schema.json> ;
+                                                                 rdfs:label "pressureTendency"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/relativeHumidity
+<https://smartdatamodels.org/dataModel.Weather/relativeHumidity> rdf:type owl:DatatypeProperty ;
+                                                                 rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                                 rdfs:comment "Humidity in the Air. Observed instantaneous relative humidity (water vapour in air)" ;
+                                                                 rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/weather-schema.json> ;
+                                                                 rdfs:label "relativeHumidity"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/snowHeight
+<https://smartdatamodels.org/dataModel.Weather/snowHeight> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                           rdfs:comment "The snow height observed by generic snow depth measurement sensors, expressed in centimeters. Units:'centimeters'" ;
+                                                           rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherObserved/schema.json> ;
+                                                           rdfs:label "snowHeight"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/solarRadiation
+<https://smartdatamodels.org/dataModel.Weather/solarRadiation> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                               rdfs:comment "The solar radiation observed measured in Watts per square. Units:'w/m2'" ;
+                                                               rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherObserved/schema.json> ;
+                                                               rdfs:label "solarRadiation"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/streamGauge
+<https://smartdatamodels.org/dataModel.Weather/streamGauge> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                            rdfs:comment "The water level surface elevation observed by Hydrometric measurement sensors, namely a Stream Gauge expressed in centimeters. Units:'centimeters'" ;
+                                                            rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherObserved/schema.json> ;
+                                                            rdfs:label "streamGauge"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/temperature
+<https://smartdatamodels.org/dataModel.Weather/temperature> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                            rdfs:comment "Temperature of the item. Prev: The observed air temperature (in the shade) nominally in degrees centigrade." ;
+                                                            rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherObserved/schema.json> ;
+                                                            rdfs:label "temperature"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/visibility
+<https://smartdatamodels.org/dataModel.Weather/visibility> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                           rdfs:comment "Categories of visibility. Prev: Visibility reported (veryPoor, poor, moderate, good, veryGood, excellent)" ;
+                                                           rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/weather-schema.json> ;
+                                                           rdfs:label "visibility"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/weatherType
+<https://smartdatamodels.org/dataModel.Weather/weatherType> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:comment "Text description of the weather. Prev: The observed weather type. It is represented by a comma separated list of weather statuses, for instance overcast, lightRain." ;
+                                                            rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/weather-schema.json> ;
+                                                            rdfs:label "weatherType"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/windDirection
+<https://smartdatamodels.org/dataModel.Weather/windDirection> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                              rdfs:comment "Direction of the wind bet" ;
+                                                              rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/weather-schema.json> ;
+                                                              rdfs:label "windDirection"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/windSpeed
+<https://smartdatamodels.org/dataModel.Weather/windSpeed> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
+                                                          rdfs:comment "Intensity of the wind." ;
+                                                          rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/weather-schema.json> ;
+                                                          rdfs:label "windSpeed"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://foodie-cloud.com/model/foodie#PropertyType
+<http://foodie-cloud.com/model/foodie#PropertyType> rdf:type owl:Class ;
+                                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#propertyType> ;
+                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#quantitativeProperty> ;
+                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#analysisDate> ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#propertyName> ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#nonQuantitativeProperty> ;
+                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ;
+                                                    rdfs:comment "An entity class for the Measured Properties" ;
+                                                    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                    rdfs:label "PropertyType" ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "PropertyType"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#PropertyTypeValue
+<http://foodie-cloud.com/model/foodie#PropertyTypeValue> rdf:type owl:Class ;
+                                                         owl:equivalentClass <https://saref.etsi.org/core/Property> ;
+                                                         rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                                         rdfs:comment "An entity class for the values of the measured properties" ;
+                                                         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                         rdfs:label "PropertyTypeValue" ;
+                                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "PropertyTypeValue"@en .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+                                                    rdfs:comment "A cf-feature:Layer is something that is a ssn:FeatureOfInterest" ;
+                                                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                    rdfs:label "Layer" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+                                                     rdfs:comment "A cf-feature:Medium is something that is a ssn:FeatureOfInterest" ;
+                                                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                     rdfs:label "Medium" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Precipitation
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#Precipitation> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+                                                            rdfs:comment "A cf-feature:Precipitation is something that is a ssn:FeatureOfInterest" ;
+                                                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                            rdfs:label "Precipitation" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+                                                      rdfs:comment "A cf-feature:Surface is something that is a ssn:FeatureOfInterest" ;
+                                                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                      rdfs:label "Surface" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceLayer
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceLayer> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+                                                           rdfs:comment "A cf-feature:SurfaceLayer is something that is a ssn:FeatureOfInterest" ;
+                                                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                           rdfs:label "Surface Layer" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#Wind
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#Wind> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+                                                   rdfs:comment "A cf-feature:Wind is something that is a ssn:FeatureOfInterest" ;
+                                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                   rdfs:label "Wind" .
+
+
+###  http://purl.oclc.org/NET/ssnx/qu/dim#Temperature
+<http://purl.oclc.org/NET/ssnx/qu/dim#Temperature> owl:equivalentClass <https://saref.etsi.org/core/Temperature> .
+
+
+###  http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind
+<http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> owl:equivalentClass <https://saref.etsi.org/core/Property> .
+
+
+###  http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> owl:equivalentClass <https://saref.etsi.org/core/UnitOfMeasure> .
+
+
+###  http://www.w3.org/ns/sosa/FeatureOfInterest
+<http://www.w3.org/ns/sosa/FeatureOfInterest> owl:equivalentClass <https://saref.etsi.org/core/FeatureOfInterest> .
+
+
+###  http://www.w3.org/ns/sosa/ObservableProperty
+<http://www.w3.org/ns/sosa/ObservableProperty> owl:equivalentClass <https://saref.etsi.org/core/Property> .
+
+
+###  http://www.w3.org/ns/sosa/Observation
+<http://www.w3.org/ns/sosa/Observation> owl:equivalentClass <https://saref.etsi.org/core/Measurement> .
+
+
+###  https://saref.etsi.org/core/Device
+<https://saref.etsi.org/core/Device> rdf:type owl:Class .
+
+
+###  https://saref.etsi.org/core/FeatureOfInterest
+<https://saref.etsi.org/core/FeatureOfInterest> rdf:type owl:Class ;
+                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <https://saref.etsi.org/core/hasProperty> ;
+                                                                  owl:allValuesFrom <https://saref.etsi.org/core/Property>
+                                                                ] ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <https://saref.etsi.org/core/isFeatureOfInterestOf> ;
+                                                                  owl:allValuesFrom <https://saref.etsi.org/core/Measurement>
+                                                                ] ;
+                                                rdfs:comment "A feature of interest represents any real world entity from which a property is measured" ;
+                                                rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                                rdfs:label "Feature of interest"@en .
+
+
+###  https://saref.etsi.org/core/Humidity
+<https://saref.etsi.org/core/Humidity> rdf:type owl:Class ;
+                                       rdfs:subClassOf <https://saref.etsi.org/core/Property> ;
+                                       rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a humidity unit" ;
+                                       rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                       rdfs:label "Humidity"@en .
+
+
+###  https://saref.etsi.org/core/Measurement
+<https://saref.etsi.org/core/Measurement> rdf:type owl:Class ;
+                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <https://saref.etsi.org/core/hasFeatureOfInterest> ;
+                                                            owl:allValuesFrom <https://saref.etsi.org/core/FeatureOfInterest>
+                                                          ] ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <https://saref.etsi.org/core/isMeasuredIn> ;
+                                                            owl:allValuesFrom <https://saref.etsi.org/core/UnitOfMeasure>
+                                                          ] ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <https://saref.etsi.org/core/relatesToProperty> ;
+                                                            owl:allValuesFrom <https://saref.etsi.org/core/Property>
+                                                          ] ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <https://saref.etsi.org/core/isMeasuredIn> ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass <https://saref.etsi.org/core/UnitOfMeasure>
+                                                          ] ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <https://saref.etsi.org/core/relatesToProperty> ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass <https://saref.etsi.org/core/Property>
+                                                          ] ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <https://saref.etsi.org/core/hasTimestamp> ;
+                                                            owl:allValuesFrom xsd:dateTime
+                                                          ] ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <https://saref.etsi.org/core/hasValue> ;
+                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                          ] ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <https://saref.etsi.org/core/hasValue> ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onDataRange xsd:float
+                                                          ] ;
+                                          owl:disjointWith <https://saref.etsi.org/core/Property> ,
+                                                           <https://saref.etsi.org/core/UnitOfMeasure> ;
+                                          rdfs:comment "Represents the measured value made over a property. It is also linked to the unit of measure in which the value is expressed and the timestamp of the measurement."@en ;
+                                          rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                          rdfs:label "Measurement"@en .
+
+
+###  https://saref.etsi.org/core/Property
+<https://saref.etsi.org/core/Property> rdf:type owl:Class ;
+                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <https://saref.etsi.org/core/isControlledByDevice> ;
+                                                         owl:allValuesFrom <https://saref.etsi.org/core/Device>
+                                                       ] ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <https://saref.etsi.org/core/isMeasuredByDevice> ;
+                                                         owl:allValuesFrom <https://saref.etsi.org/core/Device>
+                                                       ] ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <https://saref.etsi.org/core/isPropertyOf> ;
+                                                         owl:allValuesFrom <https://saref.etsi.org/core/FeatureOfInterest>
+                                                       ] ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <https://saref.etsi.org/core/relatesToMeasurement> ;
+                                                         owl:allValuesFrom <https://saref.etsi.org/core/Measurement>
+                                                       ] ;
+                                       owl:disjointWith <https://saref.etsi.org/core/UnitOfMeasure> ;
+                                       rdfs:comment "An aspect of an entity that can be observable by a sensor."@en ,
+                                                    "Anything that can be sensed, measured or controlled in households, common public buildings or offices. We propose here a list of properties that are relevant for the purpose of SAREF, but this list can be extended." ;
+                                       rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                       rdfs:label "Property"@en ,
+                                                  "Property" .
+
+
+###  https://saref.etsi.org/core/Temperature
+<https://saref.etsi.org/core/Temperature> rdf:type owl:Class ;
+                                          rdfs:subClassOf <https://saref.etsi.org/core/Property> ;
+                                          rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is measured in a temperature unit (degree_Celsius, degree_Fahrenheit, or degree_kelvin)" ;
+                                          rdfs:isDefinedBy <https://saref.etsi.org/core/> ;
+                                          rdfs:label "Temperature"@en .
+
+
+###  https://saref.etsi.org/core/UnitOfMeasure
+<https://saref.etsi.org/core/UnitOfMeasure> rdf:type owl:Class ;
+                                            rdfs:comment "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of the Smart Appliances ontology, but this list can be extended."@en ,
+                                                         "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)." ;
+                                            rdfs:isDefinedBy <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> ,
+                                                             <https://saref.etsi.org/core/> ;
+                                            rdfs:label "Unit of measure"@en .
+
+
+###  https://saref.etsi.org/saref4agri/Soil
+<https://saref.etsi.org/saref4agri/Soil> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://saref.etsi.org/core/FeatureOfInterest> ;
+                                         rdfs:comment "Upper layer of the earth in which plants grow." ;
+                                         rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                         rdfs:label "Soil" .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/AgriParcelRecord
+<https://smartdatamodels.org/dataModel.Agrifood/AgriParcelRecord> rdf:type owl:Class ;
+                                                                  rdfs:comment "This entity contains a harmonised description of the conditions recorded on a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+                                                                  rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelRecord/schema.json> ;
+                                                                  rdfs:label "AgriParcelRecord" .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/WeatherForecast
+<https://smartdatamodels.org/dataModel.Weather/WeatherForecast> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <https://saref.etsi.org/core/FeatureOfInterest> ;
+                                                                rdfs:comment "A harmonised description of a Weather Forecast" ;
+                                                                rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherForecast/schema.json> ;
+                                                                rdfs:label "WeatherForecast" .
+
+
+###  https://smartdatamodels.org/dataModel.Weather/WeatherObserved
+<https://smartdatamodels.org/dataModel.Weather/WeatherObserved> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <https://saref.etsi.org/core/FeatureOfInterest> ;
+                                                                rdfs:comment "An observation of weather conditions at a certain place and time" ;
+                                                                rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherObserved/schema.json> ;
+                                                                rdfs:label "WeatherObserved" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://dbpedia.org/resource/DBM
+<http://dbpedia.org/resource/DBM> rdf:type owl:NamedIndividual ,
+                                           <https://saref.etsi.org/core/UnitOfMeasure> ;
+                                  rdfs:comment "a unit for power measurement" ;
+                                  rdfs:isDefinedBy <https://en.wikipedia.org/wiki/DBm> ;
+                                  rdfs:label "decibel-milliwatts"@en .
+
+
+###  http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/electricConductivity
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/electricConductivity> rdf:type owl:NamedIndividual ,
+                                                                                            <http://www.w3.org/2004/02/skos/core#Concept> ,
+                                                                                            <https://saref.etsi.org/core/Property> ;
+                                                                                   rdfs:comment "Electric conductivity is a physical property of any material (e.g. Soil)." ;
+                                                                                   rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                                                   rdfs:label "electricConductivity"@en ;
+                                                                                   <http://www.w3.org/2004/02/skos/core#inScheme> <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue> ;
+                                                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "electricConductivity"@en .
+
+
+###  http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/organicMatter
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/organicMatter> rdf:type owl:NamedIndividual ,
+                                                                                     <http://www.w3.org/2004/02/skos/core#Concept> ,
+                                                                                     <https://saref.etsi.org/core/Property> ;
+                                                                            rdfs:comment "An organic matter in the components of soil." ;
+                                                                            rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                                            rdfs:label "organicMatter"@en ;
+                                                                            <http://www.w3.org/2004/02/skos/core#inScheme> <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue> ;
+                                                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "organicMatter"@en .
+
+
+###  http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/pH
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/pH> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.w3.org/2004/02/skos/core#Concept> ,
+                                                                          <https://saref.etsi.org/core/Property> ;
+                                                                 rdfs:comment "Hydrogen potential of soil" ;
+                                                                 rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                                 rdfs:label "pH"@en ;
+                                                                 <http://www.w3.org/2004/02/skos/core#inScheme> <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue> ;
+                                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "pH"@en .
+
+
+###  http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilTexture
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilTexture> rdf:type owl:NamedIndividual ,
+                                                                                   <http://www.w3.org/2004/02/skos/core#Concept> ,
+                                                                                   <https://saref.etsi.org/core/Property> ;
+                                                                          rdfs:comment "Defines the texture of soil" ;
+                                                                          rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                                          rdfs:label "soilTexture"@en ;
+                                                                          <http://www.w3.org/2004/02/skos/core#inScheme> <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue> ;
+                                                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "soilTexture"@en .
+
+
+###  http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilType
+<http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilType> rdf:type owl:NamedIndividual ,
+                                                                                <http://www.w3.org/2004/02/skos/core#Concept> ,
+                                                                                <https://saref.etsi.org/core/Property> ;
+                                                                       rdfs:comment "Defines the type of soil" ;
+                                                                       rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                                       rdfs:label "soilType"@en ;
+                                                                       <http://www.w3.org/2004/02/skos/core#inScheme> <http://foodie-cloud.com/model/foodie/code/PropertyTypeValue> ;
+                                                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "soilType"@en .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#snowfall
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#snowfall> rdf:type owl:NamedIndividual ,
+                                                                <http://purl.oclc.org/NET/ssnx/cf/cf-feature#Precipitation> ;
+                                                       <http://www.w3.org/ns/ssn/hasProperty> <http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_amount> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_flux> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_amount> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_flux> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_convective_snowfall_rate> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_large_scale_snowfall_rate> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_snowfall_rate> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_convective_snowfall_amount> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_large_scale_snowfall_amount> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_snowfall_amount> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_amount> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_flux> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_convective_snowfall_amount> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_snowfall_amount> ,
+                                                                                              <http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_snowfall_amount> ;
+                                                       rdfs:comment "Snowfall at a definite scale e.g. cm" ;
+                                                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                       rdfs:label "snowfall" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil> rdf:type owl:NamedIndividual ,
+                                                            <http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium> ;
+                                                   <http://www.w3.org/ns/ssn/hasProperty> <http://purl.oclc.org/NET/ssnx/cf/cf-property#downward_heat_flux_in_soil> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_soil_moisture_content> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#mass_concentration_of_condensed_water_in_soil> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_albedo> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_carbon_content> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_frozen_water_content> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_hydraulic_conductivity_at_saturation> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content_at_field_capacity> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_porosity> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_suction_at_saturation> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_temperature> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_capacity> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_conductivity> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_type> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_clay_in_soil> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_critical_point> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_field_capacity> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_wilting_point> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_frozen_water_in_soil> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_sand_in_soil> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_silt_in_soil> ,
+                                                                                          <http://purl.oclc.org/NET/ssnx/cf/cf-property#water_evaporation_flux_from_soil> ;
+                                                   rdfs:comment "The top layer of earth's crust" ;
+                                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                   rdfs:label "soil" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_layer
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_layer> rdf:type owl:NamedIndividual ,
+                                                                  <http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer> ;
+                                                         <http://www.w3.org/ns/ssn/hasProperty> <http://purl.oclc.org/NET/ssnx/cf/cf-property#frozen_water_content_of_soil_layer> ,
+                                                                                                <http://purl.oclc.org/NET/ssnx/cf/cf-property#liquid_water_content_of_soil_layer> ,
+                                                                                                <http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_frozen_water_content_of_soil_layer> ,
+                                                                                                <http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_moisture_content_of_soil_layer> ,
+                                                                                                <http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer> ,
+                                                                                                <http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer_at_field_capacity> ;
+                                                         rdfs:comment "The top layer of soil" ;
+                                                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                         rdfs:label "soil layer" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_pores
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#soil_pores> rdf:type owl:NamedIndividual ,
+                                                                  <http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium> ;
+                                                         <http://www.w3.org/ns/ssn/hasProperty> <http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_pores> ;
+                                                         rdfs:comment "the pores on the layer of soil for water to pass" ;
+                                                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                         rdfs:label "soil pores" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#vegetation
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#vegetation> rdf:type owl:NamedIndividual ,
+                                                                  <http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer> ;
+                                                         <http://www.w3.org/ns/ssn/hasProperty> <http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_area_fraction> ,
+                                                                                                <http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_carbon_content> ;
+                                                         rdfs:comment "The collective species of plants on a given area" ;
+                                                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                         rdfs:label "vegetation" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-feature#water
+<http://purl.oclc.org/NET/ssnx/cf/cf-feature#water> rdf:type owl:NamedIndividual ,
+                                                             <http://purl.oclc.org/NET/ssnx/cf/cf-feature#Medium> ;
+                                                    rdfs:comment "water" ;
+                                                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-feature> ;
+                                                    rdfs:label "water" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#air_density
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#air_density> rdf:type owl:NamedIndividual ,
+                                                                    <http://purl.oclc.org/NET/ssnx/qu/dim#Density> ;
+                                                           rdfs:comment "The amount of air in per cubic volume" ;
+                                                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                           rdfs:label "air density" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#air_temperature
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#air_temperature> rdf:type owl:NamedIndividual ,
+                                                                        <http://purl.oclc.org/NET/ssnx/qu/dim#Temperature> ;
+                                                               rdfs:comment "Air temperature is the bulk temperature of the air, not the surface (skin) temperature" ;
+                                                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                               rdfs:label "air temperature" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_dioxide
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_dioxide> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                                         rdfs:comment "\"Content\" indicates a quantity per unit area.  The \"atmosphere content\" of a quantity refers to the vertical integral from the surface to the top of the atmosphere. For the content between specified levels in the atmosphere, standard names including content_of_atmosphere_layer are used.  The chemical formula for carbon dioxide is CO2" ;
+                                                                                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                         rdfs:label "atmosphere mass content of carbon dioxide" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_monoxide
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_mass_content_of_carbon_monoxide> rdf:type owl:NamedIndividual ,
+                                                                                                   <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                                          rdfs:comment "\"Content\" indicates a quantity per unit area.  The \"atmosphere content\" of a quantity refers to the vertical integral from the surface to the top of the atmosphere. For the content between specified levels in the atmosphere, standard names including content_of_atmosphere_layer are used.  The chemical formula of carbon monoxide is CO" ;
+                                                                                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                          rdfs:label "atmosphere mass content of carbon monoxide" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_water_vapor_content
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#atmosphere_water_vapor_content> rdf:type owl:NamedIndividual ,
+                                                                                       <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                              rdfs:comment "\"Content\" indicates a quantity per unit area. The \"atmosphere content\" of a quantity refers to the vertical integral from the surface to the top of the atmosphere. For the content between specified levels in the atmosphere, standard names including content_of_atmosphere_layer are used. Atmosphere water vapor content is sometimes referred to as \"precipitable water\", although this term does not imply the water could all be precipitated" ;
+                                                                              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                              rdfs:label "atmosphere water vapor content" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_amount> rdf:type owl:NamedIndividual ,
+                                                                                   <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                          rdfs:comment "\"Amount\" means mass per unit area. Convective snow bands develop in response to a cold air outbreak from the continent or the frozen sea over the open water surface of lakes or seas." ;
+                                                                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                          rdfs:label "convective snowfall amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_flux
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#convective_snowfall_flux> rdf:type owl:NamedIndividual ,
+                                                                                 <http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea> ;
+                                                                        rdfs:comment "In accordance with common usage in geophysical disciplines, \"flux\" implies per unit area, called \"flux density\" in physics" ;
+                                                                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                        rdfs:label "convective snowfall flux" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#downward_heat_flux_in_soil
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#downward_heat_flux_in_soil> rdf:type owl:NamedIndividual ,
+                                                                                   <http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux> ;
+                                                                          rdfs:comment "\"Downward\" indicates a vector component which is positive when directed downward (negative upward). In accordance with common usage in geophysical disciplines, \"flux\" implies per unit area, called \"flux density\" in physics" ;
+                                                                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                          rdfs:label "downward heat flux in soil" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#frozen_water_content_of_soil_layer
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#frozen_water_content_of_soil_layer> rdf:type owl:NamedIndividual ,
+                                                                                           <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                                  rdfs:comment "\"frozen_water\" means ice. \"Content\" indicates a quantity per unit area. \"Layer\" means any layer with upper and lower boundaries that have constant values in some vertical coordinate. There must be a vertical coordinate variable indicating the extent of the layer(s). If the layers are model layers, the vertical coordinate can be model_level_number, but it is recommended to specify a physical coordinate (in a scalar or auxiliary coordinate variable) as well. Quantities defined for a soil layer must have a vertical coordinate variable with boundaries indicating the extent of the layer(s)." ;
+                                                                                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                  rdfs:label "frozen water content of soil layer" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_amount> rdf:type owl:NamedIndividual ,
+                                                                                    <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                           rdfs:comment "\"Amount\" means mass per unit area" ;
+                                                                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                           rdfs:label "large scale snowfall amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_flux
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#large_scale_snowfall_flux> rdf:type owl:NamedIndividual ,
+                                                                                  <http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea> ;
+                                                                         rdfs:comment "In accordance with common usage in geophysical disciplines, \"flux\" implies per unit area, called \"flux density\" in physics." ;
+                                                                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                         rdfs:label "large scale snowfall flux" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#liquid_water_content_of_soil_layer
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#liquid_water_content_of_soil_layer> rdf:type owl:NamedIndividual ,
+                                                                                           <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                                  rdfs:comment "\"Content\" indicates a quantity per unit area. \"Layer\" means any layer with upper and lower boundaries that have constant values in some vertical coordinate. There must be a vertical coordinate variable indicating the extent of the layer(s). If the layers are model layers, the vertical coordinate can be model_level_number, but it is recommended to specify a physical coordinate (in a scalar or auxiliary coordinate variable) as well. Quantities defined for a soil layer must have a vertical coordinate variable with boundaries indicating the extent of the layer(s)." ;
+                                                                                  rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                  rdfs:label "liquid water content of soil layer" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_convective_snowfall_rate
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_convective_snowfall_rate> rdf:type owl:NamedIndividual ,
+                                                                                     <http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed> ;
+                                                                            rdfs:comment "\"lwe\" means liquid water equivalent" ;
+                                                                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                            rdfs:label "lwe convective snowfall rate" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_large_scale_snowfall_rate
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_large_scale_snowfall_rate> rdf:type owl:NamedIndividual ,
+                                                                                      <http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed> ;
+                                                                             rdfs:comment "\"lwe\" means liquid water equivalent" ;
+                                                                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                             rdfs:label "lwe large scale snowfall rate" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_snowfall_rate
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_snowfall_rate> rdf:type owl:NamedIndividual ,
+                                                                          <http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed> ;
+                                                                 rdfs:comment "\"lwe\" means liquid water equivalent" ;
+                                                                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                 rdfs:label "lwe snowfall rate" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_convective_snowfall_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_convective_snowfall_amount> rdf:type owl:NamedIndividual ,
+                                                                                                    <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                                                           rdfs:comment "\"lwe\" means liquid water equivalent. \"Amount\" means mass per unit area. The construction lwe_thickness_of_X_amount or _content means the vertical extent of a layer of liquid water having the same mass per unit area." ;
+                                                                                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                           rdfs:label "lwe thickness of convective snowfall amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_frozen_water_content_of_soil_layer
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_frozen_water_content_of_soil_layer> rdf:type owl:NamedIndividual ,
+                                                                                                            <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                                                                   rdfs:comment "\"frozen_water\" means ice. \"lwe\" means liquid water equivalent. The construction lwe_thickness_of_X_amount or _content means the vertical extent of a layer of liquid water having the same mass per unit area. \"Content\" indicates a quantity per unit area. \"Layer\" means any layer with upper and lower boundaries that have constant values in some vertical coordinate. There must be a vertical coordinate variable indicating the extent of the layer(s). If the layers are model layers, the vertical coordinate can be model_level_number, but it is recommended to specify a physical coordinate (in a scalar or auxiliary coordinate variable) as well. Quantities defined for a soil layer must have a vertical coordinate variable with boundaries indicating the extent of the layer(s)" ;
+                                                                                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                                   rdfs:label "lwe thickness of frozen water content of soil layer" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_large_scale_snowfall_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_large_scale_snowfall_amount> rdf:type owl:NamedIndividual ,
+                                                                                                     <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                                                            rdfs:comment "\"lwe\" means liquid water equivalent. \"Amount\" means mass per unit area. The construction lwe_thickness_of_X_amount or _content means the vertical extent of a layer of liquid water having the same mass per unit area." ;
+                                                                                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                            rdfs:label "lwe thickness of large scale snowfall amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_moisture_content_of_soil_layer
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_moisture_content_of_soil_layer> rdf:type owl:NamedIndividual ,
+                                                                                                        <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                                                               rdfs:comment "\"lwe\" means liquid water equivalent. \"moisture\" means water in all phases contained in soil. The construction lwe_thickness_of_X_amount or _content means the vertical extent of a layer of liquid water having the same mass per unit area. \"Content\" indicates a quantity per unit area. \"Layer\" means any layer with upper and lower boundaries that have constant values in some vertical coordinate. There must be a vertical coordinate variable indicating the extent of the layer(s). If the layers are model layers, the vertical coordinate can be model_level_number, but it is recommended to specify a physical coordinate (in a scalar or auxiliary coordinate variable) as well. Quantities defined for a soil layer must have a vertical coordinate variable with boundaries indicating the extent of the layer(s)" ;
+                                                                                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                               rdfs:label "lwe thickness of moisture content of soil layer" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_snowfall_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_snowfall_amount> rdf:type owl:NamedIndividual ,
+                                                                                         <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                                                rdfs:comment "\"lwe\" means liquid water equivalent. \"Amount\" means mass per unit area. The construction lwe_thickness_of_X_amount or _content means the vertical extent of a layer of liquid water having the same mass per unit area" ;
+                                                                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                rdfs:label "lwe thickness of snowfall amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_soil_moisture_content
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#lwe_thickness_of_soil_moisture_content> rdf:type owl:NamedIndividual ,
+                                                                                               <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                                                      rdfs:comment "\"lwe\" means liquid water equivalent. \"moisture\" means water in all phases contained in soil. The construction lwe_thickness_of_X_amount or _content means the vertical extent of a layer of liquid water having the same mass per unit area. \"Content\" indicates a quantity per unit area. The \"soil content\" of a quantity refers to the vertical integral from the surface down to the bottom of the soil model. For the content between specified levels in the soil, standard names including content_of_soil_layer are used" ;
+                                                                                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                      rdfs:label "lwe thickness of soil moisture content" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#mass_concentration_of_condensed_water_in_soil
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#mass_concentration_of_condensed_water_in_soil> rdf:type owl:NamedIndividual ,
+                                                                                                      <http://purl.oclc.org/NET/ssnx/qu/dim#Density> ;
+                                                                                             rdfs:comment "Mass concentration means mass per unit volume and is used in the construction mass_concentration_of_X_in_Y, where X is a material constituent of Y.  Condensed water means liquid and ice" ;
+                                                                                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                             rdfs:label "mass concentration of condensed water in soil" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer> rdf:type owl:NamedIndividual ,
+                                                                                       <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                              rdfs:comment "\"moisture\" means water in all phases contained in soil. \"Content\" indicates a quantity per unit area. \"Layer\" means any layer with upper and lower boundaries that have constant values in some vertical coordinate. There must be a vertical coordinate variable indicating the extent of the layer(s). If the layers are model layers, the vertical coordinate can be model_level_number, but it is recommended to specify a physical coordinate (in a scalar or auxiliary coordinate variable) as well. Quantities defined for a soil layer must have a vertical coordinate variable with boundaries indicating the extent of the layer(s)" ;
+                                                                              rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                              rdfs:label "moisture content of soil layer" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer_at_field_capacity
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#moisture_content_of_soil_layer_at_field_capacity> rdf:type owl:NamedIndividual ,
+                                                                                                         <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                                                rdfs:comment "\"moisture\" means water in all phases contained in soil. \"Content\" indicates a quantity per unit area. \"Layer\" means any layer with upper and lower boundaries that have constant values in some vertical coordinate. There must be a vertical coordinate variable indicating the extent of the layer(s). If the layers are model layers, the vertical coordinate can be model_level_number, but it is recommended to specify a physical coordinate (in a scalar or auxiliary coordinate variable) as well. Quantities defined for a soil layer must have a vertical coordinate variable with boundaries indicating the extent of the layer(s). The field capacity of soil is the maximum content of water it can retain against gravitational drainage" ;
+                                                                                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                                rdfs:label "moisture content of soil layer at field capacity" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#normalized_difference_vegetation_index
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#normalized_difference_vegetation_index> rdf:type owl:NamedIndividual ,
+                                                                                               <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                                                      rdfs:comment "\"Normalized_difference_vegetation_index\", usually abbreviated to NDVI, is an index calculated from reflectances measured in the visible and near infrared channels.  It is calculated as NDVI = (NIR - R) / (NIR + R) where NIR is the reflectance in the near-infrared band and R is the reflectance in the red visible band.  Reflectance is the ratio of the reflected over the incoming radiation in each spectral band.  The calculated value of NDVI depends on the precise definitions of the spectral bands and these definitions may vary between different models and remote sensing instruments" ;
+                                                                                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                      rdfs:label "normalized difference vegetation index" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#precipitation_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#precipitation_amount> rdf:type owl:NamedIndividual ,
+                                                                             <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                    rdfs:comment "\"Amount\" means mass per unit area" ;
+                                                                    rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                    rdfs:label "precipitation amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_density
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_density> rdf:type owl:NamedIndividual ,
+                                                                     <http://purl.oclc.org/NET/ssnx/qu/dim#Density> ;
+                                                            rdfs:comment "the amount of snow in per meter cube" ;
+                                                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                            rdfs:label "snow density" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_grain_size
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_grain_size> rdf:type owl:NamedIndividual ,
+                                                                        <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                               rdfs:comment "the size of a snow grain " ;
+                                                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                               rdfs:label "snow grain size" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_soot_content
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_soot_content> rdf:type owl:NamedIndividual ,
+                                                                          <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                 rdfs:comment "\"Content\" indicates a quantity per unit area" ;
+                                                                 rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                 rdfs:label "snow soot content" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_temperature
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#snow_temperature> rdf:type owl:NamedIndividual ,
+                                                                         <http://purl.oclc.org/NET/ssnx/qu/dim#Temperature> ;
+                                                                rdfs:comment "Snow temperature is the bulk temperature of the snow, not the surface (skin) temperature" ;
+                                                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                rdfs:label "snow temperature" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_amount> rdf:type owl:NamedIndividual ,
+                                                                        <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                               rdfs:comment "\"Amount\" means mass per unit area" ;
+                                                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                               rdfs:label "snowfall amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_flux
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#snowfall_flux> rdf:type owl:NamedIndividual ,
+                                                                      <http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea> ;
+                                                             rdfs:comment "In accordance with common usage in geophysical disciplines, \"flux\" implies per unit area, called \"flux density\" in physics" ;
+                                                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                             rdfs:label "snowfall flux" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_albedo
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_albedo> rdf:type owl:NamedIndividual ,
+                                                                    <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                           rdfs:comment "Soil albedo is the albedo of the soil surface assuming no snow" ;
+                                                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                           rdfs:label "soil albedo" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_carbon_content
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_carbon_content> rdf:type owl:NamedIndividual ,
+                                                                            <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                   rdfs:comment "\"Content\" indicates a quantity per unit area. The \"soil content\" of a quantity refers to the vertical integral from the surface down to the bottom of the soil model. For the content between specified levels in the soil, standard names including content_of_soil_layer are used" ;
+                                                                   rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                   rdfs:label "soil carbon content" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_frozen_water_content
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_frozen_water_content> rdf:type owl:NamedIndividual ,
+                                                                                  <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                         rdfs:comment "\"frozen_water\" means ice. \"Content\" indicates a quantity per unit area. The \"soil content\" of a quantity refers to the vertical integral from the surface down to the bottom of the soil model. For the content between specified levels in the soil, standard names including content_of_soil_layer are used" ;
+                                                                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                         rdfs:label "soil frozen water content" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_hydraulic_conductivity_at_saturation
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_hydraulic_conductivity_at_saturation> rdf:type owl:NamedIndividual ,
+                                                                                                  <http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed> ;
+                                                                                         rdfs:comment "Hydraulic conductivity is the constant k in Darcy's Law q=-k grad h for fluid flow q (volume transport per unit area i.e. velocity) through a porous medium, where h is the hydraulic head (pressure expressed as an equivalent depth of water)" ;
+                                                                                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                         rdfs:label "soil hydraulic conductivity at saturation" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content> rdf:type owl:NamedIndividual ,
+                                                                              <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                     rdfs:comment "\"moisture\" means water in all phases contained in soil. \"Content\" indicates a quantity per unit area. The \"soil content\" of a quantity refers to the vertical integral from the surface down to the bottom of the soil model. For the content between specified levels in the soil, standard names including content_of_soil_layer are used" ;
+                                                                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                     rdfs:label "soil moisture content" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content_at_field_capacity
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_moisture_content_at_field_capacity> rdf:type owl:NamedIndividual ,
+                                                                                                <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                                       rdfs:comment "\"moisture\" means water in all phases contained in soil. \"Content\" indicates a quantity per unit area. The \"soil content\" of a quantity refers to the vertical integral from the surface down to the bottom of the soil model. For the content between specified levels in the soil, standard names including content_of_soil_layer are used. The field capacity of soil is the maximum content of water it can retain against gravitational drainage" ;
+                                                                                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                       rdfs:label "soil moisture content at field capacity" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_porosity
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_porosity> rdf:type owl:NamedIndividual ,
+                                                                      <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                             rdfs:comment "The soil porosity is the proportion of its total volume not occupied by soil solids" ;
+                                                             rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                             rdfs:label "soil porosity" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_respiration_carbon_flux
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_respiration_carbon_flux> rdf:type owl:NamedIndividual ,
+                                                                                     <http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea> ;
+                                                                            rdfs:comment "\"Respiration carbon\" refers to the rate at which biomass is respired expressed as the mass of carbon which it contains. Soil respiration is the sum of respiration in the soil by animals and decomposers of litter (heterotrophs or \"consumers\"), which have not produced the biomass they respire, and respiration by the roots of plants (autotrophs or \"producers\"), which have themselves produced the biomass they respire. In accordance with common usage in geophysical disciplines, \"flux\" implies per unit area, called \"flux density\" in physics" ;
+                                                                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                            rdfs:label "soil respiration carbon flux" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_suction_at_saturation
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_suction_at_saturation> rdf:type owl:NamedIndividual ,
+                                                                                   <http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure> ;
+                                                                          rdfs:comment "Soil suction is the tensile stress on water in soil due to molecular forces acting at the water-soil particle boundary. The forces may cause water to be drawn into the spaces within the soil matrix or cause it to be held in the soil without draining. Soil suction occurs in soil above the water table" ;
+                                                                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                          rdfs:label "soil suction at saturation" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_temperature
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_temperature> rdf:type owl:NamedIndividual ,
+                                                                         <http://purl.oclc.org/NET/ssnx/qu/dim#Temperature> ;
+                                                                owl:sameAs <https://saref.etsi.org/saref4agri/SoilTemperature> ;
+                                                                rdfs:comment "Soil temperature is the bulk temperature of the soil, not the surface (skin) temperature" ;
+                                                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                rdfs:label "soil temperature" .
+
+
+###  https://saref.etsi.org/saref4agri/SoilTemperature
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_capacity
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_capacity> rdf:type owl:NamedIndividual ,
+                                                                              <http://purl.oclc.org/NET/ssnx/qu/dim#SpecificEntropy> ;
+                                                                     rdfs:comment "Thermal capacity, or heat capacity, is the amount of heat energy required to increase the temperature of 1 kg of material by 1 K. It is a property of the material" ;
+                                                                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                     rdfs:label "soil thermal capacity" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_conductivity
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_thermal_conductivity> rdf:type owl:NamedIndividual ,
+                                                                                  <http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity> ;
+                                                                         rdfs:comment "Thermal conductivity is the constant k in the formula q = -k grad T where q is the heat transfer per unit time per unit area of a surface normal to the direction of transfer and grad T is the temperature gradient. Thermal conductivity is a property of the material" ;
+                                                                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                         rdfs:label "soil thermal conductivity" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_type
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#soil_type> rdf:type owl:NamedIndividual ,
+                                                                  <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                         rdfs:comment "A variable with the standard name of soil_type contains strings which indicate the character of the soil e.g. clay. These strings have not yet been standardised. Alternatively, the data variable may contain integers which can be translated to strings using flag_values and flag_meanings attributes" ;
+                                                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                         rdfs:label "soil type" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_intensity_in_air
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_intensity_in_air> rdf:type owl:NamedIndividual ,
+                                                                               <http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux> ;
+                                                                      rdfs:comment "Sound intensity is the sound energy per unit time per unit area" ;
+                                                                      rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                      rdfs:label "sound intensity in air" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_pressure_in_air
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#sound_pressure_in_air> rdf:type owl:NamedIndividual ,
+                                                                              <http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure> ;
+                                                                     rdfs:comment "Sound pressure is the difference from the local ambient pressure caused by a sound wave at a particular location and time" ;
+                                                                     rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                     rdfs:label "sound pressure in air" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_convective_snowfall_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_convective_snowfall_amount> rdf:type owl:NamedIndividual ,
+                                                                                                <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                                                       rdfs:comment "\"Amount\" means mass per unit area. The construction thickness_of_[X_]snowfall_amount means the accumulated \"depth\" of snow which fell i.e. the thickness of the layer of snow at its own density. There are corresponding standard names for liquid water equivalent (lwe) thickness" ;
+                                                                                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                       rdfs:label "thickness of convective snowfall amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_rainfall_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_rainfall_amount> rdf:type owl:NamedIndividual ,
+                                                                                                 <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                                                        rdfs:comment "\"Amount\" means mass per unit area. The construction thickness_of_[X_]rainfall_amount means the accumulated \"depth\" of rainfall i.e. the thickness of a layer of liquid water having the same mass per unit area as the rainfall amount" ;
+                                                                                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                        rdfs:label "thickness of large scale rainfall amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_snowfall_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_large_scale_snowfall_amount> rdf:type owl:NamedIndividual ,
+                                                                                                 <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                                                        rdfs:comment "\"Amount\" means mass per unit area. The construction thickness_of_[X_]snowfall_amount means the accumulated \"depth\" of snow which fell i.e. the thickness of the layer of snow at its own density. There are corresponding standard names for liquid water equivalent (lwe) thickness" ;
+                                                                                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                        rdfs:label "thickness of large scale snowfall amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_rainfall_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_rainfall_amount> rdf:type owl:NamedIndividual ,
+                                                                                     <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                                            rdfs:comment "\"Amount\" means mass per unit area. The construction thickness_of_[X_]rainfall_amount means the accumulated \"depth\" of rainfall i.e. the thickness of a layer of liquid water having the same mass per unit area as the rainfall amount" ;
+                                                                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                            rdfs:label "thickness of rainfall amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_snowfall_amount
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#thickness_of_snowfall_amount> rdf:type owl:NamedIndividual ,
+                                                                                     <http://purl.oclc.org/NET/ssnx/qu/dim#Distance> ;
+                                                                            rdfs:comment "\"Amount\" means mass per unit area. The construction thickness_of_[X_]snowfall_amount means the accumulated \"depth\" of snow which fell i.e. the thickness of the layer of snow at its own density. There are corresponding standard names for liquid water equivalent (lwe) thickness" ;
+                                                                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                            rdfs:label "thickness of snowfall amount" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_area_fraction
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_area_fraction> rdf:type owl:NamedIndividual ,
+                                                                                 <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                                        rdfs:comment "\"X_area_fraction\" means the fraction of horizontal area occupied by X. \"X_area\" means the horizontal area occupied by X within the grid cell. \"Vegetation\" means any plants e.g. trees, shrubs, grass" ;
+                                                                        rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                        rdfs:label "vegetation area fraction" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_carbon_content
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#vegetation_carbon_content> rdf:type owl:NamedIndividual ,
+                                                                                  <http://purl.oclc.org/NET/ssnx/qu/dim#SurfaceDensity> ;
+                                                                         rdfs:comment "\"Content\" indicates a quantity per unit area. \"Vegetation\" means any plants e.g. trees, shrubs, grass" ;
+                                                                         rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                         rdfs:label "vegetation carbon content" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_clay_in_soil
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_clay_in_soil> rdf:type owl:NamedIndividual ,
+                                                                                        <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                                               rdfs:comment "\"Volume fraction\" is used in the construction volume_fraction_of_X_in_Y, where X is a material constituent of Y" ;
+                                                                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                               rdfs:label "volume fraction of clay in soil" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil> rdf:type owl:NamedIndividual ,
+                                                                                                   <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                                                          rdfs:comment "\"Condensed water\" means liquid and ice. \"Volume fraction\" is used in the construction volume_fraction_of_X_in_Y, where X is a material constituent of Y" ;
+                                                                                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                          rdfs:label "volume fraction of condensed water in soil" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_critical_point
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_critical_point> rdf:type owl:NamedIndividual ,
+                                                                                                                     <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                                                                            rdfs:comment "\"Condensed water\" means liquid and ice. \"Volume fraction\" is used in the construction volume_fraction_of_X_in_Y, where X is a material constituent of Y.  When soil moisture equals or exceeds the critical point evapotranspiration takes place at the potential rate and is controlled by the ambient meteorological conditions (temperature, wind, relative humidity).  Evapotranspiration is the sum of evaporation and plant transpiration.  Potential evapotranspiration is the rate at which evapotranspiration would occur under ambient conditions from a uniformly vegetated area when the water supply is not limiting" ;
+                                                                                                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                                            rdfs:label "volume fraction of condensed water in soil at critical point" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_field_capacity
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_field_capacity> rdf:type owl:NamedIndividual ,
+                                                                                                                     <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                                                                            rdfs:comment "\"Condensed water\" means liquid and ice. \"Volume fraction\" is used in the construction volume_fraction_of_X_in_Y, where X is a material constituent of Y. The field capacity of soil is the maximum content of water it can retain against gravitational drainage" ;
+                                                                                                            rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                                            rdfs:label "volume fraction of condensed water in soil at field capacity" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_wilting_point
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_at_wilting_point> rdf:type owl:NamedIndividual ,
+                                                                                                                    <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                                                                           rdfs:comment "\"Condensed water\" means liquid and ice. \"Volume fraction\" is used in the construction volume_fraction_of_X_in_Y, where X is a material constituent of Y. The wilting point of soil is the water content below which plants cannot extract sufficient water to balance their loss through transpiration" ;
+                                                                                                           rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                                           rdfs:label "volume fraction of condensed water in soil at wilting point" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_pores
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_condensed_water_in_soil_pores> rdf:type owl:NamedIndividual ,
+                                                                                                         <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                                                                rdfs:comment "\"Volume fraction\" is used in the construction volume_fraction_of_X_in_Y, where X is a material constituent of Y.  \"Condensed water\" means liquid and ice.  \"Volume_fraction_of_condensed_water_in_soil_pores\" is the ratio of the volume of condensed water in soil pores to the volume of the pores themselves" ;
+                                                                                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                                rdfs:label "volume fraction of condensed water in soil pores" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_frozen_water_in_soil
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_frozen_water_in_soil> rdf:type owl:NamedIndividual ,
+                                                                                                <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                                                       rdfs:comment "\"frozen_water\" means ice. \"Volume fraction\" is used in the construction volume_fraction_of_X_in_Y, where X is a material constituent of Y" ;
+                                                                                       rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                       rdfs:label "volume fraction of frozen water in soil" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_sand_in_soil
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_sand_in_soil> rdf:type owl:NamedIndividual ,
+                                                                                        <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                                               rdfs:comment "\"Volume fraction\" is used in the construction volume_fraction_of_X_in_Y, where X is a material constituent of Y" ;
+                                                                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                               rdfs:label "volume fraction of sand in soil" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_silt_in_soil
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#volume_fraction_of_silt_in_soil> rdf:type owl:NamedIndividual ,
+                                                                                        <http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless> ;
+                                                                               rdfs:comment "\"Volume fraction\" is used in the construction volume_fraction_of_X_in_Y, where X is a material constituent of Y" ;
+                                                                               rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                               rdfs:label "volume fraction of silt in soil" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#water_evaporation_flux_from_soil
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#water_evaporation_flux_from_soil> rdf:type owl:NamedIndividual ,
+                                                                                         <http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea> ;
+                                                                                rdfs:comment "\"Water\" means water in all phases. Evaporation is the conversion of liquid or solid into vapor. (The conversion of solid alone into vapor is called \"sublimation\".) In accordance with common usage in geophysical disciplines, \"flux\" implies per unit area, called \"flux density\" in physics" ;
+                                                                                rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                                                rdfs:label "water evaporation flux from soil" .
+
+
+###  http://purl.oclc.org/NET/ssnx/cf/cf-property#wind_speed
+<http://purl.oclc.org/NET/ssnx/cf/cf-property#wind_speed> rdf:type owl:NamedIndividual ,
+                                                                   <http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed> ;
+                                                          rdfs:comment "Speed is the magnitude of velocity. Wind is defined as a two-dimensional (horizontal) air velocity vector, with no vertical component. (Vertical motion in the atmosphere has the standard name upward_air_velocity.) The wind speed is the magnitude of the wind velocity" ;
+                                                          rdfs:isDefinedBy <http://purl.oclc.org/NET/ssnx/cf/cf-property> ;
+                                                          rdfs:label "wind speed" .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/degreeCelsius
+<http://www.ontology-of-units-of-measure.org/resource/om-2/degreeCelsius> rdf:type owl:NamedIndividual ,
+                                                                                   <https://saref.etsi.org/core/UnitOfMeasure> ;
+                                                                          rdfs:comment "The degree Celsius is a unit of temperature defined as 1 kelvin." ;
+                                                                          rdfs:isDefinedBy <http://www.ontology-of-units-of-measure.org/resource/om-2/degreeCelsius> ;
+                                                                          rdfs:label "degree Celsius"@en .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/millibar
+<http://www.ontology-of-units-of-measure.org/resource/om-2/millibar> rdf:type owl:NamedIndividual ,
+                                                                              <https://saref.etsi.org/core/UnitOfMeasure> ;
+                                                                     rdfs:comment "The millibar is a unit of pressure defined as 1.0e-3 bar." ;
+                                                                     rdfs:isDefinedBy <http://www.ontology-of-units-of-measure.org/resource/om-2/millibar> ;
+                                                                     rdfs:label "millibar"@en .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/millimetre
+<http://www.ontology-of-units-of-measure.org/resource/om-2/millimetre> rdf:type owl:NamedIndividual ,
+                                                                                <https://saref.etsi.org/core/UnitOfMeasure> ;
+                                                                       rdfs:comment "The millimetre is a unit of length defined as 1.0e-3 metre." ;
+                                                                       rdfs:isDefinedBy <http://www.ontology-of-units-of-measure.org/resource/om-2/millimetre> ;
+                                                                       rdfs:label "millimetre"@en .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/millivolt
+<http://www.ontology-of-units-of-measure.org/resource/om-2/millivolt> rdf:type owl:NamedIndividual ,
+                                                                               <https://saref.etsi.org/core/UnitOfMeasure> ;
+                                                                      rdfs:comment "The millivolt is a unit of Voltage" ;
+                                                                      rdfs:isDefinedBy <http://www.ontology-of-units-of-measure.org/resource/om-2/millivolt> ;
+                                                                      rdfs:label "millivolt"@en .
+
+
+###  https://saref.etsi.org/saref4agri/AirTemperature
+<https://saref.etsi.org/saref4agri/AirTemperature> rdf:type owl:NamedIndividual ,
+                                                            <https://saref.etsi.org/core/Temperature> ;
+                                                   rdfs:comment "The degree or intensity of heat present in the air." ;
+                                                   rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                                   rdfs:label "Air temperature"@en .
+
+
+###  https://saref.etsi.org/saref4agri/AmbientHumidity
+<https://saref.etsi.org/saref4agri/AmbientHumidity> rdf:type owl:NamedIndividual ,
+                                                             <https://saref.etsi.org/core/Humidity> ;
+                                                    rdfs:comment "The amount of water vapour in the air." ;
+                                                    rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                                    rdfs:label "Ambient huidity"@en .
+
+
+###  https://saref.etsi.org/saref4agri/IrrigationWater
+<https://saref.etsi.org/saref4agri/IrrigationWater> rdf:type owl:NamedIndividual ,
+                                                             <https://saref.etsi.org/core/Property> ;
+                                                    rdfs:comment "The amount of water falling in the soil by irrigation methods." ;
+                                                    rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                                    rdfs:label "Irrigation water"@en .
+
+
+###  https://saref.etsi.org/saref4agri/PlantGrowthStage
+<https://saref.etsi.org/saref4agri/PlantGrowthStage> rdf:type owl:NamedIndividual ,
+                                                              <https://saref.etsi.org/core/Property> ;
+                                                     rdfs:comment "The level or stage of growth of the plant." ;
+                                                     rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                                     rdfs:label "Plant growth stage"@en .
+
+
+###  https://saref.etsi.org/saref4agri/Precipitation
+<https://saref.etsi.org/saref4agri/Precipitation> rdf:type owl:NamedIndividual ,
+                                                           <https://saref.etsi.org/core/Property> ;
+                                                  rdfs:comment "The amount of water falling in the soil by natural process (e.g. rain)." ;
+                                                  rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                                  rdfs:label "Precipitation"@en .
+
+
+###  https://saref.etsi.org/saref4agri/SoilMoisture
+<https://saref.etsi.org/saref4agri/SoilMoisture> rdf:type owl:NamedIndividual ,
+                                                          <https://saref.etsi.org/core/Property> ;
+                                                 rdfs:comment "The amount of water or humidity contained in the soil." ;
+                                                 rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                                 rdfs:label "Soil moisture"@en .
+
+
+###  https://saref.etsi.org/saref4agri/SoilTemperature
+<https://saref.etsi.org/saref4agri/SoilTemperature> rdf:type owl:NamedIndividual ,
+                                                             <https://saref.etsi.org/core/Temperature> ;
+                                                    rdfs:comment "The degree or intensity of heat present in the soil." ;
+                                                    rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                                    rdfs:label "Soil temperature"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

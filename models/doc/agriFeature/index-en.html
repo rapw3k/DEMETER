@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>DEMETER AgriFeature</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/demeter/agri/agriFeature","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/demeter/agri/agriFeature","name":"DEMETER AgriFeature", "headline":"The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions.", "datePublished":"Date of release", "version":"2.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Raul Palma","url":"http://orcid.org/0000-0003-4289-4922"}], "contributor":[{"@type":"Person","name":"Rob Atkinson"},{"@type":"Person","name":"Ioanna Roussaki"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>DEMETER AgriFeature</h1>
+<h2>Release Date of release</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/demeter/agri/agriFeature/2.0">https://w3id.org/demeter/agri/agriFeature/2.0</a></dd>
+<dt>Revision:</dt>
+<dd>2.0</dd>
+<dt>Authors:</dt>
+<dd><a href="http://orcid.org/0000-0003-4289-4922">Raul Palma</a></dd>
+
+<dt>Contributors:</dt>
+<dd>Rob Atkinson</dd><dd>Ioanna Roussaki</dd>
+
+<dt>Imported Ontologies:</dt>
+<dd><a href="https://w3id.org/demeter/agri/agriCommon">https://w3id.org/demeter/agri/agriCommon</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC_BY_4.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
+<img src="https://en.wikipedia.org/wiki/Creative_Commons_license#/media/File:CC_BY_icon.svg" style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>DEMETER Agriculture Information Model (AIM) Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">DEMETER Agriculture Information Model (AIM) domain ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/AgriFarm"
+         title="https://smartdatamodels.org/dataModel.Agrifood/AgriFarm">Agri Farm</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse"
+         title="https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse">Agri Greenhouse</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/AgriParcel"
+         title="https://smartdatamodels.org/dataModel.Agrifood/AgriParcel">Agri Parcel</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/Building" title="https://saref.etsi.org/saref4agri/Building">Building</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/BuildingSpace" title="https://saref.etsi.org/saref4agri/BuildingSpace">Building space</a>
+   </li>
+   <li>
+      <a href="#http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue"
+         title="http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue">EconomicActivityNACEValue</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/Farm" title="https://saref.etsi.org/saref4agri/Farm">Farm</a>
+   </li>
+   <li>
+      <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#Holding"
+         title="http://inspire.ec.europa.eu/schemas/af/3.0#Holding">Holding Holding</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#ManagementZone"
+         title="http://foodie-cloud.com/model/foodie#ManagementZone">ManagementZone ManagementZone</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#OriginTypeValue"
+         title="http://foodie-cloud.com/model/foodie#OriginTypeValue">OriginTypeValue OriginTypeValue</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/Parcel" title="https://saref.etsi.org/saref4agri/Parcel">Parcel</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#Plot" title="http://foodie-cloud.com/model/foodie#Plot">Plot Plot</a>
+   </li>
+   <li>
+      <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#Site" title="http://inspire.ec.europa.eu/schemas/af/3.0#Site">Site Site</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#activity"
+         title="http://inspire.ec.europa.eu/schemas/af/3.0#activity">activity activity</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/contains" title="https://saref.etsi.org/saref4agri/contains">contains</a>
+   </li>
+   <li>
+      <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#contains"
+         title="http://inspire.ec.europa.eu/schemas/af/3.0#contains">contains contains</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#containsPlot"
+         title="http://foodie-cloud.com/model/foodie#containsPlot">containsPlot containsPlot</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#containsZone"
+         title="http://foodie-cloud.com/model/foodie#containsZone">containsZone containsZone</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#originType" title="http://foodie-cloud.com/model/foodie#originType">containsZone originType</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#crop" title="http://foodie-cloud.com/model/foodie#crop">crop crop</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop"
+         title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop">hasAgriCrop</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel"
+         title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel">hasAgriParcel</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren"
+         title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren">hasAgriParcelChildren</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent"
+         title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent">hasAgriParcelParent</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil"
+         title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil">hasAgriSoil</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#holdingPlot" title="http://foodie-cloud.com/model/foodie#holdingPlot">holdingPlot holdingPlot</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#holdingZone" title="http://foodie-cloud.com/model/foodie#holdingZone">holdingPlot holdingZone</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#holdingSite" title="http://foodie-cloud.com/model/foodie#holdingSite">holdingSite holdingSite</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/isContainedIn" title="https://saref.etsi.org/saref4agri/isContainedIn">is contained in</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/landLocation"
+         title="https://smartdatamodels.org/dataModel.Agrifood/landLocation">landLocation</a>
+   </li>
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/location" title="https://uri.etsi.org/ngsi-ld/location">location</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#machine" title="http://foodie-cloud.com/model/foodie#machine">machine machine</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#tractor" title="http://foodie-cloud.com/model/foodie#tractor">tractor tractor</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/area"
+         title="https://smartdatamodels.org/dataModel.Agrifood/area">area</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/cropStatus"
+         title="https://smartdatamodels.org/dataModel.Agrifood/cropStatus">cropStatus</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt"
+         title="https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt">lastPlantedAt</a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">DEMETER Agriculture Information Model (AIM) domain ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for DEMETER Agriculture Information Model (AIM) domain ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by DEMETER Agriculture Information Model (AIM) domain ontology.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/AgriFarm"
+            title="https://smartdatamodels.org/dataModel.Agrifood/AgriFarm">Agri Farm</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse"
+            title="https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse">Agri Greenhouse</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/AgriParcel"
+            title="https://smartdatamodels.org/dataModel.Agrifood/AgriParcel">Agri Parcel</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/Building" title="https://saref.etsi.org/saref4agri/Building">Building</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/BuildingSpace" title="https://saref.etsi.org/saref4agri/BuildingSpace">Building space</a>
+      </li>
+      <li>
+         <a href="#http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue"
+            title="http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue">EconomicActivityNACEValue</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/Farm" title="https://saref.etsi.org/saref4agri/Farm">Farm</a>
+      </li>
+      <li>
+         <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#Holding"
+            title="http://inspire.ec.europa.eu/schemas/af/3.0#Holding">Holding Holding</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#ManagementZone"
+            title="http://foodie-cloud.com/model/foodie#ManagementZone">ManagementZone ManagementZone</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#OriginTypeValue"
+            title="http://foodie-cloud.com/model/foodie#OriginTypeValue">OriginTypeValue OriginTypeValue</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/Parcel" title="https://saref.etsi.org/saref4agri/Parcel">Parcel</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#Plot" title="http://foodie-cloud.com/model/foodie#Plot">Plot Plot</a>
+      </li>
+      <li>
+         <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#Site" title="http://inspire.ec.europa.eu/schemas/af/3.0#Site">Site Site</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/AgriFarm">
+      <h3>Agri Farm<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/AgriFarm</p>
+      <div class="comment">
+         <span class="markdown">This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json</a>
+         </dd>
+      </dl>
+      <dl class="description"/>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse">
+      <h3>Agri Greenhouse<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse</p>
+      <div class="comment">
+         <span class="markdown">This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriGreenhouse/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriGreenhouse/schema.json</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://smartdatamodels.org/AgriParcel"
+               target="_blank"
+               title="https://smartdatamodels.org/AgriParcel">agri parcel</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/AgriParcel">
+      <h3>Agri Parcel<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/AgriParcel</p>
+      <div class="comment">
+         <span class="markdown">This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json</a>
+         </dd>
+      </dl>
+      <dl class="description"/>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/Building">
+      <h3>Building<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/Building</p>
+      <div class="comment">
+         <span class="markdown">A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.opengis.net/ont/geosparql#Feature"
+               target="_blank"
+               title="http://www.opengis.net/ont/geosparql#Feature">feature</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/BuildingSpace">
+      <h3>Building space<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/BuildingSpace</p>
+      <div class="comment">
+         <span class="markdown">An entity used to define the physical spaces of the building. A building space contains devices or building objects.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.opengis.net/ont/geosparql#Feature"
+               target="_blank"
+               title="http://www.opengis.net/ont/geosparql#Feature">feature</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue">
+      <h3>EconomicActivityNACEValue<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue</p>
+      <div class="comment">
+         <span class="markdown">The classification of the economic activity according to the NACE</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://inspire.ec.europa.eu/schemas/act-core/3.0#">http://inspire.ec.europa.eu/schemas/act-core/3.0#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2004/02/skos/core#Concept"
+               target="_blank"
+               title="http://www.w3.org/2004/02/skos/core#Concept">concept</a>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#activity"
+               title="http://inspire.ec.europa.eu/schemas/af/3.0#activity">activity activity</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/Farm">
+      <h3>Farm<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/Farm</p>
+      <div class="comment">
+         <span class="markdown">A plot of land used for the scope of farming which can contain buildings and parcels.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://smartdatamodels.org/dataModel.Agrifood/AgriFarm"
+               title="https://smartdatamodels.org/dataModel.Agrifood/AgriFarm">Agri Farm</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.opengis.net/ont/geosparql#Feature"
+               target="_blank"
+               title="http://www.opengis.net/ont/geosparql#Feature">feature</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://inspire.ec.europa.eu/schemas/af/3.0#Holding">
+      <h3>Holding<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <h3>Holding<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://inspire.ec.europa.eu/schemas/af/3.0#Holding</p>
+      <div class="comment">
+         <span class="markdown">The whole area and all infrastructures included on it, covering the same or different sites, under the control of an operator to perform agricultural or aquaculture activities</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://inspire.ec.europa.eu/schemas/af/3.0#">http://inspire.ec.europa.eu/schemas/af/3.0#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://saref.etsi.org/saref4agri/Farm" title="https://saref.etsi.org/saref4agri/Farm">Farm</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex"
+               target="_blank"
+               title="http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex">activity complex</a>
+            <sup class="type-c" title="class">c</sup>, <a href="http://www.opengis.net/ont/geosparql#Feature"
+               target="_blank"
+               title="http://www.opengis.net/ont/geosparql#Feature">feature</a>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://foodie-cloud.com/model/foodie#holdingSite" title="http://foodie-cloud.com/model/foodie#holdingSite">holdingSite holdingSite</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#ManagementZone">
+      <h3>ManagementZone<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <h3>ManagementZone<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#ManagementZone</p>
+      <div class="comment">
+         <span class="markdown">A spatial subset of a Plot that has specific properties like electric conductivity, organic matter, pH, soil texture, soil type or soil nutrients</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.opengis.net/ont/geosparql#Feature"
+               target="_blank"
+               title="http://www.opengis.net/ont/geosparql#Feature">feature</a>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://foodie-cloud.com/model/foodie#containsZone"
+               title="http://foodie-cloud.com/model/foodie#containsZone">containsZone containsZone</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#OriginTypeValue">
+      <h3>OriginTypeValue<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <h3>OriginTypeValue<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#OriginTypeValue</p>
+      <div class="comment">
+         <span class="markdown">Origin of a Plot when taking into consideration only two options: manual (created by human user) and system generated</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/2004/02/skos/core#Concept"
+               target="_blank"
+               title="http://www.w3.org/2004/02/skos/core#Concept">concept</a>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://foodie-cloud.com/model/foodie#originType" title="http://foodie-cloud.com/model/foodie#originType">containsZone originType</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/Parcel">
+      <h3>Parcel<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/Parcel</p>
+      <div class="comment">
+         <span class="markdown">An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://smartdatamodels.org/dataModel.Agrifood/AgriParcel"
+               title="https://smartdatamodels.org/dataModel.Agrifood/AgriParcel">Agri Parcel</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.opengis.net/ont/geosparql#Feature"
+               target="_blank"
+               title="http://www.opengis.net/ont/geosparql#Feature">feature</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#Plot">
+      <h3>Plot<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <h3>Plot<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#Plot</p>
+      <div class="comment">
+         <span class="markdown">A continuous area of agricultural land with one type of crop species, cultivated by one user in one farming mode, e.g., conventional, transitional, organic farming</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://saref.etsi.org/saref4agri/Parcel" title="https://saref.etsi.org/saref4agri/Parcel">Parcel</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.opengis.net/ont/geosparql#Feature"
+               target="_blank"
+               title="http://www.opengis.net/ont/geosparql#Feature">feature</a>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://foodie-cloud.com/model/foodie#containsPlot"
+               title="http://foodie-cloud.com/model/foodie#containsPlot">containsPlot containsPlot</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://foodie-cloud.com/model/foodie#holdingZone" title="http://foodie-cloud.com/model/foodie#holdingZone">holdingPlot holdingZone</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://inspire.ec.europa.eu/schemas/af/3.0#Site">
+      <h3>Site<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <h3>Site<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://inspire.ec.europa.eu/schemas/af/3.0#Site</p>
+      <div class="comment">
+         <span class="markdown">A agricultural or aquacultural facility. All land at a same or distinct geographic location under the management control of a holding covering activities, products and services. This includes all infrastructure, equipment and materials.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://inspire.ec.europa.eu/schemas/af/3.0#">http://inspire.ec.europa.eu/schemas/af/3.0#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.opengis.net/ont/geosparql#Feature"
+               target="_blank"
+               title="http://www.opengis.net/ont/geosparql#Feature">feature</a>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#contains"
+               title="http://inspire.ec.europa.eu/schemas/af/3.0#contains">contains contains</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://foodie-cloud.com/model/foodie#holdingPlot" title="http://foodie-cloud.com/model/foodie#holdingPlot">holdingPlot holdingPlot</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#activity"
+            title="http://inspire.ec.europa.eu/schemas/af/3.0#activity">activity activity</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/contains" title="https://saref.etsi.org/saref4agri/contains">contains</a>
+      </li>
+      <li>
+         <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#contains"
+            title="http://inspire.ec.europa.eu/schemas/af/3.0#contains">contains contains</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#containsPlot"
+            title="http://foodie-cloud.com/model/foodie#containsPlot">containsPlot containsPlot</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#containsZone"
+            title="http://foodie-cloud.com/model/foodie#containsZone">containsZone containsZone</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#originType" title="http://foodie-cloud.com/model/foodie#originType">containsZone originType</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#crop" title="http://foodie-cloud.com/model/foodie#crop">crop crop</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop"
+            title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop">hasAgriCrop</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel"
+            title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel">hasAgriParcel</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren"
+            title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren">hasAgriParcelChildren</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent"
+            title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent">hasAgriParcelParent</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil"
+            title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil">hasAgriSoil</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#holdingPlot" title="http://foodie-cloud.com/model/foodie#holdingPlot">holdingPlot holdingPlot</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#holdingZone" title="http://foodie-cloud.com/model/foodie#holdingZone">holdingPlot holdingZone</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#holdingSite" title="http://foodie-cloud.com/model/foodie#holdingSite">holdingSite holdingSite</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/isContainedIn" title="https://saref.etsi.org/saref4agri/isContainedIn">is contained in</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/landLocation"
+            title="https://smartdatamodels.org/dataModel.Agrifood/landLocation">landLocation</a>
+      </li>
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/location" title="https://uri.etsi.org/ngsi-ld/location">location</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#machine" title="http://foodie-cloud.com/model/foodie#machine">machine machine</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#tractor" title="http://foodie-cloud.com/model/foodie#tractor">tractor tractor</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://inspire.ec.europa.eu/schemas/af/3.0#activity">
+      <h3>activity<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>activity<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://inspire.ec.europa.eu/schemas/af/3.0#activity</p>
+      <div class="comment">
+         <span class="markdown">A relation to the classification of the economic activity of the site</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://inspire.ec.europa.eu/schemas/af/3.0#">http://inspire.ec.europa.eu/schemas/af/3.0#</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue"
+                  title="http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue">EconomicActivityNACEValue</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/contains">
+      <h3>contains<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/contains</p>
+      <div class="comment">
+         <span class="markdown">A realtion to represent the contained land parcel</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.opengis.net/ont/geosparql#sfContains"
+                  target="_blank"
+                  title="http://www.opengis.net/ont/geosparql#sfContains">sf contains</a>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#contains"
+                  title="http://inspire.ec.europa.eu/schemas/af/3.0#contains">contains contains</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#http://foodie-cloud.com/model/foodie#containsPlot"
+                  title="http://foodie-cloud.com/model/foodie#containsPlot">containsPlot containsPlot</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#http://foodie-cloud.com/model/foodie#containsZone"
+                  title="http://foodie-cloud.com/model/foodie#containsZone">containsZone containsZone</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel"
+                  title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel">hasAgriParcel</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren"
+                  title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren">hasAgriParcelChildren</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/isContainedIn" title="https://saref.etsi.org/saref4agri/isContainedIn">is contained in</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://inspire.ec.europa.eu/schemas/af/3.0#contains">
+      <h3>contains<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>contains<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://inspire.ec.europa.eu/schemas/af/3.0#contains</p>
+      <div class="comment">
+         <span class="markdown">A relation from Holding to Site </span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://inspire.ec.europa.eu/schemas/af/3.0#">http://inspire.ec.europa.eu/schemas/af/3.0#</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/contains" title="https://saref.etsi.org/saref4agri/contains">contains</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#Site" title="http://inspire.ec.europa.eu/schemas/af/3.0#Site">Site Site</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#containsPlot">
+      <h3>containsPlot<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>containsPlot<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#containsPlot</p>
+      <div class="comment">
+         <span class="markdown">A relation from Site to Plot </span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/contains" title="https://saref.etsi.org/saref4agri/contains">contains</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://foodie-cloud.com/model/foodie#Plot" title="http://foodie-cloud.com/model/foodie#Plot">Plot Plot</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#containsZone">
+      <h3>containsZone<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>containsZone<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#containsZone</p>
+      <div class="comment">
+         <span class="markdown">A relation from Plot to Management zone</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/contains" title="https://saref.etsi.org/saref4agri/contains">contains</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://foodie-cloud.com/model/foodie#ManagementZone"
+                  title="http://foodie-cloud.com/model/foodie#ManagementZone">ManagementZone ManagementZone</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#originType">
+      <h3>containsZone<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>originType<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#originType</p>
+      <div class="comment">
+         <span class="markdown">A relation to the origin of a Plot when taking into consideration only two options: manual (created by human/user) and system (produced by the platform</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://foodie-cloud.com/model/foodie#OriginTypeValue"
+                  title="http://foodie-cloud.com/model/foodie#OriginTypeValue">OriginTypeValue OriginTypeValue</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#crop">
+      <h3>crop<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>crop<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#crop</p>
+      <div class="comment">
+         <span class="markdown">A relation from Plot to CropSpecies</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop"
+                  title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop">hasAgriCrop</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop">
+      <h3>hasAgriCrop<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop</p>
+      <div class="comment">
+         <span class="markdown">Reference to the crop associated with this parcel</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#http://foodie-cloud.com/model/foodie#crop" title="http://foodie-cloud.com/model/foodie#crop">crop crop</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel">
+      <h3>hasAgriParcel<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel</p>
+      <div class="comment">
+         <span class="markdown">List of agri parcels belonging to the farm</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/contains" title="https://saref.etsi.org/saref4agri/contains">contains</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren">
+      <h3>hasAgriParcelChildren<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren</p>
+      <div class="comment">
+         <span class="markdown">Related sub AgriParcel records to which this entity relates</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/contains" title="https://saref.etsi.org/saref4agri/contains">contains</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent">
+      <h3>hasAgriParcelParent<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent</p>
+      <div class="comment">
+         <span class="markdown">Reference to the parent AgriParcel</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/isContainedIn" title="https://saref.etsi.org/saref4agri/isContainedIn">is contained in</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil">
+      <h3>hasAgriSoil<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil</p>
+      <div class="comment">
+         <span class="markdown">Reference to the soil associated with this parcel of land</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#holdingPlot">
+      <h3>holdingPlot<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>holdingPlot<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#holdingPlot</p>
+      <div class="comment">
+         <span class="markdown">A relation from Plot to Site</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/isContainedIn" title="https://saref.etsi.org/saref4agri/isContainedIn">is contained in</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#Site" title="http://inspire.ec.europa.eu/schemas/af/3.0#Site">Site Site</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#holdingZone">
+      <h3>holdingPlot<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>holdingZone<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#holdingZone</p>
+      <div class="comment">
+         <span class="markdown">A relation from Management Zone to Plot</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/isContainedIn" title="https://saref.etsi.org/saref4agri/isContainedIn">is contained in</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://foodie-cloud.com/model/foodie#Plot" title="http://foodie-cloud.com/model/foodie#Plot">Plot Plot</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#holdingSite">
+      <h3>holdingSite<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>holdingSite<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#holdingSite</p>
+      <div class="comment">
+         <span class="markdown">A relation from Site to Holding</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/isContainedIn" title="https://saref.etsi.org/saref4agri/isContainedIn">is contained in</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#Holding"
+                  title="http://inspire.ec.europa.eu/schemas/af/3.0#Holding">Holding Holding</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/isContainedIn">
+      <h3>is contained in<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/isContainedIn</p>
+      <div class="comment">
+         <span class="markdown">A relation inverse of s4agri:contains</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.opengis.net/ont/geosparql#sfWithin"
+                  target="_blank"
+                  title="http://www.opengis.net/ont/geosparql#sfWithin">sf within</a>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent"
+                  title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent">hasAgriParcelParent</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#http://foodie-cloud.com/model/foodie#holdingPlot" title="http://foodie-cloud.com/model/foodie#holdingPlot">holdingPlot holdingPlot</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#http://foodie-cloud.com/model/foodie#holdingZone" title="http://foodie-cloud.com/model/foodie#holdingZone">holdingPlot holdingZone</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#http://foodie-cloud.com/model/foodie#holdingSite" title="http://foodie-cloud.com/model/foodie#holdingSite">holdingSite holdingSite</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/contains" title="https://saref.etsi.org/saref4agri/contains">contains</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/landLocation">
+      <h3>landLocation<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/landLocation</p>
+      <div class="comment">
+         <span class="markdown">Geometry defining the boundaries of the farm land</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/location" title="https://uri.etsi.org/ngsi-ld/location">location</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/location">
+      <h3>location<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/location</p>
+      <div class="comment">
+         <span class="markdown">The geo:json encoded polygon / multi-polygon describing this item.  It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld">https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.opengis.net/ont/geosparql#hasGeometry"
+                  target="_blank"
+                  title="http://www.opengis.net/ont/geosparql#hasGeometry">has geometry</a>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#https://smartdatamodels.org/dataModel.Agrifood/landLocation"
+                  title="https://smartdatamodels.org/dataModel.Agrifood/landLocation">landLocation</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#machine">
+      <h3>machine<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>machine<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#machine</p>
+      <div class="comment">
+         <span class="markdown">A relation from Intervention to MachineType</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://foodie-cloud.com/model/foodie#MachineType"
+                  target="_blank"
+                  title="http://foodie-cloud.com/model/foodie#MachineType">machine type</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#tractor">
+      <h3>tractor<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>tractor<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#tractor</p>
+      <div class="comment">
+         <span class="markdown">A relation from Intervention to TractorType</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://foodie-cloud.com/model/foodie#TractorType"
+                  target="_blank"
+                  title="http://foodie-cloud.com/model/foodie#TractorType">tractor type</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/area"
+            title="https://smartdatamodels.org/dataModel.Agrifood/area">area</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/cropStatus"
+            title="https://smartdatamodels.org/dataModel.Agrifood/cropStatus">cropStatus</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt"
+            title="https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt">lastPlantedAt</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/area">
+      <h3>area<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/area</p>
+      <div class="comment">
+         <span class="markdown">The area of the parcel nominally in square meters.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/cropStatus">
+      <h3>cropStatus<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/cropStatus</p>
+      <div class="comment">
+         <span class="markdown">A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt">
+      <h3>lastPlantedAt<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt</p>
+      <div class="comment">
+         <span class="markdown">Indicates the date when the crop was last planted.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

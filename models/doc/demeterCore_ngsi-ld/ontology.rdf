@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/demeter/core#"
+     xml:base="https://w3id.org/demeter/core"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/">
+    <owl:Ontology rdf:about="https://w3id.org/demeter/core">
+        <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/demeterCore.ttl"/>
+        <terms:contributor rdf:resource="_:genid-nodeid-node1grit320dx3"/>
+        <terms:contributor rdf:nodeID="genid1"/>
+        <terms:contributor rdf:nodeID="genid3"/>
+        <terms:creator rdf:nodeID="genid5"/>
+        <terms:description xml:lang="en">The DEMETER core ontology includes the meta-model elements reused from NGSI-LD specification that provide a formal basis for representing &apos;property graphs&apos; using RDF/RDFS/OWL.</terms:description>
+        <terms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</terms:rights>
+        <terms:title xml:lang="en">DEMETER core meta-model</terms:title>
+        <rdfs:comment xml:lang="en">The DEMETER core ontology is a profile (subset) of the ontology presented in Annex D of the NGSI-LD standard: ETSI GS CIM 006 V1.1.1 (2019-07), covering only the core property-graph entities.</rdfs:comment>
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <foaf:maker rdf:nodeID="genid7"/>
+    </owl:Ontology>
+    <rdf:Description rdf:nodeID="genid1">
+        <foaf:name>Ioanna Roussaki</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>ICCS</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid3">
+        <foaf:name>Rob Atkinson</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>OGC</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid5">
+        <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+        <foaf:name>Raul Palma</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>PSNC</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid7">
+        <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
+        <foaf:name>DEMETER project</foaf:name>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/rights -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/maker -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/maker"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- https://schema.org/affiliation -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/affiliation"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation -->
+
+
+    <owl:ObjectProperty rdf:about="https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation">
+        <rdfs:subPropertyOf rdf:resource="https://uri.etsi.org/ngsi-ld/LocationProperty"/>
+        <rdfs:comment>Coordinate based location object property</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://uri.etsi.org/ngsi-ld/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/GeoProperty -->
+
+
+    <owl:ObjectProperty rdf:about="https://uri.etsi.org/ngsi-ld/GeoProperty">
+        <rdfs:subPropertyOf rdf:resource="https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation"/>
+        <rdfs:comment>special case of CoordinateBasedLocation object property</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://uri.etsi.org/ngsi-ld/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/LocationProperty -->
+
+
+    <owl:ObjectProperty rdf:about="https://uri.etsi.org/ngsi-ld/LocationProperty">
+        <rdfs:subPropertyOf rdf:resource="https://uri.etsi.org/ngsi-ld/Property"/>
+        <rdfs:comment>location object property</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://uri.etsi.org/ngsi-ld/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/Property -->
+
+
+    <owl:ObjectProperty rdf:about="https://uri.etsi.org/ngsi-ld/Property">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://uri.etsi.org/ngsi-ld/Property"/>
+                    <rdf:Description rdf:about="https://uri.etsi.org/ngsi-ld/Value"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/Relationship -->
+
+
+    <owl:ObjectProperty rdf:about="https://uri.etsi.org/ngsi-ld/Relationship">
+        <rdfs:domain rdf:resource="https://uri.etsi.org/ngsi-ld/Entity"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://uri.etsi.org/ngsi-ld/Entity"/>
+                    <rdf:Description rdf:about="https://uri.etsi.org/ngsi-ld/Relationship"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/hasObject -->
+
+
+    <owl:ObjectProperty rdf:about="https://uri.etsi.org/ngsi-ld/hasObject">
+        <rdfs:domain rdf:resource="https://uri.etsi.org/ngsi-ld/Relationship"/>
+        <rdfs:range rdf:resource="https://uri.etsi.org/ngsi-ld/Entity"/>
+        <rdfs:comment>property to define object of Relationship</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://uri.etsi.org/ngsi-ld/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/TemporalProperty -->
+
+
+    <owl:DatatypeProperty rdf:about="https://uri.etsi.org/ngsi-ld/TemporalProperty">
+        <rdfs:comment>Temporal data type property</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://uri.etsi.org/ngsi-ld/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/hasValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://uri.etsi.org/ngsi-ld/hasValue">
+        <rdfs:domain rdf:resource="https://uri.etsi.org/ngsi-ld/Property"/>
+        <rdfs:comment>property to define target value of Property</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://uri.etsi.org/ngsi-ld/"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/Entity -->
+
+
+    <owl:Class rdf:about="https://uri.etsi.org/ngsi-ld/Entity">
+        <owl:disjointWith rdf:resource="https://uri.etsi.org/ngsi-ld/Property"/>
+        <owl:disjointWith rdf:resource="https://uri.etsi.org/ngsi-ld/Relationship"/>
+        <owl:disjointWith rdf:resource="https://uri.etsi.org/ngsi-ld/Value"/>
+        <rdfs:comment>Informational representative of something that is supposed to exist in the real world, physically or conceptually. Any instance of such an entity shall be uniquely identified by a URI</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://uri.etsi.org/ngsi-ld/"/>
+    </owl:Class>
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/Property -->
+
+
+    <owl:Class rdf:about="https://uri.etsi.org/ngsi-ld/Property">
+        <owl:disjointWith rdf:resource="https://uri.etsi.org/ngsi-ld/Relationship"/>
+    </owl:Class>
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/Relationship -->
+
+
+    <owl:Class rdf:about="https://uri.etsi.org/ngsi-ld/Relationship">
+        <owl:disjointWith rdf:resource="https://uri.etsi.org/ngsi-ld/Value"/>
+    </owl:Class>
+    
+
+
+    <!-- https://uri.etsi.org/ngsi-ld/Value -->
+
+
+    <owl:Class rdf:about="https://uri.etsi.org/ngsi-ld/Value">
+        <rdfs:comment>JSON value (i.e. a string, a number, true or false, an object, an array), or a JSON-LD typed value (i.e. a string as the lexical form of the value together with a type, defined by an XSD base type or more generally an IRI), or a JSON-LD structured value (i.e. a set, a list, a language-tagged string)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://uri.etsi.org/ngsi-ld/"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="https://uri.etsi.org/ngsi-ld/Property">
+        <rdfs:comment>description instance which associates a main characteristic, which is an NGSI-LD Value, to either an NGSI-LD Entity, an NGSI-LD Relationship or another NGSI-LD Property</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://uri.etsi.org/ngsi-ld/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://uri.etsi.org/ngsi-ld/Relationship">
+        <rdfs:comment>description of a directed link between a subject which is either an NGSI-LD Entity, an NGSILD Property, or another NGSI-LD Relationship on one hand, and an object, which is an NGSI-LD Entity, on the other hand</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://uri.etsi.org/ngsi-ld/"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

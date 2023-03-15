@@ -1,0 +1,330 @@
+<https://w3id.org/demeter/agri/agriCrop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/demeter/agri/agriCrop> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/demeter/agri/agriCrop/2.0> .
+<https://w3id.org/demeter/agri/agriCrop> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/demeter/agri/agriCommon> .
+<https://w3id.org/demeter/agri/agriCrop> <http://purl.org/dc/terms/contributor> <https://w3id.org/demeter/agri/agriCrop_:genid-nodeid-node1gristh40x3> .
+<https://w3id.org/demeter/agri/agriCrop> <http://purl.org/dc/terms/contributor> _:genid1 .
+_:genid1 <https://schema.org/affiliation> _:genid2 .
+_:genid2 <http://xmlns.com/foaf/0.1/name> "ICCS" .
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" .
+<https://w3id.org/demeter/agri/agriCrop> <http://purl.org/dc/terms/contributor> _:genid3 .
+_:genid3 <https://schema.org/affiliation> _:genid4 .
+_:genid4 <http://xmlns.com/foaf/0.1/name> "OGC" .
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" .
+<https://w3id.org/demeter/agri/agriCrop> <http://purl.org/dc/terms/creator> _:genid5 .
+_:genid5 <https://schema.org/affiliation> _:genid6 .
+_:genid6 <http://xmlns.com/foaf/0.1/name> "PSNC" .
+_:genid5 <http://xmlns.com/foaf/0.1/name> "Raul Palma" .
+_:genid5 <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://orcid.org/0000-0003-4289-4922> .
+<https://w3id.org/demeter/agri/agriCrop> <http://purl.org/dc/terms/description> "The DEMETER AgriCrop is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en .
+<https://w3id.org/demeter/agri/agriCrop> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
+<https://w3id.org/demeter/agri/agriCrop> <http://purl.org/dc/terms/title> "DEMETER AgriCrop"@en .
+<https://w3id.org/demeter/agri/agriCrop> <http://www.w3.org/2000/01/rdf-schema#comment> "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en .
+<https://w3id.org/demeter/agri/agriCrop> <http://www.w3.org/2000/01/rdf-schema#label> "DEMETER AgriCrop" .
+<https://w3id.org/demeter/agri/agriCrop> <http://www.w3.org/2002/07/owl#versionInfo> "2.0" .
+<https://w3id.org/demeter/agri/agriCrop> <http://xmlns.com/foaf/0.1/maker> _:genid7 .
+_:genid7 <http://xmlns.com/foaf/0.1/name> "DEMETER project" .
+_:genid7 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://foodie-cloud.com/model/foodie#cropArea
+<http://foodie-cloud.com/model/foodie#cropArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#cropArea> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/ont/geosparql#Geometry> .
+<http://foodie-cloud.com/model/foodie#cropArea> <http://www.w3.org/2000/01/rdf-schema#comment> "The geometry defining the spatial extent of the CropSpecies on the Plot" .
+<http://foodie-cloud.com/model/foodie#cropArea> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#cropArea> <http://www.w3.org/2000/01/rdf-schema#label> "cropArea" .
+<http://foodie-cloud.com/model/foodie#cropArea> <http://www.w3.org/2004/02/skos/core#prefLabel> "cropArea"@en .
+# 
+# http://foodie-cloud.com/model/foodie#cropSpecies
+<http://foodie-cloud.com/model/foodie#cropSpecies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#cropSpecies> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#CropType> .
+<http://foodie-cloud.com/model/foodie#cropSpecies> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation to the designation under which the CropSpecies is commonly known; such designation is expressed as a CropType" .
+<http://foodie-cloud.com/model/foodie#cropSpecies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#cropSpecies> <http://www.w3.org/2000/01/rdf-schema#label> "cropSpecies" .
+<http://foodie-cloud.com/model/foodie#cropSpecies> <http://www.w3.org/2004/02/skos/core#prefLabel> "cropSpecies"@en .
+# 
+# http://foodie-cloud.com/model/foodie#production
+<http://foodie-cloud.com/model/foodie#production> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#production> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#ProductionType> .
+<http://foodie-cloud.com/model/foodie#production> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation to entity containing relevant production-related data, that is defined as a ProductionType" .
+<http://foodie-cloud.com/model/foodie#production> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#production> <http://www.w3.org/2000/01/rdf-schema#label> "production" .
+<http://foodie-cloud.com/model/foodie#production> <http://www.w3.org/2004/02/skos/core#prefLabel> "production"@en .
+# 
+# http://foodie-cloud.com/model/foodie#productionAmount
+<http://foodie-cloud.com/model/foodie#productionAmount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#productionAmount> <http://www.w3.org/2000/01/rdf-schema#range> <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> .
+<http://foodie-cloud.com/model/foodie#productionAmount> <http://www.w3.org/2000/01/rdf-schema#comment> "The value of a physical quantity of produced variety, together with its unit" .
+<http://foodie-cloud.com/model/foodie#productionAmount> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#productionAmount> <http://www.w3.org/2000/01/rdf-schema#label> "productionAmount" .
+<http://foodie-cloud.com/model/foodie#productionAmount> <http://www.w3.org/2004/02/skos/core#prefLabel> "productionAmount"@en .
+# 
+# http://purl.obolibrary.org/obo/TAXRANK_1000000
+<http://purl.obolibrary.org/obo/TAXRANK_1000000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://saref.etsi.org/core/hasProperty
+<https://saref.etsi.org/core/hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://saref.etsi.org/saref4agri/generates
+<https://saref.etsi.org/saref4agri/generates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/saref4agri/generates> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/core/hasProperty> .
+<https://saref.etsi.org/saref4agri/generates> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to represent the yield generated by a Crop." .
+<https://saref.etsi.org/saref4agri/generates> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/generates> <http://www.w3.org/2000/01/rdf-schema#label> "generates"@en .
+# 
+# https://saref.etsi.org/saref4agri/receives
+<https://saref.etsi.org/saref4agri/receives> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/saref4agri/receives> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/core/hasProperty> .
+<https://saref.etsi.org/saref4agri/receives> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to represent the intake/consumption of certain substances in a Crop." .
+<https://saref.etsi.org/saref4agri/receives> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/receives> <http://www.w3.org/2000/01/rdf-schema#label> "receives" .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the recommended types of fertiliser suitable for growing this crop" .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser> <http://www.w3.org/2000/01/rdf-schema#label> "hasAgriFertiliser"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the pests known to attack this crop." .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest> <http://www.w3.org/2000/01/rdf-schema#label> "hasAgriPest"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the recommended types of soil suitable for growing this crop" .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil> <http://www.w3.org/2000/01/rdf-schema#label> "cropHasAgriSoil"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://foodie-cloud.com/model/foodie#family
+<http://foodie-cloud.com/model/foodie#family> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#family> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#family> <http://www.w3.org/2000/01/rdf-schema#comment> "a principal taxonomic category that ranks above genus and below order" .
+<http://foodie-cloud.com/model/foodie#family> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#family> <http://www.w3.org/2000/01/rdf-schema#label> "family" .
+<http://foodie-cloud.com/model/foodie#family> <http://www.w3.org/2004/02/skos/core#prefLabel> "family"@en .
+# 
+# http://foodie-cloud.com/model/foodie#genus
+<http://foodie-cloud.com/model/foodie#genus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#genus> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#genus> <http://www.w3.org/2000/01/rdf-schema#comment> "a principal taxonomic category that ranks above species and below family" .
+<http://foodie-cloud.com/model/foodie#genus> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#genus> <http://www.w3.org/2000/01/rdf-schema#label> "genus" .
+<http://foodie-cloud.com/model/foodie#genus> <http://www.w3.org/2004/02/skos/core#prefLabel> "genus"@en .
+# 
+# http://foodie-cloud.com/model/foodie#productionDate
+<http://foodie-cloud.com/model/foodie#productionDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#productionDate> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://saref.etsi.org/saref4agri/hasHarvestDate> .
+<http://foodie-cloud.com/model/foodie#productionDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://foodie-cloud.com/model/foodie#productionDate> <http://www.w3.org/2000/01/rdf-schema#comment> "date and time of production, e.g., when it was inserted or changed in the database" .
+<http://foodie-cloud.com/model/foodie#productionDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#productionDate> <http://www.w3.org/2000/01/rdf-schema#label> "productionDate" .
+<http://foodie-cloud.com/model/foodie#productionDate> <http://www.w3.org/2004/02/skos/core#prefLabel> "productionDate"@en .
+# 
+# http://foodie-cloud.com/model/foodie#species
+<http://foodie-cloud.com/model/foodie#species> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#species> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#species> <http://www.w3.org/2000/01/rdf-schema#comment> "a group of living organisms consisting of similar individuals capable of exchanging genes or interbreeding" .
+<http://foodie-cloud.com/model/foodie#species> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#species> <http://www.w3.org/2000/01/rdf-schema#label> "species" .
+<http://foodie-cloud.com/model/foodie#species> <http://www.w3.org/2004/02/skos/core#prefLabel> "species"@en .
+# 
+# http://foodie-cloud.com/model/foodie#variety
+<http://foodie-cloud.com/model/foodie#variety> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#variety> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#variety> <http://www.w3.org/2000/01/rdf-schema#comment> "a taxonomic category that ranks below subspecies (where present) or species, its mem-bers differing from others of the same subspecies or species in minor but permanent or heritable characteristics" .
+<http://foodie-cloud.com/model/foodie#variety> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#variety> <http://www.w3.org/2000/01/rdf-schema#label> "variety" .
+<http://foodie-cloud.com/model/foodie#variety> <http://www.w3.org/2004/02/skos/core#prefLabel> "variety"@en .
+# 
+# https://saref.etsi.org/saref4agri/hasHarvestDate
+<https://saref.etsi.org/saref4agri/hasHarvestDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://saref.etsi.org/saref4agri/hasHarvestDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://saref.etsi.org/saref4agri/hasHarvestDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://saref.etsi.org/saref4agri/hasHarvestDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to express the day the crop is harvested." .
+<https://saref.etsi.org/saref4agri/hasHarvestDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/hasHarvestDate> <http://www.w3.org/2000/01/rdf-schema#label> "has harvest date" .
+# 
+# https://saref.etsi.org/saref4agri/hasPlantDate
+<https://saref.etsi.org/saref4agri/hasPlantDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://saref.etsi.org/saref4agri/hasPlantDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<https://saref.etsi.org/saref4agri/hasPlantDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://saref.etsi.org/saref4agri/hasPlantDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to express the day the crop is planted." .
+<https://saref.etsi.org/saref4agri/hasPlantDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/hasPlantDate> <http://www.w3.org/2000/01/rdf-schema#label> "has plant date" .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval
+<https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval> <http://www.w3.org/2000/01/rdf-schema#comment> "A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\ninterval, description\nWhere interval is in the form of start date/end date\n--MM-DD/--MM-DD\nMeaning repeat each year from this start date to this end date." .
+<https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval> <http://www.w3.org/2000/01/rdf-schema#label> "harvestingInterval"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/plantingFrom
+<https://smartdatamodels.org/dataModel.Agrifood/plantingFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/plantingFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:\ninterval, description\nWhere interval is in the form of start date/end date\n--MM-DD/--MM-DD\nMeaning repeat each year from this start date to this end date." .
+<https://smartdatamodels.org/dataModel.Agrifood/plantingFrom> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/plantingFrom> <http://www.w3.org/2000/01/rdf-schema#label> "plantingFrom"@en .
+# 
+# https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd
+<https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd> <http://www.w3.org/2000/01/rdf-schema#comment> "Expected Blooming End" .
+<https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/demeter/agri/agriCrop#> .
+<https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd> <http://www.w3.org/2000/01/rdf-schema#label> "Expected Blooming End" .
+# 
+# https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart
+<https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart> <http://www.w3.org/2000/01/rdf-schema#comment> "Expected Blooming Start" .
+<https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/demeter/agri/agriCrop#> .
+<https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart> <http://www.w3.org/2000/01/rdf-schema#label> "Expected Blooming Start" .
+# 
+# https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded
+<https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded> <http://www.w3.org/2000/01/rdf-schema#comment> "Number Of Hives Needed" .
+<https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/demeter/agri/agriCrop#> .
+<https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded> <http://www.w3.org/2000/01/rdf-schema#label> "Number Of Hives Needed" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://foodie-cloud.com/model/foodie#CropSpecies
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/saref4agri/Crop> .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#cropArea> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#cropSpecies> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://portele.de/ont/inspire/baseInspire#validFrom> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://portele.de/ont/inspire/baseInspire#validTo> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#generatedAtTime> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#invalidatedAtTime> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity for the species of the Crops grown in a plot. The planted crop species"@en .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2000/01/rdf-schema#label> "CropSpecies" .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/2004/02/skos/core#prefLabel> "CropSpecies"@en .
+# 
+# http://foodie-cloud.com/model/foodie#CropType
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#code> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#description> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#family> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#genus> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#notes> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#species> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#variety> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/2000/01/rdf-schema#comment> "Designation under which the CropSpecies is commonly known"@en .
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/2000/01/rdf-schema#label> "CropType" .
+<http://foodie-cloud.com/model/foodie#CropType> <http://www.w3.org/2004/02/skos/core#prefLabel> "CropType"@en .
+# 
+# http://foodie-cloud.com/model/foodie#ProductionType
+<http://foodie-cloud.com/model/foodie#ProductionType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#ProductionType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#productionAmount> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ProductionType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#productionDate> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ProductionType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#variety> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ProductionType> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity containing relevant production-related data"@en .
+<http://foodie-cloud.com/model/foodie#ProductionType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#ProductionType> <http://www.w3.org/2000/01/rdf-schema#label> "ProductionType" .
+<http://foodie-cloud.com/model/foodie#ProductionType> <http://www.w3.org/2004/02/skos/core#prefLabel> "ProductionType"@en .
+# 
+# https://saref.etsi.org/core/FeatureOfInterest
+<https://saref.etsi.org/core/FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://saref.etsi.org/saref4agri/Crop
+<https://saref.etsi.org/saref4agri/Crop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/saref4agri/Crop> <http://www.w3.org/2002/07/owl#equivalentClass> <https://smartdatamodels.org/dataModel.Agrifood/AgriCrop> .
+<https://saref.etsi.org/saref4agri/Crop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/FeatureOfInterest> .
+<https://saref.etsi.org/saref4agri/Crop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.obolibrary.org/obo/TAXRANK_0000000> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/TAXRANK_1000000> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Crop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/hasHarvestDate> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Crop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/hasPlantDate> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Crop> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of cultivated plants that is grown on a large scale commercially, especially a cereal, fruit, or vegetable."@en .
+<https://saref.etsi.org/saref4agri/Crop> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/Crop> <http://www.w3.org/2000/01/rdf-schema#label> "Crop" .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/AgriCrop
+<https://smartdatamodels.org/dataModel.Agrifood/AgriCrop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriCrop> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity contains a harmonised description of a generic crop. This entity is primarily associated with the agricultural vertical and related IoT applications." .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriCrop> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriCrop> <http://www.w3.org/2000/01/rdf-schema#label> "Agri Crop" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

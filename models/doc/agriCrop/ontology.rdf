@@ -1,0 +1,567 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/demeter/agri/agriCrop#"
+     xml:base="https://w3id.org/demeter/agri/agriCrop"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:core="https://saref.etsi.org/core/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
+     xmlns:agriCommon="https://w3id.org/demeter/agri/agriCommon#"
+     xmlns:smartdatamodels="https://smartdatamodels.org/">
+    <owl:Ontology rdf:about="https://w3id.org/demeter/agri/agriCrop">
+        <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/agriCrop/2.0"/>
+        <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
+        <terms:contributor rdf:resource="_:genid-nodeid-node1gristh40x3"/>
+        <terms:contributor rdf:nodeID="genid1"/>
+        <terms:contributor rdf:nodeID="genid3"/>
+        <terms:creator rdf:nodeID="genid5"/>
+        <terms:description xml:lang="en">The DEMETER AgriCrop is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</terms:description>
+        <terms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</terms:rights>
+        <terms:title xml:lang="en">DEMETER AgriCrop</terms:title>
+        <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
+        <rdfs:label>DEMETER AgriCrop</rdfs:label>
+        <owl:versionInfo>2.0</owl:versionInfo>
+        <foaf:maker rdf:nodeID="genid7"/>
+    </owl:Ontology>
+    <rdf:Description rdf:nodeID="genid1">
+        <foaf:name>Ioanna Roussaki</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>ICCS</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid3">
+        <foaf:name>Rob Atkinson</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>OGC</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid5">
+        <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+        <foaf:name>Raul Palma</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>PSNC</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid7">
+        <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
+        <foaf:name>DEMETER project</foaf:name>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#cropArea -->
+
+
+    <owl:ObjectProperty rdf:about="http://foodie-cloud.com/model/foodie#cropArea">
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>The geometry defining the spatial extent of the CropSpecies on the Plot</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>cropArea</rdfs:label>
+        <skos:prefLabel xml:lang="en">cropArea</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#cropSpecies -->
+
+
+    <owl:ObjectProperty rdf:about="http://foodie-cloud.com/model/foodie#cropSpecies">
+        <rdfs:range rdf:resource="http://foodie-cloud.com/model/foodie#CropType"/>
+        <rdfs:comment>Relation to the designation under which the CropSpecies is commonly known; such designation is expressed as a CropType</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>cropSpecies</rdfs:label>
+        <skos:prefLabel xml:lang="en">cropSpecies</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#production -->
+
+
+    <owl:ObjectProperty rdf:about="http://foodie-cloud.com/model/foodie#production">
+        <rdfs:range rdf:resource="http://foodie-cloud.com/model/foodie#ProductionType"/>
+        <rdfs:comment>Relation to entity containing relevant production-related data, that is defined as a ProductionType</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>production</rdfs:label>
+        <skos:prefLabel xml:lang="en">production</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#productionAmount -->
+
+
+    <owl:ObjectProperty rdf:about="http://foodie-cloud.com/model/foodie#productionAmount">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure"/>
+        <rdfs:comment>The value of a physical quantity of produced variety, together with its unit</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>productionAmount</rdfs:label>
+        <skos:prefLabel xml:lang="en">productionAmount</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TAXRANK_1000000 -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/TAXRANK_1000000"/>
+    
+
+
+    <!-- https://saref.etsi.org/core/hasProperty -->
+
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/core/hasProperty"/>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/generates -->
+
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4agri/generates">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/core/hasProperty"/>
+        <rdfs:comment>A relation to represent the yield generated by a Crop.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">generates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/receives -->
+
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4agri/receives">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/core/hasProperty"/>
+        <rdfs:comment>A relation to represent the intake/consumption of certain substances in a Crop.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>receives</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser -->
+
+
+    <owl:ObjectProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser">
+        <rdfs:comment>Reference to the recommended types of fertiliser suitable for growing this crop</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json"/>
+        <rdfs:label xml:lang="en">hasAgriFertiliser</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest -->
+
+
+    <owl:ObjectProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest">
+        <rdfs:comment>Reference to the pests known to attack this crop.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json"/>
+        <rdfs:label xml:lang="en">hasAgriPest</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil -->
+
+
+    <owl:ObjectProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil">
+        <rdfs:comment>Reference to the recommended types of soil suitable for growing this crop</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json"/>
+        <rdfs:label xml:lang="en">cropHasAgriSoil</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#family -->
+
+
+    <owl:DatatypeProperty rdf:about="http://foodie-cloud.com/model/foodie#family">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>a principal taxonomic category that ranks above genus and below order</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>family</rdfs:label>
+        <skos:prefLabel xml:lang="en">family</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#genus -->
+
+
+    <owl:DatatypeProperty rdf:about="http://foodie-cloud.com/model/foodie#genus">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>a principal taxonomic category that ranks above species and below family</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>genus</rdfs:label>
+        <skos:prefLabel xml:lang="en">genus</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#productionDate -->
+
+
+    <owl:DatatypeProperty rdf:about="http://foodie-cloud.com/model/foodie#productionDate">
+        <owl:equivalentProperty rdf:resource="https://saref.etsi.org/saref4agri/hasHarvestDate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>date and time of production, e.g., when it was inserted or changed in the database</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>productionDate</rdfs:label>
+        <skos:prefLabel xml:lang="en">productionDate</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#species -->
+
+
+    <owl:DatatypeProperty rdf:about="http://foodie-cloud.com/model/foodie#species">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>a group of living organisms consisting of similar individuals capable of exchanging genes or interbreeding</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>species</rdfs:label>
+        <skos:prefLabel xml:lang="en">species</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#variety -->
+
+
+    <owl:DatatypeProperty rdf:about="http://foodie-cloud.com/model/foodie#variety">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>a taxonomic category that ranks below subspecies (where present) or species, its mem-bers differing from others of the same subspecies or species in minor but permanent or heritable characteristics</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>variety</rdfs:label>
+        <skos:prefLabel xml:lang="en">variety</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/hasHarvestDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4agri/hasHarvestDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>A relation to express the day the crop is harvested.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>has harvest date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/hasPlantDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4agri/hasPlantDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>A relation to express the day the crop is planted.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>has plant date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval">
+        <rdfs:comment>A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:
+interval, description
+Where interval is in the form of start date/end date
+--MM-DD/--MM-DD
+Meaning repeat each year from this start date to this end date.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json"/>
+        <rdfs:label xml:lang="en">harvestingInterval</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/plantingFrom -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/plantingFrom">
+        <rdfs:comment>A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:
+interval, description
+Where interval is in the form of start date/end date
+--MM-DD/--MM-DD
+Meaning repeat each year from this start date to this end date.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json"/>
+        <rdfs:label xml:lang="en">plantingFrom</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Expected Blooming End</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/demeter/agri/agriCrop#"/>
+        <rdfs:label>Expected Blooming End</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Expected Blooming Start</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/demeter/agri/agriCrop#"/>
+        <rdfs:label>Expected Blooming Start</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Number Of Hives Needed</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/demeter/agri/agriCrop#"/>
+        <rdfs:label>Number Of Hives Needed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#CropSpecies -->
+
+
+    <owl:Class rdf:about="http://foodie-cloud.com/model/foodie#CropSpecies">
+        <owl:equivalentClass rdf:resource="https://saref.etsi.org/saref4agri/Crop"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#cropArea"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#cropSpecies"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validFrom"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validTo"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An entity for the species of the Crops grown in a plot. The planted crop species</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>CropSpecies</rdfs:label>
+        <skos:prefLabel xml:lang="en">CropSpecies</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#CropType -->
+
+
+    <owl:Class rdf:about="http://foodie-cloud.com/model/foodie#CropType">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#description"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#family"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#genus"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#notes"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#species"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#variety"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Designation under which the CropSpecies is commonly known</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>CropType</rdfs:label>
+        <skos:prefLabel xml:lang="en">CropType</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#ProductionType -->
+
+
+    <owl:Class rdf:about="http://foodie-cloud.com/model/foodie#ProductionType">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#productionAmount"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#productionDate"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#variety"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An entity containing relevant production-related data</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>ProductionType</rdfs:label>
+        <skos:prefLabel xml:lang="en">ProductionType</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/core/FeatureOfInterest -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/core/FeatureOfInterest"/>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/Crop -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/Crop">
+        <owl:equivalentClass rdf:resource="https://smartdatamodels.org/dataModel.Agrifood/AgriCrop"/>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TAXRANK_1000000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/TAXRANK_0000000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/hasHarvestDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/hasPlantDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A collection of cultivated plants that is grown on a large scale commercially, especially a cereal, fruit, or vegetable.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>Crop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/AgriCrop -->
+
+
+    <owl:Class rdf:about="https://smartdatamodels.org/dataModel.Agrifood/AgriCrop">
+        <rdfs:comment>This entity contains a harmonised description of a generic crop. This entity is primarily associated with the agricultural vertical and related IoT applications.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json"/>
+        <rdfs:label>Agri Crop</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
