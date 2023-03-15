@@ -1,0 +1,522 @@
+@prefix : <https://w3id.org/demeter/agri#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/demeter/agri#> .
+
+<https://w3id.org/demeter/agri> rdf:type owl:Ontology ;
+                                 owl:versionIRI <https://w3id.org/demeter/agri/2.0> ;
+                                 owl:imports <https://w3id.org/demeter/agri/agriAlert> ,
+                                             <https://w3id.org/demeter/agri/agriCommon> ,
+                                             <https://w3id.org/demeter/agri/agriCrop> ,
+                                             <https://w3id.org/demeter/agri/agriFeature> ,
+                                             <https://w3id.org/demeter/agri/agriIntervention> ,
+                                             <https://w3id.org/demeter/agri/agriPest> ,
+                                             <https://w3id.org/demeter/agri/agriProduct> ,
+                                             <https://w3id.org/demeter/agri/agriProperty> ,
+                                             <https://w3id.org/demeter/agri/agriSystem> ,
+                                             <https://w3id.org/demeter/agri/farmAnimal> ;
+                                 <http://purl.org/dc/terms/contributor> _:genid-nodeid-node1grit5sgpx3 ,
+                                                                        _:genid1 ,
+                                                                        _:genid3 ;
+                                 <http://purl.org/dc/terms/creator> _:genid5 ;
+                                 <http://purl.org/dc/terms/description> "The DEMETER Agri Profile is a master profile importing focused specific profiles/modules of DEMETER AIM."@en ;
+                                 <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+                                 <http://purl.org/dc/terms/title> "DEMETER Agriculture Information Model (AIM) domain ontology"@en ;
+                                 rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+                                 rdfs:label "DEMETER Agriculture Information Model (AIM) domain ontology"@en ;
+                                 owl:versionInfo "2.0" ;
+                                 <http://xmlns.com/foaf/0.1/maker> _:genid7 .
+
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "ICCS"
+                                           ] .
+
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "OGC"
+                                           ] .
+
+_:genid5 rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+          <http://xmlns.com/foaf/0.1/name> "Raul Palma" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "PSNC"
+                                           ] .
+
+_:genid7 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> ;
+          <http://xmlns.com/foaf/0.1/name> "DEMETER project" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature
+<http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature> rdf:type owl:AnnotationProperty ;
+                                                                                          rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://purl.org/linked-data/cube#component
+<http://purl.org/linked-data/cube#component> rdf:type owl:AnnotationProperty ;
+                                             rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://purl.org/linked-data/cube#componentAttachment
+<http://purl.org/linked-data/cube#componentAttachment> rdf:type owl:AnnotationProperty ;
+                                                       rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://purl.org/linked-data/cube#componentProperty
+<http://purl.org/linked-data/cube#componentProperty> rdf:type owl:AnnotationProperty ;
+                                                     rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Property> .
+
+
+###  http://purl.org/linked-data/cube#concept
+<http://purl.org/linked-data/cube#concept> rdf:type owl:AnnotationProperty ;
+                                           rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://purl.org/linked-data/cube#dataSet
+<http://purl.org/linked-data/cube#dataSet> rdf:type owl:AnnotationProperty ;
+                                           rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://purl.org/linked-data/cube#observation
+<http://purl.org/linked-data/cube#observation> rdf:type owl:AnnotationProperty ;
+                                               rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://purl.org/linked-data/cube#observationGroup
+<http://purl.org/linked-data/cube#observationGroup> rdf:type owl:AnnotationProperty ;
+                                                    rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://purl.org/linked-data/cube#order
+<http://purl.org/linked-data/cube#order> rdf:type owl:AnnotationProperty ;
+                                         rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/hasValue> .
+
+
+###  http://purl.org/linked-data/cube#sliceKey
+<http://purl.org/linked-data/cube#sliceKey> rdf:type owl:AnnotationProperty ;
+                                            rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://purl.org/linked-data/cube#sliceStructure
+<http://purl.org/linked-data/cube#sliceStructure> rdf:type owl:AnnotationProperty ;
+                                                  rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://qudt.org/schema/qudt/hasQuantityKind
+<http://qudt.org/schema/qudt/hasQuantityKind> rdf:type owl:AnnotationProperty ;
+                                              rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://qudt.org/schema/qudt/numericValue
+<http://qudt.org/schema/qudt/numericValue> rdf:type owl:AnnotationProperty ;
+                                           rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/hasValue> .
+
+
+###  http://qudt.org/schema/qudt/quantityValue
+<http://qudt.org/schema/qudt/quantityValue> rdf:type owl:AnnotationProperty ;
+                                            rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://qudt.org/schema/qudt/unit
+<http://qudt.org/schema/qudt/unit> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:AnnotationProperty ;
+                                                   rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/GeoProperty> .
+
+
+###  http://www.opengis.net/ont/geosparql#hasSerialization
+<http://www.opengis.net/ont/geosparql#hasSerialization> rdf:type owl:AnnotationProperty ;
+                                                        rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/hasValue> .
+
+
+###  http://www.opengis.net/ont/geosparql#sfContains
+<http://www.opengis.net/ont/geosparql#sfContains> rdf:type owl:AnnotationProperty ;
+                                                  rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/LocationRelationship> .
+
+
+###  http://www.opengis.net/ont/geosparql#sfWithin
+<http://www.opengis.net/ont/geosparql#sfWithin> rdf:type owl:AnnotationProperty ;
+                                                rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/LocationRelationship> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#alt
+<http://www.w3.org/2003/01/geo/wgs84_pos#alt> rdf:type owl:AnnotationProperty ;
+                                              rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/hasValue> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> rdf:type owl:AnnotationProperty ;
+                                              rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/hasValue> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#location
+<http://www.w3.org/2003/01/geo/wgs84_pos#location> rdf:type owl:AnnotationProperty ;
+                                                   rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/GeoProperty> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#long
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> rdf:type owl:AnnotationProperty ;
+                                               rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/hasValue> .
+
+
+###  http://www.w3.org/2006/time#hasTime
+<http://www.w3.org/2006/time#hasTime> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/2006/time#inXSDDate
+<http://www.w3.org/2006/time#inXSDDate> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/TemporalProperty> .
+
+
+###  http://www.w3.org/2006/time#inXSDDateTimeStamp
+<http://www.w3.org/2006/time#inXSDDateTimeStamp> rdf:type owl:AnnotationProperty ;
+                                                 rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/TemporalProperty> .
+
+
+###  http://www.w3.org/2006/time#numericDuration
+<http://www.w3.org/2006/time#numericDuration> rdf:type owl:AnnotationProperty ;
+                                              rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/TemporalProperty> .
+
+
+###  http://www.w3.org/2006/time#unitType
+<http://www.w3.org/2006/time#unitType> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/prov#generatedAtTime
+<http://www.w3.org/ns/prov#generatedAtTime> rdf:type owl:AnnotationProperty ;
+                                            rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/TemporalProperty> .
+
+
+###  http://www.w3.org/ns/prov#invalidatedAtTime
+<http://www.w3.org/ns/prov#invalidatedAtTime> rdf:type owl:AnnotationProperty ;
+                                              rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/TemporalProperty> .
+
+
+###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> rdf:type owl:AnnotationProperty ;
+                                                 rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/sosa/hasMember
+<http://www.w3.org/ns/sosa/hasMember> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/sosa/hasResult
+<http://www.w3.org/ns/sosa/hasResult> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/sosa/hasSimpleResult
+<http://www.w3.org/ns/sosa/hasSimpleResult> rdf:type owl:AnnotationProperty ;
+                                            rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/hasValue> .
+
+
+###  http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest
+<http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest> rdf:type owl:AnnotationProperty ;
+                                                         rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/sosa/hosts
+<http://www.w3.org/ns/sosa/hosts> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/sosa/isFeatureOfInterestOf
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> rdf:type owl:AnnotationProperty ;
+                                                  rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/sosa/isHostedBy
+<http://www.w3.org/ns/sosa/isHostedBy> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/sosa/madeBySensor
+<http://www.w3.org/ns/sosa/madeBySensor> rdf:type owl:AnnotationProperty ;
+                                         rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/sosa/madeObservation
+<http://www.w3.org/ns/sosa/madeObservation> rdf:type owl:AnnotationProperty ;
+                                            rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/sosa/observedProperty
+<http://www.w3.org/ns/sosa/observedProperty> rdf:type owl:AnnotationProperty ;
+                                             rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Property> .
+
+
+###  http://www.w3.org/ns/sosa/observes
+<http://www.w3.org/ns/sosa/observes> rdf:type owl:AnnotationProperty ;
+                                     rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/sosa/phenomenonTime
+<http://www.w3.org/ns/sosa/phenomenonTime> rdf:type owl:AnnotationProperty ;
+                                           rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/sosa/resultTime
+<http://www.w3.org/ns/sosa/resultTime> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/TemporalProperty> .
+
+
+###  http://www.w3.org/ns/sosa/usedProcedure
+<http://www.w3.org/ns/sosa/usedProcedure> rdf:type owl:AnnotationProperty ;
+                                          rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/ssn/deployedOnPlatform
+<http://www.w3.org/ns/ssn/deployedOnPlatform> rdf:type owl:AnnotationProperty ;
+                                              rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/ssn/deployedSystem
+<http://www.w3.org/ns/ssn/deployedSystem> rdf:type owl:AnnotationProperty ;
+                                          rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/ssn/hasDeployment
+<http://www.w3.org/ns/ssn/hasDeployment> rdf:type owl:AnnotationProperty ;
+                                         rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/ssn/hasInput
+<http://www.w3.org/ns/ssn/hasInput> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/ssn/hasOutput
+<http://www.w3.org/ns/ssn/hasOutput> rdf:type owl:AnnotationProperty ;
+                                     rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/ssn/hasProperty
+<http://www.w3.org/ns/ssn/hasProperty> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Property> .
+
+
+###  http://www.w3.org/ns/ssn/hasSubSystem
+<http://www.w3.org/ns/ssn/hasSubSystem> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/ssn/implementedBy
+<http://www.w3.org/ns/ssn/implementedBy> rdf:type owl:AnnotationProperty ;
+                                         rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/ssn/implements
+<http://www.w3.org/ns/ssn/implements> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/ssn/inDeployment
+<http://www.w3.org/ns/ssn/inDeployment> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://www.w3.org/ns/ssn/isPropertyOf
+<http://www.w3.org/ns/ssn/isPropertyOf> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  http://xmlns.com/foaf/0.1/member
+<http://xmlns.com/foaf/0.1/member> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/Relationship> .
+
+
+###  https://uri.etsi.org/ngsi-ld/GeoProperty
+<https://uri.etsi.org/ngsi-ld/GeoProperty> rdf:type owl:AnnotationProperty .
+
+
+###  https://uri.etsi.org/ngsi-ld/LocationRelationship
+<https://uri.etsi.org/ngsi-ld/LocationRelationship> rdf:type owl:AnnotationProperty .
+
+
+###  https://uri.etsi.org/ngsi-ld/Property
+<https://uri.etsi.org/ngsi-ld/Property> rdf:type owl:AnnotationProperty .
+
+
+###  https://uri.etsi.org/ngsi-ld/Relationship
+<https://uri.etsi.org/ngsi-ld/Relationship> rdf:type owl:AnnotationProperty .
+
+
+###  https://uri.etsi.org/ngsi-ld/TemporalProperty
+<https://uri.etsi.org/ngsi-ld/TemporalProperty> rdf:type owl:AnnotationProperty .
+
+
+###  https://uri.etsi.org/ngsi-ld/hasValue
+<https://uri.etsi.org/ngsi-ld/hasValue> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature
+<http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_Feature> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://def.isotc211.org/iso19156/2011/Observation#OM_Observation
+<http://def.isotc211.org/iso19156/2011/Observation#OM_Observation> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure
+<http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind
+<http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind
+<http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://purl.org/linked-data/cube#Attachable
+<http://purl.org/linked-data/cube#Attachable> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://purl.org/linked-data/cube#ComponentProperty
+<http://purl.org/linked-data/cube#ComponentProperty> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://purl.org/linked-data/cube#ComponentSet
+<http://purl.org/linked-data/cube#ComponentSet> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://purl.org/linked-data/cube#DataSet
+<http://purl.org/linked-data/cube#DataSet> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://purl.org/linked-data/cube#ObservationGroup
+<http://purl.org/linked-data/cube#ObservationGroup> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://qudt.org/schema/qudt/Quantity
+<http://qudt.org/schema/qudt/Quantity> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://qudt.org/schema/qudt/QuantityKind
+<http://qudt.org/schema/qudt/QuantityKind> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://qudt.org/schema/qudt/QuantityValue
+<http://qudt.org/schema/qudt/QuantityValue> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.opengis.net/ont/geosparql#SpatialObject
+<http://www.opengis.net/ont/geosparql#SpatialObject> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/2004/02/skos/core#Scheme
+<http://www.w3.org/2004/02/skos/core#Scheme> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/2006/time#TemporalDuration
+<http://www.w3.org/2006/time#TemporalDuration> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/ActuatableProperty
+<http://www.w3.org/ns/sosa/ActuatableProperty> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/Actuation
+<http://www.w3.org/ns/sosa/Actuation> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/FeatureOfInterest
+<http://www.w3.org/ns/sosa/FeatureOfInterest> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/ObservableProperty
+<http://www.w3.org/ns/sosa/ObservableProperty> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/Observation
+<http://www.w3.org/ns/sosa/Observation> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/ObservationCollection
+<http://www.w3.org/ns/sosa/ObservationCollection> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/Platform
+<http://www.w3.org/ns/sosa/Platform> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/Procedure
+<http://www.w3.org/ns/sosa/Procedure> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/Result
+<http://www.w3.org/ns/sosa/Result> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/Sample
+<http://www.w3.org/ns/sosa/Sample> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/Sampling
+<http://www.w3.org/ns/sosa/Sampling> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/sosa/Sensor
+<http://www.w3.org/ns/sosa/Sensor> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/ssn/Deployment
+<http://www.w3.org/ns/ssn/Deployment> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/ssn/Property
+<http://www.w3.org/ns/ssn/Property> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://www.w3.org/ns/ssn/System
+<http://www.w3.org/ns/ssn/System> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  https://schema.org/Organization
+<https://schema.org/Organization> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  https://schema.org/Person
+<https://schema.org/Person> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  https://schema.org/Role
+<https://schema.org/Role> rdfs:subClassOf <https://uri.etsi.org/ngsi-ld/Entity> .
+
+
+###  https://uri.etsi.org/ngsi-ld/Entity
+<https://uri.etsi.org/ngsi-ld/Entity> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

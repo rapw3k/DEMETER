@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>DEMETER core meta-model</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/demeter/core","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/demeter/core","name":"DEMETER core meta-model", "headline":"The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions.", "datePublished":"Date of release", "version":"1.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Raul Palma","url":"http://orcid.org/0000-0003-4289-4922"}], "contributor":[{"@type":"Person","name":"Rob Atkinson"},{"@type":"Person","name":"Ioanna Roussaki"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>DEMETER core meta-model</h1>
+<h2>Release Date of release</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/demeterCore.ttl">https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/demeterCore.ttl</a></dd>
+<dt>Revision:</dt>
+<dd>1.0</dd>
+<dt>Authors:</dt>
+<dd><a href="http://orcid.org/0000-0003-4289-4922">Raul Palma</a></dd>
+
+<dt>Contributors:</dt>
+<dd>Rob Atkinson</dd><dd>Ioanna Roussaki</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC_BY_4.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
+<img src="https://en.wikipedia.org/wiki/Creative_Commons_license#/media/File:CC_BY_icon.svg" style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>DEMETER Agriculture Information Model (AIM) Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">DEMETER Agriculture Information Model (AIM) domain ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/Entity" title="https://uri.etsi.org/ngsi-ld/Entity">
+         <span>entity</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/Property" title="https://uri.etsi.org/ngsi-ld/Property">
+         <span>property</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/Relationship" title="https://uri.etsi.org/ngsi-ld/Relationship">
+         <span>relationship</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/Value" title="https://uri.etsi.org/ngsi-ld/Value">
+         <span>value</span>
+      </a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation"
+         title="https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation">
+         <span>coordinate based location</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/GeoProperty" title="https://uri.etsi.org/ngsi-ld/GeoProperty">
+         <span>geo property</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/hasObject" title="https://uri.etsi.org/ngsi-ld/hasObject">
+         <span>has object</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/LocationProperty" title="https://uri.etsi.org/ngsi-ld/LocationProperty">
+         <span>location property</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/Property" title="https://uri.etsi.org/ngsi-ld/Property">
+         <span>property</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/Relationship" title="https://uri.etsi.org/ngsi-ld/Relationship">
+         <span>relationship</span>
+      </a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/hasValue" title="https://uri.etsi.org/ngsi-ld/hasValue">
+         <span>has value</span>
+      </a>
+   </li>
+   <li>
+      <a href="#https://uri.etsi.org/ngsi-ld/TemporalProperty" title="https://uri.etsi.org/ngsi-ld/TemporalProperty">
+         <span>temporal property</span>
+      </a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">DEMETER Agriculture Information Model (AIM) domain ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for DEMETER Agriculture Information Model (AIM) domain ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by DEMETER Agriculture Information Model (AIM) domain ontology.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/Entity" title="https://uri.etsi.org/ngsi-ld/Entity">
+            <span>entity</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/Property" title="https://uri.etsi.org/ngsi-ld/Property">
+            <span>property</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/Relationship" title="https://uri.etsi.org/ngsi-ld/Relationship">
+            <span>relationship</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/Value" title="https://uri.etsi.org/ngsi-ld/Value">
+            <span>value</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/Entity">
+      <h3>entity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/Entity</p>
+      <div class="comment">
+         <span class="markdown">Informational representative of something that is supposed to exist in the real world, physically or conceptually. Any instance of such an entity shall be uniquely identified by a URI</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://uri.etsi.org/ngsi-ld/">https://uri.etsi.org/ngsi-ld/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://uri.etsi.org/ngsi-ld/Relationship" title="https://uri.etsi.org/ngsi-ld/Relationship">relationship</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://uri.etsi.org/ngsi-ld/hasObject" title="https://uri.etsi.org/ngsi-ld/hasObject">has object</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#https://uri.etsi.org/ngsi-ld/Property" title="https://uri.etsi.org/ngsi-ld/Property">property</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://uri.etsi.org/ngsi-ld/Relationship" title="https://uri.etsi.org/ngsi-ld/Relationship">relationship</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://uri.etsi.org/ngsi-ld/Value" title="https://uri.etsi.org/ngsi-ld/Value">value</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/Property">
+      <h3>property<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/Property</p>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://uri.etsi.org/ngsi-ld/hasValue" title="https://uri.etsi.org/ngsi-ld/hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#https://uri.etsi.org/ngsi-ld/Entity" title="https://uri.etsi.org/ngsi-ld/Entity">entity</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://uri.etsi.org/ngsi-ld/Relationship" title="https://uri.etsi.org/ngsi-ld/Relationship">relationship</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>
+            <a href="#https://uri.etsi.org/ngsi-ld/Property">object property</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/Relationship">
+      <h3>relationship<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/Relationship</p>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#https://uri.etsi.org/ngsi-ld/hasObject" title="https://uri.etsi.org/ngsi-ld/hasObject">has object</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#https://uri.etsi.org/ngsi-ld/Entity" title="https://uri.etsi.org/ngsi-ld/Entity">entity</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://uri.etsi.org/ngsi-ld/Property" title="https://uri.etsi.org/ngsi-ld/Property">property</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://uri.etsi.org/ngsi-ld/Value" title="https://uri.etsi.org/ngsi-ld/Value">value</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>
+            <a href="#https://uri.etsi.org/ngsi-ld/Relationship">object property</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/Value">
+      <h3>value<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/Value</p>
+      <div class="comment">
+         <span class="markdown">JSON value (i.e. a string, a number, true or false, an object, an array), or a JSON-LD typed value (i.e. a string as the lexical form of the value together with a type, defined by an XSD base type or more generally an IRI), or a JSON-LD structured value (i.e. a set, a list, a language-tagged string)</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://uri.etsi.org/ngsi-ld/">https://uri.etsi.org/ngsi-ld/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#https://uri.etsi.org/ngsi-ld/Entity" title="https://uri.etsi.org/ngsi-ld/Entity">entity</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#https://uri.etsi.org/ngsi-ld/Relationship" title="https://uri.etsi.org/ngsi-ld/Relationship">relationship</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation"
+            title="https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation">
+            <span>coordinate based location</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/GeoProperty" title="https://uri.etsi.org/ngsi-ld/GeoProperty">
+            <span>geo property</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/hasObject" title="https://uri.etsi.org/ngsi-ld/hasObject">
+            <span>has object</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/LocationProperty" title="https://uri.etsi.org/ngsi-ld/LocationProperty">
+            <span>location property</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/Property" title="https://uri.etsi.org/ngsi-ld/Property">
+            <span>property</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/Relationship" title="https://uri.etsi.org/ngsi-ld/Relationship">
+            <span>relationship</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation">
+      <h3>coordinate based location<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation</p>
+      <div class="comment">
+         <span class="markdown">Coordinate based location object property</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://uri.etsi.org/ngsi-ld/">https://uri.etsi.org/ngsi-ld/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/LocationProperty" title="https://uri.etsi.org/ngsi-ld/LocationProperty">location property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/GeoProperty" title="https://uri.etsi.org/ngsi-ld/GeoProperty">geo property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/GeoProperty">
+      <h3>geo property<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/GeoProperty</p>
+      <div class="comment">
+         <span class="markdown">special case of CoordinateBasedLocation object property</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://uri.etsi.org/ngsi-ld/">https://uri.etsi.org/ngsi-ld/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation"
+                  title="https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation">coordinate based location</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/hasObject">
+      <h3>has object<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/hasObject</p>
+      <div class="comment">
+         <span class="markdown">property to define object of Relationship</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://uri.etsi.org/ngsi-ld/">https://uri.etsi.org/ngsi-ld/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/Relationship" title="https://uri.etsi.org/ngsi-ld/Relationship">relationship</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/Entity" title="https://uri.etsi.org/ngsi-ld/Entity">entity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/LocationProperty">
+      <h3>location property<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/LocationProperty</p>
+      <div class="comment">
+         <span class="markdown">location object property</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://uri.etsi.org/ngsi-ld/">https://uri.etsi.org/ngsi-ld/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/Property" title="https://uri.etsi.org/ngsi-ld/Property">property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation"
+                  title="https://uri.etsi.org/ngsi-ld/CoordinateBasedLocation">coordinate based location</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/Property">
+      <h3>property<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/Property</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/LocationProperty" title="https://uri.etsi.org/ngsi-ld/LocationProperty">location property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/Property" title="https://uri.etsi.org/ngsi-ld/Property">property</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#https://uri.etsi.org/ngsi-ld/Value" title="https://uri.etsi.org/ngsi-ld/Value">value</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is disjoint with</dt>
+            <dd>
+               <a href="https://uri.etsi.org/ngsi-ld/Entity"
+                  target="_blank"
+                  title="https://uri.etsi.org/ngsi-ld/Entity">entity</a>, <a href="#https://uri.etsi.org/ngsi-ld/Relationship" title="https://uri.etsi.org/ngsi-ld/Relationship">relationship</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/Property">class</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/Relationship">
+      <h3>relationship<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/Relationship</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/Entity" title="https://uri.etsi.org/ngsi-ld/Entity">entity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/Entity" title="https://uri.etsi.org/ngsi-ld/Entity">entity</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#https://uri.etsi.org/ngsi-ld/Relationship" title="https://uri.etsi.org/ngsi-ld/Relationship">relationship</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is disjoint with</dt>
+            <dd>
+               <a href="https://uri.etsi.org/ngsi-ld/Entity"
+                  target="_blank"
+                  title="https://uri.etsi.org/ngsi-ld/Entity">entity</a>, <a href="#https://uri.etsi.org/ngsi-ld/Property" title="https://uri.etsi.org/ngsi-ld/Property">property</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="https://uri.etsi.org/ngsi-ld/Value"
+                  target="_blank"
+                  title="https://uri.etsi.org/ngsi-ld/Value">value</a>
+            </dd>
+            <dt>is also defined as</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/Relationship">class</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/hasValue" title="https://uri.etsi.org/ngsi-ld/hasValue">
+            <span>has value</span>
+         </a>
+      </li>
+      <li>
+         <a href="#https://uri.etsi.org/ngsi-ld/TemporalProperty" title="https://uri.etsi.org/ngsi-ld/TemporalProperty">
+            <span>temporal property</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/hasValue">
+      <h3>has value<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/hasValue</p>
+      <div class="comment">
+         <span class="markdown">property to define target value of Property</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://uri.etsi.org/ngsi-ld/">https://uri.etsi.org/ngsi-ld/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://uri.etsi.org/ngsi-ld/Property" title="https://uri.etsi.org/ngsi-ld/Property">property</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://uri.etsi.org/ngsi-ld/TemporalProperty">
+      <h3>temporal property<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://uri.etsi.org/ngsi-ld/TemporalProperty</p>
+      <div class="comment">
+         <span class="markdown">Temporal data type property</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://uri.etsi.org/ngsi-ld/">https://uri.etsi.org/ngsi-ld/</a>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,607 @@
+@prefix : <https://w3id.org/demeter/agri/agriIntervention#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/demeter/agri/agriIntervention#> .
+
+<https://w3id.org/demeter/agri/agriIntervention> rdf:type owl:Ontology ;
+                                                  owl:versionIRI <https://w3id.org/demeter/agri/agriIntervention/2.0> ;
+                                                  owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
+                                                  <http://purl.org/dc/terms/contributor> _:genid-nodeid-node1grisa6inx3 ,
+                                                                                         _:genid1 ,
+                                                                                         _:genid3 ;
+                                                  <http://purl.org/dc/terms/creator> _:genid5 ;
+                                                  <http://purl.org/dc/terms/description> "The DEMETER AgriIntervention is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+                                                  <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+                                                  <http://purl.org/dc/terms/title> "DEMETER AgriIntervention"@en ;
+                                                  rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+                                                  rdfs:label "DEMETER AgriIntervention"@en ;
+                                                  owl:versionInfo "2.0" ;
+                                                  <http://xmlns.com/foaf/0.1/maker> _:genid7 .
+
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "OGC"
+                                           ] .
+
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "ICCS"
+                                           ] .
+
+_:genid5 rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+          <http://xmlns.com/foaf/0.1/name> "Raul Palma" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "PSNC"
+                                           ] .
+
+_:genid7 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> ;
+          <http://xmlns.com/foaf/0.1/name> "DEMETER project" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://foodie-cloud.com/model/foodie#applicationWidth
+<http://foodie-cloud.com/model/foodie#applicationWidth> rdf:type owl:ObjectProperty ;
+                                                        rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> ;
+                                                        rdfs:comment "A Relation from Treatment to Measure entity, indicating a width in which a machine is capable to apply the Treatment, expressed together with its unit" ;
+                                                        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                        rdfs:label "flowAdjustment" ;
+                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "applicationWidth"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#areaDose
+<http://foodie-cloud.com/model/foodie#areaDose> rdf:type owl:ObjectProperty ;
+                                                rdfs:range <http://foodie-cloud.com/model/foodie#DoseUnit> ;
+                                                rdfs:comment "A Relation from Treatment to DoseUnit entity, indicating the minimum and maximum application rate of the Treatment together with their unit" ;
+                                                rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                rdfs:label "areaDose" ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "areaDose"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#campaign
+<http://foodie-cloud.com/model/foodie#campaign> rdf:type owl:ObjectProperty ;
+                                                rdfs:range <http://foodie-cloud.com/model/foodie#CampaignType> ;
+                                                rdfs:comment "A Relation from TreatmentPlan to CampaignType entity including the period to which the TreatmentPlan was designed" ;
+                                                rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                rdfs:label "planProduct" ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "campaign"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#evidenceParty
+<http://foodie-cloud.com/model/foodie#evidenceParty> rdf:type owl:ObjectProperty ;
+                                                     rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty> ;
+                                                     rdfs:comment "A Relation to a person or a body who inserted the Intervention into the database" ;
+                                                     rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                     rdfs:label "evidenceParty" ;
+                                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "evidenceParty"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#flowAdjustment
+<http://foodie-cloud.com/model/foodie#flowAdjustment> rdf:type owl:ObjectProperty ;
+                                                      rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> ;
+                                                      rdfs:comment "A Relation from Treatment to Measure entity, indicating whether a flow adjustment was needed for the application of the Treatment, be expressed together with its unit " ;
+                                                      rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                      rdfs:label "flowAdjustment" ;
+                                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "flowAdjustment"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#formOfTreatment
+<http://foodie-cloud.com/model/foodie#formOfTreatment> rdf:type owl:ObjectProperty ;
+                                                       rdfs:range <http://foodie-cloud.com/model/foodie#FormOfTreatmentValue> ;
+                                                       rdfs:comment "A Relation from Treatment to FormOfTreatmentValue codelist, e.g., manual (i.e. conducted manually by a person), applicationMachine (i.e. automatic or semi-automatic application by a machine), aerial (i.e. aerial application from an airplane);" ;
+                                                       rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                       rdfs:label "formOfTreatment" ;
+                                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "formOfTreatment"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#interventionGeometry
+<http://foodie-cloud.com/model/foodie#interventionGeometry> rdf:type owl:ObjectProperty ;
+                                                            rdfs:range <http://www.opengis.net/ont/geosparql#Geometry> ;
+                                                            rdfs:comment "A Relation to the geometry defining the spatial extent of the Intervention" ;
+                                                            rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                            rdfs:label "interventionGeometry" ;
+                                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "interventionGeometry"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#interventionPlot
+<http://foodie-cloud.com/model/foodie#interventionPlot> rdf:type owl:ObjectProperty ;
+                                                        owl:equivalentProperty <https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel> ;
+                                                        rdfs:range <http://foodie-cloud.com/model/foodie#Plot> ;
+                                                        rdfs:comment "A Relation from Intervention to Plot. A plot can have few intervetions." ;
+                                                        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                        rdfs:label "interventionPlot" ;
+                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "interventionPlot"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#interventionZone
+<http://foodie-cloud.com/model/foodie#interventionZone> rdf:type owl:ObjectProperty ;
+                                                        rdfs:range <http://foodie-cloud.com/model/foodie#ManagementZone> ;
+                                                        rdfs:comment "A Relation from Intervention to ManagementZone." ;
+                                                        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                        rdfs:label "interventionZone" ;
+                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "interventionZone"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#maximumDose
+<http://foodie-cloud.com/model/foodie#maximumDose> rdf:type owl:ObjectProperty ;
+                                                   rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> ;
+                                                   rdfs:comment "A Relation from DoseUnit to Measure entity, indicating the maximumDose" ;
+                                                   rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                   rdfs:label "maximumDose" ;
+                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "maximumDose"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#minimumDose
+<http://foodie-cloud.com/model/foodie#minimumDose> rdf:type owl:ObjectProperty ;
+                                                   rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> ;
+                                                   rdfs:comment "A Relation from DoseUnit to Measure entity, indicating the minimuDose" ;
+                                                   rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                   rdfs:label "minimumDose" ;
+                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "minimumDose"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#motionSpeed
+<http://foodie-cloud.com/model/foodie#motionSpeed> rdf:type owl:ObjectProperty ;
+                                                   rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> ;
+                                                   rdfs:comment "A Relation from Treatment to Measure entity, indicating recommended speed for the application of the treatment that should be expressed together with its unit" ;
+                                                   rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                   rdfs:label "motionSpeed" ;
+                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "motionSpeed"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#operator
+<http://foodie-cloud.com/model/foodie#operator> rdf:type owl:ObjectProperty ;
+                                                owl:equivalentProperty <https://smartdatamodels.org/dataModel.Agrifood/hasOperator> ;
+                                                rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty> ;
+                                                rdfs:comment "A Relation to the person(s) who has conducted an Intervention" ;
+                                                rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                rdfs:label "operator" ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "operator"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#period
+<http://foodie-cloud.com/model/foodie#period> rdf:type owl:ObjectProperty ;
+                                              rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period> ;
+                                              rdfs:comment "A Relation from CampaignType to Period entity indicating the period to which the TreatmentPlan was designed. Typically a campaign may be an agronomical year or a season e.g. between 2015-03-01 and 2015-09-30" ;
+                                              rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                              rdfs:label "period" ;
+                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "period"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#plan
+<http://foodie-cloud.com/model/foodie#plan> rdf:type owl:ObjectProperty ;
+                                            rdfs:range <http://foodie-cloud.com/model/foodie#TreatmentPlan> ;
+                                            rdfs:comment "A Relation from Treatment to TreatmentPlan entity." ;
+                                            rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                            rdfs:label "plan" ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "plan"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#planProduct
+<http://foodie-cloud.com/model/foodie#planProduct> rdf:type owl:ObjectProperty ;
+                                                   rdfs:range <http://foodie-cloud.com/model/foodie#Product> ;
+                                                   rdfs:comment "A Relation from TreatmentPlan to Product entity." ;
+                                                   rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                   rdfs:label "planProduct" ;
+                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "planProduct"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#pressure
+<http://foodie-cloud.com/model/foodie#pressure> rdf:type owl:ObjectProperty ;
+                                                rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> ;
+                                                rdfs:comment "A Relation from Treatment to Measure entity, indicating the recommended pressure for the application of the Treatment that should be expressed together with its unit" ;
+                                                rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                rdfs:label "pressure" ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "pressure"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#quantity
+<http://foodie-cloud.com/model/foodie#quantity> rdf:type owl:ObjectProperty ;
+                                                rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> ;
+                                                rdfs:comment "A Relation from Treatment to Measure entity, indicating the value of a physical quantity of applied Treatment, together with its unit." ;
+                                                rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                rdfs:label "quantity" ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "quantity"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#supervisor
+<http://foodie-cloud.com/model/foodie#supervisor> rdf:type owl:ObjectProperty ;
+                                                  rdfs:range <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty> ;
+                                                  rdfs:comment "A Relation from Intervention to ResponsibleParty. ResponsibleParty contains the entity who carries out the intervention (a person or a body who has the power and authority to give instructions and guarantee the conducted Intervention)" ;
+                                                  rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                  rdfs:label "supervisor" ;
+                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "supervisor"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#treatmentProduct
+<http://foodie-cloud.com/model/foodie#treatmentProduct> rdf:type owl:ObjectProperty ;
+                                                        rdfs:range <http://foodie-cloud.com/model/foodie#Product> ;
+                                                        rdfs:comment "A Relation from Treatment to Product entity." ;
+                                                        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                        rdfs:label "treatmentProduct" ;
+                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "treatmentProduct"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#treatmentPurpose
+<http://foodie-cloud.com/model/foodie#treatmentPurpose> rdf:type owl:ObjectProperty ;
+                                                        rdfs:range <http://foodie-cloud.com/model/foodie#TreatmentPurposeValue> ;
+                                                        rdfs:comment "A Relation from Treatment to TreatmentPurposeValue codelist, e.g., disease, fertilization, pest, weed" ;
+                                                        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                        rdfs:label "treatmentPurpose" ;
+                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "treatmentPurpose"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel> rdf:type owl:ObjectProperty ;
+                                                               rdfs:comment "Reference to the AgriParcel to which this entity relates." ;
+                                                               rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                               rdfs:label "operationHasAgriParcel"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/hasOperator
+<https://smartdatamodels.org/dataModel.Agrifood/hasOperator> rdf:type owl:ObjectProperty ;
+                                                             rdfs:comment "Reference to the operator conducting the operation" ;
+                                                             rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                             rdfs:label "hasOperator"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://foodie-cloud.com/model/foodie#creationDateTime
+<http://foodie-cloud.com/model/foodie#creationDateTime> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:range xsd:dateTime ;
+                                                        rdfs:comment "date and time of the observed operation/intervention." ;
+                                                        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                        rdfs:label "creationDateTime" ;
+                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "creationDateTime"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#status
+<http://foodie-cloud.com/model/foodie#status> rdf:type owl:DatatypeProperty ;
+                                              owl:equivalentProperty <https://uri.etsi.org/ngsi-ld/status> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Status of the intervention, e.g. approved, pending, completed as a free text" ;
+                                              rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                              rdfs:label "status" ;
+                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "status"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#treatmentDescription
+<http://foodie-cloud.com/model/foodie#treatmentDescription> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:range xsd:string ;
+                                                            rdfs:comment "Description of the observed operation/intervention." ;
+                                                            rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                            rdfs:label "treatmentDescription" ;
+                                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "treatmentDescription"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#treatmentPlanCode
+<http://foodie-cloud.com/model/foodie#treatmentPlanCode> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:range xsd:string ;
+                                                         rdfs:comment "Identification code of the observed operation/intervention." ;
+                                                         rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                         rdfs:label "treatmentPlanCode" ;
+                                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "treatmentPlanCode"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#treatmentPlanCreation
+<http://foodie-cloud.com/model/foodie#treatmentPlanCreation> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:range xsd:dateTime ;
+                                                             rdfs:comment "Date and time of the creation of the operation/intervention plan" ;
+                                                             rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                             rdfs:label "treatmentPlanCreation" ;
+                                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "treatmentPlanCreation"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/endedAt
+<https://smartdatamodels.org/dataModel.Agrifood/endedAt> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:subPropertyOf <http://portele.de/ont/inspire/baseInspire#validTo> ;
+                                                         rdfs:range xsd:dateTime ;
+                                                         rdfs:comment "Timestamp when the operation actually finished." ;
+                                                         rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                         rdfs:label "endedAt"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/irrigationRecord
+<https://smartdatamodels.org/dataModel.Agrifood/irrigationRecord> rdf:type owl:DatatypeProperty ;
+                                                                  rdfs:comment "Relationship with the irrigation record of the execution" ;
+                                                                  rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                                  rdfs:label "irrigationRecord"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/operationType
+<https://smartdatamodels.org/dataModel.Agrifood/operationType> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:subPropertyOf <http://foodie-cloud.com/model/foodie#type> ;
+                                                               rdfs:comment "A choice from an enumerated list describing the operation performed on the parcel. One of: fertiliser, inspection, pesticide, water, other." ;
+                                                               rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                               rdfs:label "operationType"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/plannedEndAt
+<https://smartdatamodels.org/dataModel.Agrifood/plannedEndAt> rdf:type owl:DatatypeProperty ;
+                                                              rdfs:range xsd:dateTime ;
+                                                              rdfs:comment "The planned end date/timestamp for the operation. Note that this is advisory and the actual time the operation finishes may be before or after the planned end." ;
+                                                              rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                              rdfs:label "plannedEndAt"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/plannedStartAt
+<https://smartdatamodels.org/dataModel.Agrifood/plannedStartAt> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:range xsd:dateTime ;
+                                                                rdfs:comment "The planned start date/timestamp for the operation. Note that this is advisory and the actual time the operation starts may be before or after the planned start." ;
+                                                                rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                                rdfs:label "plannedStartAt"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/quantity
+<https://smartdatamodels.org/dataModel.Agrifood/quantity> rdf:type owl:DatatypeProperty ;
+                                                          rdfs:comment "The total quantity of water or product used/ applied. It is recommended this is measured in litres for liquids or kilogrammes for solids." ;
+                                                          rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                          rdfs:label "quantity"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/reportedAt
+<https://smartdatamodels.org/dataModel.Agrifood/reportedAt> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:range xsd:dateTime ;
+                                                            rdfs:comment "Timestamp when the event/ fault was reported." ;
+                                                            rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                            rdfs:label "reportedAt"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/result
+<https://smartdatamodels.org/dataModel.Agrifood/result> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:subPropertyOf <http://foodie-cloud.com/model/foodie#notes> ;
+                                                        rdfs:comment "A description of the results of the operation. One of: ok, aborted, failed." ;
+                                                        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                        rdfs:label "result"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/startedAt
+<https://smartdatamodels.org/dataModel.Agrifood/startedAt> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:subPropertyOf <http://portele.de/ont/inspire/baseInspire#validFrom> ;
+                                                           rdfs:range xsd:dateTime ;
+                                                           rdfs:comment "Timestamp when the operation actually started to be performed." ;
+                                                           rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                           rdfs:label "startedAt"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/waterSource
+<https://smartdatamodels.org/dataModel.Agrifood/waterSource> rdf:type owl:DatatypeProperty ;
+                                                             rdfs:comment "Type of water sources. One of: borehole, rainfall, river, rainwater capture, water dam, commercial supply." ;
+                                                             rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                             rdfs:label "waterSource"@en .
+
+
+###  https://uri.etsi.org/ngsi-ld/status
+<https://uri.etsi.org/ngsi-ld/status> rdf:type owl:DatatypeProperty ;
+                                      rdfs:comment "A choice from an enumerated list describing the status. One of: planned, ongoing, finished, scheduled, cancelled." ;
+                                      rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
+                                      rdfs:label "status"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period
+<http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period> rdf:type owl:Class .
+
+
+###  http://foodie-cloud.com/model/foodie#CampaignType
+<http://foodie-cloud.com/model/foodie#CampaignType> rdf:type owl:Class ;
+                                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#period> ;
+                                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ;
+                                                    rdfs:comment "An entity defining the types of campaigns" ;
+                                                    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                    rdfs:label "CampaignType" ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "CampaignType"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#DoseUnit
+<http://foodie-cloud.com/model/foodie#DoseUnit> rdf:type owl:Class ;
+                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://foodie-cloud.com/model/foodie#maximumDose> ;
+                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                ] ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://foodie-cloud.com/model/foodie#minimumDose> ;
+                                                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                ] ;
+                                                rdfs:comment "An entity defining the Doses for operation/intervention" ;
+                                                rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                rdfs:label "DoseUnit" ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "DoseUnit"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#FormOfTreatmentValue
+<http://foodie-cloud.com/model/foodie#FormOfTreatmentValue> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                                            rdfs:comment "An entity defining the form of Intervention/Treatment as codelist, e.g., manual (i.e. conducted manually by a person), applicationMachine (i.e. automatic or semi-automatic application by a machine), aerial (i.e. aerial application from an airplane)" ;
+                                                            rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                            rdfs:label "FormOfTreatmentValue" ;
+                                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "FormOfTreatmentValue"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#Intervention
+<http://foodie-cloud.com/model/foodie#Intervention> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#evidenceParty> ;
+                                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#interventionGeometry> ;
+                                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#interventionPlot> ;
+                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#supervisor> ;
+                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#creationDateTime> ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#description> ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#status> ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#type> ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://portele.de/ont/inspire/baseInspire#validFrom> ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#notes> ;
+                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://foodie-cloud.com/model/foodie#price> ;
+                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://portele.de/ont/inspire/baseInspire#validTo> ;
+                                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] ;
+                                                    rdfs:comment "An entity of operation or intervention." ;
+                                                    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                    rdfs:label "Intervention" ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Intervention"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#ManagementZone
+<http://foodie-cloud.com/model/foodie#ManagementZone> rdf:type owl:Class .
+
+
+###  http://foodie-cloud.com/model/foodie#Plot
+<http://foodie-cloud.com/model/foodie#Plot> rdf:type owl:Class .
+
+
+###  http://foodie-cloud.com/model/foodie#Product
+<http://foodie-cloud.com/model/foodie#Product> rdf:type owl:Class .
+
+
+###  http://foodie-cloud.com/model/foodie#Treatment
+<http://foodie-cloud.com/model/foodie#Treatment> rdf:type owl:Class ;
+                                                 owl:equivalentClass <https://smartdatamodels.org/dataModel.Agrifood/AgriParcelOperation> ;
+                                                 rdfs:subClassOf <http://foodie-cloud.com/model/foodie#Intervention> ,
+                                                                 <http://www.opengis.net/ont/geosparql#Feature> ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://foodie-cloud.com/model/foodie#treatmentProduct> ;
+                                                                   owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://foodie-cloud.com/model/foodie#formOfTreatment> ;
+                                                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://foodie-cloud.com/model/foodie#quantity> ;
+                                                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://foodie-cloud.com/model/foodie#applicationWidth> ;
+                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://foodie-cloud.com/model/foodie#areaDose> ;
+                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://foodie-cloud.com/model/foodie#flowAdjustment> ;
+                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://foodie-cloud.com/model/foodie#motionSpeed> ;
+                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://foodie-cloud.com/model/foodie#plan> ;
+                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://foodie-cloud.com/model/foodie#pressure> ;
+                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://foodie-cloud.com/model/foodie#price> ;
+                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <http://foodie-cloud.com/model/foodie#treatmentDescription> ;
+                                                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] ;
+                                                 rdfs:comment "An entity defining the attributes of Treatments" ;
+                                                 rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                 rdfs:label "Treatment" ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Treatment"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#TreatmentPlan
+<http://foodie-cloud.com/model/foodie#TreatmentPlan> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://foodie-cloud.com/model/foodie#campaign> ;
+                                                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://foodie-cloud.com/model/foodie#planProduct> ;
+                                                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://foodie-cloud.com/model/foodie#description> ;
+                                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://foodie-cloud.com/model/foodie#treatmentPlanCreation> ;
+                                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://foodie-cloud.com/model/foodie#type> ;
+                                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://foodie-cloud.com/model/foodie#notes> ;
+                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://foodie-cloud.com/model/foodie#treatmentPlanCode> ;
+                                                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ;
+                                                     rdfs:comment "An entity defining the Treatment plans" ;
+                                                     rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                     rdfs:label "TreatmentPlan" ;
+                                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "TreatmentPlan"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#TreatmentPurposeValue
+<http://foodie-cloud.com/model/foodie#TreatmentPurposeValue> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                                             rdfs:comment "An entity defining the purpose of an Intervention/Treatment as codelist, e.g., disease (i.e. a pathological condition that affects part or all of production in the Plot), fertilization (i.e. a need to apply a fertilizer to soil), pest (i.e. a plant or animal detrimental to a human), weed (i.e. to reduce plants considered undesirable in a particular situation)" ;
+                                                             rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                             rdfs:label "TreatmentPurposeValue" ;
+                                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "TreatmentPurposeValue"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/AgriParcelOperation
+<https://smartdatamodels.org/dataModel.Agrifood/AgriParcelOperation> rdf:type owl:Class ;
+                                                                     rdfs:comment "This entity contains a harmonised description of a generic operations performed on a parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+                                                                     rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> ;
+                                                                     rdfs:label "AgriParcelOperation" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

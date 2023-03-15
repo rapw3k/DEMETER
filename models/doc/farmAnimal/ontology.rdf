@@ -1,0 +1,556 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/demeter/agri/farmAnimal#"
+     xml:base="https://w3id.org/demeter/agri/farmAnimal"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:core="https://saref.etsi.org/core/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
+     xmlns:agriCommon="https://w3id.org/demeter/agri/agriCommon#"
+     xmlns:smartdatamodels="https://smartdatamodels.org/">
+    <owl:Ontology rdf:about="https://w3id.org/demeter/agri/farmAnimal">
+        <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/farmAnimal/2.0"/>
+        <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
+        <terms:contributor rdf:resource="_:genid-nodeid-node1grit4k9ax3"/>
+        <terms:contributor rdf:nodeID="genid1"/>
+        <terms:contributor rdf:nodeID="genid3"/>
+        <terms:creator rdf:nodeID="genid5"/>
+        <terms:description xml:lang="en">FarmAnimal is one of the agri profiles of the Agriculture Information Model (AIM). This profile was created by reusing and aligning well-known ontologies and vocabularies</terms:description>
+        <terms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</terms:rights>
+        <terms:title xml:lang="en">AIM FarmAnimal</terms:title>
+        <rdfs:comment xml:lang="en">The Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
+        <rdfs:label xml:lang="en">AIM FarmAnimal</rdfs:label>
+        <owl:versionInfo>2.0</owl:versionInfo>
+        <foaf:maker rdf:nodeID="genid7"/>
+    </owl:Ontology>
+    <rdf:Description rdf:nodeID="genid1">
+        <foaf:name>Rob Atkinson</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>OGC</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid3">
+        <foaf:name>Ioanna Roussaki</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>ICCS</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid5">
+        <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+        <foaf:name>Raul Palma</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>PSNC</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid7">
+        <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
+        <foaf:name>DEMETER project</foaf:name>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal -->
+
+
+    <owl:ObjectProperty rdf:about="http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal">
+        <rdfs:range rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies"/>
+        <rdfs:comment>relatinship to included animal in e.g., a farm site</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#"/>
+        <rdfs:label xml:lang="en">includesAnimal</rdfs:label>
+        <skos:prefLabel xml:lang="en">includesAnimal</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/TAXRANK_1000000 -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/TAXRANK_1000000"/>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/hasID -->
+
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4agri/hasID">
+        <rdfs:range rdf:resource="https://saref.etsi.org/saref4agri/ID"/>
+        <rdfs:comment>A relation to express the unique identifier of an animal.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label xml:lang="en">has id</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/hasMember -->
+
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4agri/hasMember">
+        <owl:inverseOf rdf:resource="https://saref.etsi.org/saref4agri/isMemberOf"/>
+        <rdfs:comment>A relation to represent the members of an AnimalGroup.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>has member</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/isLocatedIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4agri/isLocatedIn">
+        <owl:inverseOf rdf:resource="https://saref.etsi.org/saref4agri/isLocationOf"/>
+        <rdfs:comment>A relation to express the physical location of a saref4agri entity (e.g., an animal)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>is located in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/isLocationOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4agri/isLocationOf">
+        <rdfs:comment>Location of a entity e.g. a farm</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>is location of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/isMemberOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://saref.etsi.org/saref4agri/isMemberOf">
+        <rdfs:comment>A relation to express that an animal can be part of groups.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>is member of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/calvedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/calvedBy">
+        <rdfs:comment>Mother of the animal</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">calvedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/fedWith -->
+
+
+    <owl:ObjectProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/fedWith">
+        <rdfs:comment>Food used for the animal</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">fedWith</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/locatedAt -->
+
+
+    <owl:ObjectProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/locatedAt">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/saref4agri/isLocatedIn"/>
+        <rdfs:comment>AgriParcel relationship</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">locatedAt</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/ownedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/ownedBy">
+        <rdfs:comment>The owner of the animal</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">ownedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/siredBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/siredBy">
+        <rdfs:comment>Father of the animal</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">siredBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#livestockNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="http://foodie-cloud.com/model/foodie#livestockNumber">
+        <owl:equivalentProperty rdf:resource="https://smartdatamodels.org/dataModel.Agrifood/legalID"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>A relation to express the unique identification number of an animal in a farm</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>livestock number</rdfs:label>
+        <skos:prefLabel xml:lang="en">livestockNumber</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://foodie-cloud.com/model/foodie#livestockType -->
+
+
+    <owl:DatatypeProperty rdf:about="http://foodie-cloud.com/model/foodie#livestockType">
+        <owl:equivalentProperty rdf:resource="https://smartdatamodels.org/dataModel.Agrifood/species"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A relation to express the type of an animal in a farm</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
+        <rdfs:label>livestock type</rdfs:label>
+        <skos:prefLabel xml:lang="en">livestockType</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/hasBirthDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4agri/hasBirthDate">
+        <owl:equivalentProperty rdf:resource="https://smartdatamodels.org/dataModel.Agrifood/birthdate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>A relation to express the birth date of an animal.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>has birth date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/hasDeathDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://saref.etsi.org/saref4agri/hasDeathDate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>A relation to express the death date of an animal.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>has death date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/birthdate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/birthdate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Animal&apos;s birthdate</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">birthdate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/breed -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/breed">
+        <rdfs:comment>Breed of the animal</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">breed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/healthCondition -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/healthCondition">
+        <rdfs:comment>Health Condition of the animal, e.g., healthy, sick, inTreatment</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">healthCondition</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/legalID -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/legalID">
+        <rdfs:comment>Legal ID of the animal</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">legalID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition">
+        <rdfs:comment>Phenological Condition of the animal, e.g., lactatingBaby, grazingBaby, maleAdult, femaleAdult, maleYoung, femaleYoung</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">phenologicalCondition</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/relatedSource -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/relatedSource">
+        <rdfs:comment>ID of the the current entity in external applications</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">relatedSource</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition">
+        <rdfs:comment>Reproductive Condition of the animal, e.g., noStatus, inactive, inCalf, inHeat, active</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">reproductiveCondition</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/sex -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/sex">
+        <rdfs:comment>Sex of the animal, i.e., male, female</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">sex</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/species -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/species">
+        <rdfs:comment>Species to which the animal belongs (dairy cattle, beef cattle, sheep, goat, horse, pig)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">species</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/weight -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/weight">
+        <rdfs:comment>The weight of the animal as a number</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">weight</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/welfareCondition -->
+
+
+    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/welfareCondition">
+        <rdfs:comment>Indicator of the animal welfare, e.g., issue, adequate</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label xml:lang="en">welfareCondition</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies -->
+
+
+    <owl:Class rdf:about="http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies">
+        <owl:equivalentClass rdf:resource="https://saref.etsi.org/saref4agri/Animal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#livestockNumber"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#livestockType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Identifies an animal or group of animals of the same species kept on the specific site</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://inspire.ec.europa.eu/schemas/af/3.0#"/>
+        <rdfs:label>Farm Animal Species</rdfs:label>
+        <skos:prefLabel xml:lang="en">FarmAnimalSpecies</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/core/FeatureOfInterest -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/core/FeatureOfInterest"/>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/Animal -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/Animal">
+        <owl:equivalentClass rdf:resource="https://smartdatamodels.org/dataModel.Agrifood/Animal"/>
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TAXRANK_1000000"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/TAXRANK_0000000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/isLocatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/isMemberOf"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4agri/AnimalGroup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/hasID"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://saref.etsi.org/saref4agri/ID"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/hasBirthDate"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/hasDeathDate"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/hasName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An individual and identifiable living organism that feeds on organic matter, typically having specialized sense organs and nervous system and able to respond rapidly to stimuli.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>Animal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/AnimalGroup -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/AnimalGroup">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/hasMember"/>
+                <owl:someValuesFrom rdf:resource="https://saref.etsi.org/saref4agri/Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/isLocatedIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/hasName"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A collection of one or multiple animals.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>Animal Group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://saref.etsi.org/saref4agri/ID -->
+
+
+    <owl:Class rdf:about="https://saref.etsi.org/saref4agri/ID">
+        <rdfs:comment>A class of animal IDs</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+        <rdfs:label>ID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://smartdatamodels.org/dataModel.Agrifood/Animal -->
+
+
+    <owl:Class rdf:about="https://smartdatamodels.org/dataModel.Agrifood/Animal">
+        <rdfs:comment>An animal</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json"/>
+        <rdfs:label>Animal</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

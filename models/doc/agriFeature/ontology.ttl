@@ -1,0 +1,512 @@
+@prefix : <https://w3id.org/demeter/agri/agriFeature#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/demeter/agri/agriFeature#> .
+
+<https://w3id.org/demeter/agri/agriFeature> rdf:type owl:Ontology ;
+                                             owl:versionIRI <https://w3id.org/demeter/agri/agriFeature/2.0> ;
+                                             owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
+                                             <http://purl.org/dc/terms/contributor> _:genid-nodeid-node1grisrp7sx3 ,
+                                                                                    _:genid1 ,
+                                                                                    _:genid3 ;
+                                             <http://purl.org/dc/terms/creator> _:genid5 ;
+                                             <http://purl.org/dc/terms/description> "The DEMETER AgriFeature is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+                                             <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+                                             <http://purl.org/dc/terms/title> "DEMETER AgriFeature"@en ;
+                                             rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+                                             rdfs:label "DEMETER AgriFeature"@en ;
+                                             owl:versionInfo "2.0" ;
+                                             <http://xmlns.com/foaf/0.1/maker> _:genid7 .
+
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "ICCS"
+                                           ] .
+
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "OGC"
+                                           ] .
+
+_:genid5 rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+          <http://xmlns.com/foaf/0.1/name> "Raul Palma" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "PSNC"
+                                           ] .
+
+_:genid7 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> ;
+          <http://xmlns.com/foaf/0.1/name> "DEMETER project" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://foodie-cloud.com/model/foodie#containsPlot
+<http://foodie-cloud.com/model/foodie#containsPlot> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <https://saref.etsi.org/saref4agri/contains> ;
+                                                    rdfs:range <http://foodie-cloud.com/model/foodie#Plot> ;
+                                                    rdfs:comment "A relation from Site to Plot " ;
+                                                    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                    rdfs:label "containsPlot"@en ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "containsPlot"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#containsZone
+<http://foodie-cloud.com/model/foodie#containsZone> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <https://saref.etsi.org/saref4agri/contains> ;
+                                                    rdfs:range <http://foodie-cloud.com/model/foodie#ManagementZone> ;
+                                                    rdfs:comment "A relation from Plot to Management zone" ;
+                                                    rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                    rdfs:label "containsZone"@en ;
+                                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "containsZone"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#crop
+<http://foodie-cloud.com/model/foodie#crop> rdf:type owl:ObjectProperty ;
+                                            owl:equivalentProperty <https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop> ;
+                                            rdfs:comment "A relation from Plot to CropSpecies" ;
+                                            rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                            rdfs:label "crop"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "crop"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#holdingPlot
+<http://foodie-cloud.com/model/foodie#holdingPlot> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://saref.etsi.org/saref4agri/isContainedIn> ;
+                                                   rdfs:range <http://inspire.ec.europa.eu/schemas/af/3.0#Site> ;
+                                                   rdfs:comment "A relation from Plot to Site" ;
+                                                   rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                   rdfs:label "holdingPlot"@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "holdingPlot"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#holdingSite
+<http://foodie-cloud.com/model/foodie#holdingSite> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://saref.etsi.org/saref4agri/isContainedIn> ;
+                                                   rdfs:range <http://inspire.ec.europa.eu/schemas/af/3.0#Holding> ;
+                                                   rdfs:comment "A relation from Site to Holding" ;
+                                                   rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                   rdfs:label "holdingSite"@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "holdingSite"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#holdingZone
+<http://foodie-cloud.com/model/foodie#holdingZone> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf <https://saref.etsi.org/saref4agri/isContainedIn> ;
+                                                   rdfs:range <http://foodie-cloud.com/model/foodie#Plot> ;
+                                                   rdfs:comment "A relation from Management Zone to Plot" ;
+                                                   rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                   rdfs:label "holdingPlot"@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "holdingZone"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#machine
+<http://foodie-cloud.com/model/foodie#machine> rdf:type owl:ObjectProperty ;
+                                               rdfs:range <http://foodie-cloud.com/model/foodie#MachineType> ;
+                                               rdfs:comment "A relation from Intervention to MachineType" ;
+                                               rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                               rdfs:label "machine"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "machine"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#originType
+<http://foodie-cloud.com/model/foodie#originType> rdf:type owl:ObjectProperty ;
+                                                  rdfs:range <http://foodie-cloud.com/model/foodie#OriginTypeValue> ;
+                                                  rdfs:comment "A relation to the origin of a Plot when taking into consideration only two options: manual (created by human/user) and system (produced by the platform" ;
+                                                  rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                  rdfs:label "containsZone"@en ;
+                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "originType"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#tractor
+<http://foodie-cloud.com/model/foodie#tractor> rdf:type owl:ObjectProperty ;
+                                               rdfs:range <http://foodie-cloud.com/model/foodie#TractorType> ;
+                                               rdfs:comment "A relation from Intervention to TractorType" ;
+                                               rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                               rdfs:label "tractor"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "tractor"@en .
+
+
+###  http://inspire.ec.europa.eu/schemas/af/3.0#activity
+<http://inspire.ec.europa.eu/schemas/af/3.0#activity> rdf:type owl:ObjectProperty ;
+                                                      rdfs:range <http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue> ;
+                                                      rdfs:comment "A relation to the classification of the economic activity of the site" ;
+                                                      rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> ;
+                                                      rdfs:label "activity"@en ;
+                                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "activity"@en .
+
+
+###  http://inspire.ec.europa.eu/schemas/af/3.0#contains
+<http://inspire.ec.europa.eu/schemas/af/3.0#contains> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf <https://saref.etsi.org/saref4agri/contains> ;
+                                                      rdfs:range <http://inspire.ec.europa.eu/schemas/af/3.0#Site> ;
+                                                      rdfs:comment "A relation from Holding to Site " ;
+                                                      rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> ;
+                                                      rdfs:label "contains"@en ;
+                                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "contains"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> owl:equivalentProperty <http://www.w3.org/2003/01/geo/wgs84_pos#location> .
+
+
+###  https://saref.etsi.org/saref4agri/contains
+<https://saref.etsi.org/saref4agri/contains> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfContains> ;
+                                             owl:inverseOf <https://saref.etsi.org/saref4agri/isContainedIn> ;
+                                             rdfs:comment "A realtion to represent the contained land parcel" ;
+                                             rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                             rdfs:label "contains" .
+
+
+###  https://saref.etsi.org/saref4agri/isContainedIn
+<https://saref.etsi.org/saref4agri/isContainedIn> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#sfWithin> ;
+                                                  rdfs:comment "A relation inverse of s4agri:contains" ;
+                                                  rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                                  rdfs:label "is contained in"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop> rdf:type owl:ObjectProperty ;
+                                                             rdfs:comment "Reference to the crop associated with this parcel" ;
+                                                             rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+                                                             rdfs:label "hasAgriCrop"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf <https://saref.etsi.org/saref4agri/contains> ;
+                                                               rdfs:comment "List of agri parcels belonging to the farm" ;
+                                                               rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json> ;
+                                                               rdfs:label "hasAgriParcel"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren> rdf:type owl:ObjectProperty ;
+                                                                       rdfs:subPropertyOf <https://saref.etsi.org/saref4agri/contains> ;
+                                                                       rdfs:comment "Related sub AgriParcel records to which this entity relates" ;
+                                                                       rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+                                                                       rdfs:label "hasAgriParcelChildren"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:subPropertyOf <https://saref.etsi.org/saref4agri/isContainedIn> ;
+                                                                     rdfs:comment "Reference to the parent AgriParcel" ;
+                                                                     rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+                                                                     rdfs:label "hasAgriParcelParent"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil> rdf:type owl:ObjectProperty ;
+                                                             rdfs:comment "Reference to the soil associated with this parcel of land" ;
+                                                             rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+                                                             rdfs:label "hasAgriSoil"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/landLocation
+<https://smartdatamodels.org/dataModel.Agrifood/landLocation> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf <https://uri.etsi.org/ngsi-ld/location> ;
+                                                              rdfs:comment "Geometry defining the boundaries of the farm land" ;
+                                                              rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json> ;
+                                                              rdfs:label "landLocation"@en .
+
+
+###  https://uri.etsi.org/ngsi-ld/location
+<https://uri.etsi.org/ngsi-ld/location> rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+                                        rdfs:comment "The geo:json encoded polygon / multi-polygon describing this item.  It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon" ;
+                                        rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
+                                        rdfs:label "location"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://smartdatamodels.org/dataModel.Agrifood/area
+<https://smartdatamodels.org/dataModel.Agrifood/area> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:comment "The area of the parcel nominally in square meters." ;
+                                                      rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+                                                      rdfs:label "area"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/cropStatus
+<https://smartdatamodels.org/dataModel.Agrifood/cropStatus> rdf:type owl:DatatypeProperty ;
+                                                            rdfs:comment "A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting." ;
+                                                            rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+                                                            rdfs:label "cropStatus"@en .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt
+<https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt> rdf:type owl:DatatypeProperty ;
+                                                               rdfs:range xsd:dateTime ;
+                                                               rdfs:comment "Indicates the date when the crop was last planted." ;
+                                                               rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+                                                               rdfs:label "lastPlantedAt"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://foodie-cloud.com/model/foodie#MachineType
+<http://foodie-cloud.com/model/foodie#MachineType> rdf:type owl:Class .
+
+
+###  http://foodie-cloud.com/model/foodie#ManagementZone
+<http://foodie-cloud.com/model/foodie#ManagementZone> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+                                                                        owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://foodie-cloud.com/model/foodie#code> ;
+                                                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://www.w3.org/ns/prov#generatedAtTime> ;
+                                                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://foodie-cloud.com/model/foodie#notes> ;
+                                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://portele.de/ont/inspire/baseInspire#validFrom> ;
+                                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://portele.de/ont/inspire/baseInspire#validTo> ;
+                                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://www.w3.org/ns/prov#invalidatedAtTime> ;
+                                                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                      ] ;
+                                                      rdfs:comment "A spatial subset of a Plot that has specific properties like electric conductivity, organic matter, pH, soil texture, soil type or soil nutrients" ;
+                                                      rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                      rdfs:label "ManagementZone"@en ;
+                                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "ManagementZone"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#OriginTypeValue
+<http://foodie-cloud.com/model/foodie#OriginTypeValue> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                                       rdfs:comment "Origin of a Plot when taking into consideration only two options: manual (created by human user) and system generated" ;
+                                                       rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                                       rdfs:label "OriginTypeValue"@en ;
+                                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "OriginTypeValue"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#Plot
+<http://foodie-cloud.com/model/foodie#Plot> rdf:type owl:Class ;
+                                            owl:equivalentClass <https://saref.etsi.org/saref4agri/Parcel> ;
+                                            rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+                                                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://foodie-cloud.com/model/foodie#code> ;
+                                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://portele.de/ont/inspire/baseInspire#validFrom> ;
+                                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://foodie-cloud.com/model/foodie#description> ;
+                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://portele.de/ont/inspire/baseInspire#validTo> ;
+                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://www.w3.org/ns/prov#generatedAtTime> ;
+                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://www.w3.org/ns/prov#invalidatedAtTime> ;
+                                                              owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                            ] ;
+                                            rdfs:comment "A continuous area of agricultural land with one type of crop species, cultivated by one user in one farming mode, e.g., conventional, transitional, organic farming" ;
+                                            rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                                            rdfs:label "Plot"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Plot"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#TractorType
+<http://foodie-cloud.com/model/foodie#TractorType> rdf:type owl:Class .
+
+
+###  http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex
+<http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex> rdf:type owl:Class .
+
+
+###  http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue
+<http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                                                             rdfs:comment "The classification of the economic activity according to the NACE" ;
+                                                                             rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/act-core/3.0#> ;
+                                                                             rdfs:label "EconomicActivityNACEValue"@en ,
+                                                                                        "EconomicActivityNACEValue" .
+
+
+###  http://inspire.ec.europa.eu/schemas/af/3.0#Holding
+<http://inspire.ec.europa.eu/schemas/af/3.0#Holding> rdf:type owl:Class ;
+                                                     owl:equivalentClass <https://saref.etsi.org/saref4agri/Farm> ;
+                                                     rdfs:subClassOf <http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex> ,
+                                                                     <http://www.opengis.net/ont/geosparql#Feature> ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://inspire.ec.europa.eu/schemas/af/3.0#contains> ;
+                                                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ,
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+                                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                     ] ;
+                                                     rdfs:comment "The whole area and all infrastructures included on it, covering the same or different sites, under the control of an operator to perform agricultural or aquaculture activities" ;
+                                                     rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> ;
+                                                     rdfs:label "Holding"@en ;
+                                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Holding"@en .
+
+
+###  http://inspire.ec.europa.eu/schemas/af/3.0#Site
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://foodie-cloud.com/model/foodie#containsPlot> ;
+                                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://inspire.ec.europa.eu/schemas/af/3.0#activity> ;
+                                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://foodie-cloud.com/model/foodie#code> ;
+                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://portele.de/ont/inspire/baseInspire#validFrom> ;
+                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://portele.de/ont/inspire/baseInspire#validTo> ;
+                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://www.w3.org/ns/prov#generatedAtTime> ;
+                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ] ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://www.w3.org/ns/prov#invalidatedAtTime> ;
+                                                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ] ;
+                                                  rdfs:comment "A agricultural or aquacultural facility. All land at a same or distinct geographic location under the management control of a holding covering activities, products and services. This includes all infrastructure, equipment and materials." ;
+                                                  rdfs:isDefinedBy <http://inspire.ec.europa.eu/schemas/af/3.0#> ;
+                                                  rdfs:label "Site"@en ;
+                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Site"@en .
+
+
+###  https://saref.etsi.org/saref4agri/Building
+<https://saref.etsi.org/saref4agri/Building> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <https://saref.etsi.org/saref4agri/contains> ;
+                                                               owl:someValuesFrom <https://saref.etsi.org/saref4agri/BuildingSpace>
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <https://saref.etsi.org/saref4agri/hasName> ;
+                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                             ] ;
+                                             rdfs:comment "A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space)."@en ;
+                                             rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                             rdfs:label "Building" .
+
+
+###  https://saref.etsi.org/saref4agri/BuildingSpace
+<https://saref.etsi.org/saref4agri/BuildingSpace> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ;
+                                                  rdfs:comment "An entity used to define the physical spaces of the building. A building space contains devices or building objects."@en ;
+                                                  rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                                  rdfs:label "Building space"@en .
+
+
+###  https://saref.etsi.org/saref4agri/Crop
+<https://saref.etsi.org/saref4agri/Crop> rdf:type owl:Class .
+
+
+###  https://saref.etsi.org/saref4agri/Farm
+<https://saref.etsi.org/saref4agri/Farm> rdf:type owl:Class ;
+                                         owl:equivalentClass <https://smartdatamodels.org/dataModel.Agrifood/AgriFarm> ;
+                                         rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <https://saref.etsi.org/saref4agri/contains> ;
+                                                           owl:someValuesFrom <https://saref.etsi.org/saref4agri/Building>
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <https://saref.etsi.org/saref4agri/contains> ;
+                                                           owl:someValuesFrom <https://saref.etsi.org/saref4agri/Parcel>
+                                                         ] ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <https://saref.etsi.org/saref4agri/hasName> ;
+                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                         ] ;
+                                         rdfs:comment "A plot of land used for the scope of farming which can contain buildings and parcels."@en ;
+                                         rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                         rdfs:label "Farm" .
+
+
+###  https://saref.etsi.org/saref4agri/Parcel
+<https://saref.etsi.org/saref4agri/Parcel> rdf:type owl:Class ;
+                                           owl:equivalentClass <https://smartdatamodels.org/dataModel.Agrifood/AgriParcel> ;
+                                           rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <https://saref.etsi.org/saref4agri/contains> ;
+                                                             owl:someValuesFrom <https://saref.etsi.org/saref4agri/Crop>
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <https://saref.etsi.org/saref4agri/hasName> ;
+                                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onDataRange xsd:string
+                                                           ] ;
+                                           rdfs:comment "An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items."@en ;
+                                           rdfs:isDefinedBy <https://saref.etsi.org/saref4agri/> ;
+                                           rdfs:label "Parcel" .
+
+
+###  https://smartdatamodels.org/AgriParcel
+<https://smartdatamodels.org/AgriParcel> rdf:type owl:Class .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/AgriFarm
+<https://smartdatamodels.org/dataModel.Agrifood/AgriFarm> rdf:type owl:Class ;
+                                                          rdfs:comment "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+                                                          rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json> ;
+                                                          rdfs:label "Agri Farm" .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse
+<https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <https://smartdatamodels.org/AgriParcel> ;
+                                                                rdfs:comment "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+                                                                rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriGreenhouse/schema.json> ;
+                                                                rdfs:label "Agri Greenhouse" .
+
+
+###  https://smartdatamodels.org/dataModel.Agrifood/AgriParcel
+<https://smartdatamodels.org/dataModel.Agrifood/AgriParcel> rdf:type owl:Class ;
+                                                            rdfs:comment "This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+                                                            rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+                                                            rdfs:label "Agri Parcel" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
