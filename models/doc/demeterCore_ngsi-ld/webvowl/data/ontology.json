@@ -8,7 +8,7 @@
     },
     "iri" : "https://w3id.org/demeter/core",
     "version" : "1.0",
-    "author" : [ "_:genid2147483652" ],
+    "author" : [ "_:genid2147483650" ],
     "description" : {
       "en" : "The DEMETER core ontology includes the meta-model elements reused from NGSI-LD specification that provide a formal basis for representing 'property graphs' using RDF/RDFS/OWL."
     },
@@ -19,23 +19,23 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "_:genid2147483652",
+        "value" : "_:genid2147483650",
         "type" : "label"
       } ],
       "contributor" : [ {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "_:genid2147483653",
+        "value" : "_:genid2147483652",
         "type" : "label"
       }, {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "_:genid-nodeid-node1grit320dx3",
+        "value" : "_:genid-nodeid-node1grkvr57ex3",
         "type" : "iri"
       }, {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "_:genid2147483650",
+        "value" : "_:genid2147483651",
         "type" : "label"
       } ],
       "rights" : [ {
@@ -66,13 +66,16 @@
   },
   "namespace" : [ ],
   "class" : [ {
-    "id" : "12",
+    "id" : "6",
     "type" : "owl:Class"
   }, {
-    "id" : "8",
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
     "type" : "owl:unionOf"
   }, {
-    "id" : "16",
+    "id" : "15",
     "type" : "owl:unionOf"
   }, {
     "id" : "1",
@@ -81,19 +84,36 @@
     "id" : "5",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "10",
+    "id" : "8",
     "type" : "owl:Class"
   }, {
-    "id" : "7",
-    "type" : "owl:Thing"
-  }, {
-    "id" : "11",
-    "type" : "owl:Class"
-  }, {
-    "id" : "20",
+    "id" : "16",
     "type" : "rdfs:Literal"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
+    "iri" : "https://uri.etsi.org/ngsi-ld/Property",
+    "baseIri" : "https://uri.etsi.org/ngsi-ld",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://uri.etsi.org/ngsi-ld/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Property"
+    },
+    "comment" : {
+      "undefined" : "description instance which associates a main characteristic, which is an NGSI-LD Value, to either an NGSI-LD Entity, an NGSI-LD Relationship or another NGSI-LD Property"
+    },
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
     "iri" : "https://uri.etsi.org/ngsi-ld/Relationship",
     "baseIri" : "https://uri.etsi.org/ngsi-ld",
     "instances" : 0,
@@ -112,17 +132,17 @@
       "undefined" : "description of a directed link between a subject which is either an NGSI-LD Entity, an NGSILD Property, or another NGSI-LD Relationship on one hand, and an object, which is an NGSI-LD Entity, on the other hand"
     },
     "attributes" : [ "external" ],
-    "id" : "12"
+    "id" : "9"
   }, {
     "instances" : 0,
-    "union" : [ "6", "11" ],
+    "union" : [ "6", "13" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "8"
+    "id" : "14"
   }, {
     "instances" : 0,
-    "union" : [ "12", "10" ],
+    "union" : [ "9", "8" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "16"
+    "id" : "15"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
@@ -156,13 +176,13 @@
       "undefined" : "Informational representative of something that is supposed to exist in the real world, physically or conceptually. Any instance of such an entity shall be uniquely identified by a URI"
     },
     "attributes" : [ "external" ],
-    "id" : "10"
+    "id" : "8"
   }, {
-    "iri" : "http://www.w3.org/2002/07/owl#Thing",
-    "baseIri" : "http://owl2vowl.de",
-    "id" : "7",
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "16",
     "label" : {
-      "undefined" : "Thing"
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
     }
   }, {
     "iri" : "https://uri.etsi.org/ngsi-ld/Value",
@@ -183,14 +203,7 @@
       "undefined" : "JSON value (i.e. a string, a number, true or false, an object, an array), or a JSON-LD typed value (i.e. a string as the lexical form of the value together with a type, defined by an XSD base type or more generally an IRI), or a JSON-LD structured value (i.e. a set, a list, a language-tagged string)"
     },
     "attributes" : [ "external" ],
-    "id" : "11"
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "20",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
+    "id" : "13"
   } ],
   "property" : [ {
     "id" : "0",
@@ -199,19 +212,16 @@
     "id" : "4",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "6",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "9",
+    "id" : "7",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "13",
+    "id" : "10",
     "type" : "owl:disjointWith"
   }, {
-    "id" : "14",
+    "id" : "11",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "15",
+    "id" : "12",
     "type" : "owl:disjointWith"
   }, {
     "id" : "3",
@@ -274,7 +284,17 @@
     "attributes" : [ "external", "datatype" ],
     "id" : "4"
   }, {
-    "iri" : "https://uri.etsi.org/ngsi-ld/Property",
+    "range" : "6",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "7"
+  }, {
+    "range" : "9",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "10"
+  }, {
+    "iri" : "https://uri.etsi.org/ngsi-ld/hasObject",
     "baseIri" : "https://uri.etsi.org/ngsi-ld",
     "range" : "8",
     "annotations" : {
@@ -286,51 +306,19 @@
       } ]
     },
     "label" : {
-      "IRI-based" : "Property"
-    },
-    "domain" : "7",
-    "subproperty" : [ "2" ],
-    "comment" : {
-      "undefined" : "description instance which associates a main characteristic, which is an NGSI-LD Value, to either an NGSI-LD Entity, an NGSI-LD Relationship or another NGSI-LD Property"
-    },
-    "attributes" : [ "external", "object" ],
-    "id" : "6"
-  }, {
-    "range" : "11",
-    "domain" : "10",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "9"
-  }, {
-    "range" : "12",
-    "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "13"
-  }, {
-    "iri" : "https://uri.etsi.org/ngsi-ld/hasObject",
-    "baseIri" : "https://uri.etsi.org/ngsi-ld",
-    "range" : "10",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://uri.etsi.org/ngsi-ld/",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
       "IRI-based" : "hasObject"
     },
-    "domain" : "12",
+    "domain" : "9",
     "comment" : {
       "undefined" : "property to define object of Relationship"
     },
     "attributes" : [ "external", "object" ],
-    "id" : "14"
+    "id" : "11"
   }, {
-    "range" : "11",
-    "domain" : "12",
+    "range" : "13",
+    "domain" : "9",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "15"
+    "id" : "12"
   }, {
     "iri" : "https://uri.etsi.org/ngsi-ld/GeoProperty",
     "baseIri" : "https://uri.etsi.org/ngsi-ld",
@@ -354,19 +342,19 @@
     "attributes" : [ "external", "object" ],
     "id" : "3"
   }, {
-    "range" : "12",
-    "domain" : "10",
+    "range" : "9",
+    "domain" : "8",
     "attributes" : [ "anonymous", "object" ],
     "id" : "17"
   }, {
-    "range" : "6",
-    "domain" : "10",
+    "range" : "13",
+    "domain" : "8",
     "attributes" : [ "anonymous", "object" ],
     "id" : "18"
   }, {
     "iri" : "https://uri.etsi.org/ngsi-ld/hasValue",
     "baseIri" : "https://uri.etsi.org/ngsi-ld",
-    "range" : "20",
+    "range" : "16",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -399,7 +387,6 @@
     "label" : {
       "IRI-based" : "LocationProperty"
     },
-    "superproperty" : [ "6" ],
     "domain" : "1",
     "subproperty" : [ "0" ],
     "comment" : {

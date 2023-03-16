@@ -7,7 +7,7 @@
       "en" : "DEMETER AgriPest"
     },
     "iri" : "https://w3id.org/demeter/agri/agriPest",
-    "version" : "2.0",
+    "version" : "3.0",
     "author" : [ "_:genid2147483670" ],
     "description" : {
       "en" : "The DEMETER AgriPest is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"
@@ -38,7 +38,7 @@
       }, {
         "identifier" : "contributor",
         "language" : "undefined",
-        "value" : "_:genid-nodeid-node1gris89uex3",
+        "value" : "_:genid-nodeid-node1grkvkhh4x3",
         "type" : "iri"
       } ],
       "rights" : [ {
@@ -56,7 +56,7 @@
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "undefined",
-        "value" : "2.0",
+        "value" : "3.0",
         "type" : "label"
       } ],
       "title" : [ {
@@ -186,10 +186,10 @@
     "id" : "161",
     "type" : "owl:Class"
   }, {
-    "id" : "162",
+    "id" : "76",
     "type" : "owl:Class"
   }, {
-    "id" : "76",
+    "id" : "162",
     "type" : "owl:Class"
   }, {
     "id" : "134",
@@ -297,9 +297,6 @@
     "id" : "82",
     "type" : "owl:unionOf"
   }, {
-    "id" : "235",
-    "type" : "rdfs:Datatype"
-  }, {
     "id" : "187",
     "type" : "rdfs:Datatype"
   }, {
@@ -314,6 +311,9 @@
   }, {
     "id" : "2",
     "type" : "owl:Class"
+  }, {
+    "id" : "241",
+    "type" : "rdfs:Datatype"
   }, {
     "id" : "244",
     "type" : "owl:Class"
@@ -393,11 +393,11 @@
     "id" : "201",
     "type" : "owl:equivalentClass"
   }, {
-    "id" : "200",
-    "type" : "owl:Class"
-  }, {
     "id" : "45",
     "type" : "owl:equivalentClass"
+  }, {
+    "id" : "200",
+    "type" : "owl:Class"
   }, {
     "id" : "118",
     "type" : "rdfs:Datatype"
@@ -528,7 +528,7 @@
     "id" : "24",
     "type" : "owl:Class"
   }, {
-    "id" : "239",
+    "id" : "238",
     "type" : "owl:equivalentClass"
   }, {
     "id" : "310",
@@ -906,12 +906,12 @@
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://www.opengis.net/spec/geosparql/1.0",
+        "value" : "http://www.opengis.net/ont/geosparql",
         "type" : "iri"
       }, {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://www.opengis.net/ont/geosparql",
+        "value" : "http://www.opengis.net/spec/geosparql/1.0",
         "type" : "iri"
       } ],
       "contributor" : [ {
@@ -1006,7 +1006,7 @@
     },
     "label" : {
       "IRI-based" : "AgriculturalCertificate",
-      "undefined" : "AgriculturalContract"
+      "undefined" : "AgriculturalCertificate"
     },
     "comment" : {
       "undefined" : "A legal proof of ownership, worthiness or qualification to operate an agricultural item"
@@ -1175,12 +1175,12 @@
         "inScheme" : [ {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme",
           "type" : "iri"
         }, {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme",
           "type" : "iri"
         } ]
       },
@@ -1204,7 +1204,7 @@
         "inScheme" : [ {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme",
           "type" : "iri"
         }, {
           "identifier" : "inScheme",
@@ -1214,7 +1214,7 @@
         }, {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme",
           "type" : "iri"
         } ]
       },
@@ -1238,12 +1238,12 @@
         "inScheme" : [ {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme",
           "type" : "iri"
         }, {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme",
           "type" : "iri"
         } ]
       },
@@ -1729,24 +1729,6 @@
         "en" : "Week (unit of temporal duration)"
       }
     }, {
-      "iri" : "http://www.w3.org/2006/time#unitYear",
-      "baseIri" : "http://www.w3.org/2006/time",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://www.w3.org/2006/time#",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "undefined" : "Year (unit of temporal duration)"
-      },
-      "labels" : {
-        "IRI-based" : "unitYear",
-        "en" : "Year (unit of temporal duration)"
-      }
-    }, {
       "iri" : "http://www.w3.org/2006/time#unitMonth",
       "baseIri" : "http://www.w3.org/2006/time",
       "annotations" : {
@@ -1763,6 +1745,24 @@
       "labels" : {
         "IRI-based" : "unitMonth",
         "en" : "Month (unit of temporal duration)"
+      }
+    }, {
+      "iri" : "http://www.w3.org/2006/time#unitYear",
+      "baseIri" : "http://www.w3.org/2006/time",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "http://www.w3.org/2006/time#",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "undefined" : "Year (unit of temporal duration)"
+      },
+      "labels" : {
+        "IRI-based" : "unitYear",
+        "en" : "Year (unit of temporal duration)"
       }
     }, {
       "iri" : "http://www.w3.org/2006/time#unitDay",
@@ -1936,24 +1936,6 @@
     "attributes" : [ "external" ],
     "id" : "161"
   }, {
-    "iri" : "http://purl.obolibrary.org/obo/TAXRANK_0000000",
-    "baseIri" : "http://purl.obolibrary.org/obo",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.obolibrary.org/obo/",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "TAXRANK_0000000",
-      "en" : "taxonomic_rank"
-    },
-    "attributes" : [ "external" ],
-    "id" : "162"
-  }, {
     "iri" : "https://saref.etsi.org/saref4agri/Farmer",
     "baseIri" : "https://saref.etsi.org/saref4agri",
     "instances" : 0,
@@ -1975,6 +1957,24 @@
     "attributes" : [ "external" ],
     "id" : "76",
     "superClasses" : [ "69" ]
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/TAXRANK_0000000",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.obolibrary.org/obo/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "TAXRANK_0000000",
+      "en" : "taxonomic_rank"
+    },
+    "attributes" : [ "external" ],
+    "id" : "162"
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Class",
     "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
@@ -2006,28 +2006,6 @@
     "attributes" : [ "external" ],
     "id" : "48"
   }, {
-    "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless",
-    "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/dim",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.oclc.org/NET/ssnx/qu/qu-rec20",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "Dimensionless",
-      "undefined" : "Dimensionless"
-    },
-    "comment" : {
-      "undefined" : "A Dimensionless is something that is a QuantityKind and has a unitKind property who must be a DimensionlessUnit"
-    },
-    "attributes" : [ "external" ],
-    "id" : "188",
-    "superClasses" : [ "40" ]
-  }, {
     "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#Density",
     "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/dim",
     "instances" : 0,
@@ -2056,7 +2034,7 @@
         "inScheme" : [ {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme",
           "type" : "iri"
         }, {
           "identifier" : "inScheme",
@@ -2066,7 +2044,7 @@
         }, {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme",
           "type" : "iri"
         } ]
       },
@@ -2080,6 +2058,28 @@
     } ],
     "comment" : {
       "undefined" : "A Density is something that is a QuantityKind and has a unitKind property who must be a DensityUnit"
+    },
+    "attributes" : [ "external" ],
+    "id" : "188",
+    "superClasses" : [ "40" ]
+  }, {
+    "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless",
+    "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/dim",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.oclc.org/NET/ssnx/qu/qu-rec20",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Dimensionless",
+      "undefined" : "Dimensionless"
+    },
+    "comment" : {
+      "undefined" : "A Dimensionless is something that is a QuantityKind and has a unitKind property who must be a DimensionlessUnit"
     },
     "attributes" : [ "external" ],
     "id" : "189",
@@ -2201,7 +2201,7 @@
       "IRI-based" : "QuantityKind",
       "undefined" : "QuantityKind"
     },
-    "subClasses" : [ "197", "100", "198", "189", "188", "156", "77", "199", "150", "200", "39", "139", "159", "94", "92", "96", "98", "52", "54" ],
+    "subClasses" : [ "197", "100", "198", "188", "189", "156", "77", "199", "150", "200", "39", "139", "159", "94", "92", "96", "98", "52", "54" ],
     "comment" : {
       "undefined" : "A QuantityKind is an abstract classifier that represents the [VIM] concept of kind of quantity that is defined as aspect common to mutually comparable quantities. A QuantityKind represents the essence of a quantity without any numerical value or unit. Quantities of the same kind within a given system of quantities have the same quantity dimension. However, quantities of the same dimension are not necessarily of the same kind."
     },
@@ -2588,24 +2588,6 @@
         "undefined" : "Space And Time Scheme"
       }
     }, {
-      "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme",
-      "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/dim",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/qu-rec20",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "undefined" : "Named individual of Periodic And Related Phenomena Scheme"
-      },
-      "labels" : {
-        "IRI-based" : "PeriodicAndRelatedPhenomenaScheme",
-        "undefined" : "Periodic And Related Phenomena Scheme"
-      }
-    }, {
       "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#ElectricityAndMagnetismScheme",
       "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/dim",
       "annotations" : {
@@ -2622,6 +2604,24 @@
       "labels" : {
         "IRI-based" : "ElectricityAndMagnetismScheme",
         "undefined" : "Electricity And Magnetism Scheme"
+      }
+    }, {
+      "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#PeriodicAndRelatedPhenomenaScheme",
+      "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/dim",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/qu-rec20",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "undefined" : "Named individual of Periodic And Related Phenomena Scheme"
+      },
+      "labels" : {
+        "IRI-based" : "PeriodicAndRelatedPhenomenaScheme",
+        "undefined" : "Periodic And Related Phenomena Scheme"
       }
     }, {
       "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme",
@@ -2660,24 +2660,6 @@
         "undefined" : "Heat Scheme"
       }
     }, {
-      "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme",
-      "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/dim",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/qu-rec20",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "undefined" : "Named individual of LightAndRelatedElectromagneticRadiationsScheme"
-      },
-      "labels" : {
-        "IRI-based" : "LightAndRelatedElectromagneticRadiationsScheme",
-        "undefined" : "Light And Related Electromagnetic Radiations Scheme"
-      }
-    }, {
       "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme",
       "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/dim",
       "annotations" : {
@@ -2694,6 +2676,24 @@
       "labels" : {
         "IRI-based" : "MechanicsScheme",
         "undefined" : "Mechanics Scheme"
+      }
+    }, {
+      "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme",
+      "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/dim",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/qu-rec20",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "undefined" : "Named individual of LightAndRelatedElectromagneticRadiationsScheme"
+      },
+      "labels" : {
+        "IRI-based" : "LightAndRelatedElectromagneticRadiationsScheme",
+        "undefined" : "Light And Related Electromagnetic Radiations Scheme"
       }
     }, {
       "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#AcousticsScheme",
@@ -2748,13 +2748,6 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "235",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
     "id" : "187",
     "label" : {
       "IRI-based" : "string"
@@ -2766,7 +2759,7 @@
     "id" : "236"
   }, {
     "iri" : "http://xmlns.com/foaf/0.1/Person",
-    "equivalent" : [ "239" ],
+    "equivalent" : [ "238" ],
     "baseIri" : "http://xmlns.com/foaf/0.1",
     "instances" : 0,
     "annotations" : {
@@ -2858,6 +2851,13 @@
     "attributes" : [ "external" ],
     "id" : "2",
     "superClasses" : [ "10" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "241",
+    "label" : {
+      "IRI-based" : "string"
+    }
   }, {
     "iri" : "http://www.w3.org/ns/sosa/Result",
     "baseIri" : "http://www.w3.org/ns/sosa",
@@ -3101,12 +3101,12 @@
         "inScheme" : [ {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme",
           "type" : "iri"
         }, {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#LightAndRelatedElectromagneticRadiationsScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#SpaceAndTimeScheme",
           "type" : "iri"
         } ]
       },
@@ -3228,24 +3228,6 @@
         "undefined" : "energy flow rate"
       }
     }, {
-      "iri" : "http://purl.oclc.org/NET/ssnx/qu/quantity#scalarProperty",
-      "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/quantity",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/qu-rec20",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "undefined" : "Named individual of scalarProperty"
-      },
-      "labels" : {
-        "IRI-based" : "scalarProperty",
-        "undefined" : "scalar Property"
-      }
-    }, {
       "iri" : "http://purl.oclc.org/NET/ssnx/qu/quantity#pseudovectorProperty",
       "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/quantity",
       "annotations" : {
@@ -3262,6 +3244,24 @@
       "labels" : {
         "IRI-based" : "pseudovectorProperty",
         "undefined" : "pseudo vector property"
+      }
+    }, {
+      "iri" : "http://purl.oclc.org/NET/ssnx/qu/quantity#scalarProperty",
+      "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/quantity",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/qu-rec20",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "undefined" : "Named individual of scalarProperty"
+      },
+      "labels" : {
+        "IRI-based" : "scalarProperty",
+        "undefined" : "scalar Property"
       }
     }, {
       "iri" : "http://purl.oclc.org/NET/ssnx/qu/quantity#property",
@@ -3464,6 +3464,34 @@
     "attributes" : [ "external", "equivalent" ],
     "id" : "201"
   }, {
+    "iri" : "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
+    "equivalent" : [ "44" ],
+    "baseIri" : "http://def.isotc211.org/iso19156/2011/Observation",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://www.iso.org/standard/44595.html",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "undefined",
+        "value" : "Observation process is a subtype of OM_Process. It is a process used to generate the result of the observation.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "OM_Observation",
+      "undefined" : "Observation"
+    },
+    "comment" : {
+      "undefined" : "Observation process is a subtype of OM_Process. It is a process used to generate the result of the observation."
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "45"
+  }, {
     "iri" : "http://purl.oclc.org/NET/ssnx/qu/dim#Distance",
     "baseIri" : "http://purl.oclc.org/NET/ssnx/qu/dim",
     "instances" : 0,
@@ -3534,34 +3562,6 @@
     "attributes" : [ "external" ],
     "id" : "200",
     "superClasses" : [ "40" ]
-  }, {
-    "iri" : "http://def.isotc211.org/iso19156/2011/Observation#OM_Observation",
-    "equivalent" : [ "44" ],
-    "baseIri" : "http://def.isotc211.org/iso19156/2011/Observation",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://www.iso.org/standard/44595.html",
-        "type" : "iri"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "undefined",
-        "value" : "Observation process is a subtype of OM_Process. It is a process used to generate the result of the observation.",
-        "type" : "label"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "OM_Observation",
-      "undefined" : "Observation"
-    },
-    "comment" : {
-      "undefined" : "Observation process is a subtype of OM_Process. It is a process used to generate the result of the observation."
-    },
-    "attributes" : [ "external", "equivalent" ],
-    "id" : "45"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -3828,12 +3828,12 @@
         "inScheme" : [ {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme",
           "type" : "iri"
         }, {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#PhysicalChemistryAndMolecularPhysicsScheme",
           "type" : "iri"
         } ]
       },
@@ -3857,12 +3857,12 @@
         "inScheme" : [ {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme",
           "type" : "iri"
         }, {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#MechanicsScheme",
           "type" : "iri"
         } ]
       },
@@ -3909,12 +3909,12 @@
         "inScheme" : [ {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#SolidStatePhysicsScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme",
           "type" : "iri"
         }, {
           "identifier" : "inScheme",
           "language" : "undefined",
-          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#HeatScheme",
+          "value" : "http://purl.oclc.org/NET/ssnx/qu/dim#SolidStatePhysicsScheme",
           "type" : "iri"
         } ]
       },
@@ -3972,22 +3972,22 @@
         "value" : "OGC GeoSPARQL 1.0 Standard Working Group",
         "type" : "label"
       } ],
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://www.opengis.net/spec/geosparql/1.0",
+        "type" : "iri"
+      }, {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://www.opengis.net/ont/geosparql",
+        "type" : "iri"
+      } ],
       "contributor" : [ {
         "identifier" : "contributor",
         "language" : "undefined",
         "value" : "Matthew Perry",
         "type" : "label"
-      } ],
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://www.opengis.net/ont/geosparql",
-        "type" : "iri"
-      }, {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://www.opengis.net/spec/geosparql/1.0",
-        "type" : "iri"
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
@@ -4225,7 +4225,7 @@
       "en" : "A person (alive, dead, undead, or fictional)."
     },
     "attributes" : [ "external", "equivalent" ],
-    "id" : "239"
+    "id" : "238"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -4764,20 +4764,20 @@
     "id" : "216",
     "type" : "owl:objectProperty"
   }, {
+    "id" : "235",
+    "type" : "owl:someValuesFrom"
+  }, {
     "id" : "237",
     "type" : "owl:someValuesFrom"
   }, {
-    "id" : "238",
+    "id" : "239",
     "type" : "owl:objectProperty"
   }, {
     "id" : "240",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "241",
+    "id" : "242",
     "type" : "owl:allValuesFrom"
-  }, {
-    "id" : "243",
-    "type" : "owl:someValuesFrom"
   }, {
     "id" : "248",
     "type" : "owl:objectProperty"
@@ -4788,7 +4788,7 @@
     "id" : "251",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "242",
+    "id" : "243",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "213",
@@ -4998,12 +4998,12 @@
   "propertyAttribute" : [ {
     "range" : "2",
     "domain" : "1",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "0"
   }, {
     "range" : "5",
     "domain" : "4",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "3"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/observedProperty",
@@ -5028,12 +5028,12 @@
       "domainIncludes" : [ {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Observation",
+        "value" : "http://www.w3.org/ns/sosa/ObservationCollection",
         "type" : "iri"
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/ObservationCollection",
+        "value" : "http://www.w3.org/ns/sosa/Observation",
         "type" : "iri"
       } ]
     },
@@ -5050,17 +5050,17 @@
   }, {
     "range" : "10",
     "domain" : "9",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "8"
   }, {
     "range" : "10",
     "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "11"
   }, {
     "range" : "10",
     "domain" : "14",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "13"
   }, {
     "iri" : "https://smartdatamodels.org/dateModified",
@@ -5087,17 +5087,17 @@
   }, {
     "range" : "10",
     "domain" : "2",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "17"
   }, {
     "range" : "20",
     "domain" : "19",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "18"
   }, {
     "range" : "20",
     "domain" : "22",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "21"
   }, {
     "iri" : "http://www.w3.org/2006/time#hasBeginning",
@@ -5170,7 +5170,7 @@
   }, {
     "range" : "2",
     "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "46"
   }, {
     "iri" : "http://purl.org/linked-data/cube#dataSet",
@@ -5197,27 +5197,27 @@
   }, {
     "range" : "2",
     "domain" : "50",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "49"
   }, {
     "range" : "40",
     "domain" : "52",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "51"
   }, {
     "range" : "40",
     "domain" : "54",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "53"
   }, {
     "range" : "61",
     "domain" : "60",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "59"
   }, {
     "range" : "61",
     "domain" : "63",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "62"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
@@ -5239,7 +5239,7 @@
       "rangeIncludes" : [ {
         "identifier" : "rangeIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Observation",
+        "value" : "http://www.w3.org/ns/sosa/Actuation",
         "type" : "iri"
       }, {
         "identifier" : "rangeIncludes",
@@ -5249,18 +5249,18 @@
       }, {
         "identifier" : "rangeIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Actuation",
+        "value" : "http://www.w3.org/ns/sosa/Observation",
         "type" : "iri"
       } ],
       "domainIncludes" : [ {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Sample",
+        "value" : "http://www.w3.org/ns/sosa/FeatureOfInterest",
         "type" : "iri"
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/FeatureOfInterest",
+        "value" : "http://www.w3.org/ns/sosa/Sample",
         "type" : "iri"
       } ]
     },
@@ -5277,27 +5277,27 @@
   }, {
     "range" : "67",
     "domain" : "66",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "65"
   }, {
     "range" : "67",
     "domain" : "69",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "68"
   }, {
     "range" : "72",
     "domain" : "71",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "70"
   }, {
     "range" : "72",
     "domain" : "74",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "73"
   }, {
     "range" : "69",
     "domain" : "76",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "75"
   }, {
     "iri" : "https://schema.org/addressRegion",
@@ -5414,12 +5414,12 @@
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://www.opengis.net/ont/geosparql",
+        "value" : "http://www.opengis.net/spec/geosparql/1.0",
         "type" : "iri"
       }, {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://www.opengis.net/spec/geosparql/1.0",
+        "value" : "http://www.opengis.net/ont/geosparql",
         "type" : "iri"
       } ]
     },
@@ -5458,22 +5458,22 @@
   }, {
     "range" : "40",
     "domain" : "92",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "91"
   }, {
     "range" : "40",
     "domain" : "94",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "93"
   }, {
     "range" : "40",
     "domain" : "96",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "95"
   }, {
     "range" : "40",
     "domain" : "98",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "97"
   }, {
     "iri" : "http://www.w3.org/2006/time#unitType",
@@ -5890,12 +5890,13 @@
         "value" : "http://www.w3.org/ns/sosa/Sample",
         "type" : "iri"
       } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "For example, in an Observation of the weight of a person, the FeatureOfInterest is the person and the property is its weight.",
+        "type" : "label"
+      } ],
       "domainIncludes" : [ {
-        "identifier" : "domainIncludes",
-        "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Actuation",
-        "type" : "iri"
-      }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
         "value" : "http://www.w3.org/ns/sosa/ObservationCollection",
@@ -5903,19 +5904,18 @@
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Sampling",
+        "value" : "http://www.w3.org/ns/sosa/Actuation",
         "type" : "iri"
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
         "value" : "http://www.w3.org/ns/sosa/Observation",
         "type" : "iri"
-      } ],
-      "example" : [ {
-        "identifier" : "example",
-        "language" : "en",
-        "value" : "For example, in an Observation of the weight of a person, the FeatureOfInterest is the person and the property is its weight.",
-        "type" : "label"
+      }, {
+        "identifier" : "domainIncludes",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/sosa/Sampling",
+        "type" : "iri"
       } ]
     },
     "label" : {
@@ -6052,6 +6052,11 @@
       "domainIncludes" : [ {
         "identifier" : "domainIncludes",
         "language" : "undefined",
+        "value" : "http://www.w3.org/ns/sosa/Sampling",
+        "type" : "iri"
+      }, {
+        "identifier" : "domainIncludes",
+        "language" : "undefined",
         "value" : "http://www.w3.org/ns/sosa/Actuation",
         "type" : "iri"
       }, {
@@ -6063,11 +6068,6 @@
         "identifier" : "domainIncludes",
         "language" : "undefined",
         "value" : "http://www.w3.org/ns/sosa/ObservationCollection",
-        "type" : "iri"
-      }, {
-        "identifier" : "domainIncludes",
-        "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Sampling",
         "type" : "iri"
       } ]
     },
@@ -6084,7 +6084,7 @@
   }, {
     "range" : "24",
     "domain" : "23",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "163"
   }, {
     "iri" : "http://purl.org/linked-data/cube#order",
@@ -6133,7 +6133,7 @@
   }, {
     "range" : "24",
     "domain" : "106",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "167"
   }, {
     "iri" : "http://www.w3.org/2006/time#numericDuration",
@@ -6166,17 +6166,17 @@
   }, {
     "range" : "24",
     "domain" : "137",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "170"
   }, {
     "range" : "12",
     "domain" : "33",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "171"
   }, {
     "range" : "99",
     "domain" : "148",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "172"
   }, {
     "iri" : "http://www.w3.org/2006/time#inXSDDateTimeStamp",
@@ -6209,32 +6209,32 @@
   }, {
     "range" : "66",
     "domain" : "176",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "175"
   }, {
     "range" : "63",
     "domain" : "178",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "177"
   }, {
     "range" : "63",
     "domain" : "10",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "179"
   }, {
     "range" : "181",
     "domain" : "42",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "180"
   }, {
     "range" : "183",
     "domain" : "22",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "182"
   }, {
     "range" : "24",
     "domain" : "185",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "184"
   }, {
     "iri" : "http://foodie-cloud.com/model/foodie#code",
@@ -6383,12 +6383,12 @@
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Observation",
+        "value" : "http://www.w3.org/ns/sosa/ObservationCollection",
         "type" : "iri"
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/ObservationCollection",
+        "value" : "http://www.w3.org/ns/sosa/Observation",
         "type" : "iri"
       }, {
         "identifier" : "domainIncludes",
@@ -6410,17 +6410,17 @@
   }, {
     "range" : "185",
     "domain" : "106",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "203"
   }, {
     "range" : "205",
     "domain" : "24",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "204"
   }, {
     "range" : "99",
     "domain" : "207",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "206"
   }, {
     "iri" : "http://www.w3.org/ns/ssn/implementedBy",
@@ -6598,12 +6598,12 @@
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://www.opengis.net/ont/geosparql",
+        "value" : "http://www.opengis.net/spec/geosparql/1.0",
         "type" : "iri"
       }, {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://www.opengis.net/spec/geosparql/1.0",
+        "value" : "http://www.opengis.net/ont/geosparql",
         "type" : "iri"
       } ]
     },
@@ -6723,6 +6723,28 @@
       "IRI-based" : "managesFarm",
       "en" : "manages farm"
     },
+    "domain" : "76",
+    "comment" : {
+      "en" : "manages farm"
+    },
+    "attributes" : [ "someValues", "external", "object" ],
+    "id" : "235"
+  }, {
+    "iri" : "https://saref.etsi.org/saref4agri/managesFarm",
+    "baseIri" : "https://saref.etsi.org/saref4agri",
+    "range" : "229",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://saref.etsi.org/saref4agri/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "managesFarm",
+      "en" : "manages farm"
+    },
     "domain" : "176",
     "comment" : {
       "en" : "manages farm"
@@ -6750,7 +6772,7 @@
       "undefined" : "The mailing address"
     },
     "attributes" : [ "external", "object" ],
-    "id" : "238"
+    "id" : "239"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/hasResult",
     "inverse" : "116",
@@ -6809,9 +6831,9 @@
     "id" : "240"
   }, {
     "iri" : "https://saref.etsi.org/saref4agri/hasName",
-    "equivalent" : [ "242" ],
+    "equivalent" : [ "243" ],
     "baseIri" : "https://saref.etsi.org/saref4agri",
-    "range" : "235",
+    "range" : "241",
     "annotations" : {
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
@@ -6829,29 +6851,7 @@
       "undefined" : "A relation to express the name of an entity (e.g.,animal)."
     },
     "attributes" : [ "external", "datatype", "allValues" ],
-    "id" : "241"
-  }, {
-    "iri" : "https://saref.etsi.org/saref4agri/managesFarm",
-    "baseIri" : "https://saref.etsi.org/saref4agri",
-    "range" : "229",
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "https://saref.etsi.org/saref4agri/",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "managesFarm",
-      "en" : "manages farm"
-    },
-    "domain" : "76",
-    "comment" : {
-      "en" : "manages farm"
-    },
-    "attributes" : [ "someValues", "external", "object" ],
-    "id" : "243"
+    "id" : "242"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/observes",
     "baseIri" : "http://www.w3.org/ns/sosa",
@@ -6949,7 +6949,7 @@
       "undefined" : "The name of this item"
     },
     "attributes" : [ "external", "datatype" ],
-    "id" : "242"
+    "id" : "243"
   }, {
     "iri" : "http://www.w3.org/ns/ssn/hasDeployment",
     "baseIri" : "http://www.w3.org/ns/ssn",
@@ -7131,12 +7131,12 @@
   }, {
     "range" : "33",
     "domain" : "35",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "271"
   }, {
     "range" : "33",
     "domain" : "34",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "272"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest",
@@ -7163,12 +7163,12 @@
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Observation",
+        "value" : "http://www.w3.org/ns/sosa/Sampling",
         "type" : "iri"
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Sampling",
+        "value" : "http://www.w3.org/ns/sosa/Observation",
         "type" : "iri"
       } ]
     },
@@ -7185,17 +7185,17 @@
   }, {
     "range" : "55",
     "domain" : "57",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "274"
   }, {
     "range" : "55",
     "domain" : "56",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "275"
   }, {
     "range" : "31",
     "domain" : "32",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "276"
   }, {
     "iri" : "http://www.w3.org/ns/ssn/isPropertyOf",
@@ -7288,7 +7288,7 @@
     "id" : "280"
   }, {
     "iri" : "https://saref.etsi.org/saref4agri/hasName",
-    "equivalent" : [ "242" ],
+    "equivalent" : [ "243" ],
     "baseIri" : "https://saref.etsi.org/saref4agri",
     "range" : "269",
     "annotations" : {
@@ -7452,12 +7452,6 @@
         "value" : "OGC GeoSPARQL 1.0 Standard Working Group",
         "type" : "label"
       } ],
-      "contributor" : [ {
-        "identifier" : "contributor",
-        "language" : "undefined",
-        "value" : "Matthew Perry",
-        "type" : "label"
-      } ],
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
@@ -7468,6 +7462,12 @@
         "language" : "undefined",
         "value" : "http://www.opengis.net/ont/geosparql",
         "type" : "iri"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Matthew Perry",
+        "type" : "label"
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
@@ -7517,42 +7517,42 @@
   }, {
     "range" : "40",
     "domain" : "39",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "294"
   }, {
     "range" : "40",
     "domain" : "200",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "295"
   }, {
     "range" : "40",
     "domain" : "159",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "296"
   }, {
     "range" : "40",
     "domain" : "139",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "297"
   }, {
     "range" : "40",
     "domain" : "77",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "298"
   }, {
     "range" : "40",
     "domain" : "150",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "299"
   }, {
     "range" : "40",
     "domain" : "199",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "300"
   }, {
     "range" : "63",
     "domain" : "60",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "301"
   }, {
     "iri" : "http://portele.de/ont/inspire/baseInspire#validTo",
@@ -7602,12 +7602,6 @@
         "value" : "OGC GeoSPARQL 1.0 Standard Working Group",
         "type" : "label"
       } ],
-      "contributor" : [ {
-        "identifier" : "contributor",
-        "language" : "undefined",
-        "value" : "Matthew Perry",
-        "type" : "label"
-      } ],
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
@@ -7618,6 +7612,12 @@
         "language" : "undefined",
         "value" : "http://www.opengis.net/ont/geosparql",
         "type" : "iri"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Matthew Perry",
+        "type" : "label"
       } ],
       "prefLabel" : [ {
         "identifier" : "prefLabel",
@@ -7640,7 +7640,7 @@
     "comment" : {
       "en" : "\n      A spatial representation for a given feature.\n    "
     },
-    "attributes" : [ "external", "object", "allValues" ],
+    "attributes" : [ "external", "allValues", "object" ],
     "id" : "303"
   }, {
     "iri" : "http://www.opengis.net/ont/geosparql#sfContains",
@@ -7650,12 +7650,12 @@
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://www.opengis.net/ont/geosparql",
+        "value" : "http://www.opengis.net/spec/geosparql/1.0",
         "type" : "iri"
       }, {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://www.opengis.net/spec/geosparql/1.0",
+        "value" : "http://www.opengis.net/ont/geosparql",
         "type" : "iri"
       } ]
     },
@@ -7667,34 +7667,67 @@
     "comment" : {
       "en" : "Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T*****FF*"
     },
-    "attributes" : [ "external", "object", "allValues" ],
+    "attributes" : [ "external", "allValues", "object" ],
     "id" : "304"
   }, {
-    "iri" : "http://www.opengis.net/ont/geosparql#sfWithin",
+    "iri" : "http://www.opengis.net/ont/geosparql#hasGeometry",
     "baseIri" : "http://www.opengis.net/ont/geosparql",
-    "range" : "61",
+    "range" : "63",
+    "description" : {
+      "en" : "\n      A spatial representation for a given feature.\n    "
+    },
     "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
+      "date" : [ {
+        "identifier" : "date",
         "language" : "undefined",
-        "value" : "http://www.opengis.net/ont/geosparql",
-        "type" : "iri"
-      }, {
+        "value" : "2011-06-16",
+        "type" : "label"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "OGC GeoSPARQL 1.0 Standard Working Group",
+        "type" : "label"
+      } ],
+      "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
         "value" : "http://www.opengis.net/spec/geosparql/1.0",
         "type" : "iri"
+      }, {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://www.opengis.net/ont/geosparql",
+        "type" : "iri"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Matthew Perry",
+        "type" : "label"
+      } ],
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "hasGeometry",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "\n      A spatial representation for a given feature.\n    ",
+        "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "sfWithin",
-      "en" : "within"
+      "IRI-based" : "hasGeometry",
+      "en" : "hasGeometry"
     },
     "domain" : "61",
     "comment" : {
-      "en" : "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"
+      "en" : "\n      A spatial representation for a given feature.\n    "
     },
-    "attributes" : [ "external", "object", "allValues" ],
+    "attributes" : [ "external", "allValues", "object" ],
     "id" : "305"
   }, {
     "iri" : "http://qudt.org/schema/qudt/hasQuantityKind",
@@ -7719,31 +7752,10 @@
     "attributes" : [ "external", "object" ],
     "id" : "306"
   }, {
-    "iri" : "http://www.opengis.net/ont/geosparql#hasGeometry",
+    "iri" : "http://www.opengis.net/ont/geosparql#sfWithin",
     "baseIri" : "http://www.opengis.net/ont/geosparql",
-    "range" : "63",
-    "description" : {
-      "en" : "\n      A spatial representation for a given feature.\n    "
-    },
+    "range" : "61",
     "annotations" : {
-      "date" : [ {
-        "identifier" : "date",
-        "language" : "undefined",
-        "value" : "2011-06-16",
-        "type" : "label"
-      } ],
-      "creator" : [ {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "OGC GeoSPARQL 1.0 Standard Working Group",
-        "type" : "label"
-      } ],
-      "contributor" : [ {
-        "identifier" : "contributor",
-        "language" : "undefined",
-        "value" : "Matthew Perry",
-        "type" : "label"
-      } ],
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
@@ -7754,29 +7766,17 @@
         "language" : "undefined",
         "value" : "http://www.opengis.net/ont/geosparql",
         "type" : "iri"
-      } ],
-      "prefLabel" : [ {
-        "identifier" : "prefLabel",
-        "language" : "en",
-        "value" : "hasGeometry",
-        "type" : "label"
-      } ],
-      "definition" : [ {
-        "identifier" : "definition",
-        "language" : "en",
-        "value" : "\n      A spatial representation for a given feature.\n    ",
-        "type" : "label"
       } ]
     },
     "label" : {
-      "IRI-based" : "hasGeometry",
-      "en" : "hasGeometry"
+      "IRI-based" : "sfWithin",
+      "en" : "within"
     },
     "domain" : "61",
     "comment" : {
-      "en" : "\n      A spatial representation for a given feature.\n    "
+      "en" : "Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T*F**F***"
     },
-    "attributes" : [ "external", "object", "allValues" ],
+    "attributes" : [ "external", "allValues", "object" ],
     "id" : "307"
   }, {
     "iri" : "http://xmlns.com/foaf/0.1/member",
@@ -7802,7 +7802,7 @@
     "id" : "308"
   }, {
     "iri" : "https://saref.etsi.org/saref4agri/hasName",
-    "equivalent" : [ "242" ],
+    "equivalent" : [ "243" ],
     "baseIri" : "https://saref.etsi.org/saref4agri",
     "range" : "310",
     "annotations" : {
@@ -7848,17 +7848,17 @@
   }, {
     "range" : "23",
     "domain" : "137",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "313"
   }, {
     "range" : "23",
     "domain" : "106",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "314"
   }, {
     "range" : "40",
-    "domain" : "189",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "188",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "315"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/resultTime",
@@ -7890,12 +7890,12 @@
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/ObservationCollection",
+        "value" : "http://www.w3.org/ns/sosa/Observation",
         "type" : "iri"
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Observation",
+        "value" : "http://www.w3.org/ns/sosa/ObservationCollection",
         "type" : "iri"
       } ]
     },
@@ -7912,12 +7912,12 @@
   }, {
     "range" : "40",
     "domain" : "198",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "317"
   }, {
     "range" : "40",
     "domain" : "156",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "318"
   }, {
     "iri" : "http://www.opengis.net/ont/geosparql#asWKT",
@@ -7927,12 +7927,12 @@
       "isDefinedBy" : [ {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://www.opengis.net/ont/geosparql",
+        "value" : "http://www.opengis.net/spec/geosparql/1.0",
         "type" : "iri"
       }, {
         "identifier" : "isDefinedBy",
         "language" : "undefined",
-        "value" : "http://www.opengis.net/spec/geosparql/1.0",
+        "value" : "http://www.opengis.net/ont/geosparql",
         "type" : "iri"
       } ]
     },
@@ -7948,18 +7948,18 @@
     "id" : "319"
   }, {
     "range" : "40",
-    "domain" : "188",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "189",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "320"
   }, {
     "range" : "26",
     "domain" : "27",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "321"
   }, {
     "range" : "26",
     "domain" : "196",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "322"
   }, {
     "iri" : "http://foodie-cloud.com/model/foodie#description",
@@ -7993,17 +7993,17 @@
   }, {
     "range" : "40",
     "domain" : "100",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "323"
   }, {
     "range" : "40",
     "domain" : "197",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "324"
   }, {
     "range" : "148",
     "domain" : "149",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "325"
   }, {
     "iri" : "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature",
@@ -8027,7 +8027,7 @@
   }, {
     "range" : "14",
     "domain" : "31",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "327"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/madeObservation",
@@ -8084,12 +8084,12 @@
       "domainIncludes" : [ {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Observation",
+        "value" : "http://www.w3.org/ns/sosa/ObservationCollection",
         "type" : "iri"
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/ObservationCollection",
+        "value" : "http://www.w3.org/ns/sosa/Observation",
         "type" : "iri"
       } ]
     },
@@ -8106,12 +8106,12 @@
   }, {
     "range" : "14",
     "domain" : "114",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "330"
   }, {
     "range" : "50",
     "domain" : "89",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "331"
   }, {
     "iri" : "http://portele.de/ont/inspire/baseInspire#validFrom",
@@ -8161,12 +8161,12 @@
       "domainIncludes" : [ {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Actuation",
+        "value" : "http://www.w3.org/ns/sosa/Observation",
         "type" : "iri"
       }, {
         "identifier" : "domainIncludes",
         "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Observation",
+        "value" : "http://www.w3.org/ns/sosa/Actuation",
         "type" : "iri"
       } ],
       "example" : [ {
@@ -8189,17 +8189,17 @@
   }, {
     "range" : "55",
     "domain" : "58",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "334"
   }, {
     "range" : "114",
     "domain" : "115",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "335"
   }, {
     "range" : "112",
     "domain" : "113",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "336"
   } ]
 }

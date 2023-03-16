@@ -15,9 +15,9 @@
      xmlns:agriCommon="https://w3id.org/demeter/agri/agriCommon#"
      xmlns:smartdatamodels="https://smartdatamodels.org/">
     <owl:Ontology rdf:about="https://w3id.org/demeter/agri/agriFeature">
-        <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/agriFeature/2.0"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/agriFeature/3.0"/>
         <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
-        <terms:contributor rdf:resource="_:genid-nodeid-node1grisrp7sx3"/>
+        <terms:contributor rdf:resource="_:genid-nodeid-node1grkvmilix3"/>
         <terms:contributor rdf:nodeID="genid1"/>
         <terms:contributor rdf:nodeID="genid3"/>
         <terms:creator rdf:nodeID="genid5"/>
@@ -26,22 +26,22 @@
         <terms:title xml:lang="en">DEMETER AgriFeature</terms:title>
         <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
         <rdfs:label xml:lang="en">DEMETER AgriFeature</rdfs:label>
-        <owl:versionInfo>2.0</owl:versionInfo>
+        <owl:versionInfo>3.0</owl:versionInfo>
         <foaf:maker rdf:nodeID="genid7"/>
     </owl:Ontology>
     <rdf:Description rdf:nodeID="genid1">
-        <foaf:name>Ioanna Roussaki</foaf:name>
-        <schema:affiliation>
-            <rdf:Description>
-                <foaf:name>ICCS</foaf:name>
-            </rdf:Description>
-        </schema:affiliation>
-    </rdf:Description>
-    <rdf:Description rdf:nodeID="genid3">
         <foaf:name>Rob Atkinson</foaf:name>
         <schema:affiliation>
             <rdf:Description>
                 <foaf:name>OGC</foaf:name>
+            </rdf:Description>
+        </schema:affiliation>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid3">
+        <foaf:name>Ioanna Roussaki</foaf:name>
+        <schema:affiliation>
+            <rdf:Description>
+                <foaf:name>ICCS</foaf:name>
             </rdf:Description>
         </schema:affiliation>
     </rdf:Description>
@@ -742,13 +742,6 @@
     
 
 
-    <!-- https://smartdatamodels.org/AgriParcel -->
-
-
-    <owl:Class rdf:about="https://smartdatamodels.org/AgriParcel"/>
-    
-
-
     <!-- https://smartdatamodels.org/dataModel.Agrifood/AgriFarm -->
 
 
@@ -764,7 +757,7 @@
 
 
     <owl:Class rdf:about="https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse">
-        <rdfs:subClassOf rdf:resource="https://smartdatamodels.org/AgriParcel"/>
+        <rdfs:subClassOf rdf:resource="https://smartdatamodels.org/dataModel.Agrifood/AgriParcel"/>
         <rdfs:comment>This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriGreenhouse/schema.json"/>
         <rdfs:label>Agri Greenhouse</rdfs:label>

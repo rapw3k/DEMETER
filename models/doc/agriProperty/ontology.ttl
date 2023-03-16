@@ -7,10 +7,10 @@
 @base <https://w3id.org/demeter/agri/agriProperty#> .
 
 <https://w3id.org/demeter/agri/agriProperty> rdf:type owl:Ontology ;
-                                              owl:versionIRI <https://w3id.org/demeter/agri/agriProperty/2.0> ;
+                                              owl:versionIRI <https://w3id.org/demeter/agri/agriProperty/3.0> ;
                                               owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
-                                              <http://purl.org/dc/terms/contributor> _:genid-nodeid-node1grit1nc2x3 ,
-                                                                                     _:genid-nodeid-node1grit1nc2x5 ,
+                                              <http://purl.org/dc/terms/contributor> _:genid-nodeid-node1grkvqbb0x3 ,
+                                                                                     _:genid-nodeid-node1grkvqbb0x5 ,
                                                                                      _:genid1 ,
                                                                                      _:genid3 ,
                                                                                      _:genid5 ;
@@ -20,7 +20,7 @@
                                               <http://purl.org/dc/terms/title> "DEMETER AgriProperty"@en ;
                                               rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
                                               rdfs:label "DEMETER AgriProperty" ;
-                                              owl:versionInfo "2.0" ;
+                                              owl:versionInfo "3.0" ;
                                               <http://xmlns.com/foaf/0.1/maker> _:genid9 .
 
 _:genid1 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" ;
@@ -316,13 +316,9 @@ _:genid9 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> ;
                                                                   rdfs:label "relativeHumidity"@en .
 
 
-###  https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEC
-<https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEC> rdf:type owl:DatatypeProperty ;
-                                                                rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> .
-
-
 ###  https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEc
 <https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEc> rdf:type owl:DatatypeProperty ;
+                                                                rdfs:subPropertyOf <https://saref.etsi.org/core/hasValue> ;
                                                                 rdfs:comment "Measured as Electrical Conductivity, EC nominally in units of Siemens per meter. Units:'siemens / m'" ;
                                                                 rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelRecord/schema.json> ;
                                                                 rdfs:label "soilMoistureEC"@en .

@@ -7,9 +7,9 @@
 @base <https://w3id.org/demeter/agri/agriFeature#> .
 
 <https://w3id.org/demeter/agri/agriFeature> rdf:type owl:Ontology ;
-                                             owl:versionIRI <https://w3id.org/demeter/agri/agriFeature/2.0> ;
+                                             owl:versionIRI <https://w3id.org/demeter/agri/agriFeature/3.0> ;
                                              owl:imports <https://w3id.org/demeter/agri/agriCommon> ;
-                                             <http://purl.org/dc/terms/contributor> _:genid-nodeid-node1grisrp7sx3 ,
+                                             <http://purl.org/dc/terms/contributor> _:genid-nodeid-node1grkvmilix3 ,
                                                                                     _:genid1 ,
                                                                                     _:genid3 ;
                                              <http://purl.org/dc/terms/creator> _:genid5 ;
@@ -18,15 +18,15 @@
                                              <http://purl.org/dc/terms/title> "DEMETER AgriFeature"@en ;
                                              rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
                                              rdfs:label "DEMETER AgriFeature"@en ;
-                                             owl:versionInfo "2.0" ;
+                                             owl:versionInfo "3.0" ;
                                              <http://xmlns.com/foaf/0.1/maker> _:genid7 .
 
-_:genid1 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" ;
-          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "ICCS"
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "OGC"
                                            ] .
 
-_:genid3 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" ;
-          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "OGC"
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" ;
+          <https://schema.org/affiliation> [ <http://xmlns.com/foaf/0.1/name> "ICCS"
                                            ] .
 
 _:genid5 rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
@@ -483,10 +483,6 @@ _:genid7 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> ;
                                            rdfs:label "Parcel" .
 
 
-###  https://smartdatamodels.org/AgriParcel
-<https://smartdatamodels.org/AgriParcel> rdf:type owl:Class .
-
-
 ###  https://smartdatamodels.org/dataModel.Agrifood/AgriFarm
 <https://smartdatamodels.org/dataModel.Agrifood/AgriFarm> rdf:type owl:Class ;
                                                           rdfs:comment "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
@@ -496,7 +492,7 @@ _:genid7 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> ;
 
 ###  https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse
 <https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> rdf:type owl:Class ;
-                                                                rdfs:subClassOf <https://smartdatamodels.org/AgriParcel> ;
+                                                                rdfs:subClassOf <https://smartdatamodels.org/dataModel.Agrifood/AgriParcel> ;
                                                                 rdfs:comment "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
                                                                 rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriGreenhouse/schema.json> ;
                                                                 rdfs:label "Agri Greenhouse" .

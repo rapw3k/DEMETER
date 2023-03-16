@@ -15,10 +15,10 @@
      xmlns:agriCommon="https://w3id.org/demeter/agri/agriCommon#"
      xmlns:smartdatamodels="https://smartdatamodels.org/">
     <owl:Ontology rdf:about="https://w3id.org/demeter/agri/agriProperty">
-        <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/agriProperty/2.0"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/agriProperty/3.0"/>
         <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
-        <terms:contributor rdf:resource="_:genid-nodeid-node1grit1nc2x3"/>
-        <terms:contributor rdf:resource="_:genid-nodeid-node1grit1nc2x5"/>
+        <terms:contributor rdf:resource="_:genid-nodeid-node1grkvqbb0x3"/>
+        <terms:contributor rdf:resource="_:genid-nodeid-node1grkvqbb0x5"/>
         <terms:contributor rdf:nodeID="genid1"/>
         <terms:contributor rdf:nodeID="genid3"/>
         <terms:contributor rdf:nodeID="genid5"/>
@@ -28,7 +28,7 @@
         <terms:title xml:lang="en">DEMETER AgriProperty</terms:title>
         <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
         <rdfs:label>DEMETER AgriProperty</rdfs:label>
-        <owl:versionInfo>2.0</owl:versionInfo>
+        <owl:versionInfo>3.0</owl:versionInfo>
         <foaf:maker rdf:nodeID="genid9"/>
     </owl:Ontology>
     <rdf:Description rdf:nodeID="genid1">
@@ -526,19 +526,11 @@
     
 
 
-    <!-- https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEC -->
-
-
-    <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEC">
-        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/core/hasValue"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEc -->
 
 
     <owl:DatatypeProperty rdf:about="https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEc">
+        <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/core/hasValue"/>
         <rdfs:comment>Measured as Electrical Conductivity, EC nominally in units of Siemens per meter. Units:&apos;siemens / m&apos;</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelRecord/schema.json"/>
         <rdfs:label xml:lang="en">soilMoistureEC</rdfs:label>

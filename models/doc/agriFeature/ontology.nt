@@ -1,15 +1,15 @@
 <https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/demeter/agri/agriFeature/2.0> .
+<https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/demeter/agri/agriFeature/3.0> .
 <https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/demeter/agri/agriCommon> .
-<https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/contributor> <https://w3id.org/demeter/agri/agriFeature_:genid-nodeid-node1grisrp7sx3> .
+<https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/contributor> <https://w3id.org/demeter/agri/agriFeature_:genid-nodeid-node1grkvmilix3> .
 <https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/contributor> _:genid1 .
 _:genid1 <https://schema.org/affiliation> _:genid2 .
-_:genid2 <http://xmlns.com/foaf/0.1/name> "ICCS" .
-_:genid1 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" .
+_:genid2 <http://xmlns.com/foaf/0.1/name> "OGC" .
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" .
 <https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/contributor> _:genid3 .
 _:genid3 <https://schema.org/affiliation> _:genid4 .
-_:genid4 <http://xmlns.com/foaf/0.1/name> "OGC" .
-_:genid3 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" .
+_:genid4 <http://xmlns.com/foaf/0.1/name> "ICCS" .
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" .
 <https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/creator> _:genid5 .
 _:genid5 <https://schema.org/affiliation> _:genid6 .
 _:genid6 <http://xmlns.com/foaf/0.1/name> "PSNC" .
@@ -20,7 +20,7 @@ _:genid5 <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://orcid.org/0000-0
 <https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/title> "DEMETER AgriFeature"@en .
 <https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en .
 <https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2000/01/rdf-schema#label> "DEMETER AgriFeature"@en .
-<https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2002/07/owl#versionInfo> "2.0" .
+<https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2002/07/owl#versionInfo> "3.0" .
 <https://w3id.org/demeter/agri/agriFeature> <http://xmlns.com/foaf/0.1/maker> _:genid7 .
 _:genid7 <http://xmlns.com/foaf/0.1/name> "DEMETER project" .
 _:genid7 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> .
@@ -447,9 +447,6 @@ _:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://saref.etsi.org/saref4agri/Parcel> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
 <https://saref.etsi.org/saref4agri/Parcel> <http://www.w3.org/2000/01/rdf-schema#label> "Parcel" .
 # 
-# https://smartdatamodels.org/AgriParcel
-<https://smartdatamodels.org/AgriParcel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
 # https://smartdatamodels.org/dataModel.Agrifood/AgriFarm
 <https://smartdatamodels.org/dataModel.Agrifood/AgriFarm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://smartdatamodels.org/dataModel.Agrifood/AgriFarm> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications." .
@@ -458,7 +455,7 @@ _:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse
 <https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://smartdatamodels.org/AgriParcel> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://smartdatamodels.org/dataModel.Agrifood/AgriParcel> .
 <https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications." .
 <https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriGreenhouse/schema.json> .
 <https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> <http://www.w3.org/2000/01/rdf-schema#label> "Agri Greenhouse" .
