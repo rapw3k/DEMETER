@@ -1,0 +1,262 @@
+
+{
+    "@id": "urn:demeter:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+    "@type": "WeatherForecast",
+    "description": "7 days weather forecast",
+    "hasMember": ["urn:demeter:1", "urn:demeter:2","urn:demeter:3","urn:demeter:4","urn:demeter:5","urn:demeter:6","urn:demeter:7" ],
+    "hasFeatureOfInterest": "urn:ngsi-ld:farm:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+    "resultTime": "2020-02-01T12:36:12Z"    
+},
+{
+    "@id": "urn:demeter:1",
+    "@type": "Observation",
+    "description": "7 days  forecast - day1",
+    "phenomenonTime":"2020-02-01T12:36:12Z",
+    "windSpeed": "3.5",  
+    "airTemperature": "345",
+    "precipitation": "85"
+},
+{
+    "@id": "urn:demeter:2",
+    "@type": "Observation",
+    "description": "7 days  forecast - day2",
+    "phenomenonTime":"2020-02-02T12:36:12Z",
+    "windSpeed": "3.5",  
+    "airTemperature": "345",
+    "precipitation": "85"
+},
+{
+    "@id": "urn:demeter:3",
+    "@type": "Observation",
+    "description": "7 days  forecast - day3",
+    "phenomenonTime":"2020-02-03T12:36:12Z",
+    "windSpeed": "3.5",  
+    "airTemperature": "345",
+    "precipitation": "85"
+},
+{
+    "@id": "urn:demeter:4",
+    "@type": "Observation",
+    "description": "7 days  forecast - day4",
+    "phenomenonTime":"2020-02-04T12:36:12Z",
+    "windSpeed": "3.5",  
+    "airTemperature": "345",
+    "precipitation": "85"
+},
+{
+    "@id": "urn:demeter:5",
+    "@type": "Observation",
+    "description": "7 days  forecast - day5",
+    "phenomenonTime":"2020-02-05T12:36:12Z",
+    "windSpeed": "3.5",  
+    "airTemperature": "345",
+    "precipitation": "85"
+},
+{
+    "@id": "urn:demeter:6",
+    "@type": "Observation",
+    "description": "7 days  forecast - day6",
+    "phenomenonTime":"2020-02-06T12:36:12Z",
+    "windSpeed": "3.5",  
+    "airTemperature": "345",
+    "precipitation": "85"
+},
+{
+    "@id": "urn:demeter:7",
+    "@type": "Observation",
+    "description": "7 days  forecast - day7",
+    "phenomenonTime":"2020-02-07T12:36:12Z",
+    "windSpeed": "3.5",  
+    "airTemperature": "345",
+    "precipitation": "85"
+}
+
+###########
+
+{
+    "@id": "urn:demeter:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+    "@type": "WeatherForecast",
+    "description": "7 days weather forecast (general collection)",
+    "hasMember": ["urn:demeter:1", "urn:demeter:2","urn:demeter:3" ],
+    "hasFeatureOfInterest": "urn:ngsi-ld:farm:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+    "resultTime": "2020-02-01T12:36:12Z"    
+},
+{
+    "@id": "urn:demeter:1",
+    "@type": "ObservationCollection",
+    "description": "7 days windSpeed forecast (collection of wind speed)",
+    "hasMember": ["urn:demeter:1a", "urn:demeter:1b","urn:demeter:1c", "urn:demeter:1d","urn:demeter:1e","urn:demeter:1f", "urn:demeter:1g" ],
+    "observedProperty":"http://purl.oclc.org/NET/ssnx/cf/cf-property#wind_speed"
+},
+{
+    "@id": "urn:demeter:1a",
+    "@type": "Observation",
+    "description": "7 days windSpeed forecast - day1",
+    "phenomenonTime":"2020-02-01T12:36:12Z",
+    "hasSimpleResult":"3.5",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/1ar", "@type": "QuantityValue", "numericValue": "3.5", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:1b",
+    "@type": "Observation",
+    "description": "7 days windSpeed forecast - day2",
+    "phenomenonTime":"2020-02-02T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/1br", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:1c",
+    "@type": "Observation",
+    "description": "7 days windSpeed forecast - day3",
+    "phenomenonTime":"2020-02-03T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/1cr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:1d",
+    "@type": "Observation",
+    "description": "7 days windSpeed forecast - day4",
+    "phenomenonTime":"2020-02-04T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/1dr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:1e",
+    "@type": "Observation",
+    "description": "7 days windSpeed forecast - day5",
+    "phenomenonTime":"2020-02-05T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/1er", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:1f",
+    "@type": "Observation",
+    "description": "7 days windSpeed forecast - day6",
+    "phenomenonTime":"2020-02-06T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/1fr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:1g",
+    "@type": "Observation",
+    "description": "7 days windSpeed forecast - day7",
+    "phenomenonTime":"2020-02-07T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/1gr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+
+
+{
+    "@id": "urn:demeter:2",
+    "@type": "ObservationCollection",
+    "description": "7 days precipitation forecast (collection of precipitation)",
+    "hasMember": ["urn:demeter:2a", "urn:demeter:2b","urn:demeter:2c", "urn:demeter:2d","urn:demeter:2e","urn:demeter:2f", "urn:demeter:2g" ],
+    "observedProperty":"http://purl.oclc.org/NET/ssnx/cf/cf-property#precipitation_amount"
+},
+{
+    "@id": "urn:demeter:2a",
+    "@type": "Observation",
+    "description": "7 days precipitation forecast - day1",
+    "phenomenonTime":"2020-02-01T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/2ar", "@type": "QuantityValue", "numericValue": "3.5", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:2b",
+    "@type": "Observation",
+    "description": "7 days precipitation forecast - day2",
+    "phenomenonTime":"2020-02-02T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/2br", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:2c",
+    "@type": "Observation",
+    "description": "7 days precipitation forecast - day3",
+    "phenomenonTime":"2020-02-03T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/2cr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:2d",
+    "@type": "Observation",
+    "description": "7 days precipitation forecast - day4",
+    "phenomenonTime":"2020-02-04T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/2dr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:2e",
+    "@type": "Observation",
+    "description": "7 days precipitation forecast - day5",
+    "phenomenonTime":"2020-02-05T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/2er", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:2f",
+    "@type": "Observation",
+    "description": "7 days precipitation forecast - day6",
+    "phenomenonTime":"2020-02-06T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/2fr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:2g",
+    "@type": "Observation",
+    "description": "7 days precipitation forecast - day7",
+    "phenomenonTime":"2020-02-07T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/2gr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+
+
+{
+    "@id": "urn:demeter:3",
+    "@type": "ObservationCollection",
+    "description": "7 days airTemperature forecast (collection of airTemperature)",
+    "hasMember": ["urn:demeter:3a", "urn:demeter:3b","urn:demeter:3c", "urn:demeter:3d","urn:demeter:3e","urn:demeter:3f", "urn:demeter:3g" ],
+    "observedProperty":"http://purl.oclc.org/NET/ssnx/cf/cf-property#air_temperature"
+},
+{
+    "@id": "urn:demeter:3a",
+    "@type": "Observation",
+    "description": "7 days airTemperature forecast - day1",
+    "phenomenonTime":"2020-02-01T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/3ar", "@type": "QuantityValue", "numericValue": "3.5", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:3b",
+    "@type": "Observation",
+    "description": "7 days airTemperature forecast - day2",
+    "phenomenonTime":"2020-02-02T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/3br", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:3c",
+    "@type": "Observation",
+    "description": "7 days airTemperature forecast - day3",
+    "phenomenonTime":"2020-02-03T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/3cr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:3d",
+    "@type": "Observation",
+    "description": "7 days airTemperature forecast - day4",
+    "phenomenonTime":"2020-02-04T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/3dr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:3e",
+    "@type": "Observation",
+    "description": "7 days airTemperature forecast - day5",
+    "phenomenonTime":"2020-02-05T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/3er", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:3f",
+    "@type": "Observation",
+    "description": "7 days airTemperature forecast - day6",
+    "phenomenonTime":"2020-02-06T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/3fr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+},
+{
+    "@id": "urn:demeter:3g",
+    "@type": "Observation",
+    "description": "7 days airTemperature forecast - day7",
+    "phenomenonTime":"2020-02-07T12:36:12Z",
+    "hasResult": [{ "@id": "urn:demeter:ObservationI/3gr", "@type": "QuantityValue", "numericValue": "25", "unit": "qudt-unit:xyz"}]
+}
+
+
+#####################
+
+
+

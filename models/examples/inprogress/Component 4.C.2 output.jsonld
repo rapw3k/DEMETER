@@ -1,0 +1,83 @@
+{
+	"@context":[
+	    "https://w3id.org/demeter/agri-context.jsonld"
+    ],
+    "@graph": [
+    {
+        "@id": "urn:ngsi-ld:farm:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+        "@type": "Farm",
+        "hasGeometry": {
+            "@id": "urn:ngsi-ld:AgriFarm:geo:72d9fb43-53f8-4ec8-a33c-fa931360259x",
+    	    "@type": "Point",
+    	    "asWKT": "POINT(-4.921835148467521 8.211577028416752)"
+        },
+        "containsPlot":[
+        {
+            "@id": "urn:ngsi-ld:plot:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+            "@type": "Plot",
+            "area": "100",
+            "name": "A.3",
+            "crop": {
+                "@id": "urn:ngsi-ld:crop:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
+                "@type": "Crop",
+                "cropSpecies":{
+                    "@id":"urn:demeter:croptype:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
+                    "@type": "CropType",
+                    "name": "Corn",
+                    "description": "Spring corn parcel"
+                },
+                "cropStatus": "seeded",
+                "lastPlantedAt": "2020-10-01T12:00:00Z"       
+            },
+            "containsZone":{
+                "@id": "urn:ngsi-ld:mz:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
+                "@type": "ManagementZone",
+                "hasGeometry": {
+                    "@id": "urn:ngsi-ld:mz:geo:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
+                    "@type": "Polygon",
+                    "asWKT": "POLYGON ((-4.921835148467521 8.211577028416752, -4.909428711158992 8.209955238777532, -4.912627858335922 8.205939350092134, -4.925970627570363 8.204703687856378, -4.930496242356324 8.209569098645511, -4.921835148467521 8.211577028416752))"
+                },
+                "soilProperty":  {
+                    "@id": "urn:ngsi-ld:mz:soilp:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
+                    "@type": "PropertyType",
+                    "name":"Silt",
+                    "propertyType":"http://foodie-cloud.com/model/foodie/code/PropertyTypeValue/soilType"
+                },
+                "recommendedSowingPeriod":{
+                    "@id": "urn:ngsi-ld:mz:planting:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
+                    "@type": "Interval",
+                    "description": "Recommended period for sowing",
+                    "hasBeginning":{"@id": "urn:ngsi-ld:mz:planting:beg:df72dc57-1eb9-42a3-88a9-8647ecc954b4", "@type": "Instant", "inXSDDateTimeStamp":"2020-02-01T12:00:00Z"},
+                    "hasEnd":{"@id": "urn:ngsi-ld:mz:planting:end:df72dc57-1eb9-42a3-88a9-8647ecc954b4", "@type": "Instant", "inXSDDateTimeStamp":"2020-03-31T12:00:00Z"}
+                },
+                "serviceURL":"https://services.terrascope.be/wms/v2?service=WMS&version=1.3.0&request=GetMap&layers=CGS_S2_NDVI&format=image/png&time=2020-06-01&width=1920&height=592&bbox=556945.9710290054,6657998.9149440415,575290.8578174476,6663655.255037144&styles=&srs=EPSG:3857"
+            }
+        }]
+    },
+    {
+        "@id": "urn:ngsi-ld:intervention:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+        "@type": "Intervention",
+        "description": "Recommended seeds density for Class 1",  
+        "name": "Class 1",  
+        "hasProperty":"http://purl.oclc.org/NET/ssnx/qu/quantity#density",
+        "propertyHasValue":"345",
+        "interventionZone":"urn:ngsi-ld:mz:df72dc57-1eb9-42a3-88a9-8647ecc954b4"
+    },
+    {
+        "@id": "urn:ngsi-ld:intervention:72d9fb43-53f8-4ec8-a33c-fa931360259b",
+        "@type": "Intervention",
+        "description": "Recommended seeds density for Class 2", 
+        "name": "Class 2",  
+        "densityValue": "275",
+        "interventionZone":"urn:ngsi-ld:mz:df72dc57-1eb9-42a3-88a9-8647ecc954b4"
+    },
+    {
+        "@id": "urn:ngsi-ld:intervention:72d9fb43-53f8-4ec8-a33c-fa931360259c",
+        "@type": "Intervention",
+        "description": "Recommended seeds density for Class 3",  
+        "name": "Class 3", 
+        "densityValue": "167",
+        "interventionZone":"urn:ngsi-ld:mz:df72dc57-1eb9-42a3-88a9-8647ecc954b4"
+    }        
+    ]
+}
