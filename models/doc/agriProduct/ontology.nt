@@ -1,0 +1,388 @@
+<https://w3id.org/demeter/agri/agriProduct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/demeter/agri/agriProduct> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/demeter/agri/agriProduct/3.0> .
+<https://w3id.org/demeter/agri/agriProduct> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/demeter/agri/agriCommon> .
+<https://w3id.org/demeter/agri/agriProduct> <http://purl.org/dc/terms/contributor> <https://w3id.org/demeter/agri/agriProduct_:genid-nodeid-node1grl00frbx3> .
+<https://w3id.org/demeter/agri/agriProduct> <http://purl.org/dc/terms/contributor> _:genid1 .
+_:genid1 <https://schema.org/affiliation> _:genid2 .
+_:genid2 <http://xmlns.com/foaf/0.1/name> "ICCS" .
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" .
+<https://w3id.org/demeter/agri/agriProduct> <http://purl.org/dc/terms/contributor> _:genid3 .
+_:genid3 <https://schema.org/affiliation> _:genid4 .
+_:genid4 <http://xmlns.com/foaf/0.1/name> "OGC" .
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" .
+<https://w3id.org/demeter/agri/agriProduct> <http://purl.org/dc/terms/creator> _:genid5 .
+_:genid5 <https://schema.org/affiliation> _:genid6 .
+_:genid6 <http://xmlns.com/foaf/0.1/name> "PSNC" .
+_:genid5 <http://xmlns.com/foaf/0.1/name> "Raul Palma" .
+_:genid5 <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://orcid.org/0000-0003-4289-4922> .
+<https://w3id.org/demeter/agri/agriProduct> <http://purl.org/dc/terms/description> "The DEMETER AgriProduct is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en .
+<https://w3id.org/demeter/agri/agriProduct> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
+<https://w3id.org/demeter/agri/agriProduct> <http://purl.org/dc/terms/title> "DEMETER AgriProduct"@en .
+<https://w3id.org/demeter/agri/agriProduct> <http://www.w3.org/2000/01/rdf-schema#comment> "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en .
+<https://w3id.org/demeter/agri/agriProduct> <http://www.w3.org/2000/01/rdf-schema#label> "DEMETER AgriProduct"@en .
+<https://w3id.org/demeter/agri/agriProduct> <http://www.w3.org/2002/07/owl#versionInfo> "3.0" .
+<https://w3id.org/demeter/agri/agriProduct> <http://xmlns.com/foaf/0.1/maker> _:genid7 .
+_:genid7 <http://xmlns.com/foaf/0.1/name> "DEMETER project" .
+_:genid7 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://foodie-cloud.com/model/foodie#ingredientAmount
+<http://foodie-cloud.com/model/foodie#ingredientAmount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#ingredientAmount> <http://www.w3.org/2000/01/rdf-schema#range> <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> .
+<http://foodie-cloud.com/model/foodie#ingredientAmount> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to product nutrients entity to denote the measured amount of an specific ingredient" .
+<http://foodie-cloud.com/model/foodie#ingredientAmount> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#ingredientAmount> <http://www.w3.org/2000/01/rdf-schema#label> "ingredientAmount" .
+<http://foodie-cloud.com/model/foodie#ingredientAmount> <http://www.w3.org/2004/02/skos/core#prefLabel> "ingredientAmount"@en .
+# 
+# http://foodie-cloud.com/model/foodie#manufacturer
+<http://foodie-cloud.com/model/foodie#manufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#manufacturer> <http://www.w3.org/2000/01/rdf-schema#range> <http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty> .
+<http://foodie-cloud.com/model/foodie#manufacturer> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the responsible party entity related to a product entity defining the manufacturer relationship" .
+<http://foodie-cloud.com/model/foodie#manufacturer> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#manufacturer> <http://www.w3.org/2000/01/rdf-schema#label> "manufacturer" .
+<http://foodie-cloud.com/model/foodie#manufacturer> <http://www.w3.org/2004/02/skos/core#prefLabel> "manufacturer"@en .
+# 
+# http://foodie-cloud.com/model/foodie#nutrient
+<http://foodie-cloud.com/model/foodie#nutrient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#nutrient> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#ProductNutrients> .
+<http://foodie-cloud.com/model/foodie#nutrient> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the Product Nutrients entity related to a product entity" .
+<http://foodie-cloud.com/model/foodie#nutrient> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#nutrient> <http://www.w3.org/2000/01/rdf-schema#label> "nutrient" .
+<http://foodie-cloud.com/model/foodie#nutrient> <http://www.w3.org/2004/02/skos/core#prefLabel> "nutrient"@en .
+# 
+# http://foodie-cloud.com/model/foodie#nutrientAmount
+<http://foodie-cloud.com/model/foodie#nutrientAmount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#nutrientAmount> <http://www.w3.org/2000/01/rdf-schema#range> <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> .
+<http://foodie-cloud.com/model/foodie#nutrientAmount> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to product nutrients entity to denote the measured amount of an specific nutrient" .
+<http://foodie-cloud.com/model/foodie#nutrientAmount> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#nutrientAmount> <http://www.w3.org/2000/01/rdf-schema#label> "nutrientAmount" .
+<http://foodie-cloud.com/model/foodie#nutrientAmount> <http://www.w3.org/2004/02/skos/core#prefLabel> "nutrientAmount"@en .
+# 
+# http://foodie-cloud.com/model/foodie#nutrientProduct
+<http://foodie-cloud.com/model/foodie#nutrientProduct> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#nutrientProduct> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#Product> .
+<http://foodie-cloud.com/model/foodie#nutrientProduct> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the Product entity from  product nutrients entity" .
+<http://foodie-cloud.com/model/foodie#nutrientProduct> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#nutrientProduct> <http://www.w3.org/2000/01/rdf-schema#label> "nutrientProduct" .
+<http://foodie-cloud.com/model/foodie#nutrientProduct> <http://www.w3.org/2004/02/skos/core#prefLabel> "nutrientProduct"@en .
+# 
+# http://foodie-cloud.com/model/foodie#productKind
+<http://foodie-cloud.com/model/foodie#productKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#productKind> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#ProductKindValue> .
+<http://foodie-cloud.com/model/foodie#productKind> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the product kind value entity related to a product entity" .
+<http://foodie-cloud.com/model/foodie#productKind> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#productKind> <http://www.w3.org/2000/01/rdf-schema#label> "productKind" .
+<http://foodie-cloud.com/model/foodie#productKind> <http://www.w3.org/2004/02/skos/core#prefLabel> "productKind"@en .
+# 
+# http://foodie-cloud.com/model/foodie#productQuantity
+<http://foodie-cloud.com/model/foodie#productQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#productQuantity> <http://www.w3.org/2000/01/rdf-schema#range> <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> .
+<http://foodie-cloud.com/model/foodie#productQuantity> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to denote the measured quantity of an ingredient in the product prepartion entity" .
+<http://foodie-cloud.com/model/foodie#productQuantity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#productQuantity> <http://www.w3.org/2000/01/rdf-schema#label> "productQuantity" .
+<http://foodie-cloud.com/model/foodie#productQuantity> <http://www.w3.org/2004/02/skos/core#prefLabel> "productQuantity"@en .
+# 
+# http://foodie-cloud.com/model/foodie#safetyPeriod
+<http://foodie-cloud.com/model/foodie#safetyPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#safetyPeriod> <http://www.w3.org/2000/01/rdf-schema#range> <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period> .
+<http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#safetyPeriod> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to denote the time period for an element in the product prepartion entity" .
+<http://foodie-cloud.com/model/foodie#safetyPeriod> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#safetyPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "safetyPeriod" .
+<http://foodie-cloud.com/model/foodie#safetyPeriod> <http://www.w3.org/2004/02/skos/core#prefLabel> "safetyPeriod"@en .
+# 
+# http://foodie-cloud.com/model/foodie#solventQuantity
+<http://foodie-cloud.com/model/foodie#solventQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#solventQuantity> <http://www.w3.org/2000/01/rdf-schema#range> <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure> .
+<http://foodie-cloud.com/model/foodie#solventQuantity> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to denote the quantity of measure (e.g. solvent) in the product prepartion entity" .
+<http://foodie-cloud.com/model/foodie#solventQuantity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#solventQuantity> <http://www.w3.org/2000/01/rdf-schema#label> "solventQuantity" .
+<http://foodie-cloud.com/model/foodie#solventQuantity> <http://www.w3.org/2004/02/skos/core#prefLabel> "solventQuantity"@en .
+# 
+# http://purl.obolibrary.org/obo/FOODON_00001301
+<http://purl.obolibrary.org/obo/FOODON_00001301> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.obolibrary.org/obo/FOODON_00001301> <http://www.w3.org/2000/01/rdf-schema#comment> "has food substance analog" .
+<http://purl.obolibrary.org/obo/FOODON_00001301> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.obolibrary.org/obo/> .
+<http://purl.obolibrary.org/obo/FOODON_00001301> <http://www.w3.org/2000/01/rdf-schema#label> "hasFoodSubstanceAnalog" .
+# 
+# http://purl.obolibrary.org/obo/HANCESTRO_0308
+<http://purl.obolibrary.org/obo/HANCESTRO_0308> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.obolibrary.org/obo/HANCESTRO_0308> <http://www.w3.org/2000/01/rdf-schema#comment> "has country of origin" .
+<http://purl.obolibrary.org/obo/HANCESTRO_0308> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.obolibrary.org/obo/> .
+<http://purl.obolibrary.org/obo/HANCESTRO_0308> <http://www.w3.org/2000/01/rdf-schema#label> "hasCountryOfOrigin" .
+# 
+# http://purl.obolibrary.org/obo/RO_0002180
+<http://purl.obolibrary.org/obo/RO_0002180> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.obolibrary.org/obo/RO_0002180> <http://www.w3.org/2000/01/rdf-schema#comment> "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." .
+<http://purl.obolibrary.org/obo/RO_0002180> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.obolibrary.org/obo/> .
+<http://purl.obolibrary.org/obo/RO_0002180> <http://www.w3.org/2000/01/rdf-schema#label> "hasComponent" .
+# 
+# http://purl.obolibrary.org/obo/RO_0002473
+<http://purl.obolibrary.org/obo/RO_0002473> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.obolibrary.org/obo/RO_0002473> <http://www.w3.org/2000/01/rdf-schema#comment> "composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y" .
+<http://purl.obolibrary.org/obo/RO_0002473> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.obolibrary.org/obo/> .
+<http://purl.obolibrary.org/obo/RO_0002473> <http://www.w3.org/2000/01/rdf-schema#label> "composedPrimarilyOf" .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductType
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductType> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the AgriProductType used/ applied." .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcelOperation/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductType> <http://www.w3.org/2000/01/rdf-schema#label> "hasAgriProductType"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeChildren
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeChildren> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeChildren> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductType> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeChildren> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to child product types i.e. immediately below this entity in the hierarchy." .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeChildren> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriProductType/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeChildren> <http://www.w3.org/2000/01/rdf-schema#label> "hasAgriProductTypeChildren"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeParent
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeParent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeParent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductType> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeParent> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the parent product type i.e. immediately above the entity in the hierarchy." .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeParent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriProductType/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeParent> <http://www.w3.org/2000/01/rdf-schema#label> "hasAgriProductTypeParent"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://foodie-cloud.com/model/foodie#ingredientName
+<http://foodie-cloud.com/model/foodie#ingredientName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#ingredientName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://smartdatamodels.org/name> .
+<http://foodie-cloud.com/model/foodie#ingredientName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#ingredientName> <http://www.w3.org/2000/01/rdf-schema#comment> "Designation under which the Ingredient is commonly known" .
+<http://foodie-cloud.com/model/foodie#ingredientName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#ingredientName> <http://www.w3.org/2000/01/rdf-schema#label> "ingredientName" .
+<http://foodie-cloud.com/model/foodie#ingredientName> <http://www.w3.org/2004/02/skos/core#prefLabel> "ingredientName"@en .
+# 
+# http://foodie-cloud.com/model/foodie#nutrientMeasure
+<http://foodie-cloud.com/model/foodie#nutrientMeasure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#nutrientMeasure> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#nutrientMeasure> <http://www.w3.org/2000/01/rdf-schema#comment> "Textual description of a method for an estimation of the nutrient amount in the Product" .
+<http://foodie-cloud.com/model/foodie#nutrientMeasure> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#nutrientMeasure> <http://www.w3.org/2000/01/rdf-schema#label> "nutrientMeasure" .
+<http://foodie-cloud.com/model/foodie#nutrientMeasure> <http://www.w3.org/2004/02/skos/core#prefLabel> "nutrientMeasure"@en .
+# 
+# http://foodie-cloud.com/model/foodie#nutrientName
+<http://foodie-cloud.com/model/foodie#nutrientName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#nutrientName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://smartdatamodels.org/name> .
+<http://foodie-cloud.com/model/foodie#nutrientName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#nutrientName> <http://www.w3.org/2000/01/rdf-schema#comment> "Designation under which the nutrient is commonly known" .
+<http://foodie-cloud.com/model/foodie#nutrientName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#nutrientName> <http://www.w3.org/2000/01/rdf-schema#label> "ingredientName" .
+<http://foodie-cloud.com/model/foodie#nutrientName> <http://www.w3.org/2004/02/skos/core#prefLabel> "nutrientName"@en .
+# 
+# http://foodie-cloud.com/model/foodie#productCode
+<http://foodie-cloud.com/model/foodie#productCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#productCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#productCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Indentifing code of a product. Unique identification of the Product." .
+<http://foodie-cloud.com/model/foodie#productCode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#productCode> <http://www.w3.org/2000/01/rdf-schema#label> "productCode" .
+<http://foodie-cloud.com/model/foodie#productCode> <http://www.w3.org/2004/02/skos/core#prefLabel> "productCode"@en .
+# 
+# http://foodie-cloud.com/model/foodie#productName
+<http://foodie-cloud.com/model/foodie#productName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#productName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://smartdatamodels.org/name> .
+<http://foodie-cloud.com/model/foodie#productName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#productName> <http://www.w3.org/2000/01/rdf-schema#comment> "The property defines the designation under which the Product is commonly known" .
+<http://foodie-cloud.com/model/foodie#productName> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#productName> <http://www.w3.org/2000/01/rdf-schema#label> "productName" .
+<http://foodie-cloud.com/model/foodie#productName> <http://www.w3.org/2004/02/skos/core#prefLabel> "productName"@en .
+# 
+# http://foodie-cloud.com/model/foodie#productSubType
+<http://foodie-cloud.com/model/foodie#productSubType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#productSubType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#productSubType> <http://www.w3.org/2000/01/rdf-schema#comment> "More detailed classification of a type of the Product, e.g. biochemical insecticide, as a free text. The sub-types of Product vary from country to country as well as from farmer to farmer" .
+<http://foodie-cloud.com/model/foodie#productSubType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#productSubType> <http://www.w3.org/2000/01/rdf-schema#label> "productSubType" .
+<http://foodie-cloud.com/model/foodie#productSubType> <http://www.w3.org/2004/02/skos/core#prefLabel> "productSubType"@en .
+# 
+# http://foodie-cloud.com/model/foodie#productType
+<http://foodie-cloud.com/model/foodie#productType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#productType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#productType> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of the Product, e.g. pesticide, as a free text. The types of Product vary from country to country as well as from farmer to farmer" .
+<http://foodie-cloud.com/model/foodie#productType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#productType> <http://www.w3.org/2000/01/rdf-schema#label> "productType" .
+<http://foodie-cloud.com/model/foodie#productType> <http://www.w3.org/2004/02/skos/core#prefLabel> "productType"@en .
+# 
+# http://foodie-cloud.com/model/foodie#registerUrl
+<http://foodie-cloud.com/model/foodie#registerUrl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#registerUrl> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://foodie-cloud.com/model/foodie#registerUrl> <http://www.w3.org/2000/01/rdf-schema#comment> "Link to the national or any other relevant register where the Product was registered" .
+<http://foodie-cloud.com/model/foodie#registerUrl> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#registerUrl> <http://www.w3.org/2000/01/rdf-schema#label> "registerUrl" .
+<http://foodie-cloud.com/model/foodie#registerUrl> <http://www.w3.org/2004/02/skos/core#prefLabel> "registerUrl"@en .
+# 
+# http://foodie-cloud.com/model/foodie#registrationCode
+<http://foodie-cloud.com/model/foodie#registrationCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#registrationCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#registrationCode> <http://www.w3.org/2000/01/rdf-schema#comment> "Indentifing the registration code of a product. Unique identification of a Product according to the national or any other relevant registration scheme." .
+<http://foodie-cloud.com/model/foodie#registrationCode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#registrationCode> <http://www.w3.org/2000/01/rdf-schema#label> "registrationCode" .
+<http://foodie-cloud.com/model/foodie#registrationCode> <http://www.w3.org/2004/02/skos/core#prefLabel> "registrationCode"@en .
+# 
+# http://foodie-cloud.com/model/foodie#safetyInstructions
+<http://foodie-cloud.com/model/foodie#safetyInstructions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#safetyInstructions> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#safetyInstructions> <http://www.w3.org/2000/01/rdf-schema#comment> "The property defines the information on safe manipulation of the Product" .
+<http://foodie-cloud.com/model/foodie#safetyInstructions> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#safetyInstructions> <http://www.w3.org/2000/01/rdf-schema#label> "safetyInstructions" .
+<http://foodie-cloud.com/model/foodie#safetyInstructions> <http://www.w3.org/2004/02/skos/core#prefLabel> "safetyInstructions"@en .
+# 
+# http://foodie-cloud.com/model/foodie#storageHandling
+<http://foodie-cloud.com/model/foodie#storageHandling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#storageHandling> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#storageHandling> <http://www.w3.org/2000/01/rdf-schema#comment> "The property defines the information on the safe storage of the Product" .
+<http://foodie-cloud.com/model/foodie#storageHandling> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#storageHandling> <http://www.w3.org/2000/01/rdf-schema#label> "storageHandling" .
+<http://foodie-cloud.com/model/foodie#storageHandling> <http://www.w3.org/2004/02/skos/core#prefLabel> "storageHandling"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/root
+<https://smartdatamodels.org/dataModel.Agrifood/root> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/root> <http://www.w3.org/2000/01/rdf-schema#comment> "A logical indicator that this product is the root of an AgriProductType hierarchy. Logical true indicates it is the root." .
+<https://smartdatamodels.org/dataModel.Agrifood/root> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriProductType/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/root> <http://www.w3.org/2000/01/rdf-schema#label> "root"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period
+# 
+# http://foodie-cloud.com/model/foodie#ActiveIngredients
+<http://foodie-cloud.com/model/foodie#ActiveIngredients> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#ActiveIngredients> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#ingredientAmount> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ActiveIngredients> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#ingredientName> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ActiveIngredients> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#code> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ActiveIngredients> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity holds the information of the active ingredients (e.g. incredient name, ingredient code, ingredient amount) for a product" .
+<http://foodie-cloud.com/model/foodie#ActiveIngredients> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#ActiveIngredients> <http://www.w3.org/2000/01/rdf-schema#label> "ActiveIngredients" .
+<http://foodie-cloud.com/model/foodie#ActiveIngredients> <http://www.w3.org/2004/02/skos/core#prefLabel> "ActiveIngredients"@en .
+# 
+# http://foodie-cloud.com/model/foodie#Product
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2002/07/owl#equivalentClass> <https://smartdatamodels.org/dataModel.Agrifood/AgriProductType> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#manufacturer> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#productKind> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#productName> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#productType> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#description> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#price> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#safetyInstructions> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#storageHandling> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity defines a product" .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2000/01/rdf-schema#label> "Product" .
+<http://foodie-cloud.com/model/foodie#Product> <http://www.w3.org/2004/02/skos/core#prefLabel> "Product"@en .
+# 
+# http://foodie-cloud.com/model/foodie#ProductKindValue
+<http://foodie-cloud.com/model/foodie#ProductKindValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#ProductKindValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://foodie-cloud.com/model/foodie#ProductKindValue> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity holds the information of the kind/type of product (e.g. oragnic, mineral) as codelist" .
+<http://foodie-cloud.com/model/foodie#ProductKindValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#ProductKindValue> <http://www.w3.org/2000/01/rdf-schema#label> "ProductNutrients" .
+<http://foodie-cloud.com/model/foodie#ProductKindValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "ProductKindValue"@en .
+# 
+# http://foodie-cloud.com/model/foodie#ProductNutrients
+<http://foodie-cloud.com/model/foodie#ProductNutrients> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#ProductNutrients> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://foodie-cloud.com/model/foodie#ProductNutrients> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#nutrientProduct> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ProductNutrients> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#nutrientAmount> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ProductNutrients> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#nutrientName> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ProductNutrients> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#nutrientMeasure> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ProductNutrients> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity holds the information of the nutrients (e.g. nutrient name, nutrient measure, nutrient amount) used for a product" .
+<http://foodie-cloud.com/model/foodie#ProductNutrients> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#ProductNutrients> <http://www.w3.org/2000/01/rdf-schema#label> "ProductNutrients" .
+<http://foodie-cloud.com/model/foodie#ProductNutrients> <http://www.w3.org/2004/02/skos/core#prefLabel> "ProductNutrients"@en .
+# 
+# http://foodie-cloud.com/model/foodie#ProductPreparation
+<http://foodie-cloud.com/model/foodie#ProductPreparation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#ProductPreparation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://foodie-cloud.com/model/foodie#ProductPreparation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#productQuantity> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ProductPreparation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#safetyPeriod> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ProductPreparation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#solventQuantity> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ProductPreparation> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity defines the preparation of a product (e.g. quantities of the ingredients)" .
+<http://foodie-cloud.com/model/foodie#ProductPreparation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#ProductPreparation> <http://www.w3.org/2000/01/rdf-schema#label> "ProductPreparation" .
+<http://foodie-cloud.com/model/foodie#ProductPreparation> <http://www.w3.org/2004/02/skos/core#prefLabel> "ProductPreparation"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/AgriProductType
+<https://smartdatamodels.org/dataModel.Agrifood/AgriProductType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriProductType> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity contains a harmonised description of a generic agricultural product type. This entity is primarily associated with the agricultural vertical and related IoT applications. The AgriProductType includes a hierarchical structure that allows product types to be grouped in a flexible way." .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriProductType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriProductType/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriProductType> <http://www.w3.org/2000/01/rdf-schema#label> "AgriProductType" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

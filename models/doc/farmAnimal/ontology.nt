@@ -1,0 +1,320 @@
+<https://w3id.org/demeter/agri/farmAnimal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/demeter/agri/farmAnimal> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/demeter/agri/farmAnimal/3.0> .
+<https://w3id.org/demeter/agri/farmAnimal> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/demeter/agri/agriCommon> .
+<https://w3id.org/demeter/agri/farmAnimal> <http://purl.org/dc/terms/contributor> <https://w3id.org/demeter/agri/farmAnimal_:genid-nodeid-node1grkvs83kx3> .
+<https://w3id.org/demeter/agri/farmAnimal> <http://purl.org/dc/terms/contributor> _:genid1 .
+_:genid1 <https://schema.org/affiliation> _:genid2 .
+_:genid2 <http://xmlns.com/foaf/0.1/name> "OGC" .
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" .
+<https://w3id.org/demeter/agri/farmAnimal> <http://purl.org/dc/terms/contributor> _:genid3 .
+_:genid3 <https://schema.org/affiliation> _:genid4 .
+_:genid4 <http://xmlns.com/foaf/0.1/name> "ICCS" .
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" .
+<https://w3id.org/demeter/agri/farmAnimal> <http://purl.org/dc/terms/creator> _:genid5 .
+_:genid5 <https://schema.org/affiliation> _:genid6 .
+_:genid6 <http://xmlns.com/foaf/0.1/name> "PSNC" .
+_:genid5 <http://xmlns.com/foaf/0.1/name> "Raul Palma" .
+_:genid5 <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://orcid.org/0000-0003-4289-4922> .
+<https://w3id.org/demeter/agri/farmAnimal> <http://purl.org/dc/terms/description> "FarmAnimal is one of the agri profiles of the Agriculture Information Model (AIM). This profile was created by reusing and aligning well-known ontologies and vocabularies"@en .
+<https://w3id.org/demeter/agri/farmAnimal> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
+<https://w3id.org/demeter/agri/farmAnimal> <http://purl.org/dc/terms/title> "AIM FarmAnimal"@en .
+<https://w3id.org/demeter/agri/farmAnimal> <http://www.w3.org/2000/01/rdf-schema#comment> "The Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en .
+<https://w3id.org/demeter/agri/farmAnimal> <http://www.w3.org/2000/01/rdf-schema#label> "AIM FarmAnimal"@en .
+<https://w3id.org/demeter/agri/farmAnimal> <http://www.w3.org/2002/07/owl#versionInfo> "3.0" .
+<https://w3id.org/demeter/agri/farmAnimal> <http://xmlns.com/foaf/0.1/maker> _:genid7 .
+_:genid7 <http://xmlns.com/foaf/0.1/name> "DEMETER project" .
+_:genid7 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal
+<http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal> <http://www.w3.org/2000/01/rdf-schema#range> <http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal> <http://www.w3.org/2000/01/rdf-schema#comment> "relatinship to included animal in e.g., a farm site" .
+<http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal> <http://www.w3.org/2000/01/rdf-schema#label> "includesAnimal"@en .
+<http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal> <http://www.w3.org/2004/02/skos/core#prefLabel> "includesAnimal"@en .
+# 
+# http://purl.obolibrary.org/obo/TAXRANK_1000000
+<http://purl.obolibrary.org/obo/TAXRANK_1000000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://saref.etsi.org/saref4agri/hasID
+<https://saref.etsi.org/saref4agri/hasID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/saref4agri/hasID> <http://www.w3.org/2000/01/rdf-schema#range> <https://saref.etsi.org/saref4agri/ID> .
+<https://saref.etsi.org/saref4agri/hasID> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to express the unique identifier of an animal." .
+<https://saref.etsi.org/saref4agri/hasID> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/hasID> <http://www.w3.org/2000/01/rdf-schema#label> "has id"@en .
+# 
+# https://saref.etsi.org/saref4agri/hasMember
+<https://saref.etsi.org/saref4agri/hasMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/saref4agri/hasMember> <http://www.w3.org/2002/07/owl#inverseOf> <https://saref.etsi.org/saref4agri/isMemberOf> .
+<https://saref.etsi.org/saref4agri/hasMember> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to represent the members of an AnimalGroup." .
+<https://saref.etsi.org/saref4agri/hasMember> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/hasMember> <http://www.w3.org/2000/01/rdf-schema#label> "has member" .
+# 
+# https://saref.etsi.org/saref4agri/isLocatedIn
+<https://saref.etsi.org/saref4agri/isLocatedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/saref4agri/isLocatedIn> <http://www.w3.org/2002/07/owl#inverseOf> <https://saref.etsi.org/saref4agri/isLocationOf> .
+<https://saref.etsi.org/saref4agri/isLocatedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to express the physical location of a saref4agri entity (e.g., an animal)" .
+<https://saref.etsi.org/saref4agri/isLocatedIn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/isLocatedIn> <http://www.w3.org/2000/01/rdf-schema#label> "is located in" .
+# 
+# https://saref.etsi.org/saref4agri/isLocationOf
+<https://saref.etsi.org/saref4agri/isLocationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/saref4agri/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Location of a entity e.g. a farm" .
+<https://saref.etsi.org/saref4agri/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#label> "is location of" .
+# 
+# https://saref.etsi.org/saref4agri/isMemberOf
+<https://saref.etsi.org/saref4agri/isMemberOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/saref4agri/isMemberOf> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to express that an animal can be part of groups." .
+<https://saref.etsi.org/saref4agri/isMemberOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/isMemberOf> <http://www.w3.org/2000/01/rdf-schema#label> "is member of" .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/calvedBy
+<https://smartdatamodels.org/dataModel.Agrifood/calvedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/calvedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Mother of the animal" .
+<https://smartdatamodels.org/dataModel.Agrifood/calvedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/calvedBy> <http://www.w3.org/2000/01/rdf-schema#label> "calvedBy"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/fedWith
+<https://smartdatamodels.org/dataModel.Agrifood/fedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/fedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Food used for the animal" .
+<https://smartdatamodels.org/dataModel.Agrifood/fedWith> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/fedWith> <http://www.w3.org/2000/01/rdf-schema#label> "fedWith"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/locatedAt
+<https://smartdatamodels.org/dataModel.Agrifood/locatedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/locatedAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/saref4agri/isLocatedIn> .
+<https://smartdatamodels.org/dataModel.Agrifood/locatedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "AgriParcel relationship" .
+<https://smartdatamodels.org/dataModel.Agrifood/locatedAt> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/locatedAt> <http://www.w3.org/2000/01/rdf-schema#label> "locatedAt"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/ownedBy
+<https://smartdatamodels.org/dataModel.Agrifood/ownedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/ownedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The owner of the animal" .
+<https://smartdatamodels.org/dataModel.Agrifood/ownedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/ownedBy> <http://www.w3.org/2000/01/rdf-schema#label> "ownedBy"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/siredBy
+<https://smartdatamodels.org/dataModel.Agrifood/siredBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/siredBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Father of the animal" .
+<https://smartdatamodels.org/dataModel.Agrifood/siredBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/siredBy> <http://www.w3.org/2000/01/rdf-schema#label> "siredBy"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://foodie-cloud.com/model/foodie#livestockNumber
+<http://foodie-cloud.com/model/foodie#livestockNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#livestockNumber> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://smartdatamodels.org/dataModel.Agrifood/legalID> .
+<http://foodie-cloud.com/model/foodie#livestockNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<http://foodie-cloud.com/model/foodie#livestockNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to express the unique identification number of an animal in a farm" .
+<http://foodie-cloud.com/model/foodie#livestockNumber> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#livestockNumber> <http://www.w3.org/2000/01/rdf-schema#label> "livestock number" .
+<http://foodie-cloud.com/model/foodie#livestockNumber> <http://www.w3.org/2004/02/skos/core#prefLabel> "livestockNumber"@en .
+# 
+# http://foodie-cloud.com/model/foodie#livestockType
+<http://foodie-cloud.com/model/foodie#livestockType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#livestockType> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://smartdatamodels.org/dataModel.Agrifood/species> .
+<http://foodie-cloud.com/model/foodie#livestockType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://foodie-cloud.com/model/foodie#livestockType> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to express the type of an animal in a farm" .
+<http://foodie-cloud.com/model/foodie#livestockType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#livestockType> <http://www.w3.org/2000/01/rdf-schema#label> "livestock type" .
+<http://foodie-cloud.com/model/foodie#livestockType> <http://www.w3.org/2004/02/skos/core#prefLabel> "livestockType"@en .
+# 
+# https://saref.etsi.org/saref4agri/hasBirthDate
+<https://saref.etsi.org/saref4agri/hasBirthDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://saref.etsi.org/saref4agri/hasBirthDate> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://smartdatamodels.org/dataModel.Agrifood/birthdate> .
+<https://saref.etsi.org/saref4agri/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://saref.etsi.org/saref4agri/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to express the birth date of an animal." .
+<https://saref.etsi.org/saref4agri/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/hasBirthDate> <http://www.w3.org/2000/01/rdf-schema#label> "has birth date" .
+# 
+# https://saref.etsi.org/saref4agri/hasDeathDate
+<https://saref.etsi.org/saref4agri/hasDeathDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://saref.etsi.org/saref4agri/hasDeathDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://saref.etsi.org/saref4agri/hasDeathDate> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to express the death date of an animal." .
+<https://saref.etsi.org/saref4agri/hasDeathDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/hasDeathDate> <http://www.w3.org/2000/01/rdf-schema#label> "has death date" .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/birthdate
+<https://smartdatamodels.org/dataModel.Agrifood/birthdate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/birthdate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://smartdatamodels.org/dataModel.Agrifood/birthdate> <http://www.w3.org/2000/01/rdf-schema#comment> "Animal's birthdate" .
+<https://smartdatamodels.org/dataModel.Agrifood/birthdate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/birthdate> <http://www.w3.org/2000/01/rdf-schema#label> "birthdate"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/breed
+<https://smartdatamodels.org/dataModel.Agrifood/breed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/breed> <http://www.w3.org/2000/01/rdf-schema#comment> "Breed of the animal" .
+<https://smartdatamodels.org/dataModel.Agrifood/breed> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/breed> <http://www.w3.org/2000/01/rdf-schema#label> "breed"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/healthCondition
+<https://smartdatamodels.org/dataModel.Agrifood/healthCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/healthCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "Health Condition of the animal, e.g., healthy, sick, inTreatment" .
+<https://smartdatamodels.org/dataModel.Agrifood/healthCondition> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/healthCondition> <http://www.w3.org/2000/01/rdf-schema#label> "healthCondition"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/legalID
+<https://smartdatamodels.org/dataModel.Agrifood/legalID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/legalID> <http://www.w3.org/2000/01/rdf-schema#comment> "Legal ID of the animal" .
+<https://smartdatamodels.org/dataModel.Agrifood/legalID> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/legalID> <http://www.w3.org/2000/01/rdf-schema#label> "legalID"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition
+<https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "Phenological Condition of the animal, e.g., lactatingBaby, grazingBaby, maleAdult, femaleAdult, maleYoung, femaleYoung" .
+<https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition> <http://www.w3.org/2000/01/rdf-schema#label> "phenologicalCondition"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/relatedSource
+<https://smartdatamodels.org/dataModel.Agrifood/relatedSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/relatedSource> <http://www.w3.org/2000/01/rdf-schema#comment> "ID of the the current entity in external applications" .
+<https://smartdatamodels.org/dataModel.Agrifood/relatedSource> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/relatedSource> <http://www.w3.org/2000/01/rdf-schema#label> "relatedSource"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition
+<https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "Reproductive Condition of the animal, e.g., noStatus, inactive, inCalf, inHeat, active" .
+<https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition> <http://www.w3.org/2000/01/rdf-schema#label> "reproductiveCondition"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/sex
+<https://smartdatamodels.org/dataModel.Agrifood/sex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/sex> <http://www.w3.org/2000/01/rdf-schema#comment> "Sex of the animal, i.e., male, female" .
+<https://smartdatamodels.org/dataModel.Agrifood/sex> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/sex> <http://www.w3.org/2000/01/rdf-schema#label> "sex"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/species
+<https://smartdatamodels.org/dataModel.Agrifood/species> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/species> <http://www.w3.org/2000/01/rdf-schema#comment> "Species to which the animal belongs (dairy cattle, beef cattle, sheep, goat, horse, pig)" .
+<https://smartdatamodels.org/dataModel.Agrifood/species> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/species> <http://www.w3.org/2000/01/rdf-schema#label> "species"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/weight
+<https://smartdatamodels.org/dataModel.Agrifood/weight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/weight> <http://www.w3.org/2000/01/rdf-schema#comment> "The weight of the animal as a number" .
+<https://smartdatamodels.org/dataModel.Agrifood/weight> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/weight> <http://www.w3.org/2000/01/rdf-schema#label> "weight"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/welfareCondition
+<https://smartdatamodels.org/dataModel.Agrifood/welfareCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/welfareCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicator of the animal welfare, e.g., issue, adequate" .
+<https://smartdatamodels.org/dataModel.Agrifood/welfareCondition> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/welfareCondition> <http://www.w3.org/2000/01/rdf-schema#label> "welfareCondition"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies
+<http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/saref4agri/Animal> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#livestockNumber> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#livestockType> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifies an animal or group of animals of the same species kept on the specific site" .
+<http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies> <http://www.w3.org/2000/01/rdf-schema#label> "Farm Animal Species" .
+<http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies> <http://www.w3.org/2004/02/skos/core#prefLabel> "FarmAnimalSpecies"@en .
+# 
+# https://saref.etsi.org/core/FeatureOfInterest
+<https://saref.etsi.org/core/FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://saref.etsi.org/saref4agri/Animal
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2002/07/owl#equivalentClass> <https://smartdatamodels.org/dataModel.Agrifood/Animal> .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/FeatureOfInterest> .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.obolibrary.org/obo/TAXRANK_0000000> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.obolibrary.org/obo/TAXRANK_1000000> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.opengis.net/ont/geosparql#Feature> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/isLocatedIn> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/saref4agri/AnimalGroup> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/isMemberOf> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#onClass> <https://saref.etsi.org/saref4agri/ID> .
+_:genid13 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/hasID> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid14 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/hasBirthDate> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid15 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/hasDeathDate> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid16 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/hasName> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2000/01/rdf-schema#comment> "An individual and identifiable living organism that feeds on organic matter, typically having specialized sense organs and nervous system and able to respond rapidly to stimuli."@en .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/Animal> <http://www.w3.org/2000/01/rdf-schema#label> "Animal" .
+# 
+# https://saref.etsi.org/saref4agri/AnimalGroup
+<https://saref.etsi.org/saref4agri/AnimalGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/saref4agri/AnimalGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://saref.etsi.org/core/FeatureOfInterest> .
+<https://saref.etsi.org/saref4agri/AnimalGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/saref4agri/Animal> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/hasMember> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/AnimalGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.opengis.net/ont/geosparql#Feature> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/isLocatedIn> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/AnimalGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid19 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/hasName> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/AnimalGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of one or multiple animals."@en .
+<https://saref.etsi.org/saref4agri/AnimalGroup> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/AnimalGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Animal Group" .
+# 
+# https://saref.etsi.org/saref4agri/ID
+<https://saref.etsi.org/saref4agri/ID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/saref4agri/ID> <http://www.w3.org/2000/01/rdf-schema#comment> "A class of animal IDs" .
+<https://saref.etsi.org/saref4agri/ID> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/ID> <http://www.w3.org/2000/01/rdf-schema#label> "ID" .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/Animal
+<https://smartdatamodels.org/dataModel.Agrifood/Animal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://smartdatamodels.org/dataModel.Agrifood/Animal> <http://www.w3.org/2000/01/rdf-schema#comment> "An animal" .
+<https://smartdatamodels.org/dataModel.Agrifood/Animal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/Animal> <http://www.w3.org/2000/01/rdf-schema#label> "Animal" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

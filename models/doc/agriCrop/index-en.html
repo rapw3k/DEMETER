@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>DEMETER AgriCrop</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/demeter/agri/agriCrop","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/demeter/agri/agriCrop","name":"DEMETER AgriCrop", "headline":"The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions.", "datePublished":"Date of release", "version":"3.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Raul Palma","url":"http://orcid.org/0000-0003-4289-4922"}], "contributor":[{"@type":"Person","name":"Rob Atkinson"},{"@type":"Person","name":"Ioanna Roussaki"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>DEMETER AgriCrop</h1>
+<h2>Release Date of release</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/demeter/agri/agriCrop/3.0">https://w3id.org/demeter/agri/agriCrop/3.0</a></dd>
+<dt>Revision:</dt>
+<dd>3.0</dd>
+<dt>Authors:</dt>
+<dd><a href="http://orcid.org/0000-0003-4289-4922">Raul Palma</a></dd>
+
+<dt>Contributors:</dt>
+<dd>Rob Atkinson</dd><dd>Ioanna Roussaki</dd>
+
+<dt>Imported Ontologies:</dt>
+<dd><a href="https://w3id.org/demeter/agri/agriCommon">https://w3id.org/demeter/agri/agriCommon</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC_BY_4.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
+<img src="https://en.wikipedia.org/wiki/Creative_Commons_license#/media/File:CC_BY_icon.svg" style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>DEMETER Agriculture Information Model (AIM) Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">DEMETER Agriculture Information Model (AIM) domain ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/AgriCrop"
+         title="https://smartdatamodels.org/dataModel.Agrifood/AgriCrop">Agri Crop</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/Crop" title="https://saref.etsi.org/saref4agri/Crop">Crop</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#CropSpecies" title="http://foodie-cloud.com/model/foodie#CropSpecies">CropSpecies CropSpecies</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#CropType" title="http://foodie-cloud.com/model/foodie#CropType">CropType CropType</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#ProductionType"
+         title="http://foodie-cloud.com/model/foodie#ProductionType">ProductionType ProductionType</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#cropArea" title="http://foodie-cloud.com/model/foodie#cropArea">cropArea cropArea</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil"
+         title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil">cropHasAgriSoil</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#cropSpecies" title="http://foodie-cloud.com/model/foodie#cropSpecies">cropSpecies cropSpecies</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/generates" title="https://saref.etsi.org/saref4agri/generates">generates</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser"
+         title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser">hasAgriFertiliser</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest"
+         title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest">hasAgriPest</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#production" title="http://foodie-cloud.com/model/foodie#production">production production</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#productionAmount"
+         title="http://foodie-cloud.com/model/foodie#productionAmount">productionAmount productionAmount</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/receives" title="https://saref.etsi.org/saref4agri/receives">receives</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#expectedBloomingEnd"
+         title="https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd">Expected Blooming End</a>
+   </li>
+   <li>
+      <a href="#expectedBloomingStart"
+         title="https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart">Expected Blooming Start</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#family" title="http://foodie-cloud.com/model/foodie#family">family family</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#genus" title="http://foodie-cloud.com/model/foodie#genus">genus genus</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval"
+         title="https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval">harvestingInterval</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/hasHarvestDate" title="https://saref.etsi.org/saref4agri/hasHarvestDate">has harvest date</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/hasPlantDate" title="https://saref.etsi.org/saref4agri/hasPlantDate">has plant date</a>
+   </li>
+   <li>
+      <a href="#numberOfHivesNeeded"
+         title="https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded">Number Of Hives Needed</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/plantingFrom"
+         title="https://smartdatamodels.org/dataModel.Agrifood/plantingFrom">plantingFrom</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#productionDate"
+         title="http://foodie-cloud.com/model/foodie#productionDate">productionDate productionDate</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#species" title="http://foodie-cloud.com/model/foodie#species">species species</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#variety" title="http://foodie-cloud.com/model/foodie#variety">variety variety</a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">DEMETER Agriculture Information Model (AIM) domain ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for DEMETER Agriculture Information Model (AIM) domain ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by DEMETER Agriculture Information Model (AIM) domain ontology.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/AgriCrop"
+            title="https://smartdatamodels.org/dataModel.Agrifood/AgriCrop">Agri Crop</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/Crop" title="https://saref.etsi.org/saref4agri/Crop">Crop</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#CropSpecies" title="http://foodie-cloud.com/model/foodie#CropSpecies">CropSpecies CropSpecies</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#CropType" title="http://foodie-cloud.com/model/foodie#CropType">CropType CropType</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#ProductionType"
+            title="http://foodie-cloud.com/model/foodie#ProductionType">ProductionType ProductionType</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/AgriCrop">
+      <h3>Agri Crop<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/AgriCrop</p>
+      <div class="comment">
+         <span class="markdown">This entity contains a harmonised description of a generic crop. This entity is primarily associated with the agricultural vertical and related IoT applications.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json</a>
+         </dd>
+      </dl>
+      <dl class="description"/>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/Crop">
+      <h3>Crop<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/Crop</p>
+      <div class="comment">
+         <span class="markdown">A collection of cultivated plants that is grown on a large scale commercially, especially a cereal, fruit, or vegetable.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://smartdatamodels.org/dataModel.Agrifood/AgriCrop"
+               title="https://smartdatamodels.org/dataModel.Agrifood/AgriCrop">Agri Crop</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://saref.etsi.org/core/FeatureOfInterest"
+               target="_blank"
+               title="https://saref.etsi.org/core/FeatureOfInterest">feature of interest</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#CropSpecies">
+      <h3>CropSpecies<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <h3>CropSpecies<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#CropSpecies</p>
+      <div class="comment">
+         <span class="markdown">An entity for the species of the Crops grown in a plot. The planted crop species</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://saref.etsi.org/saref4agri/Crop" title="https://saref.etsi.org/saref4agri/Crop">Crop</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.opengis.net/ont/geosparql#Feature"
+               target="_blank"
+               title="http://www.opengis.net/ont/geosparql#Feature">feature</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#CropType">
+      <h3>CropType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <h3>CropType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#CropType</p>
+      <div class="comment">
+         <span class="markdown">Designation under which the CropSpecies is commonly known</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd/>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://foodie-cloud.com/model/foodie#cropSpecies" title="http://foodie-cloud.com/model/foodie#cropSpecies">cropSpecies cropSpecies</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#ProductionType">
+      <h3>ProductionType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <h3>ProductionType<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#ProductionType</p>
+      <div class="comment">
+         <span class="markdown">An entity containing relevant production-related data</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd/>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://foodie-cloud.com/model/foodie#production" title="http://foodie-cloud.com/model/foodie#production">production production</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#cropArea" title="http://foodie-cloud.com/model/foodie#cropArea">cropArea cropArea</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil"
+            title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil">cropHasAgriSoil</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#cropSpecies" title="http://foodie-cloud.com/model/foodie#cropSpecies">cropSpecies cropSpecies</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/generates" title="https://saref.etsi.org/saref4agri/generates">generates</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser"
+            title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser">hasAgriFertiliser</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest"
+            title="https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest">hasAgriPest</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#production" title="http://foodie-cloud.com/model/foodie#production">production production</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#productionAmount"
+            title="http://foodie-cloud.com/model/foodie#productionAmount">productionAmount productionAmount</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/receives" title="https://saref.etsi.org/saref4agri/receives">receives</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#cropArea">
+      <h3>cropArea<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>cropArea<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#cropArea</p>
+      <div class="comment">
+         <span class="markdown">The geometry defining the spatial extent of the CropSpecies on the Plot</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.opengis.net/ont/geosparql#Geometry"
+                  target="_blank"
+                  title="http://www.opengis.net/ont/geosparql#Geometry">geometry</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil">
+      <h3>cropHasAgriSoil<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil</p>
+      <div class="comment">
+         <span class="markdown">Reference to the recommended types of soil suitable for growing this crop</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#cropSpecies">
+      <h3>cropSpecies<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>cropSpecies<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#cropSpecies</p>
+      <div class="comment">
+         <span class="markdown">Relation to the designation under which the CropSpecies is commonly known; such designation is expressed as a CropType</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://foodie-cloud.com/model/foodie#CropType" title="http://foodie-cloud.com/model/foodie#CropType">CropType CropType</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/generates">
+      <h3>generates<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/generates</p>
+      <div class="comment">
+         <span class="markdown">A relation to represent the yield generated by a Crop.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://saref.etsi.org/core/hasProperty"
+                  target="_blank"
+                  title="https://saref.etsi.org/core/hasProperty">has property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser">
+      <h3>hasAgriFertiliser<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser</p>
+      <div class="comment">
+         <span class="markdown">Reference to the recommended types of fertiliser suitable for growing this crop</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest">
+      <h3>hasAgriPest<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest</p>
+      <div class="comment">
+         <span class="markdown">Reference to the pests known to attack this crop.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#production">
+      <h3>production<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>production<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#production</p>
+      <div class="comment">
+         <span class="markdown">Relation to entity containing relevant production-related data, that is defined as a ProductionType</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://foodie-cloud.com/model/foodie#ProductionType"
+                  title="http://foodie-cloud.com/model/foodie#ProductionType">ProductionType ProductionType</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#productionAmount">
+      <h3>productionAmount<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>productionAmount<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#productionAmount</p>
+      <div class="comment">
+         <span class="markdown">The value of a physical quantity of produced variety, together with its unit</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure"
+                  target="_blank"
+                  title="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure">measure</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/receives">
+      <h3>receives<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/receives</p>
+      <div class="comment">
+         <span class="markdown">A relation to represent the intake/consumption of certain substances in a Crop.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="https://saref.etsi.org/core/hasProperty"
+                  target="_blank"
+                  title="https://saref.etsi.org/core/hasProperty">has property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#expectedBloomingEnd"
+            title="https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd">Expected Blooming End</a>
+      </li>
+      <li>
+         <a href="#expectedBloomingStart"
+            title="https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart">Expected Blooming Start</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#family" title="http://foodie-cloud.com/model/foodie#family">family family</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#genus" title="http://foodie-cloud.com/model/foodie#genus">genus genus</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval"
+            title="https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval">harvestingInterval</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/hasHarvestDate" title="https://saref.etsi.org/saref4agri/hasHarvestDate">has harvest date</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/hasPlantDate" title="https://saref.etsi.org/saref4agri/hasPlantDate">has plant date</a>
+      </li>
+      <li>
+         <a href="#numberOfHivesNeeded"
+            title="https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded">Number Of Hives Needed</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/plantingFrom"
+            title="https://smartdatamodels.org/dataModel.Agrifood/plantingFrom">plantingFrom</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#productionDate"
+            title="http://foodie-cloud.com/model/foodie#productionDate">productionDate productionDate</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#species" title="http://foodie-cloud.com/model/foodie#species">species species</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#variety" title="http://foodie-cloud.com/model/foodie#variety">variety variety</a>
+      </li>
+   </ul>
+   <div class="entity" id="expectedBloomingEnd">
+      <h3>Expected Blooming End<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd</p>
+      <div class="comment">
+         <span class="markdown">Expected Blooming End</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/demeter/agri/agriCrop#">https://w3id.org/demeter/agri/agriCrop#</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="expectedBloomingStart">
+      <h3>Expected Blooming Start<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/demeter/agri/agriCrop#expectedBloomingStart</p>
+      <div class="comment">
+         <span class="markdown">Expected Blooming Start</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/demeter/agri/agriCrop#">https://w3id.org/demeter/agri/agriCrop#</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#family">
+      <h3>family<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <h3>family<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#family</p>
+      <div class="comment">
+         <span class="markdown">a principal taxonomic category that ranks above genus and below order</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#genus">
+      <h3>genus<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <h3>genus<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#genus</p>
+      <div class="comment">
+         <span class="markdown">a principal taxonomic category that ranks above species and below family</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval">
+      <h3>harvestingInterval<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval</p>
+      <div class="comment">
+         <span class="markdown">A list of the recommended harvesting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:
+interval, description
+Where interval is in the form of start date/end date
+--MM-DD/--MM-DD
+Meaning repeat each year from this start date to this end date.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/hasHarvestDate">
+      <h3>has harvest date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/hasHarvestDate</p>
+      <div class="comment">
+         <span class="markdown">A relation to express the day the crop is harvested.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#http://foodie-cloud.com/model/foodie#productionDate"
+                  title="http://foodie-cloud.com/model/foodie#productionDate">productionDate productionDate</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/hasPlantDate">
+      <h3>has plant date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/hasPlantDate</p>
+      <div class="comment">
+         <span class="markdown">A relation to express the day the crop is planted.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/2002/07/owl#topDataProperty"
+                  target="_blank"
+                  title="http://www.w3.org/2002/07/owl#topDataProperty">top data property</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="numberOfHivesNeeded">
+      <h3>Number Of Hives Needed<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded</p>
+      <div class="comment">
+         <span class="markdown">Number Of Hives Needed</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://w3id.org/demeter/agri/agriCrop#">https://w3id.org/demeter/agri/agriCrop#</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/plantingFrom">
+      <h3>plantingFrom<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/plantingFrom</p>
+      <div class="comment">
+         <span class="markdown">A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:
+interval, description
+Where interval is in the form of start date/end date
+--MM-DD/--MM-DD
+Meaning repeat each year from this start date to this end date.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#productionDate">
+      <h3>productionDate<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <h3>productionDate<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#productionDate</p>
+      <div class="comment">
+         <span class="markdown">date and time of production, e.g., when it was inserted or changed in the database</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/hasHarvestDate" title="https://saref.etsi.org/saref4agri/hasHarvestDate">has harvest date</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#species">
+      <h3>species<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <h3>species<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#species</p>
+      <div class="comment">
+         <span class="markdown">a group of living organisms consisting of similar individuals capable of exchanging genes or interbreeding</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#variety">
+      <h3>variety<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <h3>variety<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#variety</p>
+      <div class="comment">
+         <span class="markdown">a taxonomic category that ranks below subspecies (where present) or species, its mem-bers differing from others of the same subspecies or species in minor but permanent or heritable characteristics</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

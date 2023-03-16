@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>AIM FarmAnimal</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/demeter/agri/farmAnimal","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/demeter/agri/farmAnimal","name":"AIM FarmAnimal", "headline":"The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions.", "datePublished":"Date of release", "version":"3.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Raul Palma","url":"http://orcid.org/0000-0003-4289-4922"}], "contributor":[{"@type":"Person","name":"Rob Atkinson"},{"@type":"Person","name":"Ioanna Roussaki"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>AIM FarmAnimal</h1>
+<h2>Release Date of release</h2>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/demeter/agri/farmAnimal/3.0">https://w3id.org/demeter/agri/farmAnimal/3.0</a></dd>
+<dt>Revision:</dt>
+<dd>3.0</dd>
+<dt>Authors:</dt>
+<dd><a href="http://orcid.org/0000-0003-4289-4922">Raul Palma</a></dd>
+
+<dt>Contributors:</dt>
+<dd>Rob Atkinson</dd><dd>Ioanna Roussaki</dd>
+
+<dt>Imported Ontologies:</dt>
+<dd><a href="https://w3id.org/demeter/agri/agriCommon">https://w3id.org/demeter/agri/agriCommon</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC_BY_4.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
+<img src="https://en.wikipedia.org/wiki/Creative_Commons_license#/media/File:CC_BY_icon.svg" style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>DEMETER Agriculture Information Model (AIM) Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">DEMETER Agriculture Information Model (AIM) domain ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/Animal" title="https://saref.etsi.org/saref4agri/Animal">Animal</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/Animal"
+         title="https://smartdatamodels.org/dataModel.Agrifood/Animal">Animal</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/AnimalGroup" title="https://saref.etsi.org/saref4agri/AnimalGroup">Animal Group</a>
+   </li>
+   <li>
+      <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies"
+         title="http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies">Farm Animal Species FarmAnimalSpecies</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/ID" title="https://saref.etsi.org/saref4agri/ID">ID</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/calvedBy"
+         title="https://smartdatamodels.org/dataModel.Agrifood/calvedBy">calvedBy</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/fedWith"
+         title="https://smartdatamodels.org/dataModel.Agrifood/fedWith">fedWith</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/hasID" title="https://saref.etsi.org/saref4agri/hasID">has id</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/hasMember" title="https://saref.etsi.org/saref4agri/hasMember">has member</a>
+   </li>
+   <li>
+      <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal"
+         title="http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal">includesAnimal includesAnimal</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/isLocatedIn" title="https://saref.etsi.org/saref4agri/isLocatedIn">is located in</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/isLocationOf" title="https://saref.etsi.org/saref4agri/isLocationOf">is location of</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/isMemberOf" title="https://saref.etsi.org/saref4agri/isMemberOf">is member of</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/locatedAt"
+         title="https://smartdatamodels.org/dataModel.Agrifood/locatedAt">locatedAt</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/ownedBy"
+         title="https://smartdatamodels.org/dataModel.Agrifood/ownedBy">ownedBy</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/siredBy"
+         title="https://smartdatamodels.org/dataModel.Agrifood/siredBy">siredBy</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/birthdate"
+         title="https://smartdatamodels.org/dataModel.Agrifood/birthdate">birthdate</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/breed"
+         title="https://smartdatamodels.org/dataModel.Agrifood/breed">breed</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/hasBirthDate" title="https://saref.etsi.org/saref4agri/hasBirthDate">has birth date</a>
+   </li>
+   <li>
+      <a href="#https://saref.etsi.org/saref4agri/hasDeathDate" title="https://saref.etsi.org/saref4agri/hasDeathDate">has death date</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/healthCondition"
+         title="https://smartdatamodels.org/dataModel.Agrifood/healthCondition">healthCondition</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/legalID"
+         title="https://smartdatamodels.org/dataModel.Agrifood/legalID">legalID</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#livestockNumber"
+         title="http://foodie-cloud.com/model/foodie#livestockNumber">livestock number livestockNumber</a>
+   </li>
+   <li>
+      <a href="#http://foodie-cloud.com/model/foodie#livestockType"
+         title="http://foodie-cloud.com/model/foodie#livestockType">livestock type livestockType</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition"
+         title="https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition">phenologicalCondition</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/relatedSource"
+         title="https://smartdatamodels.org/dataModel.Agrifood/relatedSource">relatedSource</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition"
+         title="https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition">reproductiveCondition</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/sex"
+         title="https://smartdatamodels.org/dataModel.Agrifood/sex">sex</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/species"
+         title="https://smartdatamodels.org/dataModel.Agrifood/species">species</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/weight"
+         title="https://smartdatamodels.org/dataModel.Agrifood/weight">weight</a>
+   </li>
+   <li>
+      <a href="#https://smartdatamodels.org/dataModel.Agrifood/welfareCondition"
+         title="https://smartdatamodels.org/dataModel.Agrifood/welfareCondition">welfareCondition</a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">DEMETER Agriculture Information Model (AIM) domain ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for DEMETER Agriculture Information Model (AIM) domain ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by DEMETER Agriculture Information Model (AIM) domain ontology.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/Animal" title="https://saref.etsi.org/saref4agri/Animal">Animal</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/Animal"
+            title="https://smartdatamodels.org/dataModel.Agrifood/Animal">Animal</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/AnimalGroup" title="https://saref.etsi.org/saref4agri/AnimalGroup">Animal Group</a>
+      </li>
+      <li>
+         <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies"
+            title="http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies">Farm Animal Species FarmAnimalSpecies</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/ID" title="https://saref.etsi.org/saref4agri/ID">ID</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/Animal">
+      <h3>Animal<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/Animal</p>
+      <div class="comment">
+         <span class="markdown">An individual and identifiable living organism that feeds on organic matter, typically having specialized sense organs and nervous system and able to respond rapidly to stimuli.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://smartdatamodels.org/dataModel.Agrifood/Animal"
+               title="https://smartdatamodels.org/dataModel.Agrifood/Animal">Animal</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://saref.etsi.org/core/FeatureOfInterest"
+               target="_blank"
+               title="https://saref.etsi.org/core/FeatureOfInterest">feature of interest</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/Animal">
+      <h3>Animal<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/Animal</p>
+      <div class="comment">
+         <span class="markdown">An animal</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+      <dl class="description"/>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/AnimalGroup">
+      <h3>Animal Group<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/AnimalGroup</p>
+      <div class="comment">
+         <span class="markdown">A collection of one or multiple animals.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="https://saref.etsi.org/core/FeatureOfInterest"
+               target="_blank"
+               title="https://saref.etsi.org/core/FeatureOfInterest">feature of interest</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies">
+      <h3>Farm Animal Species<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <h3>FarmAnimalSpecies<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies</p>
+      <div class="comment">
+         <span class="markdown">Identifies an animal or group of animals of the same species kept on the specific site</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://inspire.ec.europa.eu/schemas/af/3.0#">http://inspire.ec.europa.eu/schemas/af/3.0#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#https://saref.etsi.org/saref4agri/Animal" title="https://saref.etsi.org/saref4agri/Animal">Animal</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd/>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal"
+               title="http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal">includesAnimal includesAnimal</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/ID">
+      <h3>ID<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/ID</p>
+      <div class="comment">
+         <span class="markdown">A class of animal IDs</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#https://saref.etsi.org/saref4agri/hasID" title="https://saref.etsi.org/saref4agri/hasID">has id</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/calvedBy"
+            title="https://smartdatamodels.org/dataModel.Agrifood/calvedBy">calvedBy</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/fedWith"
+            title="https://smartdatamodels.org/dataModel.Agrifood/fedWith">fedWith</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/hasID" title="https://saref.etsi.org/saref4agri/hasID">has id</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/hasMember" title="https://saref.etsi.org/saref4agri/hasMember">has member</a>
+      </li>
+      <li>
+         <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal"
+            title="http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal">includesAnimal includesAnimal</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/isLocatedIn" title="https://saref.etsi.org/saref4agri/isLocatedIn">is located in</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/isLocationOf" title="https://saref.etsi.org/saref4agri/isLocationOf">is location of</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/isMemberOf" title="https://saref.etsi.org/saref4agri/isMemberOf">is member of</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/locatedAt"
+            title="https://smartdatamodels.org/dataModel.Agrifood/locatedAt">locatedAt</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/ownedBy"
+            title="https://smartdatamodels.org/dataModel.Agrifood/ownedBy">ownedBy</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/siredBy"
+            title="https://smartdatamodels.org/dataModel.Agrifood/siredBy">siredBy</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/calvedBy">
+      <h3>calvedBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/calvedBy</p>
+      <div class="comment">
+         <span class="markdown">Mother of the animal</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/fedWith">
+      <h3>fedWith<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/fedWith</p>
+      <div class="comment">
+         <span class="markdown">Food used for the animal</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/hasID">
+      <h3>has id<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/hasID</p>
+      <div class="comment">
+         <span class="markdown">A relation to express the unique identifier of an animal.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/ID" title="https://saref.etsi.org/saref4agri/ID">ID</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/hasMember">
+      <h3>has member<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/hasMember</p>
+      <div class="comment">
+         <span class="markdown">A relation to represent the members of an AnimalGroup.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/isMemberOf" title="https://saref.etsi.org/saref4agri/isMemberOf">is member of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal">
+      <h3>includesAnimal<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <h3>includesAnimal<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://inspire.ec.europa.eu/schemas/af/3.0#includesAnimal</p>
+      <div class="comment">
+         <span class="markdown">relatinship to included animal in e.g., a farm site</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://inspire.ec.europa.eu/schemas/af/3.0#">http://inspire.ec.europa.eu/schemas/af/3.0#</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies"
+                  title="http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies">Farm Animal Species FarmAnimalSpecies</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/isLocatedIn">
+      <h3>is located in<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/isLocatedIn</p>
+      <div class="comment">
+         <span class="markdown">A relation to express the physical location of a saref4agri entity (e.g., an animal)</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#https://smartdatamodels.org/dataModel.Agrifood/locatedAt"
+                  title="https://smartdatamodels.org/dataModel.Agrifood/locatedAt">locatedAt</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/isLocationOf" title="https://saref.etsi.org/saref4agri/isLocationOf">is location of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/isLocationOf">
+      <h3>is location of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/isLocationOf</p>
+      <div class="comment">
+         <span class="markdown">Location of a entity e.g. a farm</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/isLocatedIn" title="https://saref.etsi.org/saref4agri/isLocatedIn">is located in</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/isMemberOf">
+      <h3>is member of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/isMemberOf</p>
+      <div class="comment">
+         <span class="markdown">A relation to express that an animal can be part of groups.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/hasMember" title="https://saref.etsi.org/saref4agri/hasMember">has member</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/locatedAt">
+      <h3>locatedAt<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/locatedAt</p>
+      <div class="comment">
+         <span class="markdown">AgriParcel relationship</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/isLocatedIn" title="https://saref.etsi.org/saref4agri/isLocatedIn">is located in</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/ownedBy">
+      <h3>ownedBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/ownedBy</p>
+      <div class="comment">
+         <span class="markdown">The owner of the animal</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/siredBy">
+      <h3>siredBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/siredBy</p>
+      <div class="comment">
+         <span class="markdown">Father of the animal</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/birthdate"
+            title="https://smartdatamodels.org/dataModel.Agrifood/birthdate">birthdate</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/breed"
+            title="https://smartdatamodels.org/dataModel.Agrifood/breed">breed</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/hasBirthDate" title="https://saref.etsi.org/saref4agri/hasBirthDate">has birth date</a>
+      </li>
+      <li>
+         <a href="#https://saref.etsi.org/saref4agri/hasDeathDate" title="https://saref.etsi.org/saref4agri/hasDeathDate">has death date</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/healthCondition"
+            title="https://smartdatamodels.org/dataModel.Agrifood/healthCondition">healthCondition</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/legalID"
+            title="https://smartdatamodels.org/dataModel.Agrifood/legalID">legalID</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#livestockNumber"
+            title="http://foodie-cloud.com/model/foodie#livestockNumber">livestock number livestockNumber</a>
+      </li>
+      <li>
+         <a href="#http://foodie-cloud.com/model/foodie#livestockType"
+            title="http://foodie-cloud.com/model/foodie#livestockType">livestock type livestockType</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition"
+            title="https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition">phenologicalCondition</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/relatedSource"
+            title="https://smartdatamodels.org/dataModel.Agrifood/relatedSource">relatedSource</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition"
+            title="https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition">reproductiveCondition</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/sex"
+            title="https://smartdatamodels.org/dataModel.Agrifood/sex">sex</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/species"
+            title="https://smartdatamodels.org/dataModel.Agrifood/species">species</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/weight"
+            title="https://smartdatamodels.org/dataModel.Agrifood/weight">weight</a>
+      </li>
+      <li>
+         <a href="#https://smartdatamodels.org/dataModel.Agrifood/welfareCondition"
+            title="https://smartdatamodels.org/dataModel.Agrifood/welfareCondition">welfareCondition</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/birthdate">
+      <h3>birthdate<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/birthdate</p>
+      <div class="comment">
+         <span class="markdown">Animal's birthdate</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#https://saref.etsi.org/saref4agri/hasBirthDate" title="https://saref.etsi.org/saref4agri/hasBirthDate">has birth date</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/breed">
+      <h3>breed<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/breed</p>
+      <div class="comment">
+         <span class="markdown">Breed of the animal</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/hasBirthDate">
+      <h3>has birth date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/hasBirthDate</p>
+      <div class="comment">
+         <span class="markdown">A relation to express the birth date of an animal.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#https://smartdatamodels.org/dataModel.Agrifood/birthdate"
+                  title="https://smartdatamodels.org/dataModel.Agrifood/birthdate">birthdate</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://saref.etsi.org/saref4agri/hasDeathDate">
+      <h3>has death date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://saref.etsi.org/saref4agri/hasDeathDate</p>
+      <div class="comment">
+         <span class="markdown">A relation to express the death date of an animal.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://saref.etsi.org/saref4agri/">https://saref.etsi.org/saref4agri/</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#dateTime"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#dateTime">date time</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/healthCondition">
+      <h3>healthCondition<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/healthCondition</p>
+      <div class="comment">
+         <span class="markdown">Health Condition of the animal, e.g., healthy, sick, inTreatment</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/legalID">
+      <h3>legalID<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/legalID</p>
+      <div class="comment">
+         <span class="markdown">Legal ID of the animal</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#http://foodie-cloud.com/model/foodie#livestockNumber"
+                  title="http://foodie-cloud.com/model/foodie#livestockNumber">livestock number livestockNumber</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#livestockNumber">
+      <h3>livestock number<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <h3>livestockNumber<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#livestockNumber</p>
+      <div class="comment">
+         <span class="markdown">A relation to express the unique identification number of an animal in a farm</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#https://smartdatamodels.org/dataModel.Agrifood/legalID"
+                  title="https://smartdatamodels.org/dataModel.Agrifood/legalID">legalID</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://foodie-cloud.com/model/foodie#livestockType">
+      <h3>livestock type<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <h3>livestockType<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://foodie-cloud.com/model/foodie#livestockType</p>
+      <div class="comment">
+         <span class="markdown">A relation to express the type of an animal in a farm</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://foodie-cloud.com/model/foodie">http://foodie-cloud.com/model/foodie</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#https://smartdatamodels.org/dataModel.Agrifood/species"
+                  title="https://smartdatamodels.org/dataModel.Agrifood/species">species</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition">
+      <h3>phenologicalCondition<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition</p>
+      <div class="comment">
+         <span class="markdown">Phenological Condition of the animal, e.g., lactatingBaby, grazingBaby, maleAdult, femaleAdult, maleYoung, femaleYoung</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/relatedSource">
+      <h3>relatedSource<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/relatedSource</p>
+      <div class="comment">
+         <span class="markdown">ID of the the current entity in external applications</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition">
+      <h3>reproductiveCondition<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition</p>
+      <div class="comment">
+         <span class="markdown">Reproductive Condition of the animal, e.g., noStatus, inactive, inCalf, inHeat, active</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/sex">
+      <h3>sex<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/sex</p>
+      <div class="comment">
+         <span class="markdown">Sex of the animal, i.e., male, female</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/species">
+      <h3>species<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/species</p>
+      <div class="comment">
+         <span class="markdown">Species to which the animal belongs (dairy cattle, beef cattle, sheep, goat, horse, pig)</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has equivalent properties</dt>
+            <dd>
+               <a href="#http://foodie-cloud.com/model/foodie#livestockType"
+                  title="http://foodie-cloud.com/model/foodie#livestockType">livestock type livestockType</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/weight">
+      <h3>weight<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/weight</p>
+      <div class="comment">
+         <span class="markdown">The weight of the animal as a number</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://smartdatamodels.org/dataModel.Agrifood/welfareCondition">
+      <h3>welfareCondition<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://smartdatamodels.org/dataModel.Agrifood/welfareCondition</p>
+      <div class="comment">
+         <span class="markdown">Indicator of the animal welfare, e.g., issue, adequate</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json">https://github.com/smart-data-models/dataModel.Agrifood/blob/master/Animal/schema.json</a>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

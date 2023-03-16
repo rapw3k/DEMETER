@@ -1,0 +1,469 @@
+<https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/demeter/agri/agriFeature/3.0> .
+<https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/demeter/agri/agriCommon> .
+<https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/contributor> <https://w3id.org/demeter/agri/agriFeature_:genid-nodeid-node1grkvmilix3> .
+<https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/contributor> _:genid1 .
+_:genid1 <https://schema.org/affiliation> _:genid2 .
+_:genid2 <http://xmlns.com/foaf/0.1/name> "OGC" .
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" .
+<https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/contributor> _:genid3 .
+_:genid3 <https://schema.org/affiliation> _:genid4 .
+_:genid4 <http://xmlns.com/foaf/0.1/name> "ICCS" .
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" .
+<https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/creator> _:genid5 .
+_:genid5 <https://schema.org/affiliation> _:genid6 .
+_:genid6 <http://xmlns.com/foaf/0.1/name> "PSNC" .
+_:genid5 <http://xmlns.com/foaf/0.1/name> "Raul Palma" .
+_:genid5 <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://orcid.org/0000-0003-4289-4922> .
+<https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/description> "The DEMETER AgriFeature is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en .
+<https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
+<https://w3id.org/demeter/agri/agriFeature> <http://purl.org/dc/terms/title> "DEMETER AgriFeature"@en .
+<https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2000/01/rdf-schema#comment> "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en .
+<https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2000/01/rdf-schema#label> "DEMETER AgriFeature"@en .
+<https://w3id.org/demeter/agri/agriFeature> <http://www.w3.org/2002/07/owl#versionInfo> "3.0" .
+<https://w3id.org/demeter/agri/agriFeature> <http://xmlns.com/foaf/0.1/maker> _:genid7 .
+_:genid7 <http://xmlns.com/foaf/0.1/name> "DEMETER project" .
+_:genid7 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://foodie-cloud.com/model/foodie#containsPlot
+<http://foodie-cloud.com/model/foodie#containsPlot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#containsPlot> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/saref4agri/contains> .
+<http://foodie-cloud.com/model/foodie#containsPlot> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#Plot> .
+<http://foodie-cloud.com/model/foodie#containsPlot> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation from Site to Plot " .
+<http://foodie-cloud.com/model/foodie#containsPlot> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#containsPlot> <http://www.w3.org/2000/01/rdf-schema#label> "containsPlot"@en .
+<http://foodie-cloud.com/model/foodie#containsPlot> <http://www.w3.org/2004/02/skos/core#prefLabel> "containsPlot"@en .
+# 
+# http://foodie-cloud.com/model/foodie#containsZone
+<http://foodie-cloud.com/model/foodie#containsZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#containsZone> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/saref4agri/contains> .
+<http://foodie-cloud.com/model/foodie#containsZone> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#ManagementZone> .
+<http://foodie-cloud.com/model/foodie#containsZone> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation from Plot to Management zone" .
+<http://foodie-cloud.com/model/foodie#containsZone> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#containsZone> <http://www.w3.org/2000/01/rdf-schema#label> "containsZone"@en .
+<http://foodie-cloud.com/model/foodie#containsZone> <http://www.w3.org/2004/02/skos/core#prefLabel> "containsZone"@en .
+# 
+# http://foodie-cloud.com/model/foodie#crop
+<http://foodie-cloud.com/model/foodie#crop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#crop> <http://www.w3.org/2002/07/owl#equivalentProperty> <https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop> .
+<http://foodie-cloud.com/model/foodie#crop> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation from Plot to CropSpecies" .
+<http://foodie-cloud.com/model/foodie#crop> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#crop> <http://www.w3.org/2000/01/rdf-schema#label> "crop"@en .
+<http://foodie-cloud.com/model/foodie#crop> <http://www.w3.org/2004/02/skos/core#prefLabel> "crop"@en .
+# 
+# http://foodie-cloud.com/model/foodie#holdingPlot
+<http://foodie-cloud.com/model/foodie#holdingPlot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#holdingPlot> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/saref4agri/isContainedIn> .
+<http://foodie-cloud.com/model/foodie#holdingPlot> <http://www.w3.org/2000/01/rdf-schema#range> <http://inspire.ec.europa.eu/schemas/af/3.0#Site> .
+<http://foodie-cloud.com/model/foodie#holdingPlot> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation from Plot to Site" .
+<http://foodie-cloud.com/model/foodie#holdingPlot> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#holdingPlot> <http://www.w3.org/2000/01/rdf-schema#label> "holdingPlot"@en .
+<http://foodie-cloud.com/model/foodie#holdingPlot> <http://www.w3.org/2004/02/skos/core#prefLabel> "holdingPlot"@en .
+# 
+# http://foodie-cloud.com/model/foodie#holdingSite
+<http://foodie-cloud.com/model/foodie#holdingSite> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#holdingSite> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/saref4agri/isContainedIn> .
+<http://foodie-cloud.com/model/foodie#holdingSite> <http://www.w3.org/2000/01/rdf-schema#range> <http://inspire.ec.europa.eu/schemas/af/3.0#Holding> .
+<http://foodie-cloud.com/model/foodie#holdingSite> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation from Site to Holding" .
+<http://foodie-cloud.com/model/foodie#holdingSite> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#holdingSite> <http://www.w3.org/2000/01/rdf-schema#label> "holdingSite"@en .
+<http://foodie-cloud.com/model/foodie#holdingSite> <http://www.w3.org/2004/02/skos/core#prefLabel> "holdingSite"@en .
+# 
+# http://foodie-cloud.com/model/foodie#holdingZone
+<http://foodie-cloud.com/model/foodie#holdingZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#holdingZone> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/saref4agri/isContainedIn> .
+<http://foodie-cloud.com/model/foodie#holdingZone> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#Plot> .
+<http://foodie-cloud.com/model/foodie#holdingZone> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation from Management Zone to Plot" .
+<http://foodie-cloud.com/model/foodie#holdingZone> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#holdingZone> <http://www.w3.org/2000/01/rdf-schema#label> "holdingPlot"@en .
+<http://foodie-cloud.com/model/foodie#holdingZone> <http://www.w3.org/2004/02/skos/core#prefLabel> "holdingZone"@en .
+# 
+# http://foodie-cloud.com/model/foodie#machine
+<http://foodie-cloud.com/model/foodie#machine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#machine> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#MachineType> .
+<http://foodie-cloud.com/model/foodie#MachineType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#machine> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation from Intervention to MachineType" .
+<http://foodie-cloud.com/model/foodie#machine> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#machine> <http://www.w3.org/2000/01/rdf-schema#label> "machine"@en .
+<http://foodie-cloud.com/model/foodie#machine> <http://www.w3.org/2004/02/skos/core#prefLabel> "machine"@en .
+# 
+# http://foodie-cloud.com/model/foodie#originType
+<http://foodie-cloud.com/model/foodie#originType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#originType> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#OriginTypeValue> .
+<http://foodie-cloud.com/model/foodie#originType> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to the origin of a Plot when taking into consideration only two options: manual (created by human/user) and system (produced by the platform" .
+<http://foodie-cloud.com/model/foodie#originType> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#originType> <http://www.w3.org/2000/01/rdf-schema#label> "containsZone"@en .
+<http://foodie-cloud.com/model/foodie#originType> <http://www.w3.org/2004/02/skos/core#prefLabel> "originType"@en .
+# 
+# http://foodie-cloud.com/model/foodie#tractor
+<http://foodie-cloud.com/model/foodie#tractor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#tractor> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#TractorType> .
+<http://foodie-cloud.com/model/foodie#TractorType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#tractor> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation from Intervention to TractorType" .
+<http://foodie-cloud.com/model/foodie#tractor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#tractor> <http://www.w3.org/2000/01/rdf-schema#label> "tractor"@en .
+<http://foodie-cloud.com/model/foodie#tractor> <http://www.w3.org/2004/02/skos/core#prefLabel> "tractor"@en .
+# 
+# http://inspire.ec.europa.eu/schemas/af/3.0#activity
+<http://inspire.ec.europa.eu/schemas/af/3.0#activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#activity> <http://www.w3.org/2000/01/rdf-schema#range> <http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#activity> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation to the classification of the economic activity of the site" .
+<http://inspire.ec.europa.eu/schemas/af/3.0#activity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#activity> <http://www.w3.org/2000/01/rdf-schema#label> "activity"@en .
+<http://inspire.ec.europa.eu/schemas/af/3.0#activity> <http://www.w3.org/2004/02/skos/core#prefLabel> "activity"@en .
+# 
+# http://inspire.ec.europa.eu/schemas/af/3.0#contains
+<http://inspire.ec.europa.eu/schemas/af/3.0#contains> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#contains> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/saref4agri/contains> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#contains> <http://www.w3.org/2000/01/rdf-schema#range> <http://inspire.ec.europa.eu/schemas/af/3.0#Site> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#contains> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation from Holding to Site " .
+<http://inspire.ec.europa.eu/schemas/af/3.0#contains> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#contains> <http://www.w3.org/2000/01/rdf-schema#label> "contains"@en .
+<http://inspire.ec.europa.eu/schemas/af/3.0#contains> <http://www.w3.org/2004/02/skos/core#prefLabel> "contains"@en .
+# 
+# http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.w3.org/2003/01/geo/wgs84_pos#location> .
+# 
+# https://saref.etsi.org/saref4agri/contains
+<https://saref.etsi.org/saref4agri/contains> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/saref4agri/contains> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#sfContains> .
+<https://saref.etsi.org/saref4agri/contains> <http://www.w3.org/2002/07/owl#inverseOf> <https://saref.etsi.org/saref4agri/isContainedIn> .
+<https://saref.etsi.org/saref4agri/contains> <http://www.w3.org/2000/01/rdf-schema#comment> "A realtion to represent the contained land parcel" .
+<https://saref.etsi.org/saref4agri/contains> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/contains> <http://www.w3.org/2000/01/rdf-schema#label> "contains" .
+# 
+# https://saref.etsi.org/saref4agri/isContainedIn
+<https://saref.etsi.org/saref4agri/isContainedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://saref.etsi.org/saref4agri/isContainedIn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#sfWithin> .
+<https://saref.etsi.org/saref4agri/isContainedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation inverse of s4agri:contains" .
+<https://saref.etsi.org/saref4agri/isContainedIn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/isContainedIn> <http://www.w3.org/2000/01/rdf-schema#label> "is contained in"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the crop associated with this parcel" .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop> <http://www.w3.org/2000/01/rdf-schema#label> "hasAgriCrop"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/saref4agri/contains> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel> <http://www.w3.org/2000/01/rdf-schema#comment> "List of agri parcels belonging to the farm" .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel> <http://www.w3.org/2000/01/rdf-schema#label> "hasAgriParcel"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/saref4agri/contains> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren> <http://www.w3.org/2000/01/rdf-schema#comment> "Related sub AgriParcel records to which this entity relates" .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren> <http://www.w3.org/2000/01/rdf-schema#label> "hasAgriParcelChildren"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://saref.etsi.org/saref4agri/isContainedIn> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the parent AgriParcel" .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent> <http://www.w3.org/2000/01/rdf-schema#label> "hasAgriParcelParent"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the soil associated with this parcel of land" .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil> <http://www.w3.org/2000/01/rdf-schema#label> "hasAgriSoil"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/landLocation
+<https://smartdatamodels.org/dataModel.Agrifood/landLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/landLocation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://uri.etsi.org/ngsi-ld/location> .
+<https://smartdatamodels.org/dataModel.Agrifood/landLocation> <http://www.w3.org/2000/01/rdf-schema#comment> "Geometry defining the boundaries of the farm land" .
+<https://smartdatamodels.org/dataModel.Agrifood/landLocation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/landLocation> <http://www.w3.org/2000/01/rdf-schema#label> "landLocation"@en .
+# 
+# https://uri.etsi.org/ngsi-ld/location
+<https://uri.etsi.org/ngsi-ld/location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://uri.etsi.org/ngsi-ld/location> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+<https://uri.etsi.org/ngsi-ld/location> <http://www.w3.org/2000/01/rdf-schema#comment> "The geo:json encoded polygon / multi-polygon describing this item.  It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon" .
+<https://uri.etsi.org/ngsi-ld/location> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> .
+<https://uri.etsi.org/ngsi-ld/location> <http://www.w3.org/2000/01/rdf-schema#label> "location"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/area
+<https://smartdatamodels.org/dataModel.Agrifood/area> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/area> <http://www.w3.org/2000/01/rdf-schema#comment> "The area of the parcel nominally in square meters." .
+<https://smartdatamodels.org/dataModel.Agrifood/area> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/area> <http://www.w3.org/2000/01/rdf-schema#label> "area"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/cropStatus
+<https://smartdatamodels.org/dataModel.Agrifood/cropStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/cropStatus> <http://www.w3.org/2000/01/rdf-schema#comment> "A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting." .
+<https://smartdatamodels.org/dataModel.Agrifood/cropStatus> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/cropStatus> <http://www.w3.org/2000/01/rdf-schema#label> "cropStatus"@en .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt
+<https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the date when the crop was last planted." .
+<https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt> <http://www.w3.org/2000/01/rdf-schema#label> "lastPlantedAt"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://foodie-cloud.com/model/foodie#MachineType
+# 
+# http://foodie-cloud.com/model/foodie#ManagementZone
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#code> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#generatedAtTime> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#notes> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://portele.de/ont/inspire/baseInspire#validFrom> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://portele.de/ont/inspire/baseInspire#validTo> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#invalidatedAtTime> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2000/01/rdf-schema#comment> "A spatial subset of a Plot that has specific properties like electric conductivity, organic matter, pH, soil texture, soil type or soil nutrients" .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2000/01/rdf-schema#label> "ManagementZone"@en .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/2004/02/skos/core#prefLabel> "ManagementZone"@en .
+# 
+# http://foodie-cloud.com/model/foodie#OriginTypeValue
+<http://foodie-cloud.com/model/foodie#OriginTypeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#OriginTypeValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://foodie-cloud.com/model/foodie#OriginTypeValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Origin of a Plot when taking into consideration only two options: manual (created by human user) and system generated" .
+<http://foodie-cloud.com/model/foodie#OriginTypeValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#OriginTypeValue> <http://www.w3.org/2000/01/rdf-schema#label> "OriginTypeValue"@en .
+<http://foodie-cloud.com/model/foodie#OriginTypeValue> <http://www.w3.org/2004/02/skos/core#prefLabel> "OriginTypeValue"@en .
+# 
+# http://foodie-cloud.com/model/foodie#Plot
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/saref4agri/Parcel> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#code> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://portele.de/ont/inspire/baseInspire#validFrom> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#description> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://portele.de/ont/inspire/baseInspire#validTo> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#generatedAtTime> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#invalidatedAtTime> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2000/01/rdf-schema#comment> "A continuous area of agricultural land with one type of crop species, cultivated by one user in one farming mode, e.g., conventional, transitional, organic farming" .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2000/01/rdf-schema#label> "Plot"@en .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/2004/02/skos/core#prefLabel> "Plot"@en .
+# 
+# http://foodie-cloud.com/model/foodie#TractorType
+# 
+# http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex
+<http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue
+<http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The classification of the economic activity according to the NACE" .
+<http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+<http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue> <http://www.w3.org/2000/01/rdf-schema#label> "EconomicActivityNACEValue"@en .
+<http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue> <http://www.w3.org/2000/01/rdf-schema#label> "EconomicActivityNACEValue" .
+# 
+# http://inspire.ec.europa.eu/schemas/af/3.0#Holding
+<http://inspire.ec.europa.eu/schemas/af/3.0#Holding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Holding> <http://www.w3.org/2002/07/owl#equivalentClass> <https://saref.etsi.org/saref4agri/Farm> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Holding> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inspire.ec.europa.eu/schemas/act-core/3.0#ActivityComplex> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Holding> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Holding> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://inspire.ec.europa.eu/schemas/af/3.0#contains> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Holding> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Holding> <http://www.w3.org/2000/01/rdf-schema#comment> "The whole area and all infrastructures included on it, covering the same or different sites, under the control of an operator to perform agricultural or aquaculture activities" .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Holding> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Holding> <http://www.w3.org/2000/01/rdf-schema#label> "Holding"@en .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Holding> <http://www.w3.org/2004/02/skos/core#prefLabel> "Holding"@en .
+# 
+# http://inspire.ec.europa.eu/schemas/af/3.0#Site
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#containsPlot> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://inspire.ec.europa.eu/schemas/af/3.0#activity> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#code> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
+_:genid28 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <http://portele.de/ont/inspire/baseInspire#validFrom> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
+_:genid29 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <http://portele.de/ont/inspire/baseInspire#validTo> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#generatedAtTime> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid31 .
+_:genid31 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#invalidatedAtTime> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#comment> "A agricultural or aquacultural facility. All land at a same or distinct geographic location under the management control of a holding covering activities, products and services. This includes all infrastructure, equipment and materials." .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2000/01/rdf-schema#label> "Site"@en .
+<http://inspire.ec.europa.eu/schemas/af/3.0#Site> <http://www.w3.org/2004/02/skos/core#prefLabel> "Site"@en .
+# 
+# https://saref.etsi.org/saref4agri/Building
+<https://saref.etsi.org/saref4agri/Building> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/saref4agri/Building> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<https://saref.etsi.org/saref4agri/Building> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid32 .
+_:genid32 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/saref4agri/BuildingSpace> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/contains> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Building> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
+_:genid33 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/hasName> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Building> <http://www.w3.org/2000/01/rdf-schema#comment> "A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space)."@en .
+<https://saref.etsi.org/saref4agri/Building> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/Building> <http://www.w3.org/2000/01/rdf-schema#label> "Building" .
+# 
+# https://saref.etsi.org/saref4agri/BuildingSpace
+<https://saref.etsi.org/saref4agri/BuildingSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/saref4agri/BuildingSpace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<https://saref.etsi.org/saref4agri/BuildingSpace> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity used to define the physical spaces of the building. A building space contains devices or building objects."@en .
+<https://saref.etsi.org/saref4agri/BuildingSpace> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/BuildingSpace> <http://www.w3.org/2000/01/rdf-schema#label> "Building space"@en .
+# 
+# https://saref.etsi.org/saref4agri/Crop
+<https://saref.etsi.org/saref4agri/Crop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://saref.etsi.org/saref4agri/Farm
+<https://saref.etsi.org/saref4agri/Farm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/saref4agri/Farm> <http://www.w3.org/2002/07/owl#equivalentClass> <https://smartdatamodels.org/dataModel.Agrifood/AgriFarm> .
+<https://saref.etsi.org/saref4agri/Farm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<https://saref.etsi.org/saref4agri/Farm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
+_:genid34 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/saref4agri/Building> .
+_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/contains> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Farm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid35 .
+_:genid35 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/saref4agri/Parcel> .
+_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/contains> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Farm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
+_:genid36 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/hasName> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Farm> <http://www.w3.org/2000/01/rdf-schema#comment> "A plot of land used for the scope of farming which can contain buildings and parcels."@en .
+<https://saref.etsi.org/saref4agri/Farm> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/Farm> <http://www.w3.org/2000/01/rdf-schema#label> "Farm" .
+# 
+# https://saref.etsi.org/saref4agri/Parcel
+<https://saref.etsi.org/saref4agri/Parcel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://saref.etsi.org/saref4agri/Parcel> <http://www.w3.org/2002/07/owl#equivalentClass> <https://smartdatamodels.org/dataModel.Agrifood/AgriParcel> .
+<https://saref.etsi.org/saref4agri/Parcel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<https://saref.etsi.org/saref4agri/Parcel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+_:genid37 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://saref.etsi.org/saref4agri/Crop> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/contains> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Parcel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid38 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <https://saref.etsi.org/saref4agri/hasName> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://saref.etsi.org/saref4agri/Parcel> <http://www.w3.org/2000/01/rdf-schema#comment> "An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items."@en .
+<https://saref.etsi.org/saref4agri/Parcel> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://saref.etsi.org/saref4agri/> .
+<https://saref.etsi.org/saref4agri/Parcel> <http://www.w3.org/2000/01/rdf-schema#label> "Parcel" .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/AgriFarm
+<https://smartdatamodels.org/dataModel.Agrifood/AgriFarm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriFarm> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications." .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriFarm> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriFarm> <http://www.w3.org/2000/01/rdf-schema#label> "Agri Farm" .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse
+<https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://smartdatamodels.org/dataModel.Agrifood/AgriParcel> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications." .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriGreenhouse/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse> <http://www.w3.org/2000/01/rdf-schema#label> "Agri Greenhouse" .
+# 
+# https://smartdatamodels.org/dataModel.Agrifood/AgriParcel
+<https://smartdatamodels.org/dataModel.Agrifood/AgriParcel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriParcel> <http://www.w3.org/2000/01/rdf-schema#comment> "This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications." .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriParcel> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> .
+<https://smartdatamodels.org/dataModel.Agrifood/AgriParcel> <http://www.w3.org/2000/01/rdf-schema#label> "Agri Parcel" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

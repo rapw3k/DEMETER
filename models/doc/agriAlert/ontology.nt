@@ -1,0 +1,216 @@
+<https://w3id.org/demeter/agri/agriAlert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/demeter/agri/agriAlert> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/demeter/agri/agriAlert/3.0> .
+<https://w3id.org/demeter/agri/agriAlert> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/demeter/agri/agriCommon> .
+<https://w3id.org/demeter/agri/agriAlert> <http://purl.org/dc/terms/contributor> <https://w3id.org/demeter/agri/agriAlert_:genid-nodeid-node1grkvouiex3> .
+<https://w3id.org/demeter/agri/agriAlert> <http://purl.org/dc/terms/contributor> _:genid1 .
+_:genid1 <https://schema.org/affiliation> _:genid2 .
+_:genid2 <http://xmlns.com/foaf/0.1/name> "OGC" .
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Rob Atkinson" .
+<https://w3id.org/demeter/agri/agriAlert> <http://purl.org/dc/terms/contributor> _:genid3 .
+_:genid3 <https://schema.org/affiliation> _:genid4 .
+_:genid4 <http://xmlns.com/foaf/0.1/name> "ICCS" .
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Ioanna Roussaki" .
+<https://w3id.org/demeter/agri/agriAlert> <http://purl.org/dc/terms/creator> _:genid5 .
+_:genid5 <https://schema.org/affiliation> _:genid6 .
+_:genid6 <http://xmlns.com/foaf/0.1/name> "PSNC" .
+_:genid5 <http://xmlns.com/foaf/0.1/name> "Raul Palma" .
+_:genid5 <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://orcid.org/0000-0003-4289-4922> .
+<https://w3id.org/demeter/agri/agriAlert> <http://purl.org/dc/terms/description> "The DEMETER AgriAlert is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en .
+<https://w3id.org/demeter/agri/agriAlert> <http://purl.org/dc/terms/rights> "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en .
+<https://w3id.org/demeter/agri/agriAlert> <http://purl.org/dc/terms/title> "DEMETER AgriAlert"@en .
+<https://w3id.org/demeter/agri/agriAlert> <http://www.w3.org/2000/01/rdf-schema#comment> "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en .
+<https://w3id.org/demeter/agri/agriAlert> <http://www.w3.org/2000/01/rdf-schema#label> "DEMETER AgriAlert" .
+<https://w3id.org/demeter/agri/agriAlert> <http://www.w3.org/2002/07/owl#versionInfo> "3.0" .
+<https://w3id.org/demeter/agri/agriAlert> <http://xmlns.com/foaf/0.1/maker> _:genid7 .
+_:genid7 <http://xmlns.com/foaf/0.1/name> "DEMETER project" .
+_:genid7 <http://xmlns.com/foaf/0.1/homepage> <https://h2020-demeter.eu/> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://foodie-cloud.com/model/foodie#alertGeometry
+<http://foodie-cloud.com/model/foodie#alertGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#alertGeometry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+<http://foodie-cloud.com/model/foodie#alertGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/ont/geosparql#Geometry> .
+<http://foodie-cloud.com/model/foodie#alertGeometry> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between Geometry entity and Alert" .
+<http://foodie-cloud.com/model/foodie#alertGeometry> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#alertGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "alertGeometry" .
+<http://foodie-cloud.com/model/foodie#alertGeometry> <http://www.w3.org/2004/02/skos/core#prefLabel> "alertGeometry"@en .
+# 
+# http://foodie-cloud.com/model/foodie#alertPlot
+<http://foodie-cloud.com/model/foodie#alertPlot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#alertPlot> <http://www.w3.org/2002/07/owl#inverseOf> <http://foodie-cloud.com/model/foodie#plotAlert> .
+<http://foodie-cloud.com/model/foodie#alertPlot> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#Plot> .
+<http://foodie-cloud.com/model/foodie#Plot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#alertPlot> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation inverse of plotAlert directing from Alert to Plot class" .
+<http://foodie-cloud.com/model/foodie#alertPlot> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#alertPlot> <http://www.w3.org/2000/01/rdf-schema#label> "plotAlert" .
+<http://foodie-cloud.com/model/foodie#alertPlot> <http://www.w3.org/2004/02/skos/core#prefLabel> "alertPlot"@en .
+# 
+# http://foodie-cloud.com/model/foodie#alertSpecies
+<http://foodie-cloud.com/model/foodie#alertSpecies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#alertSpecies> <http://www.w3.org/2002/07/owl#inverseOf> <http://foodie-cloud.com/model/foodie#speciesAlert> .
+<http://foodie-cloud.com/model/foodie#alertSpecies> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#CropSpecies> .
+<http://foodie-cloud.com/model/foodie#CropSpecies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#alertSpecies> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between crop species and alert." .
+<http://foodie-cloud.com/model/foodie#alertSpecies> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#alertSpecies> <http://www.w3.org/2000/01/rdf-schema#label> "alertSpecies" .
+<http://foodie-cloud.com/model/foodie#alertSpecies> <http://www.w3.org/2004/02/skos/core#prefLabel> "alertSpecies"@en .
+# 
+# http://foodie-cloud.com/model/foodie#alertZone
+<http://foodie-cloud.com/model/foodie#alertZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#alertZone> <http://www.w3.org/2002/07/owl#inverseOf> <http://foodie-cloud.com/model/foodie#zoneAlert> .
+<http://foodie-cloud.com/model/foodie#alertZone> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#ManagementZone> .
+<http://foodie-cloud.com/model/foodie#ManagementZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#alertZone> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between management zone and alert." .
+<http://foodie-cloud.com/model/foodie#alertZone> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#alertZone> <http://www.w3.org/2000/01/rdf-schema#label> "alertSpecies" .
+<http://foodie-cloud.com/model/foodie#alertZone> <http://www.w3.org/2004/02/skos/core#prefLabel> "alertZone"@en .
+# 
+# http://foodie-cloud.com/model/foodie#plotAlert
+<http://foodie-cloud.com/model/foodie#plotAlert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#plotAlert> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#Alert> .
+<http://foodie-cloud.com/model/foodie#plotAlert> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation from Plot to Alert" .
+<http://foodie-cloud.com/model/foodie#plotAlert> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#plotAlert> <http://www.w3.org/2000/01/rdf-schema#label> "plotAlert" .
+<http://foodie-cloud.com/model/foodie#plotAlert> <http://www.w3.org/2004/02/skos/core#prefLabel> "plotAlert"@en .
+# 
+# http://foodie-cloud.com/model/foodie#speciesAlert
+<http://foodie-cloud.com/model/foodie#speciesAlert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#speciesAlert> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#Alert> .
+<http://foodie-cloud.com/model/foodie#speciesAlert> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation inverse of plotAlert directing from Alert to Plot class" .
+<http://foodie-cloud.com/model/foodie#speciesAlert> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#speciesAlert> <http://www.w3.org/2000/01/rdf-schema#label> "plotAlert" .
+<http://foodie-cloud.com/model/foodie#speciesAlert> <http://www.w3.org/2004/02/skos/core#prefLabel> "speciesAlert"@en .
+# 
+# http://foodie-cloud.com/model/foodie#zoneAlert
+<http://foodie-cloud.com/model/foodie#zoneAlert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://foodie-cloud.com/model/foodie#zoneAlert> <http://www.w3.org/2000/01/rdf-schema#range> <http://foodie-cloud.com/model/foodie#Alert> .
+<http://foodie-cloud.com/model/foodie#zoneAlert> <http://www.w3.org/2000/01/rdf-schema#comment> "A relation between management zone and alert, inverse of alertZone" .
+<http://foodie-cloud.com/model/foodie#zoneAlert> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#zoneAlert> <http://www.w3.org/2000/01/rdf-schema#label> "zoneAlert" .
+<http://foodie-cloud.com/model/foodie#zoneAlert> <http://www.w3.org/2004/02/skos/core#prefLabel> "zoneAlert"@en .
+# 
+# https://uri.etsi.org/ngsi-ld/data
+<https://uri.etsi.org/ngsi-ld/data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://uri.etsi.org/ngsi-ld/data> <http://www.w3.org/2000/01/rdf-schema#comment> "Payload containing the data retrieved" .
+<https://uri.etsi.org/ngsi-ld/data> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> .
+<https://uri.etsi.org/ngsi-ld/data> <http://www.w3.org/2000/01/rdf-schema#label> "data"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://foodie-cloud.com/model/foodie#alertDate
+<http://foodie-cloud.com/model/foodie#alertDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://foodie-cloud.com/model/foodie#alertDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://foodie-cloud.com/model/foodie#alertDate> <http://www.w3.org/2000/01/rdf-schema#comment> "The date/time of the generated alert" .
+<http://foodie-cloud.com/model/foodie#alertDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#alertDate> <http://www.w3.org/2000/01/rdf-schema#label> "alertDate" .
+<http://foodie-cloud.com/model/foodie#alertDate> <http://www.w3.org/2004/02/skos/core#prefLabel> "alertDate"@en .
+# 
+# https://smartdatamodels.org/dataModel.Weather/alertSource
+<https://smartdatamodels.org/dataModel.Weather/alertSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Weather/alertSource> <http://www.w3.org/2000/01/rdf-schema#comment> "reference to the source of the alert. For example, it could be a user of an application, a device, or a service" .
+<https://smartdatamodels.org/dataModel.Weather/alertSource> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
+<https://smartdatamodels.org/dataModel.Weather/alertSource> <http://www.w3.org/2000/01/rdf-schema#label> "alertSource"@en .
+# 
+# https://smartdatamodels.org/dataModel.Weather/dateIssued
+<https://smartdatamodels.org/dataModel.Weather/dateIssued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Weather/dateIssued> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://smartdatamodels.org/dataModel.Weather/dateIssued> <http://www.w3.org/2000/01/rdf-schema#comment> "The date and time the item was issued in ISO8601 UTC format" .
+<https://smartdatamodels.org/dataModel.Weather/dateIssued> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
+<https://smartdatamodels.org/dataModel.Weather/dateIssued> <http://www.w3.org/2000/01/rdf-schema#label> "dateIssued"@en .
+# 
+# https://smartdatamodels.org/dataModel.Weather/severity
+<https://smartdatamodels.org/dataModel.Weather/severity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Weather/severity> <http://www.w3.org/2000/01/rdf-schema#comment> "define the level of gravity of a given alert" .
+<https://smartdatamodels.org/dataModel.Weather/severity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/severity> .
+<https://smartdatamodels.org/dataModel.Weather/severity> <http://www.w3.org/2000/01/rdf-schema#label> "severity"@en .
+# 
+# https://smartdatamodels.org/dataModel.Weather/subCategory
+<https://smartdatamodels.org/dataModel.Weather/subCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Weather/subCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Describe the sub category of alert, i.e., Weather categories, e.g., avalanches,coastalEvent, coldWave, flood, fog, forestFire, heatWave, highTemperature, hurricane, ice, lowTemperature, rainfall, rain_flood, snow, snow_ice, thunderstorms, tornado, tropicalCyclone, tsunami, wind" .
+<https://smartdatamodels.org/dataModel.Weather/subCategory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
+<https://smartdatamodels.org/dataModel.Weather/subCategory> <http://www.w3.org/2000/01/rdf-schema#label> "subCategory"@en .
+# 
+# https://smartdatamodels.org/dataModel.Weather/validFrom
+<https://smartdatamodels.org/dataModel.Weather/validFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Weather/validFrom> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://portele.de/ont/inspire/baseInspire#validFrom> .
+<https://smartdatamodels.org/dataModel.Weather/validFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://smartdatamodels.org/dataModel.Weather/validFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "The start of the validity period for this weather alert as a ISO8601 format" .
+<https://smartdatamodels.org/dataModel.Weather/validFrom> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/doc/spec.md> .
+<https://smartdatamodels.org/dataModel.Weather/validFrom> <http://www.w3.org/2000/01/rdf-schema#label> "validFrom"@en .
+# 
+# https://smartdatamodels.org/dataModel.Weather/validTo
+<https://smartdatamodels.org/dataModel.Weather/validTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://smartdatamodels.org/dataModel.Weather/validTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://portele.de/ont/inspire/baseInspire#validTo> .
+<https://smartdatamodels.org/dataModel.Weather/validTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://smartdatamodels.org/dataModel.Weather/validTo> <http://www.w3.org/2000/01/rdf-schema#comment> "The end of the validity period for this weather alert as a ISO8601 format " .
+<https://smartdatamodels.org/dataModel.Weather/validTo> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/doc/spec.md> .
+<https://smartdatamodels.org/dataModel.Weather/validTo> <http://www.w3.org/2000/01/rdf-schema#label> "validTo"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://foodie-cloud.com/model/foodie#Alert
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/2002/07/owl#equivalentClass> <https://smartdatamodels.org/dataModel.Weather/WeatherAlert> .
+<https://smartdatamodels.org/dataModel.Weather/WeatherAlert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#alertGeometry> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#type> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#alertDate> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#code> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://foodie-cloud.com/model/foodie#description> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/2000/01/rdf-schema#comment> "Alerts automatically generated" .
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://foodie-cloud.com/model/foodie> .
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/2000/01/rdf-schema#label> "Alert" .
+<http://foodie-cloud.com/model/foodie#Alert> <http://www.w3.org/2004/02/skos/core#prefLabel> "Alert"@en .
+# 
+# http://foodie-cloud.com/model/foodie#CropSpecies
+# 
+# http://foodie-cloud.com/model/foodie#ManagementZone
+# 
+# http://foodie-cloud.com/model/foodie#Plot
+# 
+# https://smartdatamodels.org/dataModel.Weather/Alert
+<https://smartdatamodels.org/dataModel.Weather/Alert> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://smartdatamodels.org/dataModel.Weather/Alert> <http://www.w3.org/2000/01/rdf-schema#comment> "A weather alert generated by a user or device in a given location" .
+<https://smartdatamodels.org/dataModel.Weather/Alert> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
+<https://smartdatamodels.org/dataModel.Weather/Alert> <http://www.w3.org/2000/01/rdf-schema#label> "Alert" .
+# 
+# https://smartdatamodels.org/dataModel.Weather/WeatherAlert
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
