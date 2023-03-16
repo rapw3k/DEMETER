@@ -29,11 +29,6 @@
     xmlns:ssn="http://www.w3.org/ns/ssn/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:fiware-agrifood="https://smartdatamodels.org/dataModel.Agrifood/" > 
-  <rdf:Description rdf:nodeID="A0">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://smartdatamodels.org/dataModel.Agrifood/plantingFrom">
     <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json"/>
     <rdfs:comment>A list of the recommended planting interval date(s) for this crop. Specified using ISO8601 repeating date intervals:
@@ -44,17 +39,24 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:label xml:lang="en">plantingFrom</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A1">
-    <foaf:name>PSNC</foaf:name>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A2">
-    <foaf:name>DEMETER project</foaf:name>
-    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A3">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#description"/>
+  <rdf:Description rdf:nodeID="A0">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/hasPlantDate"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#genus"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <foaf:name>Rob Atkinson</foaf:name>
+    <schema:affiliation rdf:nodeID="A4"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#productionAmount">
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
@@ -64,34 +66,43 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Measure"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A4">
+  <rdf:Description rdf:nodeID="A5">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#variety"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#cropArea"/>
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#variety"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/hasHarvestDate"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A5">
-    <foaf:name>Raul Palma</foaf:name>
-    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
-    <schema:affiliation rdf:nodeID="A1"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#CropSpecies">
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
     <rdfs:comment xml:lang="en">An entity for the species of the Crops grown in a plot. The planted crop species</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A9"/>
     <skos:prefLabel xml:lang="en">CropSpecies</skos:prefLabel>
+    <rdfs:subClassOf rdf:nodeID="A10"/>
     <rdfs:subClassOf rdf:nodeID="A6"/>
     <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdfs:subClassOf rdf:nodeID="A11"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:nodeID="A7"/>
-    <rdfs:subClassOf rdf:nodeID="A0"/>
-    <rdfs:subClassOf rdf:nodeID="A8"/>
-    <rdfs:subClassOf rdf:nodeID="A9"/>
-    <rdfs:subClassOf rdf:nodeID="A10"/>
+    <rdfs:subClassOf rdf:nodeID="A12"/>
     <rdfs:label>CropSpecies</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="A13"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A8">
-    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validTo"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A14">
+    <foaf:name>DEMETER project</foaf:name>
+    <foaf:homepage rdf:resource="https://h2020-demeter.eu/"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://saref.etsi.org/saref4agri/generates">
     <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
@@ -115,37 +126,24 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:subPropertyOf rdf:resource="https://saref.etsi.org/core/hasProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A11">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#productionAmount"/>
+  <rdf:Description rdf:nodeID="A15">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#species"/>
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A12">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:onProperty rdf:resource="https://saref.etsi.org/saref4agri/hasPlantDate"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A13">
-    <foaf:name>ICCS</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#CropType">
-    <rdfs:subClassOf rdf:nodeID="A14"/>
+    <rdfs:subClassOf rdf:nodeID="A7"/>
     <rdfs:label>CropType</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="A15"/>
     <skos:prefLabel xml:lang="en">CropType</skos:prefLabel>
     <rdfs:subClassOf rdf:nodeID="A16"/>
-    <rdfs:subClassOf rdf:nodeID="A17"/>
-    <rdfs:subClassOf rdf:nodeID="A18"/>
-    <rdfs:subClassOf rdf:nodeID="A3"/>
+    <rdfs:subClassOf rdf:nodeID="A0"/>
+    <rdfs:subClassOf rdf:nodeID="A2"/>
+    <rdfs:subClassOf rdf:nodeID="A15"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="A17"/>
     <rdfs:comment xml:lang="en">Designation under which the CropSpecies is commonly known</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A18"/>
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
-    <rdfs:subClassOf rdf:nodeID="A19"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A14">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#code"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#family">
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
@@ -155,11 +153,6 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A19">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#species"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#variety">
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
     <rdfs:label>variety</rdfs:label>
@@ -168,10 +161,13 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A20">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#variety"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="A19">
+    <foaf:name>Raul Palma</foaf:name>
+    <rdfs:seeAlso rdf:resource="http://orcid.org/0000-0003-4289-4922"/>
+    <schema:affiliation rdf:nodeID="A20"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A21">
+    <foaf:name>ICCS</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="https://smartdatamodels.org/dataModel.Agrifood/AgriCrop">
     <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json"/>
@@ -179,8 +175,8 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:label>Agri Crop</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A10">
-    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
+  <rdf:Description rdf:nodeID="A16">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#family"/>
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
@@ -190,22 +186,13 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:label xml:lang="en">cropHasAgriSoil</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A17">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#genus"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A15">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#family"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A21">
-    <foaf:name>OGC</foaf:name>
+  <rdf:Description rdf:nodeID="A22">
+    <foaf:name>Ioanna Roussaki</foaf:name>
+    <schema:affiliation rdf:nodeID="A21"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A9">
-    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validFrom"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#production">
@@ -226,9 +213,8 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:label xml:lang="en">harvestingInterval</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A22">
-    <foaf:name>Ioanna Roussaki</foaf:name>
-    <schema:affiliation rdf:nodeID="A13"/>
+  <rdf:Description rdf:nodeID="A4">
+    <foaf:name>OGC</foaf:name>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#productionDate">
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
@@ -259,8 +245,18 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:label xml:lang="en">hasAgriPest</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A23">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#productionDate"/>
+  <rdf:Description rdf:nodeID="A13">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#cropSpecies"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A17">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#description"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validFrom"/>
     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
@@ -271,35 +267,20 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="A7">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#cropArea"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:minCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A16">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#notes"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/demeter/agri/agriCrop">
-    <dct:contributor rdf:nodeID="A22"/>
-    <owl:versionInfo>2.0</owl:versionInfo>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <foaf:maker rdf:nodeID="A2"/>
     <dct:description xml:lang="en">The DEMETER AgriCrop is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies</dct:description>
+    <dct:contributor rdf:nodeID="A3"/>
     <owl:imports rdf:resource="https://w3id.org/demeter/agri/agriCommon"/>
-    <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/agriCrop/2.0"/>
-    <dct:creator rdf:nodeID="A5"/>
     <rdfs:label>DEMETER AgriCrop</rdfs:label>
     <dct:title xml:lang="en">DEMETER AgriCrop</dct:title>
-    <dct:contributor rdf:nodeID="A24"/>
+    <dct:contributor rdf:nodeID="A22"/>
     <dct:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0</dct:rights>
+    <foaf:maker rdf:nodeID="A14"/>
+    <owl:versionInfo>3.0</owl:versionInfo>
+    <owl:versionIRI rdf:resource="https://w3id.org/demeter/agri/agriCrop/3.0"/>
+    <dct:creator rdf:nodeID="A19"/>
     <rdfs:comment xml:lang="en">The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A6">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#cropSpecies"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/demeter/agri/agriCrop#numberOfHivesNeeded">
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/demeter/agri/agriCrop#"/>
@@ -316,6 +297,9 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A20">
+    <foaf:name>PSNC</foaf:name>
+  </rdf:Description>
   <rdf:Description rdf:about="https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser">
     <rdfs:isDefinedBy rdf:resource="https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriCrop/schema.json"/>
     <rdfs:comment>Reference to the recommended types of fertiliser suitable for growing this crop</rdfs:comment>
@@ -323,36 +307,36 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://saref.etsi.org/saref4agri/Crop">
-    <rdfs:subClassOf rdf:nodeID="A4"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">A collection of cultivated plants that is grown on a large scale commercially, especially a cereal, fruit, or vegetable.</rdfs:comment>
+    <rdfs:subClassOf rdf:nodeID="A8"/>
     <rdfs:label>Crop</rdfs:label>
     <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
+    <rdfs:subClassOf rdf:nodeID="A23"/>
     <rdfs:subClassOf rdf:resource="https://saref.etsi.org/core/FeatureOfInterest"/>
     <owl:equivalentClass rdf:resource="http://foodie-cloud.com/model/foodie#CropSpecies"/>
-    <rdfs:subClassOf rdf:nodeID="A25"/>
+    <rdfs:subClassOf rdf:nodeID="A1"/>
     <owl:equivalentClass rdf:resource="https://smartdatamodels.org/dataModel.Agrifood/AgriCrop"/>
-    <rdfs:subClassOf rdf:nodeID="A12"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A23">
+    <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/TAXRANK_0000000"/>
+    <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TAXRANK_1000000"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A18">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#notes"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#ProductionType">
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
     <rdfs:label>ProductionType</rdfs:label>
     <rdfs:comment xml:lang="en">An entity containing relevant production-related data</rdfs:comment>
     <skos:prefLabel xml:lang="en">ProductionType</skos:prefLabel>
-    <rdfs:subClassOf rdf:nodeID="A11"/>
-    <rdfs:subClassOf rdf:nodeID="A23"/>
-    <rdfs:subClassOf rdf:nodeID="A20"/>
+    <rdfs:subClassOf rdf:nodeID="A24"/>
+    <rdfs:subClassOf rdf:nodeID="A25"/>
+    <rdfs:subClassOf rdf:nodeID="A5"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A25">
-    <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/TAXRANK_0000000"/>
-    <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/TAXRANK_1000000"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A18">
-    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#variety"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://saref.etsi.org/saref4agri/hasHarvestDate">
     <owl:equivalentProperty rdf:resource="http://foodie-cloud.com/model/foodie#productionDate"/>
@@ -363,6 +347,16 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="A25">
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#productionDate"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://foodie-cloud.com/model/foodie#genus">
     <rdfs:isDefinedBy rdf:resource="http://foodie-cloud.com/model/foodie"/>
     <rdfs:label>genus</rdfs:label>
@@ -372,8 +366,9 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="A24">
-    <foaf:name>Rob Atkinson</foaf:name>
-    <schema:affiliation rdf:nodeID="A21"/>
+    <owl:onProperty rdf:resource="http://foodie-cloud.com/model/foodie#productionAmount"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://saref.etsi.org/saref4agri/hasPlantDate">
     <rdfs:isDefinedBy rdf:resource="https://saref.etsi.org/saref4agri/"/>
@@ -382,5 +377,10 @@ Meaning repeat each year from this start date to this end date.</rdfs:comment>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <owl:onProperty rdf:resource="http://portele.de/ont/inspire/baseInspire#validTo"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
 </rdf:RDF>
