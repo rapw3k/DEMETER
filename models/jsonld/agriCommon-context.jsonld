@@ -1,11 +1,8 @@
 {
   "@context" : {
-    "invalidatedAtTime" : {
-      "@id" : "http://www.w3.org/ns/prov#invalidatedAtTime",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
-    "entityVersion" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#entityVersion"
+    "contractSeller" : {
+      "@id" : "https://w3id.org/demeter/agri/ecrop/contractSeller",
+      "@type" : "@id"
     },
     "affiliation" : {
       "@id" : "https://schema.org/affiliation"
@@ -24,30 +21,45 @@
       "@id" : "http://portele.de/ont/inspire/baseInspire#validFrom",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
+    "width" : {
+      "@id" : "https://schema.org/width"
+    },
     "FarmHolding" : {
-      "@id" : "https://w3id.org/def/saref4agri#FarmHolding"
+      "@id" : "https://saref.etsi.org/saref4agri/FarmHolding"
+    },
+    "dateCreated" : {
+      "@id" : "https://smartdatamodels.org/dateCreated",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Organization" : {
       "@id" : "https://schema.org/Organization"
     },
-    "agroVocConcept" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#agroVocConcept",
-      "@type" : "@id"
+    "encodingFormat" : {
+      "@id" : "https://schema.org/encodingFormat"
     },
-    "eppoConcept" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#eppoConcept",
-      "@type" : "@id"
-    },        
-    "hasName" : {
-      "@id" : "https://w3id.org/def/saref4agri#hasName",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "createdAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#createdAt",
+    "dateModified" : {
+      "@id" : "https://smartdatamodels.org/dateModified",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
+    "agroVocConcept" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/agroVocConcept",
+      "@type" : "@id"
+    },
+    "height" : {
+      "@id" : "https://schema.org/height"
+    },
+    "addressRegion" : {
+      "@id" : "https://schema.org/addressRegion"
+    },
+    "hasName" : {
+      "@id" : "https://saref.etsi.org/saref4agri/hasName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
     "dataProvider" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#dataProvider"
+      "@id" : "https://smartdatamodels.org/dataProvider"
+    },
+    "propertyHasValue" : {
+      "@id" : "https://saref.etsi.org/core/hasValue"
     },
     "maker" : {
       "@id" : "http://xmlns.com/foaf/0.1/maker"
@@ -58,6 +70,13 @@
     "TAXRANK_1000000" : {
       "@id" : "http://purl.obolibrary.org/obo/TAXRANK_1000000"
     },
+    "contractBuyer" : {
+      "@id" : "https://w3id.org/demeter/agri/ecrop/contractBuyer",
+      "@type" : "@id"
+    },
+    "imageHeight" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageHeight"
+    },
     "homepage" : {
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
@@ -67,17 +86,34 @@
     "Agent" : {
       "@id" : "http://xmlns.com/foaf/0.1/Agent"
     },
+    "ImageObject" : {
+      "@id" : "https://schema.org/ImageObject"
+    },
     "creator" : {
       "@id" : "http://purl.org/dc/terms/creator"
+    },
+    "contentUrl" : {
+      "@id" : "https://schema.org/contentUrl"
     },
     "schema.name" : {
       "@id" : "https://schema.org/name"
     },
+    "imageURL" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageURL",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "address" : {
+      "@id" : "https://smartdatamodels.org/address",
+      "@type" : "@id"
+    },
     "rights" : {
       "@id" : "http://purl.org/dc/terms/rights"
     },
+    "imageDataType" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageDataType"
+    },
     "Farm" : {
-      "@id" : "https://w3id.org/def/saref4agri#Farm"
+      "@id" : "https://saref.etsi.org/saref4agri/Farm"
     },
     "userName" : {
       "@id" : "https://w3id.org/demeter/agri/agriCommon#userName",
@@ -85,6 +121,9 @@
     },
     "isDefinedBy" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
     "title" : {
       "@id" : "http://purl.org/dc/terms/title"
@@ -94,14 +133,27 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "source" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#source"
+      "@id" : "https://smartdatamodels.org/source"
+    },
+    "eppoConcept" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#eppoConcept",
+      "@type" : "@id"
     },
     "typeName" : {
       "@id" : "http://foodie-cloud.com/model/foodie#type",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "imageFormat" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageFormat"
+    },
+    "AgriculturalCertificate" : {
+      "@id" : "https://w3id.org/demeter/agri/ecrop/AgriculturalCertificate"
+    },
+    "version" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/version"
+    },
     "managesFarm" : {
-      "@id" : "https://w3id.org/def/saref4agri#managesFarm",
+      "@id" : "https://saref.etsi.org/saref4agri/managesFarm",
       "@type" : "@id"
     },
     "password" : {
@@ -111,16 +163,15 @@
     "seeAlso" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
     },
-    "modifiedAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#modifiedAt",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
     "category" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#category"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/category"
     },
     "notes" : {
       "@id" : "http://foodie-cloud.com/model/foodie#notes",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "comment" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
@@ -129,15 +180,21 @@
       "@id" : "http://foodie-cloud.com/model/foodie#price",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "Image" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#Image"
+    },
     "contributor" : {
       "@id" : "http://purl.org/dc/terms/contributor"
     },
+    "imageWidth" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageWidth"
+    },
     "hasDescription" : {
-      "@id" : "https://w3id.org/saref#hasDescription",
+      "@id" : "https://saref.etsi.org/core/hasDescription",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "hasTimestamp" : {
-      "@id" : "https://w3id.org/saref#hasTimestamp",
+      "@id" : "https://saref.etsi.org/core/hasTimestamp",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "code" : {
@@ -145,62 +202,26 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "alternateName" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#alternateName"
+      "@id" : "https://smartdatamodels.org/alternateName"
     },
     "prefLabel" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
     },
-    "descriptionEntity" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#description"
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
+    },
+    "description" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "ResponsibleParty" : {
       "@id" : "http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"
     },
     "Farmer" : {
-      "@id" : "https://w3id.org/def/saref4agri#Farmer"
-    },
-    "description" : {
-      "@id" : "http://foodie-cloud.com/model/foodie#description"
+      "@id" : "https://saref.etsi.org/saref4agri/Farmer"
     },
     "name" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#name"
-    },
-    "Image" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#Image"
-    },
-    "ImageObject" : {
-      "@id" : "https://schema.org/ImageObject"
-    },
-    "imageURL" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageURL",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "contentUrl" : {
-      "@id" : "https://schema.org/contentUrl"
-    },
-    "propertyHasValue" : {
-      "@id" : "https://w3id.org/saref#hasValue"
-    },
-    "imageHeight" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageHeight"
-    },
-    "height" : {
-      "@id" : "https://schema.org/height"
-    },
-    "imageWidth" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageWidth"
-    },
-    "width" : {
-      "@id" : "https://schema.org/width"
-    },
-    "imageDataType" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageDataType"
-    },
-    "imageFormat" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageFormat"
-    },
-    "encodingFormat" : {
-      "@id" : "https://schema.org/encodingFormat"
+      "@id" : "https://smartdatamodels.org/name"
     }
   }
 }

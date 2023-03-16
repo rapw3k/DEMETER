@@ -1,0 +1,193 @@
+@prefix schema: <https://schema.org/> .
+@prefix :      <https://w3id.org/cybele/> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix saref: <https://w3id.org/saref#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dim:   <http://purl.oclc.org/NET/ssnx/qu/dim#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix act-inspire: <http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+@prefix ssn:   <http://www.w3.org/ns/ssn/> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix qb:    <http://purl.org/linked-data/cube#> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix sosa:  <http://www.w3.org/ns/sosa/> .
+@prefix stat:  <http://data.europa.eu/m8g/> .
+@prefix cf:    <http://purl.oclc.org/NET/ssnx/cf/cf-property#> .
+@prefix quantity: <http://purl.oclc.org/NET/ssnx/qu/quantity#> .
+@prefix qu:    <http://purl.oclc.org/NET/ssnx/qu/qu#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix af-inspire: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix cf-feature: <http://purl.oclc.org/NET/ssnx/cf/cf-feature#> .
+@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<https://astrea.linkeddata.es/shapes#bac156cb4c091b645a2b3eceee3c609b>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:code .
+
+<https://astrea.linkeddata.es/report/1514534692>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://raw.githubusercontent.com/rapw3k/DEMETER/master/models/agriSystem.ttl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#06d343a59be56b45caf7bbca1e50e807>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Watering valve"@en ;
+        sh:name           "Watering valve"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:WateringValve .
+
+<https://astrea.linkeddata.es/shapes#daeed9fa59dbe88693b3b778f632e014>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Weather station"@en ;
+        sh:description    "A sensor o system that measure weather conditions."@en ;
+        sh:name           "Weather station"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:WeatherStation .
+
+<https://astrea.linkeddata.es/shapes#17df36668c68a2b8ece07442c26e334b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "Device"@en ;
+        sh:name           "Device"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref:Device .
+
+<https://astrea.linkeddata.es/shapes#14f4740cb2289a2aa9391d4da4a86b24>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Thermometer"@en ;
+        sh:name           "Thermometer"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:Thermometer .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#daeed9fa59dbe88693b3b778f632e014> , <https://astrea.linkeddata.es/shapes#ea1a1e3d2380b574749df423ca895398> , <https://astrea.linkeddata.es/shapes#78b37b13428e58c8824cde0844043b7e> , <https://astrea.linkeddata.es/shapes#06d343a59be56b45caf7bbca1e50e807> , <https://astrea.linkeddata.es/shapes#499af03d1cb5ac159c48185c9fe54b06> , <https://astrea.linkeddata.es/shapes#689dff520b7934561f2107f67cb3637e> , <https://astrea.linkeddata.es/shapes#15c31c97fdf1f3cf83113228d2ce8e7c> , <https://astrea.linkeddata.es/shapes#c967b0fdd8f53ecc88b36db8a1959138> , <https://astrea.linkeddata.es/shapes#bac156cb4c091b645a2b3eceee3c609b> , <https://astrea.linkeddata.es/shapes#bbf2b80f2a4bd0c20fab127bf2ff39dd> , <https://astrea.linkeddata.es/shapes#a5d1d90d85a3dca6c7c8406eec083400> , <https://astrea.linkeddata.es/shapes#1c20aeaf56b91e5b9b6adf8be31fd11d> , <https://astrea.linkeddata.es/shapes#afd432ca9d507a89c5ab032681bb246f> , <https://astrea.linkeddata.es/shapes#14f4740cb2289a2aa9391d4da4a86b24> , <https://astrea.linkeddata.es/shapes#8866e3f2019fcadc04bd60737397cedf> , <https://astrea.linkeddata.es/shapes#17df36668c68a2b8ece07442c26e334b> , <https://astrea.linkeddata.es/shapes#56412c6e81da06014e55555506514cf3> , <https://astrea.linkeddata.es/shapes#656253a2e2b47a837a280b35b949ebc7> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1514534692> .
+
+<https://astrea.linkeddata.es/shapes#656253a2e2b47a837a280b35b949ebc7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Pluviometer"@en ;
+        sh:description    "A sensor that measures the rain fall."@en ;
+        sh:name           "Pluviometer"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:Pluviometer .
+
+<https://astrea.linkeddata.es/shapes#78b37b13428e58c8824cde0844043b7e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Soil tensiometer"@en ;
+        sh:description    "A sensor that measures the soil moisture."@en ;
+        sh:name           "Soil tensiometer"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:SoilTensiometer .
+
+<https://astrea.linkeddata.es/shapes#689dff520b7934561f2107f67cb3637e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Weight sensor"@en ;
+        sh:name           "Weight sensor"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:WeightSensor .
+
+<https://astrea.linkeddata.es/shapes#ea1a1e3d2380b574749df423ca895398>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Watering system"@en ;
+        sh:name           "Watering system"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:WateringSystem .
+
+<https://astrea.linkeddata.es/shapes#bbf2b80f2a4bd0c20fab127bf2ff39dd>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foodie:code .
+
+<https://astrea.linkeddata.es/shapes#afd432ca9d507a89c5ab032681bb246f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bbf2b80f2a4bd0c20fab127bf2ff39dd> ;
+        sh:targetClass    foodie:TractorType .
+
+<https://astrea.linkeddata.es/shapes#1c20aeaf56b91e5b9b6adf8be31fd11d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "Sensor"@en ;
+        sh:name           "Sensor"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref:Sensor , sosa:Sensor .
+
+<https://astrea.linkeddata.es/shapes#c967b0fdd8f53ecc88b36db8a1959138>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref: ;
+        rdfs:label        "Actuator"@en ;
+        sh:name           "Actuator"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref:Actuator .
+
+<https://astrea.linkeddata.es/shapes#499af03d1cb5ac159c48185c9fe54b06>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Movement activity sensor"@en ;
+        sh:name           "Movement activity sensor"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:MovementActivitySensor .
+
+<https://astrea.linkeddata.es/shapes#a5d1d90d85a3dca6c7c8406eec083400>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Eating activity sensor"@en ;
+        sh:name           "Eating activity sensor"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:EatingActivitySensor .
+
+<https://astrea.linkeddata.es/shapes#8866e3f2019fcadc04bd60737397cedf>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Milking sensor"@en ;
+        sh:name           "Milking sensor"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:MilkingSensor .
+
+<https://astrea.linkeddata.es/shapes#15c31c97fdf1f3cf83113228d2ce8e7c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Watering gun"@en ;
+        sh:description    "An actuator to irrigate an space."@en ;
+        sh:name           "Watering gun"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:WateringGun .
+
+<https://astrea.linkeddata.es/shapes#56412c6e81da06014e55555506514cf3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bac156cb4c091b645a2b3eceee3c609b> ;
+        sh:targetClass    foodie:MachineType .

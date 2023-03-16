@@ -1,11 +1,13 @@
+@prefix fiware-agrifood: <https://smartdatamodels.org/dataModel.Agrifood/> .
 @prefix schema: <https://schema.org/> .
 @prefix :      <https://w3id.org/cybele/> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix fiware: <https://smartdatamodels.org/> .
 @prefix act-inspire: <http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix geo:   <http://www.opengis.net/ont/geosparql#> .
 @prefix qb:    <http://purl.org/linked-data/cube#> .
@@ -23,7 +25,7 @@
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix afn:   <http://jena.apache.org/ARQ/function#> .
 @prefix af-inspire: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
-@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix saref4agri: <https://saref.etsi.org/saref4agri/> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 <https://astrea.linkeddata.es/shapes#1234d42ca03d2db81542faa103549017>
@@ -33,29 +35,67 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      common:validFrom .
 
-<https://astrea.linkeddata.es/shapes#cec13f824650b91401ee4d9e7051141d>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "lastPlantedAt"@en , "Indicates the date when the crop was last planted." ;
-        sh:datatype       xsd:dateTime ;
-        sh:description    "Indicates the date when the crop was last planted." ;
-        sh:name           "lastPlantedAt"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:lastPlantedAt ;
-        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+<https://astrea.linkeddata.es/shapes#84dabe1f51bdcdab8668ef404bc51bf9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Building space"@en ;
+        sh:description    "An entity used to define the physical spaces of the building. A building space contains devices or building objects."@en ;
+        sh:name           "Building space"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    saref4agri:BuildingSpace .
 
-<https://astrea.linkeddata.es/shapes#94c94d6cfbd428c08f39ddc52cc55162>
+<https://astrea.linkeddata.es/shapes#144f550aeeabf18a84c5e46c49596609>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+        rdfs:label        "hasAgriCrop"@en , "Reference to the crop associated with this parcel" ;
+        sh:description    "Reference to the crop associated with this parcel" ;
+        sh:name           "hasAgriCrop"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware-agrifood:hasAgriCrop .
+
+<https://astrea.linkeddata.es/shapes#b8c6ef891d7877e3a2f7324ed0e4ff27>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> ;
+        rdfs:label        "location"@en , "The geo:json encoded polygon / multi-polygon describing this item.  It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon" ;
+        sh:description    "The geo:json encoded polygon / multi-polygon describing this item.  It can be Point, LineString, Polygon, MultiPoint, MultiLineString or MultiPolygon" ;
+        sh:name           "location"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ngsi-ld:location .
+
+<https://astrea.linkeddata.es/shapes#b01d6eed32b58e8c5381e68a18181893>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  af-inspire: ;
+        rdfs:label        "Holding"@en ;
+        sh:description    "The whole area and all infrastructures included on it, covering the same or different sites, under the control of an operator to perform agricultural or aquaculture activities" ;
+        sh:name           "Holding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ffa228fbe9acf17ea0b9d1fa1bf85040> , <https://astrea.linkeddata.es/shapes#79f9049ac8c7b059d503662569e881fe> ;
+        sh:targetClass    af-inspire:Holding .
+
+<https://astrea.linkeddata.es/shapes#075d79900df48b92bccf0febfd6f6ecb>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      saref4agri:hasName .
 
-<https://astrea.linkeddata.es/shapes#b01d6eed32b58e8c5381e68a18181893>
+<https://astrea.linkeddata.es/shapes#905bb712e3a89f14c1c5f5d647b4b115>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  af-inspire: ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Building" ;
+        sh:description    "A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space)."@en ;
+        sh:name           "Building" ;
         sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#ffa228fbe9acf17ea0b9d1fa1bf85040> , <https://astrea.linkeddata.es/shapes#79f9049ac8c7b059d503662569e881fe> ;
-        sh:targetClass    af-inspire:Holding .
+        sh:property       <https://astrea.linkeddata.es/shapes#9207fef9fa9b243a4ee1bf06b90c17b8> , <https://astrea.linkeddata.es/shapes#075d79900df48b92bccf0febfd6f6ecb> ;
+        sh:targetClass    saref4agri:Building .
+
+<https://astrea.linkeddata.es/shapes#aacca0f18aa4b9d62ceeacdd8c0f78c2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+        rdfs:label        "hasAgriSoil"@en , "Reference to the soil associated with this parcel of land" ;
+        sh:description    "Reference to the soil associated with this parcel of land" ;
+        sh:name           "hasAgriSoil"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware-agrifood:hasAgriSoil .
 
 <https://astrea.linkeddata.es/shapes#3feb00f80e5466881b35881ee8cd88c4>
         a            sh:PropertyShape ;
@@ -71,30 +111,29 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      common:validFrom .
 
-<https://astrea.linkeddata.es/shapes#1dc19786e03c31a4408854a399076c70>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "hasAgriSoil"@en , "Reference to the soil associated with this parcel of land." ;
-        sh:description    "Reference to the soil associated with this parcel of land." ;
-        sh:name           "hasAgriSoil"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           fiware:hasAgriSoil .
-
-<https://astrea.linkeddata.es/shapes#e29dbde7c1f41aad2f20eccfcec14058>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "hasAgriCrop"@en , "Reference to the crop associated with this parcel" ;
-        sh:description    "Reference to the crop associated with this parcel" ;
-        sh:name           "hasAgriCrop"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           fiware:hasAgriCrop .
+<https://astrea.linkeddata.es/shapes#9207fef9fa9b243a4ee1bf06b90c17b8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:contains .
 
 <https://astrea.linkeddata.es/shapes#be4b194476cee0124b7ee49362b53877>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  af-inspire: ;
+        rdfs:label        "activity"@en , "A relation to the classification of the economic activity of the site" ;
         sh:class          act-inspire:EconomicActivityNACEValue ;
+        sh:description    "A relation to the classification of the economic activity of the site" ;
+        sh:name           "activity"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           af-inspire:activity .
+
+<https://astrea.linkeddata.es/shapes#31072cd5db7818eea0e89b05c1417f8a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriGreenhouse/schema.json> ;
+        rdfs:label        "Agri Greenhouse" ;
+        sh:description    "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+        sh:name           "Agri Greenhouse" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware-agrifood:AgriGreenhouse .
 
 <https://astrea.linkeddata.es/shapes#4e2656b0e2a32e06c1a88a6a3133fd04>
         a            sh:PropertyShape ;
@@ -114,6 +153,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      common:validTo .
 
+<https://astrea.linkeddata.es/shapes#4be8017c1cb5809a9d04c75ec970eb41>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json> ;
+        rdfs:label        "Agri Farm" ;
+        sh:description    "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+        sh:name           "Agri Farm" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    fiware-agrifood:AgriFarm .
+
 <https://astrea.linkeddata.es/shapes#7656edcbaa7adbdb325bfe2856838bc6>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:int ;
@@ -130,51 +178,31 @@
 <https://astrea.linkeddata.es/shapes#263550765f3409c3e526d4b72a416373>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "holdingPlot"@en , "A relation from Management Zone to Plot" ;
         sh:class          foodie:Plot ;
+        sh:description    "A relation from Management Zone to Plot" ;
+        sh:name           "holdingPlot"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:holdingZone .
-
-<https://astrea.linkeddata.es/shapes#db2cab4dd634c22d6152f7a596a05e6e>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/Animal/doc/spec.md> , <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "location"@en , "The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty" ;
-        sh:description    "The geo:json encoded polygon / multi-polygon describing this [entity]. Range is equivalent to GeoProperty" ;
-        sh:name           "location"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           fiware:location .
 
 <https://astrea.linkeddata.es/shapes#05d33e1cf8ead5ebf41d409a1af0e7dc>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  act-inspire: ;
-        rdfs:label        "EconomicActivityNACEValue" ;
-        sh:name           "EconomicActivityNACEValue" ;
+        rdfs:label        "EconomicActivityNACEValue"@en , "EconomicActivityNACEValue" ;
+        sh:description    "The classification of the economic activity according to the NACE" ;
+        sh:name           "EconomicActivityNACEValue"@en , "EconomicActivityNACEValue" ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    act-inspire:EconomicActivityNACEValue .
 
 <https://astrea.linkeddata.es/shapes#eff3a21eb92b38d1ceecd6a7b50956a9>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "holdingSite"@en , "A relation from Site to Holding" ;
         sh:class          af-inspire:Holding ;
+        sh:description    "A relation from Site to Holding" ;
+        sh:name           "holdingSite"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:holdingSite .
-
-<https://astrea.linkeddata.es/shapes#e6681742cb01e8ceff3eff7cbeac73bf>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "cropStatus"@en , "A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting." ;
-        sh:description    "A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting." ;
-        sh:name           "cropStatus"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:cropStatus .
-
-<https://astrea.linkeddata.es/shapes#d35bf908c20032fcd25f5924864f2a8e>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> ;
-        rdfs:label        "hasAgriParcel"@en , "List of agri parcels belonging to the farm" ;
-        sh:description    "List of agri parcels belonging to the farm" ;
-        sh:name           "hasAgriParcel"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           fiware:hasAgriParcel .
 
 <https://astrea.linkeddata.es/shapes#c2c26428d6d9e54285a52c4b4d4745a5>
         a            sh:PropertyShape ;
@@ -186,14 +214,20 @@
 <https://astrea.linkeddata.es/shapes#88868d8c55ef1f8660fa5427e6fd63d2>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
-        sh:equals         fiware:hasAgriCrop ;
+        rdfs:label        "crop"@en , "A relation from Plot to CropSpecies" ;
+        sh:description    "A relation from Plot to CropSpecies" ;
+        sh:equals         fiware-agrifood:hasAgriCrop ;
+        sh:name           "crop"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:crop .
 
 <https://astrea.linkeddata.es/shapes#80b6412cec973e549d02f8f742992180>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "containsPlot"@en , "A relation from Site to Plot " ;
         sh:class          foodie:Plot ;
+        sh:description    "A relation from Site to Plot " ;
+        sh:name           "containsPlot"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:containsPlot .
 
@@ -203,16 +237,21 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      geo:hasGeometry .
 
+<https://astrea.linkeddata.es/shapes#df40098fb648431a7a497556e4b0842b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Farm" ;
+        sh:description    "A plot of land used for the scope of farming which can contain buildings and parcels."@en ;
+        sh:name           "Farm" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ab80b338ced0a329d13d23134839f1ef> , <https://astrea.linkeddata.es/shapes#720f22d4e1f7459c8db8ecaa13211f49> ;
+        sh:targetClass    fiware-agrifood:AgriFarm , saref4agri:Farm , af-inspire:Holding .
+
 <https://astrea.linkeddata.es/shapes#021432ba9c751b4d4033997503c1f902>
         a            sh:PropertyShape ;
         sh:minCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      af-inspire:activity .
-
-<https://astrea.linkeddata.es/shapes#651efc216c5a0a6abf668d162509b4c9>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:hasName .
 
 <https://astrea.linkeddata.es/report/908222557>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
@@ -226,7 +265,10 @@
 <https://astrea.linkeddata.es/shapes#c509e281fc42c3d5de278a4ba65f429c>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  af-inspire: ;
+        rdfs:label        "contains"@en , "A relation from Holding to Site " ;
         sh:class          af-inspire:Site ;
+        sh:description    "A relation from Holding to Site " ;
+        sh:name           "contains"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           af-inspire:contains .
 
@@ -242,6 +284,11 @@
         sh:minCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      foodie:containsPlot .
+
+<https://astrea.linkeddata.es/shapes#ab80b338ced0a329d13d23134839f1ef>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:contains .
 
 <https://astrea.linkeddata.es/shapes#c59d4953fd243e041443fc088566f8b8>
         a            sh:PropertyShape ;
@@ -264,8 +311,35 @@
 <https://astrea.linkeddata.es/shapes#34772c2940cb10460f0219f508e35699>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "OriginTypeValue"@en ;
+        sh:description    "Origin of a Plot when taking into consideration only two options: manual (created by human user) and system generated" ;
+        sh:name           "OriginTypeValue"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    foodie:OriginTypeValue .
+
+<https://astrea.linkeddata.es/shapes#331008cdd09d29897bbd13aa06d32dac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+        rdfs:label        "cropStatus"@en , "A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting." ;
+        sh:description    "A choice from an enumerated list describing the crop planting status One of: seeded, justBorn, growing, maturing, readyForHarvesting." ;
+        sh:name           "cropStatus"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware-agrifood:cropStatus .
+
+<https://astrea.linkeddata.es/shapes#720f22d4e1f7459c8db8ecaa13211f49>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:hasName .
+
+<https://astrea.linkeddata.es/shapes#49ef4dd355736641a4164906371acb0a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json> ;
+        rdfs:label        "hasAgriParcel"@en , "List of agri parcels belonging to the farm" ;
+        sh:description    "List of agri parcels belonging to the farm" ;
+        sh:name           "hasAgriParcel"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware-agrifood:hasAgriParcel .
 
 <https://astrea.linkeddata.es/shapes#bf3bc9f168c46a0a3e0fe3c379bbe0d7>
         a            sh:PropertyShape ;
@@ -280,17 +354,52 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      common:validTo .
 
+<https://astrea.linkeddata.es/shapes#c615c245f6aceae63293b07432addfc6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriFarm/schema.json> ;
+        rdfs:label        "landLocation"@en , "Geometry defining the boundaries of the farm land" ;
+        sh:description    "Geometry defining the boundaries of the farm land" ;
+        sh:name           "landLocation"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware-agrifood:landLocation .
+
+<https://astrea.linkeddata.es/shapes#183b4a32b1a22104c576998e033bdf9e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+        rdfs:label        "hasAgriParcelChildren"@en , "Related sub AgriParcel records to which this entity relates" ;
+        sh:description    "Related sub AgriParcel records to which this entity relates" ;
+        sh:name           "hasAgriParcelChildren"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           fiware-agrifood:hasAgriParcelChildren .
+
 <https://astrea.linkeddata.es/shapes#ef4ee09775a4ed717799816812fb2efc>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "ManagementZone"@en ;
+        sh:description    "A spatial subset of a Plot that has specific properties like electric conductivity, organic matter, pH, soil texture, soil type or soil nutrients" ;
+        sh:name           "ManagementZone"@en ;
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#bf3bc9f168c46a0a3e0fe3c379bbe0d7> , <https://astrea.linkeddata.es/shapes#f7b2b5e404a15b049376007758affc7e> , <https://astrea.linkeddata.es/shapes#ae908c904944a56cefec54c488a89327> , <https://astrea.linkeddata.es/shapes#7139ac3bac1fb96b85203ca83f019ef6> , <https://astrea.linkeddata.es/shapes#92ec9f4a340443ce661beb8dfaf279a7> , <https://astrea.linkeddata.es/shapes#77cce3bcdaf17172ebb7f37f1c99b4d1> , <https://astrea.linkeddata.es/shapes#d5cfa76e1be0f91bfc1d3c44ef0b8ae0> ;
         sh:targetClass    foodie:ManagementZone .
 
+<https://astrea.linkeddata.es/shapes#f528c38b2ba5387d92fb5c83bc4b157e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+        rdfs:label        "Indicates the date when the crop was last planted." , "lastPlantedAt"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "Indicates the date when the crop was last planted." ;
+        sh:name           "lastPlantedAt"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware-agrifood:lastPlantedAt ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
 <https://astrea.linkeddata.es/shapes#44d387d97a81baf0defa97566060720b>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "tractor"@en , "A relation from Intervention to TractorType" ;
         sh:class          foodie:TractorType ;
+        sh:description    "A relation from Intervention to TractorType" ;
+        sh:name           "tractor"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:tractor .
 
@@ -303,47 +412,21 @@
 <https://astrea.linkeddata.es/shapes#911b85a41f3a3ad7701eb24d15f10cdb>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "holdingPlot"@en , "A relation from Plot to Site" ;
         sh:class          af-inspire:Site ;
+        sh:description    "A relation from Plot to Site" ;
+        sh:name           "holdingPlot"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:holdingPlot .
 
-<https://astrea.linkeddata.es/shapes#607bdac0f15890021a981ed53c08385f>
+<https://astrea.linkeddata.es/shapes#057c91aabe317bf10140a2ebbb68ddf1>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  saref4agri: ;
-        rdfs:label        "is contained in"@en ;
-        sh:name           "is contained in"@en ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+        rdfs:label        "hasAgriParcelParent"@en , "Reference to the parent AgriParcel" ;
+        sh:description    "Reference to the parent AgriParcel" ;
+        sh:name           "hasAgriParcelParent"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           saref4agri:isContainedIn .
-
-<https://astrea.linkeddata.es/shapes#532c96c480f991d2378c8f44624b10f6>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:hasName .
-
-<https://astrea.linkeddata.es/shapes#7596737bf4a6921eb418db1a46b9cc2e>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  saref4agri: ;
-        rdfs:label        "Farm" ;
-        sh:description    "A plot of land used for the scope of farming which can contain buildings and parcels."@en ;
-        sh:name           "Farm" ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#532c96c480f991d2378c8f44624b10f6> , <https://astrea.linkeddata.es/shapes#cd45bf2d7086935ef4cae881bbe6a0d1> ;
-        sh:targetClass    af-inspire:Holding , fiware:AgriFarm , saref4agri:Farm .
-
-<https://astrea.linkeddata.es/shapes#cd45bf2d7086935ef4cae881bbe6a0d1>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:contains .
-
-<https://astrea.linkeddata.es/shapes#d1dbf8e5174cb33e190071253f816d1e>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "area"@en , "The area of the parcel nominally in square meters." ;
-        sh:description    "The area of the parcel nominally in square meters." ;
-        sh:name           "area"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           fiware:area .
+        sh:path           fiware-agrifood:hasAgriParcelParent .
 
 <https://astrea.linkeddata.es/shapes#9b924293881f2d5e050aebe0296bcc65>
         a            sh:PropertyShape ;
@@ -351,32 +434,33 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      common:validTo .
 
-<https://astrea.linkeddata.es/shapes#6802eec3913acf2a6c9cb7317522b366>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> ;
-        rdfs:label        "landLocation"@en , "Geometry defining the boundaries of the farm land" ;
-        sh:description    "Geometry defining the boundaries of the farm land" ;
-        sh:name           "landLocation"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           fiware:landLocation .
+<https://astrea.linkeddata.es/shapes#f53da6dddfab2225aa45d16df0e01e33>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:hasName .
 
-<https://astrea.linkeddata.es/shapes#356b5c12716bacd05f9e43896197c2ae>
+<https://astrea.linkeddata.es/shapes#dc1487d61265ade87dad9cc4a3ae2fc2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      saref4agri:contains .
+
+<https://astrea.linkeddata.es/shapes#4743c9181a8adfa0be75fdb97f551fca>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "contains" , "A realtion to represent the contained land parcel" ;
+        sh:description    "A realtion to represent the contained land parcel" ;
+        sh:name           "contains" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref4agri:contains .
+
+<https://astrea.linkeddata.es/shapes#badf4fc0fd7768d761fcd3c6e8652b02>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
         rdfs:label        "Agri Parcel" ;
         sh:description    "This entity contains a harmonised description of a generic parcel of land. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
         sh:name           "Agri Parcel" ;
         sh:nodeKind       sh:IRI ;
-        sh:targetClass    fiware:AgriParcel .
-
-<https://astrea.linkeddata.es/shapes#5eeae139d7dc3b975f5db84262268428>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "hasAgriParcelParent"@en , "An optional reference to a higher level (parent) AgriParcel entity to which this entity relates." ;
-        sh:description    "An optional reference to a higher level (parent) AgriParcel entity to which this entity relates." ;
-        sh:name           "hasAgriParcelParent"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           fiware:hasAgriParcelParent .
+        sh:targetClass    fiware-agrifood:AgriParcel .
 
 <https://astrea.linkeddata.es/shapes#79f9049ac8c7b059d503662569e881fe>
         a            sh:PropertyShape ;
@@ -384,25 +468,38 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      af-inspire:contains .
 
+<https://astrea.linkeddata.es/shapes#a9b5c9680e3c84143b57f79f25578668>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "Parcel" ;
+        sh:description    "An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items."@en ;
+        sh:name           "Parcel" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#dc1487d61265ade87dad9cc4a3ae2fc2> , <https://astrea.linkeddata.es/shapes#f53da6dddfab2225aa45d16df0e01e33> ;
+        sh:targetClass    foodie:Plot , fiware-agrifood:AgriParcel , saref4agri:Parcel .
+
+<https://astrea.linkeddata.es/shapes#ae7764cd65829f14d512c65b1ea0076f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  saref4agri: ;
+        rdfs:label        "is contained in"@en , "A relation inverse of s4agri:contains" ;
+        sh:description    "A relation inverse of s4agri:contains" ;
+        sh:name           "is contained in"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           saref4agri:isContainedIn .
+
 <http://astrea.linkeddata.es/report>
         a       <https://w3id.org/def/astrea#ShapeReport> ;
         <https://w3id.org/def/astrea#contains>
-                <https://astrea.linkeddata.es/shapes#6be1d03efca12a71da4b30a5b4a343b2> , <https://astrea.linkeddata.es/shapes#e29dbde7c1f41aad2f20eccfcec14058> , <https://astrea.linkeddata.es/shapes#db2cab4dd634c22d6152f7a596a05e6e> , <https://astrea.linkeddata.es/shapes#2bce13ade70060bed3ad95798661aeb8> , <https://astrea.linkeddata.es/shapes#1dc19786e03c31a4408854a399076c70> , <https://astrea.linkeddata.es/shapes#50fb204bdd3a0e1876233e9e71c263f8> , <https://astrea.linkeddata.es/shapes#92ec9f4a340443ce661beb8dfaf279a7> , <https://astrea.linkeddata.es/shapes#79f9049ac8c7b059d503662569e881fe> , <https://astrea.linkeddata.es/shapes#021432ba9c751b4d4033997503c1f902> , <https://astrea.linkeddata.es/shapes#f7b2b5e404a15b049376007758affc7e> , <https://astrea.linkeddata.es/shapes#a742b2c3b67f7817094c3e8d8100531d> , <https://astrea.linkeddata.es/shapes#88868d8c55ef1f8660fa5427e6fd63d2> , <https://astrea.linkeddata.es/shapes#d1dbf8e5174cb33e190071253f816d1e> , <https://astrea.linkeddata.es/shapes#7656edcbaa7adbdb325bfe2856838bc6> , <https://astrea.linkeddata.es/shapes#263550765f3409c3e526d4b72a416373> , <https://astrea.linkeddata.es/shapes#d6ba2ad06ee60e9831df14dfb16ec28f> , <https://astrea.linkeddata.es/shapes#607bdac0f15890021a981ed53c08385f> , <https://astrea.linkeddata.es/shapes#911b85a41f3a3ad7701eb24d15f10cdb> , <https://astrea.linkeddata.es/shapes#d4e2a1e81542161626d4dc6183ac8582> , <https://astrea.linkeddata.es/shapes#ffa228fbe9acf17ea0b9d1fa1bf85040> , <https://astrea.linkeddata.es/shapes#34772c2940cb10460f0219f508e35699> , <https://astrea.linkeddata.es/shapes#42179914bb5f0eb140c2471501e085ab> , <https://astrea.linkeddata.es/shapes#1be48af0cf6b75e1dabf27a2980aa633> , <https://astrea.linkeddata.es/shapes#651efc216c5a0a6abf668d162509b4c9> , <https://astrea.linkeddata.es/shapes#5eeae139d7dc3b975f5db84262268428> , <https://astrea.linkeddata.es/shapes#bf3bc9f168c46a0a3e0fe3c379bbe0d7> , <https://astrea.linkeddata.es/shapes#eff3a21eb92b38d1ceecd6a7b50956a9> , <https://astrea.linkeddata.es/shapes#c7440d1726af17e71d4486a5f43e978a> , <https://astrea.linkeddata.es/shapes#ef4ee09775a4ed717799816812fb2efc> , <https://astrea.linkeddata.es/shapes#c2c26428d6d9e54285a52c4b4d4745a5> , <https://astrea.linkeddata.es/shapes#c509e281fc42c3d5de278a4ba65f429c> , <https://astrea.linkeddata.es/shapes#356b5c12716bacd05f9e43896197c2ae> , <https://astrea.linkeddata.es/shapes#e8ed999c2de445b957dc5a746142c8c9> , <https://astrea.linkeddata.es/shapes#3feb00f80e5466881b35881ee8cd88c4> , <https://astrea.linkeddata.es/shapes#14306bd799bd4ee4de065efc914e4a55> , <https://astrea.linkeddata.es/shapes#80b6412cec973e549d02f8f742992180> , <https://astrea.linkeddata.es/shapes#8dfa58d44df4446f771625d9437b8472> , <https://astrea.linkeddata.es/shapes#1234d42ca03d2db81542faa103549017> , <https://astrea.linkeddata.es/shapes#d35bf908c20032fcd25f5924864f2a8e> , <https://astrea.linkeddata.es/shapes#b01d6eed32b58e8c5381e68a18181893> , <https://astrea.linkeddata.es/shapes#8c6ff4b7d0cf7d6348f602ebad111cef> , <https://astrea.linkeddata.es/shapes#cd45bf2d7086935ef4cae881bbe6a0d1> , <https://astrea.linkeddata.es/shapes#05d33e1cf8ead5ebf41d409a1af0e7dc> , <https://astrea.linkeddata.es/shapes#100f1a0fde90405f1c26850ca86d085e> , <https://astrea.linkeddata.es/shapes#c59d4953fd243e041443fc088566f8b8> , <https://astrea.linkeddata.es/shapes#7139ac3bac1fb96b85203ca83f019ef6> , <https://astrea.linkeddata.es/shapes#e6681742cb01e8ceff3eff7cbeac73bf> , <https://astrea.linkeddata.es/shapes#e7e55ae5615fe107537373c8179bbf7f> , <https://astrea.linkeddata.es/shapes#6802eec3913acf2a6c9cb7317522b366> , <https://astrea.linkeddata.es/shapes#532c96c480f991d2378c8f44624b10f6> , <https://astrea.linkeddata.es/shapes#9b924293881f2d5e050aebe0296bcc65> , <https://astrea.linkeddata.es/shapes#4e2656b0e2a32e06c1a88a6a3133fd04> , <https://astrea.linkeddata.es/shapes#94c94d6cfbd428c08f39ddc52cc55162> , <https://astrea.linkeddata.es/shapes#9698dc4a8537d2e9cd91560f11e157da> , <https://astrea.linkeddata.es/shapes#be4b194476cee0124b7ee49362b53877> , <https://astrea.linkeddata.es/shapes#7596737bf4a6921eb418db1a46b9cc2e> , <https://astrea.linkeddata.es/shapes#cec13f824650b91401ee4d9e7051141d> , <https://astrea.linkeddata.es/shapes#7079166d64f203e3c5ada3ecea14c911> , <https://astrea.linkeddata.es/shapes#f594accb3ab1abee976af834f4a87746> , <https://astrea.linkeddata.es/shapes#bf42292cb0c5051a51b20e6f2fa77392> , <https://astrea.linkeddata.es/shapes#ae908c904944a56cefec54c488a89327> , <https://astrea.linkeddata.es/shapes#77cce3bcdaf17172ebb7f37f1c99b4d1> , <https://astrea.linkeddata.es/shapes#d5cfa76e1be0f91bfc1d3c44ef0b8ae0> , <https://astrea.linkeddata.es/shapes#44d387d97a81baf0defa97566060720b> , <https://astrea.linkeddata.es/shapes#ec92439b303570f321576b28135fe664> , <https://astrea.linkeddata.es/shapes#7d1250b1e972e6db18e8c8490eb8728a> ;
+                <https://astrea.linkeddata.es/shapes#6be1d03efca12a71da4b30a5b4a343b2> , <https://astrea.linkeddata.es/shapes#49ef4dd355736641a4164906371acb0a> , <https://astrea.linkeddata.es/shapes#2bce13ade70060bed3ad95798661aeb8> , <https://astrea.linkeddata.es/shapes#ae7764cd65829f14d512c65b1ea0076f> , <https://astrea.linkeddata.es/shapes#badf4fc0fd7768d761fcd3c6e8652b02> , <https://astrea.linkeddata.es/shapes#331008cdd09d29897bbd13aa06d32dac> , <https://astrea.linkeddata.es/shapes#50fb204bdd3a0e1876233e9e71c263f8> , <https://astrea.linkeddata.es/shapes#92ec9f4a340443ce661beb8dfaf279a7> , <https://astrea.linkeddata.es/shapes#79f9049ac8c7b059d503662569e881fe> , <https://astrea.linkeddata.es/shapes#021432ba9c751b4d4033997503c1f902> , <https://astrea.linkeddata.es/shapes#f7b2b5e404a15b049376007758affc7e> , <https://astrea.linkeddata.es/shapes#a742b2c3b67f7817094c3e8d8100531d> , <https://astrea.linkeddata.es/shapes#a9b5c9680e3c84143b57f79f25578668> , <https://astrea.linkeddata.es/shapes#88868d8c55ef1f8660fa5427e6fd63d2> , <https://astrea.linkeddata.es/shapes#075d79900df48b92bccf0febfd6f6ecb> , <https://astrea.linkeddata.es/shapes#c49b9fe0aaf7db97b532ad5aa1f6a711> , <https://astrea.linkeddata.es/shapes#7656edcbaa7adbdb325bfe2856838bc6> , <https://astrea.linkeddata.es/shapes#263550765f3409c3e526d4b72a416373> , <https://astrea.linkeddata.es/shapes#057c91aabe317bf10140a2ebbb68ddf1> , <https://astrea.linkeddata.es/shapes#911b85a41f3a3ad7701eb24d15f10cdb> , <https://astrea.linkeddata.es/shapes#31072cd5db7818eea0e89b05c1417f8a> , <https://astrea.linkeddata.es/shapes#df40098fb648431a7a497556e4b0842b> , <https://astrea.linkeddata.es/shapes#aacca0f18aa4b9d62ceeacdd8c0f78c2> , <https://astrea.linkeddata.es/shapes#ffa228fbe9acf17ea0b9d1fa1bf85040> , <https://astrea.linkeddata.es/shapes#34772c2940cb10460f0219f508e35699> , <https://astrea.linkeddata.es/shapes#f53da6dddfab2225aa45d16df0e01e33> , <https://astrea.linkeddata.es/shapes#42179914bb5f0eb140c2471501e085ab> , <https://astrea.linkeddata.es/shapes#4743c9181a8adfa0be75fdb97f551fca> , <https://astrea.linkeddata.es/shapes#bf3bc9f168c46a0a3e0fe3c379bbe0d7> , <https://astrea.linkeddata.es/shapes#183b4a32b1a22104c576998e033bdf9e> , <https://astrea.linkeddata.es/shapes#eff3a21eb92b38d1ceecd6a7b50956a9> , <https://astrea.linkeddata.es/shapes#ef4ee09775a4ed717799816812fb2efc> , <https://astrea.linkeddata.es/shapes#c2c26428d6d9e54285a52c4b4d4745a5> , <https://astrea.linkeddata.es/shapes#c509e281fc42c3d5de278a4ba65f429c> , <https://astrea.linkeddata.es/shapes#720f22d4e1f7459c8db8ecaa13211f49> , <https://astrea.linkeddata.es/shapes#905bb712e3a89f14c1c5f5d647b4b115> , <https://astrea.linkeddata.es/shapes#3feb00f80e5466881b35881ee8cd88c4> , <https://astrea.linkeddata.es/shapes#14306bd799bd4ee4de065efc914e4a55> , <https://astrea.linkeddata.es/shapes#80b6412cec973e549d02f8f742992180> , <https://astrea.linkeddata.es/shapes#1234d42ca03d2db81542faa103549017> , <https://astrea.linkeddata.es/shapes#b8c6ef891d7877e3a2f7324ed0e4ff27> , <https://astrea.linkeddata.es/shapes#b01d6eed32b58e8c5381e68a18181893> , <https://astrea.linkeddata.es/shapes#4be8017c1cb5809a9d04c75ec970eb41> , <https://astrea.linkeddata.es/shapes#f528c38b2ba5387d92fb5c83bc4b157e> , <https://astrea.linkeddata.es/shapes#144f550aeeabf18a84c5e46c49596609> , <https://astrea.linkeddata.es/shapes#dc1487d61265ade87dad9cc4a3ae2fc2> , <https://astrea.linkeddata.es/shapes#05d33e1cf8ead5ebf41d409a1af0e7dc> , <https://astrea.linkeddata.es/shapes#100f1a0fde90405f1c26850ca86d085e> , <https://astrea.linkeddata.es/shapes#c59d4953fd243e041443fc088566f8b8> , <https://astrea.linkeddata.es/shapes#ab80b338ced0a329d13d23134839f1ef> , <https://astrea.linkeddata.es/shapes#7139ac3bac1fb96b85203ca83f019ef6> , <https://astrea.linkeddata.es/shapes#9b924293881f2d5e050aebe0296bcc65> , <https://astrea.linkeddata.es/shapes#4e2656b0e2a32e06c1a88a6a3133fd04> , <https://astrea.linkeddata.es/shapes#9207fef9fa9b243a4ee1bf06b90c17b8> , <https://astrea.linkeddata.es/shapes#9698dc4a8537d2e9cd91560f11e157da> , <https://astrea.linkeddata.es/shapes#be4b194476cee0124b7ee49362b53877> , <https://astrea.linkeddata.es/shapes#84dabe1f51bdcdab8668ef404bc51bf9> , <https://astrea.linkeddata.es/shapes#7079166d64f203e3c5ada3ecea14c911> , <https://astrea.linkeddata.es/shapes#bf42292cb0c5051a51b20e6f2fa77392> , <https://astrea.linkeddata.es/shapes#c615c245f6aceae63293b07432addfc6> , <https://astrea.linkeddata.es/shapes#ae908c904944a56cefec54c488a89327> , <https://astrea.linkeddata.es/shapes#77cce3bcdaf17172ebb7f37f1c99b4d1> , <https://astrea.linkeddata.es/shapes#d5cfa76e1be0f91bfc1d3c44ef0b8ae0> , <https://astrea.linkeddata.es/shapes#44d387d97a81baf0defa97566060720b> , <https://astrea.linkeddata.es/shapes#ec92439b303570f321576b28135fe664> , <https://astrea.linkeddata.es/shapes#7d1250b1e972e6db18e8c8490eb8728a> ;
         <https://w3id.org/def/astrea#generatedShapesFrom>
                 <https://astrea.linkeddata.es/report/908222557> .
-
-<https://astrea.linkeddata.es/shapes#1be48af0cf6b75e1dabf27a2980aa633>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Greenhouse.md> ;
-        rdfs:label        "Agri Greenhouse" ;
-        sh:description    "This entity contains a harmonised description of the conditions recorded within a generic greenhouse, a type of AgriParcel. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
-        sh:name           "Agri Greenhouse" ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    fiware:AgriGreenhouse .
 
 <https://astrea.linkeddata.es/shapes#50fb204bdd3a0e1876233e9e71c263f8>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "Plot"@en ;
+        sh:description    "A continuous area of agricultural land with one type of crop species, cultivated by one user in one farming mode, e.g., conventional, transitional, organic farming" ;
+        sh:name           "Plot"@en ;
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#100f1a0fde90405f1c26850ca86d085e> , <https://astrea.linkeddata.es/shapes#9698dc4a8537d2e9cd91560f11e157da> , <https://astrea.linkeddata.es/shapes#3feb00f80e5466881b35881ee8cd88c4> , <https://astrea.linkeddata.es/shapes#a742b2c3b67f7817094c3e8d8100531d> , <https://astrea.linkeddata.es/shapes#7d1250b1e972e6db18e8c8490eb8728a> , <https://astrea.linkeddata.es/shapes#4e2656b0e2a32e06c1a88a6a3133fd04> , <https://astrea.linkeddata.es/shapes#7656edcbaa7adbdb325bfe2856838bc6> ;
         sh:targetClass    foodie:Plot .
@@ -420,99 +517,57 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      geo:hasGeometry .
 
-<https://astrea.linkeddata.es/shapes#e7e55ae5615fe107537373c8179bbf7f>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:contains .
-
 <https://astrea.linkeddata.es/shapes#f7b2b5e404a15b049376007758affc7e>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      prov:invalidatedAtTime .
 
-<https://astrea.linkeddata.es/shapes#f594accb3ab1abee976af834f4a87746>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <https://github.com/FIWARE/data-models/blob/master/specs/AgriFood/AgriFarm/schema.json> ;
-        rdfs:label        "Agri Farm" ;
-        sh:description    "This entity contains a harmonised description of a generic farm made up of buildings and parcels. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
-        sh:name           "Agri Farm" ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    fiware:AgriFarm .
-
 <https://astrea.linkeddata.es/shapes#2bce13ade70060bed3ad95798661aeb8>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "containsZone"@en , "A relation to the origin of a Plot when taking into consideration only two options: manual (created by human/user) and system (produced by the platform" ;
         sh:class          foodie:OriginTypeValue ;
+        sh:description    "A relation to the origin of a Plot when taking into consideration only two options: manual (created by human/user) and system (produced by the platform" ;
+        sh:name           "containsZone"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:originType .
 
 <https://astrea.linkeddata.es/shapes#6be1d03efca12a71da4b30a5b4a343b2>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "containsZone"@en , "A relation from Plot to Management zone" ;
         sh:class          foodie:ManagementZone ;
+        sh:description    "A relation from Plot to Management zone" ;
+        sh:name           "containsZone"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:containsZone .
-
-<https://astrea.linkeddata.es/shapes#d4e2a1e81542161626d4dc6183ac8582>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  saref4agri: ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           saref4agri:contains .
 
 <https://astrea.linkeddata.es/shapes#42179914bb5f0eb140c2471501e085ab>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  af-inspire: ;
+        rdfs:label        "Site"@en ;
+        sh:description    "A agricultural or aquacultural facility. All land at a same or distinct geographic location under the management control of a holding covering activities, products and services. This includes all infrastructure, equipment and materials." ;
+        sh:name           "Site"@en ;
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#bf42292cb0c5051a51b20e6f2fa77392> , <https://astrea.linkeddata.es/shapes#ec92439b303570f321576b28135fe664> , <https://astrea.linkeddata.es/shapes#9b924293881f2d5e050aebe0296bcc65> , <https://astrea.linkeddata.es/shapes#c2c26428d6d9e54285a52c4b4d4745a5> , <https://astrea.linkeddata.es/shapes#1234d42ca03d2db81542faa103549017> , <https://astrea.linkeddata.es/shapes#021432ba9c751b4d4033997503c1f902> , <https://astrea.linkeddata.es/shapes#c59d4953fd243e041443fc088566f8b8> , <https://astrea.linkeddata.es/shapes#14306bd799bd4ee4de065efc914e4a55> ;
         sh:targetClass    af-inspire:Site .
 
-<https://astrea.linkeddata.es/shapes#e8ed999c2de445b957dc5a746142c8c9>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  saref4agri: ;
-        rdfs:label        "Building" ;
-        sh:description    "A building represents a structure that provides shelter for its occupants or contents and stands in one place. The building is also used to provide a basic element within the spatial structure hierarchy for the components of a building project (together with site, storey, and space)."@en ;
-        sh:name           "Building" ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#e7e55ae5615fe107537373c8179bbf7f> , <https://astrea.linkeddata.es/shapes#94c94d6cfbd428c08f39ddc52cc55162> ;
-        sh:targetClass    saref4agri:Building .
-
-<https://astrea.linkeddata.es/shapes#8dfa58d44df4446f771625d9437b8472>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  saref4agri: ;
-        rdfs:label        "Building space"@en ;
-        sh:description    "An entity used to define the physical spaces of the building. A building space contains devices or building objects."@en ;
-        sh:name           "Building space"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    saref4agri:BuildingSpace .
-
-<https://astrea.linkeddata.es/shapes#c7440d1726af17e71d4486a5f43e978a>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      saref4agri:contains .
-
-<https://astrea.linkeddata.es/shapes#8c6ff4b7d0cf7d6348f602ebad111cef>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  saref4agri: ;
-        rdfs:label        "Parcel" ;
-        sh:description    "An area of land, which might be used for grazing animals or planting crops. The parcel is defined as an undividable logical area of land which contains homogeneous items."@en ;
-        sh:name           "Parcel" ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#651efc216c5a0a6abf668d162509b4c9> , <https://astrea.linkeddata.es/shapes#c7440d1726af17e71d4486a5f43e978a> ;
-        sh:targetClass    saref4agri:Parcel , foodie:Plot , fiware:AgriParcel .
-
-<https://astrea.linkeddata.es/shapes#d6ba2ad06ee60e9831df14dfb16ec28f>
+<https://astrea.linkeddata.es/shapes#c49b9fe0aaf7db97b532ad5aa1f6a711>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel.md> ;
-        rdfs:label        "hasAgriParcelChildren"@en , "An optional reference to lower level (child) AgriParcel records to which this entity relates." ;
-        sh:description    "An optional reference to lower level (child) AgriParcel records to which this entity relates." ;
-        sh:name           "hasAgriParcelChildren"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           fiware:hasAgriParcelChildren .
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriParcel/schema.json> ;
+        rdfs:label        "area"@en , "The area of the parcel nominally in square meters." ;
+        sh:description    "The area of the parcel nominally in square meters." ;
+        sh:name           "area"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           fiware-agrifood:area .
 
 <https://astrea.linkeddata.es/shapes#7079166d64f203e3c5ada3ecea14c911>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://foodie-cloud.com/model/foodie> ;
+        rdfs:label        "machine"@en , "A relation from Intervention to MachineType" ;
         sh:class          foodie:MachineType ;
+        sh:description    "A relation from Intervention to MachineType" ;
+        sh:name           "machine"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foodie:machine .

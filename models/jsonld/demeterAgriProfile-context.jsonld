@@ -1,18 +1,7 @@
 {
   "@context" : {
-  	"@vocab": "https://w3id.org/demeter/default-context/",
-  	"type": "@type",
-  	"value": "https://uri.etsi.org/ngsi-ld/hasValue",
-    "object": {
-    	"@id": "https://uri.etsi.org/ngsi-ld/hasObject",
-			"@type":"@id"
-		},
-		"Property": "https://uri.etsi.org/ngsi-ld/Property",
-		"Relationship": "https://uri.etsi.org/ngsi-ld/Relationship",
-    "Entity" : {
-      "@id" : "https://uri.etsi.org/ngsi-ld/v1/ontology#Entity"
-    },
-    
+    "@vocab": "https://w3id.org/demeter/default-context/",
+    "type": "@type",
     "productionDate" : {
       "@id" : "http://foodie-cloud.com/model/foodie#productionDate",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
@@ -22,14 +11,17 @@
       "@type" : "@id"
     },
     "phenologicalCondition" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#phenologicalCondition"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/phenologicalCondition"
     },
     "invalidatedAtTime" : {
-      "@id" : "http://www.w3.org/ns/prov#invalidatedAtTime",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "http://www.w3.org/ns/prov#invalidatedAtTime"
     },
     "AgriProductType" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#AgriProductType"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/AgriProductType"
+    },
+    "contractSeller" : {
+      "@id" : "https://w3id.org/demeter/agri/ecrop/contractSeller",
+      "@type" : "@id"
     },
     "MultiLineString" : {
       "@id" : "http://www.opengis.net/ont/sf#MultiLineString"
@@ -42,23 +34,26 @@
       "@id" : "http://purl.org/linked-data/cube#Attachable"
     },
     "Crop" : {
-      "@id" : "https://w3id.org/def/saref4agri#Crop"
+      "@id" : "https://saref.etsi.org/saref4agri/Crop"
     },
     "UnitOfMeasure" : {
-      "@id" : "https://w3id.org/saref#UnitOfMeasure"
+      "@id" : "https://saref.etsi.org/core/UnitOfMeasure"
     },
     "hasAgriCrop" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriCrop",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasAgriCrop",
       "@type" : "@id"
     },
-    "entityVersion" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#entityVersion"
+    "QuantityValue" : {
+      "@id" : "http://qudt.org/schema/qudt/QuantityValue"
     },
     "affiliation" : {
       "@id" : "https://schema.org/affiliation"
     },
+    "Unit" : {
+      "@id" : "http://qudt.org/schema/qudt/Unit"
+    },
     "isControlledByDevice" : {
-      "@id" : "https://w3id.org/saref#isControlledByDevice",
+      "@id" : "https://saref.etsi.org/core/isControlledByDevice",
       "@type" : "@id"
     },
     "alertSpecies" : {
@@ -76,7 +71,7 @@
       "@type" : "@id"
     },
     "hasDevice" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasDevice",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasDevice",
       "@type" : "@id"
     },
     "versionInfo" : {
@@ -87,15 +82,14 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "hasAgriProductTypeParent" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriProductTypeParent",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeParent",
       "@type" : "@id"
     },
     "SoilTensiometer" : {
-      "@id" : "https://w3id.org/def/saref4agri#SoilTensiometer"
+      "@id" : "https://saref.etsi.org/saref4agri/SoilTensiometer"
     },
     "generatedAtTime" : {
-      "@id" : "http://www.w3.org/ns/prov#generatedAtTime",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "http://www.w3.org/ns/prov#generatedAtTime"
     },
     "productionAmount" : {
       "@id" : "http://foodie-cloud.com/model/foodie#productionAmount",
@@ -113,31 +107,33 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "alertValidFrom" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#validFrom",
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/validFrom",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Slice" : {
       "@id" : "http://purl.org/linked-data/cube#Slice"
     },
     "Humidity" : {
-      "@id" : "https://w3id.org/saref#Humidity"
+      "@id" : "https://saref.etsi.org/core/Humidity"
     },
     "alertGeometry" : {
       "@id" : "http://foodie-cloud.com/model/foodie#alertGeometry",
       "@type" : "@id"
     },
+    "width" : {
+      "@id" : "https://schema.org/width"
+    },
     "Concentration" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Concentration"
     },
     "dataSet" : {
-      "@id" : "http://purl.org/linked-data/cube#dataSet",
-      "@type" : "@id"
+      "@id" : "http://purl.org/linked-data/cube#dataSet"
     },
     "Period" : {
       "@id" : "http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period"
     },
     "FarmHolding" : {
-      "@id" : "https://w3id.org/def/saref4agri#FarmHolding"
+      "@id" : "https://saref.etsi.org/saref4agri/FarmHolding"
     },
     "componentAttachment" : {
       "@id" : "http://purl.org/linked-data/cube#componentAttachment",
@@ -149,7 +145,10 @@
     },
     "Platform" : {
       "@id" : "http://www.w3.org/ns/sosa/Platform"
-    },    
+    },
+    "Relationship" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/Relationship"
+    },
     "concept" : {
       "@id" : "http://purl.org/linked-data/cube#concept",
       "@type" : "@id"
@@ -166,7 +165,7 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "animalSpecies" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#species"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/species"
     },
     "MultiSurface" : {
       "@id" : "http://www.opengis.net/ont/sf#MultiSurface"
@@ -175,11 +174,21 @@
       "@id" : "http://foodie-cloud.com/model/foodie#production",
       "@type" : "@id"
     },
+    "TemporalDuration" : {
+      "@id" : "http://www.w3.org/2006/time#TemporalDuration"
+    },
     "waterSource" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#waterSource"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/waterSource"
+    },
+    "dateCreated" : {
+      "@id" : "https://smartdatamodels.org/dateCreated",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Procedure" : {
+      "@id" : "http://www.w3.org/ns/sosa/Procedure"
     },
     "WeatherObserved" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#WeatherObserved"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/WeatherObserved"
     },
     "interventionPlot" : {
       "@id" : "http://foodie-cloud.com/model/foodie#interventionPlot",
@@ -190,15 +199,18 @@
       "@type" : "@id"
     },
     "isLocationOf" : {
-      "@id" : "https://w3id.org/def/saref4agri#isLocationOf",
+      "@id" : "https://saref.etsi.org/saref4agri/isLocationOf",
       "@type" : "@id"
     },
     "Organization" : {
       "@id" : "https://schema.org/Organization"
     },
     "hasAgriParcelParent" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriParcelParent",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelParent",
       "@type" : "@id"
+    },
+    "encodingFormat" : {
+      "@id" : "https://schema.org/encodingFormat"
     },
     "crop" : {
       "@id" : "http://foodie-cloud.com/model/foodie#crop",
@@ -225,6 +237,10 @@
       "@id" : "http://foodie-cloud.com/model/foodie#areaDose",
       "@type" : "@id"
     },
+    "dateModified" : {
+      "@id" : "https://smartdatamodels.org/dateModified",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
     "AttributeProperty" : {
       "@id" : "http://purl.org/linked-data/cube#AttributeProperty"
     },
@@ -233,25 +249,34 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "relatedSource" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#relatedSource"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/relatedSource"
     },
     "Product" : {
       "@id" : "http://foodie-cloud.com/model/foodie#Product"
     },
     "agroVocConcept" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#agroVocConcept",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/agroVocConcept",
       "@type" : "@id"
     },
-    "eppoConcept" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#eppoConcept",
+    "quantityValue" : {
+      "@id" : "http://qudt.org/schema/qudt/quantityValue",
       "@type" : "@id"
+    },
+    "height" : {
+      "@id" : "https://schema.org/height"
+    },
+    "TemporalUnit" : {
+      "@id" : "http://www.w3.org/2006/time#TemporalUnit"
+    },
+    "addressRegion" : {
+      "@id" : "https://schema.org/addressRegion"
     },
     "hosts" : {
       "@id" : "http://www.w3.org/ns/sosa/hosts",
       "@type" : "@id"
     },
     "hasName" : {
-      "@id" : "https://w3id.org/def/saref4agri#hasName",
+      "@id" : "https://saref.etsi.org/saref4agri/hasName",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "asWKT" : {
@@ -259,8 +284,12 @@
       "@type" : "http://www.opengis.net/ont/geosparql#wktLiteral"
     },
     "lastPlantedAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#lastPlantedAt",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/lastPlantedAt",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "hasOutput" : {
+      "@id" : "http://www.w3.org/ns/ssn/hasOutput",
+      "@type" : "@id"
     },
     "OriginTypeValue" : {
       "@id" : "http://foodie-cloud.com/model/foodie#OriginTypeValue"
@@ -278,15 +307,11 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "hasID" : {
-      "@id" : "https://w3id.org/def/saref4agri#hasID",
+      "@id" : "https://saref.etsi.org/saref4agri/hasID",
       "@type" : "@id"
     },
     "area" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#area"
-    },
-    "createdAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#createdAt",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/area"
     },
     "RotationalSpeed" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#RotationalSpeed"
@@ -296,27 +321,31 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
     },
     "saref.FeatureOfInterest" : {
-      "@id" : "https://w3id.org/saref#FeatureOfInterest"
+      "@id" : "https://saref.etsi.org/core/FeatureOfInterest"
     },
     "dataProvider" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#dataProvider"
+      "@id" : "https://smartdatamodels.org/dataProvider"
     },
     "ComponentProperty" : {
-      "@id" : "http://purl.org/linked-data/cube#ComponentProperty"
+      "@id" : "http://purl.org/linked-data/cube#ComponentProperty",
+      "@type" : "@id"
     },
     "motionSpeed" : {
       "@id" : "http://foodie-cloud.com/model/foodie#motionSpeed",
       "@type" : "@id"
     },
     "measuresProperty" : {
-      "@id" : "https://w3id.org/saref#measuresProperty",
+      "@id" : "https://saref.etsi.org/core/measuresProperty",
       "@type" : "@id"
     },
     "Class" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#Class"
     },
     "soilTemperature" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#soilTemperature"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/soilTemperature"
+    },
+    "ObservationCollection" : {
+      "@id" : "http://www.w3.org/ns/sosa/ObservationCollection"
     },
     "Geometry" : {
       "@id" : "http://www.opengis.net/ont/geosparql#Geometry"
@@ -328,21 +357,28 @@
       "@id" : "http://www.opengis.net/ont/sf#Curve"
     },
     "legalID" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#legalID"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/legalID"
     },
     "originType" : {
       "@id" : "http://foodie-cloud.com/model/foodie#originType",
       "@type" : "@id"
     },
-    "propertyHasValue" : {
-      "@id" : "https://w3id.org/saref#hasValue"
+    "value" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/hasValue"
+    },
+    "composedPrimarilyOf" : {
+      "@id" : "http://purl.obolibrary.org/obo/RO_0002473",
+      "@type" : "@id"
+    },
+    "Instant" : {
+      "@id" : "http://www.w3.org/2006/time#Instant"
     },
     "operator" : {
       "@id" : "http://foodie-cloud.com/model/foodie#operator",
       "@type" : "@id"
     },
     "snowHeight" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#snowHeight"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/snowHeight"
     },
     "maker" : {
       "@id" : "http://xmlns.com/foaf/0.1/maker"
@@ -358,25 +394,32 @@
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#ThermalConductivity"
     },
     "breed" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#breed"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/breed"
+    },
+    "hasUltimateFeatureOfInterest" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest",
+      "@type" : "@id"
     },
     "domainIncludes" : {
       "@id" : "https://schema.org/domainIncludes"
     },
     "AgriFarm" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#AgriFarm"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/AgriFarm"
     },
     "activity" : {
       "@id" : "http://inspire.ec.europa.eu/schemas/af/3.0#activity",
       "@type" : "@id"
     },
     "hasAgriFertiliser" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriFertiliser",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasAgriFertiliser",
       "@type" : "@id"
     },
     "madeBySensor" : {
       "@id" : "http://www.w3.org/ns/sosa/madeBySensor",
       "@type" : "@id"
+    },
+    "long" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#long"
     },
     "FarmAnimalSpecies" : {
       "@id" : "http://inspire.ec.europa.eu/schemas/af/3.0#FarmAnimalSpecies"
@@ -385,10 +428,10 @@
       "@id" : "http://www.w3.org/ns/sosa/ActuatableProperty"
     },
     "streamGauge" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#streamGauge"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/streamGauge"
     },
     "hasAgriProductTypeChildren" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriProductTypeChildren",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductTypeChildren",
       "@type" : "@id"
     },
     "Feature" : {
@@ -405,14 +448,17 @@
       "@type" : "@id"
     },
     "contains" : {
-      "@id" : "https://w3id.org/def/saref4agri#contains",
+      "@id" : "https://saref.etsi.org/saref4agri/contains",
       "@type" : "@id"
+    },
+    "numericValue" : {
+      "@id" : "http://qudt.org/schema/qudt/numericValue"
     },
     "Wind" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Wind"
     },
     "landLocation" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#landLocation",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/landLocation",
       "@type" : "@id"
     },
     "TAXRANK_1000000" : {
@@ -420,7 +466,11 @@
       "@type" : "@id"
     },
     "harvestingInterval" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#harvestingInterval"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/harvestingInterval"
+    },
+    "hasCountryOfOrigin" : {
+      "@id" : "http://purl.obolibrary.org/obo/HANCESTRO_0308",
+      "@type" : "@id"
     },
     "Concept" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
@@ -430,7 +480,7 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
     },
     "refPointOfInterest" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#refPointOfInterest",
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/refPointOfInterest",
       "@type" : "@id"
     },
     "component" : {
@@ -448,22 +498,26 @@
     "SliceKey" : {
       "@id" : "http://purl.org/linked-data/cube#SliceKey"
     },
+    "contractBuyer" : {
+      "@id" : "https://w3id.org/demeter/agri/ecrop/contractBuyer",
+      "@type" : "@id"
+    },
     "Result" : {
       "@id" : "http://www.w3.org/ns/sosa/Result"
     },
     "fedWith" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#fedWith",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/fedWith",
       "@type" : "@id"
     },
     "Measurement" : {
-      "@id" : "https://w3id.org/saref#Measurement"
+      "@id" : "https://saref.etsi.org/core/Measurement"
     },
     "startedAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#startedAt",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/startedAt",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Thermometer" : {
-      "@id" : "https://w3id.org/def/saref4agri#Thermometer"
+      "@id" : "https://saref.etsi.org/saref4agri/Thermometer"
     },
     "isHostedBy" : {
       "@id" : "http://www.w3.org/ns/sosa/isHostedBy",
@@ -476,6 +530,9 @@
     "ActiveIngredients" : {
       "@id" : "http://foodie-cloud.com/model/foodie#ActiveIngredients"
     },
+    "imageHeight" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageHeight"
+    },
     "propertyName" : {
       "@id" : "http://foodie-cloud.com/model/foodie#propertyName",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
@@ -484,10 +541,10 @@
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Compressibility"
     },
     "AgriCrop" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#AgriCrop"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/AgriCrop"
     },
     "windDirection" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#windDirection"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/windDirection"
     },
     "storageHandling" : {
       "@id" : "http://foodie-cloud.com/model/foodie#storageHandling",
@@ -503,8 +560,11 @@
     "MassPerTimePerArea" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#MassPerTimePerArea"
     },
+    "numericDuration" : {
+      "@id" : "http://www.w3.org/2006/time#numericDuration"
+    },
     "Animal" : {
-      "@id" : "https://w3id.org/def/saref4agri#Animal"
+      "@id" : "https://saref.etsi.org/saref4agri/Animal"
     },
     "Temperature" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Temperature"
@@ -517,24 +577,24 @@
       "@id" : "http://xmlns.com/foaf/0.1/homepage"
     },
     "operationType" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#operationType"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/operationType"
     },
     "hasOperator" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasOperator",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasOperator",
       "@type" : "@id"
     },
     "WeatherForecast" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#WeatherForecast"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/WeatherForecast"
     },
     "root" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#root"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/root"
     },
     "creationDateTime" : {
       "@id" : "http://foodie-cloud.com/model/foodie#creationDateTime",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "soilMoistureEc" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#soilMoistureEc"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/soilMoistureEc"
     },
     "CampaignType" : {
       "@id" : "http://foodie-cloud.com/model/foodie#CampaignType"
@@ -544,7 +604,7 @@
       "@type" : "@id"
     },
     "isMemberOfAnimalGroup" : {
-      "@id" : "https://w3id.org/def/saref4agri#isMemberOf",
+      "@id" : "https://saref.etsi.org/saref4agri/isMemberOf",
       "@type" : "@id"
     },
     "Measure" : {
@@ -553,29 +613,28 @@
     "TreatmentPlan" : {
       "@id" : "http://foodie-cloud.com/model/foodie#TreatmentPlan"
     },
-    "Person" : {
-      "@id" : "http://xmlns.com/foaf/0.1/Person"
+    "schema.Person" : {
+      "@id" : "https://schema.org/Person"
     },
     "Triangle" : {
       "@id" : "http://www.opengis.net/ont/sf#Triangle"
     },
     "Soil" : {
-      "@id" : "https://w3id.org/def/saref4agri#Soil"
+      "@id" : "https://saref.etsi.org/saref4agri/Soil"
     },
-    "operationHasAgriParcel" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#operationHasAgriParcel",
-      "@type" : "@id"
+    "note" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#note"
     },
     "nutrientName" : {
       "@id" : "http://foodie-cloud.com/model/foodie#nutrientName",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "hasHarvestDate" : {
-      "@id" : "https://w3id.org/def/saref4agri#hasHarvestDate",
+      "@id" : "https://saref.etsi.org/saref4agri/hasHarvestDate",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "measurementMadeBy" : {
-      "@id" : "https://w3id.org/saref#measurementMadeBy",
+      "@id" : "https://saref.etsi.org/core/measurementMadeBy",
       "@type" : "@id"
     },
     "ActivityComplex" : {
@@ -593,6 +652,12 @@
       "@id" : "http://foodie-cloud.com/model/foodie#productKind",
       "@type" : "@id"
     },
+    "Interval" : {
+      "@id" : "http://www.w3.org/2006/time#Interval"
+    },
+    "LocationRelationship" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/LocationRelationship"
+    },
     "EnergyFlux" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyFlux"
     },
@@ -600,14 +665,13 @@
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#StressOrPressure"
     },
     "WateringSystem" : {
-      "@id" : "https://w3id.org/def/saref4agri#WateringSystem"
+      "@id" : "https://saref.etsi.org/saref4agri/WateringSystem"
     },
     "Treatment" : {
       "@id" : "http://foodie-cloud.com/model/foodie#Treatment"
     },
     "resultTime" : {
-      "@id" : "http://www.w3.org/ns/sosa/resultTime",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "http://www.w3.org/ns/sosa/resultTime"
     },
     "holdingSite" : {
       "@id" : "http://foodie-cloud.com/model/foodie#holdingSite",
@@ -617,30 +681,33 @@
       "@id" : "http://foodie-cloud.com/model/foodie#PropertyType"
     },
     "AgriParcelOperation" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#AgriParcelOperation"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/AgriParcelOperation"
     },
     "PropertyTypeValue" : {
       "@id" : "http://foodie-cloud.com/model/foodie#PropertyTypeValue"
     },
     "visibility" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#visibility"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/visibility"
     },
     "ProductionType" : {
       "@id" : "http://foodie-cloud.com/model/foodie#ProductionType"
     },
     "refDevice" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#refDevice",
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/refDevice",
       "@type" : "@id"
     },
     "ownedBy" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#ownedBy",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/ownedBy",
       "@type" : "@id"
     },
     "Agent" : {
       "@id" : "http://xmlns.com/foaf/0.1/Agent"
     },
     "MilkingSensor" : {
-      "@id" : "https://w3id.org/def/saref4agri#MilkingSensor"
+      "@id" : "https://saref.etsi.org/saref4agri/MilkingSensor"
+    },
+    "ImageObject" : {
+      "@id" : "https://schema.org/ImageObject"
     },
     "Intervention" : {
       "@id" : "http://foodie-cloud.com/model/foodie#Intervention"
@@ -662,8 +729,15 @@
       "@id" : "http://foodie-cloud.com/model/foodie#holdingPlot",
       "@type" : "@id"
     },
+    "phenomenonTime" : {
+      "@id" : "http://www.w3.org/ns/sosa/phenomenonTime",
+      "@type" : "@id"
+    },
     "alertSource" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#alertSource"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/alertSource"
+    },
+    "contentUrl" : {
+      "@id" : "https://schema.org/contentUrl"
     },
     "Energy" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Energy"
@@ -679,54 +753,65 @@
       "@id" : "https://schema.org/Role"
     },
     "hasSerialization" : {
-      "@id" : "http://www.opengis.net/ont/geosparql#hasSerialization",
-      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+      "@id" : "http://www.opengis.net/ont/geosparql#hasSerialization"
     },
     "cropStatus" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#cropStatus"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/cropStatus"
     },
     "interventionGeometry" : {
       "@id" : "http://foodie-cloud.com/model/foodie#interventionGeometry",
       "@type" : "@id"
     },
     "hasAgriSoil" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriSoil",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasAgriSoil",
       "@type" : "@id"
     },
     "WateringValve" : {
-      "@id" : "https://w3id.org/def/saref4agri#WateringValve"
+      "@id" : "https://saref.etsi.org/saref4agri/WateringValve"
     },
     "Building" : {
-      "@id" : "https://w3id.org/def/saref4agri#Building"
-    },
-    "airTemperature" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#airTemperature"
+      "@id" : "https://saref.etsi.org/saref4agri/Building"
     },
     "Layer" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Layer"
     },
+    "hasTime" : {
+      "@id" : "http://www.w3.org/2006/time#hasTime",
+      "@type" : "@id"
+    },
     "healthCondition" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#healthCondition"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/healthCondition"
+    },
+    "GeoProperty" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/GeoProperty"
     },
     "ProductKindValue" : {
       "@id" : "http://foodie-cloud.com/model/foodie#ProductKindValue"
     },
     "totalQuantity" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#quantity"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/quantity"
+    },
+    "imageURL" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageURL",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
     },
     "AnimalGroup" : {
-      "@id" : "https://w3id.org/def/saref4agri#AnimalGroup"
+      "@id" : "https://saref.etsi.org/saref4agri/AnimalGroup"
     },
     "SF_SamplingFeature.sampledFeature" : {
       "@id" : "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature.sampledFeature",
       "@type" : "@id"
     },
     "hasMemberAnimal" : {
-      "@id" : "https://w3id.org/def/saref4agri#hasMember",
+      "@id" : "https://saref.etsi.org/saref4agri/hasMember",
       "@type" : "@id"
     },
     "rangeIncludes" : {
       "@id" : "https://schema.org/rangeIncludes"
+    },
+    "hasInput" : {
+      "@id" : "http://www.w3.org/ns/ssn/hasInput",
+      "@type" : "@id"
     },
     "Alert" : {
       "@id" : "http://foodie-cloud.com/model/foodie#Alert"
@@ -735,12 +820,16 @@
       "@id" : "http://foodie-cloud.com/model/foodie#livestockType",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "implementedBy" : {
+      "@id" : "http://www.w3.org/ns/ssn/implementedBy",
+      "@type" : "@id"
+    },
     "expectedBloomingEnd" : {
       "@id" : "https://w3id.org/demeter/agri/agriCrop#expectedBloomingEnd",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "isContainedIn" : {
-      "@id" : "https://w3id.org/def/saref4agri#isContainedIn",
+      "@id" : "https://saref.etsi.org/saref4agri/isContainedIn",
       "@type" : "@id"
     },
     "location" : {
@@ -754,13 +843,21 @@
       "@id" : "http://purl.org/linked-data/cube#ComponentSpecification"
     },
     "temperature" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#temperature"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/temperature"
+    },
+    "hasFoodSubstanceAnalog" : {
+      "@id" : "http://purl.obolibrary.org/obo/FOODON_00001301",
+      "@type" : "@id"
     },
     "Scheme" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#Scheme"
     },
     "locatedAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#locatedAt",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/locatedAt",
+      "@type" : "@id"
+    },
+    "hasEnd" : {
+      "@id" : "http://www.w3.org/2006/time#hasEnd",
       "@type" : "@id"
     },
     "ProductNutrients" : {
@@ -771,13 +868,14 @@
       "@type" : "@id"
     },
     "AgriGreenhouse" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#AgriGreenhouse"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/AgriGreenhouse"
     },
     "GeometryCollection" : {
       "@id" : "http://www.opengis.net/ont/sf#GeometryCollection"
     },
     "address" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#address"
+      "@id" : "https://smartdatamodels.org/address",
+      "@type" : "@id"
     },
     "rights" : {
       "@id" : "http://purl.org/dc/terms/rights"
@@ -791,7 +889,7 @@
       "@type" : "@id"
     },
     "ID" : {
-      "@id" : "https://w3id.org/def/saref4agri#ID"
+      "@id" : "https://saref.etsi.org/saref4agri/ID"
     },
     "status" : {
       "@id" : "http://foodie-cloud.com/model/foodie#status",
@@ -801,15 +899,25 @@
       "@id" : "http://foodie-cloud.com/model/foodie#containsPlot",
       "@type" : "@id"
     },
+    "imageDataType" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageDataType"
+    },
+    "TemporalEntity" : {
+      "@id" : "http://www.w3.org/2006/time#TemporalEntity"
+    },
+    "hasBeginning" : {
+      "@id" : "http://www.w3.org/2006/time#hasBeginning",
+      "@type" : "@id"
+    },
     "isResultOf" : {
       "@id" : "http://www.w3.org/ns/sosa/isResultOf",
       "@type" : "@id"
     },
     "Farm" : {
-      "@id" : "https://w3id.org/def/saref4agri#Farm"
+      "@id" : "https://saref.etsi.org/saref4agri/Farm"
     },
     "generates" : {
-      "@id" : "https://w3id.org/def/saref4agri#generates",
+      "@id" : "https://saref.etsi.org/saref4agri/generates",
       "@type" : "@id"
     },
     "productType" : {
@@ -817,22 +925,25 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "hasBirthDate" : {
-      "@id" : "https://w3id.org/def/saref4agri#hasBirthDate",
+      "@id" : "https://saref.etsi.org/saref4agri/hasBirthDate",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "SF_SamplingFeature" : {
       "@id" : "http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeature"
     },
     "siredBy" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#siredBy",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/siredBy",
       "@type" : "@id"
     },
     "DimensionProperty" : {
       "@id" : "http://purl.org/linked-data/cube#DimensionProperty"
     },
     "hasAgriParcel" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriParcel",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcel",
       "@type" : "@id"
+    },
+    "alt" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
     },
     "Acceleration" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Acceleration"
@@ -844,28 +955,36 @@
       "@id" : "http://www.w3.org/ns/ssn/hasSubSystem",
       "@type" : "@id"
     },
+    "Quantity" : {
+      "@id" : "http://qudt.org/schema/qudt/Quantity"
+    },
     "QuantityKind" : {
-      "@id" : "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
+      "@id" : "http://qudt.org/schema/qudt/QuantityKind"
     },
     "AgriParcelRecord" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#AgriParcelRecord"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/AgriParcelRecord"
     },
     "Distance" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Distance"
     },
     "dateObserved" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#dateObserved",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "https://smartdatamodels.org/dateObserved"
     },
     "relatesToMeasurement" : {
-      "@id" : "https://w3id.org/saref#relatesToMeasurement",
+      "@id" : "https://saref.etsi.org/core/relatesToMeasurement",
       "@type" : "@id"
     },
     "atmosphericPressure" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#atmosphericPressure"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/atmosphericPressure"
+    },
+    "WeatherAlert" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/WeatherAlert"
+    },
+    "deprecated" : {
+      "@id" : "http://www.w3.org/2002/07/owl#deprecated"
     },
     "isMeasuredByDevice" : {
-      "@id" : "https://w3id.org/saref#isMeasuredByDevice",
+      "@id" : "https://saref.etsi.org/core/isMeasuredByDevice",
       "@type" : "@id"
     },
     "applicationWidth" : {
@@ -873,19 +992,18 @@
       "@type" : "@id"
     },
     "reportedAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#reportedAt",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/reportedAt",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "FormOfTreatmentValue" : {
       "@id" : "http://foodie-cloud.com/model/foodie#FormOfTreatmentValue"
     },
-    "cropHasAgriSoil" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#cropHasAgriSoil",
-      "@type" : "@id"
-    },
     "evidenceParty" : {
       "@id" : "http://foodie-cloud.com/model/foodie#evidenceParty",
       "@type" : "@id"
+    },
+    "Duration" : {
+      "@id" : "http://www.w3.org/2006/time#Duration"
     },
     "TIN" : {
       "@id" : "http://www.opengis.net/ont/sf#TIN"
@@ -914,14 +1032,14 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "hasPlantDate" : {
-      "@id" : "https://w3id.org/def/saref4agri#hasPlantDate",
+      "@id" : "https://saref.etsi.org/saref4agri/hasPlantDate",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "isDefinedBy" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
     },
     "hasAgriProductType" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriProductType",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasAgriProductType",
       "@type" : "@id"
     },
     "wgs84.Point" : {
@@ -930,8 +1048,15 @@
     "definition" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#definition"
     },
+    "editorialNote" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#editorialNote"
+    },
+    "observes" : {
+      "@id" : "http://www.w3.org/ns/sosa/observes",
+      "@type" : "@id"
+    },
     "makesMeasurement" : {
-      "@id" : "https://w3id.org/saref#makesMeasurement",
+      "@id" : "https://saref.etsi.org/core/makesMeasurement",
       "@type" : "@id"
     },
     "hasDeployment" : {
@@ -947,22 +1072,35 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "order" : {
-      "@id" : "http://purl.org/linked-data/cube#order",
-      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+      "@id" : "http://purl.org/linked-data/cube#order"
     },
     "hasGeometry" : {
       "@id" : "http://www.opengis.net/ont/geosparql#hasGeometry",
       "@type" : "@id"
+    },
+    "usedProcedure" : {
+      "@id" : "http://www.w3.org/ns/sosa/usedProcedure",
+      "@type" : "@id"
+    },
+    "Property" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/Property"
     },
     "ingredientName" : {
       "@id" : "http://foodie-cloud.com/model/foodie#ingredientName",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "pressureTendency" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#pressureTendency"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/pressureTendency"
+    },
+    "streetAddress" : {
+      "@id" : "https://schema.org/streetAddress"
     },
     "sfContains" : {
       "@id" : "http://www.opengis.net/ont/geosparql#sfContains",
+      "@type" : "@id"
+    },
+    "hasComponent" : {
+      "@id" : "http://purl.obolibrary.org/obo/RO_0002180",
       "@type" : "@id"
     },
     "title" : {
@@ -974,8 +1112,8 @@
     "LinearRing" : {
       "@id" : "http://www.opengis.net/ont/sf#LinearRing"
     },
-    "validTo" : {
-      "@id" : "http://portele.de/ont/inspire/baseInspire#validTo",
+    "alertValidTo" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/validTo",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Holding" : {
@@ -989,14 +1127,18 @@
       "@id" : "http://foodie-cloud.com/model/foodie#family",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "inXSDDateTimeStamp" : {
+      "@id" : "http://www.w3.org/2006/time#inXSDDateTimeStamp"
+    },
     "Parcel" : {
-      "@id" : "https://w3id.org/def/saref4agri#Parcel"
+      "@id" : "https://saref.etsi.org/saref4agri/Parcel"
     },
     "source" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#source"
+      "@id" : "https://smartdatamodels.org/source"
     },
-    "wateringFrequency" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#wateringFrequency"
+    "eppoConcept" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#eppoConcept",
+      "@type" : "@id"
     },
     "MeasureProperty" : {
       "@id" : "http://purl.org/linked-data/cube#MeasureProperty"
@@ -1006,10 +1148,13 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "weatherType" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#weatherType"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/weatherType"
+    },
+    "imageFormat" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageFormat"
     },
     "isMeasuredIn" : {
-      "@id" : "https://w3id.org/saref#isMeasuredIn",
+      "@id" : "https://saref.etsi.org/core/isMeasuredIn",
       "@type" : "@id"
     },
     "PropertyKind" : {
@@ -1023,57 +1168,65 @@
       "@type" : "@id"
     },
     "dewPoint" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#dewPoint"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/dewPoint"
     },
     "Pluviometer" : {
-      "@id" : "https://w3id.org/def/saref4agri#Pluviometer"
+      "@id" : "https://saref.etsi.org/saref4agri/Pluviometer"
     },
     "hasFeatureOfInterest" : {
       "@id" : "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
       "@type" : "@id"
     },
-    "hasUltimateFeatureOfInterest" : {
-      "@id" : "http://www.w3.org/ns/sosa/hasUltimateFeatureOfInterest",
-      "@type" : "@id"
-    },
-    "hasMember" : {
-      "@id" : "http://www.w3.org/ns/sosa/hasMember",
-      "@type" : "@id"
+    "lat" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
     },
     "SpecificEntropy" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#SpecificEntropy"
     },
     "hasAgriPest" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriPest",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasAgriPest",
       "@type" : "@id"
     },
     "Plot" : {
       "@id" : "http://foodie-cloud.com/model/foodie#Plot"
     },
+    "AgriculturalCertificate" : {
+      "@id" : "https://w3id.org/demeter/agri/ecrop/AgriculturalCertificate"
+    },
     "endedAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#endedAt",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/endedAt",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "hasDeathDate" : {
-      "@id" : "https://w3id.org/def/saref4agri#hasDeathDate",
+      "@id" : "https://saref.etsi.org/saref4agri/hasDeathDate",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Site" : {
       "@id" : "http://inspire.ec.europa.eu/schemas/af/3.0#Site"
     },
+    "TemporalProperty" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/TemporalProperty"
+    },
     "CodedProperty" : {
       "@id" : "http://purl.org/linked-data/cube#CodedProperty"
+    },
+    "treatmentPurpose" : {
+      "@id" : "http://foodie-cloud.com/model/foodie#treatmentPurpose",
+      "@type" : "@id"
+    },
+    "version" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/version"
     },
     "productionProperty" : {
       "@id" : "http://foodie-cloud.com/model/foodie#productionProperty",
       "@type" : "@id"
     },
     "hasAgriParcelChildren" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#hasAgriParcelChildren",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/hasAgriParcelChildren",
       "@type" : "@id"
     },
     "managesFarm" : {
-      "@id" : "https://w3id.org/def/saref4agri#managesFarm",
+      "@id" : "https://saref.etsi.org/saref4agri/managesFarm",
       "@type" : "@id"
     },
     "observedProperty" : {
@@ -1081,15 +1234,18 @@
       "@type" : "@id"
     },
     "birthdate" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#birthdate",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/birthdate",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "nonQuantitativeProperty" : {
       "@id" : "http://foodie-cloud.com/model/foodie#nonQuantitativeProperty",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "irrigationRecord" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/irrigationRecord"
+    },
     "welfareCondition" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#welfareCondition"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/welfareCondition"
     },
     "password" : {
       "@id" : "https://w3id.org/demeter/agri/agriCommon#password",
@@ -1108,23 +1264,23 @@
       "@type" : "@id"
     },
     "EatingActivitySensor" : {
-      "@id" : "https://w3id.org/def/saref4agri#EatingActivitySensor"
+      "@id" : "https://saref.etsi.org/saref4agri/EatingActivitySensor"
     },
     "zoneAlert" : {
       "@id" : "http://foodie-cloud.com/model/foodie#zoneAlert",
       "@type" : "@id"
     },
     "WeightSensor" : {
-      "@id" : "https://w3id.org/def/saref4agri#WeightSensor"
+      "@id" : "https://saref.etsi.org/saref4agri/WeightSensor"
     },
     "MovementActivitySensor" : {
-      "@id" : "https://w3id.org/def/saref4agri#MovementActivitySensor"
+      "@id" : "https://saref.etsi.org/saref4agri/MovementActivitySensor"
     },
     "solarRadiation" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#solarRadiation"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/solarRadiation"
     },
-    "recordHasAgriParcel" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#recordHasAgriParcel",
+    "unit" : {
+      "@id" : "http://qudt.org/schema/qudt/unit",
       "@type" : "@id"
     },
     "date" : {
@@ -1145,10 +1301,13 @@
       "@id" : "http://foodie-cloud.com/model/foodie#MachineType"
     },
     "relativeHumidity" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#relativeHumidity"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/relativeHumidity"
     },
     "WeatherStation" : {
-      "@id" : "https://w3id.org/def/saref4agri#WeatherStation"
+      "@id" : "https://saref.etsi.org/saref4agri/WeatherStation"
+    },
+    "Entity" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/Entity"
     },
     "plan" : {
       "@id" : "http://foodie-cloud.com/model/foodie#plan",
@@ -1170,14 +1329,10 @@
       "@id" : "http://purl.org/linked-data/cube#ObservationGroup"
     },
     "plantingFrom" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#plantingFrom"
-    },
-    "modifiedAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#modifiedAt",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/plantingFrom"
     },
     "calvedBy" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#calvedBy",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/calvedBy",
       "@type" : "@id"
     },
     "ingredientAmount" : {
@@ -1189,16 +1344,16 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "sex" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#sex"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/sex"
     },
     "Sample" : {
       "@id" : "http://www.w3.org/ns/sosa/Sample"
     },
     "category" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#category"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/category"
     },
     "relatesToProperty" : {
-      "@id" : "https://w3id.org/saref#relatesToProperty",
+      "@id" : "https://saref.etsi.org/core/relatesToProperty",
       "@type" : "@id"
     },
     "period" : {
@@ -1213,16 +1368,23 @@
       "@id" : "http://inspire.ec.europa.eu/schemas/act-core/3.0#EconomicActivityNACEValue"
     },
     "DataSet" : {
-      "@id" : "http://purl.org/linked-data/cube#DataSet"
+      "@id" : "http://purl.org/linked-data/cube#DataSet",
+      "@type" : "@id"
+    },
+    "addressLocality" : {
+      "@id" : "https://schema.org/addressLocality"
     },
     "Actuator" : {
-      "@id" : "https://w3id.org/saref#Actuator"
+      "@id" : "https://saref.etsi.org/core/Actuator"
     },
     "BuildingSpace" : {
-      "@id" : "https://w3id.org/def/saref4agri#BuildingSpace"
+      "@id" : "https://saref.etsi.org/saref4agri/BuildingSpace"
+    },
+    "airTemperatureForecast" : {
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/airTemperatureForecast"
     },
     "plannedEndAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#plannedEndAt",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/plannedEndAt",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "comment" : {
@@ -1235,12 +1397,15 @@
       "@id" : "http://foodie-cloud.com/model/foodie#price",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "Image" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#Image"
+    },
     "dateIssued" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#dateIssued",
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/dateIssued",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "controlsProperty" : {
-      "@id" : "https://w3id.org/saref#controlsProperty",
+      "@id" : "https://saref.etsi.org/core/controlsProperty",
       "@type" : "@id"
     },
     "Polygon" : {
@@ -1264,7 +1429,7 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "reproductiveCondition" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#reproductiveCondition"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/reproductiveCondition"
     },
     "alertPlot" : {
       "@id" : "http://foodie-cloud.com/model/foodie#alertPlot",
@@ -1278,7 +1443,7 @@
       "@id" : "http://purl.org/dc/terms/contributor"
     },
     "severity" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#severity"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/severity"
     },
     "deployedSystem" : {
       "@id" : "http://www.w3.org/ns/ssn/deployedSystem",
@@ -1291,6 +1456,13 @@
       "@id" : "http://foodie-cloud.com/model/foodie#safetyInstructions",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
+    "unitKind" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/qu#unitKind",
+      "@type" : "@id"
+    },
+    "imageWidth" : {
+      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageWidth"
+    },
     "dimension" : {
       "@id" : "http://purl.org/linked-data/cube#dimension",
       "@type" : "@id"
@@ -1299,30 +1471,31 @@
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#RadianceExposure"
     },
     "soilMoistureVwc" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#soilMoistureVwc"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/soilMoistureVwc"
     },
     "VelocityOrSpeed" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#VelocityOrSpeed"
     },
     "Device" : {
-      "@id" : "https://w3id.org/saref#Device"
+      "@id" : "https://saref.etsi.org/core/Device"
     },
     "deployedOnPlatform" : {
       "@id" : "http://www.w3.org/ns/ssn/deployedOnPlatform",
       "@type" : "@id"
     },
     "AgriPest" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#AgriPest"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/AgriPest"
     },
     "data" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#data"
+      "@id" : "https://uri.etsi.org/ngsi-ld/data",
+      "@type" : "@id"
     },
     "containsZone" : {
       "@id" : "http://foodie-cloud.com/model/foodie#containsZone",
       "@type" : "@id"
     },
     "subCategory" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#subCategory"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/subCategory"
     },
     "CropType" : {
       "@id" : "http://foodie-cloud.com/model/foodie#CropType"
@@ -1332,8 +1505,11 @@
       "@type" : "@id"
     },
     "hasDescription" : {
-      "@id" : "https://w3id.org/saref#hasDescription",
+      "@id" : "https://saref.etsi.org/core/hasDescription",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "inXSDDate" : {
+      "@id" : "http://www.w3.org/2006/time#inXSDDate"
     },
     "GFI_DomainFeature" : {
       "@id" : "http://def.isotc211.org/iso19156/2011/GeneralFeatureInstance#GFI_DomainFeature"
@@ -1342,38 +1518,44 @@
       "@id" : "http://foodie-cloud.com/model/foodie#formOfTreatment",
       "@type" : "@id"
     },
+    "Actuation" : {
+      "@id" : "http://www.w3.org/ns/sosa/Actuation"
+    },
     "observation" : {
       "@id" : "http://purl.org/linked-data/cube#observation",
       "@type" : "@id"
     },
     "hasTimestamp" : {
-      "@id" : "https://w3id.org/saref#hasTimestamp",
+      "@id" : "https://saref.etsi.org/core/hasTimestamp",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "WateringGun" : {
-      "@id" : "https://w3id.org/def/saref4agri#WateringGun"
+      "@id" : "https://saref.etsi.org/saref4agri/WateringGun"
     },
     "Dimensionless" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"
     },
+    "Sampling" : {
+      "@id" : "http://www.w3.org/ns/sosa/Sampling"
+    },
     "precipitation" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#precipitation"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/precipitation"
     },
     "code" : {
       "@id" : "http://foodie-cloud.com/model/foodie#code",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "alternateName" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#alternateName"
+      "@id" : "https://smartdatamodels.org/alternateName"
     },
     "Power" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#Power"
     },
     "AgriParcel" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#AgriParcel"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/AgriParcel"
     },
     "observedAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#observedAt",
+      "@id" : "https://smartdatamodels.org/observedAt",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "OM_Observation" : {
@@ -1384,6 +1566,9 @@
     },
     "Surface" : {
       "@id" : "http://www.opengis.net/ont/sf#Surface"
+    },
+    "addressCountry" : {
+      "@id" : "https://schema.org/addressCountry"
     },
     "SurfaceLayer" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#SurfaceLayer"
@@ -1397,7 +1582,7 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "weight" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#weight"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/weight"
     },
     "inScheme" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#inScheme"
@@ -1406,11 +1591,11 @@
       "@id" : "http://purl.org/dc/terms/description"
     },
     "receives" : {
-      "@id" : "https://w3id.org/def/saref4agri#receives",
+      "@id" : "https://saref.etsi.org/saref4agri/receives",
       "@type" : "@id"
     },
     "isLocatedIn" : {
-      "@id" : "https://w3id.org/def/saref4agri#isLocatedIn",
+      "@id" : "https://saref.etsi.org/saref4agri/isLocatedIn",
       "@type" : "@id"
     },
     "ManagementZone" : {
@@ -1420,13 +1605,17 @@
       "@id" : "http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"
     },
     "result" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#result"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/result"
     },
     "MultiCurve" : {
       "@id" : "http://www.opengis.net/ont/sf#MultiCurve"
     },
+    "hasQuantityKind" : {
+      "@id" : "http://qudt.org/schema/qudt/hasQuantityKind",
+      "@type" : "@id"
+    },
     "windSpeed" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#windSpeed"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/windSpeed"
     },
     "DataStructureDefinition" : {
       "@id" : "http://purl.org/linked-data/cube#DataStructureDefinition"
@@ -1434,29 +1623,29 @@
     "MultiPoint" : {
       "@id" : "http://www.opengis.net/ont/sf#MultiPoint"
     },
-    "qb.Observation" : {
-      "@id" : "http://purl.org/linked-data/cube#Observation"
+    "Observation" : {
+      "@id" : "http://www.w3.org/ns/sosa/Observation"
     },
     "EnergyDensity" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/qu/dim#EnergyDensity"
     },
     "illuminance" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#illuminance"
+      "@id" : "https://smartdatamodels.org/dataModel.Weather/illuminance"
     },
     "DoseUnit" : {
       "@id" : "http://foodie-cloud.com/model/foodie#DoseUnit"
     },
     "Farmer" : {
-      "@id" : "https://w3id.org/def/saref4agri#Farmer"
+      "@id" : "https://saref.etsi.org/saref4agri/Farmer"
     },
-    "saref.Sensor" : {
-      "@id" : "https://w3id.org/saref#Sensor"
+    "Sensor" : {
+      "@id" : "http://www.w3.org/ns/sosa/Sensor"
     },
     "ProductPreparation" : {
       "@id" : "http://foodie-cloud.com/model/foodie#ProductPreparation"
     },
     "plannedStartAt" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#plannedStartAt",
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/plannedStartAt",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "hasSimpleResult" : {
@@ -1466,40 +1655,31 @@
       "@id" : "http://foodie-cloud.com/model/foodie#nutrient",
       "@type" : "@id"
     },
-    "componentProperty" : {
-      "@id" : "http://purl.org/linked-data/cube#componentProperty",
+    "unitType" : {
+      "@id" : "http://www.w3.org/2006/time#unitType",
       "@type" : "@id"
+    },
+    "componentProperty" : {
+      "@id" : "http://purl.org/linked-data/cube#componentProperty"
     },
     "isFeatureOfInterestOf" : {
       "@id" : "http://www.w3.org/ns/sosa/isFeatureOfInterestOf",
       "@type" : "@id"
     },
-    "AlertEntity" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#Alert"
-    },
     "sf.Geometry" : {
       "@id" : "http://www.opengis.net/ont/sf#Geometry"
-    },
-    "schema.Person" : {
-      "@id" : "https://schema.org/Person"
     },
     "cf.Surface" : {
       "@id" : "http://purl.oclc.org/NET/ssnx/cf/cf-feature#Surface"
     },
     "saref.Temperature" : {
-      "@id" : "https://w3id.org/saref#Temperature"
+      "@id" : "https://saref.etsi.org/core/Temperature"
     },
     "FeatureOfInterest" : {
       "@id" : "http://www.w3.org/ns/sosa/FeatureOfInterest"
     },
     "FarmAnimal" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#Animal"
-    },
-    "Observation" : {
-      "@id" : "http://www.w3.org/ns/sosa/Observation"
-    },
-    "ObservationCollection" : {
-      "@id" : "http://www.w3.org/ns/sosa/ObservationCollection"
+      "@id" : "https://smartdatamodels.org/dataModel.Agrifood/Animal"
     },
     "Point" : {
       "@id" : "http://www.opengis.net/ont/sf#Point"
@@ -1508,21 +1688,21 @@
       "@id" : "http://www.w3.org/ns/ssn/Property"
     },
     "saref.Property" : {
-      "@id" : "https://w3id.org/saref#Property"
+      "@id" : "https://saref.etsi.org/core/Property"
     },
     "description" : {
       "@id" : "http://foodie-cloud.com/model/foodie#description",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
-    "descriptionEntity" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#description"
+    "propertyHasValue" : {
+      "@id" : "https://saref.etsi.org/core/hasValue"
     },
     "validFrom" : {
       "@id" : "http://portele.de/ont/inspire/baseInspire#validFrom",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
-    "alertValidTo" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#validTo",
+    "validTo" : {
+      "@id" : "http://portele.de/ont/inspire/baseInspire#validTo",
       "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "species" : {
@@ -1530,14 +1710,14 @@
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "operationStatus" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#status"
+      "@id" : "https://uri.etsi.org/ngsi-ld/status"
     },
     "quantity" : {
       "@id" : "http://foodie-cloud.com/model/foodie#quantity",
       "@type" : "@id"
     },
     "name" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#name"
+      "@id" : "https://smartdatamodels.org/name"
     },
     "schema.name" : {
       "@id" : "https://schema.org/name"
@@ -1547,185 +1727,41 @@
       "@type" : "@id"
     },
     "locationGeoJson" : {
-      "@id" : "https://uri.fiware.org/ns/data-models#location",
+      "@id" : "https://uri.etsi.org/ngsi-ld/location",
       "@type" : "@id"
     },
     "saref.hasProperty" : {
-      "@id" : "https://w3id.org/saref#hasProperty",
+      "@id" : "https://saref.etsi.org/core/hasProperty",
       "@type" : "@id"
     },
     "saref.hasFeatureOfInterest" : {
-      "@id" : "https://w3id.org/saref#hasFeatureOfInterest",
+      "@id" : "https://saref.etsi.org/core/hasFeatureOfInterest",
       "@type" : "@id"
     },
     "saref.isFeatureOfInterestOf" : {
-      "@id" : "https://w3id.org/saref#isFeatureOfInterestOf",
+      "@id" : "https://saref.etsi.org/core/isFeatureOfInterestOf",
       "@type" : "@id"
     },
     "saref.isPropertyOf" : {
-      "@id" : "https://w3id.org/saref#isPropertyOf",
+      "@id" : "https://saref.etsi.org/core/isPropertyOf",
       "@type" : "@id"
     },
-    "Quantity" : {
-      "@id" : "http://qudt.org/schema/qudt/Quantity"
+    "qu.QuantityKind" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind"
     },
-    "qudt.QuantityKind" : {
-      "@id" : "http://qudt.org/schema/qudt/QuantityKind"
-    },
-    "QuantityValue" : {
-      "@id" : "http://qudt.org/schema/qudt/QuantityValue"
-    },
-    "Unit" : {
-      "@id" : "http://qudt.org/schema/qudt/Unit"
-    },
-    "unit" : {
-      "@id" : "http://qudt.org/schema/qudt/unit",
+    "hasMember" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasMember",
       "@type" : "@id"
     },
-    "quantityValue" : {
-      "@id" : "http://qudt.org/schema/qudt/quantityValue",
+    "qb.Observation" : {
+      "@id" : "http://purl.org/linked-data/cube#Observation"
+    },
+    "saref.Sensor" : {
+      "@id" : "https://saref.etsi.org/core/Sensor"
+    },
+    "object" : {
+      "@id" : "https://uri.etsi.org/ngsi-ld/hasObject",
       "@type" : "@id"
-    },
-    "hasQuantityKind" : {
-      "@id" : "http://qudt.org/schema/qudt/hasQuantityKind",
-      "@type" : "@id"
-    },
-    "numericValue" : {
-      "@id" : "http://qudt.org/schema/qudt/numericValue"
-    },
-    "Sensor" : {
-      "@id" : "http://www.w3.org/ns/sosa/Sensor"
-    },
-    "Actuation" : {
-      "@id" : "http://www.w3.org/ns/sosa/Actuation"
-    },
-    "Sampling" : {
-      "@id" : "http://www.w3.org/ns/sosa/Sampling"
-    },
-    "Procedure" : {
-      "@id" : "http://www.w3.org/ns/sosa/Procedure"
-    },
-    "observes" : {
-      "@id" : "http://www.w3.org/ns/sosa/observes",
-      "@type" : "@id"
-    },
-    "phenomenonTime" : {
-      "@id" : "http://www.w3.org/ns/sosa/phenomenonTime",
-      "@type" : "@id"
-    },
-    "usedProcedure" : {
-      "@id" : "http://www.w3.org/ns/sosa/usedProcedure",
-      "@type" : "@id"
-    },
-    "hasInput" : {
-      "@id" : "http://www.w3.org/ns/ssn/hasInput",
-      "@type" : "@id"
-    },
-    "hasOutput" : {
-      "@id" : "http://www.w3.org/ns/ssn/hasOutput",
-      "@type" : "@id"
-    },
-    "implementedBy" : {
-      "@id" : "http://www.w3.org/ns/ssn/implementedBy",
-      "@type" : "@id"
-    },
-    "lat" : {
-      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
-    },
-    "long" : {
-      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#long"
-    },
-    "alt" : {
-      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
-    },
-    "TemporalDuration" : {
-      "@id" : "http://www.w3.org/2006/time#TemporalDuration"
-    },
-    "TemporalUnit" : {
-      "@id" : "http://www.w3.org/2006/time#TemporalUnit"
-    },
-    "Instant" : {
-      "@id" : "http://www.w3.org/2006/time#Instant"
-    },
-    "numericDuration" : {
-      "@id" : "http://www.w3.org/2006/time#numericDuration",
-      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
-    },
-    "note" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#note"
-    },
-    "Interval" : {
-      "@id" : "http://www.w3.org/2006/time#Interval"
-    },
-    "hasTime" : {
-      "@id" : "http://www.w3.org/2006/time#hasTime",
-      "@type" : "@id"
-    },
-    "hasEnd" : {
-      "@id" : "http://www.w3.org/2006/time#hasEnd",
-      "@type" : "@id"
-    },
-    "TemporalEntity" : {
-      "@id" : "http://www.w3.org/2006/time#TemporalEntity"
-    },
-    "hasBeginning" : {
-      "@id" : "http://www.w3.org/2006/time#hasBeginning",
-      "@type" : "@id"
-    },
-    "deprecated" : {
-      "@id" : "http://www.w3.org/2002/07/owl#deprecated"
-    },
-    "Duration" : {
-      "@id" : "http://www.w3.org/2006/time#Duration"
-    },
-    "editorialNote" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#editorialNote"
-    },
-    "inXSDDateTimeStamp" : {
-      "@id" : "http://www.w3.org/2006/time#inXSDDateTimeStamp",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
-    },
-    "inXSDDate" : {
-      "@id" : "http://www.w3.org/2006/time#inXSDDate",
-      "@type" : "http://www.w3.org/2001/XMLSchema#date"
-    },
-    "unitType" : {
-      "@id" : "http://www.w3.org/2006/time#unitType",
-      "@type" : "@id"
-    },
-    "Image" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#Image"
-    },
-    "ImageObject" : {
-      "@id" : "https://schema.org/ImageObject"
-    },
-    "imageURL" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageURL",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "contentUrl" : {
-      "@id" : "https://schema.org/contentUrl"
-    },
-    "imageHeight" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageHeight"
-    },
-    "height" : {
-      "@id" : "https://schema.org/height"
-    },
-    "imageWidth" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageWidth"
-    },
-    "width" : {
-      "@id" : "https://schema.org/width"
-    },
-    "imageDataType" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageDataType"
-    },
-    "imageFormat" : {
-      "@id" : "https://w3id.org/demeter/agri/agriCommon#imageFormat"
-    },
-    "encodingFormat" : {
-      "@id" : "https://schema.org/encodingFormat"
-    }  
+    }
   }
 }

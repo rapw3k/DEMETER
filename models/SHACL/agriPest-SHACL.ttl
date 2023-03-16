@@ -1,12 +1,13 @@
+@prefix fiware-agrifood: <https://smartdatamodels.org/dataModel.Agrifood/> .
 @prefix schema: <https://schema.org/> .
 @prefix :      <https://w3id.org/cybele/> .
 @prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
-@prefix saref: <https://w3id.org/saref#> .
+@prefix saref: <https://saref.etsi.org/core/> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix fiware: <https://uri.fiware.org/ns/data-models#> .
+@prefix fiware: <https://smartdatamodels.org/> .
 @prefix act-inspire: <http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
 @prefix ssn:   <http://www.w3.org/ns/ssn/> .
 @prefix geo:   <http://www.opengis.net/ont/geosparql#> .
@@ -25,13 +26,13 @@
 @prefix foodie: <http://foodie-cloud.com/model/foodie#> .
 @prefix afn:   <http://jena.apache.org/ARQ/function#> .
 @prefix af-inspire: <http://inspire.ec.europa.eu/schemas/af/3.0#> .
-@prefix saref4agri: <https://w3id.org/def/saref4agri#> .
+@prefix saref4agri: <https://saref.etsi.org/saref4agri/> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 <http://astrea.linkeddata.es/report>
         a       <https://w3id.org/def/astrea#ShapeReport> ;
         <https://w3id.org/def/astrea#contains>
-                <https://astrea.linkeddata.es/shapes#522e6e9d9c1ec057b270d68c6e6671e1> ;
+                <https://astrea.linkeddata.es/shapes#9370f794597321a079717aa8cd197ce2> ;
         <https://w3id.org/def/astrea#generatedShapesFrom>
                 <https://astrea.linkeddata.es/report/1879514699> .
 
@@ -44,11 +45,11 @@
         <https://w3id.org/def/astrea#statusCode>
                 "200"^^xsd:int .
 
-<https://astrea.linkeddata.es/shapes#522e6e9d9c1ec057b270d68c6e6671e1>
+<https://astrea.linkeddata.es/shapes#9370f794597321a079717aa8cd197ce2>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Pest.md> ;
+        rdfs:isDefinedBy  <https://github.com/smart-data-models/dataModel.Agrifood/blob/master/AgriPest/schema.json> ;
         rdfs:label        "AgriPest" ;
-        sh:description    "This entity contains a harmonised description of an agricultural pest. This entity is primarily associated with the agricultural vertical and related IoT applications." ;
+        sh:description    "This entity contains a harmonised description of an agricultural pest. This entity is primarily associated with the agricultural vertical and related IoT applications" ;
         sh:name           "AgriPest" ;
         sh:nodeKind       sh:IRI ;
-        sh:targetClass    fiware:AgriPest .
+        sh:targetClass    fiware-agrifood:AgriPest .

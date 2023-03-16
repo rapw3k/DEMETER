@@ -1,0 +1,239 @@
+@prefix : <https://w3id.org/cybele/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix stat: <http://data.europa.eu/m8g/> .
+@prefix schema: <https://schema.org/> .
+@prefix af-inspire:	<http://inspire.ec.europa.eu/schemas/af/3.0#> .
+@prefix act-inspire:	<http://inspire.ec.europa.eu/schemas/act-core/3.0#> .
+@prefix foodie: <http://foodie-cloud.com/model/foodie#> .
+@prefix saref4agri: <https://saref.etsi.org/saref4agri/> .
+@prefix common: <http://portele.de/ont/inspire/baseInspire#> .
+@prefix fiware: <https://smartdatamodels.org/> .
+@prefix fiware-agrifood: <https://smartdatamodels.org/dataModel.Agrifood/> .
+@prefix fiware-weather: <https://smartdatamodels.org/dataModel.Weather/> .
+@prefix ngsi-ld: <https://uri.etsi.org/ngsi-ld/> .
+@prefix iso19109: <http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#> .
+@prefix iso19150-2: <http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic#> .
+@prefix iso19103: <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#> .
+@prefix geo:   <http://www.opengis.net/ont/geosparql#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix saref: <https://saref.etsi.org/core/> .
+@base <https://w3id.org/demeter/> .
+
+<https://w3id.org/demeter/agri/agriAlert> a owl:Ontology ;
+                            owl:versionIRI <https://w3id.org/demeter/agri/agriAlert/3.0> ;
+                            dct:contributor [ schema:affiliation [ foaf:name "OGC"
+                                                                 ] ;
+                                              foaf:name "Rob Atkinson"
+                                            ] ,
+                                            [ schema:affiliation [ foaf:name "ICCS"
+                                                                 ] ;
+                                              foaf:name "Ioanna Roussaki"
+                                            ] ;
+                            dct:creator [ schema:affiliation [ foaf:name "PSNC"
+                                                             ] ;
+                                          rdfs:seeAlso <http://orcid.org/0000-0003-4289-4922> ;
+                                          foaf:name "Raul Palma"
+                                        ] ;
+                            owl:imports <https://w3id.org/demeter/agri/agriCommon/3.0> ;
+                            dct:description "The DEMETER AgriAlert is one of the agri profiles of DEMETER AIM. This profile was created by reusing and aligning well-known ontologies and vocabularies"@en ;
+                            dct:rights "This vocabulary is distributed under Creative Commons Attribution 4.0 License - http://creativecommons.org/licenses/by/4.0"@en ;
+                            dct:title "DEMETER AgriAlert"@en ;
+                            rdfs:label "DEMETER AgriAlert" ;
+                            rdfs:comment "The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions"@en ;
+                            owl:versionInfo "3.0" ;
+                            foaf:maker [ foaf:homepage <https://h2020-demeter.eu/> ;
+                                         foaf:name "DEMETER project"
+                                       ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://foodie-cloud.com/model/foodie#alertGeometry
+foodie:alertGeometry  a  owl:ObjectProperty ;
+        rdfs:range      geo:Geometry ;
+        skos:prefLabel  "alertGeometry"@en ;
+        rdfs:label "alertGeometry" ;
+        rdfs:comment "A relation between Geometry entity and Alert" ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#plotAlert
+foodie:plotAlert
+	a owl:ObjectProperty ;
+        rdfs:range      foodie:Alert ;
+        skos:prefLabel  "plotAlert"@en ;
+        rdfs:label "plotAlert" ;
+        rdfs:comment "A relation from Plot to Alert" ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#alertPlot
+foodie:alertPlot  a     owl:ObjectProperty ;
+        rdfs:range      foodie:Plot ;
+        owl:inverseOf   foodie:plotAlert ;
+        skos:prefLabel  "alertPlot"@en ;
+        rdfs:label "plotAlert" ;
+        rdfs:comment "A relation inverse of plotAlert directing from Alert to Plot class" ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#speciesAlert
+foodie:speciesAlert  a  owl:ObjectProperty ;
+        rdfs:range      foodie:Alert ;
+        skos:prefLabel  "speciesAlert"@en ;
+        rdfs:label "plotAlert" ;
+        rdfs:comment "A relation inverse of plotAlert directing from Alert to Plot class" ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#alertSpecies
+foodie:alertSpecies  a  owl:ObjectProperty ;
+        rdfs:range      foodie:CropSpecies ;
+        owl:inverseOf   foodie:speciesAlert ;
+        skos:prefLabel  "alertSpecies"@en ;
+        rdfs:label "alertSpecies" ;
+        rdfs:comment "A relation between crop species and alert." ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#alertZone
+foodie:alertZone  a     owl:ObjectProperty ;
+        rdfs:range      foodie:ManagementZone ;
+        owl:inverseOf   foodie:zoneAlert ;
+        skos:prefLabel  "alertZone"@en ;
+        rdfs:label "alertSpecies" ;
+        rdfs:comment "A relation between management zone and alert." ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+###  http://foodie-cloud.com/model/foodie#zoneAlert
+foodie:zoneAlert  a     owl:ObjectProperty ;
+        rdfs:range      foodie:Alert ;
+        skos:prefLabel  "zoneAlert"@en ;
+        rdfs:label "zoneAlert" ;
+        rdfs:comment "A relation between management zone and alert, inverse of alertZone" ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .   
+
+### https://uri.etsi.org/ngsi-ld/data
+ngsi-ld:data	a      owl:ObjectProperty ;
+        rdfs:label   		"data"@en ;
+        rdfs:comment		"Payload containing the data retrieved" ;
+        rdfs:isDefinedBy <https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context-v1.6.jsonld> .
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://foodie-cloud.com/model/foodie#alertDate
+foodie:alertDate  a     owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;
+        skos:prefLabel  "alertDate"@en ;
+         rdfs:label "alertDate" ;
+        rdfs:comment "The date/time of the generated alert" ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+### https://smartdatamodels.org/dataModel.Weather/subCategory
+fiware-weather:subCategory	a      owl:DatatypeProperty ;
+        rdfs:label   		"subCategory"@en ;
+        rdfs:comment		"Describe the sub category of alert, i.e., Weather categories, e.g., avalanches,coastalEvent, coldWave, flood, fog, forestFire, heatWave, highTemperature, hurricane, ice, lowTemperature, rainfall, rain_flood, snow, snow_ice, thunderstorms, tornado, tropicalCyclone, tsunami, wind" ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
+
+### https://smartdatamodels.org/dataModel.Weather/dateIssued
+fiware-weather:dateIssued	a      owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;
+        rdfs:label   		"dateIssued"@en ;
+        rdfs:comment		"The date and time the item was issued in ISO8601 UTC format" ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
+
+### https://smartdatamodels.org/dataModel.Weather/validFrom
+fiware-weather:validFrom	a      owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;
+        rdfs:label   		"validFrom"@en ;
+        rdfs:comment		"The start of the validity period for this weather alert as a ISO8601 format" ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/doc/spec.md> .
+
+### https://smartdatamodels.org/dataModel.Weather/validTo
+fiware-weather:validTo	a      owl:DatatypeProperty ;
+        rdfs:range      xsd:dateTime ;
+        rdfs:label   		"validTo"@en ;
+        rdfs:comment		"The end of the validity period for this weather alert as a ISO8601 format " ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/doc/spec.md> .
+
+### https://smartdatamodels.org/dataModel.Weather/alertSource
+fiware-weather:alertSource	a      owl:DatatypeProperty ;
+        rdfs:label   		"alertSource"@en ;
+        rdfs:comment		"reference to the source of the alert. For example, it could be a user of an application, a device, or a service" ;
+        rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
+
+### https://smartdatamodels.org/dataModel.Weather/severity
+fiware-weather:severity	a      owl:DatatypeProperty ;
+        rdfs:label   		"severity"@en ;
+        rdfs:comment		"define the level of gravity of a given alert" ;
+        rdfs:isDefinedBy <https://smart-data-models.github.io/data-models/terms.jsonld#/definitions/severity> .
+
+#################################################################
+#    Classes
+#################################################################
+
+### http://foodie-cloud.com/model/foodie#Alert
+foodie:Alert  a          owl:Class ;
+        rdfs:subClassOf  geo:Feature ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:minCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:alertGeometry
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:code
+                         ] ;
+        rdfs:subClassOf  [ a                owl:Restriction ;
+                           owl:cardinality  "1"^^xsd:int ;
+                           owl:onProperty   foodie:alertDate
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:minCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:type
+                         ] ;
+        rdfs:subClassOf  [ a                   owl:Restriction ;
+                           owl:maxCardinality  "1"^^xsd:int ;
+                           owl:onProperty      foodie:description
+                         ] ;
+        skos:prefLabel   "Alert"@en ;
+        rdfs:label "Alert" ;
+	rdfs:comment "Alerts automatically generated" ;
+        rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> .
+
+### https://smartdatamodels.org/dataModel.Weather/WeatherAlert
+fiware-weather:Alert	a owl:Class ;
+			rdfs:label "Alert" ;
+			rdfs:comment "A weather alert generated by a user or device in a given location" ;
+			rdfs:isDefinedBy <https://github.com/smart-data-models/dataModel.Weather/blob/master/WeatherAlert/schema.json> .
+
+#################################################################
+#    Alignments
+#################################################################
+foodie:Alert owl:equivalentClass fiware-weather:WeatherAlert .
+fiware-weather:validFrom rdfs:subPropertyOf common:validFrom .
+fiware-weather:validTo rdfs:subPropertyOf common:validTo .
+foodie:alertGeometry rdfs:subPropertyOf geo:hasGeometry .
+
+
+#################################################################
+#    Individuals
+#################################################################
