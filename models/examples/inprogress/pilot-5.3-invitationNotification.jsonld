@@ -1,0 +1,34 @@
+{
+    "@context": [
+    	"https://w3id.org/demeter/agri-context.jsonld",
+    	"https://w3id.org/demeter/agri/ext/pollination-context.jsonld"
+    ],
+    "@id":"urn:demeter:sn:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+		"@type": "SprayingNotification",
+		"beekeeperID": "",
+		"relatedInvitationId" : "",
+		"numberOfBeeFamilies":"",
+		"validFrom":"",
+		"validTo":"",
+		"invalidatedAtTime":"2021-06-12", 
+		"interventionPlot":{
+			"@id":"urn:demeter:plot:72d9fb43-53f8-4ec8-a33c-fa931360259a",
+			"@type": "Plot",
+			"identifier": "",
+			"location": {
+				"@id": "urn:demeter:site:geo:72d9fb43-53f8-4ec8-a33c-fa931360259y",
+				"@type": "Point",
+				"lat": 111.439584467,
+				"long": 12.3948549865
+      }
+    },
+    "crop": {
+			"@id": "urn:ngsi-ld:crop:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
+			"@type": "Crop",
+			"cropSpecies":{
+				"@id": "urn:demeter:croptype:df72dc57-1eb9-42a3-88a9-8647ecc954b4",
+				"@type": "CropType",
+				"name": "Wheat"
+			}
+		}		
+}

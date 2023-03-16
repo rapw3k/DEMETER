@@ -1,12 +1,27 @@
-# Domain Ontologies
+# Agriculture Information Model (AIM)
 
-This folder contains the modules comprising the AIM domain layer. 
-The modules have been created by reusing well-known ontologies and models related to the agri-food sector, namely 
-[Saref4Agri](https://mariapoveda.github.io/saref-ext/OnToology/SAREF4AGRI/ontology/saref4agri.ttl/documentation/index-en.html), 
-[FOODIE](http://agroportal.lirmm.fr/ontologies/FOODIE) and 
-[FIWARE agrifood models](https://github.com/FIWARE/data-models/tree/master/specs/AgriFood).
-The modules include required extensions to cover DEMETER pilot's needs, as well as alignments between elements in these models.
-The modules have been structured based on topics similar to the FIWARE agrifood models, but more in line with the underlying models.
+This repository contains the modules comprising all the layers of the Agriculture Information Model (AIM). 
+
+The cross-domain module has been created by reusing and alignment existing standard ontologies/vocabularies,
+including: OGC/W3C sosa/ssn, OGC Geosparql, W3C Time ontology, W3C Data Cube ontology, ISO 191xx standards, WGS84, QUDT, W3C PROV-O, as well as well-known vocabularies like FOAF, Schema.org, and Dublin Core.
+
+The domain modules have been created by reusing well-known ontologies and models related to the agri-food sector, namely the ETSI standard [Saref4Agri](https://saref.etsi.org/saref4agri/v1.1.2/) and the underlying Smart Applications REFerence [SAREF ontology](https://saref.etsi.org/core/v3.1.1/), 
+[INPIRE/FOODIE ontology](http://agroportal.lirmm.fr/ontologies/FOODIE) and 
+[SmartDataModel (aka.FIWARE) agrifood related models](https://smartdatamodels.org/).
+
+The modules include required extensions to cover DEMETER pilot's needs, as well as alignments between elements in these models. The modules have been structured based on topics similar to the FIWARE/SmartDataModels agrifood related models, but in alignment with the DEMEter requirements and the coverage of the re-used models.
+
+> Version 3.0 of AIM has been released (03/2023). It includes:
+* Re-alignment to FIWARE, now SmartDataModels, using latest models and the now official URIs
+* Re-alignment to SAREF/SAREF4AGRI, using the latest, now official URIs
+* Re-use of key FOODON terms
+* Re-use of key eCrop terms
+* Improve documentation (adding labels and comments for each term)
+* Cleaning and harmonization of terms definition
+* Updated RDF/XML serialization based on official Turtle resources
+* Updated JSON-LD contexts  
+* Updated SHACL
+
 
 > Version 2.0 of AIM has been released. It includes:
 * Cross-domain ontology finalized
