@@ -78,7 +78,7 @@ Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/e
 ## Key terms
 
 The three underlying models have concepts to represent a portion of land where crops or animals are grown, 
-and since this is a major concept used in practically all agri applications, we include a [discussion of key terms](https://github.com/rapw3k/DEMETER/tree/master/models/README.MD) that includes short definitions for them, and an explanaition of how they are aligned, so developers will be able to decide which one is more suited for their needs.
+and since this is a major concept used in practically all agri applications, we include a [discussion of key terms](https://github.com/rapw3k/DEMETER/blob/master/models/README.md) that includes short definitions for them, and an explanaition of how they are aligned, so developers will be able to decide which one is more suited for their needs.
 
 ## Finding terms and retrieving annotations 
 
