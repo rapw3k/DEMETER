@@ -1,67 +1,30 @@
-WiDoco auto-config
-==================
-
-This folder contains the assets necessary to generate the documentation of the
-various ontology modules. Ultimatelly, the documentation is created by WiDoco,
-but some pre-processing is necessary to transform the ontology meta-data into
-WiDoco input config files.
-
-This auto-config programme is necessary since WiDoco is not yet able to deal
-with meta-data vocabularies (VCard, Doublin Core, Schema.org). [An issue](https://github.com/dgarijo/Widoco/issues/285) 
-is currently open on this matter. Once that issue is closed this programme might no
-longer be necessary. 
-
-config
-------
-
-The auto-config programme needs to be awere of the location of the WiDoco `.jar`
-file. This information is set up in the `config` file, an input to the programme.
-This file also stores the location of the WiDoco template, stored in a separate
-file for convinience (`template.json`, see below). 
-
-Before running the programme edit the `config` file, inserting the right path to the
-WiDoco `.jar` in your system. 
+# DEMETER Ontology
+DEMETER Agriculture Information Model (AIM) Domain Ontology
+The DEMETER Agriculture Information Model (AIM) is the common vocabulary in DEMETER project providing the basis for semantic interoperability across smart farming solutions.
 
 
-template.json
--------------
+## Ontology modules
+* [DEMETER Agriculture Information Model (AIM) domain ontology](https://rapw3k.github.io/DEMETER/demeterAgriProfile/index-en.html)
+* [AIM FarmAnimal](https://rapw3k.github.io/DEMETER/farmAnimal/index-en.html)
+* [DEMETER core meta-model](https://rapw3k.github.io/DEMETER/demeterCore_ngsi-ld/index-en.html)
+* [DEMETER Cross-Domain](https://rapw3k.github.io/DEMETER/cross-domain/index-en.html)
+* [DEMETER AgriSystem](https://rapw3k.github.io/DEMETER/agriSystem/index-en.html)
+* [DEMETER AgriProperty](https://rapw3k.github.io/DEMETER/agriProperty/index-en.html)
+* [DEMETER AgriProduct](https://rapw3k.github.io/DEMETER/agriProduct/index-en.html)
+* [DEMETER AgriPest](https://rapw3k.github.io/DEMETER/agriPest/index-en.html)
+* [DEMETER AgriIntervention](https://rapw3k.github.io/DEMETER/agriIntervention/index-en.html)
+* [DEMETER AgriFeature](https://rapw3k.github.io/DEMETER/agriFeature/index-en.html)
+* [DEMETER AgriCrop](https://rapw3k.github.io/DEMETER/agriCrop/index-en.html)
+* [AIM AgriCommon](https://rapw3k.github.io/DEMETER/agriCommon/index-en.html)
+* [DEMETER AgriAlert](https://rapw3k.github.io/DEMETER/agriAlert/index-en.html)
 
-Contains a dictionary with various WiDoco options that compose the input config
-file. All the values in this dictionary are replaced with meta-data obtained from the
-ontology file itself, except the following:
-- status
-- licenseURI
-- licenseName
-- licenseIconURL
+Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
-Updated these items directly in the `template.json` file if you wish to modify them.
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
 
-requirements.txt
-----------------
+[![CC BY 4.0][cc-by-image]][cc-by]
 
-The auto-config programme depends on a few Python libraries enumerated in the
-`requirements.txt` file. A virtual environment is a simple and convinient method
-to set up these libraries:
-
-```
-python3 -m venv env
-
-source ./env/bin/activate
-
-pip3 install -r requirements.txt
-```
-
-generateDoc.py
---------------
-
-Creates a config file for an ontology module and runs WiDoco. The HTML outputs
-are stored in a folder with the same name of the ontology module.
-
-The programme takes as single input the name of a module, e.g. `glosis_main`. It
-then opens the corresponding Turtle file in the parent folder As an example to
-create the documentation for the `glosis_common` module:
-
-```
-python3 generateDoc.py glosis_main
-```
-
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
