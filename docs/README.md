@@ -16,6 +16,7 @@ maintaining its consistency and compliance. In particular, AIM comprises the fol
 * the cross-domain layer defining relevant concepts and properties that are common across multiple domains, and which enable the interoperability with existing standard models and vocabularies
 * the domain layer defining agri-specific concepts and properties covering different aspects of interest of agri applications, and which enables the integration of relevant vocabularies in the sector.
 * The pilot-specific layer defining additional concepts and properties that are of specific use for particular applications. 
+
 Additionally, AIM defines a metadata model that can be used to describe datasets, services or applications in DEMETER.
 
 The cross-domain module has been created by reusing and alignment existing standard ontologies/vocabularies, including: OGC/W3C sosa/ssn, OGC Geosparql, 
@@ -77,7 +78,7 @@ Please check examples at [https://github.com/rapw3k/DEMETER/tree/master/models/e
 ## Key terms
 
 The three underlying models have concepts to represent a portion of land where crops or animals are grown, 
-and since this is a major concept used in practically all agri applications, we include a [discussion of key terms] (https://github.com/rapw3k/DEMETER/tree/master/models/README.MD) that includes short definitions for them, and an explanaition of how they are aligned, so developers will be able to decide which one is more suited for their needs.
+and since this is a major concept used in practically all agri applications, we include a [discussion of key terms](https://github.com/rapw3k/DEMETER/tree/master/models/README.MD) that includes short definitions for them, and an explanaition of how they are aligned, so developers will be able to decide which one is more suited for their needs.
 
 ## Finding terms and retrieving annotations 
 

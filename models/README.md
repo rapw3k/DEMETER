@@ -18,6 +18,7 @@ maintaining its consistency and compliance. In particular, AIM comprises the fol
 * the cross-domain layer defining relevant concepts and properties that are common across multiple domains, and which enable the interoperability with existing standard models and vocabularies
 * the domain layer defining agri-specific concepts and properties covering different aspects of interest of agri applications, and which enables the integration of relevant vocabularies in the sector.
 * The pilot-specific layer defining additional concepts and properties that are of specific use for particular applications. 
+
 Additionally, AIM defines a metadata model that can be used to describe datasets, services or applications in DEMETER.
 
 The cross-domain module has been created by reusing and alignment existing standard ontologies/vocabularies, including: OGC/W3C sosa/ssn, OGC Geosparql, 
