@@ -41,7 +41,7 @@ domains (reusing the cross-domain layer).
 > Version 3.0 of AIM has been released (03/2023). It includes:
 * Re-alignment to FIWARE, now SmartDataModels, using latest models and the now official URIs
 * Re-alignment to SAREF/SAREF4AGRI, using the latest, now official URIs
-* Cleaned and moved the alignment to NGSI-LD from cross-domain layer to spearate module, enabling alignments with other meta-models in the future
+* Cleaned and moved the alignment to NGSI-LD from cross-domain layer to separate module, enabling the alignments of AIM with other meta-models in the future
 * Re-use of key FOODON terms
 * Re-use of key eCrop terms
 * Improve documentation (adding labels and comments for each term)
